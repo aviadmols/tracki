@@ -10,8 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ 'all-lander.css' | asset_url }}" />
-  {{ content_for_header }}
-  <script src="{{ 'utm-order-attribution.js' | asset_url }}" defer></script>
+  <style>
+
+.offer-inner {
+    background: transparent !important;
+}
+
+.offer-inner *{
+    background: transparent !important;
+}
+
+</style>
 </head>
 <body>
 
@@ -437,7 +446,7 @@
         </div>
         <div class="device-img-wrap">
           <div class="device-glow"></div>
-          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/Layer-177_2x_03e9fcfa-fc78-404a-8072-692aaa586397.jpg?v=1613743097" alt="Tracki Universal GPS Tracker - actual size vs quarter, 1.8in x 1.5in x 0.55in, 1.26oz" class="device-img device-size-img" />
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/Layer-177_2x_03e9fcfa-fc78-404a-8072-692aaa586397.jpg?v=1613743097" alt="Tracki Universal GPS Tracker â€” actual size compared to a quarter coin, 1.8in x 1.5in x 0.55in, weight 1.26oz" class="device-img device-size-img" />
           <div class="device-float-1">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span>Live Tracking</span>
@@ -586,379 +595,77 @@
   </section>
 
   <!-- ===== OFFER ===== -->
-  <section class="offer-section offer-section--radio" id="offer">
-    <div class="container offer-inner">
-      <div class="offer-layout-2col">
-
-        <div class="offer-col-left">
-          <div class="offer-top">
-            <div class="offer-left">
-              <div class="offer-title">
-                <h2>Simple Plans,</h2>
-                <h3>No Hidden Fees</h3>
-              </div>
-              <div class="offer-start">Starting at $11.54 per month.</div>
-              <div class="offer-price">
-                <span class="offer-price-num">11.54</span> <span class="offer-price-curr">USD</span>
-              </div>
-            </div>
+  <section class="offer-section" id="offer" style=" background: transparent !important;">
+    <div class="container" style="max-width:960px;">
+      
+      <div class="offer-top" style=" background: transparent !important;">
+        <div class="offer-left" style=" background: transparent !important;">
+          <div class="offer-title">
+            <h2>Simple Plans,</h2>
+            <h3>No Hidden Fees</h3>
           </div>
-
-          <div class="offer-device-block">
-            <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Device" class="offer-device-img" width="auto" height="auto" />
-            <div class="money-back">
-              MONEY BACK
-              <span>30 DAYS</span>
-              GUARANTEE
-            </div>
+          <div class="offer-start">Starting at per month.</div>
+          <div class="offer-price">
+            9.96 <span>USD</span>
           </div>
         </div>
 
-        <div class="offer-col-right">
-          <div class="pricing-radio-stack" role="radiogroup" aria-label="Choose billing plan">
+        <div class="offer-right" style=" background: transparent !important;">
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Device" class="offer-device-img" />
+          <div class="money-back">
+            MONEY BACK
+            <span>30 DAYS</span>
+            GUARANTEE
+          </div>
+        </div>
+      </div>
 
+      <div class="pricing-grid-2x2">
+        
         <!-- 2 Years -->
-        <div
-          class="plan-card"
-          role="radio"
-          tabindex="0"
-          aria-checked="false"
-          id="plan-2yr-cta"
-          data-product-id="8188271165555"
-          onclick="selectPlan(this)"
-          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPlan(this);}"
-        >
-          <span class="plan-badge-corner" aria-hidden="true">SAVE 50%</span>
-          <div class="plan-card-inner">
-            <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-info">
-              <div class="plan-header">
-                <span class="plan-dur">Tracki + 24 Month Subscription</span>
-              </div>
-            </div>
-            <div class="plan-price-col">
-              <div class="plan-price-main">
-                <span class="plan-amount">$11.54</span>
-                <span class="plan-compare"><span class="visually-hidden">Was </span>$19.95</span>
-              </div>
-              <div class="plan-period">/ month + FREE device</div>
-            </div>
+        <a href="https://tracki.com" target="_blank" class="plan-card" id="plan-2yr-cta">
+          <div class="plan-top-row">
+            <div class="plan-dur">2 Years</div>
+            <div class="plan-save">SAVE<span>50%</span></div>
           </div>
-          <ul class="plan-bullets">
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Pay only $276.90 — this is a one-time payment, not recurring</span>
-            </li>
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>FREE Tracki device included</span>
-            </li>
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Cancel or Change Anytime</span>
-            </li>
-          </ul>
-        </div>
+          <div class="plan-monthly">$9.96 USD <span>/ month</span></div>
+          <div class="plan-sub">$239.00 USD Prepaid<br/>every 24 months</div>
+        </a>
 
         <!-- 1 Year -->
-        <div
-          class="plan-card"
-          role="radio"
-          tabindex="0"
-          aria-checked="false"
-          id="plan-1yr-cta"
-          data-product-id="8188271132787"
-          onclick="selectPlan(this)"
-          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPlan(this);}"
-        >
-          <span class="plan-badge-corner" aria-hidden="true">SAVE 30%</span>
-          <div class="plan-card-inner">
-            <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-info">
-              <div class="plan-header">
-                <span class="plan-dur">Tracki + 12 Month Subscription</span>
-              </div>
-            </div>
-            <div class="plan-price-col">
-              <div class="plan-price-main">
-                <span class="plan-amount">$16.66</span>
-                <span class="plan-compare"><span class="visually-hidden">Was </span>$19.95</span>
-              </div>
-              <div class="plan-period">/ month + FREE device</div>
-            </div>
+        <a href="https://tracki.com" target="_blank" class="plan-card" id="plan-1yr-cta">
+          <div class="plan-top-row">
+            <div class="plan-dur">1 Year</div>
+            <div class="plan-save">SAVE<span>30%</span></div>
           </div>
-          <ul class="plan-bullets">
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Pay only $199.90 — this is a one-time payment, not recurring</span>
-            </li>
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>FREE Tracki device included</span>
-            </li>
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Cancel or Change Anytime</span>
-            </li>
-          </ul>
-        </div>
+          <div class="plan-monthly">$13.95 USD <span>/ month</span></div>
+          <div class="plan-sub">$167.40 USD Prepaid<br/>every 12 months</div>
+        </a>
 
         <!-- 6 Months -->
-        <div
-          class="plan-card"
-          role="radio"
-          tabindex="0"
-          aria-checked="false"
-          id="plan-6mo-cta"
-          data-product-id="8188270575731"
-          onclick="selectPlan(this)"
-          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPlan(this);}"
-        >
-          <span class="plan-badge-corner" aria-hidden="true">SAVE 17%</span>
-          <div class="plan-card-inner">
-            <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-info">
-              <div class="plan-header">
-                <span class="plan-dur">Tracki + 6 Month Subscription</span>
-              </div>
-            </div>
-            <div class="plan-price-col">
-              <div class="plan-price-main">
-                <span class="plan-amount">$21.65</span>
-                <span class="plan-compare"><span class="visually-hidden">Was </span>$24.95</span>
-              </div>
-              <div class="plan-period">/ month + FREE device</div>
-            </div>
+        <a href="https://tracki.com" target="_blank" class="plan-card" id="plan-6mo-cta">
+          <div class="plan-top-row">
+            <div class="plan-dur">6 Months</div>
+            <div class="plan-save">SAVE<span>17%</span></div>
           </div>
-          <ul class="plan-bullets">
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Pay only $129.90 — this is a one-time payment, not recurring</span>
-            </li>
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>FREE Tracki device included</span>
-            </li>
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Cancel or Change Anytime</span>
-            </li>
-          </ul>
-        </div>
+          <div class="plan-monthly">$16.60 USD <span>/ month</span></div>
+          <div class="plan-sub">$99.60 USD Prepaid<br/>every 6 months</div>
+        </a>
 
-        <!-- Device Only -->
-        <div
-          class="plan-card plan-card--no-strike plan-card--device-only selected"
-          role="radio"
-          tabindex="0"
-          aria-checked="true"
-          id="plan-1mo-cta"
-          data-product-id="7351960502387"
-          onclick="selectPlan(this)"
-          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectPlan(this);}"
-        >
-          <div class="plan-card-inner">
-            <span class="plan-radio" aria-hidden="true"></span>
-            <div class="plan-info">
-              <div class="plan-header">
-                <span class="plan-dur">Tracki Device Only</span>
-              </div>
-            </div>
-            <div class="plan-price-col">
-              <div class="plan-price-main">
-                <span class="plan-amount">$29.88</span>
-                <span class="plan-compare"><span class="visually-hidden">Was </span>$49.99</span>
-              </div>
-              <div class="plan-period">one-time</div>
-            </div>
+        <!-- Monthly -->
+        <a href="https://tracki.com" target="_blank" class="plan-card" id="plan-1mo-cta">
+          <div class="plan-top-row">
+            <div class="plan-dur">Monthly</div>
+            <div class="plan-save">Cancel<span>Anytime</span></div>
           </div>
-          <ul class="plan-bullets">
-            <li>
-              <svg class="plan-bullet-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              <span>Subscription NOT included — $19.95/mo billed separately</span>
-            </li>
-          </ul>
-        </div>
-
-          </div>
-          <div class="pricing-cta-wrap">
-            <button type="button" id="checkout-btn" class="btn btn-green btn-xl pricing-checkout-btn" onclick="proceedToCheckout(this)">PROCEED TO CHECKOUT</button>
-            <p class="pricing-cta-hint">Select a plan above to continue</p>
-          </div>
-        </div>
+          <div class="plan-monthly">$19.95 USD <span>/ month</span></div>
+          <div class="plan-sub">$19.95 USD Paid month<br/>to month</div>
+        </a>
 
       </div>
 
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-
-        var __variantCache = {};
-        var __planMeta = {
-          'plan-2yr-cta':  { title: 'Tracki + 24 Month Subscription', price: '$11.54/mo + FREE device', amount: 11.54,  total: 276.90, variant: '24-month' },
-          'plan-1yr-cta':  { title: 'Tracki + 12 Month Subscription', price: '$16.66/mo + FREE device', amount: 16.66, total: 199.90, variant: '12-month' },
-          'plan-6mo-cta':  { title: 'Tracki + 6 Month Subscription',  price: '$21.65/mo + FREE device', amount: 21.65, total: 129.90,  variant: '6-month' },
-          'plan-1mo-cta':  { title: 'Tracki Device Only',             price: '$29.88 one-time',         amount: 29.88, total: 29.88,  variant: 'device-only' }
-        };
-        function trackEvent(eventName, params) {
-          var payload = Object.assign({ event: eventName }, params || {});
-          try {
-            var utm =
-              window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function'
-                ? window.TrackiAttribution.getMerged()
-                : {};
-            if (utm && Object.keys(utm).length) {
-              payload.attribution = utm;
-            }
-          } catch (e) {}
-          dataLayer.push(payload);
-        }
-        function selectPlan(ele) {
-          var cards = document.querySelectorAll('.pricing-radio-stack .plan-card');
-          for (var i = 0; i < cards.length; i++) {
-            cards[i].classList.remove('selected');
-            cards[i].setAttribute('aria-checked', 'false');
-            cards[i].setAttribute('tabindex', '0');
-          }
-          ele.classList.add('selected');
-          ele.setAttribute('aria-checked', 'true');
-          var meta = __planMeta[ele.id];
-          if (meta) {
-            var t = document.getElementById('mob-bar-title');
-            var p = document.getElementById('mob-bar-price');
-            if (t) t.textContent = meta.title;
-            if (p) p.textContent = meta.price;
-            trackEvent('select_item', {
-              ecommerce: {
-                items: [{
-                  item_name: meta.title,
-                  item_variant: meta.variant,
-                  price: meta.total,
-                  currency: 'USD',
-                  quantity: 1
-                }]
-              }
-            });
-          }
-        }
-        function lineItemAttributionProperties() {
-          var raw = {};
-          try {
-            if (window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function') {
-              raw = window.TrackiAttribution.getMerged() || {};
-            }
-          } catch (e) {}
-          var props = {};
-          Object.keys(raw).forEach(function (k) {
-            var v = raw[k];
-            if (v == null || String(v).trim() === '') return;
-            var name = k.indexOf('_') === 0 ? k : '_' + k;
-            props[name] = String(v).trim();
-          });
-          return props;
-        }
-        async function fetchVariantIdByProductId(productId) {
-          if (__variantCache[productId]) return __variantCache[productId];
-          var pid = String(productId);
-          var page = 1;
-          var maxPages = 25;
-          while (page <= maxPages) {
-            var r = await fetch('/products.json?limit=250&page=' + page, { credentials: 'same-origin' });
-            if (!r.ok) break;
-            var data = await r.json();
-            if (!data.products || !data.products.length) break;
-            for (var j = 0; j < data.products.length; j++) {
-              var p = data.products[j];
-              if (String(p.id) === pid && p.variants && p.variants.length) {
-                var vid = p.variants[0].id;
-                __variantCache[productId] = vid;
-                return vid;
-              }
-            }
-            if (data.products.length < 250) break;
-            page++;
-          }
-          return null;
-        }
-        async function proceedToCheckout(btn) {
-          var selected = document.querySelector('.pricing-radio-stack .plan-card.selected');
-          if (!selected) {
-            alert('Please select a plan.');
-            return;
-          }
-          var pid = selected.getAttribute('data-product-id');
-          if (!pid) {
-            window.location.href = '/checkout';
-            return;
-          }
-          var meta = __planMeta[selected.id] || {};
-          var ecomItem = {
-            item_name: meta.title || selected.id,
-            item_variant: meta.variant || '',
-            price: meta.total || 0,
-            currency: 'USD',
-            quantity: 1
-          };
-
-          trackEvent('add_to_cart', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
-
-          var prevHtml = btn.innerHTML;
-          btn.disabled = true;
-          btn.innerHTML = 'Please wait…';
-          try {
-            if (window.TrackiAttribution && typeof window.TrackiAttribution.syncCart === 'function') {
-              await window.TrackiAttribution.syncCart();
-            }
-            var vid = await fetchVariantIdByProductId(pid);
-            if (!vid) {
-              throw new Error('Could not find product variant. Check product IDs in the theme.');
-            }
-            var clearRes = await fetch('/cart/clear.js', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-              credentials: 'same-origin'
-            });
-            if (!clearRes.ok) throw new Error('Cart clear failed');
-            var lineItem = { id: Number(vid), quantity: 1 };
-            var utmProps = lineItemAttributionProperties();
-            if (Object.keys(utmProps).length) {
-              lineItem.properties = utmProps;
-            }
-            var addRes = await fetch('/cart/add.js', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-              credentials: 'same-origin',
-              body: JSON.stringify({ items: [lineItem] })
-            });
-            if (!addRes.ok) {
-              var errBody = await addRes.text();
-              throw new Error(errBody || 'Add to cart failed');
-            }
-
-            trackEvent('begin_checkout', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
-
-            window.location.href = '/checkout';
-          } catch (e) {
-            console.error(e);
-            alert('Checkout could not start. Please try again or contact support.');
-            btn.disabled = false;
-            btn.innerHTML = prevHtml;
-          }
-        }
-        window.addEventListener('pageshow', function(e) {
-          if (e.persisted) {
-            var btns = document.querySelectorAll('.pricing-checkout-btn, #mob-bar-buy');
-            for (var i = 0; i < btns.length; i++) {
-              btns[i].disabled = false;
-              if (btns[i].id === 'mob-bar-buy') btns[i].innerHTML = 'Buy Now →';
-              else btns[i].innerHTML = 'PROCEED TO CHECKOUT';
-            }
-          }
-        });
-      </script>
     </div>
-
-</section>
+  </section>
 
   <!-- ===== FAQ + FINAL CTA ===== -->
   <section class="faq-section" id="faq">
@@ -1026,7 +733,7 @@
             <img src="{{ 'scare-child.png' | asset_url }}" alt="Lost child standing on a dark street" class="faq-scare-img" />
             <h3>Don't wait until you have a scare.</h3>
             <p>Every parent who bought Tracki says the same thing: <em>"I wish I'd done this sooner."</em> Today's the day you stop worrying â€” and start knowing.</p>
-            <a href="#offer" class="btn btn-green btn-pill btn-xl" id="final-cta">
+            <a href="https://tracki.com" target="_blank" class="btn btn-green btn-pill btn-xl" id="final-cta">
               Get Tracki Now
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -1046,7 +753,7 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer new">
+  <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/logo_c77c8a9c-eaf3-4e77-b9a0-9509b44b0bfc.png?v=1767166739" alt="Tracki" class="footer-logo-img" />
@@ -1090,61 +797,14 @@
   <div class="mob-bar" id="mob-bar">
     <div class="mob-bar-inner">
       <div class="mob-bar-text">
-        <strong id="mob-bar-title">Tracki Device Only</strong>
-        <span id="mob-bar-price">$29.88 one-time</span>
+        <strong>Tracki Universal</strong>
+        <span>From $14.90 + plans from $9.95/mo</span>
       </div>
-      <button type="button" class="btn btn-green btn-pill btn-sm" id="mob-bar-buy" onclick="proceedToCheckout(this)">Buy Now →</button>
+      <a href="#offer" class="btn btn-green btn-pill btn-sm">Get Tracki â†’</a>
     </div>
   </div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var ctaLinks = document.querySelectorAll('a[href="#offer"]');
-    for (var i = 0; i < ctaLinks.length; i++) {
-      (function(link) {
-        link.addEventListener('click', function() {
-          var label = (link.id || link.textContent || '').trim().substring(0, 60);
-          trackEvent('cta_click', {
-            cta_text: label,
-            cta_destination: '#offer',
-            cta_location: link.closest('section, nav, .mob-bar')
-              ? (link.closest('section, nav, .mob-bar').id || link.closest('section, nav, .mob-bar').className.split(' ')[0])
-              : 'unknown'
-          });
-        });
-      })(ctaLinks[i]);
-    }
-
-    var offerSection = document.getElementById('offer');
-    if (offerSection && typeof IntersectionObserver !== 'undefined') {
-      var viewFired = false;
-      var obs = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting && !viewFired) {
-          viewFired = true;
-          trackEvent('view_item_list', {
-            ecommerce: {
-              item_list_name: 'Pricing Plans',
-              items: Object.keys(__planMeta).map(function(key, idx) {
-                var m = __planMeta[key];
-                return { item_name: m.title, item_variant: m.variant, price: m.total, currency: 'USD', index: idx };
-              })
-            }
-          });
-          obs.disconnect();
-        }
-      }, { threshold: 0.3 });
-      obs.observe(offerSection);
-    }
-  });
-  </script>
-  {{ content_for_footer }}
-  <script defer src="{{ 'all-lander.js' | asset_url }}"></script>
+  <script src="{{ 'all-lander.js' | asset_url }}"></script>
 </body>
 </html>
-
-<style>
-.header, .footer:not(.new), .mobile-dock, .woot--bubble-holder {
-  display: none !important;
-}
-</style>
 

@@ -1,4 +1,3 @@
-{% layout none %}
 {% assign hero_bg = 'hero-bg.png' | asset_url %}
 <!DOCTYPE html>
 <html lang="en">
@@ -35,11 +34,11 @@
         <a href="#features">Features</a>
         <a href="#how-it-works">How it Works</a>
         <a href="#reviews">Reviews</a>
-        <a href="#offer">Get Tracki</a>
+        <button type="button" class="nav-link-checkout newparents-buy-btn" onclick="buyTrackiUniversalCheckout(this)">Get Tracki</button>
         <a href="#faq">FAQ</a>
       </div>
+      <button type="button" class="btn btn-green btn-pill newparents-buy-btn" id="nav-cta" style="padding-left: 16px; padding-right: 16px; white-space: nowrap; font-size: 0.85rem;" onclick="buyTrackiUniversalCheckout(this)">Get Tracki $14.90</button>
       <div class="nav-actions">
-        <a href="#offer" class="btn btn-green btn-pill" id="nav-cta" style="padding-left: 16px; padding-right: 16px; white-space: nowrap; font-size: 0.85rem;">Get Tracki — <span style="color:#da291c;">$14.90</span></a>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -83,10 +82,10 @@
           </div>
         </div>
         <div class="hero-ctas">
-          <a href="#offer" class="btn btn-green btn-pill btn-lg" id="hero-cta-main">
+          <button type="button" class="btn btn-green btn-pill btn-lg newparents-buy-btn" id="hero-cta-main" onclick="buyTrackiUniversalCheckout(this)">
             Secure Your Child Today — Get the Device
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          </button>
           <a href="#how-it-works" class="btn btn-ghost-white btn-pill btn-lg">
             See How It Works
           </a>
@@ -235,7 +234,7 @@
             <li class="good-item"><span class="check-icon">✓</span><span>7-day battery · gets an alert before it dies</span></li>
             <li class="good-item"><span class="check-icon">✓</span><span>One button tap sends you an instant text</span></li>
           </ul>
-          <a href="#offer" class="btn btn-green btn-pill">Get Tracki Now →</a>
+          <button type="button" class="btn btn-green btn-pill newparents-buy-btn" onclick="buyTrackiUniversalCheckout(this)">Get Tracki Now →</button>
         </div>
       </div>
 
@@ -402,7 +401,7 @@
               </div>
             </div>
           </div>
-          <a href="#offer" class="btn btn-green btn-pill btn-lg">Order Now →</a>
+          <button type="button" class="btn btn-green btn-pill btn-lg newparents-buy-btn" onclick="buyTrackiUniversalCheckout(this)">Order Now →</button>
         </div>
         <div class="device-img-wrap">
           <div class="device-glow"></div>
@@ -478,7 +477,7 @@
       </div>
 
       <div class="reviews-cta" style="display:flex;justify-content:center;padding:0 20px;">
-        <a href="#offer" class="btn btn-green btn-pill btn-lg" style="max-width:100%;width:auto;text-align:center;">Join 50,000+ Families — Get Tracki</a>
+        <button type="button" class="btn btn-green btn-pill btn-lg newparents-buy-btn" style="max-width:100%;width:auto;text-align:center;" onclick="buyTrackiUniversalCheckout(this)">Join 50,000+ Families — Get Tracki</button>
       </div>
     </div>
   </section>
@@ -554,23 +553,23 @@
     </div>
   </section>
 
-  <!-- ===== OFFER — DEVICE ONLY ===== -->
-  <section class="offer-section" id="offer" style="padding:80px 0;background:linear-gradient(135deg, #46c160, #2E8B57) !important;color:#fff !important;overflow:hidden">
-    <div class="container" style="max-width:960px;">
+  <!-- ===== DEVICE CTA (np-lp-* — no "offer" in class names; id=offer kept for anchors) ===== -->
+  <section class="np-lp-device-cta" id="offer">
+    <div class="container">
 
-      <div class="offer-top">
-        <div class="offer-left">
-          <div class="offer-title" style="color:#fff !important;">
-            <h2 style="font-size:4rem;font-weight:900;text-transform:uppercase;line-height:0.9;margin:0;letter-spacing:-1px;color:#fff !important;">Get the Device.</h2>
-            <h3 style="font-size:1.8rem;font-weight:400;text-transform:uppercase;margin:0 0 20px 0;letter-spacing:1px;color:#fff !important;">Start Protecting Today.</h3>
+      <div class="np-lp-top">
+        <div class="np-lp-left">
+          <div class="np-lp-title">
+            <h2>Get the Device.</h2>
+            <h3>Start Protecting Today.</h3>
           </div>
-          <div class="offer-price" style="display:flex;align-items:flex-start;">
-            <span style="font-size:8rem;font-weight:900;line-height:0.8;letter-spacing:-3px;color:#fff !important;">14.90</span> <span style="font-size:2.5rem;font-weight:800;margin-left:8px;margin-top:10px;color:#fff !important;">USD</span>
+          <div class="np-lp-price">
+            <span class="np-lp-price-num">14.90</span><span class="np-lp-price-curr">USD</span>
           </div>
         </div>
 
-        <div class="offer-right">
-          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Device" class="offer-device-img" width="auto" height="auto" />
+        <div class="np-lp-right">
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Device" class="np-lp-device-img" width="auto" height="auto" />
           <div class="money-back">
             MONEY BACK
             <span>30 DAYS</span>
@@ -579,17 +578,7 @@
         </div>
       </div>
 
-      <!-- Single device CTA card Styles (Cache-Bypass) -->
-      <style>
-        #plan-device-cta .plan-monthly { color:#46c160 !important; font-size:2.8rem !important; font-weight:900 !important; line-height:1 !important; margin-bottom:12px !important; }
-        #plan-device-cta .plan-monthly span { font-size:2.2rem !important; font-weight:800 !important; color:#46c160 !important; }
-        #plan-device-cta .plan-sub { color:#6b7280 !important; font-size:1.1rem !important; font-weight:500 !important; line-height:1.5 !important; margin-bottom:16px !important; }
-        #plan-device-cta .device-offer-features { display:flex !important; gap:20px !important; flex-wrap:wrap !important; justify-content:center !important; font-size:.85rem !important; font-weight:600 !important; color:#46c160 !important; margin-top:8px !important; }
-        #plan-device-cta .device-offer-features span { display:flex !important; align-items:center !important; gap:4px !important; color:#46c160 !important; }
-        #plan-device-cta .plan-save span { font-size:1.2rem !important; display:block !important; }
-      </style>
-      <!-- Single device CTA card -->
-      <div class="device-offer-box">
+      <div class="np-lp-device-box">
         <div class="plan-card plan-card-featured" id="plan-device-cta">
           <div class="plan-top-row">
             <div class="plan-dur">Tracki Universal</div>
@@ -597,16 +586,16 @@
           </div>
           <div class="plan-monthly">$14.90 <span style="font-size:1.4rem;font-weight:700;color:#46c160;">USD</span></div>
           <div class="plan-sub">World's smallest 4G GPS tracker<br />Includes lanyard, belt clip &amp; velcro mount</div>
-          <div class="device-offer-features">
+          <div class="np-lp-device-features">
             <span>✓ Ships in 1 business day</span>
             <span>✓ Lifetime warranty</span>
             <span>✓ 30-day money back</span>
           </div>
-          <a href="https://tracki.com/products/tracki-gps-tracker" target="_blank" class="btn btn-green btn-pill btn-lg" style="width:100%;justify-content:center;margin-top:20px;font-size:1.05rem;">
+          <button type="button" id="np-lp-buy-btn" class="btn btn-green btn-pill btn-lg newparents-buy-btn" style="width:100%;justify-content:center;margin-top:20px;font-size:1.05rem;" onclick="buyTrackiUniversalCheckout(this)">
             Buy Now — $14.90
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <p style="font-size:.72rem;color:#6b7280 !important;margin-top:12px;text-align:center;">🔒 Secure checkout · 30-day guarantee</p>
+          </button>
+          <p class="np-lp-plan-footnote">🔒 Secure checkout · 30-day guarantee</p>
         </div>
       </div>
 
@@ -679,10 +668,10 @@
             <img src="{{ 'scare-child.png' | asset_url }}" alt="Lost child standing on a dark street" class="faq-scare-img" width="auto" height="auto" />
             <h3>Don't wait until you have a scare.</h3>
             <p>Every parent who bought Tracki says the same thing: <em>"I wish I'd done this sooner."</em> Today's the day you stop worrying — and start knowing.</p>
-            <a href="https://tracki.com/products/tracki-gps-tracker" target="_blank" class="btn btn-green btn-pill btn-xl" id="final-cta">
+            <button type="button" class="btn btn-green btn-pill btn-xl newparents-buy-btn" id="final-cta" onclick="buyTrackiUniversalCheckout(this)">
               Get Tracki Now
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            </button>
             <div class="faq-trust-row">
               <div class="faq-trust-item"><span>🔒</span> Secure checkout</div>
               <div class="faq-trust-item"><span>📦</span> Ships in 1 business day</div>
@@ -699,7 +688,7 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer new">
     <div class="container footer-inner">
       <div class="footer-brand">
         <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/logo_c77c8a9c-eaf3-4e77-b9a0-9509b44b0bfc.png?v=1767166739" alt="Tracki" class="footer-logo-img" width="auto" height="auto" />
@@ -746,10 +735,164 @@
         <strong>Tracki Universal</strong>
         <span>World's smallest GPS — just $14.90</span>
       </div>
-      <a href="#offer" class="btn btn-green btn-pill btn-sm">Get Tracki →</a>
+      <button type="button" class="btn btn-green btn-pill btn-sm newparents-buy-btn" id="mob-bar-buy" onclick="buyTrackiUniversalCheckout(this)">Get Tracki →</button>
     </div>
   </div>
 
+  <script>
+    (function () {
+      var __UNIVERSAL_PRODUCT_ID = '1888889929801';
+      var __variantCache = {};
+      var __itemMeta = {
+        title: 'Tracki Universal',
+        price: '$14.90',
+        amount: 14.9,
+        total: 14.9,
+        variant: 'tracki-universal'
+      };
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      function trackEvent(eventName, params) {
+        var payload = Object.assign({ event: eventName }, params || {});
+        try {
+          var utm =
+            window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function'
+              ? window.TrackiAttribution.getMerged()
+              : {};
+          if (utm && Object.keys(utm).length) {
+            payload.attribution = utm;
+          }
+        } catch (e) {}
+        dataLayer.push(payload);
+      }
+
+      function lineItemAttributionProperties() {
+        var raw = {};
+        try {
+          if (window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function') {
+            raw = window.TrackiAttribution.getMerged() || {};
+          }
+        } catch (e) {}
+        var props = {};
+        Object.keys(raw).forEach(function (k) {
+          var v = raw[k];
+          if (v == null || String(v).trim() === '') return;
+          var name = k.indexOf('_') === 0 ? k : '_' + k;
+          props[name] = String(v).trim();
+        });
+        return props;
+      }
+
+      async function fetchVariantIdByProductId(productId) {
+        if (__variantCache[productId]) return __variantCache[productId];
+        var pid = String(productId);
+        var page = 1;
+        var maxPages = 25;
+        while (page <= maxPages) {
+          var r = await fetch('/products.json?limit=250&page=' + page, { credentials: 'same-origin' });
+          if (!r.ok) break;
+          var data = await r.json();
+          if (!data.products || !data.products.length) break;
+          for (var j = 0; j < data.products.length; j++) {
+            var p = data.products[j];
+            if (String(p.id) === pid && p.variants && p.variants.length) {
+              var vid = p.variants[0].id;
+              __variantCache[productId] = vid;
+              return vid;
+            }
+          }
+          if (data.products.length < 250) break;
+          page++;
+        }
+        return null;
+      }
+
+      window.buyTrackiUniversalCheckout = async function (btn) {
+        var meta = __itemMeta;
+        var ecomItem = {
+          item_name: meta.title,
+          item_variant: meta.variant,
+          price: meta.total,
+          currency: 'USD',
+          quantity: 1
+        };
+
+        trackEvent('add_to_cart', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
+
+        var prevHtml = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Please wait…';
+        try {
+          if (window.TrackiAttribution && typeof window.TrackiAttribution.syncCart === 'function') {
+            await window.TrackiAttribution.syncCart();
+          }
+          var vid = await fetchVariantIdByProductId(__UNIVERSAL_PRODUCT_ID);
+          if (!vid) {
+            throw new Error('Could not find product variant. Check product ID in the theme.');
+          }
+          var clearRes = await fetch('/cart/clear.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'same-origin'
+          });
+          if (!clearRes.ok) throw new Error('Cart clear failed');
+          var lineItem = { id: Number(vid), quantity: 1 };
+          var utmProps = lineItemAttributionProperties();
+          if (Object.keys(utmProps).length) {
+            lineItem.properties = utmProps;
+          }
+          var addRes = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'same-origin',
+            body: JSON.stringify({ items: [lineItem] })
+          });
+          if (!addRes.ok) {
+            var errBody = await addRes.text();
+            throw new Error(errBody || 'Add to cart failed');
+          }
+
+          trackEvent('begin_checkout', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
+
+          window.location.href = '/checkout';
+        } catch (e) {
+          console.error(e);
+          alert('Checkout could not start. Please try again or contact support.');
+          btn.disabled = false;
+          btn.innerHTML = prevHtml;
+        }
+      };
+
+      window.addEventListener('pageshow', function (e) {
+        if (!e.persisted) return;
+        var map = [
+          ['np-lp-buy-btn', 'Buy Now — $14.90<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'],
+          ['final-cta', 'Get Tracki Now<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'],
+          ['mob-bar-buy', 'Get Tracki →']
+        ];
+        for (var i = 0; i < map.length; i++) {
+          var el = document.getElementById(map[i][0]);
+          if (el) {
+            el.disabled = false;
+            el.innerHTML = map[i][1];
+          }
+        }
+      });
+    })();
+  </script>
   <script defer src="{{ 'newparents-lander.js' | asset_url }}"></script>
+
+  <style>
+    .header,
+    .footer:not(.new),
+    .mobile-dock,
+    .woot--bubble-holder {
+      display: none !important;
+    }
+  </style>
 </body>
 </html>

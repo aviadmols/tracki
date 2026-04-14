@@ -48,7 +48,7 @@ window.toggleFaq = function(id) {
 
 // ── Scroll reveal ──────────────────────────────────────────
 const revealEls = document.querySelectorAll(
-  '.feature-card, .review-card, .hiw-step, .pricing-card, .pricing-radio-stack .plan-card, .stat-item, .compare-card, .spec-row, .faq-item, .device-img-wrap'
+  '.feature-card, .review-card, .hiw-step, .pricing-card, .stat-item, .compare-card, .spec-row, .faq-item, .device-img-wrap'
 );
 
 const revealObs = new IntersectionObserver((entries) => {
