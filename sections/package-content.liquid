@@ -1,0 +1,64 @@
+<section id="package_contents" class="package-content-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+      {% if section.settings.heading != '' %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Package Content" loading="lazy" />
+      {% endif %}
+      <ol class="package-infolist">
+        {% for block in section.blocks %}
+          {% if block.settings.title != '' %}
+            <li>{{ block.settings.title }}</li>
+          {% endif %}
+        {% endfor %}
+        {% comment %} <li>Adhesive tape holder</li>
+        <li>Magnet holder</li>
+        <li>Screws holder</li>
+        <li>USB Type C charging port</li>
+        <li>Red light</li>
+        <li>Blue light</li>
+        <li>Green light</li>
+        <li>Charging cable USB Type C</li> {% endcomment %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"Package Content",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      },
+      {
+         "type":"image_picker",
+         "id":"image",
+         "label":"Image"
+      }
+   ],
+   "blocks":[
+      {
+         "name":"Package Info",
+         "type":"package-info",
+         "settings":[
+            {
+               "type":"textarea",
+               "id":"title",
+               "label":"Title"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Package Content"
+      }
+   ]
+}
+{% endschema %}

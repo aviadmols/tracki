@@ -1,0 +1,18 @@
+/* Precision PDP — white background, black text */
+:root {
+  --precision-pdp-primary: #1eea65;
+  --precision-pdp-on-primary: #000000;
+  --precision-pdp-surface: #ffffff;
+  --precision-pdp-on-surface: #000000;
+  --precision-pdp-on-surface-variant: #000000;
+  --precision-pdp-surface-container-low: #ffffff;
+  --precision-pdp-surface-container-highest: #ffffff;
+  --precision-pdp-outline: #000000;
+  --precision-pdp-outline-variant: #000000;
+  --precision-pdp-border-subtle: rgba(0, 0, 0, 0.12);
+  --precision-pdp-radius-lg: 0.25rem;
+  --precision-pdp-radius-xl: 0.5rem;
+  --precision-pdp-radius-2xl: 1rem;
+  --precision-pdp-radius-3xl: 1.5rem;
+  --precision-pdp-font: 'Plus Jakarta Sans', system-ui, sans-serif;
+}

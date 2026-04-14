@@ -1,0 +1,36 @@
+<section id="general-info" class="general-info-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+    {% if section.settings.heading != '' %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.Text != '' %}
+        {{ section.settings.Text }}
+    {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"General Info",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      },
+      {
+         "type":"richtext",
+         "id":"Text",
+         "label":"Text"
+      }
+   ],
+   "presets":[
+      {
+         "name":"General Info"
+      }
+   ]
+}
+{% endschema %}

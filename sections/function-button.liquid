@@ -1,0 +1,133 @@
+<section id="button_functions" class="button-functions-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+      {% if section.settings.heading != '' %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      <div class="button-image-wrap">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Button function" loading="lazy" />
+      {% endif %}
+      {% if section.settings.image2 != blank %}
+        <img src="{{ section.settings.image2 | img_url: 'master' }}" alt="Button function" loading="lazy" />
+      {% endif %}
+      </div>
+      <div class="info-wrap-cntnt">
+        {% if section.settings.small_heading != '' %}
+          <div class="small-heading">{{ section.settings.small_heading }}</div>
+        {% endif %}
+        {% if section.settings.small_text != '' %}
+          {{ section.settings.small_text }}
+        {% endif %}
+        {% if section.settings.note_text != '' %}
+          <p class="grey-text">{{ section.settings.note_text }}</p>
+        {% endif %}
+        {% if section.settings.note_sub_heading != '' %}
+          <div class="small-heading">{{ section.settings.note_sub_heading }}</div>
+        {% endif %}
+        {% if section.settings.note_sub_heading_text != '' %}
+          {{ section.settings.note_sub_heading_text }}
+        {% endif %}
+        {% if section.settings.note_sub_heading2 != '' %}
+          <div class="small-heading">{{ section.settings.note_sub_heading2 }}</div>
+        {% endif %}
+        {% if section.settings.note_sub_heading_text2 != '' %}
+          {{ section.settings.note_sub_heading_text2 }}
+        {% endif %}
+        {% if section.settings.note_sub_heading3 != '' %}
+          <div class="small-heading">{{ section.settings.note_sub_heading3 }}</div>
+        {% endif %}
+        {% if section.settings.note_sub_heading_text3 != '' %}
+          {{ section.settings.note_sub_heading_text3 }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .tracki-universal .page-width.page-width--smaller{
+    padding-top:30px;
+  }
+  .tracki-universal .getting-started{
+    padding-top:30px;
+  }
+  .tracki-plus-2g .tracki-manual__content h2,
+  .tracki-plus-4g .tracki-manual__content h2
+  {
+    margin-top: 30px;
+  }
+  
+</style>
+{% schema %}
+{
+   "name":"Function Button",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      },
+      {
+         "type":"image_picker",
+         "id":"image",
+         "label":"Image"
+      },
+      {
+         "type":"image_picker",
+         "id":"image2",
+         "label":"Image2"
+      },
+      {
+         "type":"textarea",
+         "id":"small_heading",
+         "label":"Small Heading"
+      },
+      {
+         "type":"richtext",
+         "id":"small_text",
+         "label":"Small Text"
+      },
+      {
+         "type":"textarea",
+         "id":"note_text",
+         "label":"Note Text"
+      },
+      {
+         "type":"textarea",
+         "id":"note_sub_heading",
+         "label":"Note Sub Heading"
+      },
+      {
+         "type":"richtext",
+         "id":"note_sub_heading_text",
+         "label":"Note Sub Heading Text"
+      },
+      {
+         "type":"textarea",
+         "id":"note_sub_heading2",
+         "label":"Note Sub Heading2"
+      },
+      {
+         "type":"richtext",
+         "id":"note_sub_heading_text2",
+         "label":"Note Sub Heading Text2"
+      },
+      {
+         "type":"textarea",
+         "id":"note_sub_heading3",
+         "label":"Note Sub Heading3"
+      },
+      {
+         "type":"richtext",
+         "id":"note_sub_heading_text3",
+         "label":"Note Sub Heading Text3"
+      }
+   ],
+   "presets":[
+      {
+         "name":"Function Button"
+      }
+   ]
+}
+{% endschema %}

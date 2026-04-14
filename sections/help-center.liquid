@@ -1,0 +1,109 @@
+<section class="help-center-main">
+  <div class="page-width page-width--smaller">
+
+    {% if section.settings.heading != blank %}
+      <h1 class="tracki-manual__title">
+        {{ section.settings.heading }}
+      </h1>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      <div class="guide-step divider-sec help-center-info" {{ block.shopify_attributes }}>
+
+        <div class="help-desk-item">
+
+          {% if block.settings.icon != blank %}
+            <div class="help-desk-icon">
+              {{
+                block.settings.icon
+                | image_url: width: 60
+                | image_tag: loading: 'lazy', alt: block.settings.title
+              }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h2>{{ block.settings.title }}</h2>
+          {% endif %}
+
+        </div>
+
+        {% if block.settings.text != blank %}
+          <p>{{ block.settings.text }}</p>
+        {% endif %}
+
+        {% if block.settings.btn_label != blank %}
+          <div class="primary-green-btn">
+            <a href="{{ block.settings.btn_link }}">
+              {{ block.settings.btn_label }} &gt;
+            </a>
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Help Center",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Help Center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "help_item",
+      "name": "Help item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "User guide"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Let’s get you started with your brand new Tracki device and find all documentation about our GPS tracker hardware and included attachments."
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Button label",
+          "default": "Account Setup Guide"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Help Center",
+      "blocks": [
+        { "type": "help_item" },
+        { "type": "help_item" },
+        { "type": "help_item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

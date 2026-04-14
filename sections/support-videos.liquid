@@ -1,0 +1,226 @@
+
+<style>
+{% comment %} .video-section {
+  padding: 10px 20px;
+} {% endcomment %}
+
+.video-section .page-width {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.video-heading h2 {
+  color: #FFF;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 20px;
+}
+
+/* Video Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Video Item Card */
+.videoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.videoItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Video Embed Wrapper */
+.imgWrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.imgWrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Video Title */
+.videoItem .itemTitle {
+    color: var(--Green-light, #76C773);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 10px;
+
+    /* Force left alignment no matter the parent layout */
+    text-align: left;       /* fallback for block/inline-block */
+    justify-self: start;    /* for CSS grid parent */
+    align-self: flex-start; /* for flex parent */
+}
+
+.divider-sec{
+    border-bottom: 1px solid #394045;
+}
+
+/* Responsive */
+/* ===== Responsive Video Section ===== */
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .video-heading h2 {
+    font-size: 34px;
+    padding-bottom: 15px;
+  }
+
+  .itemTitle {
+    font-size: 22px;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .video-heading h2 {
+    font-size: 28px;
+    padding-bottom: 10px;
+  }
+
+  .itemTitle {
+    font-size: 20px;
+  }
+}
+
+/* Extra Small: adjust padding/margins if needed */
+@media (max-width: 480px) {
+  .video-section .page-width {
+    padding: 0 15px;
+  }
+
+  .itemTitle {
+    font-size: 18px;
+    margin-bottom: 8px;
+    word-break: break-word; /* ensures long titles wrap */
+  }
+
+  .imgWrap iframe {
+    border-radius: 8px; /* slightly smaller corners for small screens */
+  }
+}
+</style>
+
+<section class="video-section" style="background-color: {{ section.settings.bg_color }};">
+  <div class="page-width">
+
+    {% if section.settings.heading != blank %}
+      <div class="video-heading">
+        <h2>{{ section.settings.heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="video-grid columns-{{ section.settings.columns }}"
+         style="grid-template-columns: repeat({{ section.settings.columns }}, 1fr);">
+
+      {% for block in section.blocks %}
+        {% if block.settings.video_url != blank %}
+          <div class="videoItem theapp divider-sec ">
+            <!-- Title above the video -->
+            {% if block.settings.title != blank %}
+              <div class="itemTitle">{{ block.settings.title }}</div>
+            {% endif %}
+            
+            <div class="imgWrap">
+              <iframe width="560" height="315"
+                      src="{{ block.settings.video_url }}"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+
+
+
+{% schema %}
+{
+  "name": "Support Videos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "How-To Videos"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Desktop Columns",
+      "default": "3",
+      "options": [
+        { "value": "2", "label": "2 Columns" },
+        { "value": "3", "label": "3 Columns" },
+        { "value": "4", "label": "4 Columns" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video Item",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "YouTube Video URL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Video Title",
+          "default": "Video Title"
+        },
+    ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support Videos",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

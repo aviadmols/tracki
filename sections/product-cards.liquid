@@ -1,0 +1,341 @@
+{% comment %}
+  Custom Product Slideshow with Swiper.js – Dawn Theme
+{% endcomment %}
+
+<section class="product-grid-section" id="product-slideshow-cards">
+  <div class="page-width">
+
+    {% if section.settings.title != blank %}
+      <h2 class="grid-title">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    <div class="product-grid">
+
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+
+        <div class="product-card">
+          <div class="card-inner">
+
+            <div class="card-image">
+              {% if product.featured_image != blank %}
+                <img src="{{ product.featured_image | image_url: width: 400 }}" 
+                     alt="{{ product.title | escape }}" loading="lazy">
+              {% endif %}
+            </div>
+
+            <h3 class="card-title">
+              {%- assign title_parts = product.title | split: ' ' -%}
+              {{ title_parts[0] }} {{ title_parts[1] }} <br>
+              <span class="card-subtitle">
+                {% for part in title_parts offset: 2 %}
+                  {{ part }} 
+                {% endfor %}
+              </span>
+            </h3>
+
+            {% if product.price != blank %}
+              <p class="card-price product-price">
+                {{ product.price | money }}
+              </p>
+            {% endif %}
+
+            <a href="{% if product.available %}
+  {% if block.settings.button_link != blank %}
+    {{ block.settings.button_link }}
+  {% else %}
+    {{ product.url }}
+  {% endif %}
+{% else %}
+  javascript:void(0)
+{% endif %}" 
+               class="card-btn {% if product.available == false %}disabled{% endif %}"
+               {% if product.available == false %}aria-disabled="true"{% endif %}>
+              {% if product.available == false %}
+                Out of stock
+              {% else %}
+                Details
+              {% endif %}
+            </a>
+
+          </div>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+<script>
+  const cards = document.querySelectorAll('.card-inner');
+
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.classList.add('active');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('active');
+  });
+});
+</script>
+{% comment %} Swiper CSS & JS from CDN {% endcomment %}
+ 
+{% comment %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let swiper;
+    const enableDrag = {{ section.settings.enable_drag | json }};
+
+    function initSwiper() {
+      if (window.innerWidth > 768) {
+        if (!swiper) {
+          swiper = new Swiper('#product-slideshow-{{ section.id }} .product-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            loop: false,
+
+            /* 🔥 Drag control */
+            allowTouchMove: enableDrag,
+            simulateTouch: enableDrag,
+            grabCursor: enableDrag,
+
+            navigation: {
+              nextEl: '#product-slideshow-{{ section.id }} .swiper-button-next',
+              prevEl: '#product-slideshow-{{ section.id }} .swiper-button-prev',
+            },
+
+            breakpoints: {
+    640: {
+      slidesPerView: 2,
+      centeredSlides: false
+    },
+    1024: {
+      slidesPerView: 3,
+      centeredSlides: false
+    },
+    1280: {
+      slidesPerView: 4,
+      centeredSlides: false
+    }
+  },
+        }
+      } else {
+        if (swiper) {
+          swiper.destroy(true, true);
+          swiper = null;
+        }
+      }
+    }
+
+    initSwiper();
+    window.addEventListener('resize', initSwiper);
+  });
+  {% comment %} document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.product-swiper .slide-card-inner');
+
+  // Find the index of the default-active card
+  let defaultIndex = -1;
+  cards.forEach((card, i) => {
+    if (card.classList.contains('default-active')) {
+      defaultIndex = i;
+    }
+  });
+
+  // Ensure default card is active initially
+  if (defaultIndex >= 0) {
+    cards[defaultIndex].classList.add('active');
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      // Remove 'active' from all cards
+      cards.forEach(c => c.classList.remove('active'));
+
+      // Activate hovered card
+      card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Remove 'active' from hovered card
+      card.classList.remove('active');
+
+      // Restore default card by index
+      if (defaultIndex >= 0) {
+        cards[defaultIndex].classList.add('active');
+      }
+    });
+  });
+}); {% endcomment %}
+document.addEventListener('DOMContentLoaded', function () {
+
+  const swiperEl = document.querySelector('.product-swiper');
+  const swiperInstance = swiperEl.swiper; // get swiper instance
+
+  function setDefaultActive() {
+    const realSlides = swiperEl.querySelectorAll(
+      '.swiper-slide:not(.swiper-slide-duplicate) .slide-card-inner'
+    );
+
+    realSlides.forEach(card => card.classList.remove('active'));
+
+    const defaultCard = swiperEl.querySelector(
+      '.swiper-slide:not(.swiper-slide-duplicate) .slide-card-inner.default-active'
+    );
+
+    if (defaultCard) {
+      defaultCard.classList.add('active');
+    }
+  }
+
+  function attachHover() {
+    const realSlides = swiperEl.querySelectorAll(
+      '.swiper-slide:not(.swiper-slide-duplicate) .slide-card-inner'
+    );
+
+    realSlides.forEach(card => {
+
+      card.addEventListener('mouseover', function () {
+        realSlides.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+
+    });
+  }
+
+  // Initial setup
+  setDefaultActive();
+  attachHover();
+
+  // When swiper changes (important for loop mode)
+  if (swiperInstance) {
+    swiperInstance.on('slideChange', function () {
+      setDefaultActive();
+    });
+  }
+
+});
+
+
+</script>
+
+{% endcomment %}
+
+
+{% schema %}
+{
+  "name": "Product Slideshow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "TRACKI DEVICES"
+    },
+    {
+        "type": "checkbox",
+        "id": "enable_drag",
+        "label": "Enable swipe / drag",
+        "default": true
+    },
+    {
+      "type": "range",
+      "id": "slides_visible",
+      "label": "Slides visible on desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "show_arrows",
+      "label": "Show navigation arrows",
+      "options": [
+        { "value": "both", "label": "Both" },
+        { "value": "previous", "label": "Previous only" },
+        { "value": "next", "label": "Next only" },
+        { "value": "none", "label": "None (hide arrows)" }
+      ],
+      "default": "both"
+    },
+    {
+      "type": "select",
+      "id": "prev_arrow_icon",
+      "label": "Previous arrow icon",
+      "options": [
+        { "value": "chevron-left", "label": "Chevron Left" },
+        { "value": "arrow-left", "label": "Arrow Left" },
+        { "value": "caret", "label": "Caret" }
+      ],
+      "default": "chevron-left"
+    },
+    {
+      "type": "select",
+      "id": "next_arrow_icon",
+      "label": "Next arrow icon",
+      "options": [
+        { "value": "chevron-right", "label": "Chevron Right" },
+        { "value": "arrow-right", "label": "Arrow Right" },
+        { "value": "caret", "label": "Caret" }
+      ],
+      "default": "chevron-right"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product Slide New",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "activate_card",
+          "label": "Activate Card",
+          "info": "This is for Activate Default Card in active position"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product title"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button text",
+          "default": "Details"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slide New"
+    }
+  ]
+}
+{% endschema %}

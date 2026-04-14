@@ -1,0 +1,187 @@
+<style>
+    .how-to-use {
+  background: #26282a;
+  {% comment %} padding: 80px 0; {% endcomment %}
+  color: #ffffff;
+  text-align: center;
+}
+
+.how-to-use__title {
+    color: #FFF;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+{% comment %} .how-to-use__step {
+  padding: 60px 0;
+} {% endcomment %}
+
+.how-to-use__header {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.how-to-use__number {
+    color: var(--Green-light, #76C773);
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.how-to-use__step-title {
+    color: var(--Green-light, #76C773);
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.how-to-use__description {
+    color: var(--Text-Light, #F7F1E7);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.how-to-use__image img {
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+{% comment %} .how-to-use__divider {
+  border-bottom: 1px solid #2a2f33;
+} {% endcomment %}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .how-to-use__title {
+    font-size: 30px;
+  }
+
+  .how-to-use__header {
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .how-to-use {
+    padding: 60px 20px;
+  }
+
+  .how-to-use__step {
+    padding: 40px 0;
+  }
+
+  .how-to-use__image img {
+    max-width: 200px;
+  }
+}
+</style>
+<section class="how-to-use">
+  <div class="how-to-use__wrapper page-width page-width--smaller">
+
+    {% if section.settings.heading != blank %}
+      <h2 class="how-to-use__title">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      <div class="how-to-use__step how-to-use__divider divider-sec" {{ block.shopify_attributes }}>
+
+        <!-- Step Header -->
+        <div class="how-to-use__header">
+          <span class="how-to-use__number">
+            {{ forloop.index }}.
+          </span>
+          {% if block.settings.step_title != blank %}
+            <span class="how-to-use__step-title">
+              {{ block.settings.step_title }}
+            </span>
+          {% endif %}
+        </div>
+
+        <!-- Step Description -->
+        {% if block.settings.step_description != blank %}
+          <div class="how-to-use__description">
+            {{ block.settings.step_description }}
+          </div>
+        {% endif %}
+
+        <!-- Step Image -->
+        {% if block.settings.step_image != blank %}
+          <div class="how-to-use__image">
+            <img 
+              src="{{ block.settings.step_image | image_url: width: 500 }}"
+              alt="{{ block.settings.step_title }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How to use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "How to use"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Activate"
+        },
+        {
+          "type": "richtext",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "<p>Choose a pricing plan for your Tracki GPS tracker & connect it to our network.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "step_image",
+          "label": "Step Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to use",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" }
+      ]
+    }
+  ]
+}
+{% endschema %}

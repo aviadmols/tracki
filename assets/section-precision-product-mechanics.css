@@ -1,0 +1,175 @@
+.precision-mechanics {
+  font-family: var(--precision-pdp-font);
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.precision-mechanics__inner {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 990px) {
+  .precision-mechanics__inner {
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .precision-mechanics__media {
+    flex: 1;
+    width: 50%;
+  }
+
+  .precision-mechanics__content {
+    flex: 1;
+  }
+}
+
+.precision-mechanics__media {
+  width: 100%;
+}
+
+.precision-mechanics__video-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: var(--precision-pdp-radius-2xl);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--precision-pdp-border-subtle);
+}
+
+.precision-mechanics__deferred {
+  width: 100%;
+  display: block;
+}
+
+.precision-mechanics__html5-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.precision-mechanics__poster--static img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--precision-pdp-radius-2xl);
+}
+
+.precision-mechanics__poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.precision-mechanics__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.precision-mechanics__poster .deferred-media__poster-button {
+  display: none;
+}
+
+.precision-mechanics__poster.media > .precision-mechanics__poster-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.precision-mechanics__video-wrap.is-playing .precision-mechanics__poster.media > .precision-mechanics__poster-inner {
+  opacity: 0;
+}
+
+.precision-mechanics__play-fab {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.precision-mechanics__play-fab .material-symbols-outlined {
+  font-size: 2.5rem;
+  font-variation-settings: 'FILL' 1;
+}
+
+.precision-mechanics__subheading {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 0.5rem;
+}
+
+.precision-mechanics__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  color: #000000;
+}
+
+.precision-mechanics__body {
+  color: #000000;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.precision-mechanics__body rte,
+.precision-mechanics__body {
+  font-size: 1rem;
+}
+
+.precision-mechanics__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.precision-mechanics__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.precision-mechanics__list .material-symbols-outlined {
+  color: #000000;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.precision-mechanics__list span:last-child {
+  font-size: 0.875rem;
+  font-weight: 500;
+}

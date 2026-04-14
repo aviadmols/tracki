@@ -1,0 +1,98 @@
+/* FAQ block — Product details table (matches Hero + Product information look) */
+.precision-pdp-faq-details {
+  font-family: var(--precision-pdp-font);
+  color: #000000;
+}
+
+.precision-pdp-faq-details__inner {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.precision-pdp-faq-details__page-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  color: #000000;
+}
+
+.precision-pdp-faq-details__details {
+  border: 1px solid var(--precision-pdp-border-subtle);
+  border-radius: var(--precision-pdp-radius-xl);
+  margin-bottom: 0;
+  background: #fafafa;
+  overflow: hidden;
+}
+
+.precision-pdp-faq-details__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000000;
+  user-select: none;
+}
+
+.precision-pdp-faq-details__summary::-webkit-details-marker {
+  display: none;
+}
+
+.precision-pdp-faq-details__summary-text {
+  flex: 1;
+  text-align: start;
+}
+
+.precision-pdp-faq-details__chevron {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
+  color: #000000;
+}
+
+.precision-pdp-faq-details__details[open] .precision-pdp-faq-details__chevron {
+  transform: rotate(180deg);
+}
+
+.precision-pdp-faq-details__content {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--precision-pdp-border-subtle);
+  background: #ffffff;
+}
+
+.precision-pdp-faq-details__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.precision-pdp-faq-details__table th {
+  text-align: start;
+  vertical-align: top;
+  padding: 0.625rem 0.75rem 0.625rem 0;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.55);
+  width: 42%;
+  border-bottom: 1px solid var(--precision-pdp-border-subtle);
+}
+
+.precision-pdp-faq-details__table td {
+  padding: 0.625rem 0;
+  color: #000000;
+  border-bottom: 1px solid var(--precision-pdp-border-subtle);
+}
+
+.precision-pdp-faq-details__table tr:last-child th,
+.precision-pdp-faq-details__table tr:last-child td {
+  border-bottom: none;
+}

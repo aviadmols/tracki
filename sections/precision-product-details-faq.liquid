@@ -1,0 +1,143 @@
+{{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
+{{ 'section-precision-product-details-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="precision-pdp-faq-details section-{{ section.id }}-padding">
+  <div class="precision-pdp-faq-details__inner">
+    {%- if section.settings.page_heading != blank -%}
+      <h2 class="precision-pdp-faq-details__page-title">{{ section.settings.page_heading | escape }}</h2>
+    {%- endif -%}
+
+    <details class="precision-pdp-faq-details__details">
+      <summary class="precision-pdp-faq-details__summary">
+        <span class="precision-pdp-faq-details__summary-text">
+          {{ section.settings.panel_heading | default: 'Product details' | escape }}
+        </span>
+        <span class="material-symbols-outlined precision-pdp-faq-details__chevron" aria-hidden="true">expand_more</span>
+      </summary>
+      <div class="precision-pdp-faq-details__content rte">
+        <table class="precision-pdp-faq-details__table">
+          <tbody>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'detail_row' -%}
+                <tr {{ block.shopify_attributes }}>
+                  <th scope="row">{{ block.settings.label | escape }}</th>
+                  <td>
+                    {%- if block.settings.use_variant_sku -%}
+                      {{ product.selected_or_first_available_variant.sku | default: '—' }}
+                    {%- elsif block.settings.use_product_vendor -%}
+                      {{ product.vendor | default: '—' }}
+                    {%- else -%}
+                      {{ block.settings.value | escape }}
+                    {%- endif -%}
+                  </td>
+                </tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</div>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.section_bg }};
+    color: #000000;
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "PDP Product details FAQ",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "detail_row",
+      "name": "Detail row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "default": "Label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "default": "Value",
+          "label": "Value"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_product_vendor",
+          "default": false,
+          "label": "Use product vendor as value"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_variant_sku",
+          "default": false,
+          "label": "Use current variant SKU as value"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_heading",
+      "default": "FAQ",
+      "label": "Section heading"
+    },
+    {
+      "type": "text",
+      "id": "panel_heading",
+      "default": "Product details",
+      "label": "Accordion title"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section background",
+      "default": "#ebebeb"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP Product details FAQ"
+    }
+  ]
+}
+{% endschema %}

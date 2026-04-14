@@ -1,0 +1,214 @@
+<section class="device-lights-section" style="background: {{ section.settings.bg_color }};" id="device_lights_image">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2 class="device-lights-section__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="device-lights-wrapper divider-sec">
+      <div class="device-image-wrapper">
+        {% if section.settings.device_image != blank %}
+          <img src="{{ section.settings.device_image | image_url: width: 1000 }}" alt="Device image" class="device-image" loading="lazy" />
+        {% endif %}
+
+        {% for block in section.blocks %}
+        <div class="device-label">
+          <div class="device-label__count">{{ forloop.index }}.</div>
+        <div class="device-label__text">{{ block.settings.label_text }}</div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.device-lights-section {
+  {% comment %} padding: 50px 20px; {% endcomment %}
+  text-align: center;
+  background: {{ section.settings.bg_color }};
+}
+
+.device-lights-section__heading {
+  font-size: 30px;
+  font-weight: 700;
+  {% comment %} margin-bottom: 60px; {% endcomment %}
+  color: #f3f1f0;
+}
+
+.device-lights-wrapper {
+  position: relative;
+  max-width: 800px; /* increase container width */
+  margin: 0 auto;
+}
+
+.device-image-wrapper {
+  position: relative;
+}
+
+.device-image {
+  max-width: 100%;  /* image fills the container */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  object-fit: contain; /* ensures image scales nicely */
+}
+
+/* Label styling */
+.device-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  margin-top: 20px;
+}
+
+.device-label__count {
+  color: var(--Green-light, #76C773);
+  text-align: justify;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.device-label__line {
+  width: 30px;
+  height: 1px;
+  background: #aaa;
+  flex-shrink: 0;
+}
+
+.device-label__text {
+  color: #f3f1f0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .device-lights-wrapper {
+    max-width: 600px; /* reduce container width */
+  }
+
+  .device-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .device-label {
+    gap: 8px;
+    margin-bottom: 12px;
+    margin-top: 16px;
+  }
+
+  .device-label__count {
+    font-size: 15px; /* slightly smaller */
+  }
+
+  .device-label__text {
+    font-size: 15px;
+  }
+
+  .device-label__line {
+    width: 25px;
+  }
+
+  .device-lights-section__heading {
+    font-size: 28px;
+  }
+}
+
+/* Mobile (≤600px) */
+@media (max-width: 600px) {
+  .device-lights-wrapper {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .device-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .device-label {
+    display: flex;
+    flex-direction: column; /* stack number, line, text */
+    align-items: flex-start;
+    gap: 4px; /* reduce spacing for mobile */
+    margin-bottom: 10px;
+    margin-top: 12px;
+  }
+
+  .device-label__count {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .device-label__line {
+    width: 100%; /* full width below number */
+    height: 1px;
+    background: #aaa;
+  }
+
+  .device-label__text {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .device-lights-section__heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Device Light Image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Device Lights"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f3f1f0"
+    },
+    {
+      "type": "image_picker",
+      "id": "device_image",
+      "label": "Device Image"
+    }
+  ],
+  "blocks": [
+    {
+  "type": "block",
+  "name": "Label",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Label Text",
+      "default": "Power button"
+    }
+  ]
+}
+  ],
+  "presets": [
+    {
+      "name": "Device Light Image",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

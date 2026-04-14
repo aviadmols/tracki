@@ -1,0 +1,457 @@
+<div class="page-width page-width--inner section--padding">
+<div class="main-custom-banner trackiguide-padding-top">
+  <div class="guide">
+    {% if section.settings.title != '' %}
+      <h2 class="title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.sub_title != '' %}
+      <div class="trackiguide-subtitle">{{ section.settings.sub_title }}</div>
+    {% endif %}
+  </div>
+</div>
+<div class="wrap-section first-wrapper">
+  {% if section.settings.guide_title != '' %}
+    <div class="guide wrap-title">
+      <h2 class="title">{{ section.settings.guide_title }}</h2>
+    </div>
+  {% endif %}
+  <div class="group-step-guide">
+    <div class="group-step">
+      {% if section.settings.guide_step_title != ''  %}
+        <p class="step">{{ section.settings.guide_step_title  }}</p>
+      {% endif %}
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <div class="group-install-app">
+            {% if section.settings.apple_pay__image != blank %}
+              <a href="{{ section.settings.apple_pay__link }}"><img src="{{ section.settings.apple_pay__image | img_url: 'master' }}" alt> </a>
+            {% endif %}
+            {% if section.settings.gogole_pay__image != blank %}
+            <a href="{{ section.settings.gogole_pay__link }}"><img src="{{ section.settings.gogole_pay__image | img_url: 'master' }}" alt> </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="group-step">
+      {% if section.settings.account_title != '' %}
+        <p class="step">{{ section.settings.account_title }}</p>
+      {% endif %}
+      {% if section.settings.account_btn != '' %}
+      <div class="primary-green-btn"><a href="{{ section.settings.account_link }}">{{ section.settings.account_btn }}</a></div>
+      {% endif %}
+    </div>
+    <div class="group-step">
+      {% if section.settings.device_activate_title != '' %}
+        <p class="step">{{ section.settings.device_activate_title }}</p>
+      {% endif %}
+      {% if section.settings.device_activate_btn != '' %}
+      <div class="primary-green-btn"><a href="{{ section.settings.device_activate_link }}">{{ section.settings.device_activate_btn }}</a></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<!-- -->
+<div class="wrap-section second-wrapper">
+  <div class="guide">
+    {% if section.settings.support_team_title != '' %}
+      <h2 class="title">{{section.settings.support_team_title }}</h2>
+    {% endif %}
+    {% if section.settings.support_team_subtitle != '' %}
+      <div class="trackiguide-subtitle">{{ section.settings.support_team_subtitle }}</div>
+    {% endif %}
+  </div>
+  <div class="group-step-guide">
+    {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'support' %}
+    <div class="group-step">
+      {% if block.settings.support_image != blank %}
+      <p class="step"><img src="{{ block.settings.support_image | img_url: 'master' }}" alt></p>
+      {% endif %}
+      {% if block.settings.support_title != '' %}
+      <div class="title"><a href="{{ block.settings.support_link }}">{{ block.settings.support_title }}</a></div>
+      {% endif %}
+    </div>
+    {% endcase %}
+    {% endfor %}
+    {% comment %} <div class="group-step">
+      <p class="step"><img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/num_1_480x480.png?v=1675848253" alt></p>
+      <div class="title"><a href="#">Help Center</a></div>
+    </div>
+    <div class="group-step">
+      <p class="step"><img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/num_2_480x480.png?v=1675848287" alt></p>
+      <div class="title"><a href="https://tracki.com/pages/contact-us">Contact Support</a></div>
+    </div> {% endcomment %}
+  </div>
+</div>
+<div class="wrap-section third-wrapper">
+  {% if section.settings.our_device_title != '' %}
+  <div class="guide wrap-title">
+    <h2 class="title">{{ section.settings.our_device_title }}</h2>
+  </div>
+  {% endif %}
+  <div class="group-step-guide">
+    {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'device' %}
+    <div class="group-step tracki-universal">
+      {% if block.settings.device_title != '' %}
+        {% if block.settings.device_title=='Tracki Pet' %}
+          <a href="{{ block.settings.device_link }}" target="_blank">
+        {% else %}
+
+        <a href="{{ block.settings.device_link }}">
+        {% endif %}
+
+        {% if block.settings.device_image != blank %}
+          <p>
+            <img width="172px" height="144px" src="{{ block.settings.device_image | img_url: 'master' }}" alt class="tracki-universal-img">
+          </p>
+        {% endif %}
+        <div class="title">{{ block.settings.device_title }}</div>
+      </a>
+      {% endif %}
+    </div>
+    {% endcase %}
+    {% endfor %}
+    {% comment %} <div class="group-step tracki-universal">
+      <a href="#">
+        <p><img width="143px" height="187px" src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-pro.webp?v=1771319961" alt class="tracki-pro-img"></p>
+        <div class="title">Tracki Pro</div>
+      </a>
+    </div>
+    <div class="group-step tracki-universal">
+      <a href="#">
+        <p><img width="143px" height="187px" src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-slim.webp?v=1771319961" alt class="tracki-pro-img"></p>
+        <div class="title">Tracki Slim</div>
+      </a>
+    </div>
+    <div class="group-step tracki-universal">
+      <a href="#">
+        <p><img width="143px" height="187px" src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-pet.webp?v=1771319962" alt class="tracki-pro-img"></p>
+        <div class="title">Tracki Pet</div>
+      </a>
+    </div>
+    <div class="group-step tracki-universal">
+      <a href="#">
+        <p><img width="143px" height="187px" src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-plus-2g.webp?v=1771319962" alt class="tracki-pro-img"></p>
+        <div class="title">Tracki Plus 2G</div>
+      </a>
+    </div>
+    <div class="group-step tracki-universal">
+      <a href="#">
+        <p><img width="143px" height="187px" src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-plus-4g.webp?v=1771319961" alt class="tracki-pro-img"></p>
+        <div class="title">Tracki Plus 4G</div>
+      </a>
+    </div> {% endcomment %}
+  </div>
+</div>
+<div class="wrap-section fourth-wrapper">
+  {% if section.settings.app_function_title != '' %}
+    <div class="guide wrap-title">
+      <h2 class="title">{{ section.settings.app_function_title }}</h2>
+    </div>
+  {% endif %}
+  <div class="group-step-guide app-function two-lines">
+    <div class="group-step pt30">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/gps_480x480.png?v=1675933056" alt>
+      <div class="small-heading">Tracking mode</div>
+      <div class="view-more-detail">
+        <p>
+          The tracker uses GPS (Global Positioning System) technology to calculate its current location. It receives signals from GPS satellites in space. These GPS signals can be received when the device is used outdoors or in a vehicle. <br>The GPS signal is blocked, however, when the
+          tracker is located inside a building or under a concrete roof. The signal may be blocked or diverted even if the tracker is placed near a window. In such cases the device will use an alternative method to calculate its position. The position is determined through identification
+          of a nearby WiFi router or mobile communications antenna. This is less precise than GPS data, and may be hundreds of meters from the tracker. If the device is using a cell-based location (also known as "GSM-based location"), you will be able to tell by a semi-transparent blue
+          circle over the location.
+        </p>
+      </div>
+    </div>
+    <div class="group-step pt30">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/geofenc_480x480.png?v=1675933328" alt>
+      <div class="small-heading">Geofencing</div>
+      <div class="view-more-detail">
+        <p>A geofence is a self-defined virtual boundary. You will receive a notification in the Tracki app when the tracker leaves this area or goes into this area.</p>
+        <p>
+          <i><b>To create a geofence:</b></i>
+        </p>
+        <ol>
+          <li>Select the tracker in the Tracki app.</li>
+          <li>Click on "Fence".</li>
+          <li>
+            Click on the "Create Fence" button.
+            <ul>
+              <p>A rectangular fence will be created around your device' s current location (or in the center of map).</p>
+              <li>You can also enter an address to position a fence.</li>
+              <li>You can choose a pre-defined size.</li>
+              <li>You can change the size by making the sides of the rectangle bigger or smaller, or by moving the rectangle.</li>
+            </ul>
+          </li>
+          <li>Once your fence has been created, you can give your geofence a name and click on "Save".</li>
+          <li>You will receive a notification in the Tracki app every time your tracker enters or leaves this area. If you want to receive email notifications as well, tap on "Share", then on "New contact". You will then be able to add an email address for this alert.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="group-step pt30">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/speed_480x480.png?v=1675933334" alt>
+      <div class="small-heading">Speed Alert</div>
+      <div class="view-more-detail">
+        <p>You will receive a notification in the Tracki app when the tracker moves faster than the speed pre-defined by you.</p>
+        <ol>
+          <li>Select the tracker in the Tracki app.</li>
+          <li>Go to "Settings".</li>
+          <li>Enable the alert by checking the Speed alert box.</li>
+          <li>Click on "Save".</li>
+          <li>If you want to receive a notification via email as well, go to the Settings area in the app, swipe right on the "Speed alert", then tap on "Share" then on "New contact". You will then be able to add an email address for this alert.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="group-step pt30">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/start-moving_480x480.png?v=1675933338" alt>
+      <div class="small-heading">Start Moving Alert</div>
+      <div class="view-more-detail">
+        <p>You will receive a notification in the Tracki app when the tracker starts to move.</p>
+        <ol>
+          <li>Select the tracker in the Tracki app.</li>
+          <li>Go to "Settings".</li>
+          <li>Set the "Start moving alert" ON.</li>
+          <li>Enable the alert by checking the "Start Moving alert" box.</li>
+          <li>Click on "Save".</li>
+          <li>If you want to receive a notification via email as well, go to the Settings area in the app, swipe right on the "Start Moving Alert", then tap on "Share" then on "New contact". You will then be able to add an email address for this alert.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="group-step pt30">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/battery_480x480.png?v=1675933341" alt>
+      <div class="small-heading">Low Battery Alert</div>
+      <div class="view-more-detail">
+        <p>You will receive a notification in the Tracki app when your tracker's battery level drops to 10% or below.</p>
+        <ol>
+          <li>Select the tracker in the Tracki app.</li>
+          <li>Go to "Settings".</li>
+          <li>Set the "Low Battery Alert" ON.</li>
+          <li>Click on "Save".</li>
+          <li>If you want to receive a notification via email as well, go to the Settings area in the app, swipe right on the "Low Battery Alert", then tap on "Share" then on "New contact". You will then be able to add an email address for this alert.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrap-section fifth-wrapper">
+  {% if section.settings.social_media_title != '' %}
+    <div class="guide wrap-title">
+      <h2 class="title">{{ section.settings.social_media_title }}</h2>
+    </div>
+  {% endif %}
+  <div class="social-guide-wrap">
+    {% for block in section.blocks %}
+      {% case block.type %}
+      {% when 'social-media' %}
+      {% if block.settings.social_image != blank %}
+        <a href="{{ block.settings.social_link }}" target="_blank">
+          <img src="{{ block.settings.social_image | img_url: 'master' }}" alt>
+        </a>
+      {% endif %}
+    {% endcase %}
+    {% endfor %}
+    {% comment %} <a href="https://www.instagram.com/tracki.gps/" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/insta_480x480.png?v=1675940762" alt>
+    </a>
+    <a href="https://twitter.com/TrackiGPS" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/twitter.png?v=1695104230" alt>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLq9QuuRtpCLZPSEFuHb7GimK1GI9QusQR" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/youtube_480x480.png?v=1675940769" alt>
+    </a> {% endcomment %}
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+   "name":"User Guide Content",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"title",
+         "label":"Title"
+      },
+      {
+         "type":"textarea",
+         "id":"sub_title",
+         "label":"Sub Title"
+      },
+      {
+         "type":"textarea",
+         "id":"guide_title",
+         "label":"Guide Title"
+      },
+      {
+         "type":"textarea",
+         "id":"guide_step_title",
+         "label":"Guide Step Title"
+      },
+      {
+         "type":"url",
+         "id":"apple_pay__link",
+         "label":"Apple Pay Link"
+      },
+      {
+         "type":"image_picker",
+         "id":"apple_pay__image",
+         "label":"Apple Pay Image"
+      },
+      {
+         "type":"url",
+         "id":"gogole_pay__link",
+         "label":"Google Pay Link"
+      },
+      {
+         "type":"image_picker",
+         "id":"gogole_pay__image",
+         "label":"Google Pay Image"
+      },
+      {
+         "type":"textarea",
+         "id":"account_title",
+         "label":"Account Title"
+      },
+      {
+         "type":"url",
+         "id":"account_link",
+         "label":"Account Link"
+      },
+      {
+         "type":"text",
+         "id":"account_btn",
+         "label":"Account Btn"
+      },
+      {
+         "type":"textarea",
+         "id":"device_activate_title",
+         "label":"Device Activate Title"
+      },
+      {
+         "type":"url",
+         "id":"device_activate_link",
+         "label":"Device Activate Link"
+      },
+      {
+         "type":"text",
+         "id":"device_activate_btn",
+         "label":"Device Activate Btn"
+      },
+      {
+         "type":"text",
+         "id":"support_team_title",
+         "label":"Support Team Title"
+      },
+      {
+         "type":"textarea",
+         "id":"support_team_subtitle",
+         "label":"Support Team Subtitle"
+      },
+      {
+         "type":"textarea",
+         "id":"our_device_title",
+         "label":"Our Device Title"
+      },
+      {
+         "type":"textarea",
+         "id":"app_function_title",
+         "label":"App Function Title"
+      },
+      {
+         "type":"textarea",
+         "id":"social_media_title",
+         "label":"Social Media_title"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"support",
+         "name":"Support",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"support_image",
+               "label":"Support Image"
+            },
+            {
+               "type":"url",
+               "id":"support_link",
+               "label":"Support Link"
+            },
+            {
+               "type":"text",
+               "id":"support_title",
+               "label":"Support Title"
+            }
+         ]
+      },
+      {
+         "type":"device",
+         "name":"Device",
+         "settings":[
+            {
+               "type":"url",
+               "id":"device_link",
+               "label":"Device Link"
+            },
+            {
+               "type":"image_picker",
+               "id":"device_image",
+               "label":"Device Image"
+            },
+            {
+               "type":"text",
+               "id":"device_title",
+               "label":"Device Title"
+            }
+         ]
+      },
+      {
+         "type":"app-function",
+         "name":"App Function",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"app_image",
+               "label":"App Image"
+            },
+            {
+               "type":"text",
+               "id":"app_heading",
+               "label":"App Heading"
+            },
+            {
+               "type":"richtext",
+               "id":"app_text",
+               "label":"App Text"
+            }
+         ]
+      },
+      {
+         "type":"social-media",
+         "name":"Social Media",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"social_image",
+               "label":"Social Image"
+            },
+            {
+               "type":"url",
+               "id":"social_link",
+               "label":"Social Link"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"User Guide Content"
+      }
+   ]
+}
+{% endschema %}

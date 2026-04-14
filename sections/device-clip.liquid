@@ -1,0 +1,93 @@
+<style>
+.single-image-section {
+  padding: 70px 10px 20px;
+  text-align: center;
+  background: #26282a;
+  padding-top: 20px;
+}
+
+.single-image-section__heading {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #f3f1f0;
+}
+
+.single-image-section__blocks {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.single-image-section__block {
+  margin-bottom: 40px;
+}
+
+.single-image-section__image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<section class="single-image-section" id="device-clip">
+
+  {% if section.settings.heading != blank %}
+    <h2 class="single-image-section__heading">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="single-image-section__blocks">
+    {% for block in section.blocks %}
+      <div class="single-image-section__block divider-sec" {{ block.shopify_attributes }}>
+        
+        {% if block.settings.image != blank %}
+          <div class="single-image-section__image">
+            <img 
+              src="{{ block.settings.image | image_url: width: 1000 }}" 
+              alt="{{ block.settings.image.alt | escape }}"
+            >
+          </div>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Device Clip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Our Product Gallery"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Single Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Device Clip"
+    }
+  ]
+}
+{% endschema %}

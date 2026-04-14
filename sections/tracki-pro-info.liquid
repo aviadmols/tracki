@@ -1,0 +1,440 @@
+{% comment %} <section class="tracki-manual">
+  <div class="page-width page-width--smaller">
+    <!-- TOP AREA -->
+    <div class="tracki-manual__header">
+      <h1 class="tracki-manual__title">TrackiPro</h1>
+      <div class="tracki-manual__top">
+        <!-- PRODUCT IMAGE -->
+        <div class="tracki-manual__image">
+          <img src="{{ 'tracki-pro-main.webp' | file_url }}"  alt="TrackiPro device">
+        </div>
+
+        <!-- SIDE NAVIGATION -->
+        <div class="tracki-manual__nav">
+          <ul>
+            <li><a href="#general-info">General information</a></li>
+            <li><a href="#initial_setup">Initial set-up</a></li>
+            <li><a href="#device_notification">Device notification</a></li>
+            <li><a href="#package_contents">Package contents</a></li>
+            <li><a href="#button_functions">Button functions</a></li>
+            <li><a href="#device_lights">Device lights</a></li>
+            <li><a href="#place_device">Where to place the device in your vehicle</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+<section class="tracki-manual">
+  <div class="page-width page-width--smaller">
+
+    <!-- TOP AREA -->
+    <div class="tracki-manual__header">
+
+      <h1 class="tracki-manual__title">
+        {{ section.settings.title }}
+      </h1>
+
+      <div class="tracki-manual__top">
+
+        <!-- PRODUCT IMAGE -->
+        <div class="tracki-manual__image">
+          {% if section.settings.product_image != blank %}
+            <img 
+              src="{{ section.settings.product_image | img_url: 'master' }}" 
+              alt="{{ section.settings.product_image.alt | escape }}">
+          {% endif %}
+        </div>
+
+        <!-- SIDE NAVIGATION -->
+        <div class="tracki-manual__nav">
+          <ul>
+            {% for block in section.blocks %}
+              <li>
+                <a href="{{ block.settings.anchor }}">
+                  {{ block.settings.label }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{% comment %} <section id="general-info" class="general-info-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        <h2>General information</h2>
+        <p>
+            These operating instructions are for the Tracki Pro 4G GPS tracker, which will simply be referred to as ‘tracker’ in the following. They contain important information regarding set-up and operation. Before using the tracker, please read the operating instructions carefully. This particularly applies to the safety notes. Failure to adhere to these operating instructions may result in severe injury or damage to the tracker.
+        </p>
+        <p>
+            The operating instructions are based on the standards and rules in force in the European Union. When abroad, you must also observe country-specific guideless and laws. keep the operating instructions for future use. If you pass the tracker on to third parties, please be absolute sure, to include these operating instructions.
+        </p>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% comment %} <section id="initial_setup" class="initialsetup-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        <h2>Initial set-up</h2>
+        <h6>Installing and charging the battery</h6>
+        <p>When you unpack the tracker for the first time, the battery is empty. Charge it as follows:</p>
+        <ol>
+            <li>Connect the charging plug of the charging cable to the tracker with the Type C.</li>
+            <li>Connect the other end of the charging cable to the USB power adaptor and then to the power socket. Alternatively you can also connect the charging cable to a computer.</li>
+            <li>Charge the tracker for 6 hours.</li>
+            <li>The red light will blink whilst charging. When the tracker is fully charged, the light will turn solid red.</li>
+        </ol>
+    </div>
+    <div class="tracki-manual__content divider-sec">
+        <h6>Turning the tracker on</h6>
+        <ol>
+            <li>Take the tracker outside so that it is in the open air.</li>
+            <li>Verify tracker is ON by pressing and hold the ON/OFF button. Red light will blink.</li>
+            <li>Place the tracker down and leave it for at least 15 minutes. This allows the tracker to perform its initial GPS positioning, which is required for the device to function correctly.</li>   
+        </ol>
+        <p>&nbsp;</p>
+        <p>Once completed, the tracker will be ready for use and can be activated. <br/><span class="grey-text">Please note: this procedure is only required the very first time the tracker is turned on.</span></p>
+    </div>
+    <div class="tracki-manual__content divider-sec">
+        <h6>Activating the tracker via Web</h6>
+        <ol>
+            <li>Open your internet browser and go to <a href="#">app.tracki.com</a></li>
+            <li>Register and create your Tracki account, then wait for the activation email from Tracki, click on the confirmation link, then login.</li>
+            <li>Click on “Add Tracker” and follow the on-screen instructions.</li>
+            <li>Insert your tracker IMEI and Device ID, and follow the instructions to activate your service plan.</li>
+        </ol>
+    </div>
+    <div class="tracki-manual__content divider-sec">
+        <h6>Activating the tracker via App</h6>
+        <ol>
+            <li>Download the Tracki app from the Apple Store or Google Play.</li>
+            <li>Register or log into your Tracki account.</li>
+            <li>Tap on "+" icon to add the device and follow the activation instructions.</li>
+        </ol>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% comment %} <section id="device_notification" class="device-notification-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        <h2>Device notification</h2>
+
+        <div class="device-notification__grid">
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'speedometer1.svg' | file_url }}"  alt="SPEED LIMIT">
+                    <h3 class="small-heading">SPEED LIMIT</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        Once the user sets a speed limit for the device, they will receive an app notification whenever the tracker exceeds the designated speed. In such cases, the user will also receive the location information and a text message sent to the phone number or email address they have provided.<br/>
+Please be aware that there is a cooldown period of 5 minutes between consecutive alerts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'zone-entry.svg' | file_url }}"  alt="Zone entry \ Zone exit">
+                    <h3 class="small-heading">Zone entry \ Zone exit</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        A geofence is a virtual boundary that can be customized by the user. Whenever the tracker crosses the boundary, whether exiting or entering the defined area, the user will receive a notification within the app. Additionally, the user's specified phone number or email will receive the location information along with a text message.<br/>
+Please take note that there is a cooldown period of 5 minutes between two consecutive alerts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'sos_64803538-dce9-4b33-92a9-17d80fc0d938.svg' | file_url }}"  alt="SOS Key Pressed">
+                    <h3 class="small-heading">SOS Key Pressed</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        When the user holds down the SOS button for a minimum of 2 seconds, both the location information and a text message will be sent using all the chosen communication methods.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'battery-full_db508af9-e1e4-4e32-a622-bea01eb364d3.svg' | file_url }}"  alt="Low Battery">
+                    <h3 class="small-heading">LOW Battery</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        When the battery percentage drops to 10%, an alert will be triggered using all the chosen communication methods. The user's specified phone number or email will receive the location details along with a text message.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'smart-car_7c15cb38-392a-4d45-866f-45c7dd87f9a0.svg' | file_url }}"  alt="Start moving">
+                    <h3 class="small-heading">Start moving</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        Once the tracker begins to move, the user will be notified within the app. Furthermore, the location information and a text message will be sent to the phone number or email address that the user has provided.
+Please note that there is a cooldown period of 5 minutes between two consecutive alerts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'toggle-on_be2df08d-ea46-4cfa-a389-6a20f6ca8d90.svg' | file_url }}"  alt="POWER ON/OFF">
+                    <h3 class="small-heading">POWER ON/OFF</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        When the device is fully charged and powered on, a notification will be triggered to inform the user about the device being turned on. Similarly, when the device is shut down, a message will be sent to the user to notify them of the shutdown.
+                    </p>
+                </div>
+            </div>            
+
+        </div>
+
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% comment %} <section id="device_lights" class="device-lights-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        <h2>Device lights</h2>
+
+        <div class="device-light__grid">
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-starting.svg' | file_url }}"  alt="Device Starting">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is starting up</h3>
+                        <small class="sub-smalldesc">(Long press)</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'activation-sos.svg' | file_url }}"  alt="Activate SOS mode">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Activate SOS mode</h3>
+                        <small class="sub-smalldesc">(Triple press)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-poweroff.svg' | file_url }}"  alt="Device power off">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is powering off</h3>
+                        <small class="sub-smalldesc">(Press and hold for 3 sec)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'battery-low.svg' | file_url }}"  alt="Battery low">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Battery is low</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-online.svg' | file_url }}"  alt="Device online">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is online</h3>
+                        <small class="sub-smalldesc">(Single press)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-charging.svg' | file_url }}"  alt="Device charging">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is charging</h3>
+                        <small class="sub-smalldesc">(Connect to power)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-onbut-offline.svg' | file_url }}"  alt="Device on but offline">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is on but offline</h3>
+                        <small class="sub-smalldesc">(Single press)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-charged.svg' | file_url }}"  alt="Device charged">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is fully charged</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% comment %} <section id="package_contents" class="package-content-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        <h2>Package contents</h2>
+        <img src="{{ 'package-content-img.webp' | file_url }}"  alt="Package Content">
+        <ol class="package-infolist">
+            <li>ON / OFF Button</li>
+            <li>Adhesive tape holder</li>
+            <li>Magnet holder</li>
+            <li>Screws holder</li>
+            <li>USB Type C charging port</li>
+            <li>Red light</li>
+            <li>Blue light</li>
+            <li>Green light</li>
+            <li>Charging cable USB Type C</li>
+        </ol>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% comment %} <section id="button_functions" class="button-functions-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        <h2>Button functions</h2>
+        <img src="{{ 'button-function-img.webp' | file_url }}"  alt="Button function">
+        <div class="info-wrap-cntnt">
+            <div class="small-heading">ON / OFF button</div>
+            <p>Press and hold the ON/OFF button to turn the tracker ON or OFF.<br/>Briefly press the ON/OFF button once the check whether the tracker is on.</p>
+            <p class="grey-text">Please note: If the green light flashes, the tracker is ON. If no light comes on, the tracker is OFF.</p>
+            <div class="small-heading">SOS BUTTON</div>
+            <p>If you press the power button 3 times (short presses), the SOS alarm will be activated, the location and a text message will be sent to the telephone number or e-mail you have provided.</p>
+        </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+{% comment %} <section id="place_device" class="place-device-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content">
+        <h2>Where to place the device in your vehicle</h2>
+        <img src="{{ 'device-place1.webp' | file_url }}"  alt="Device place1">
+        <img src="{{ 'device-place2.webp' | file_url }}"  alt="Device place2">        
+    </div>
+  </div>
+</section> {% endcomment %}
+<script>
+    document.querySelectorAll('.tracki-manual__nav a').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+
+const target = document.querySelector(this.getAttribute('href'));
+const headerOffset = 120; // adjust to your header height
+
+if (target) {
+const elementPosition = target.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+
+</script>
+{% schema %}
+{
+  "name": "Tracki pro info",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page Title",
+      "default": "TrackiPro"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "navigation_item",
+      "name": "Navigation Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Link Label",
+          "default": "General information"
+        },
+        {
+          "type": "text",
+          "id": "anchor",
+          "label": "Anchor ID (Example: #general-info)",
+          "default": "#general-info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tracki pro info",
+      "blocks": [
+        {
+          "type": "navigation_item"
+        },
+        {
+          "type": "navigation_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

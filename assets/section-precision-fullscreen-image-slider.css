@@ -1,0 +1,148 @@
+/* Full-bleed edge-to-edge (100vw) — breaks out of page gutters */
+.precision-fs-image-slider {
+  --precision-fs-slider-height: auto;
+  font-family: var(--precision-pdp-font, inherit);
+}
+
+.precision-fs-image-slider__edge {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+}
+
+.precision-fs-image-slider__viewport {
+  position: relative;
+}
+
+.precision-fs-image-slider__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: 0;
+}
+
+.precision-fs-image-slider__track.slider {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.precision-fs-image-slider__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+}
+
+.precision-fs-image-slider__slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+}
+
+.precision-fs-image-slider__slide img {
+  width: 100%;
+  display: block;
+}
+
+.precision-fs-image-slider__placeholder svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Height modes */
+.precision-fs-image-slider--height-natural .precision-fs-image-slider__slide img {
+  height: auto;
+}
+
+.precision-fs-image-slider--height-viewport .precision-fs-image-slider__slide {
+  height: min(92vh, 900px);
+}
+
+.precision-fs-image-slider--height-viewport .precision-fs-image-slider__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.precision-fs-image-slider--height-ratio.precision-fs-image-slider--ratio-16x9 .precision-fs-image-slider__slide {
+  aspect-ratio: 16 / 9;
+}
+
+.precision-fs-image-slider--height-ratio.precision-fs-image-slider--ratio-4x3 .precision-fs-image-slider__slide {
+  aspect-ratio: 4 / 3;
+}
+
+.precision-fs-image-slider--height-ratio.precision-fs-image-slider--ratio-21x9 .precision-fs-image-slider__slide {
+  aspect-ratio: 21 / 9;
+}
+
+.precision-fs-image-slider--height-ratio.precision-fs-image-slider--ratio-1x1 .precision-fs-image-slider__slide {
+  aspect-ratio: 1 / 1;
+}
+
+.precision-fs-image-slider--height-ratio .precision-fs-image-slider__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.precision-fs-image-slider__empty {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.875rem;
+}
+
+/* Arrows overlay — desktop + mobile visible (full-bleed hero) */
+.precision-fs-image-slider__viewport .precision-fs-image-slider__arrows {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem;
+}
+
+.precision-fs-image-slider__viewport .precision-fs-image-slider__arrows .slider-button {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (min-width: 750px) {
+  .precision-fs-image-slider__viewport .precision-fs-image-slider__arrows {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Theme hides .slider-buttons on desktop — force show for this section */
+.precision-fs-image-slider__viewport .precision-fs-image-slider__arrows.slider-buttons {
+  display: flex !important;
+  justify-content: space-between;
+  margin: 0;
+  bottom: auto;
+  right: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

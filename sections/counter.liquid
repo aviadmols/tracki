@@ -1,0 +1,150 @@
+{% comment %} <section class="counter-section">
+  <div class="counter-wrapper-box">    
+        <div class="counter-wrapper">
+
+            {% for block in section.blocks %}
+            <div class="counter-item">
+                <div class="counter-number"
+                    data-count="{{ block.settings.number }}"  data-animate="{{ section.settings.enable_animation }}">
+                0
+                </div>
+
+                <h4 class="counter-title">{{ block.settings.title }}</h4>
+                <p class="counter-text">{{ block.settings.text }}</p>
+            </div>
+            {% endfor %}
+
+        </div>      
+  </div>
+</section> {% endcomment %}
+
+<section class="counter-section">
+    <div class="counter-wrapper-box">
+        <div class="counter-wrapper">
+            
+            {% for block in section.blocks %}
+                <div class="counter-item">
+                {% if block.settings.image_icon != blank %}
+                  <div class="coutner-icon">
+                    <img src="{{ block.settings.image_icon | image_url }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+                  </div>
+                {% elsif block.settings.number !=blank %}  
+                    <div class="counter-number"
+                        data-count="{{ block.settings.number }}"data-animate="{{ section.settings.enable_animation }}">
+                    0
+                    </div>
+                {% endif %}
+
+                <h4 class="counter-title">{{ block.settings.title }}</h4>
+                <p class="counter-text">{{ block.settings.text }}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+  </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter-number");
+
+    const animateCounter = (counter) => {
+        const target = +counter.dataset.count;
+        const speed = 100;
+        let count = 0;
+
+        const update = () => {
+        const increment = target / speed;
+        count += increment;
+
+        if (count < target) {
+            counter.innerText = Math.floor(count);
+            requestAnimationFrame(update);
+        } else {
+            counter.innerText = target;
+        }
+        };
+
+        update();
+    };
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const counter = entry.target;
+            const shouldAnimate = counter.dataset.animate === "true";
+
+            if (shouldAnimate) {
+            animateCounter(counter);
+            } else {
+            counter.innerText = counter.dataset.count;
+            }
+
+            observer.unobserve(counter);
+        });
+        },
+        { threshold: 0.5 }
+    );
+
+    counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+
+
+{% schema %}
+{
+  "name": "Dynamic Counter",
+  "settings": [
+    {
+    "type": "checkbox",
+    "id": "enable_animation",
+    "label": "Enable counter animation",
+    "default": true
+  }
+  ],
+  "blocks": [
+    {
+      "type": "counter",
+      "name": "Counter Item",
+      "settings": [
+        {
+          "type": "number",
+          "id": "number",
+          "label": "Counter Number",
+          "default": 100
+        },
+        {
+            "type": "image_picker",
+            "id": "image_icon",
+            "label": "Image Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Countries"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Works globally in over 100 countries."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Dynamic Counter",
+      "blocks": [
+        { "type": "counter" },
+        { "type": "counter" },
+        { "type": "counter" }
+      ]
+    }
+  ]
+}
+{% endschema %}

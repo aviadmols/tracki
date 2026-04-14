@@ -1,0 +1,139 @@
+<section class="contactform-section">
+    <div class="page-width">
+        {% if section.settings.heading != '' %}
+            <div class="cf-heading">
+                <h2>{{ section.settings.heading }}</h2>
+            </div>
+        {% endif %}
+        <div class="contactform-wrapper-box">
+        <div class="contact__main">
+          <div class="title-innerform">
+            <span class="icon-chat">
+            {{ 'Chats.svg' | inline_asset_content }}
+            </span>
+            {% if section.settings.text != '' %}
+                {{ section.settings.text }}
+            {% endif %}            
+        </div>
+          
+        {% form 'contact', id: 'contact_form_home', class: 'contact__form form' %}
+
+  <div class="feild flex default_fields name_email_fields">
+    <!-- Name -->
+    <div class="input">
+      <label for="contact-form-name" class="input__label">Name<span>*</span></label>
+      <input id="contact-form-name" placeholder="Input your name" type="text" class="input__field" name="contact[name]" required>
+    </div>
+    <!-- Email -->
+    <div class="input">
+      <label for="contact-form-email" class="input__label">Email<span>*</span></label>
+      <input id="contact-form-email" placeholder="Input your email address" type="email" class="input__field" name="contact[email]" required>
+    </div>
+  </div>
+
+  <div class="feild flex default_fields phone_country_fields">
+    <!-- Phone -->
+    {% comment %} <div class="input">
+      <label for="phone_number">Phone number</label>
+      <div class="phone-input-wrapper">
+        <div class="country-code">
+          <img src="{{ 'us-flag.svg' | asset_url }}" alt="US" class="flag-icon">
+          <span class="dial-code">+1</span>
+        </div>
+        <input class="input__field" type="tel" id="phone_number" name="contact[phone]" placeholder="(000) 000-0000" required>
+      </div>
+    </div> {% endcomment %}
+
+    <!-- Phone -->
+    <div class="input">
+      <label for="phone_number">Phone number</label>
+      <div class="phone-input-wrapper">
+        <input class="input__field" type="tel" id="phone_number" name="contact[phone]" placeholder="(000) 000-0000" required>
+      </div>
+    </div>
+
+    <!-- Country -->
+    <div class="input">
+      <label for="country">Country</label>
+      <select class="input__field" id="country" name="contact[country]" required>
+        <option value="">Choose your country</option>
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="UK">United Kingdom</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Message -->
+  <div class="feild flex default_fields message_field" style="width:100%;">
+    <div class="input message-label">
+      <label for="contact-form-message" class="input__label">Message<span>*</span></label>
+      <textarea id="contact-form-message" name="contact[body]" placeholder="Let us know your question or request with us, and we’ll get back to you." rows="3" class="input__field input__field--textarea" required></textarea>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  {% if section.settings.button != blank %}
+    <button type="submit" class="form__submit button button--primary btn-height-small">
+      {{ section.settings.button }}
+    </button>
+  {% endif %}
+
+{% endform %}
+
+        </div>
+            
+        
+
+        </div>
+  </div>
+</section>
+
+
+
+{%schema %}
+    {
+   "name":"Contact New",
+   "tag":"section",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      },
+      {
+         "type":"richtext",
+         "id":"text",
+         "label":"Text"
+      },
+      {
+         "type":"text",
+         "id":"button",
+         "label":"Button"
+      },
+      {
+         "type":"checkbox",
+         "id":"enable_validation",
+         "label":"Enable validation",
+         "default":false
+      }
+   ],
+   "blocks":[
+      
+   ],
+   "presets":[
+      {
+         "name":"Contact New"
+      }
+   ]
+}
+{% endschema %}
+
+
+
+{% style %}
+  .iti { width: 100%; } /* Makes it full width */
+  .iti__flag-container { padding: 0 8px; } /* Adjust flag dropdown position */
+  .iti__search-input-wrapper { display: none !important; }
+  .input__label span { color: #EA0000; padding-left: 3px; font-size: 16px; font-style: normal; font-weight: 450; line-height: normal; }
+{% endstyle %}

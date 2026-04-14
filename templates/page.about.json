@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1644832354fa8ba394": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "1644832354662b5012-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h0",
+            "heading_tag": "h2"
+          }
+        },
+        "1644832354662b5012-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Founded in 2022, Be Yours is a premium international fashion retailer home to over 200 men's and women's designer collections from established fashion houses, emerging designers and rare international labels.</p>",
+            "text_size": "typeset2",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "1644832354662b5012-0",
+        "1644832354662b5012-1"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "text_box_position": "flex-start",
+        "text_alignment": "left",
+        "image_ratio": "750px",
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_box_position": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 32,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-0": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Life at Be Yours",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Be Your you can also find a carefully curated LIFE section that contains the best from Fashion, Art, Music, Photography and Home, as well as the UK's largest street style archive with new shots added regularly from London and other European cities. With the elegant simplicity of the site, Be Your is a celebration of the quality of simple design.</p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "550px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-1": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why shop at Be Yours",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free UK and European delivery when you spend over £1.</p><p>Premium options available including tracked delivery.</p><p>Designer fashion and exclusive products.</p><p>Be Yours LIFE for all the things you care about.</p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "text_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "550px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Us",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you require help with your order or have an enquiry for our Customer Service team, please get in touch through our contact page.</p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "27c8e6b8-43c6-4184-b5c6-0de68adbdd55": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact information",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "27c8e6b8-43c6-4184-b5c6-0de68adbdd55"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "550px",
+        "enlarge_content": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_layout": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "164483337198ed3547": {
+      "type": "newsletter",
+      "blocks": {
+        "16448333717aac31b9-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_tag": "h2"
+          }
+        },
+        "16448333717aac31b9-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "16448333717aac31b9-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "16448333717aac31b9-0",
+        "16448333717aac31b9-1",
+        "16448333717aac31b9-2"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "full_width": false,
+        "show_divider": false,
+        "colors_text": "#1a1b18",
+        "colors_border": "#d2d5d9",
+        "colors_background": "#efefef",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644832354fa8ba394",
+    "image-with-text-0",
+    "image-with-text-1",
+    "image-with-text-2",
+    "164483337198ed3547"
+  ]
+}

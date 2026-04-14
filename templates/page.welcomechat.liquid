@@ -1,0 +1,37 @@
+{% layout 'theme.blank' %}
+<div style="min-height: 100vh; display: flex; justify-content: center; align-items: center">
+  <img
+    width="45%"
+    src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki_logo_blank.png?v=1709173792"
+    alt="logo-blank-page"
+  >
+</div>
+<script>
+
+(function(d,t) {
+  var BASE_URL="https://omni.tracki.com";
+  var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=BASE_URL+"/packs/js/sdk.js";
+  g.defer = true;
+  g.async = true;
+  s.parentNode.insertBefore(g,s);
+
+  g.onload=function(){
+    window.chatwootSDK.run({
+      websiteToken: 'vxBMnyqc8qAikeAhYmLRzdPA',
+      baseUrl: BASE_URL
+    });
+
+ 
+
+    // ✅ Wait a moment to ensure widget is ready
+    setTimeout(function(){
+      
+          window.$chatwoot.toggle('open');
+     
+    }, 500);
+  }
+
+})(document,"script");
+
+</script>

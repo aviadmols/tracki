@@ -1,0 +1,116 @@
+<section id="initial_setup" class="initialsetup-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+      {% if section.settings.initial_steup_heading != '' %}
+        <h2>{{ section.settings.initial_steup_heading }}</h2>
+      {% endif %}
+      {% if section.settings.initial_steup_subheading != '' %}
+        <h6>{{ section.settings.initial_steup_subheading }}</h6>
+      {% endif %}
+      {% if section.settings.initial_steup_text != '' %}
+        {{ section.settings.initial_steup_text }}
+      {% endif %}
+    </div>
+    <div class="tracki-manual__content divider-sec">
+    {% if section.settings.tracker_on_title != '' %}
+      <h6>{{ section.settings.tracker_on_title }}</h6>
+    {% endif %}
+    {% if section.settings.tracker_on_text != '' %}
+        {{ section.settings.tracker_on_text }}
+    {% endif %}
+      {% comment %} <p>&nbsp;</p> {% endcomment %}
+    {% if section.settings.tracker_on_heading != '' %}
+      <p>{{ section.settings.tracker_on_heading }} <br />
+        {% if section.settings.tracker_on_note != '' %}
+        <span class="grey-text">{{ section.settings.tracker_on_note }}</span>
+        {% endif %}
+      </p>
+        {% endif %}
+    </div>
+    <div class="tracki-manual__content divider-sec">
+      {% if section.settings.tracker_web_title != '' %}
+        <h6>{{ section.settings.tracker_web_title }}</h6>
+      {% endif %}
+      {% if section.settings.tracker_web_text != '' %}
+        {{ section.settings.tracker_web_text }}
+      {% endif %}
+    </div>
+    <div class="tracki-manual__content divider-sec">
+      {% if section.settings.tracker_app_title != '' %}
+        <h6>{{ section.settings.tracker_app_title }}</h6>
+      {% endif %}
+      {% if section.settings.tracker_app_text != '' %}
+        {{ section.settings.tracker_app_text }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"Initial Setup",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"initial_steup_heading",
+         "label":"Initial Steup Heading"
+      },
+      {
+         "type":"textarea",
+         "id":"initial_steup_subheading",
+         "label":"Initial Steup Subheading"
+      },
+      {
+         "type":"richtext",
+         "id":"initial_steup_text",
+         "label":"Initial Steup Text"
+      },
+      {
+         "type":"textarea",
+         "id":"tracker_on_title",
+         "label":"Initial ON Title"
+      },
+      {
+         "type":"richtext",
+         "id":"tracker_on_text",
+         "label":"Initial ON Text"
+      },
+      {
+         "type":"textarea",
+         "id":"tracker_on_heading",
+         "label":"Initial ON Heading"
+      },
+      {
+         "type":"textarea",
+         "id":"tracker_on_note",
+         "label":"Initial ON Note"
+      },
+      {
+         "type":"textarea",
+         "id":"tracker_web_title",
+         "label":"Initial Web Title"
+      },
+      {
+         "type":"richtext",
+         "id":"tracker_web_text",
+         "label":"Initial Web Text"
+      },
+      {
+         "type":"textarea",
+         "id":"tracker_app_title",
+         "label":"Initial App Title"
+      },
+      {
+         "type":"richtext",
+         "id":"tracker_app_text",
+         "label":"Initial App Text"
+      }
+   ],
+   "presets":[
+      {
+         "name":"Initial Setup"
+      }
+   ]
+}
+{% endschema %}

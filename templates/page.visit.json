@@ -1,0 +1,297 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "narrow": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "image-with-text-0": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-0-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Doral, FL",
+            "heading_size": "h1"
+          }
+        },
+        "image-with-text-0-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AHT Global<br/><a href=\"http://maps.google.com/?q=8312+NW+30th+Terrace%2C+Doral%2C+FL+33122+US&output=classic\" target=\"_blank\" title=\"http://maps.google.com/?q=8312+NW+30th+Terrace%2C+Doral%2C+FL+33122+US&output=classic\">8312 NW 30th Terrace</a></p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-0-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Monday–Thursday: 12pm–7pm<br/>Friday–Sunday: 11am–7pm</p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-0-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get directions",
+            "button_link": "http://maps.google.com/?q=8312+NW+30th+Terrace%2C+Doral%2C+FL+33122+US&output=classic",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-0-0",
+        "image-with-text-0-1",
+        "image-with-text-0-2",
+        "image-with-text-0-3"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "full_width": true,
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-1": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-1-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Alpharetta, GA",
+            "heading_size": "h1"
+          }
+        },
+        "image-with-text-1-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Digital Interiors<br/><a href=\"https://www.google.com/maps/place/1825+Grassland+Pkwy+a,+Alpharetta,+GA+30004,+USA/@34.115332,-84.2134183,14.14z/data=!4m5!3m4!1s0x88f59da2e3d07195:0x23d2b0824dd73ee1!8m2!3d34.1427848!4d-84.2465657\" target=\"_blank\" title=\"https://www.google.com/maps/place/1825+Grassland+Pkwy+a,+Alpharetta,+GA+30004,+USA/@34.115332,-84.2134183,14.14z/data=!4m5!3m4!1s0x88f59da2e3d07195:0x23d2b0824dd73ee1!8m2!3d34.1427848!4d-84.2465657\">1825 Grassland Parkway</a></p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-1-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Monday–Thursday: 12pm–7pm<br/>Friday–Sunday: 11am–7pm</p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-1-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get directions",
+            "button_link": "http://maps.google.com/?q=1825+Grassland+Parkway%2C+Suite+A%2C+Alpharetta%2C+GA+30004+US&output=classic",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-1-0",
+        "image-with-text-1-1",
+        "image-with-text-1-2",
+        "image-with-text-1-3"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "text_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "full_width": true,
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ann Arbor, MI",
+            "heading_size": "h1"
+          }
+        },
+        "image-with-text-2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Overture Audio, Inc.<br/><a href=\"http://maps.google.com/?q=5040+Jackson+Road%2C+Ann+Arbor%2C+MI+48103+US&output=classic\" target=\"_blank\" title=\"http://maps.google.com/?q=5040+Jackson+Road%2C+Ann+Arbor%2C+MI+48103+US&output=classic\">5040 Jackson Road</a></p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-2-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Monday–Thursday: 12pm–7pm<br/>Friday–Sunday: 11am–7pm</p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-2-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get directions",
+            "button_link": "http://maps.google.com/?q=5040+Jackson+Road%2C+Ann+Arbor%2C+MI+48103+US&output=classic",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-2-0",
+        "image-with-text-2-1",
+        "image-with-text-2-2",
+        "image-with-text-2-3"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "image_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "full_width": true,
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-with-text-3": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Castle Rock, CO",
+            "heading_size": "h1"
+          }
+        },
+        "image-with-text-3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SmartLife Audio Video<br/><a href=\"http://maps.google.com/?q=858+W.+Happy+Canyon+Rd.%2C+Suite+115%2C+Castle+Rock%2C+CO+80108+US&output=classic\" target=\"_blank\" title=\"http://maps.google.com/?q=858+W.+Happy+Canyon+Rd.%2C+Suite+115%2C+Castle+Rock%2C+CO+80108+US&output=classic\">858 W. Happy Canyon Rd.</a></p>",
+            "text_size": "typeset2",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-3-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Monday–Thursday: 12pm–7pm<br/>Friday–Sunday: 11am–7pm</p>",
+            "text_size": "typeset",
+            "secondary_color": true
+          }
+        },
+        "image-with-text-3-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get directions",
+            "button_link": "http://maps.google.com/?q=858+W.+Happy+Canyon+Rd.%2C+Suite+115%2C+Castle+Rock%2C+CO+80108+US&output=classic",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-3-0",
+        "image-with-text-3-1",
+        "image-with-text-3-2",
+        "image-with-text-3-3"
+      ],
+      "settings": {
+        "image": "",
+        "image_position": "center center",
+        "layout": "text_first",
+        "text_box_position": "middle",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "full_width": true,
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "rich-text-0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please follow us @beyours and sign up for our newsletter below for our latest events.</p>",
+            "text_size": "typeset3",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "rich-text-0"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "narrow": true,
+        "mobile_text_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "newsletter-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails"
+          }
+        },
+        "newsletter-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "newsletter-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "newsletter-0",
+        "newsletter-1",
+        "newsletter-2"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "full_width": false,
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-with-text-0",
+    "image-with-text-1",
+    "image-with-text-2",
+    "image-with-text-3",
+    "rich-text",
+    "newsletter"
+  ]
+}

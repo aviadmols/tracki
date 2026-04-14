@@ -1,0 +1,304 @@
+{%- if template.suffix == 'precision-pdp' -%}
+  {{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
+  {{ 'section-steps-phone-slider-precision-pdp.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+<section
+  class="steps-slider{% if template.suffix == 'precision-pdp' %} steps-slider--precision-pdp{% endif %}"
+  style="{% if section.settings.background_image != blank %}
+      background-image: url({{ section.settings.background_image | img_url: '2000x' }}); 
+    {% endif %}">
+  <div class="hand-wrapper">
+    <img src="{{ 'hand.png' | file_url }}" class="hand-indicator" alt="Swipe hand">
+  </div>
+
+  <div class="steps-overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"></div>
+
+  <div class="page-width steps-inner">
+
+    {% if section.settings.section_title != blank %}
+      <h2 class="steps-title">{{ section.settings.section_title }}</h2>
+    {% endif %}
+
+    <!-- SLIDER CONTAINER -->
+    <div class="steps-slider-container">
+      <div class="step-slide-wrapper">
+        {% for block in section.blocks %}
+          <div class="step-slide">
+
+            <div class="step-content">
+              <div class="step-number-wrap">
+                <span class="step-big">{{ block.settings.step_number }}</span>
+                <span class="step-small">step</span>
+              </div>
+              <h3 class="step-heading">{{ block.settings.heading }}</h3>
+            </div>
+
+            <div class="phone-frame">
+              {% if block.settings.phone_image != blank %}
+                <img
+                  src="{{ block.settings.phone_image | img_url: '900x' }}"
+                  class="phone-scroll-image"
+                  alt="Phone screen"
+                >
+              {% endif %}
+              {% if block.settings.phone_mobile_image != blank %}
+                <img
+                  src="{{ block.settings.phone_mobile_image | img_url: '900x' }}"
+                  class="phone-scroll-image-mobile"
+                  alt="Phone screen"
+                >
+              {% endif %}
+            </div>
+
+            <div class="step-info">
+              {% if block.settings.icon != blank %}
+                <span class="step-icon">
+                  {{ block.settings.icon | image_url: width: 60 | image_tag }}
+                </span>
+              {% endif %}
+              {{ block.settings.extra_text }}
+            </div>
+
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="slider-dots">
+      {% for block in section.blocks %}
+        <span class="{% if forloop.first %}active{% endif %}"></span>
+      {% endfor %}
+      {% if section.settings.mouse_icon != blank %}
+      <div class="slider-down">
+        <a href="{{ section.settings.link }}" class="page-scroll">
+          <img src="{{ section.settings.mouse_icon | img_url: 'master' }}" alt="scroll down icon">
+        </a>
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<script>
+$(document).ready(function(){
+
+  var $wrapper = $('.step-slide-wrapper');
+  var $slides  = $('.step-slide');
+  var total    = $slides.length;
+  var current  = 0;
+  var scrolling = false;
+  var $hand = $('.hand-indicator');
+  var $section = $('.steps-inner');
+
+  // Function to check if screen is large
+  function isLargeScreen() {
+    return $(window).width() > 769;
+  }
+
+ function setHandPosition() {
+  var $slide = $slides.eq(1);
+  var $phone = $slide.find('.phone-frame');
+
+  if (!$phone.length) return;
+
+  var sectionRect = document.querySelector('.steps-slider').getBoundingClientRect();
+  var phoneRect   = $phone[0].getBoundingClientRect();
+
+  var finalX = phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
+
+  // 👉 ONLY CALCULATE HERE (no animation logic)
+  var finalY = phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
+
+  return { x: finalX, y: finalY };
+}
+
+  function goToSlide(index) {
+  if (!isLargeScreen()) return;
+
+  if (index < 0) index = 0;
+  if (index >= total) index = total - 1;
+
+  if (scrolling) return;
+  scrolling = true;
+
+  current = index;
+
+  // Move slide
+  $wrapper.css('transform', 'translateY(-' + (current * 100) + 'vh)');
+  $('.slider-dots span').removeClass('active').eq(current).addClass('active');
+
+  // FULL RESET (IMPORTANT)
+  $hand.removeClass('hand-animate').css({
+  opacity: 0,
+  transform: 'translate(-50%, -120px)' // match CSS start
+});
+
+if (current === 1) {
+
+  setTimeout(function () {
+
+    var pos = setHandPosition();
+
+    // START from top
+    $hand.css({
+      left: pos.x + 'px',
+      top: '0px',
+      opacity: 1,
+      transform: 'translateX(-50%)'
+    });
+
+    $hand[0].offsetHeight;
+
+    // MOVE to final (this is where you control stop position)
+    $hand.stop().animate(
+      { top: pos.y },
+      {
+        duration: 1200,
+        easing: "swing"
+      }
+    );
+
+  }, 700);
+}
+
+  // Unlock scrolling
+  setTimeout(function () {
+    scrolling = false;
+  }, 900);
+}
+  goToSlide(0);
+
+  // Dot click
+  $('.slider-dots span').on('click', function(){
+    if (!isLargeScreen()) return; // Stop sliding on small screens
+    goToSlide($(this).index());
+  });
+
+  // Mouse wheel
+  $('.steps-slider-container').on('wheel', function(e){
+  if (!isLargeScreen()) return;
+
+  var delta = e.originalEvent.deltaY;
+
+  if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
+    return; // allow normal scroll at edges
+  }
+
+  e.preventDefault();
+
+  if (delta > 0) {
+    goToSlide(current + 1);
+  } else {
+    goToSlide(current - 1);
+  }
+});
+
+  // Window resize
+  $(window).on('resize', function(){
+    if (current === 1) setHandPosition();
+
+    if (!isLargeScreen()) {
+      $wrapper.css('transform', 'translateY(0)'); // reset to first slide
+      current = 0;
+      $('.slider-dots span').removeClass('active').eq(current).addClass('active');
+      $hand.removeClass('hand-animate').css('opacity', 0);
+    }
+  });
+
+});
+
+
+$(document).on('click','.slider-down a',function(event){
+  event.preventDefault();
+  $('html, body').animate({
+      scrollTop: $(this.hash).offset().top - 50
+  }, 1000);
+});
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Steps Phone Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Easy to use"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Section Background Image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay Opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "image_picker",
+      "id": "mouse_icon",
+      "label": "Mouse Icon"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Activate"
+        },
+        {
+          "type": "image_picker",
+          "id": "phone_image",
+          "label": "Phone Dekstop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "phone_mobile_image",
+          "label": "Phone Mobile Image"
+        },
+        {
+          "type": "richtext",
+          "id": "extra_text",
+          "label": "Right Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Right Content Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps Phone Slider"
+    }
+  ]
+}
+{% endschema %}

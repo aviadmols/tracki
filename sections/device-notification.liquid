@@ -1,0 +1,140 @@
+<section id="device_notification" class="device-notification-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        {% if section.settings.heading != '' %}
+            <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        <div class="device-notification__grid">
+
+            <!-- ITEM -->
+            {% for block in section.blocks %}
+                <div class="device-notification__item">
+                    {% if block.settings.image != blank %}
+                    <div class="device-notification__icon">
+                        <img src="{{ block.settings.image | img_url: 'master' }}"  alt="SPEED LIMIT">
+                        {% if block.settings.title != '' %}
+                            <h3 class="small-heading">{{ block.settings.title }}</h3>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% if block.settings.text != '' %}
+                    <div class="device-notification__content">                
+                       {{ block.settings.text }}
+                    </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {% comment %} <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'zone-entry.svg' | file_url }}"  alt="Zone entry \ Zone exit">
+                    <h3 class="small-heading">Zone entry \ Zone exit</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        A geofence is a virtual boundary that can be customized by the user. Whenever the tracker crosses the boundary, whether exiting or entering the defined area, the user will receive a notification within the app. Additionally, the user's specified phone number or email will receive the location information along with a text message.<br/>
+                Please take note that there is a cooldown period of 5 minutes between two consecutive alerts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'sos_64803538-dce9-4b33-92a9-17d80fc0d938.svg' | file_url }}"  alt="SOS Key Pressed">
+                    <h3 class="small-heading">SOS Key Pressed</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        When the user holds down the SOS button for a minimum of 2 seconds, both the location information and a text message will be sent using all the chosen communication methods.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'battery-full_db508af9-e1e4-4e32-a622-bea01eb364d3.svg' | file_url }}"  alt="Low Battery">
+                    <h3 class="small-heading">LOW Battery</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        When the battery percentage drops to 10%, an alert will be triggered using all the chosen communication methods. The user's specified phone number or email will receive the location details along with a text message.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'smart-car_7c15cb38-392a-4d45-866f-45c7dd87f9a0.svg' | file_url }}"  alt="Start moving">
+                    <h3 class="small-heading">Start moving</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        Once the tracker begins to move, the user will be notified within the app. Furthermore, the location information and a text message will be sent to the phone number or email address that the user has provided.
+                            Please note that there is a cooldown period of 5 minutes between two consecutive alerts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-notification__item">
+                <div class="device-notification__icon">
+                    <img src="{{ 'toggle-on_be2df08d-ea46-4cfa-a389-6a20f6ca8d90.svg' | file_url }}"  alt="POWER ON/OFF">
+                    <h3 class="small-heading">POWER ON/OFF</h3>
+                </div>
+                <div class="device-notification__content">                
+                    <p>
+                        When the device is fully charged and powered on, a notification will be triggered to inform the user about the device being turned on. Similarly, when the device is shut down, a message will be sent to the user to notify them of the shutdown.
+                    </p>
+                </div>
+            </div>             {% endcomment %}
+
+        </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"Device Notification",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      }
+   ],
+   "blocks":[
+      {
+         "name":"Device Info",
+         "type":"device-info",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Image"
+            },
+            {
+               "type":"textarea",
+               "id":"title",
+               "label":"Title"
+            },
+            {
+               "type":"richtext",
+               "id":"text",
+               "label":"Text"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Device Notification"
+      }
+   ]
+}
+{% endschema %}

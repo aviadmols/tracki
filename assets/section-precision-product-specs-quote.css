@@ -1,0 +1,260 @@
+.precision-specs-quote {
+  font-family: var(--precision-pdp-font);
+  background: #ffffff;
+  color: #000000;
+}
+
+.precision-specs-quote__inner {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 990px) {
+  .precision-specs-quote__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+.precision-specs-quote__specs-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 3rem;
+  color: #000000;
+}
+
+.precision-specs-quote__spec-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.precision-specs-quote__spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--precision-pdp-border-subtle);
+}
+
+.precision-specs-quote__spec-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000000;
+}
+
+.precision-specs-quote__spec-value {
+  font-weight: 700;
+  text-align: right;
+  color: #000000;
+}
+
+/* Quote column + carousel */
+.precision-specs-quote__quote-column {
+  min-width: 0;
+}
+
+.precision-specs-quote__carousel {
+  position: relative;
+  width: 100%;
+}
+
+.precision-specs-quote__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.precision-specs-quote__track {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+}
+
+.precision-specs-quote__slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.125rem;
+}
+
+.precision-specs-quote__card {
+  background: #f7f5f3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.precision-specs-quote__media {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: #ebe8e4;
+}
+
+.precision-specs-quote__media-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.precision-specs-quote__card-body {
+  padding: 2rem 2.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.precision-specs-quote__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.precision-specs-quote__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--precision-pdp-border-subtle);
+  flex-shrink: 0;
+}
+
+.precision-specs-quote__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.precision-specs-quote__author-text {
+  min-width: 0;
+}
+
+.precision-specs-quote__author-name {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  color: #000000;
+}
+
+.precision-specs-quote__author-role {
+  font-size: 0.8125rem;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0.25rem 0 0;
+  line-height: 1.35;
+}
+
+.precision-specs-quote__blockquote {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.45;
+  font-style: italic;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.precision-specs-quote__blockquote::before {
+  content: '\201C';
+}
+
+.precision-specs-quote__blockquote::after {
+  content: '\201D';
+}
+
+.precision-specs-quote__stars {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.precision-specs-quote__star {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.precision-specs-quote__star--filled {
+  font-variation-settings: 'FILL' 1;
+  color: var(--precision-pdp-primary);
+}
+
+.precision-specs-quote__star--empty {
+  font-variation-settings: 'FILL' 0;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* Controls */
+.precision-specs-quote__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.precision-specs-quote__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--precision-pdp-border-subtle);
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.precision-specs-quote__btn:hover {
+  background: #f7f5f3;
+}
+
+.precision-specs-quote__btn:active {
+  transform: scale(0.96);
+}
+
+.precision-specs-quote__btn .material-symbols-outlined {
+  font-size: 1.35rem;
+}
+
+.precision-specs-quote__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.precision-specs-quote__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.precision-specs-quote__dot.is-active {
+  background: var(--precision-pdp-primary);
+  transform: scale(1.15);
+}

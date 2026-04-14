@@ -1,0 +1,10 @@
+# Shopify CLI — חנות: trackisecurity (מ-admin.shopify.com/store/trackisecurity/...)
+# תיעוד: https://shopify.dev/docs/storefronts/themes/tools/cli/environments
+#
+# הרצה: shopify theme dev -e trackisecurity
+#        shopify theme push -e trackisecurity --unpublished
+# התחברות (CLI 3.x): shopify auth login
+# אחרי login — theme dev ישתמש ב-store מהסביבה למטה (או: shopify theme dev -s trackisecurity)
+
+[environments.trackisecurity]
+store = "trackisecurity"

@@ -1,0 +1,160 @@
+<div class="information-wrapper-section">
+
+  <div class="information-wrapper">
+    {% for block in section.blocks %}
+    <div class="box-container">
+      <div class="content-item">
+      {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+      {% endif %}
+        {% if block.settings.heading != '' %}
+          <h3>{{ block.settings.heading }}</h3>
+        {% endif %}
+        {% if block.settings.text != '' %}
+          {{ block.settings.text }}
+        {% endif %}
+        <div class="phone-section">
+          {% if block.settings.usa_heading != '' %}
+            <div class="contry-number">
+              <span class="c-code">{{ block.settings.usa_heading }}</span><span>{{ block.settings.usa_number }}</span>
+            </div>
+          {% endif %}
+          {% if block.settings.can_heading != '' %}
+            <div class="contry-number">
+              <span class="c-code">{{ block.settings.can_heading }}</span><span>{{ block.settings.can_number }}</span>
+            </div>
+          {% endif %}
+          {% if block.settings.uk_heading != '' %}
+            <div class="contry-number">
+              <span class="c-code">{{ block.settings.uk_heading }}</span><span>{{ block.settings.uk_number }}</span>
+            </div>
+          {% endif %}
+          {% if block.settings.mex_heading != '' %}
+            <div class="contry-number">
+              <span class="c-code">{{ block.settings.mex_heading }}</span><span>{{ block.settings.mex_number }}</span>
+            </div>
+          {% endif %}
+          {% if block.settings.aus_heading != '' %}
+            <div class="contry-number">
+              <span class="c-code">{{ block.settings.aus_heading }}</span><span>{{ block.settings.aus_number }}</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% if block.settings.email != '' %}
+      <div class="email-setting">
+            <a href="mailto:support@tracki.com" class="support-email">
+              {{ block.settings.email }}
+            </a>
+        </div>
+      {% endif %}
+      {% if block.settings.btn_text != '' %}
+        <div class="box-button">
+          <a href="#" id="chat-box">{{ block.settings.btn_text }}</a>
+        </div>
+      {% endif %}
+      <div class="devider"></div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+
+{% schema %}
+    {
+   "name":"Contact-Info",
+   "settings":[
+      
+   ],
+   "blocks":[
+      {
+         "name":"Image With Text",
+         "type":"image-with-text",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Image"
+            },
+            {
+               "type":"textarea",
+               "id":"heading",
+               "label":"Heading"
+            },
+            {
+               "type":"richtext",
+               "id":"text",
+               "label":"Text"
+            },
+            {
+               "type":"text",
+               "id":"usa_heading",
+               "label":"USA Heading"
+            },
+            {
+               "type":"text",
+               "id":"usa_number",
+               "label":"USA Number"
+            },
+            {
+               "type":"text",
+               "id":"can_heading",
+               "label":"CAN Heading"
+            },
+            {
+               "type":"text",
+               "id":"can_number",
+               "label":"CAN Number"
+            },
+            {
+               "type":"text",
+               "id":"uk_heading",
+               "label":"UK Heading"
+            },
+            {
+               "type":"text",
+               "id":"uk_number",
+               "label":"UK Number"
+            },
+            {
+               "type":"text",
+               "id":"mex_heading",
+               "label":"MEX Heading"
+            },
+            {
+               "type":"text",
+               "id":"mex_number",
+               "label":"MEX Number"
+            },
+            {
+               "type":"text",
+               "id":"aus_heading",
+               "label":"AUS Heading"
+            },
+            {
+               "type":"text",
+               "id":"aus_number",
+               "label":"AUS Number"
+            },
+            {
+               "type":"text",
+               "id":"email",
+               "label":"Email"
+            },
+            {
+               "type":"text",
+               "id":"btn_text",
+               "label":"Button Text"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Contact-Info"
+      }
+   ]
+}
+{% endschema %}

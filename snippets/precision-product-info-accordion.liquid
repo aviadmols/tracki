@@ -1,0 +1,105 @@
+{% comment %}
+  Amazon-style "Product information" — collapsible sections (native <details>).
+  Accepts: section, product
+{% endcomment %}
+<div class="precision-pdp-product-info">
+  <h2 class="precision-pdp-product-info__title">{{ section.settings.product_info_heading | default: 'Product information' | escape }}</h2>
+
+  <details class="precision-pdp-product-info__details">
+    <summary class="precision-pdp-product-info__summary">
+      <span class="precision-pdp-product-info__summary-text">Features &amp; Specs</span>
+      <span class="material-symbols-outlined precision-pdp-product-info__chevron" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="precision-pdp-product-info__content rte">
+      <table class="precision-pdp-product-info__table">
+        <tbody>
+          <tr><th scope="row">Additional Features</th><td>Anti-Theft, Geo-Fence, Real Time Tracking</td></tr>
+          <tr><th scope="row">Connectivity Technology</th><td>WiFi, GPS, LTE, GSM</td></tr>
+          <tr><th scope="row">Supported Application</th><td>iOS iPhone, Android, Web App, Alexa</td></tr>
+          <tr><th scope="row">Specific Uses For Product</th><td>Tracking</td></tr>
+          <tr><th scope="row">Battery Average Life</th><td>5 days</td></tr>
+          <tr><th scope="row">Compatible Devices</th><td>Smartphone, Tablet, Personal Computer</td></tr>
+          <tr><th scope="row">Battery Capacity</th><td>650 Milliamp Hours</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="precision-pdp-product-info__details">
+    <summary class="precision-pdp-product-info__summary">
+      <span class="precision-pdp-product-info__summary-text">Measurements</span>
+      <span class="material-symbols-outlined precision-pdp-product-info__chevron" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="precision-pdp-product-info__content rte">
+      <table class="precision-pdp-product-info__table">
+        <tbody>
+          <tr><th scope="row">Item Dimensions</th><td>1.81 x 1.5 x 0.6 inches</td></tr>
+          <tr><th scope="row">Item Weight</th><td>1.26 Ounces</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="precision-pdp-product-info__details">
+    <summary class="precision-pdp-product-info__summary">
+      <span class="precision-pdp-product-info__summary-text">Additional details</span>
+      <span class="material-symbols-outlined precision-pdp-product-info__chevron" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="precision-pdp-product-info__content rte">
+      <table class="precision-pdp-product-info__table">
+        <tbody>
+          <tr><th scope="row">Enclosure Material</th><td>Plastic</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="precision-pdp-product-info__details">
+    <summary class="precision-pdp-product-info__summary">
+      <span class="precision-pdp-product-info__summary-text">Item details</span>
+      <span class="material-symbols-outlined precision-pdp-product-info__chevron" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="precision-pdp-product-info__content rte">
+      <table class="precision-pdp-product-info__table">
+        <tbody>
+          <tr><th scope="row">Brand</th><td>Tracki</td></tr>
+          <tr><th scope="row">Built-In Media</th><td>Battery, Lock Clip, Magnet Mount, SIM Card, USB Cable</td></tr>
+          <tr><th scope="row">Manufacturer</th><td>Tracki</td></tr>
+          <tr><th scope="row">UPC</th><td>853995007505</td></tr>
+          <tr><th scope="row">Model Number</th><td>TRKM010A</td></tr>
+          <tr><th scope="row">Mfr Part Number</th><td>TRKM010A</td></tr>
+          <tr><th scope="row">Warranty Description</th><td>2 years</td></tr>
+          <tr><th scope="row">Best Sellers Rank</th><td>#1,689 in Electronics · #5 in GPS Trackers</td></tr>
+          <tr><th scope="row">ASIN</th><td>B07N4DHFZM</td></tr>
+          <tr>
+            <th scope="row">Customer Reviews</th>
+            <td>
+              {%- if product.metafields.reviews.rating.value != blank -%}
+                {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
+                {%- if product.metafields.reviews.rating_count != blank -%}
+                  ({{ product.metafields.reviews.rating_count }} reviews)
+                {%- endif -%}
+              {%- else -%}
+                4.2 out of 5 stars (42,821)
+              {%- endif -%}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="precision-pdp-product-info__details">
+    <summary class="precision-pdp-product-info__summary">
+      <span class="precision-pdp-product-info__summary-text">Warranty &amp; Support</span>
+      <span class="material-symbols-outlined precision-pdp-product-info__chevron" aria-hidden="true">expand_more</span>
+    </summary>
+    <div class="precision-pdp-product-info__content rte">
+      {%- if section.settings.product_info_warranty_text != blank -%}
+        <div class="precision-pdp-product-info__warranty">{{ section.settings.product_info_warranty_text }}</div>
+      {%- else -%}
+        <p>Tracki offers support for setup and subscription questions. Warranty terms are listed in your product documentation. For returns, follow our store return policy.</p>
+      {%- endif -%}
+    </div>
+  </details>
+</div>

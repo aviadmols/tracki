@@ -1,0 +1,41 @@
+{% unless template.name == 'page' and template.suffix == nil and page.handle != 'faqs' %}
+<div class="breadcrumbs-area-main">
+  <div class="page-width">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol class="breadcrumbs__list">
+
+        <li class="breadcrumbs__item">
+          <a href="/pages/new-tracki-guide">New Tracki Guide</a>
+        </li>
+        
+        {% if page.handle == 'tracki-setup-videos' %}
+          <li class="breadcrumbs__item">
+          <a href="/pages/new-help-center">› Help center</a>
+        </li>
+        {% endif %}
+        {% if page %}
+          <li class="breadcrumbs__separator">›</li>
+          <li class="breadcrumbs__item breadcrumbs__item--active">
+            {{ page.title }}
+          </li>
+        {% endif %}
+
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "New bredcrump",
+  "settings": [
+    ],
+  "presets": [
+    {
+      "name": "New bredcrump",
+      
+    }
+  ]
+}
+{% endschema %}

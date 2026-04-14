@@ -1,0 +1,162 @@
+<section id="device_lights" class="device-lights-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content divider-sec">
+        {% if section.settings.heading != ''  %}
+            <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        <div class="device-light__grid">
+            {% for block in section.blocks %}
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    {% if block.settings.image != blank %}
+                        <img src="{{ block.settings.image | img_url: 'master' }}"  alt="Device Starting">
+                    {% endif %}
+                    <div class="device-light-cntnt">
+                        {% if block.settings.heading != '' %}
+                            <h3 class="small-heading">{{ block.settings.heading }}</h3>
+                        {% endif %}
+                        {% if block.settings.sub_heading != '' %}
+                            <small class="sub-smalldesc">{{ block.settings.sub_heading }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% comment %} <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'activation-sos.svg' | file_url }}"  alt="Activate SOS mode">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Activate SOS mode</h3>
+                        <small class="sub-smalldesc">(Triple press)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-poweroff.svg' | file_url }}"  alt="Device power off">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is powering off</h3>
+                        <small class="sub-smalldesc">(Press and hold for 3 sec)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'battery-low.svg' | file_url }}"  alt="Battery low">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Battery is low</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-online.svg' | file_url }}"  alt="Device online">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is online</h3>
+                        <small class="sub-smalldesc">(Single press)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-charging.svg' | file_url }}"  alt="Device charging">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is charging</h3>
+                        <small class="sub-smalldesc">(Connect to power)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-onbut-offline.svg' | file_url }}"  alt="Device on but offline">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is on but offline</h3>
+                        <small class="sub-smalldesc">(Single press)</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="device-light__item">
+                <div class="device-light__icon">
+                    <img src="{{ 'device-charged.svg' | file_url }}"  alt="Device charged">
+                    <div class="device-light-cntnt">
+                        <h3 class="small-heading">Device is fully charged</h3>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+
+        </div>
+
+    </div>
+  </div>
+</section>
+<style>
+ 
+.tracki-pet-mini .device-lights-section {
+    background: #f3f1f0;
+    padding-bottom: 20px;
+}
+
+.tracki-pet-mini .device-lights-section .tracki-manual__content h2 {
+    color: #26282a;
+    padding-top: 20px;
+}
+
+.tracki-pet-mini .sub-smalldesc {
+    color: #26282a;
+}
+</style>
+{% schema %}
+{
+   "name":"Device Light",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      }
+   ],
+   "blocks":[
+      {
+         "name":"Device",
+         "type":"device",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"Image"
+            },
+            {
+               "type":"textarea",
+               "id":"heading",
+               "label":"Heading"
+            },
+            {
+               "type":"textarea",
+               "id":"sub_heading",
+               "label":"Sub Heading"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Device Light"
+      }
+   ]
+}
+{% endschema %}

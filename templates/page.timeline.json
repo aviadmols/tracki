@@ -1,0 +1,162 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "narrow": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "dual_scroll_zyyfeR": {
+      "type": "dual-scroll",
+      "blocks": {
+        "slide_VXChDn": {
+          "type": "slide",
+          "settings": {
+            "title": "JAN 12, 2018",
+            "heading_size": "h0",
+            "description": "<p>Company founded with a vision to redefine personal audio through design and innovation.</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "image": "",
+            "media_background_color": "#e9eaec"
+          }
+        },
+        "slide_yaFmab": {
+          "type": "slide",
+          "settings": {
+            "title": "SEP 5, 2019",
+            "heading_size": "h0",
+            "description": "<p>First-generation wireless headphones launched, featuring immersive sound and long battery life.</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "image": "",
+            "media_background_color": "#e9eaec"
+          }
+        },
+        "slide_NCK6wk": {
+          "type": "slide",
+          "settings": {
+            "title": "FEB 14, 2021",
+            "heading_size": "h0",
+            "description": "<p>Flagship noise-cancelling model introduced, setting new industry standards for clarity and comfort.</p>",
+            "text_size": "typeset2",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "image": "",
+            "media_background_color": "#e9eaec"
+          }
+        },
+        "slide_DxDNc7": {
+          "type": "slide",
+          "settings": {
+            "title": "NOV 30, 2022",
+            "heading_size": "h0",
+            "description": "<p>Company reaches one million units sold, expanding to international markets across Europe and Asia.</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "image": "",
+            "media_background_color": "#e9eaec"
+          }
+        },
+        "slide_6rqMEn": {
+          "type": "slide",
+          "settings": {
+            "title": "MAR 10, 2025",
+            "heading_size": "h0",
+            "description": "<p>Launch of sustainable headphone series made from recycled materials, emphasizing eco-conscious engineering.</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "image": "",
+            "media_background_color": "#e9eaec"
+          }
+        },
+        "slide_hcUjbm": {
+          "type": "slide",
+          "settings": {
+            "title": "OUR VISIONS",
+            "heading_size": "h0",
+            "description": "<p>Unveils next-gen AI-powered headphones with adaptive sound technology and real-time hearing personalization.</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Contact Us",
+            "button_size": "medium",
+            "button_link": "",
+            "image": "",
+            "media_background_color": "#e9eaec"
+          }
+        }
+      },
+      "block_order": [
+        "slide_VXChDn",
+        "slide_yaFmab",
+        "slide_NCK6wk",
+        "slide_DxDNc7",
+        "slide_6rqMEn",
+        "slide_hcUjbm"
+      ],
+      "name": "t:sections.dual-scroll.presets.name",
+      "settings": {
+        "heading": "MOMENTS THAT MADE US",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "enable_highlight": false,
+        "highlight_style": "marker",
+        "narrow": true,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "description_color": "#fafafa",
+        "panel_background_color": "#de6152",
+        "border_color": "#e9eaec",
+        "button_background_color": "#272c32",
+        "button_text_color": "#ffffff",
+        "highlight_color": "#ffb503",
+        "transition_type": "scroll",
+        "media_rotation": 0,
+        "media_scale": 84,
+        "enable_media_shadow": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "dual_scroll_zyyfeR"
+  ]
+}

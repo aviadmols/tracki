@@ -1,0 +1,223 @@
+<section class="amazon-review">
+    <h2>{{ section.settings.heading | escape }}</h2>
+    <div class="swiper mySwiper reviews-container">
+        <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+            <div class="swiper-slide">
+                <div class="reviews-box">
+                    <div class="title-stars">
+                        <h3>{{ block.settings.name | escape }}</h3>
+                        {%- assign rating = block.settings.review | plus: 0 -%}
+                        {%- assign full_stars = rating | floor -%}
+                        {%- assign decimal_part = rating | minus: full_stars -%}
+                        {%- assign has_half_star = false -%}
+
+                        {%- if decimal_part >= 0.5 -%}
+                        {%- assign has_half_star = true -%}
+                        {%- endif -%}
+
+                        {%- assign half_star_position = full_stars | plus: 1 -%}
+                        {%- assign total_stars = 5 -%}
+
+                        <div class="stars" role="img"
+                            aria-label="Rating: {{ rating }} out of 5">
+                            {%- for i in (1..total_stars) -%}
+                            {%- if i <= full_stars -%}
+                            <span class="star filled">★</span>
+                            {%- elsif has_half_star and i == half_star_position
+                            -%}
+                            <span class="star half">★</span>
+                            {%- else -%}
+                            <span class="star empty">★</span>
+                            {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+
+                        {%- if section.settings.show_text -%}
+                        <p class="rating-text">{{ rating }} / 5</p>
+                        {%- endif -%}
+
+                    </div>
+                    <div class="caption-content">
+                        <h5>{{ block.settings.title | escape }}</h5>
+                        <p>{{ block.settings.text }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="review-controls">
+
+        <div class="review-progress">
+
+        </div>
+        <div class="review-nav-group">
+            <button class="review-btn prev-btn" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    viewBox="0 0 32 32" fill="none">
+                    <path d="M27 16H5" stroke="#F3F1F0" stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M14 7L5 16L14 25" stroke="#F3F1F0" stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="review-btn next-btn" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    viewBox="0 0 32 32" fill="none">
+                    <path d="M5 16H27" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 7L27 16L18 25" stroke="white" stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+        const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {{ section.settings.autoplay | json }} ? {
+        delay: 3000,
+        disableOnInteraction: false
+    } : false,
+    speed: 400,
+    grabCursor: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        640: { slidesPerView: 1, spaceBetween: 30 },
+        768: { slidesPerView: 2, spaceBetween: 40 },
+        1024: { slidesPerView: 5, spaceBetween: 50 },
+    },
+    preventClicks: false,
+    preventClicksPropagation: false,
+    touchStartPreventDefault: false,
+});
+
+// ----------------------
+// Autoplay hover logic
+// ----------------------
+const swiperEl = document.querySelector(".mySwiper");
+
+if (swiper.autoplay) {
+    swiperEl.addEventListener("mouseenter", () => {
+        swiper.autoplay.stop();
+    });
+
+    swiperEl.addEventListener("mouseleave", () => {
+        swiper.autoplay.start();
+    });
+}
+
+// ----------------------
+// Navigation buttons
+// ----------------------
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+let firstMove = false;
+prevBtn.disabled = true;
+
+prevBtn.addEventListener("click", () => swiper.slidePrev());
+
+nextBtn.addEventListener("click", () => {
+    swiper.slideNext();
+
+    if (!firstMove) {
+        firstMove = true;
+        prevBtn.disabled = false;
+    }
+});
+
+swiper.on("slideChange", () => {
+    if (!firstMove) {
+        prevBtn.disabled = true;
+    } else {
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
+    }
+});
+
+// ----------------------
+// ✅ SAME Progress Bar Logic As Your Second Script
+// ----------------------
+const progressWrapper = document.querySelector(".review-progress");
+const slideCount = swiper.slides.length;
+
+for (let i = 0; i < slideCount; i++) {
+    const segment = document.createElement("div");
+    segment.classList.add("progress-segment");
+    if (i === 0) segment.classList.add("active");
+    progressWrapper.appendChild(segment);
+}
+
+const segments = document.querySelectorAll(".progress-segment");
+
+swiper.on("slideChange", () => {
+    const realIndex = swiper.realIndex;
+    segments.forEach((seg, i) => {
+        seg.classList.toggle("active", i === realIndex);
+    });
+});
+
+</script>
+
+
+{% schema %}
+{
+  "name": "Amazon Reviews Swiper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "40,000+ positive reviews on Amazon"
+    },
+    {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Enable Autoplay Card",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "loop",
+        "label": "Rewind > Enable Loop",
+        "default": false
+        },
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Reviewer Name" },
+        { "type": "text", "id": "review", "label": "Reviewer Review" },
+        { "type": "text", "id": "title", "label": "Review Title" },
+        { "type": "textarea", "id": "text", "label": "Review Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Amazon Reviews Swiper"
+    }
+  ]
+}
+{% endschema %}

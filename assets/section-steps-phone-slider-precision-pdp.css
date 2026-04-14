@@ -1,0 +1,132 @@
+/**
+ * Steps Phone Slider — עיצוב Precision PDP בלבד.
+ * נטען רק מ־steps-phone-slider.liquid כש־template.suffix == 'precision-pdp'.
+ * כל הסלקטורים תחת .steps-slider--precision-pdp כדי שלא ישפיעו על דפים אחרים.
+ * פונטים מוקטנים ~20% (×0.8) מהגדרות custom-style הגלובליות.
+ */
+
+.steps-slider.steps-slider--precision-pdp {
+  font-family: var(--precision-pdp-font, 'Plus Jakarta Sans', system-ui, sans-serif);
+  background-color: #f7f7f5;
+  color: #000000;
+  background-attachment: scroll;
+  height: auto;
+  min-height: 720px;
+}
+
+.steps-slider.steps-slider--precision-pdp .steps-overlay {
+  display: block !important;
+  background: rgba(255, 255, 255, 0.88);
+  z-index: 1;
+}
+
+.steps-slider.steps-slider--precision-pdp .steps-inner {
+  z-index: 2;
+}
+
+/* כותרת — 80% מ־clamp הקודם */
+.steps-slider.steps-slider--precision-pdp h2.steps-title {
+  color: #000000;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+/* מספרי שלב — 300px→240px, במסכים קטנים 200px→160px */
+.steps-slider.steps-slider--precision-pdp .step-big {
+  color: var(--precision-pdp-primary, #1eea65);
+  text-shadow: none;
+  font-weight: 800;
+  font-size: 240px;
+  line-height: 1;
+}
+
+.steps-slider.steps-slider--precision-pdp .step-small {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.steps-slider.steps-slider--precision-pdp .step-heading {
+  color: #000000;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+}
+
+/* טקסט צד — 18px→14.4px */
+.steps-slider.steps-slider--precision-pdp .step-info p,
+.steps-slider.steps-slider--precision-pdp .step-info ol li {
+  color: rgba(0, 0, 0, 0.82);
+  font-weight: 500;
+  font-size: 14.4px;
+  line-height: 1.7;
+}
+
+.steps-slider.steps-slider--precision-pdp .step-info p strong {
+  color: #000000;
+  font-weight: 700;
+}
+
+.steps-slider.steps-slider--precision-pdp .step-info a {
+  color: #0d7a3d;
+}
+
+.steps-slider.steps-slider--precision-pdp .step-icon img {
+  width: 25.6px;
+  height: auto;
+}
+
+/* נקודות ניווט — מעט קטנות יותר */
+.steps-slider.steps-slider--precision-pdp .slider-dots span {
+  background: rgba(0, 0, 0, 0.12);
+  width: 24px;
+  height: 2.4px;
+}
+
+.steps-slider.steps-slider--precision-pdp .slider-dots span.active {
+  background: var(--precision-pdp-primary, #1eea65);
+}
+
+.steps-slider.steps-slider--precision-pdp .phone-frame {
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.06));
+}
+
+@media (max-width: 1030px) {
+  .steps-slider.steps-slider--precision-pdp .step-big {
+    font-size: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-slider.steps-slider--precision-pdp {
+    min-height: 0;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .steps-slider.steps-slider--precision-pdp h2.steps-title {
+    padding: 0 1rem;
+    font-size: clamp(1.25rem, 4.5vw, 1.6rem);
+  }
+
+  .steps-slider.steps-slider--precision-pdp .step-big {
+    font-size: 160px;
+  }
+
+  .steps-slider.steps-slider--precision-pdp .step-small {
+    font-size: 28.8px;
+  }
+
+  .steps-slider.steps-slider--precision-pdp .step-info p,
+  .steps-slider.steps-slider--precision-pdp .step-info ol li {
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14.4px;
+  }
+
+  .steps-slider.steps-slider--precision-pdp .step-info ol li::before {
+    font-size: 14.4px;
+  }
+}

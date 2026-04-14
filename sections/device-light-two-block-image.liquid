@@ -1,0 +1,120 @@
+<div class="two-image-section" id="device_lights_two">
+
+  {% if section.settings.heading != blank %}
+    <h2 class="section-heading">
+      {{ section.settings.heading }}
+    </h2>
+  {% endif %}
+
+  <div class="custom-container divider-sec">
+    <div class="two-image-wrapper">
+      
+      <div class="image-item">
+        <img 
+          src="{{ section.settings.image_one | image_url: width: 1200 }}" 
+          alt="">
+      </div>
+
+      <div class="image-item">
+        <img 
+          src="{{ section.settings.image_two | image_url: width: 1200 }}" 
+          alt="">
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+.two-image-section {
+  background: #f3f1f0;
+  padding: 80px 0;
+  width: 100%;
+  {% comment %} margin-bottom: 30px; {% endcomment %}
+   padding-top: 20px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #25282A;
+  margin-bottom: 50px;
+}
+
+/* Centered content width like screenshot */
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.two-image-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.image-item {
+  overflow: hidden;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .two-image-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Device Light Two Block",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Your Section Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_one",
+      "label": "First Image"
+    },
+    {
+      "type": "text",
+      "id": "image_one_alt",
+      "label": "First Image Alt Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_two",
+      "label": "Second Image"
+    },
+    {
+      "type": "text",
+      "id": "image_two_alt",
+      "label": "Second Image Alt Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Device Light Two Block"
+    }
+  ]
+}
+{% endschema %}

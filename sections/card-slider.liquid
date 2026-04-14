@@ -1,0 +1,543 @@
+{% comment %}
+  Tracki Solutions Carousel Section
+  Fully converted to Shopify Liquid with customizable blocks
+  Features:
+  - Editable section title
+  - Unlimited "Card Slide" blocks added via theme editor
+  - Each card: background image, icon (optional custom SVG), title, rich text description, 3 small bottom images
+  - Responsive Owl Carousel with expand/collapse functionality
+  - CSS: assets\custom-styles.css  linkedin In theme.liquid
+{% endcomment %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<style>
+  @charset "utf-8";
+  {% comment %} @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); {% endcomment %}
+
+  * { margin: 0; padding: 0; }
+  {% comment %} body { font-family: "Roboto", sans-serif; font-size: 16px; } {% endcomment %}
+  .clear { clear: both; }
+  img { max-width: 100%; border: 0; }
+  ul, ol { list-style: none; }
+  a { text-decoration: none; color: inherit; outline: none; transition: all 1.4s ease-in-out; }
+  a:hover { color: #e73700; }
+  h2 { margin-bottom: 48px; padding-bottom: 16px; font-size: 20px; line-height: 28px; font-weight: 700; position: relative; text-transform: capitalize; }
+  h3 { margin: 0 0 10px; font-size: 28px; line-height: 36px; }
+  button { outline: none !important; }
+
+  .line-title { position: relative; width: 100%; }
+  {% if section.settings.enable_line_title_style %}
+  .line-title::before, .line-title::after { content: ""; position: absolute; bottom: 0; left: 0; height: 4px; border-radius: 2px; }
+  .line-title::before { width: 100%; background: #f2f2f2; }
+  .line-title::after { width: 32px; background: #e73700; }
+  {% endif %}
+
+  .custom-carousel .item {
+  transition: transform 0.35s ease;
+}
+
+.custom-carousel .item.active {
+  z-index: 10;
+}
+
+
+.game-section .item {
+  transform-origin: left center;
+  transition:
+    width 2.1s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 2.1s ease;
+}
+
+</style>
+{% comment %} {{ section.settings.cart_section_layout }} {% endcomment %}
+<section class="game-section">
+  <h2 class="line-title line-title--{{ section.settings.title_position }}">{{ section.settings.section_title }}</h2>
+
+  <div class="owl-carousel custom-carousel owl-theme">
+    {% for block in section.blocks %}
+      {% assign is_active = false %}
+      {% if section.settings.enable_default_active %}
+        {% if block.settings.set_as_default_active %}
+          {% assign is_active = true %}
+        {% elsif forloop.first and section.blocks.size > 0 %}
+          {% comment %} If no card is marked as default active, use first card as fallback {% endcomment %}
+          {% assign has_default = false %}
+          {% for b in section.blocks %}
+            {% if b.settings.set_as_default_active %}
+              {% assign has_default = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% unless has_default %}
+            {% assign is_active = true %}
+          {% endunless %}
+        {% endif %}
+      {% endif %}
+      <div class="item {% if is_active %}active{% endif %}"
+           style="background-image: url('{{ block.settings.background_image | img_url: '2048x' }}');">
+        <div class="item-title">
+         <div class="item-icon">
+            {% if block.settings.card_icon %}
+                <img src="{{ block.settings.card_icon | img_url: '60x60' }}" alt="{{ block.settings.card_title }} icon" style="width:100%; height:100%; object-fit:contain;">
+            {% else %}
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-4.8" y="-4.8" width="69.6" height="69.6">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.4px);clip-path:url(#bgblur_clip);height:100%;width:100%"></div>
+                </foreignObject>
+                <circle cx="30" cy="30" r="30" fill="white" fill-opacity="0.2"/>
+                <path d="M42.6824 23.2189H40.7537C40.2798 23.2189 39.8967 23.6021 39.8967 24.0751V27.2727H38.845V16.725L36.9355 16.0364V20.249C36.2373 19.2882 35.1115 18.6572 33.833 18.6572H26.166C24.8866 18.6572 23.7617 19.289 23.0626 20.249V16.0364L21.1548 16.725V27.2736H20.1032V24.0759C20.1032 23.6029 19.7201 23.2198 19.2462 23.2198H17.3175C16.8444 23.2198 16.4604 23.6029 16.4604 24.0759V27.9605C16.4604 28.4335 16.8444 28.8175 17.3175 28.8175H18.2818H19.2453H21.1548V31.8912C20.4139 32.3599 19.5953 33.1165 19.5953 34.1804V38.0719H19.2628C18.843 38.0719 18.5026 38.4131 18.5026 38.832V41.1124C18.5026 41.5322 18.843 41.8726 19.2628 41.8726H20.2612V43.2018C20.2612 43.6224 20.6015 43.9619 21.0213 43.9619H24.5847C25.0044 43.9619 25.3448 43.6224 25.3448 43.2018V41.8726H34.6551V43.2018C34.6551 43.6224 34.9954 43.9619 35.4152 43.9619H38.9786C39.3983 43.9619 39.7387 43.6224 39.7387 43.2018V41.8726H40.7371C41.1569 41.8726 41.4972 41.5322 41.4972 41.1124V38.832C41.4972 38.4131 41.1569 38.0719 40.7371 38.0719H40.4046C40.4046 36.8483 40.4046 35.2495 40.4046 34.1804C40.4046 33.1165 39.586 32.3599 38.845 31.8912V28.8175H40.7546H41.7181H42.6824C43.1554 28.8175 43.5394 28.4335 43.5394 27.9605V24.0759C43.5403 23.6029 43.1554 23.2189 42.6824 23.2189ZM24.4328 38.0727H21.1548V35.7173H24.4328V38.0727ZM23.979 27.2736V23.4729H36.0218V27.2727H23.979V27.2736ZM33.5886 33.8304H26.4104V32.9114H33.5886V33.8304ZM26.4113 34.9702H33.5895V36.0149H26.4113V34.9702ZM26.4113 38.0727V37.1555H33.5895V38.0727H26.4113ZM38.845 38.0727H35.5671V35.7173H38.845V38.0727Z" fill="white"/>
+                <defs><clipPath id="bgblur_clip"><circle cx="30" cy="30" r="30"/></clipPath></defs>
+                </svg>
+            {% endif %}
+            </div>
+          <h3>{{ block.settings.card_title }}</h3>
+        </div>
+
+        <div class="item-desc">
+          {{ block.settings.card_description }}
+          {% if block.settings.small_image_1 or block.settings.small_image_2 or block.settings.small_image_3 %}
+            <div class="cards-inner-images">
+              <div class="cards-inner-left">
+                {% if block.settings.small_image_1 %}
+                  <div class="image-box-container left-image-box">
+                    <img src="{{ block.settings.small_image_1 | img_url: '600x' }}" alt="{{ block.settings.card_title }}">
+                  </div>
+                {% endif %}
+                {% if block.settings.small_image_2 %}
+                  <div class="image-box-container right-image-box">
+                    <img src="{{ block.settings.small_image_2 | img_url: '600x' }}" alt="{{ block.settings.card_title }}">
+                  </div>
+                {% endif %}
+              </div>
+              <div class="cards-inner-right">
+                {% if block.settings.small_image_3 %}
+                  <div class="image-box-container">
+                    <img src="{{ block.settings.small_image_3 | img_url: '600x' }}" alt="{{ block.settings.card_title }}">
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        <button class="item-more-btn">More...</button>
+        <button class="item-back-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+            <g clip-path="url(#clip_back)">
+              <path d="M12.9375 5.75V10.0625H17.25" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.6875 4.3125L12.9375 10.0625" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.75 12.9375H10.0625V17.25" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4.3125 18.6875L10.0625 12.9375" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs><clipPath id="clip_back"><rect width="23" height="23" fill="white"/></clipPath></defs>
+          </svg>
+        </button>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+
+
+{% comment %} 19-01-2026 Backup {% endcomment %}
+{% comment %} <script>
+  $(document).ready(function () {
+    var owl;
+
+    function addNavIcons() {
+      var filterId = 'filter_' + Date.now();
+      $(".custom-carousel .owl-prev").html('<svg class="icon icon-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M15 8H3m4-5L2 8l5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+      $(".custom-carousel .owl-next").html('<svg class="icon icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M1 8h12M9 3l5 5-5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    }
+
+    function updateNavButtons() {
+      if (!owl || !owl.length) return;
+      var $items = $('.custom-carousel .item');
+      var totalItems = $items.length;
+      var currentIndex = $items.index($items.filter('.active, .center').first());
+      if (currentIndex < 0) currentIndex = 0;
+
+      var $prev = $(".custom-carousel .owl-prev");
+      var $next = $(".custom-carousel .owl-next");
+
+      $prev.toggleClass('disabled', currentIndex === 0);
+      $next.toggleClass('disabled', currentIndex >= totalItems - 1);
+    }
+
+    function initCarousel() {
+      var width = $(window).width();
+      if (width <= 480) {
+        if (owl) { owl.trigger('destroy.owl.carousel'); owl = null; }
+        $(".custom-carousel").removeClass('owl-carousel owl-loaded owl-theme');
+      } else {
+        if (!owl) {
+          owl = $(".custom-carousel").owlCarousel({
+            autoWidth: true,
+            loop: false,
+            // Removed center: true
+            margin: 30,
+            nav: true,
+            dots: false,
+            navText: ['', ''],
+            startPosition: 0, // Explicitly start at first item
+            onInitialized: function() { 
+              addNavIcons(); 
+              updateNavButtons(); 
+            },
+            onChanged: updateNavButtons
+          });
+          owl.on('changed.owl.carousel', function() { setTimeout(updateNavButtons, 50); });
+        }
+      }
+    }
+
+    initCarousel();
+    $(window).on('resize', initCarousel);
+
+    $(".item-more-btn").click(function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $item = $(this).closest(".item");
+      var $carousel = $(".custom-carousel");
+
+      $(".custom-carousel .item").removeClass("active");
+
+      // Force reflow for instant animation
+      void $item[0].offsetWidth;
+
+      $item.addClass("active");
+      $carousel.addClass("popup-open");
+    });
+
+    $(".item-back-btn").click(function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $carousel = $(".custom-carousel");
+
+      $(this).closest(".item").removeClass("active");
+
+      // Restore carousel
+      $carousel.removeClass("popup-open");
+    });
+
+
+    $(document).on('click', '.custom-carousel .owl-prev, .custom-carousel .owl-next', function() {
+      setTimeout(updateNavButtons, 150);
+    });
+  });
+</script> {% endcomment %}
+
+
+
+
+<script>
+$(document).ready(function () {
+
+  var $carousel = $(".custom-carousel");
+  var owl;
+
+  function addNavIcons() {
+    $(".custom-carousel .owl-prev").html(
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>'
+    );
+    $(".custom-carousel .owl-next").html(
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'
+    );
+  }
+
+  function updateNavState() {
+    if (!owl) return;
+    // Owl already adds .disabled — we just ensure visual consistency
+    $carousel.find('.owl-prev, .owl-next').each(function() {
+      var $btn = $(this);
+      if ($btn.hasClass('disabled')) {
+        $btn.css({ opacity: 0.4, cursor: 'not-allowed' });
+      } else {
+        $btn.css({ opacity: 1, cursor: 'pointer' });
+      }
+    });
+  }
+
+  function collapseAll() {
+    $carousel.find('.item.active').removeClass('active');
+    $carousel.removeClass('popup-open');
+    $carousel.find('.owl-nav').css('pointer-events', 'auto');
+  }
+
+  function initCarousel() {
+    var width = $(window).width();
+    if (width <= 989) {
+      if (owl) {
+        owl.trigger('destroy.owl.carousel');
+        owl = null;
+      }
+      $carousel.removeClass('owl-carousel owl-loaded owl-theme');
+      return;
+    }
+
+    if (owl) {
+      owl.trigger('destroy.owl.carousel');
+    }
+
+    owl = $carousel.owlCarousel({
+      autoWidth: true,
+      loop: true,
+      center: false,
+      margin: 30,
+      nav: true,
+      dots: false,
+      navText: ['', ''],
+      slideBy: 1,
+      startPosition: 0,
+      mouseDrag: true,      // we'll control it dynamically
+      touchDrag: true,
+               // delay between scrolls (0 = continuous)
+   
+      onInitialized: function () {
+        addNavIcons();
+        updateNavState();
+      },
+      onTranslated: updateNavState,
+      onResized: updateNavState,
+      onDrag: function() {
+        // Optional: collapse when user starts dragging
+        collapseAll();
+      }
+    });
+  }
+
+  initCarousel();
+  $(window).on('resize', initCarousel);
+
+  // ────────────────────────────────────────────────
+  // More / Back logic — allow nav even when expanded
+  // ────────────────────────────────────────────────
+  $(".item-more-btn").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var $item = $(this).closest(".item");
+
+    // Collapse others + this one if already open
+    collapseAll();
+
+    // Open this one
+    $item.addClass("active");
+    $carousel.addClass("popup-open");
+
+    // Optional: disable drag while reading expanded content
+    owl.options.mouseDrag = false;
+    owl.options.touchDrag  = false;
+    owl.refresh();   // important after option change
+
+    // But nav still clickable
+    $carousel.find('.owl-nav').css('pointer-events', 'auto');
+  });
+
+  $(".item-back-btn").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    collapseAll();
+
+    // Re-enable drag
+    owl.options.mouseDrag = true;
+    owl.options.touchDrag  = true;
+    owl.refresh();
+
+    setTimeout(updateNavState, 40);
+  });
+
+  // When user clicks prev/next → force collapse first
+  $carousel.on('click', '.owl-prev, .owl-next', function(e) {
+    if ($(this).hasClass('disabled')) return;
+
+    // Collapse expanded card before slide happens
+    collapseAll();
+
+    // Re-enable drag (in case it was off)
+    owl.options.mouseDrag = true;
+    owl.options.touchDrag  = true;
+    owl.refresh();
+  });
+
+  // After any slide completes → make sure nav looks correct
+  owl.on('translated.owl.carousel', function() {
+    setTimeout(updateNavState, 40);
+  });
+});
+</script>
+
+
+
+{% style %}
+.game-section .owl-theme .owl-nav [class*="owl-"].disabled {
+  background: transparent !important;
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.game-section .owl-theme .owl-nav [class*="owl-"].disabled svg {
+  stroke: #aaa;           /* or your disabled color */
+}
+
+.game-section .owl-nav {
+  pointer-events: auto !important;   /* always clickable */
+}
+
+.game-section .owl-theme .owl-nav [class*="owl-"] {
+  pointer-events: auto;
+}
+
+.game-section .owl-theme .owl-nav [class*="owl-"].disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none !important;
+}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Card Carousel",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Tracki solutions for what matters most"
+    },
+    {
+        "type": "select",
+        "id": "title_position",
+        "label": "Title Position",
+        "default": "center",
+        "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+        ]
+    },
+    {
+        "type": "select",
+        "id": "cart_section_layout",
+        "label": "Layout",
+        "default": "page-width",
+        "options": [
+            { "value": "page-width", "label": "Container" },
+            { "value": "full-width", "label": "Full" }
+        ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_default_active",
+      "label": "Enable Default Active Card",
+      "default": true,
+      "info": "When enabled, a card will be active by default. You can specify which card in each block's settings."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_line_title_style",
+      "label": "Enable Line Title Style",
+      "default": true,
+      "info": "When enabled, displays decorative lines (before and after) under the section title."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card_slide",
+      "name": "Card Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image",
+          "info": "Recommended size: 1200x800px or larger"
+        },
+        {
+          "type": "checkbox",
+          "id": "set_as_default_active",
+          "label": "Set as Default Active Card",
+          "default": false,
+          "info": "Check this to make this card active by default. If multiple cards are checked, the first one will be used."
+        },
+        {
+          "type": "image_picker",
+          "id": "card_icon",
+          "label": "Card Icon (optional)",
+          "info": "Recommended: 60x60px transparent PNG or SVG. Leave empty to use default icon."
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Fleet and Logistics tracking"
+        },
+        {
+          "type": "richtext",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "<p>Tracki GPS Pro is a professional-grade tracking solution designed for businesses managing fleets, containers, packages, and high-value assets...</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "small_image_1",
+          "label": "Bottom Image 1 (Left)"
+        },
+        {
+          "type": "image_picker",
+          "id": "small_image_2",
+          "label": "Bottom Image 2 (Right of Left)"
+        },
+        {
+          "type": "image_picker",
+          "id": "small_image_3",
+          "label": "Bottom Image 3 (Right side)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Carousel",
+      "blocks": [
+        {
+          "type": "card_slide",
+          "settings": {
+            "card_title": "Fleet and Logistics tracking",
+            "set_as_default_active": true
+          }
+        },
+        {
+          "type": "card_slide",
+          "settings": {
+            "card_title": "Vehicles and Cars"
+          }
+        },
+        {
+          "type": "card_slide",
+          "settings": {
+            "card_title": "Loved ones"
+          }
+        },
+        {
+          "type": "card_slide",
+          "settings": {
+            "card_title": "Pets"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,44 @@
+<section id="place_device" class="place-device-section">
+  <div class="page-width page-width--smaller">
+    <!-- CONTENT AREA -->
+    <div class="tracki-manual__content">
+      {% if section.settings.heading != '' %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.device_image1 != '' %}
+        <img src="{{ section.settings.device_image1 | img_url: 'master' }}" alt="Device place1" loading="lazy" />
+      {% endif %}
+      {% if section.settings.device_image2 %}
+        <img src="{{ section.settings.device_image2 | img_url: 'master' }}" alt="Device place2" loading="lazy" />
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name":"Place Device",
+   "settings":[
+      {
+         "type":"textarea",
+         "id":"heading",
+         "label":"Heading"
+      },
+      {
+         "type":"image_picker",
+         "id":"device_image1",
+         "label":"Device Image1"
+      },
+      {
+         "type":"image_picker",
+         "id":"device_image2",
+         "label":"Device Image2"
+      }
+   ],
+   "presets":[
+      {
+         "name":"Place Device"
+      }
+   ]
+}
+{% endschema %}

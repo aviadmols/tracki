@@ -1,0 +1,399 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+{{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
+{{ 'section-precision-product-specs-quote.css' | asset_url | stylesheet_tag }}
+
+{%- assign quote_slides = section.blocks | where: 'type', 'quote_slide' -%}
+
+<div class="precision-specs-quote section-{{ section.id }}-padding">
+  <div class="precision-specs-quote__inner page-width">
+    <div class="precision-specs-quote__specs">
+      {%- if section.settings.specs_heading != blank -%}
+        <h2 class="precision-specs-quote__specs-heading">{{ section.settings.specs_heading | escape }}</h2>
+      {%- endif -%}
+      <div class="precision-specs-quote__spec-rows">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'spec_row' -%}
+            <div class="precision-specs-quote__spec-row" {{ block.shopify_attributes }}>
+              <span class="precision-specs-quote__spec-label">{{ block.settings.label | escape }}</span>
+              <span class="precision-specs-quote__spec-value">{{ block.settings.value | escape }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="precision-specs-quote__quote-column">
+      {%- if quote_slides.size > 0 -%}
+        <div
+          class="precision-specs-quote__carousel"
+          data-prec-specs-quote
+          id="precision-specs-quote-{{ section.id }}"
+        >
+          <div class="precision-specs-quote__viewport">
+            <div class="precision-specs-quote__track" data-track>
+              {%- for block in quote_slides -%}
+                <div
+                  class="precision-specs-quote__slide"
+                  data-slide
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ quote_slides.size }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <article class="precision-specs-quote__card">
+                    {%- if block.settings.top_image != blank -%}
+                      {%- assign slide_top_alt = block.settings.top_image.alt | default: block.settings.author_name | default: 'Testimonial' -%}
+                      <div class="precision-specs-quote__media">
+                        {{
+                          block.settings.top_image
+                          | image_url: width: 1200
+                          | image_tag:
+                            loading: 'lazy',
+                            sizes: '(min-width: 990px) 40vw, 100vw',
+                            widths: '400, 600, 800, 1000, 1200',
+                            class: 'precision-specs-quote__media-img',
+                            alt: slide_top_alt
+                        }}
+                      </div>
+                    {%- endif -%}
+                    <div class="precision-specs-quote__card-body">
+                      <div class="precision-specs-quote__author">
+                        {%- if block.settings.author_image != blank -%}
+                          {%- assign author_alt = block.settings.author_name | default: 'Author' -%}
+                          <div class="precision-specs-quote__avatar">
+                            {{ block.settings.author_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: author_alt }}
+                          </div>
+                        {%- endif -%}
+                        <div class="precision-specs-quote__author-text">
+                          {%- if block.settings.author_name != blank -%}
+                            <p class="precision-specs-quote__author-name">{{ block.settings.author_name | escape }}</p>
+                          {%- endif -%}
+                          {%- if block.settings.author_role != blank -%}
+                            <p class="precision-specs-quote__author-role">{{ block.settings.author_role | escape }}</p>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                      {%- if block.settings.quote_text != blank -%}
+                        <blockquote class="precision-specs-quote__blockquote">{{ block.settings.quote_text | escape }}</blockquote>
+                      {%- endif -%}
+                      <div class="precision-specs-quote__stars" aria-hidden="true">
+                        {%- assign stars = block.settings.star_rating | times: 1 -%}
+                        {%- for i in (1..5) -%}
+                          <span
+                            class="material-symbols-outlined precision-specs-quote__star{% if i <= stars %} precision-specs-quote__star--filled{% else %} precision-specs-quote__star--empty{% endif %}"
+                          >
+                            star
+                          </span>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          {%- if quote_slides.size > 1 -%}
+            <div class="precision-specs-quote__controls">
+              <button
+                type="button"
+                class="precision-specs-quote__btn precision-specs-quote__btn--prev"
+                data-prev
+                aria-controls="precision-specs-quote-{{ section.id }}"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+              >
+                <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+              </button>
+              <div
+                class="precision-specs-quote__dots"
+                data-dots
+                role="tablist"
+                aria-label="{{ section.settings.carousel_dots_label | escape }}"
+              >
+                {%- for block in quote_slides -%}
+                  <button
+                    type="button"
+                    class="precision-specs-quote__dot{% if forloop.first %} is-active{% endif %}"
+                    data-dot
+                    data-index="{{ forloop.index0 }}"
+                    aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ quote_slides.size }}"
+                    aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                  ></button>
+                {%- endfor -%}
+              </div>
+              <button
+                type="button"
+                class="precision-specs-quote__btn precision-specs-quote__btn--next"
+                data-next
+                aria-controls="precision-specs-quote-{{ section.id }}"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+              >
+                <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+              </button>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- comment -%} Fallback: הגדרות סקשן (תבניות ישנות) {%- endcomment -%}
+        <article class="precision-specs-quote__card">
+          {%- if section.settings.top_image != blank -%}
+            {%- assign fb_top_alt = section.settings.top_image.alt | default: section.settings.author_name | default: 'Testimonial' -%}
+            <div class="precision-specs-quote__media">
+              {{
+                section.settings.top_image
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: '(min-width: 990px) 40vw, 100vw',
+                  widths: '400, 600, 800, 1000, 1200',
+                  class: 'precision-specs-quote__media-img',
+                  alt: fb_top_alt
+              }}
+            </div>
+          {%- endif -%}
+          <div class="precision-specs-quote__card-body">
+            <div class="precision-specs-quote__author">
+              {%- if section.settings.author_image != blank -%}
+                {%- assign author_alt = section.settings.author_name | default: 'Author' -%}
+                <div class="precision-specs-quote__avatar">
+                  {{ section.settings.author_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: author_alt }}
+                </div>
+              {%- endif -%}
+              <div class="precision-specs-quote__author-text">
+                {%- if section.settings.author_name != blank -%}
+                  <p class="precision-specs-quote__author-name">{{ section.settings.author_name | escape }}</p>
+                {%- endif -%}
+                {%- if section.settings.author_role != blank -%}
+                  <p class="precision-specs-quote__author-role">{{ section.settings.author_role | escape }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+            {%- if section.settings.quote_text != blank -%}
+              <blockquote class="precision-specs-quote__blockquote">{{ section.settings.quote_text | escape }}</blockquote>
+            {%- endif -%}
+            <div class="precision-specs-quote__stars" aria-hidden="true">
+              {%- assign stars = section.settings.star_rating | times: 1 -%}
+              {%- for i in (1..5) -%}
+                <span
+                  class="material-symbols-outlined precision-specs-quote__star{% if i <= stars %} precision-specs-quote__star--filled{% else %} precision-specs-quote__star--empty{% endif %}"
+                >
+                  star
+                </span>
+              {%- endfor -%}
+            </div>
+          </div>
+        </article>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'section-precision-product-specs-quote.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background: #ffffff;
+    color: #000000;
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Precision specs quote",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "spec_row",
+      "name": "Specification row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "default": "Dimensions",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "default": "1.75 x 1.5 x 0.55 in",
+          "label": "Value"
+        }
+      ]
+    },
+    {
+      "type": "quote_slide",
+      "name": "Quote slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "top_image",
+          "label": "Image above card"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Portrait (avatar)"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "default": "Marcus Thorne",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "author_role",
+          "default": "Lead Engineer, TechFlow",
+          "label": "Title / role"
+        },
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "default": "The level of precision in a device this small is unprecedented. Tracki Pro has set a new benchmark for reliable asset management.",
+          "label": "Quote"
+        },
+        {
+          "type": "range",
+          "id": "star_rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Star rating"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "specs_heading",
+      "default": "Technical Specs.",
+      "label": "Specifications heading"
+    },
+    {
+      "type": "header",
+      "content": "Fallback quote (if no Quote slide blocks)"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_image",
+      "label": "Image above card"
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Portrait image"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "default": "Marcus Thorne",
+      "label": "Name"
+    },
+    {
+      "type": "text",
+      "id": "author_role",
+      "default": "Lead Engineer, TechFlow",
+      "label": "Role"
+    },
+    {
+      "type": "textarea",
+      "id": "quote_text",
+      "default": "The level of precision in a device this small is unprecedented. Tracki Pro has set a new benchmark for reliable asset management.",
+      "label": "Quote text"
+    },
+    {
+      "type": "range",
+      "id": "star_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5,
+      "label": "Star rating"
+    },
+    {
+      "type": "text",
+      "id": "carousel_dots_label",
+      "label": "Carousel dots (accessibility)",
+      "default": "Testimonials",
+      "info": "Screen readers only"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Precision specs quote",
+      "blocks": [
+        {
+          "type": "spec_row",
+          "settings": {
+            "label": "Dimensions",
+            "value": "1.75 x 1.5 x 0.55 in"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "label": "Weight",
+            "value": "1.26 Ounces"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "label": "Network",
+            "value": "4G LTE / 3G / 2G"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "label": "Update Frequency",
+            "value": "Every 15 Seconds"
+          }
+        },
+        {
+          "type": "quote_slide",
+          "settings": {
+            "author_name": "Marcus Thorne",
+            "author_role": "Lead Engineer, TechFlow",
+            "quote_text": "The level of precision in a device this small is unprecedented. Tracki Pro has set a new benchmark for reliable asset management.",
+            "star_rating": 5
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

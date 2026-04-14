@@ -1,0 +1,755 @@
+{% layout none %}
+{% assign hero_bg = 'hero-bg.png' | asset_url %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracki GPS for Kids | Real-Time Child Safety Tracker</title>
+  <meta name="description" content="Give your child the freedom to grow — and yourself total peace of mind. Tracki's world's smallest GPS gives you real-time location, SOS alerts, and indoor Wi-Fi tracking. No smartphone needed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ 'newparents-lander.css' | asset_url }}" />
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announce-bar" id="announce-bar">
+    <div class="announce-inner">
+      <span class="announce-dot"></span>
+      <span>🎒 Back to School Special — <strong>Up to 50% off</strong> hardware + Free Lifetime Warranty</span>
+      <button class="announce-close" id="announce-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- ===== STICKY NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Tracki for Parents">
+        <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/logo_c77c8a9c-eaf3-4e77-b9a0-9509b44b0bfc.png?v=1767166739" alt="Tracki" width="120" height="36" class="nav-logo-img" />
+        <span class="logo-divider">|</span>
+        <span class="logo-sub">for parents</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#offer">Get Tracki</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#offer" class="btn btn-green btn-pill" id="nav-cta" style="padding-left: 16px; padding-right: 16px; white-space: nowrap; font-size: 0.85rem;">Get Tracki — <span style="color:#da291c;">$14.90</span></a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-wrap">
+      <img src="{{ hero_bg }}" alt="Child walking safely with Tracki GPS" width="1600" height="900" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-pill">
+          <span class="pulse-dot"></span>
+          #1 GPS Tracker for Kids — Trusted by 50,000+ Families
+        </div>
+        <h1 class="hero-headline">
+          Let Them<br />Roam Free.<br />
+          <span class="hero-green">Know They're Safe.</span>
+        </h1>
+        <p class="hero-sub">
+          The world's smallest 4G GPS tracker with <strong>Wi-Fi indoor tracking</strong>, SOS alerts, and real-time location — all without giving your child a smartphone.
+        </p>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span><strong>4.8/5</strong> Average Rating</span>
+          </div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span><strong>190+</strong> Countries</span>
+          </div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span><strong>Lifetime</strong> Warranty</span>
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <a href="#offer" class="btn btn-green btn-pill btn-lg" id="hero-cta-main">
+            Secure Your Child Today — Get the Device
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-ghost-white btn-pill btn-lg">
+            See How It Works
+          </a>
+        </div>
+        <p class="hero-micro">🔒 30-Day Money Back Guarantee · Ships in 1 business day</p>
+      </div>
+
+      <!-- Phone mockup widget -->
+      <div class="hero-phone-wrap">
+        <div class="hero-phone">
+          <div class="phone-notch">
+            <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/logo_c77c8a9c-eaf3-4e77-b9a0-9509b44b0bfc.png?v=1767166739" alt="Tracki" width="80" height="24" class="notch-logo">
+          </div>
+          <div class="phone-screen">
+            <div class="phone-header">
+              <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracker_ss.jpg?v=1775423932" alt="Tracki map interface" width="300" height="180" class="phone-map-img" />
+              <div class="phone-map-overlay"></div>
+              <div class="phone-body">
+                <div class="phone-alert">
+                  <div class="phone-alert-icon">✓</div>
+                  <div>
+                    <div class="phone-alert-title">Anna Arrived at School</div>
+                    <div class="phone-alert-time">Today, 8:24 AM · 0.2 mi from home</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating stat cards -->
+        <div class="hero-stat-card hero-stat-1">
+          <div class="stat-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3.2 16a2.8 2.8 0 0 0 .5 4l6.1 1.2a7 7 0 0 0 5.6-1.5l2-1.7a2 2 0 0 0 .6-1.5V6a2 2 0 1 0-4 0v5"></path><path d="M15 6V4a2 2 0 1 0-4 0v2"></path><path d="M11 4V2"></path></svg></div>
+          <div>
+            <div class="stat-card-val">1 tap</div>
+            <div class="stat-card-label">SOS alert sent</div>
+          </div>
+        </div>
+        <div class="hero-stat-card hero-stat-2">
+          <div class="stat-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+          <div>
+            <div class="stat-card-val">190+</div>
+            <div class="stat-card-label">Countries covered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num" data-count="50000">50,000+</div>
+        <div class="stat-lbl">Families Protected</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <div class="stat-num">190+</div>
+        <div class="stat-lbl">Countries Covered</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <div class="stat-num">1.26</div>
+        <div class="stat-lbl">oz — Lightest GPS</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <div class="stat-num">7<span>days</span></div>
+        <div class="stat-lbl">Battery on One Charge</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT VIDEO ===== -->
+  <section class="video-section" id="video-section">
+    <div class="container">
+      <div class="section-label" style="text-align:center">See It In Action</div>
+      <h2 class="section-h2">How parents Use It,<br /><span class="green-text">How it keeps Kids Safe.</span></h2>
+    </div>
+    <div class="video-wrap">
+      <video
+        id="tracki-video"
+        class="tracki-video"
+        muted
+        loop
+        playsinline
+        preload="none"
+        poster="{{ hero_bg }}"
+      >
+        <source src="https://cdn.shopify.com/videos/c/o/v/dfdb84fcf5da4f5d9659936d58059cf3.mp4" type="video/mp4" />
+      </video>
+      <div class="video-play-btn" id="video-play-btn" aria-label="Play video">
+        <div class="play-icon">▶</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SMARTPHONE ALTERNATIVE ===== -->
+  <section class="comparison-section" id="comparison">
+    <div class="container">
+      <div class="section-label">The Smarter Choice</div>
+      <h2 class="section-h2">They're not ready for a smartphone.<br /><span class="green-text">But you still need to know they're safe.</span></h2>
+      <div class="compare-grid">
+        <div class="compare-card compare-bad">
+          <div class="compare-card-header">
+            <div class="compare-icon-wrap bad"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line><line x1="4" y1="4" x2="20" y2="20"></line></svg></div>
+            <div>
+              <div class="compare-card-title">The Smartphone</div>
+              <div class="compare-card-sub">$800–$1,200 replacement cost</div>
+            </div>
+          </div>
+          <ul class="compare-list">
+            <li class="bad-item"><span class="x-icon">✕</span><span>Screen addiction and TikTok rabbit holes</span></li>
+            <li class="bad-item"><span class="x-icon">✕</span><span>Exposed to the open internet and strangers</span></li>
+            <li class="bad-item"><span class="x-icon">✕</span><span>Expensive to replace when dropped</span></li>
+            <li class="bad-item"><span class="x-icon">✕</span><span>Battery dies when they're scrolling</span></li>
+            <li class="bad-item"><span class="x-icon">✕</span><span>Distracted — won't answer when you call</span></li>
+          </ul>
+        </div>
+
+        <div class="compare-vs">
+          <div class="vs-circle">VS</div>
+        </div>
+
+        <div class="compare-card compare-good">
+          <div class="compare-card-badge">Recommended</div>
+          <div class="compare-card-header">
+            <div class="compare-icon-wrap good"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>
+            <div>
+              <div class="compare-card-title">Tracki Universal</div>
+              <div class="compare-card-sub">Just $14.90 — world's smallest GPS</div>
+            </div>
+          </div>
+          <ul class="compare-list">
+            <li class="good-item"><span class="check-icon">✓</span><span>Screen-free — zero distraction, infinite focus</span></li>
+            <li class="good-item"><span class="check-icon">✓</span><span>No internet access · No apps · No stranger danger</span></li>
+            <li class="good-item"><span class="check-icon">✓</span><span>Tiny, lightweight, nearly indestructible</span></li>
+            <li class="good-item"><span class="check-icon">✓</span><span>7-day battery · gets an alert before it dies</span></li>
+            <li class="good-item"><span class="check-icon">✓</span><span>One button tap sends you an instant text</span></li>
+          </ul>
+          <a href="#offer" class="btn btn-green btn-pill">Get Tracki Now →</a>
+        </div>
+      </div>
+
+      <!-- Action Button Highlight -->
+      <div class="action-highlight">
+        <div class="action-highlight-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="action-highlight-text">
+          <h3>The Programmable Action Button — Your Child's Secret Superpower</h3>
+          <p>One press = instant text to your phone. Pre-program messages like <em>"I made it to school ✓"</em> or <em>"I'm ready for pickup."</em> No screen. No typing. No app. <strong>Just one tap.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-label">Built For Busy Parents</div>
+      <h2 class="section-h2">Every Feature Engineered for<br /><span class="green-text">Your Peace of Mind</span></h2>
+      <p class="section-sub">Not a list of specs. Real solutions to the real worries keeping you up at night.</p>
+
+      <div class="features-grid">
+
+        <!-- Card 1: SOS -->
+        <div class="feature-card" data-delay="0">
+          <div class="feature-card-bg" style="background-image:url({{ hero_bg }})"></div>
+          <div class="feature-card-overlay" style="background:linear-gradient(135deg,rgba(180,20,20,.88),rgba(80,0,0,.94))"></div>
+          <div class="feature-card-content">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="feature-card-tag">Instant Alert</div>
+            <h3>3-Second SOS Panic Button</h3>
+            <p>Hold 3 seconds → your phone rings immediately with exact GPS coordinates. Stranger danger, fall, or feeling unsafe — help is one squeeze away.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Wi-Fi Indoor -->
+        <div class="feature-card" data-delay="100">
+          <div class="feature-card-bg" style="background:linear-gradient(135deg,#0d1f3c,#0a3d62)"></div>
+          <div class="feature-card-overlay" style="background:linear-gradient(135deg,rgba(13,31,60,.6),rgba(10,61,98,.4))"></div>
+          <div class="feature-card-content">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#fff"/></svg>
+            </div>
+            <div class="feature-card-tag">Works Everywhere</div>
+            <h3>Wi-Fi Indoor Tracking</h3>
+            <p>Standard GPS goes dark inside buildings. Tracki uses nearby Wi-Fi signals to pinpoint them deep inside malls, theme parks, schools, and stadiums.</p>
+            <div class="feature-chip-row">
+              <span class="chip chip-dark">Schools</span>
+              <span class="chip chip-dark">Stadiums</span>
+              <span class="chip chip-dark">Malls</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Geofencing -->
+        <div class="feature-card" data-delay="200">
+          <div class="feature-card-bg" style="background:linear-gradient(135deg,#0d2b0d,#1a4a1a)"></div>
+          <div class="feature-card-content">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="2" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="22" y2="12"/></svg>
+            </div>
+            <div class="feature-card-tag">Smart Notifications</div>
+            <h3>Geofencing &amp; Smart 'Places'</h3>
+            <p>Draw a virtual boundary around school, grandma's, or the park. When they arrive or leave — you get an instant text: <em>"Anna arrived at School ✓"</em> — not confusing coordinates.</p>
+            <div class="geofence-demo">
+              <div class="geofence-circle"><div class="geofence-pin-svg"><svg width="20" height="20" viewBox="0 0 24 24" fill="#46c160"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div></div>
+              <div class="geofence-label">School Geofence Active</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Route History -->
+        <div class="feature-card" data-delay="300">
+          <div class="feature-card-bg" style="background:linear-gradient(135deg,#1a1a2e,#2d2d5e)"></div>
+          <div class="feature-card-overlay" style="background:linear-gradient(135deg,rgba(26,26,46,.5),rgba(45,45,94,.3))"></div>
+          <div class="feature-card-content">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="feature-card-tag">Route History</div>
+            <h3>Live Breadcrumbs &amp; Trip Replay</h3>
+            <p>Review the exact route they walked, step by step. Confirm they didn't take that unsafe shortcut — and verify their walk matched what they told you.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Ultra-Lightweight -->
+        <div class="feature-card" data-delay="400">
+          <div class="feature-card-bg" style="background:linear-gradient(135deg,#1a0a3a,#2d1a5e)"></div>
+          <div class="feature-card-content">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-card-tag">1.26 oz Only</div>
+            <h3>Ultra-Lightweight &amp; Wearable</h3>
+            <p>Lighter than a granola bar. Kids forget they're wearing it. Includes lanyard, belt clip, and backpack velcro — perfect for any child, any day.</p>
+            <div class="weight-badge">
+              <span class="weight-num">1.26</span>
+              <span class="weight-unit">oz</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Battery Alerts -->
+        <div class="feature-card" data-delay="500">
+          <div class="feature-card-bg" style="background:linear-gradient(135deg,#1c1200,#3d2800)"></div>
+          <div class="feature-card-overlay" style="background:linear-gradient(135deg,rgba(28,18,0,.5),rgba(61,40,0,.3))"></div>
+          <div class="feature-card-content">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="feature-card-tag">Never Goes Missing</div>
+            <h3>App Beeper &amp; Battery Alerts</h3>
+            <p>Dropped it in the grass? Ring it remotely from the app. Get an automatic notification when battery hits 10% — never dead in an emergency.</p>
+            <div class="battery-bar-wrap">
+              <div class="battery-bar"><div class="battery-fill" style="width:87%"></div></div>
+              <span class="battery-pct">87%</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /features-grid -->
+    </div><!-- /container -->
+  </section><!-- /features -->
+
+  <!-- ===== DEVICE SHOWCASE ===== -->
+  <section class="device-section">
+    <div class="container">
+      <div class="device-grid">
+        <div class="device-copy">
+          <div class="section-label">The Device</div>
+          <h2 class="section-h2" style="text-align:left; max-width: 480px;">World's Smallest 4G GPS Tracker</h2>
+          <p class="device-desc">At just 1.26 oz (38g) and smaller than a matchbox, the Tracki Universal is the most discreet child safety device ever made. Your child can carry it anywhere — in a backpack, on a lanyard, or in a pocket — and they'll barely notice it.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <div class="spec-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg></div>
+              <div>
+                <div class="spec-label">Dimensions</div>
+                <div class="spec-val">1.8" × 1.5" × 0.5"</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12l2 6h10l2-6"/><line x1="2" y1="12" x2="22" y2="12"/><circle cx="12" cy="5" r="2"/></svg></div>
+              <div>
+                <div class="spec-label">Weight</div>
+                <div class="spec-val">1.26 oz (38g)</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="12" x2="14" y2="12"/></svg></div>
+              <div>
+                <div class="spec-label">Battery Life</div>
+                <div class="spec-val">Up to 7 days</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><circle cx="12" cy="20" r="1"></circle></svg></div>
+              <div>
+                <div class="spec-label">Network</div>
+                <div class="spec-val">4G LTE + Wi-Fi + GPS</div>
+              </div>
+            </div>
+          </div>
+          <a href="#offer" class="btn btn-green btn-pill btn-lg">Order Now →</a>
+        </div>
+        <div class="device-img-wrap">
+          <div class="device-glow"></div>
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/Layer-177_2x_03e9fcfa-fc78-404a-8072-692aaa586397.jpg?v=1613743097" alt="Tracki Universal GPS Tracker — actual size compared to a quarter coin, 1.8in x 1.5in x 0.55in, weight 1.26oz" class="device-img device-size-img" width="auto" height="auto" />
+          <div class="device-float-1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Live Tracking</span>
+          </div>
+          <div class="device-float-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Lifetime Warranty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-label">Real Parents · Real Stories</div>
+      <h2 class="section-h2">50,000+ Families Trust Tracki<br /><span class="green-text">Every Single Day</span></h2>
+
+      <div class="reviews-summary">
+        <div class="reviews-score">4.8</div>
+        <div class="reviews-stars-big">★★★★★</div>
+        <div class="reviews-count">Based on 50,000+ verified reviews</div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-avatar" style="background: linear-gradient(135deg, #ff6b35, #f7931e);">SL</div>
+            <div>
+              <div class="review-name">Sarah L.</div>
+              <div class="review-location">Mom of 2 · Orlando, FL</div>
+            </div>
+            <div class="review-stars ml-auto">★★★★★</div>
+          </div>
+          <div class="review-verified">✓ Verified Purchase · Tracki Universal</div>
+          <p class="review-body">"Last summer at Disney World, my 7-year-old slipped away for <strong>10 terrifying minutes.</strong> We found her, thank God — but I bought a Tracki that same night. A few weeks later at Universal Studios she wandered off again. This time I had my phone out, opened the app, and had her exact location inside the park <strong>in under 30 seconds.</strong> The Wi-Fi indoor tracking is literally a miracle."</p>
+          <div class="review-highlight">💡 Wi-Fi indoor tracking found her inside a crowded theme park</div>
+        </div>
+
+        <div class="review-card review-featured">
+          <div class="review-featured-badge">⭐ Most Helpful</div>
+          <div class="review-top">
+            <div class="review-avatar" style="background: linear-gradient(135deg, #1976D2, #0d47a1);">MK</div>
+            <div>
+              <div class="review-name">Mike K.</div>
+              <div class="review-location">Dad of 3 · Chicago, IL</div>
+            </div>
+            <div class="review-stars ml-auto">★★★★★</div>
+          </div>
+          <div class="review-verified">✓ Verified Purchase · Tracki Universal</div>
+          <p class="review-body">"My son Jake, 10, plays travel soccer. Pickups were always chaotic — I was that dad constantly refreshing my messages. Now Jake just <strong>taps his Tracki button once</strong> when practice is over. My phone buzzes: 'Jake is ready for pickup.' Done. No smartphone drama, no data plan, no texting during drills. His coach loves it too. Worth every single penny."</p>
+          <div class="review-highlight">💡 The Action Button replaced 100+ missed texts</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-avatar" style="background: linear-gradient(135deg, #7b1fa2, #4a148c);">DR</div>
+            <div>
+              <div class="review-name">Dana R.</div>
+              <div class="review-location">Mom · Seattle, WA</div>
+            </div>
+            <div class="review-stars ml-auto">★★★★★</div>
+          </div>
+          <div class="review-verified">✓ Verified Purchase · Tracki Universal</div>
+          <p class="review-body">"Our son has autism and tends to wander when overwhelmed. Setting up the geofence around our home took <strong>less than 2 minutes.</strong> Now if he gets past the backyard, my phone alerts me before he even reaches the sidewalk. We've had 4 alerts in 6 months. Four times this little device kept him safe. I'd give it 10 stars. For any special needs parent, this isn't a gadget — <strong>it's a lifeline.</strong>"</p>
+          <div class="review-highlight">💡 Geofences alert her before he reaches the sidewalk</div>
+        </div>
+      </div>
+
+      <div class="reviews-cta" style="display:flex;justify-content:center;padding:0 20px;">
+        <a href="#offer" class="btn btn-green btn-pill btn-lg" style="max-width:100%;width:auto;text-align:center;">Join 50,000+ Families — Get Tracki</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="hiw-section" id="how-it-works">
+    <div class="hiw-bg"></div>
+    <div class="container hiw-container">
+      <div class="section-label" style="color:#a5d6a7">Up &amp; Running in Minutes</div>
+      <h2 class="section-h2" style="color:white">Three Steps to<br /><span class="green-text">Total Peace of Mind</span></h2>
+
+      <div class="hiw-grid">
+        <div class="hiw-step">
+          <div class="hiw-num">01</div>
+          <div class="hiw-icon-wrap"><img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/activate-your-device.webp?v=1771843703" alt="Order Tracki" class="hiw-img" width="auto" height="auto" /></div>
+          <h3>Order Your Tracki</h3>
+          <p>Get the Tracki Universal (4G Mini) — the world's smallest GPS tracker — for just $14.90. It ships pre-activated and ready to use.</p>
+          <div class="hiw-step-detail">Ships in 1 business day · Pre-activated</div>
+        </div>
+
+        <div class="hiw-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num">02</div>
+          <div class="hiw-icon-wrap"><img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/step2-mobimage.png?v=1768817457" alt="Attach Tracki" class="hiw-img" width="auto" height="auto" /></div>
+          <h3>Attach to Your Child</h3>
+          <p>Clip it to their backpack, thread the lanyard, or velcro it inside. Setup takes under 3 minutes. They'll barely notice it's there.</p>
+          <div class="hiw-step-detail">Includes lanyard · belt clip · velcro</div>
+        </div>
+
+        <div class="hiw-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#46c160" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num">03</div>
+          <div class="hiw-icon-wrap"><img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/Tracki_Mini_4G_Best_GPS_Tracker_for_Kids_Best_Overall_for_Versatility.png?v=1760341970" alt="Track Globally" class="hiw-img" width="auto" height="auto" /></div>
+          <h3>Track Globally. Breathe Easy.</h3>
+          <p>Open the free Tracki app (iOS &amp; Android). See their exact location in real time, set geofences, review routes, and get SOS alerts — globally.</p>
+          <div class="hiw-step-detail">iOS &amp; Android · Free App · Instant setup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WEB & MOBILE APP ===== -->
+  <section class="app-section" id="app">
+    <div class="container">
+      <div class="app-grid">
+        <div class="app-image-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki_webapp_ss.jpg?v=1775423290" alt="Tracki Web Dashboard" class="app-image-web" width="auto" height="auto" />
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki_app_ss.jpg?v=1775423290" alt="Tracki Mobile App" class="app-image-mobile" width="auto" height="auto" />
+        </div>
+        <div class="app-content">
+          <div class="section-label">Web &amp; Mobile Ready</div>
+          <h2 class="section-h2">Track from Anywhere, <br/><span class="green-text">Any Device</span></h2>
+          <p class="section-sub" style="text-align:left; max-width:100%; margin-top:20px;">
+            Whether you're at work on your computer or out and about on your phone, you've got full visibility. Tracki includes a comprehensive Web Dashboard perfect for parents at work, plus top-rated native apps for both iOS and Android.
+          </p>
+          <ul class="compare-list" style="margin-top:24px;">
+            <li><span class="check-icon">✓</span> <div><strong>Web App:</strong> Detailed dashboard for desktop tracking</div></li>
+            <li><span class="check-icon">✓</span> <div><strong>Mobile App:</strong> Real-time alerts and on-the-go tracking</div></li>
+            <li><span class="check-icon">✓</span> <div><strong>Multi-User:</strong> Share access with spouses or caregivers</div></li>
+          </ul>
+          <div class="app-store-btns">
+            <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/appstrore-btn.png?v=1767691701" alt="Download on App Store" width="auto" height="auto" />
+            <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/googleplay-btn.png?v=1767691955" alt="Get it on Google Play" width="auto" height="auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFFER — DEVICE ONLY ===== -->
+  <section class="offer-section" id="offer" style="padding:80px 0;background:linear-gradient(135deg, #46c160, #2E8B57) !important;color:#fff !important;overflow:hidden">
+    <div class="container" style="max-width:960px;">
+
+      <div class="offer-top">
+        <div class="offer-left">
+          <div class="offer-title" style="color:#fff !important;">
+            <h2 style="font-size:4rem;font-weight:900;text-transform:uppercase;line-height:0.9;margin:0;letter-spacing:-1px;color:#fff !important;">Get the Device.</h2>
+            <h3 style="font-size:1.8rem;font-weight:400;text-transform:uppercase;margin:0 0 20px 0;letter-spacing:1px;color:#fff !important;">Start Protecting Today.</h3>
+          </div>
+          <div class="offer-price" style="display:flex;align-items:flex-start;">
+            <span style="font-size:8rem;font-weight:900;line-height:0.8;letter-spacing:-3px;color:#fff !important;">14.90</span> <span style="font-size:2.5rem;font-weight:800;margin-left:8px;margin-top:10px;color:#fff !important;">USD</span>
+          </div>
+        </div>
+
+        <div class="offer-right">
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Device" class="offer-device-img" width="auto" height="auto" />
+          <div class="money-back">
+            MONEY BACK
+            <span>30 DAYS</span>
+            GUARANTEE
+          </div>
+        </div>
+      </div>
+
+      <!-- Single device CTA card Styles (Cache-Bypass) -->
+      <style>
+        #plan-device-cta .plan-monthly { color:#46c160 !important; font-size:2.8rem !important; font-weight:900 !important; line-height:1 !important; margin-bottom:12px !important; }
+        #plan-device-cta .plan-monthly span { font-size:2.2rem !important; font-weight:800 !important; color:#46c160 !important; }
+        #plan-device-cta .plan-sub { color:#6b7280 !important; font-size:1.1rem !important; font-weight:500 !important; line-height:1.5 !important; margin-bottom:16px !important; }
+        #plan-device-cta .device-offer-features { display:flex !important; gap:20px !important; flex-wrap:wrap !important; justify-content:center !important; font-size:.85rem !important; font-weight:600 !important; color:#46c160 !important; margin-top:8px !important; }
+        #plan-device-cta .device-offer-features span { display:flex !important; align-items:center !important; gap:4px !important; color:#46c160 !important; }
+        #plan-device-cta .plan-save span { font-size:1.2rem !important; display:block !important; }
+      </style>
+      <!-- Single device CTA card -->
+      <div class="device-offer-box">
+        <div class="plan-card plan-card-featured" id="plan-device-cta">
+          <div class="plan-top-row">
+            <div class="plan-dur">Tracki Universal</div>
+            <div class="plan-save">SAVE<span>48%</span></div>
+          </div>
+          <div class="plan-monthly">$14.90 <span style="font-size:1.4rem;font-weight:700;color:#46c160;">USD</span></div>
+          <div class="plan-sub">World's smallest 4G GPS tracker<br />Includes lanyard, belt clip &amp; velcro mount</div>
+          <div class="device-offer-features">
+            <span>✓ Ships in 1 business day</span>
+            <span>✓ Lifetime warranty</span>
+            <span>✓ 30-day money back</span>
+          </div>
+          <a href="https://tracki.com/products/tracki-gps-tracker" target="_blank" class="btn btn-green btn-pill btn-lg" style="width:100%;justify-content:center;margin-top:20px;font-size:1.05rem;">
+            Buy Now — $14.90
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p style="font-size:.72rem;color:#6b7280 !important;margin-top:12px;text-align:center;">🔒 Secure checkout · 30-day guarantee</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FAQ + FINAL CTA ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-col">
+          <div class="section-label">Got Questions?</div>
+          <h2 class="section-h2" style="text-align:left; max-width: 440px;">Quick Answers for<br /><span class="green-text">Busy Parents</span></h2>
+
+          <div class="faq-accordion">
+            <div class="faq-item active" id="faq1">
+              <button class="faq-q" onclick="toggleFaq('faq1')">
+                Does the Tracki need a subscription?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                Yes — a data plan is required to activate the Tracki's built-in SIM card, which is what enables real-time GPS tracking over 4G. The device hardware is just $14.90, and you choose a monthly or annual data plan in the app. Monthly plans can be cancelled with one click in the app. Annual plans are billed upfront for the full year, but you can cancel auto-renewal at any time. No fine print, no gotchas.
+              </div>
+            </div>
+
+            <div class="faq-item" id="faq2">
+              <button class="faq-q" onclick="toggleFaq('faq2')">
+                Will it fit on a small child?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                At just 1.26 oz — about the weight of two AA batteries — it's one of the smallest 4G GPS trackers ever made. The included lanyard loops easily around a small neck, and the backpack velcro works with any school bag. Most kids forget they're wearing it within 10 minutes.
+              </div>
+            </div>
+
+            <div class="faq-item" id="faq3">
+              <button class="faq-q" onclick="toggleFaq('faq3')">
+                Does it work inside a school building?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                Yes — and this is one of Tracki's biggest advantages over competitors. Using Wi-Fi signal triangulation, it can pinpoint your child inside any building: classrooms, gyms, malls, hospitals. Standard GPS trackers go dark indoors. Tracki doesn't.
+              </div>
+            </div>
+
+            <div class="faq-item" id="faq4">
+              <button class="faq-q" onclick="toggleFaq('faq4')">
+                How long does the battery last?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                Up to 7 days on a single charge with standard 60-second update intervals. You'll get an automatic alert before it reaches 10%, so it's never dead when they need it. Charging takes about 2 hours via the included magnetic charger.
+              </div>
+            </div>
+
+            <div class="faq-item" id="faq5">
+              <button class="faq-q" onclick="toggleFaq('faq5')">
+                Is there a limit on geofences I can set?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                No limit. Set as many Places as your family needs — school, grandma's, the park, soccer field. Each sends a named arrival/departure notification so you always know exactly where they are without opening the app.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-cta-col">
+          <div class="faq-cta-card">
+            <img src="{{ 'scare-child.png' | asset_url }}" alt="Lost child standing on a dark street" class="faq-scare-img" width="auto" height="auto" />
+            <h3>Don't wait until you have a scare.</h3>
+            <p>Every parent who bought Tracki says the same thing: <em>"I wish I'd done this sooner."</em> Today's the day you stop worrying — and start knowing.</p>
+            <a href="https://tracki.com/products/tracki-gps-tracker" target="_blank" class="btn btn-green btn-pill btn-xl" id="final-cta">
+              Get Tracki Now
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="faq-trust-row">
+              <div class="faq-trust-item"><span>🔒</span> Secure checkout</div>
+              <div class="faq-trust-item"><span>📦</span> Ships in 1 business day</div>
+              <div class="faq-trust-item"><span>🛡️</span> Lifetime warranty</div>
+            </div>
+            <div class="faq-reviews-mini">
+              <div class="faq-stars">★★★★★</div>
+              <div class="faq-review-count">4.8/5 from 50,000+ reviews</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/logo_c77c8a9c-eaf3-4e77-b9a0-9509b44b0bfc.png?v=1767166739" alt="Tracki" class="footer-logo-img" width="auto" height="auto" />
+        <p class="footer-tagline">The world's smallest family safety GPS tracker.</p>
+        <div class="footer-socials">
+          <a href="https://tracki.com/products/tracki-gps-tracker" target="_blank" aria-label="Website">🌐</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">👥</a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-link-col">
+          <div class="footer-col-title">Product</div>
+          <a href="https://tracki.com/products/tracki-gps-tracker" target="_blank">Tracki Universal</a>
+          <a href="https://tracki.com/products/tracki-pro-gps-tracker" target="_blank">Tracki Pro</a>
+          <a href="https://tracki.com/collections/accessories-collection" target="_blank">Accessories</a>
+        </div>
+        <div class="footer-link-col">
+          <div class="footer-col-title">Support</div>
+          <a href="https://tracki.com/pages/how-to-use" target="_blank">How to Use</a>
+          <a href="https://tracki.com/pages/new-tracki-guide" target="_blank">User Guide</a>
+          <a href="https://tracki.com/pages/contact-us" target="_blank">Contact Us</a>
+        </div>
+        <div class="footer-link-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="https://tracki.com/privacy" target="_blank">Privacy Policy</a>
+          <a href="https://tracki.com/terms" target="_blank">Terms of Service</a>
+          <a href="https://tracki.com/pages/about-us" target="_blank">About Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2025 Tracki, Inc. All rights reserved.</span>
+        <span>This is a targeted landing page for the Tracki Parents audience.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MOBILE STICKY BAR ===== -->
+  <div class="mob-bar" id="mob-bar">
+    <div class="mob-bar-inner">
+      <div class="mob-bar-text">
+        <strong>Tracki Universal</strong>
+        <span>World's smallest GPS — just $14.90</span>
+      </div>
+      <a href="#offer" class="btn btn-green btn-pill btn-sm">Get Tracki →</a>
+    </div>
+  </div>
+
+  <script defer src="{{ 'newparents-lander.js' | asset_url }}"></script>
+</body>
+</html>

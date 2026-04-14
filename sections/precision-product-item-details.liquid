@@ -1,0 +1,149 @@
+{{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
+{{ 'section-precision-product-item-details.css' | asset_url | stylesheet_tag }}
+
+<div class="precision-item-details section-{{ section.id }}-padding">
+  <div class="precision-item-details__inner">
+    <div class="precision-item-details__card">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="precision-item-details__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      <div class="precision-item-details__grid">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'detail_row' -%}
+              <div
+                class="precision-item-details__row{% if block.settings.full_width %} precision-item-details__row--full{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <span class="precision-item-details__label">{{ block.settings.label | escape }}</span>
+                <span class="precision-item-details__value">
+                  {%- if block.settings.use_variant_sku -%}
+                    {{ product.selected_or_first_available_variant.sku | default: '—' }}
+                  {%- elsif block.settings.use_product_vendor -%}
+                    {{ product.vendor | default: '—' }}
+                  {%- else -%}
+                    {{ block.settings.value | escape }}
+                  {%- endif -%}
+                </span>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background: #ffffff;
+    color: #000000;
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Precision item details",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "detail_row",
+      "name": "Detail row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "default": "Label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "default": "Value",
+          "label": "Value"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_product_vendor",
+          "default": false,
+          "label": "Use product vendor as value",
+          "info": "Overrides the value field when enabled."
+        },
+        {
+          "type": "checkbox",
+          "id": "use_variant_sku",
+          "default": false,
+          "label": "Use current variant SKU as value",
+          "info": "Overrides vendor and value when enabled."
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "default": false,
+          "label": "Full width row (desktop)"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Item Details",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Precision item details",
+      "blocks": [
+        {
+          "type": "detail_row",
+          "settings": {
+            "label": "Brand",
+            "value": "Tracki",
+            "use_product_vendor": true
+          }
+        },
+        {
+          "type": "detail_row",
+          "settings": {
+            "label": "Model Number",
+            "value": "TRKM010A"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

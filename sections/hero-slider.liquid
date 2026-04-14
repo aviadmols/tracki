@@ -1,0 +1,211 @@
+<section class="b2b-hero-slider">
+  <div class="b2b-swiper"> <!-- Unique class for this slider -->
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide b2b-slide" style="background-image:url({{ block.settings.bg_image | image_url }});" {{ block.shopify_attributes }}>
+          <div class="page-width b2b-hero__grid">
+            <div class="b2b-hero__content">
+              <div class="b2b-hero__content-top {% if forloop.index == 1 %}title_1   {% elsif forloop.index == 2 %}title_2   {% endif %}">
+                <h1>{{ block.settings.heading }}<span><br/>{{ block.settings.heading_2 }}</span></h1>
+                <p>{{ block.settings.subheading }}</p>
+              </div>
+              {% if block.settings.show_rating %}
+                <div class="b2b-rating">
+                  <div class="b2b-rating__top">
+                    <span class="rating-number">4.2</span>
+                    <span class="stars">
+                      <span class="star filled">★</span>
+                      <span class="star filled">★</span>
+                      <span class="star filled">★</span>
+                      <span class="star filled">★</span>
+                      <span class="star empty">★</span>
+                    </span>
+                  </div>
+                  {% comment %} <div class="b2b-rating__bottom">
+                    42,559 positive reviews on Amazon
+                  </div>
+        <div class="box-button-home">
+          <a href="">More...</a>
+        </div> {% endcomment %}
+        {% if block.settings.product_rating__text != '' %}
+        <div class="b2b-rating__bottom">
+            {{ block.settings.product_rating__text }}
+        </div>
+        {% endif %}
+        {% if block.settings.product_more__text != '' %}
+        <div class="box-button-home">
+          <a href="{{ block.settings.product_more__link }}">{{ block.settings.product_more__text }}</a>
+        </div>
+      {% endif %}
+
+                </div>
+              {% endif %}
+            </div>
+            <div class="b2b-hero__image">
+              {% if block.settings.product_image %}
+                <img src="{{ block.settings.product_image | image_url }}" alt="" class="product-dekstop-image">
+              {% endif %}
+               {% if block.settings.product_mobile__image %}
+                <img src="{{ block.settings.product_mobile__image | image_url }}" alt="" class="product-mobile-image">
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Swiper Navigation & Pagination -->
+    {% comment %} <div class="swiper-button-next b2b-swiper-button-next"></div>
+    <div class="swiper-button-prev b2b-swiper-button-prev"></div> {% endcomment %}
+    <div class="swiper-pagination b2b-swiper-pagination"></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "B2B Hero Slider",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Hero Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "heading_2",
+          "label": "Heading 2"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_mobile__image",
+          "label": "Product Mobile image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating",
+          "label": "Show rating",
+          "default": true
+        },
+        {
+          "type": "textarea",
+          "id": "product_rating__text",
+          "label": "Product Mobile Text"
+        },
+        {
+          "type": "url",
+          "id": "product_more__link",
+          "label": "Product Mobile Link"
+        },
+        {
+          "type": "text",
+          "id": "product_more__text",
+          "label": "Product Mobile Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Hero Slider"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+/* Optional: Scoped styles to avoid conflicts (prefix with .b2b-hero-slider) */
+.b2b-hero-slider .b2b-swiper {
+  width: 100%;
+  height: 100vh; /* Adjust as needed for hero height */
+}
+
+
+
+/* Custom navigation/pagination styles if needed */
+.b2b-hero-slider .b2b-swiper-button-next,
+.b2b-hero-slider .b2b-swiper-button-prev {
+  color: white; /* Example customization */
+}
+
+.b2b-hero-slider .b2b-swiper-pagination .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.7;
+}
+
+.b2b-hero-slider .b2b-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.b2b-hero-slider .swiper-slide {
+    opacity: 1;
+}
+.b2b-hero-slider .swiper-wrapper {
+  transition-timing-function: ease-in-out;
+}
+{% endstylesheet %}
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.b2b-swiper', {
+    loop: true,
+    speed: 900,
+    slidesPerView: 1,
+    grabCursor: true,
+    autoplay:false,
+
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+
+    on: {
+      init: function () {
+        updateSlideClasses(this);
+      },
+      slideChangeTransitionEnd: function () {
+        updateSlideClasses(this);
+      }
+    }
+  });
+
+  function updateSlideClasses(swiperInstance) {
+    // Remove old classes
+    swiperInstance.slides.forEach(slide => {
+      slide.classList.remove('slider1', 'slider2');
+    });
+
+    // Real index (ignores duplicated slides)
+    const realIndex = swiperInstance.realIndex;
+
+    // Active slide element
+    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+
+    if (realIndex === 0) {
+      activeSlide.classList.add('slider1');
+    }
+
+    if (realIndex === 1) {
+      activeSlide.classList.add('slider2');
+    }
+  }
+});
+{% endjavascript %}

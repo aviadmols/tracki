@@ -1,0 +1,52 @@
+/* Precision features — gray band, green icons (original mock) */
+.precision-features {
+  font-family: var(--precision-pdp-font);
+  background: #f3f0ef;
+  color: #000000;
+}
+
+.precision-features__inner {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1.5rem;
+}
+
+.precision-features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 750px) {
+  .precision-features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 990px) {
+  .precision-features__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.precision-features__item .material-symbols-outlined {
+  font-size: 2.5rem;
+  color: var(--precision-pdp-primary, #1eea65);
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.precision-features__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 1rem 0 0.5rem;
+  color: #000000;
+}
+
+.precision-features__text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #5c5b5b;
+  margin: 0;
+}
