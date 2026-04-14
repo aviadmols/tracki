@@ -2,9 +2,13 @@
 # תיעוד: https://shopify.dev/docs/storefronts/themes/tools/cli/environments
 #
 # הרצה: shopify theme dev -e trackisecurity
-#        shopify theme push -e trackisecurity --unpublished
+#        shopify theme push -e trackisecurity -t 144759554163
+#        (עדכון לאותה תבנית שהועלתה מ-Git; תבנית חדשה: --unpublished -t "שם")
 # התחברות (CLI 3.x): shopify auth login
+# חיבור GitHub מהאדמין: https://help.shopify.com/manual/online-store/themes/managing-themes/connecting-themes-git
 # אחרי login — theme dev ישתמש ב-store מהסביבה למטה (או: shopify theme dev -s trackisecurity)
 
 [environments.trackisecurity]
 store = "trackisecurity"
+# מזהה תבנית "Tracki Git (main)" בחנות: 144759554163
+# עדכון לאותה תבנית: shopify theme push -e trackisecurity -t 144759554163
