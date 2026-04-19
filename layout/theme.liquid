@@ -195,7 +195,7 @@
     })(window, document, "clarity", "script", "w4v2m8a4cu");
 </script>
   </head>
-  <body class="{% if template == 'index' %}transparent-header{% endif %} {% unless template == 'index' %}innerpages{% endunless %} template-{{ request.page_type }}{% if request.design_mode %} shopify-design-mode{% endif %} {% if request.page_type == 'page' %}{{ page.handle }}{% endif %}"
+  <body class="{% if template == 'index' %}transparent-header{% endif %} {% unless template == 'index' %}innerpages{% endunless %} template-{{ request.page_type }}{% if request.design_mode %} shopify-design-mode{% endif %} {% if request.page_type == 'page' %}{{ page.handle }}{% endif %}{% if template.name == 'page' and template.suffix == 'parentsv2-lander' %} template-parentsv2-lander{% endif %}"
     {%- if settings.image_zoom_effect_enabled %} data-animate-image{% endif -%}
     {%- if settings.image_loading_bar_enabled %} data-lazy-image{% endif -%}
     {%- if settings.heading_capitalize %} data-heading-capitalize{% endif -%}
@@ -210,14 +210,21 @@
     {% render 'transition-cover' %}
 
     <div class="transition-body">
-      {% sections 'header-group' %}
+      {%- comment -%}
+        Landing page.parentsv2-lander: theme header/footer hidden; page template supplies its own nav/footer.
+      {%- endcomment -%}
+      {% unless template.name == 'page' and template.suffix == 'parentsv2-lander' %}
+        {% sections 'header-group' %}
+      {% endunless %}
       
       <div class="transition-content">
         <main id="MainContent" class="content-for-layout focus-none shopify-section" role="main" tabindex="-1">
           {{ content_for_layout }}
         </main>
 
+      {% unless template.name == 'page' and template.suffix == 'parentsv2-lander' %}
         {% sections 'footer-group' %}
+      {% endunless %}
       </div>
     </div>
 

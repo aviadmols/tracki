@@ -1,17 +1,52 @@
-{% layout none %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tracki GPS for Kids | Real-Time Child Safety Tracker</title>
-  <meta name="description" content="Give your child the freedom to grow — and yourself total peace of mind. Tracki's world's smallest GPS gives you real-time location, SOS alerts, and indoor Wi-Fi tracking. No smartphone needed." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ 'parentsv2-lander.css' | asset_url }}" />
-</head>
-<body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+{{ 'parentsv2-lander.css' | asset_url | stylesheet_tag }}
+<style>
+  body.template-parentsv2-lander main#MainContent {
+    max-width: none !important;
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .parentsv2-lander-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  /* Override theme rule targeting [class*="offer"] that forces white text on the white pricing card */
+  #offer .starter-package,
+  #offer .starter-package p,
+  #offer .starter-package li,
+  #offer .starter-package div {
+    color: #6b7280 !important;
+  }
+  #offer .starter-package .starter-includes p,
+  #offer .starter-package .starter-includes strong {
+    color: #111827 !important;
+  }
+  #offer .starter-package li .check {
+    color: #ffffff !important;
+  }
+  #offer .starter-package .strike-price {
+    color: #6b7280 !important;
+  }
+  #offer .starter-package .final-price {
+    color: #46c160 !important;
+  }
+  #offer .starter-package .final-price span {
+    color: #111827 !important;
+  }
+  #offer .starter-package .price-desc {
+    color: #6b7280 !important;
+  }
+  #offer .starter-fineprint,
+  #offer .starter-fineprint strong {
+    color: #64748b !important;
+  }
+</style>
+
+<div class="parentsv2-lander-page">
 
   <!-- ===== ANNOUNCEMENT BAR ===== -->
   <div class="announce-bar" id="announce-bar">
@@ -38,7 +73,7 @@
         <a href="#faq">FAQ</a>
       </div>
       <div class="nav-actions">
-        <a href="#offer" class="btn btn-green btn-pill nav-cta-btn" id="nav-cta" style="padding-left: 24px; padding-right: 24px;">Get Tracki →</a>
+        <button type="button" class="btn btn-green btn-pill nav-cta-btn" id="nav-cta" style="padding-left: 24px; padding-right: 24px;" onclick="buyParentsv2Checkout(this)">Get Tracki →</button>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -82,10 +117,10 @@
           </div>
         </div>
         <div class="hero-ctas">
-          <a href="#offer" class="btn btn-green btn-pill btn-lg" id="hero-cta-main">
+          <button type="button" class="btn btn-green btn-pill btn-lg" id="hero-cta-main" onclick="buyParentsv2Checkout(this)">
             Secure Your Child Today — See Offers
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          </button>
           <a href="#how-it-works" class="btn btn-ghost-white btn-pill btn-lg">
             See How It Works
           </a>
@@ -341,6 +376,7 @@
           </div>
         </div>
 
+      </div><!-- /features-grid -->
     </div><!-- /container -->
   </section><!-- /features -->
 
@@ -410,7 +446,7 @@
               </div>
             </div>
           </div>
-          <a href="#offer" class="btn btn-green btn-pill btn-lg">Order Now →</a>
+          <button type="button" class="btn btn-green btn-pill btn-lg" id="device-order-cta" onclick="buyParentsv2Checkout(this)">Order Now →</button>
         </div>
         <div class="device-img-wrap">
           <div class="device-glow"></div>
@@ -516,7 +552,7 @@
       </div>
 
       <div class="reviews-cta">
-        <a href="#offer" class="btn btn-green btn-pill btn-lg">Join 50,000+ Families — Get Tracki</a>
+        <button type="button" class="btn btn-green btn-pill btn-lg" id="reviews-cta-btn" onclick="buyParentsv2Checkout(this)">Join 50,000+ Families — Get Tracki</button>
       </div>
     </div>
   </section>
@@ -605,9 +641,9 @@
             Whether you're at work on your computer or out and about on your phone, you've got full visibility. Tracki includes a comprehensive Web Dashboard perfect for parents at work, plus top-rated native apps for both iOS and Android.
           </p>
           <ul class="compare-list" style="margin-top:24px;">
-            <li><span class="check-icon">✓</span> <div><strong>Web App:</strong> Detailed dashboard for desktop tracking</div></li>
-            <li><span class="check-icon">✓</span> <div><strong>Mobile App:</strong> Real-time alerts and on-the-go tracking</div></li>
-            <li><span class="check-icon">✓</span> <div><strong>Multi-User:</strong> Share access with spouses or caregivers</div></li>
+            <li><span class="check-icon">✓</span> <strong>Web App:</strong> Detailed dashboard for desktop tracking</li>
+            <li><span class="check-icon">✓</span> <strong>Mobile App:</strong> Real-time alerts and on-the-go tracking</li>
+            <li><span class="check-icon">✓</span> <strong>Multi-User:</strong> Share access with spouses or caregivers</li>
           </ul>
           <div class="app-store-btns">
             <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/appstrore-btn.png?v=1767691701" alt="Download on App Store" />
@@ -619,22 +655,29 @@
   </section>
 
   <!-- ===== OFFER ===== -->
-  <section class="offer-section" id="offer">
-    <div class="container" style="max-width:960px;">
+  <section
+    class="offer-section"
+    id="offer"
+    style="padding: 80px 0; background: linear-gradient(135deg, #46c160, #2e8b57) !important; color: #fff !important; overflow: hidden;"
+  >
+    <div class="container" style="max-width: 960px;">
 
-      <div class="offer-top">
-        <div class="offer-left">
-          <div class="offer-title">
-            <h2>Transparent Pricing.</h2>
-            <h3>Choose Your Plan</h3>
+      <div
+        class="offer-top"
+        style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; position: relative; background: transparent !important; color: #fff !important;"
+      >
+        <div class="offer-left" style="display: flex; flex-direction: column; background: transparent !important; color: #fff !important;">
+          <div class="offer-title" style="background: transparent !important; color: #fff !important;">
+            <h2 style="color: #fff !important;">Transparent Pricing.</h2>
+            <h3 style="color: #fff !important;">Choose Your Plan</h3>
           </div>
         </div>
 
-        <div class="offer-right">
+        <div class="offer-right" style="position: relative; margin-bottom: -20px; background: transparent !important; color: #fff !important;">
           <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Device" class="offer-device-img" />
-          <div class="money-back" style="font-size: 0.6rem;">
+          <div class="money-back" style="font-size: 0.6rem; color: #fff !important; background: #da291c !important;">
             TRY RISK-FREE
-            <span>30 DAYS</span>
+            <span style="color: #fff !important;">30 DAYS</span>
             FULL REFUND
           </div>
         </div>
@@ -661,10 +704,10 @@
             <div class="strike-price">$49.95</div>
             <div class="final-price">$34.94<span>USD</span></div>
             <div class="price-desc">Device ($14.99) + 1st Month Data ($19.95)</div>
-            <a href="https://tracki.com" target="_blank" class="btn btn-green btn-xl" id="starter-cta">
+            <button type="button" class="btn btn-green btn-xl" id="starter-cta" onclick="buyParentsv2Checkout(this)">
               Get Started Now
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            </button>
             <div style="margin-top: 16px;">
               <a href="https://tracki.com" target="_blank" style="color: #46c160; font-size: 0.95rem; font-weight: 600; text-decoration: underline;">See annual plans — save up to 50%</a>
             </div>
@@ -745,10 +788,10 @@
             <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/parentsv2-scare-child.jpg?v=1776412676" alt="Lost child standing on a dark street" class="faq-scare-img" />
             <h3>Don't wait until you have a scare.</h3>
             <p>Every parent who bought Tracki says the same thing: <em>"I wish I'd done this sooner."</em> Today's the day you stop worrying — and start knowing.</p>
-            <a href="https://tracki.com" target="_blank" class="btn btn-green btn-pill btn-xl" id="final-cta">
+            <button type="button" class="btn btn-green btn-pill btn-xl" id="final-cta" onclick="buyParentsv2Checkout(this)">
               Get Tracki Now
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            </button>
             <div class="faq-trust-row">
               <div class="faq-trust-item"><span>🔒</span> Secure checkout</div>
               <div class="faq-trust-item"><span>📦</span> Ships in 1 day</div>
@@ -812,10 +855,166 @@
         <strong>Tracki Universal</strong>
         <span>$34.94 Starter Package</span>
       </div>
-      <a href="#offer" class="btn btn-green btn-pill btn-sm">Get Tracki →</a>
+      <button type="button" class="btn btn-green btn-pill btn-sm" id="parentsv2-mob-bar-buy" onclick="buyParentsv2Checkout(this)">Get Tracki →</button>
     </div>
   </div>
 
-  <script src="{{ 'parentsv2-lander.js' | asset_url }}"></script>
-</body>
-</html>
+  <script>
+    (function () {
+      var __PARENTSV2_PRODUCT_ID = '8246411853939';
+      var __variantCache = {};
+      var __itemMeta = {
+        title: 'Tracki Universal',
+        price: '$34.94',
+        amount: 34.94,
+        total: 34.94,
+        variant: 'tracki-universal',
+      };
+
+      window.dataLayer = window.dataLayer || [];
+
+      function trackEvent(eventName, params) {
+        var payload = Object.assign({ event: eventName }, params || {});
+        try {
+          var utm =
+            window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function'
+              ? window.TrackiAttribution.getMerged()
+              : {};
+          if (utm && Object.keys(utm).length) {
+            payload.attribution = utm;
+          }
+        } catch (e) {}
+        dataLayer.push(payload);
+      }
+
+      function lineItemAttributionProperties() {
+        var raw = {};
+        try {
+          if (window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function') {
+            raw = window.TrackiAttribution.getMerged() || {};
+          }
+        } catch (e) {}
+        var props = {};
+        Object.keys(raw).forEach(function (k) {
+          var v = raw[k];
+          if (v == null || String(v).trim() === '') return;
+          var name = k.indexOf('_') === 0 ? k : '_' + k;
+          props[name] = String(v).trim();
+        });
+        props._landing_page = 'parentsv2-lander';
+        return props;
+      }
+
+      async function fetchVariantIdByProductId(productId) {
+        if (__variantCache[productId]) return __variantCache[productId];
+        var pid = String(productId);
+        var page = 1;
+        var maxPages = 25;
+        while (page <= maxPages) {
+          var r = await fetch('/products.json?limit=250&page=' + page, { credentials: 'same-origin' });
+          if (!r.ok) break;
+          var data = await r.json();
+          if (!data.products || !data.products.length) break;
+          for (var j = 0; j < data.products.length; j++) {
+            var p = data.products[j];
+            if (String(p.id) === pid && p.variants && p.variants.length) {
+              var vid = p.variants[0].id;
+              __variantCache[productId] = vid;
+              return vid;
+            }
+          }
+          if (data.products.length < 250) break;
+          page++;
+        }
+        return null;
+      }
+
+      window.buyParentsv2Checkout = async function (btn) {
+        var meta = __itemMeta;
+        var ecomItem = {
+          item_name: meta.title,
+          item_variant: meta.variant,
+          price: meta.total,
+          currency: 'USD',
+          quantity: 1,
+        };
+
+        trackEvent('add_to_cart', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
+
+        var prevHtml = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Please wait…';
+        try {
+          if (window.TrackiAttribution && typeof window.TrackiAttribution.syncCart === 'function') {
+            await window.TrackiAttribution.syncCart();
+          }
+          var vid = await fetchVariantIdByProductId(__PARENTSV2_PRODUCT_ID);
+          if (!vid) {
+            throw new Error('Could not find product variant. Check product ID in the theme.');
+          }
+          var clearRes = await fetch('/cart/clear.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'same-origin',
+          });
+          if (!clearRes.ok) throw new Error('Cart clear failed');
+          var lineItem = { id: Number(vid), quantity: 1 };
+          var utmProps = lineItemAttributionProperties();
+          if (Object.keys(utmProps).length) {
+            lineItem.properties = utmProps;
+          }
+          var addRes = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'same-origin',
+            body: JSON.stringify({ items: [lineItem] }),
+          });
+          if (!addRes.ok) {
+            var errBody = await addRes.text();
+            throw new Error(errBody || 'Add to cart failed');
+          }
+
+          trackEvent('begin_checkout', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
+
+          window.location.href = '/checkout';
+        } catch (e) {
+          console.error(e);
+          alert('Checkout could not start. Please try again or contact support.');
+          btn.disabled = false;
+          btn.innerHTML = prevHtml;
+        }
+      };
+
+      window.addEventListener('pageshow', function (e) {
+        if (!e.persisted) return;
+        var map = [
+          ['nav-cta', 'Get Tracki →'],
+          [
+            'hero-cta-main',
+            'Secure Your Child Today — See Offers<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+          ],
+          ['device-order-cta', 'Order Now →'],
+          ['reviews-cta-btn', 'Join 50,000+ Families — Get Tracki'],
+          [
+            'starter-cta',
+            'Get Started Now<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+          ],
+          [
+            'final-cta',
+            'Get Tracki Now<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
+          ],
+          ['parentsv2-mob-bar-buy', 'Get Tracki →'],
+        ];
+        for (var i = 0; i < map.length; i++) {
+          var el = document.getElementById(map[i][0]);
+          if (el) {
+            el.disabled = false;
+            el.innerHTML = map[i][1];
+          }
+        }
+      });
+    })();
+  </script>
+  <script src="{{ 'parentsv2-lander.js' | asset_url }}" defer></script>
+
+</div>
