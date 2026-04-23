@@ -74,6 +74,12 @@
       background: rgba(70,193,96,0.05);
       font-weight: 700;
     }
+    .hero {
+      min-height: auto !important;
+    }
+    .hero-content {
+      padding-bottom: 40px !important;
+    }
   </style>
 </head>
 <body>
@@ -124,11 +130,11 @@
           Top Rated GPS Tracker for Business
         </div>
         <h1 class="hero-headline" style="font-size: 4rem;">
-          Track 1-10 Vehicles.<br />
-          <span class="hero-green">No Sales Demo.</span>
+          Fleet Tracking Made Simple.<br />
+          <span class="hero-green">Set Up In Minutes.</span>
         </h1>
         <p class="hero-sub" style="font-size: 1.25rem;">
-          Stop guessing where your crews are and start proving they were on-site. The Tracki Pro gives you a 12-month battery and a self-serve, multi-vehicle dashboard in 5 minutes. No enterprise contracts. No $3,000 installations.
+          Stop guessing where your crews are and start proving they were on-site. The Tracki Pro GPS tracker for fleets gives you a 12-month battery and a self-serve, multi-vehicle dashboard in 5 minutes. No enterprise contracts. No $3,000 installations.
         </p>
         <div class="hero-trust" style="margin-bottom: 30px;">
           <div class="hero-trust-item" style="font-weight:700;">
@@ -146,6 +152,7 @@
           </a>
         </div>
         <p class="hero-micro">🔒 Risk-Free 30 Days · Volume Discounts Available</p>
+        <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-pro.png?v=1774941406" alt="Tracki Pro Device" style="width: 120px; height: auto; display: block; margin: 30px auto 0;" />
       </div>
 
       <!-- Phone mockup showing business alert -->
@@ -203,12 +210,14 @@
       <p style="font-size:1.1rem; color:#475569; line-height:1.6; margin-bottom:40px; max-width:800px; margin-left:auto; margin-right:auto;">
         Tracki is recognized by independent testing labs as a leader in tracking accuracy. Our hardware, engineered by our sister company <strong>Trackimo</strong>, sweeps the world's prestigious IoT telecommunications and industrial design galas.
       </p>
-      
+
+
+
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; text-align:left; margin-bottom: 40px;">
         
         <!-- TechGearLab -->
         <div style="background:#f8fafc; border-radius:12px; padding:24px; border:1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-          <div style="margin-bottom:12px;"><span style="background:#e0e7ff; color:#3730a3; padding:4px 8px; border-radius:4px; font-size:0.85rem; font-weight:700; text-transform:uppercase;">TechGearLab</span></div>
+          <div style="margin-bottom:12px; height: 28px;"><img src="{{ 'logo-techgearlab.png' | asset_url }}" alt="TechGearLab" width="150" height="28" style="height:100%; width:auto; opacity:0.9;" /></div>
           <h3 style="font-size:1.2rem; font-weight:800; color:#111827; margin:0 0 8px 0;">"Best for Vehicles"</h3>
           <p style="font-size:0.95rem; color:#475569; line-height:1.5; margin:0;">
             Achieved a near-perfect score for vehicle tracking. Validated for unlimited range and enterprise-grade GPS accuracy that pinpointed the exact side of a building our subject was on.
@@ -217,7 +226,7 @@
 
         <!-- SafeWise -->
         <div style="background:#f8fafc; border-radius:12px; padding:24px; border:1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-          <div style="margin-bottom:12px;"><span style="background:#dcfce7; color:#166534; padding:4px 8px; border-radius:4px; font-size:0.85rem; font-weight:700; text-transform:uppercase;">SafeWise Labs</span></div>
+          <div style="margin-bottom:12px; height: 28px;"><img src="{{ 'logo-safewise.svg' | asset_url }}" alt="SafeWise" width="120" height="28" style="height:100%; width:auto; opacity:0.9;" /></div>
           <h3 style="font-size:1.2rem; font-weight:800; color:#111827; margin:0 0 8px 0;">"Best International Tracker"</h3>
           <p style="font-size:0.95rem; color:#475569; line-height:1.5; margin:0;">
             Awarded for our multi-network cellular fallback capabilities. Validates Tracki's reliability in maintaining a seamless signal across borders for international shipping and supply chains.
@@ -226,7 +235,7 @@
 
         <!-- Men's Health Tech -->
         <div style="background:#f8fafc; border-radius:12px; padding:24px; border:1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-          <div style="margin-bottom:12px;"><span style="background:#fee2e2; color:#991b1b; padding:4px 8px; border-radius:4px; font-size:0.85rem; font-weight:700; text-transform:uppercase;">Men's Health Tech</span></div>
+          <div style="margin-bottom:12px; height: 28px;"><img src="{{ 'logo-menshealth.svg' | asset_url }}" alt="Men's Health" width="150" height="28" style="height:100%; width:auto; opacity:0.9;" /></div>
           <h3 style="font-size:1.2rem; font-weight:800; color:#111827; margin:0 0 8px 0;">"Best Value Tracker"</h3>
           <p style="font-size:0.95rem; color:#475569; line-height:1.5; margin:0;">
             Recognized as the ultimate scalable solution for tracking unpowered movable assets without massive corporate hardware costs, praised for its magnetic mount and low-power battery efficiency.
@@ -236,34 +245,34 @@
       </div>
 
       <!-- Trackimo Graceful Explanation -->
-      <div style="background:linear-gradient(135deg, #0f172a, #1e293b); border-radius:16px; padding:32px; text-align:left; color:#fff; position:relative; overflow:hidden; border: 1px solid #334155;">
+      <div style="background:linear-gradient(135deg, #0f172a, #1e293b); border-radius:16px; padding:32px; text-align:center; color:#fff; position:relative; overflow:hidden; border: 1px solid #334155;">
         <div style="position:relative; z-index:1;">
-          <h3 style="font-size:1.5rem; font-weight:800; margin:0 0 16px 0; color:#f8fafc; display:flex; align-items:center; gap:8px;">
+          <h3 style="font-size:1.5rem; font-weight:800; margin:0 0 16px 0; color:#f8fafc; display:flex; align-items:center; justify-content:center; gap:8px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             Powered by Trackimo® Technology
           </h3>
           <p style="font-size:1.05rem; color:#cbd5e1; line-height:1.6; margin:0 0 20px 0;">
             Every Tracki device is engineered by our sister company, <strong>Trackimo</strong>—a global leader in IoT hardware who co-creates connected devices with telecommunication giants like Vodafone. Because of this powerhouse engineering structure, the proprietary hardware inside your tracker has swept the world's most highly contested industrial design and technology galas.
           </p>
-          <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <div style="background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem; border:1px solid rgba(255,255,255,0.2);">🏆 GLOMO Award (MWC)</div>
-            <div style="background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem; border:1px solid rgba(255,255,255,0.2);">🔴 Red Dot Product Design Award</div>
-            <div style="background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem; border:1px solid rgba(255,255,255,0.2);">🏆 iF Design Award</div>
-            <div style="background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem; border:1px solid rgba(255,255,255,0.2);">🌟 Bosch DNA Nxt Incubator Alliance</div>
-            <div style="background:rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem; border:1px solid rgba(255,255,255,0.2);">🏆 Good Design Award</div>
+          <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:center; align-items:center; margin-top:24px;">
+            <img src="{{ 'logo-glomo.svg' | asset_url }}" alt="GLOMO" width="150" height="64" style="height:64px; width:auto; opacity:0.9;" />
+            <img src="{{ 'logo-red-dot.svg' | asset_url }}" alt="Red Dot" width="100" height="48" style="height:48px; width:auto; opacity:0.75;" />
+            <img src="{{ 'logo-if-design.svg' | asset_url }}" alt="iF Design" width="100" height="48" style="height:48px; width:auto; opacity:0.75;" />
+            <img src="{{ 'logo-bosch.svg' | asset_url }}" alt="Bosch" width="150" height="52" style="height:52px; width:auto; opacity:0.9;" />
+            <img src="{{ 'logo-good-design.svg' | asset_url }}" alt="Good Design" width="150" height="52" style="height:52px; width:auto; opacity:0.9;" />
           </div>
         </div>
       </div>
 
     </div>
   </section>
-  <section class="action-highlight" style="padding: 60px 0; background: #f8fafc;">
+  <section class="action-highlight" style="padding: 60px 0; background: #15803d;">
     <div class="container" style="max-width:800px; text-align:center;">
       <div class="action-highlight-icon" style="margin: 0 auto 20px;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
       </div>
-      <h2 class="section-h2" style="color:#111827;">The 1-Tap <span class="green-text">Shareable Link</span></h2>
-      <p style="font-size:1.1rem; color:#475569; line-height:1.6; margin-top:16px;">
+      <h2 class="section-h2" style="color:#fff;">The 1-Tap <span style="color: #bbf7d0;">Shareable Link</span></h2>
+      <p style="font-size:1.1rem; color:#e2e8f0; line-height:1.6; margin-top:16px;">
         Need a client to know exactly when a delivery is arriving? Or need to hand police a live map of a stolen work truck? Tap "Share" and send a secure URL via text. They can watch your vehicle move in real-time on any browser—no Tracki account required.
       </p>
     </div>
@@ -355,22 +364,23 @@
   </section>
 
   <!-- ===== WEB & MOBILE APP ===== -->
-  <section class="app-section" id="app" style="background:#fff; padding: 80px 0; border-top: 1px solid #e2e8f0;">
+  <section class="app-section" id="app" style="background:linear-gradient(135deg, #14532d, #064e3b); padding: 80px 0; border-top: 1px solid #064e3b;">
     <div class="container">
       <div class="app-grid" style="display:flex; flex-wrap:wrap; align-items:center; gap: 60px;">
-        <div class="app-image-wrap" style="flex:1; min-width:300px;">
-          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki_webapp_ss.jpg?v=1775423290" alt="Tracki Web Dashboard" class="app-image-web" width="100%" height="auto" style="border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.1);" />
+        <div class="app-image-wrap" style="position: relative; flex:1; min-width:300px;">
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/black_work_van_webapp.jpg?v=1776876640" alt="Tracki Web Dashboard" class="app-image-web" width="100%" height="auto" style="border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,0.4);" />
+          <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/black_work_van_mobile.jpg?v=1776880951" alt="Tracki Mobile App" class="app-image-mobile" width="400" height="800" />
         </div>
         <div class="app-content" style="flex:1; min-width:300px;">
-          <div class="section-label">Web &amp; Mobile Ready</div>
-          <h2 class="section-h2">Fleet Tracking from Anywhere, <br/><span class="green-text">Any Device</span></h2>
-          <p class="section-sub" style="text-align:left; max-width:100%; margin-top:20px; color:#64748b; font-size:1.1rem; line-height:1.6;">
+          <div class="section-label" style="color:#86efac;">Web &amp; Mobile Ready</div>
+          <h2 class="section-h2" style="color:#fff;">Fleet Tracking from Anywhere, <br/><span style="color:#4ade80;">Any Device</span></h2>
+          <p class="section-sub" style="text-align:left; max-width:100%; margin-top:20px; color:#e2e8f0; font-size:1.1rem; line-height:1.6;">
             Whether you're dispatching from the office or managing teams out in the field, you've got full visibility. Tracki includes a comprehensive Web Dashboard perfect for dispatchers and fleet managers, plus top-rated native apps for both iOS and Android.
           </p>
           <ul class="compare-list" style="margin-top:24px; list-style:none; padding:0;">
-            <li style="display:flex; align-items:flex-start; margin-bottom:12px;"><span class="check-icon" style="color:#15803d; margin-right:12px; font-weight:bold;">✓</span> <div style="color:#334155;"><strong>Web App:</strong> Detailed fleet dashboard and reporting for desktop</div></li>
-            <li style="display:flex; align-items:flex-start; margin-bottom:12px;"><span class="check-icon" style="color:#15803d; margin-right:12px; font-weight:bold;">✓</span> <div style="color:#334155;"><strong>Mobile App:</strong> Real-time alerts and on-the-go tracking for field managers</div></li>
-            <li style="display:flex; align-items:flex-start;"><span class="check-icon" style="color:#15803d; margin-right:12px; font-weight:bold;">✓</span> <div style="color:#334155;"><strong>Sub-Accounts:</strong> Share limited access with drivers or regional managers</div></li>
+            <li style="display:flex; align-items:flex-start; margin-bottom:12px;"><span class="check-icon" style="color:#4ade80; margin-right:12px; font-weight:bold;">✓</span> <div style="color:#f8fafc;"><strong>Web App:</strong> Detailed fleet dashboard and reporting for desktop</div></li>
+            <li style="display:flex; align-items:flex-start; margin-bottom:12px;"><span class="check-icon" style="color:#4ade80; margin-right:12px; font-weight:bold;">✓</span> <div style="color:#f8fafc;"><strong>Mobile App:</strong> Real-time alerts and on-the-go tracking for field managers</div></li>
+            <li style="display:flex; align-items:flex-start;"><span class="check-icon" style="color:#4ade80; margin-right:12px; font-weight:bold;">✓</span> <div style="color:#f8fafc;"><strong>Sub-Accounts:</strong> Share limited access with drivers or regional managers</div></li>
           </ul>
           <div class="app-store-btns" style="display:flex; flex-wrap:wrap; gap:16px; margin-top:30px;">
             <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/appstrore-btn.png?v=1767691701" alt="Download on App Store" width="140" height="auto" />
@@ -474,18 +484,42 @@
       </table>
     </div>
   </section>
+  <!-- ===== DEVICE CHOOSER ===== -->
+  <section class="device-chooser" style="padding: 80px 0; background: #15803d;">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-label" style="text-align:center; color:#bbf7d0;">Hardware Options</div>
+      <h2 class="section-h2" style="color:#fff; text-align:center;">Which Tracki Is Right<br/>For Your Business?</h2>
+      
+      <div style="display:flex; flex-wrap:wrap; gap:30px; margin-top:40px;">
+        <div style="flex:1; min-width:300px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2); text-align:center; border-top: 4px solid #4ade80;">
+          <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-pro.png?v=1774941406" alt="Tracki Pro" width="180" height="auto" style="display:block;" />
+          </div>
+          <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:10px; color:#111827;">Tracki Pro (Recommended)</h3>
+          <p style="color:#64748b; font-size:1rem; margin-bottom:20px;">18 oz · 12-Month Battery · Magnetic Mount</p>
+          <p style="color:#334155; line-height:1.5;">Built for the elements. Features a massive internal battery and an industrial undercarriage magnet. Best for work vans, heavy equipment, and trailers.</p>
+        </div>
+        <div style="flex:1; min-width:300px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2); text-align:center;">
+          <div style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-universal.webp?v=1771319961" alt="Tracki Universal" width="90" height="auto" style="display:block;" />
+          </div>
+          <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:10px; color:#111827;">Tracki Universal</h3>
+          <p style="color:#64748b; font-size:1rem; margin-bottom:20px;">1.26 oz · 7-Day Battery · Tiny Footprint</p>
+          <p style="color:#334155; line-height:1.5;">Ultra-compact and lightweight. Best for dropping into gloveboxes, high-value toolboxes, or courier bags where space is extremely limited.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== OFFER (BUNDLE) ===== -->
   <section class="b2b-offer-section" id="offer" style="padding: 80px 0; background: #f8fafc; overflow: hidden;">
     <div class="container" style="max-width:1000px;">
       <div class="section-label" style="text-align:center;">Transparent Pricing</div>
-      <h2 class="section-h2" style="text-align:center;">Fleet Tracking. <span class="green-text">Zero Enterprise Nonsense.</span></h2>
+      <h2 class="section-h2" style="text-align:center;">Fleet Tracking. <span class="green-text" style="color:#15803d !important;">Zero Enterprise Nonsense.</span></h2>
       <p style="text-align:center; color:#64748b; font-size:1.1rem; margin-bottom: 40px;">Select a bundled data plan below, or buy the hardware now and choose a plan upon activation.</p>
 
-      <!-- Volume Discount Callout -->
-      <div style="background: rgba(70, 193, 96, 0.1); border: 1px solid #15803d; border-radius: 8px; padding: 16px; text-align: center; margin-bottom: 40px; font-weight: 700; color: #1e293b;">
-        <span style="display:inline-block; margin-right:8px;">🚚</span> 
-        Managing a larger group? Volume hardware discounts automatically apply at checkout for 5+ vehicles.
+      <div style="text-align: center; margin-bottom: 40px;">
+        <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-pro.png?v=1774941406" alt="Tracki Pro Device" style="max-width: 100%; height: auto; width: 300px; display: inline-block;" />
       </div>
 
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start;">
@@ -494,42 +528,42 @@
         <div style="background:#fff; border-radius:16px; padding:30px; text-align:center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position:relative; border: 2px solid #15803d;">
           <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:#15803d; color:#fff; font-weight:800; font-size:0.8rem; padding:6px 16px; border-radius:20px; white-space:nowrap;">Most Popular</div>
           
-          <h3 style="font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:10px;">1-Year Fleet Bundle</h3>
-          <div style="font-size:3rem; font-weight:900; color:#111827; line-height:1; margin-bottom:5px; letter-spacing:-1px;">$11.66</div>
-          <div style="font-size:0.9rem; color:#64748b; font-weight:600; text-transform:uppercase; margin-bottom:20px;">/ Month Equivalent</div>
+          <h3 style="font-size:1.5rem; font-weight:800; color:#111827 !important; margin-bottom:10px;">1-Year Fleet Bundle</h3>
+          <div style="font-size:3rem; font-weight:900; color:#111827 !important; line-height:1; margin-bottom:5px; letter-spacing:-1px;">$11.66</div>
+          <div style="font-size:0.9rem; color:#64748b !important; font-weight:600; text-transform:uppercase; margin-bottom:20px;">/ Month Equivalent</div>
           
-          <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e2e8f0; font-size:0.95rem; color:#334155;">
+          <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e2e8f0; font-size:0.95rem; color:#334155 !important;">
             <strong>Hardware:</strong> $28.88 (One-time)<br/>
             <strong>1-Year Data:</strong> $139.95 (Prepaid)<br/>
-            <strong>Total Upfront: $168.83</strong>
+            <strong style="font-weight: 900; color: #111827;">Total Upfront: $168.83</strong>
           </div>
           <a href="#" class="btn btn-green btn-pill" style="display:block; width:100%; font-size:1.1rem; padding:16px; font-weight:800;">Get 1-Year Bundle</a>
         </div>
 
         <!-- Option 2: 2-Year Bundle -->
         <div style="background:#fff; border-radius:16px; padding:30px; text-align:center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-          <h3 style="font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:10px;">2-Year Fleet Bundle</h3>
-          <div style="font-size:3rem; font-weight:900; color:#111827; line-height:1; margin-bottom:5px; letter-spacing:-1px;">$9.95</div>
-          <div style="font-size:0.9rem; color:#64748b; font-weight:600; text-transform:uppercase; margin-bottom:20px;">/ Month Equivalent</div>
+          <h3 style="font-size:1.5rem; font-weight:800; color:#111827 !important; margin-bottom:10px;">2-Year Fleet Bundle</h3>
+          <div style="font-size:3rem; font-weight:900; color:#111827 !important; line-height:1; margin-bottom:5px; letter-spacing:-1px;">$9.95</div>
+          <div style="font-size:0.9rem; color:#64748b !important; font-weight:600; text-transform:uppercase; margin-bottom:20px;">/ Month Equivalent</div>
           
-          <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e2e8f0; font-size:0.95rem; color:#334155;">
+          <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e2e8f0; font-size:0.95rem; color:#334155 !important;">
             <strong>Hardware:</strong> $28.88 (One-time)<br/>
             <strong>2-Year Data:</strong> $238.80 (Prepaid)<br/>
-            <strong>Total Upfront: $267.68</strong>
+            <strong style="font-weight: 900; color: #111827;">Total Upfront: $267.68</strong>
           </div>
           <a href="#" class="btn btn-ghost-dark btn-pill" style="display:block; width:100%; font-size:1.1rem; padding:16px; font-weight:800; border:2px solid #111827; color:#111827; background:#fff;">Get 2-Year Bundle</a>
         </div>
 
         <!-- Option 3: Base Device Only -->
         <div style="background:#fff; border-radius:16px; padding:30px; text-align:center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-          <h3 style="font-size:1.5rem; font-weight:800; color:#111827; margin-bottom:10px;">Device Only</h3>
-          <div style="font-size:3rem; font-weight:900; color:#111827; line-height:1; margin-bottom:5px; letter-spacing:-1px;">$19.95</div>
-          <div style="font-size:0.9rem; color:#64748b; font-weight:600; text-transform:uppercase; margin-bottom:20px;">/ Month (No Contract)</div>
+          <h3 style="font-size:1.5rem; font-weight:800; color:#111827 !important; margin-bottom:10px;">Device Only</h3>
+          <div style="font-size:3rem; font-weight:900; color:#111827 !important; line-height:1; margin-bottom:5px; letter-spacing:-1px;">$19.95</div>
+          <div style="font-size:0.9rem; color:#64748b !important; font-weight:600; text-transform:uppercase; margin-bottom:20px;">/ Month (No Contract)</div>
           
-          <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e2e8f0; font-size:0.95rem; color:#334155;">
+          <div style="margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #e2e8f0; font-size:0.95rem; color:#334155 !important;">
             <strong>Hardware:</strong> $28.88 (One-time)<br/>
             <strong>Data:</strong> Billed Monthly<br/>
-            <strong>Total Upfront: $28.88</strong>
+            <strong style="font-weight: 900; color: #111827;">Total Upfront: $28.88</strong>
           </div>
           <a href="#" class="btn btn-ghost-dark btn-pill" style="display:block; width:100%; font-size:1.1rem; padding:16px; font-weight:800; border:2px solid #111827; color:#111827; background:#fff;">Get Hardware Only</a>
         </div>
@@ -555,7 +589,7 @@
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="faq-layout">
-        <div class="faq-col" style="max-width:100%;">
+        <div class="faq-col">
           <div class="section-label">Questions?</div>
           <h2 class="section-h2" style="text-align:left;">Frequently Asked by<br /><span class="green-text">Fleet Managers</span></h2>
 
@@ -571,6 +605,27 @@
             <div class="faq-item" id="faq3">
               <button class="faq-q" onclick="toggleFaq('faq3')">How is Tracki different from Samsara or Verizon Connect?<span class="faq-icon">+</span></button>
               <div class="faq-a">Samsara and Verizon are incredible platforms for 500-truck over-the-road freight groups that need ELD compliance, AI dashcams, and API integrations. If you just need reliable GPS dots on a map for 5 HVAC vans—without spending $8,000 upfront—Tracki is for you.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-cta-col">
+          <div class="faq-cta-card">
+            <img src="{{ 'b2b-hero.png' | asset_url }}" alt="Work truck fleet tracking" class="faq-scare-img" width="400" height="400" style="object-fit: cover;" />
+            <h3>Don't wait until you have a scare.</h3>
+            <p>Every business owner who bought Tracki says the same thing: <em>"I wish I'd done this sooner."</em> Today's the day you take control of your fleet.</p>
+            <a href="#offer" class="btn btn-green btn-pill btn-xl" id="final-cta">
+              Get Tracki Pro Now
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <div class="faq-trust-row">
+              <div class="faq-trust-item"><span>🔒</span> Secure checkout</div>
+              <div class="faq-trust-item"><span>📦</span> Ships in 1 day</div>
+              <div class="faq-trust-item"><span>🛡️</span> Lifetime warranty</div>
+            </div>
+            <div class="faq-reviews-mini">
+              <div class="faq-stars">★★★★★</div>
+              <div class="faq-review-count">4.8/5 from 14,300+ businesses</div>
             </div>
           </div>
         </div>
