@@ -84,6 +84,7 @@
       margin-bottom: 24px;
     }
   </style>
+  <script src="{{ 'utm-order-attribution.js' | asset_url }}" defer></script>
 </head>
 <body>
 
@@ -752,7 +753,7 @@
 
       </div>
 
-      <button id="checkout-btn" style="display:block; width:100%; background:#111827; color:#fff; font-weight:900; font-size:1.1rem; letter-spacing:1.5px; text-transform:uppercase; padding:20px; border-radius:60px; border:none; cursor:pointer; margin-bottom:12px;">GET TRACKI PRO NOW</button>
+      <button type="button" id="checkout-btn" onclick="buyB2cBundleCheckout(this)" style="display:block; width:100%; background:#111827; color:#fff; font-weight:900; font-size:1.1rem; letter-spacing:1.5px; text-transform:uppercase; padding:20px; border-radius:60px; border:none; cursor:pointer; margin-bottom:12px;">GET TRACKI PRO NOW</button>
       <p style="text-align:center; color:rgba(255,255,255,0.7) !important; font-size:0.85rem; margin:0;">Select a plan above to continue</p>
       <div style="text-align:center; margin-top:24px; color:rgba(255,255,255,0.75) !important; font-size:0.9rem;">🛡️ 30-Day Money-Back Guarantee · Free Shipping · No Hidden Fees</div>
     </div>
@@ -884,6 +885,163 @@
     </div>
   </div>
 
+  <script>
+    (function () {
+      var __PLAN_MAP = {
+        'plan-device': {
+          productId: '7351960502387',
+          title: 'Tracki Device Only',
+          amount: 28.88,
+        },
+        'plan-6': {
+          productId: '8188270575731',
+          title: 'Tracki + 6 Month Subscription',
+          amount: 99.99,
+        },
+        'plan-12': {
+          productId: '8188271132787',
+          title: 'Tracki + 12 Month Subscription',
+          amount: 142.99,
+        },
+        'plan-24': {
+          productId: '8188271165555',
+          title: 'Tracki + 24 Month Subscription',
+          amount: 195.49,
+        },
+      };
+
+      var __variantCache = {};
+      var __CHECKOUT_BTN_HTML = 'GET TRACKI PRO NOW';
+      window.dataLayer = window.dataLayer || [];
+
+      function trackEvent(eventName, params) {
+        var payload = Object.assign({ event: eventName }, params || {});
+        try {
+          var utm =
+            window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function'
+              ? window.TrackiAttribution.getMerged()
+              : {};
+          if (utm && Object.keys(utm).length) {
+            payload.attribution = utm;
+          }
+        } catch (e) {}
+        dataLayer.push(payload);
+      }
+
+      function lineItemAttributionProperties(planKey) {
+        var raw = {};
+        try {
+          if (window.TrackiAttribution && typeof window.TrackiAttribution.getMerged === 'function') {
+            raw = window.TrackiAttribution.getMerged() || {};
+          }
+        } catch (e) {}
+        var props = {};
+        Object.keys(raw).forEach(function (k) {
+          var v = raw[k];
+          if (v == null || String(v).trim() === '') return;
+          var name = k.indexOf('_') === 0 ? k : '_' + k;
+          props[name] = String(v).trim();
+        });
+        props._landing_page = 'b2c-bundle-lander';
+        if (planKey) {
+          props._plan = String(planKey);
+        }
+        return props;
+      }
+
+      async function fetchVariantIdByProductId(productId) {
+        if (__variantCache[productId]) return __variantCache[productId];
+        var pid = String(productId);
+        var page = 1;
+        var maxPages = 25;
+        while (page <= maxPages) {
+          var r = await fetch('/products.json?limit=250&page=' + page, { credentials: 'same-origin' });
+          if (!r.ok) break;
+          var data = await r.json();
+          if (!data.products || !data.products.length) break;
+          for (var j = 0; j < data.products.length; j++) {
+            var p = data.products[j];
+            if (String(p.id) === pid && p.variants && p.variants.length) {
+              var vid = p.variants[0].id;
+              __variantCache[productId] = vid;
+              return vid;
+            }
+          }
+          if (data.products.length < 250) break;
+          page++;
+        }
+        return null;
+      }
+
+      window.buyB2cBundleCheckout = async function (btn) {
+        var checked = document.querySelector('input[name="plan"]:checked');
+        var planKey = checked && checked.id ? checked.id : 'plan-device';
+        var meta = __PLAN_MAP[planKey] || __PLAN_MAP['plan-device'];
+
+        var ecomItem = {
+          item_name: meta.title,
+          item_variant: planKey,
+          price: meta.amount,
+          currency: 'USD',
+          quantity: 1,
+        };
+
+        trackEvent('add_to_cart', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
+
+        var prevHtml = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Please wait…';
+        try {
+          if (window.TrackiAttribution && typeof window.TrackiAttribution.syncCart === 'function') {
+            await window.TrackiAttribution.syncCart();
+          }
+          var vid = await fetchVariantIdByProductId(meta.productId);
+          if (!vid) {
+            throw new Error('Could not find product variant. Check product ID in the theme.');
+          }
+          var clearRes = await fetch('/cart/clear.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'same-origin',
+          });
+          if (!clearRes.ok) throw new Error('Cart clear failed');
+          var lineItem = { id: Number(vid), quantity: 1 };
+          var utmProps = lineItemAttributionProperties(planKey);
+          if (Object.keys(utmProps).length) {
+            lineItem.properties = utmProps;
+          }
+          var addRes = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'same-origin',
+            body: JSON.stringify({ items: [lineItem] }),
+          });
+          if (!addRes.ok) {
+            var errBody = await addRes.text();
+            throw new Error(errBody || 'Add to cart failed');
+          }
+
+          trackEvent('begin_checkout', { ecommerce: { currency: 'USD', value: ecomItem.price, items: [ecomItem] } });
+
+          window.location.href = '/checkout';
+        } catch (e) {
+          console.error(e);
+          alert('Checkout could not start. Please try again or contact support.');
+          btn.disabled = false;
+          btn.innerHTML = prevHtml;
+        }
+      };
+
+      window.addEventListener('pageshow', function (e) {
+        if (!e.persisted) return;
+        var cb = document.getElementById('checkout-btn');
+        if (cb) {
+          cb.disabled = false;
+          cb.innerHTML = __CHECKOUT_BTN_HTML;
+        }
+      });
+    })();
+  </script>
   <script src="{{ 'all-lander.js' | asset_url }}" defer></script>
 </body>
 </html>
