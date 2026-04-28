@@ -891,7 +891,7 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer new">
     <div class="container footer-inner">
       <div class="footer-brand">
         <img src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/logo_c77c8a9c-eaf3-4e77-b9a0-9509b44b0bfc.png?v=1767166739" alt="Tracki" class="footer-logo-img" width="100" height="30" />
@@ -1104,5 +1104,15 @@
     })();
   </script>
   <script src="{{ 'all-lander.js' | asset_url }}" defer></script>
+  <style>
+    .transparent-header .header,
+    .innerpages .header,
+    .header,
+    .footer:not(.new),
+    .mobile-dock,
+    .woot--bubble-holder {
+      display: none !important;
+    }
+  </style>
 </body>
 </html>
