@@ -263,9 +263,9 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": false,
+            "show_quantity_selector": true,
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": true
           }
         },
         "share": {
@@ -307,13 +307,13 @@
       "settings": {
         "enable_sticky_info": true,
         "media_position": "left",
-        "media_size": "large",
+        "media_size": "small",
         "gallery_layout": "thumbnail_slider",
         "image_ratio": "adapt",
         "show_featured_media": false,
-        "show_thumbnails": true,
+        "show_thumbnails": false,
         "hide_variants": false,
-        "enable_image_zoom": true,
+        "enable_image_zoom": false,
         "enable_video_looping": false,
         "mobile_image_ratio": "adapt_first",
         "show_mobile_thumbnails": false,
