@@ -191,7 +191,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "title_size": "h1",
+            "title_size": "h2",
             "show_price": false,
             "price_size": "medium"
           }
@@ -263,14 +263,6 @@
             "color_scheme": "accent-3"
           }
         },
-        "text_nWhRrR": {
-          "type": "text",
-          "settings": {
-            "icon": "truck",
-            "text": "Have Large Fleet? buy more and save!",
-            "text_style": "body"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -310,7 +302,6 @@
         "dd734640-b7b1-44ad-96b6-3d7c9affc69e",
         "fd414a67-531a-4a3a-8941-e78cec888355",
         "inventory_status",
-        "text_nWhRrR",
         "buy_buttons",
         "share",
         "54684625-1615-430d-b322-cfb5af689b94",
