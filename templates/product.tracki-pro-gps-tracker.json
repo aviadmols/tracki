@@ -726,64 +726,6 @@
         "highlight_style": "marker"
       }
     },
-    "16448079723140b4d6": {
-      "type": "collage",
-      "blocks": {
-        "16448079726c05f8a0-0": {
-          "type": "video",
-          "settings": {
-            "cover_image": "shopify://shop_images/WhatsApp_Image_2026-02-22_at_13.54.18.jpg",
-            "enable_video_looping": true,
-            "video": "shopify://files/videos/lv_0_20260213155644.mp4",
-            "video_url": "",
-            "description": "Describe the video for customers using screen readers",
-            "heading": "",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "cf00eccf-b810-423e-b980-c7140a8d8f03": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/tracki-2021-model-mini-real-time-gps-tracker-788444.jpg",
-            "heading": "",
-            "link": "",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "5a6fcbbe-82e4-4199-9799-ac7dc39024a6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/universal-new.webp",
-            "heading": "",
-            "link": "",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        }
-      },
-      "block_order": [
-        "16448079726c05f8a0-0",
-        "cf00eccf-b810-423e-b980-c7140a8d8f03",
-        "5a6fcbbe-82e4-4199-9799-ac7dc39024a6"
-      ],
-      "settings": {
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "apply_overlay": true,
-        "show_divider": false,
-        "heading": "",
-        "heading_size": "h1",
-        "heading_alignment": "left",
-        "heading_tag": "h2",
-        "colors_highlight": "#ffb503",
-        "padding_top": 0,
-        "padding_bottom": 36,
-        "enable_highlight": false,
-        "highlight_style": "marker"
-      }
-    },
     "1644818998cec1e2a6": {
       "type": "testimonials",
       "blocks": {
@@ -1022,7 +964,6 @@
     "product-recommendations",
     "164476417040d4bb5c",
     "tab-collage",
-    "16448079723140b4d6",
     "1644818998cec1e2a6",
     "1644745953392511db",
     "1644821694668dc64a"
