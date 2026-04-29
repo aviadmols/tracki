@@ -4205,6 +4205,7 @@ letter-spacing: 0.292px;
     font-weight: 450;
     line-height: normal;
     font-family: var(--font-heading-family);
+    margin-left:0px;
 }
 .innerpages.manual .language-selection h1, .innerpages.manual .main-content h2, .innerpages.manual .main-content h3 {
     color: #FFF;
