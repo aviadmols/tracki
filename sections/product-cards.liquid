@@ -12,50 +12,56 @@
     <div class="product-grid">
 
       {% for block in section.blocks %}
-  {% assign product = all_products[block.settings.product] %}
+        {% assign product = all_products[block.settings.product] %}
 
-  {% if product and product.available and product.published_at %}
+        <div class="product-card">
+          <div class="card-inner">
 
-    <div class="product-card">
-      <div class="card-inner">
+            <div class="card-image">
+              {% if product.featured_image != blank %}
+                <img src="{{ product.featured_image | image_url: width: 400 }}" 
+                     alt="{{ product.title | escape }}" loading="lazy">
+              {% endif %}
+            </div>
 
-        <div class="card-image">
-          {% if product.featured_image != blank %}
-            <img src="{{ product.featured_image | image_url: width: 400 }}" 
-                 alt="{{ product.title | escape }}" loading="lazy">
-          {% endif %}
+            <h3 class="card-title">
+              {%- assign title_parts = product.title | split: ' ' -%}
+              {{ title_parts[0] }} {{ title_parts[1] }} <br>
+              <span class="card-subtitle">
+                {% for part in title_parts offset: 2 %}
+                  {{ part }} 
+                {% endfor %}
+              </span>
+            </h3>
+
+            {% if product.price != blank %}
+              <p class="card-price product-price">
+                {{ product.price | money }}
+              </p>
+            {% endif %}
+
+            <a href="{% if product.available %}
+  {% if block.settings.button_link != blank %}
+    {{ block.settings.button_link }}
+  {% else %}
+    {{ product.url }}
+  {% endif %}
+{% else %}
+  javascript:void(0)
+{% endif %}" 
+               class="card-btn {% if product.available == false %}disabled{% endif %}"
+               {% if product.available == false %}aria-disabled="true"{% endif %}>
+              {% if product.available == false %}
+                Out of stock
+              {% else %}
+                Details
+              {% endif %}
+            </a>
+
+          </div>
         </div>
 
-        <h3 class="card-title">
-          {%- assign title_parts = product.title | split: ' ' -%}
-          {{ title_parts[0] }} {{ title_parts[1] }} <br>
-          <span class="card-subtitle">
-            {% for part in title_parts offset: 2 %}
-              {{ part }} 
-            {% endfor %}
-          </span>
-        </h3>
-
-        {% if product.price != blank %}
-          <p class="card-price product-price">
-            {{ product.price | money }}
-          </p>
-        {% endif %}
-
-        <a href="{% if block.settings.button_link != blank %}
-                    {{ block.settings.button_link }}
-                 {% else %}
-                    {{ product.url }}
-                 {% endif %}" 
-           class="card-btn">
-          Details
-        </a>
-
-      </div>
-    </div>
-
-  {% endif %}
-{% endfor %}
+      {% endfor %}
 
     </div>
 

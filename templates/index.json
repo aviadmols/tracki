@@ -1562,7 +1562,7 @@
           "type": "product",
           "settings": {
             "activate_card": false,
-            "product": "",
+            "product": "tracki-max-real-time-gps-tracker",
             "title": "",
             "price": "",
             "button_label": "Details",
