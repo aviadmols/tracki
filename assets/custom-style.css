@@ -4190,6 +4190,7 @@ letter-spacing: 0.292px;
     .innerpages.manual .language-selection h1  {
         font-size: 34px;
     }
+    .innerpages.manual .main-content h2{font-size:30px;}
     .innerpages.manual .post-section ul li, .innerpages.manual p {
         font-size: 17px;
         line-height: 1.8;
@@ -4203,7 +4204,7 @@ letter-spacing: 0.292px;
     font-weight: 450;
     line-height: normal;
 }
-.innerpages.manual .language-selection h1 {
+.innerpages.manual .language-selection h1, .innerpages.manual .main-content h2 {
     color: #FFF;
     text-align: center;
     font-size: 30px;
@@ -4211,8 +4212,9 @@ letter-spacing: 0.292px;
     font-weight: 700;
     line-height: normal;
 }
+.innerpages.manual .main-content h2{font-size:26px;}
 .innerpages.manual .language-card p{color:#000;}
-.innerpages.manual .language-card .flag{line-height:1.2;}
+.innerpages.manual .language-card .flag{line-height:1;}
 .innerpages.manual .language-card a.btn {
     border-radius: 20px;
     border: 1px solid var(--Green, #009C56);
