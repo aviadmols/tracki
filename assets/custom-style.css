@@ -4205,7 +4205,7 @@ letter-spacing: 0.292px;
     font-weight: 450;
     line-height: normal;
 }
-.innerpages.manual .language-selection h1, .innerpages.manual .main-content h2 {
+.innerpages.manual .language-selection h1, .innerpages.manual .main-content h2, .innerpages.manual .main-content h3 {
     color: #FFF;
     text-align: center;
     font-size: 30px;
