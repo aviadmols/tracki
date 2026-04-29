@@ -4211,6 +4211,7 @@ letter-spacing: 0.292px;
     font-weight: 700;
     line-height: normal;
 }
+.innerpages.manual .language-card p{color:#000;}
 .innerpages.manual .language-card a.btn {
     border-radius: 20px;
     border: 1px solid var(--Green, #009C56);
