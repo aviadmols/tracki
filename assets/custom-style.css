@@ -4186,17 +4186,7 @@ letter-spacing: 0.292px;
 .innerpages.manual .breadcrumbs li{color:#fff;}
 /* .innerpages.manual .language-selection{border-radius:8px;} */
 
-@media (min-width: 1400px) {
-    .innerpages.manual .language-selection h1  {
-        font-size: 34px;
-    }
-    .innerpages.manual .main-content h2{font-size:30px;}
-    .innerpages.manual .main-content h3{font-size:26px;}
-    .innerpages.manual .post-section ul li, .innerpages.manual p {
-        font-size: 17px;
-        line-height: 1.8;
-    }
-}
+
 .innerpages.manual .post-section ul, .innerpages.manual .post-section ol{margin-left:0px;}
 .innerpages.manual .post-section ol li, .innerpages.manual .post-section ul li, .innerpages.manual p, .social-share .share-text {
     color: #FAFAFA;
@@ -4219,6 +4209,18 @@ letter-spacing: 0.292px;
 .innerpages.manual .main-content h2{font-size:26px;margin-bottom:30px;}
 .innerpages.manual .main-content h3{font-size:22px;text-align:left;margin-bottom:15px;}
 .innerpages.manual .language-card p{color:#000;}
+
+@media (min-width: 1400px) {
+    .innerpages.manual .language-selection h1  {
+        font-size: 34px;
+    }
+    .innerpages.manual .main-content h2{font-size:30px;}
+    .innerpages.manual .main-content h3{font-size:26px;}
+    .innerpages.manual .post-section ol li, .innerpages.manual .post-section ul li, .innerpages.manual p, .social-share .share-text {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+}
 .innerpages.manual .language-card .flag{line-height:1;}
 .innerpages.manual .language-card a.btn {
     border-radius: 20px;
