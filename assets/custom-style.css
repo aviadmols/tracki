@@ -4214,7 +4214,7 @@ letter-spacing: 0.292px;
     line-height: normal;
 }
 .innerpages.manual .main-content h2{font-size:26px;}
-.innerpages.manual .main-content h3{font-size:22px;}
+.innerpages.manual .main-content h3{font-size:22px;text-align:left;font-weight:400;}
 .innerpages.manual .language-card p{color:#000;}
 .innerpages.manual .language-card .flag{line-height:1;}
 .innerpages.manual .language-card a.btn {
