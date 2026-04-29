@@ -4169,7 +4169,7 @@ letter-spacing: 0.292px;
 /* ===== Homepage new product Grid section css end ===== */
 
 /* user manual css start */
-.innerpages.manual{font-family: var(--font-heading-family);letter-spacing:0px;}
+.innerpages.manual{font-family: var(--font-heading-family) !important;letter-spacing:0px;}
 .innerpages.manual h1.page-title{
   color: #FFF;
     text-align: center;
