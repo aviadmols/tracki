@@ -4210,7 +4210,7 @@ letter-spacing: 0.292px;
 .innerpages.manual .main-content h3{font-size:22px;text-align:left;margin-bottom:15px;}
 .innerpages.manual .language-card p{color:#000;}
 .rte .social-icons a{background:#fff;border-radius:50%;color:#000;}
-.rte .social-icons a:hover{background:#76c773;color:#fff;}
+.rte .social-icons a:hover{background:#76c773;color:#fff;transform:unset;}
 
 @media (min-width: 1400px) {
     .innerpages.manual .language-selection h1  {
