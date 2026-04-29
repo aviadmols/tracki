@@ -4257,4 +4257,8 @@ letter-spacing: 0.292px;
     box-shadow: 0 2px 7px 1px #25282a99;
     transform: unset;
 }
+
+@media(max-width:1200px){
+  .innerpages.manual h1.page-title{padding-top:40px;}
+}
 /* user manual css end */
