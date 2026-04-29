@@ -4177,7 +4177,7 @@ letter-spacing: 0.292px;
     font-weight: 700;
     line-height: normal;
 }
-.innerpages.manual .breadcrumbs{background:transparent;}
+.innerpages.manual .breadcrumbs, .innerpages.manual .language-selection{background:transparent;}
 .innerpages.manual .rte .breadcrumbs ul {
     padding-inline-start: 0px;
 }
