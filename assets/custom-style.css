@@ -4169,6 +4169,7 @@ letter-spacing: 0.292px;
 /* ===== Homepage new product Grid section css end ===== */
 
 /* user manual css start */
+.innerpages.manual{font-family: var(--font-heading-family);letter-spacing:0px;}
 .innerpages.manual h1.page-title{
   color: #FFF;
     text-align: center;
@@ -4183,5 +4184,45 @@ letter-spacing: 0.292px;
 }
 .innerpages.manual .rte .breadcrumbs a{font-size:16px;}
 .innerpages.manual .breadcrumbs li{color:#fff;}
-.innerpages.manual .language-selection{border-radius:6px;}
+.innerpages.manual .language-selection{border-radius:8px;}
+.post-section ul li, .innerpages.manual p {
+    color: #FAFAFA;
+    text-align: justify;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+}
+.innerpages.manual .language-card a.btn {
+    border-radius: 20px;
+    border: 1px solid var(--Green, #009C56);
+    background: var(--Green, #009C56);
+    box-shadow: 0 2px 7px 1px #1dcf7f99;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    display: flex;
+    height: 40px;
+    padding: 6px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: var(--White, #FFF);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    transition: all .3s;
+    transform: unset;
+}
+.innerpages.manual .language-card a.btn:hover {
+    background: #25282a;
+    color: #fff;
+    border-color: #25282a;
+    box-shadow: 0 2px 7px 1px #25282a99;
+    transform: unset;
+}
 /* user manual css end */
