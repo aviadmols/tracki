@@ -4167,3 +4167,15 @@ letter-spacing: 0.292px;
 }
 
 /* ===== Homepage new product Grid section css end ===== */
+
+/* user manual css start */
+.innerpages.manual h1.page-title{
+  color: #FFF;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* user manual css end */
