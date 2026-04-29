@@ -4182,5 +4182,5 @@ letter-spacing: 0.292px;
     padding-inline-start: 0px;
 }
 .innerpages.manual .rte .breadcrumbs a{font-size:16px;}
-.innerpages.manual .breadcrumbs li:after{color:#fff;}
+.innerpages.manual .breadcrumbs li{color:#fff;}
 /* user manual css end */
