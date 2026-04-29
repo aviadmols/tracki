@@ -4204,6 +4204,7 @@ letter-spacing: 0.292px;
     font-style: normal;
     font-weight: 450;
     line-height: normal;
+    font-family: var(--font-heading-family);
 }
 .innerpages.manual .language-selection h1, .innerpages.manual .main-content h2, .innerpages.manual .main-content h3 {
     color: #FFF;
@@ -4212,6 +4213,7 @@ letter-spacing: 0.292px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    font-family: var(--font-heading-family);
 }
 .innerpages.manual .main-content h2{font-size:26px;margin-bottom:30px;}
 .innerpages.manual .main-content h3{font-size:22px;text-align:left;margin-bottom:15px;}
