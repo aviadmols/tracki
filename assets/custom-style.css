@@ -4197,7 +4197,8 @@ letter-spacing: 0.292px;
         line-height: 1.8;
     }
 }
-.innerpages.manual .post-section ul li, .innerpages.manual p {
+.innerpages.manual .post-section ul, .innerpages.manual .post-section ol{margin-left:0px;}
+.innerpages.manual .post-section ol li, .innerpages.manual .post-section ul li, .innerpages.manual p {
     color: #FAFAFA;
     text-align: justify;
     font-size: 16px;
@@ -4205,7 +4206,6 @@ letter-spacing: 0.292px;
     font-weight: 450;
     line-height: normal;
     font-family: var(--font-heading-family);
-    margin-left:0px;
 }
 .innerpages.manual .language-selection h1, .innerpages.manual .main-content h2, .innerpages.manual .main-content h3 {
     color: #FFF;
