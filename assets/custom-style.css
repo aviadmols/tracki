@@ -4218,7 +4218,7 @@ letter-spacing: 0.292px;
     .innerpages.manual .main-content h3{font-size:26px;}
     .innerpages.manual .post-section ol li, .innerpages.manual .post-section ul li, .innerpages.manual p, .social-share .share-text {
         font-size: 17px;
-        line-height: 1.8;
+        line-height: 1.5;
     }
 }
 .innerpages.manual .language-card .flag{line-height:1;}
