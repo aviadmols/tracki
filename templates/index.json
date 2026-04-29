@@ -1,1 +1,1850 @@
-{"sections":{"image_banner_iDaF6m":{"type":"image-banner","blocks":{"heading_cgL9hG":{"type":"heading","settings":{"heading":"Image banner","heading_size":"h1","heading_tag":"h2","enable_highlight":false,"highlight_style":"marker"}},"text_qE6N6h":{"type":"text","settings":{"text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","text_size":"typeset2","secondary_color":false,"enable_highlight":false,"highlight_style":"marker"}},"button_4TM8JN":{"type":"button","settings":{"button_size":"medium","button_label":"Button label","button_link":"","button_style_secondary":false,"button_alt_label":"","button_alt_link":"","button_alt_style_secondary":false}}},"block_order":["heading_cgL9hG","text_qE6N6h","button_4TM8JN"],"disabled":true,"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/bgr-hero-1.webp","image_2":"shopify:\/\/shop_images\/bgr-herow-2.webp","image_position":"center center","text_box_position":"middle-center","text_alignment":"center","image_ratio":"650px","show_text_box":true,"full_width":true,"show_divider":false,"image_behavior":"ambient","mobile_text_alignment":"center","mobile_image_ratio":"auto","stack_images_on_mobile":true,"show_text_below":true,"colors_button_label":"#1a1b18","colors_button_background":"#ffffff","colors_text":"#ffffff","colors_overlay":"#000000","colors_overlay_opacity":28,"colors_highlight":"#ffb503","padding_top":36,"padding_bottom":36}},"video_hero_jBbnJe":{"type":"video-hero","blocks":{"subheading_MB4kKK":{"type":"subheading","settings":{"subheading":"<em>DYNASTY HEADPHONE<\/em>","subheading_size":"h5","secondary_color":false,"enable_highlight":true,"highlight_style":"solid-color"}},"heading_hHrwkH":{"type":"heading","settings":{"heading":"<em>CRAFTED FOR<\/em> THE SENSES","heading_size":"h1","heading_tag":"h2","enable_highlight":true,"highlight_style":"solid-color"}},"button_bngmVj":{"type":"button","settings":{"button_size":"medium","button_label":"From €899","button_link":"","button_style_secondary":true,"button_alt_label":"","button_alt_link":"","button_alt_style_secondary":false}}},"block_order":["subheading_MB4kKK","heading_hHrwkH","button_bngmVj"],"disabled":true,"custom_css":["@media screen and (min-width: 750px) {.banner__heading {max-width: 30rem; }}"],"settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","text_box_position":"bottom-left","text_alignment":"left","image_ratio":"adapt","show_text_box":false,"full_width":true,"show_divider":false,"mobile_text_alignment":"left","mobile_image_ratio":"400px","show_text_below":true,"colors_button_label":"#1a1b18","colors_button_background":"#ffffff","colors_text":"#ffffff","colors_overlay":"#000000","colors_overlay_opacity":28,"colors_highlight":"#aa723e","padding_top":0,"padding_bottom":0}},"1644821111d5f02984":{"type":"rich-text","blocks":{"1644821111a6e15546-1":{"type":"text","settings":{"text":"<p>This is a demo store to showcase a real-world example of a one-product store.<\/p>","text_size":"typeset2","secondary_color":true,"enable_highlight":false,"highlight_style":"marker"}},"a92f0d1d-9ef3-4735-9d56-a35bfb88cac9":{"type":"button","settings":{"button_size":"medium","button_label":"Explore product landing","button_link":"","button_style_secondary":false,"button_alt_label":"","button_alt_link":"","button_alt_style_secondary":false}}},"block_order":["1644821111a6e15546-1","a92f0d1d-9ef3-4735-9d56-a35bfb88cac9"],"disabled":true,"settings":{"text_alignment":"left","mobile_text_alignment":"left","horizontal_content":true,"narrow":false,"show_divider":true,"use_custom_colors":false,"colors_button_label":"#ffffff","colors_button_background":"#1a1b18","colors_text":"#212326","colors_background":"#ffffff","colors_highlight":"#ffb503","gradient_background":"","padding_top":36,"padding_bottom":36}},"16447362110bb87100":{"type":"slideshow","blocks":{"d307d1a5-5b7c-491f-8d15-3ec972ee174e":{"type":"image","settings":{"image_position":"center center","text_box_position":"middle-center","subheading":"<em>ADAPTIVE ANC<\/em>","subheading_size":"h5","heading":"Put the world on pause","heading_size":"h1","heading_tag":"h2","text":"Five levels of noise cancellation make Dynasty Headphone our most advanced ANC headphones yet, handling everything from the hum of home life to the commotion of a commute.","text_size":"typeset","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"button_alt_label":"","button_alt_link":"","button_alt_size":"medium","button_alt_style_secondary":false,"enable_highlight":true,"highlight_style":"solid-color"}},"1644736211f9403d12-0":{"type":"image","settings":{"image_position":"center center","text_box_position":"middle-center","subheading":"<em>DYNASTY<\/em> HEADPHONE","subheading_size":"h5","heading":"Like nothing you've heard before","heading_size":"h1","heading_tag":"h2","text":"Depth, detail and delight. Dialed up beyond expectation. This is, quite simply, our finest headphone experience.","text_size":"typeset","button_label":"Shop Now","button_link":"#shopify-section-template--14471573471292__featured-product","button_size":"medium","button_style_secondary":false,"button_alt_label":"","button_alt_link":"","button_alt_size":"medium","button_alt_style_secondary":false,"enable_highlight":true,"highlight_style":"circle"}},"1644736211f9403d12-1":{"type":"image","settings":{"image_position":"center center","text_box_position":"middle-center","subheading":"<em>STANDOUT SOUND QUALITY<\/em>","subheading_size":"h5","heading":"Listen with new ears","heading_size":"h1","heading_tag":"h2","text":"Custom titanium drivers – nestled under detachable magnetic earcups – are tuned to our tightest tolerance on performance. It's done under the watchful ear of our in-house Tonmeister. The result? More lush lows, punchier mids and crisper highs. Put simply, you'll hear magical details you've never heard before.","text_size":"typeset","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"button_alt_label":"","button_alt_link":"","button_alt_size":"medium","button_alt_style_secondary":false,"enable_highlight":true,"highlight_style":"bold-underline"}}},"block_order":["d307d1a5-5b7c-491f-8d15-3ec972ee174e","1644736211f9403d12-0","1644736211f9403d12-1"],"disabled":true,"settings":{"slideshow_type":"modern","text_alignment":"left","image_ratio":"650px","autorotate":false,"autorotate_speed":5,"full_width":true,"image_behavior":"none","mobile_text_alignment":"left","mobile_image_ratio":"300px","show_text_below":true,"colors_button_label":"#000000","colors_button_background":"#ffffff","colors_text":"#ffffff","colors_background":"#000000","colors_overlay":"#000000","colors_overlay_opacity":92,"colors_navigation_text":"#000000","colors_navigation_background":"#ffffff","colors_highlight":"#aa723e","padding_top":0,"padding_bottom":36}},"featured-product":{"type":"featured-product","blocks":{"2f6cf206-7a70-46dc-88c2-3270e81a35b4":{"type":"text","disabled":true,"settings":{"icon":"none","text":"{{ section.settings.product.vendor }}","text_style":"uppercase","enable_highlight":false,"highlight_style":"marker"}},"featured-product-0":{"type":"title","settings":{"title_size":"h1","title_tag":"h2","show_price":false,"price_size":"medium"}},"featured-product-1":{"type":"rating","settings":{}},"featured-product-2":{"type":"text","settings":{"icon":"none","text":"","text_style":"subtitle","enable_highlight":false,"highlight_style":"marker"}},"featured-product-4":{"type":"price","settings":{"price_size":"medium","show_badges":true,"sale_badge_basis":"auto"}},"featured-product-5":{"type":"variant_picker","settings":{"show_variant_labels":true,"picker_type":"button","swatch_source":"variant","swatch_type":"round","enable_swatch_unavailable_click":false,"size_chart":""}},"4fc040da-9135-47c0-b21d-d0a71a846643":{"type":"text","settings":{"icon":"return","text":"30-day free trial","text_style":"body","enable_highlight":false,"highlight_style":"marker"}},"85dcc59a-693c-4b60-96fd-8c5b85a32897":{"type":"text","settings":{"icon":"box","text":"Available gift wrapping","text_style":"body","enable_highlight":false,"highlight_style":"marker"}},"3c41bd5f-1ea8-43d3-9425-fa9bd0133a46":{"type":"text","settings":{"icon":"lock","text":"3 years warranty","text_style":"body","enable_highlight":false,"highlight_style":"marker"}},"featured-product-6":{"type":"inventory_status","settings":{"inventory_threshold":10,"show_inventory_transfer":true,"color_scheme":"accent-3"}},"featured-product-7":{"type":"buy_buttons","settings":{"show_quantity_selector":false,"show_dynamic_checkout":true,"show_gift_card_recipient":false}},"featured-product-8":{"type":"share","settings":{"share_label":"Share"}},"14b61070-e337-414c-83d1-1603b3f46ff5":{"type":"image","settings":{"height":20,"link":""}}},"block_order":["2f6cf206-7a70-46dc-88c2-3270e81a35b4","featured-product-0","featured-product-1","featured-product-2","featured-product-4","featured-product-5","4fc040da-9135-47c0-b21d-d0a71a846643","85dcc59a-693c-4b60-96fd-8c5b85a32897","3c41bd5f-1ea8-43d3-9425-fa9bd0133a46","featured-product-6","featured-product-7","featured-product-8","14b61070-e337-414c-83d1-1603b3f46ff5"],"disabled":true,"settings":{"product":"","layout":"media_first","full_width":false,"show_divider":false,"show_featured_media":false,"hide_variants":false,"enable_image_zoom":true,"enable_video_looping":false,"image_ratio":"portrait","image_position":"center center","enable_layered_images":false,"colors_highlight":"#ffb503","padding_top":36,"padding_bottom":36}},"dual_scroll_FDtbDe":{"type":"dual-scroll","blocks":{"slide_wMBJWT":{"type":"slide","settings":{"title":"Included In The Box","heading_size":"h1","description":"<ul><li>Dynasty Headphone<\/li><li>Aluminium carrying case<\/li><li>USB-A to USB-C cable<\/li><li>3.5 mm audio cable<\/li><li>Flight adaptor<\/li><li>Microfibre cleaning cloth<\/li><li>Quick start guide<\/li><li>Greeting card<\/li><li>Instruction and care card<\/li><\/ul>","text_size":"typeset","secondary_color":false,"enable_highlight":false,"highlight_style":"marker","highlight_color":"#ffb503","button_label":"Shop Now","button_size":"medium","button_link":"","media_background_color":"#000000"}},"slide_MyHVCj":{"type":"slide","settings":{"title":"Sounding","heading_size":"h1","description":"<p><strong>Noise Isolation<\/strong><br\/>Passive Noise Cancelling<br\/><br\/><strong>Driver Type<\/strong><br\/>Electrodynamic, 5.7 mm diameter<br\/><br\/><strong>Driver Sensitivity<\/strong><br\/>107dB ± 3dB, 1kHz @-3 dBFS (max volume) with Bluetooth playback<br\/><br\/><strong>Frequency Range<\/strong><br\/>20 - 20,000 Hz<br\/><br\/><strong>Customizable Sound EQ<br\/><\/strong>Presets available and fully customisable through the app<\/p>","text_size":"typeset","secondary_color":false,"enable_highlight":false,"highlight_style":"marker","highlight_color":"#ffb503","button_label":"Shop Now","button_size":"medium","button_link":"","media_background_color":"#000000"}},"slide_KeDKxw":{"type":"slide","settings":{"title":"Design","heading_size":"h1","description":"<p><strong>Fit<\/strong><br\/>True wireless In-ear<br\/>Fit for sport<br\/><br\/><strong>EarGels<\/strong><br\/>4 pairs of silicone tips (XS, S,M,L)<br\/>Comply™ Foam tips (M size)<br\/><br\/><strong>Materials<\/strong><br\/>Aluminium, Polymer, Silicon<br\/><br\/><strong>Dust and Waterproof Rating<\/strong><br\/>IP57 rating: <br\/><br\/><strong>Dimensions (mm)<\/strong><br\/>Earphones: 23 W x 25 H x 21 D<br\/>Charging case: 70.6 W x 33.5 H x 35.6 D<br\/><br\/><strong>Weight<\/strong><br\/>12.8 g<br\/><br\/>Charging case:<br\/>55 g (without earbuds)<\/p>","text_size":"typeset","secondary_color":false,"enable_highlight":false,"highlight_style":"marker","highlight_color":"#ffb503","button_label":"Shop Now","button_size":"medium","button_link":"","media_background_color":"#000000"}},"slide_Mfrbjp":{"type":"slide","settings":{"title":"Battery","heading_size":"h1","description":"<p><strong>Battery Life<\/strong><br\/>Up to 30 hours with charging case at moderate volume<br\/><br\/><strong>Charging Time<\/strong><br\/>Earphones: approx. 2 ½ h<br\/>Charging Case (USB-C): 2 h<br\/>Charging Case (Qi Wireless): 2 ½ h<br\/><br\/>Charging for 20 minutes gives approximately 1½ hour playback.<br\/><br\/><strong>Battery Size<\/strong><br\/>Right (Primary) 60 mAh<br\/>Left (Secondary) 60 mAh<br\/>Charging Case: 450 mAh<\/p>","text_size":"typeset","secondary_color":false,"enable_highlight":false,"highlight_style":"marker","highlight_color":"#ffb503","button_label":"Shop Now","button_size":"medium","button_link":"","media_background_color":"#000000"}},"slide_3MJTrb":{"type":"slide","settings":{"title":"Connectivity","heading_size":"h1","description":"<p><strong>Bluetooth<\/strong><br\/>Bluetooth 5.1<br\/><br\/><strong>Sound Codecs<\/strong><br\/>SBC, AAC codec, Aptx classic<br\/><br\/><strong>Microphone<\/strong><br\/>4 - With beamforming signal processing<br\/><br\/><strong>Inputs and Outputs<\/strong><br\/>1.25 m USB-A to USB-C cable for Charging<br\/>Qi Wireless Charging<\/p>","text_size":"typeset","secondary_color":false,"enable_highlight":false,"highlight_style":"marker","highlight_color":"#ffb503","button_label":"Shop Now","button_size":"medium","button_link":"","media_background_color":"#000000"}}},"block_order":["slide_wMBJWT","slide_MyHVCj","slide_KeDKxw","slide_Mfrbjp","slide_3MJTrb"],"disabled":true,"name":"t:sections.dual-scroll.presets.name","settings":{"heading":"TECH SPECS","heading_size":"h1","heading_tag":"h2","heading_alignment":"center","enable_highlight":false,"highlight_style":"marker","narrow":true,"padding_top":36,"padding_bottom":36,"heading_color":"#ffffff","text_color":"#ffffff","description_color":"#b2b2b2","panel_background_color":"#272c32","border_color":"#2f353c","button_background_color":"#000000","button_text_color":"#ffffff","highlight_color":"#ffb503","transition_type":"scroll","media_rotation":0,"media_scale":80,"enable_media_shadow":false}},"1644819422ac1baaaa":{"type":"guarantees","blocks":{"164481942257a0f888-0":{"type":"guarantee","settings":{"icon":"none","icon_size":"medium","custom_icon":"","title":"User Guide","title_size":"h3","text":"<p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/5276\/2172\/files\/SAMPLE_EMPTY_USER_GUIDE.pdf?v=1646362704\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/5276\/2172\/files\/SAMPLE_EMPTY_USER_GUIDE.pdf?v=1646362704\">Download<\/a><\/p>","enable_highlight":false,"highlight_style":"marker"}},"164481942257a0f888-1":{"type":"guarantee","settings":{"icon":"none","icon_size":"medium","custom_icon":"","title":"Quick Start Guide","title_size":"h3","text":"<p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/5276\/2172\/files\/SAMPLE_EMPTY_QUICKSTART_GUIDE.pdf?v=1646362705\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/5276\/2172\/files\/SAMPLE_EMPTY_QUICKSTART_GUIDE.pdf?v=1646362705\">Download<\/a><\/p>","enable_highlight":false,"highlight_style":"marker"}},"27547c53-1011-49dd-b83a-bbb7b5b28ac1":{"type":"guarantee","settings":{"icon":"none","icon_size":"medium","custom_icon":"","title":"Product sheet","title_size":"h3","text":"<p><a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/5276\/2172\/files\/SAMPLE_EMPTY_PRODUCTSHEET.pdf?v=1646362704\" target=\"_blank\" title=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/5276\/2172\/files\/SAMPLE_EMPTY_PRODUCTSHEET.pdf?v=1646362704\">Download<\/a><\/p>","enable_highlight":false,"highlight_style":"marker"}}},"block_order":["164481942257a0f888-0","164481942257a0f888-1","27547c53-1011-49dd-b83a-bbb7b5b28ac1"],"disabled":true,"settings":{"layout":"default","column_alignment":"left","horizontal_content":false,"full_width":false,"show_divider":false,"columns_desktop":4,"heading":"","heading_size":"h1","heading_tag":"h2","columns_mobile":"1","swipe_on_mobile":true,"use_custom_colors":false,"colors_icon":"#ffffff","colors_text":"#1a1b18","colors_background":"#ffffff","gradient_background":"","colors_highlight":"#ffb503","padding_top":0,"padding_bottom":36,"enable_highlight":false,"highlight_style":"marker"}},"1644811296b96dd257":{"type":"rich-text","blocks":{"164481129652949795-2":{"type":"button","settings":{"button_size":"medium","button_label":"Experience in Store","button_link":"","button_style_secondary":false,"button_alt_label":"","button_alt_link":"","button_alt_style_secondary":false}}},"block_order":["164481129652949795-2"],"disabled":true,"settings":{"text_alignment":"left","mobile_text_alignment":"left","horizontal_content":false,"narrow":false,"show_divider":false,"use_custom_colors":false,"colors_button_label":"#ffffff","colors_button_background":"#1a1b18","colors_text":"#212326","colors_background":"#ffffff","colors_highlight":"#ffb503","gradient_background":"","padding_top":0,"padding_bottom":36}},"comparison_table_nKCEFG":{"type":"comparison-table","blocks":{"criteria_b8fH7E":{"type":"criteria","disabled":true,"settings":{"criteria_1_icon":"none","criteria_1_text":"BATTERY","criteria_2_icon":"none","criteria_2_text":"Criterion 2","criteria_3_icon":"none","criteria_3_text":"Criterion 3","criteria_4_icon":"none","criteria_4_text":"Criterion 4","criteria_5_icon":"none","criteria_5_text":"","criteria_6_icon":"none","criteria_6_text":"","criteria_7_icon":"none","criteria_7_text":"","criteria_8_icon":"none","criteria_8_text":"","criteria_9_icon":"none","criteria_9_text":"","criteria_10_icon":"none","criteria_10_text":""}},"product_column_e7wxLt":{"type":"product_column","settings":{"product":"","product_description":"","criteria_1_icon":"none","criteria_1_text":"<p>40 hours. 25 hours (NC).<\/p>","criteria_2_icon":"none","criteria_2_text":"<p>5.3<br\/>Low latency for gaming.<\/p>","criteria_3_icon":"none","criteria_3_text":"<p>1.5 hours.<br\/>Fast-charging. USB-C.<\/p>","criteria_4_icon":"none","criteria_4_text":"<p>Active (Hybrid ANC).<\/p>","criteria_5_icon":"none","criteria_5_text":"<p>250g.<\/p>","criteria_6_icon":"none","criteria_6_text":"","criteria_7_icon":"none","criteria_7_text":"","criteria_8_icon":"none","criteria_8_text":"","criteria_9_icon":"none","criteria_9_text":"","criteria_10_icon":"none","criteria_10_text":""}},"product_column_E3rEN3":{"type":"product_column","settings":{"product":"","product_description":"","criteria_1_icon":"none","criteria_1_text":"<p>30 hours.<\/p>","criteria_2_icon":"none","criteria_2_text":"<p>5.2<br\/>Optimized for energy efficiency.<\/p>","criteria_3_icon":"none","criteria_3_text":"<p>2 hours.<br\/>Quick-charge support<br\/>(15 mins for 4 hrs playing).<\/p>","criteria_4_icon":"none","criteria_4_text":"<p>Passive NC.<\/p>","criteria_5_icon":"none","criteria_5_text":"<p>220g.<\/p>","criteria_6_icon":"none","criteria_6_text":"","criteria_7_icon":"none","criteria_7_text":"","criteria_8_icon":"none","criteria_8_text":"","criteria_9_icon":"none","criteria_9_text":"","criteria_10_icon":"none","criteria_10_text":""}},"product_column_XCJJp3":{"type":"product_column","settings":{"product":"","product_description":"","criteria_1_icon":"none","criteria_1_text":"<p>25 hours.<\/p>","criteria_2_icon":"none","criteria_2_text":"<p>5.0<br\/>Reliable wireless range.<\/p>","criteria_3_icon":"none","criteria_3_text":"<p>1 hour.<br\/>Ideal for quick top-ups.<\/p>","criteria_4_icon":"none","criteria_4_text":"<p>Active NC.<\/p>","criteria_5_icon":"none","criteria_5_text":"<p>180g.<\/p>","criteria_6_icon":"none","criteria_6_text":"","criteria_7_icon":"none","criteria_7_text":"","criteria_8_icon":"none","criteria_8_text":"","criteria_9_icon":"none","criteria_9_text":"","criteria_10_icon":"none","criteria_10_text":""}}},"block_order":["criteria_b8fH7E","product_column_e7wxLt","product_column_E3rEN3","product_column_XCJJp3"],"disabled":true,"name":"t:sections.comparison_table.presets.inline.name","settings":{"heading":"COMPARE OUR TOPS","heading_size":"h1","heading_tag":"h2","heading_alignment":"center","text_alignment":"center","narrow":true,"mobile_text_alignment":"center","show_divider":false,"criteria_header_text":"","image_ratio":"square","enable_inline_criteria":true,"enable_table_border_radius":true,"enable_table_shadow":true,"hide_vertical_borders":true,"use_custom_colors":true,"colors_text":"#ffffff","colors_background":"#000000","colors_highlight":"#272c32","colors_border":"#272c32","colors_table_background":"#121212","gradient_background":"","padding_top":36,"padding_bottom":36,"icon_size":24}},"tab-collage-0":{"type":"tab-collage","blocks":{"tab-collage-0-0":{"type":"image","settings":{"image_position":"center center","heading":"CRAFTED FOR THE SENSES","description":"<p>You can see it in the soft lambskin leather, picked and stitched with exacting attention to detail. You can feel it in the precision-cut aluminium frame that's robust yet beautiful. Even the carry case tells the story. Timeless design, made to last for generations.<\/p>","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"enable_highlight":false,"highlight_style":"marker"}},"tab-collage-0-1":{"type":"image","settings":{"image_position":"center center","heading":"LESS EFFORT. MORE EMOTION.","description":"<p>Quick set up, intuitive user controls and Bluetooth 5.1 allow you to connect easily to the devices you already love. And if you want to make a few sounds of your own, four microphones keep your voice crystal clear on calls.<\/p>","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"enable_highlight":false,"highlight_style":"marker"}},"tab-collage-0-3":{"type":"image","settings":{"image_position":"center center","heading":"STANDOUT ACCESSORIES","description":"<p>Dynasty Headphone’s finishing touches are made to be touched, with matching aluminium details and woven fabric encasing the audio cable, charging cable and flight adapter.<\/p>","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"enable_highlight":false,"highlight_style":"marker"}},"212b439a-6a88-4ae4-91aa-5847453b23ee":{"type":"image","settings":{"image_position":"center center","heading":"MUSIC AT YOUR FINGERTIPS","description":"<p>More bass, more warmth, more you. Personalise your listening experience with the app. The equalizer and noise cancellation adjusters give you complete control over how you listen, with just a tap.<\/p>","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"enable_highlight":false,"highlight_style":"marker"}},"fec6ec70-153a-4ad9-92cb-a79a5e023380":{"type":"image","settings":{"image_position":"center center","heading":"FIDELITY THAT FLEXES","description":"<p>For the rare moments you'll take them off, Dynasty Headphone can be folded and placed into the custom hardcase, which is lined with a super soft textile finish. No matter how much you move, they'll be safe and sound.<\/p>","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"enable_highlight":false,"highlight_style":"marker"}},"tab-collage-0-2":{"type":"image","settings":{"image_position":"center center","heading":"ALMOST-<em>UNREAL<\/em> COMFORT","description":"<p>So comfortable, it's like you're not wearing them at all. Oval memory foam cushions, soft top grain lambskin and a superior fit invite you to play all day.<\/p>","button_label":"","button_link":"","button_size":"medium","button_style_secondary":false,"enable_highlight":true,"highlight_style":"solid-color"}}},"block_order":["tab-collage-0-0","tab-collage-0-1","tab-collage-0-3","212b439a-6a88-4ae4-91aa-5847453b23ee","fec6ec70-153a-4ad9-92cb-a79a5e023380","tab-collage-0-2"],"disabled":true,"settings":{"layout":"text_first","text_box_position":"top","text_alignment":"left","image_ratio":"650px","make_collapsible_rows":false,"full_width":false,"show_divider":false,"heading":"WHY <em>DYNASTY HEADPHONE<\/em>","heading_size":"h1","heading_alignment":"center","heading_tag":"h2","mobile_layout":"text_first","mobile_text_alignment":"left","mobile_image_ratio":"250px","colors_button_label":"#ffffff","colors_button_background":"#1a1b18","colors_text":"#ffffff","colors_border":"#d2d5d9","colors_background":"#272c32","gradient_background":"","colors_highlight":"#aa723e","padding_top":36,"padding_bottom":36,"enable_highlight":true,"highlight_style":"solid-color"}},"1644811831b4f0fa35":{"type":"collage","blocks":{"1644811830db336187-0":{"type":"video","settings":{"enable_video_looping":false,"video_url":"","description":"Describe the video for customers using screen readers","heading":"","enable_highlight":false,"highlight_style":"marker"}},"54317a72-eb48-427d-b5b8-c54437d40a4a":{"type":"image","settings":{"heading":"","link":"","enable_highlight":false,"highlight_style":"marker"}},"18a92390-5b3a-4d60-9478-da18415af0c8":{"type":"image","settings":{"heading":"","link":"","enable_highlight":false,"highlight_style":"marker"}}},"block_order":["1644811830db336187-0","54317a72-eb48-427d-b5b8-c54437d40a4a","18a92390-5b3a-4d60-9478-da18415af0c8"],"disabled":true,"settings":{"desktop_layout":"left","mobile_layout":"collage","apply_overlay":true,"show_divider":false,"heading":"","heading_size":"h1","heading_alignment":"left","heading_tag":"h2","colors_highlight":"#ffb503","padding_top":0,"padding_bottom":36,"enable_highlight":false,"highlight_style":"marker"}},"testimonials":{"type":"testimonials","blocks":{"testimonials-0":{"type":"testimonial","settings":{"icon":"5","text":"<p>The materials for the Dynasty Headphone are luxurious: soft sheep leather for the ear cushions, memory foam for their filler, cow leather for the headband, metal for the main structure.<\/p>","author":"Paige Alexander","enable_highlight":false,"highlight_style":"heavy-squiggle"}},"testimonials-1":{"type":"testimonial","settings":{"icon":"5","text":"<p>The Dynasty Headphone’s designers have done a fabulous job of creating a pair of wireless ANC headphones that are super comfortable to wear and sound like a dream.<\/p>","author":"Claire Cooper","enable_highlight":false,"highlight_style":"marker"}},"testimonials-2":{"type":"testimonial","settings":{"icon":"5","text":"<p>Sound is authentic, giving music recordings a lively presence with superbly balanced frequencies while bringing attention to subtle nuances you would likely miss on any other pair of wireless earbuds.<\/p>","author":"Sara Bond","enable_highlight":false,"highlight_style":"marker"}},"testimonials-3":{"type":"testimonial","settings":{"icon":"5","text":"<p>Dynasty Headphone is a sports version of their completely wireless earplugs. They can join you almost everywhere you go - even underwater.<\/p>","author":"Nikolay Balushev","enable_highlight":false,"highlight_style":"marker"}},"testimonials-4":{"type":"testimonial","settings":{"icon":"5","text":"<p>They look exquisite, sound excellent, and offer seamless connectivity between Xbox and Bluetooth devices.<\/p>","author":"Angela McCafferty","enable_highlight":false,"highlight_style":"marker"}}},"block_order":["testimonials-0","testimonials-1","testimonials-2","testimonials-3","testimonials-4"],"disabled":true,"settings":{"autorotate":true,"autorotate_speed":5,"hide_images":false,"show_divider":false,"heading":"REVIEWS FROM <em>THE EXPERTS<\/em>","heading_size":"h1","heading_alignment":"center","heading_tag":"h2","colors_highlight":"#aa723e","padding_top":36,"padding_bottom":36,"enable_highlight":true,"highlight_style":"solid-color"}},"16448112989817467f":{"type":"newsletter","blocks":{"1644811298c0564430-0":{"type":"heading","settings":{"heading":"<em>SUBSCRIBE<\/em> TO OUR EMAILS","heading_tag":"h2","enable_highlight":true,"highlight_style":"solid-color"}},"1644811298c0564430-1":{"type":"paragraph","settings":{"paragraph":"<p>Be the first to know about new collections and <em>exclusive offers<\/em>.<\/p>","enable_highlight":true,"highlight_style":"heavy-squiggle"}},"1644811298c0564430-2":{"type":"email_form","settings":{}}},"block_order":["1644811298c0564430-0","1644811298c0564430-1","1644811298c0564430-2"],"disabled":true,"settings":{"return_url":"","text_alignment":"left","mobile_text_alignment":"left","full_width":false,"show_divider":false,"colors_text":"#fafafa","colors_border":"#fafafa","colors_background":"#18181a","gradient_background":"","colors_highlight":"#aa723e","padding_top":36,"padding_bottom":36}},"1657639263294ef946":{"type":"scrolling-promotion","blocks":{"8b58cd48-6a53-41d3-bc7a-353c3d073f75":{"type":"announcement","settings":{"icon":"none","icon_size":"medium","custom_icon":"","text":"☞ Free shipping and local pickup","text_size":42,"link":""}}},"block_order":["8b58cd48-6a53-41d3-bc7a-353c3d073f75"],"disabled":true,"settings":{"direction":"left","speed":1,"show_divider":false,"use_custom_colors":false,"colors_icon":"#ffffff","colors_text":"#ffffff","colors_background":"#000000","gradient_background":"","padding_top":36,"padding_bottom":36}},"1644815946c01342e2":{"type":"map","blocks":{"164481594625edbdd6-0":{"type":"heading","settings":{"heading":"Our Store","heading_size":"h2","heading_tag":"h2","enable_highlight":false,"highlight_style":"marker"}},"456b3e9a-e494-4165-9771-0d72a12f7d61":{"type":"subheading","settings":{"subheading":"Address","subheading_size":"h5","secondary_color":false,"enable_highlight":false,"highlight_style":"marker"}},"164481594625edbdd6-1":{"type":"text","settings":{"text":"<p>Toronto, Canada<\/p>","text_size":"typeset","secondary_color":false,"enable_highlight":false,"highlight_style":"marker"}},"4994a8aa-6dc3-44a1-8886-187509be4cd7":{"type":"subheading","settings":{"subheading":"Opening hours","subheading_size":"h5","secondary_color":false,"enable_highlight":false,"highlight_style":"marker"}},"91dbe872-138f-4c17-ba79-b5897d6a1f3c":{"type":"custom_liquid","settings":{"custom_liquid":"<table>\n  <tr>\n    <td>Mon - Fri<\/td>\n    <td>8:30am - 10:30pm<\/td>\n  <\/tr>\n  <tr>\n    <td>Saturday<\/td>\n    <td>8:30am - 10:30pm<\/td>\n  <\/tr>\n  <tr>\n    <td>Sunday<\/td>\n    <td>8:30am - 10:30pm<\/td>\n  <\/tr>\n<\/table>"}},"164481594625edbdd6-2":{"type":"button","settings":{"button_label":"Get directions","button_link":"https:\/\/www.google.com\/maps\/place\/Peter+Bangs+Vej+15,+7600+Struer,+Denmark\/@56.4843068,8.6032672,17z\/data=!3m1!4b1!4m5!3m4!1s0x464a2dcc4bfc3e09:0x3222e80e09b18b8a!8m2!3d56.484304!4d8.605328","button_size":"small","button_style_secondary":false}}},"block_order":["164481594625edbdd6-0","456b3e9a-e494-4165-9771-0d72a12f7d61","164481594625edbdd6-1","4994a8aa-6dc3-44a1-8886-187509be4cd7","91dbe872-138f-4c17-ba79-b5897d6a1f3c","164481594625edbdd6-2"],"disabled":true,"settings":{"map_address":"Toronto, Canada","map_api_key":"","map_zoom":14,"map_style":"dark","image_position":"center center","text_box_position":"middle-left","text_alignment":"left","image_ratio":"550px","full_width":true,"show_divider":false,"mobile_text_box_position":"image_first","mobile_text_alignment":"left","mobile_image_ratio":"400px","colors_button_label":"#18181a","colors_button_background":"#ffffff","colors_text":"#ffffff","colors_overlay":"#18181a","gradient_overlay":"","colors_overlay_opacity":92,"colors_highlight":"#ffb503","padding_top":36,"padding_bottom":0}},"hero_slider_rChcH8":{"type":"hero-slider","blocks":{"slide_keDifc":{"type":"slide","settings":{"bg_image":"shopify:\/\/shop_images\/home-banner-slide1.png","heading":"Real-time GPS tracking: Fleets,","heading_2":"Containers, Vehicles & Business Assets","subheading":"Real-time visibility, instant alerts, and full operational control.","product_image":"shopify:\/\/shop_images\/black-tracker-slide1.png","product_mobile__image":"shopify:\/\/shop_images\/tracki-slide1-mob.png","show_rating":true,"product_rating__text":"42,559 positive reviews on Amazon","product_more__link":"shopify:\/\/products\/tracki-pro-gps-tracker","product_more__text":"More..."}},"slide_gjJ7nR":{"type":"slide","settings":{"bg_image":"shopify:\/\/shop_images\/image-272.webp","heading":"Real-time GPS tracking for Cars","heading_2":"","subheading":"Monitor the car, track its status, and secure every journey.","product_image":"shopify:\/\/shop_images\/tracki.webp","product_mobile__image":"shopify:\/\/shop_images\/tracki-banner-mobile.webp","show_rating":true,"product_rating__text":"42,559 positive reviews on Amazon","product_more__link":"shopify:\/\/products\/tracki-gps-tracker","product_more__text":"More..."}},"slide_zrajpL":{"type":"slide","settings":{"bg_image":"shopify:\/\/shop_images\/home-banner-slide2.png","heading":"Real-time GPS tracking for Pets","heading_2":"","subheading":"Stay close, stay informed, and protect what matters most.","product_image":"shopify:\/\/shop_images\/banner-dekstop-image.webp","product_mobile__image":"shopify:\/\/shop_images\/banner-mobile-image.webp","show_rating":true,"product_rating__text":"42,559 positive reviews on Amazon","product_more__link":"shopify:\/\/products\/trackipet-4g-mini-pet-gps-tracker","product_more__text":"More..."}}},"block_order":["slide_keDifc","slide_gjJ7nR","slide_zrajpL"],"name":"B2B Hero Slider","settings":{}},"card_slider_ny8Hzz":{"type":"card-slider","blocks":{"card_slide_tHGgD9":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/image-270-small.jpg","set_as_default_active":true,"card_icon":"shopify:\/\/shop_images\/icon-fleet.svg","card_title":"Fleet and Logistics tracking","card_description":"<p>Tracki GPS Pro is a professional-grade tracking solution designed for businesses managing fleets, containers, packages, and high-value assets. With reliable real-time tracking, geofencing alerts, and detailed location history. Tracki GPS Pro helps companies improve operational efficiency, reduce loss and theft, and gain full visibility across logistics and supply chain operations. Built for scale and reliability, it delivers continuous monitoring and actionable insights - so businesses stay in control of their assets at all times.<\/p>"}},"card_slide_rtngYY":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/car-road-porto-rotondo-costa-smeralda-sardinia-island-italy-summer-small.jpg","set_as_default_active":false,"card_icon":"shopify:\/\/shop_images\/icon-car.svg","card_title":"Vehicles and Cars","card_description":"<p>Tracki GPS Tracker offers real-time GPS tracking for cars, providing anti-theft protection and fleet management.  It enables geofencing for car rentals, teen driver monitoring with speed alerts, and emergency location data. In case of theft, it helps recover stolen vehicles swiftly, ensuring safety and peace of mind.<\/p>","small_image_1":"shopify:\/\/shop_images\/screen_b.png","small_image_2":"shopify:\/\/shop_images\/screen_s.png","small_image_3":"shopify:\/\/shop_images\/screen_s2.png"}},"card_slide_GdY6YH":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/grandfather-spending-time-with-his-granddaughter-park-autumn-day1-small.jpg","set_as_default_active":false,"card_icon":"shopify:\/\/shop_images\/icon-family.svg","card_title":"Loved ones","card_description":"<p>Tracki GPS Tracker ensures safety for kids and the elderly through real-time tracking and geofencing. If a child or senior with the tracker crosses a designated safe zone, you'll receive an instant alert. This feature is ideal for monitoring school commutes, park visits, and preventing wandering or getting lost.<\/p>","small_image_1":"shopify:\/\/shop_images\/Modal.png","small_image_2":"shopify:\/\/shop_images\/screen_s-2.png","small_image_3":"shopify:\/\/shop_images\/alert_2f57853a-3527-4bbb-9871-f806d5b8b7c7.png"}},"card_slide_PtzBEX":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/dog-road1-small.jpg","set_as_default_active":false,"card_icon":"shopify:\/\/shop_images\/icon-dog.svg","card_title":"Pets","card_description":"<p>Tracki GPS Tracker is perfect for tracking pets, offering versatility and flexibility with real-time location data to monitor their movements during walks or if they wander off. Geofencing lets you set safe zones, sending alerts if your pet crosses the boundary, reducing the risk of getting lost. With Tracki, you can quickly locate and retrieve your pets, ensuring their safety and your peace of mind.<\/p>","small_image_1":"shopify:\/\/shop_images\/content.png","small_image_2":"shopify:\/\/shop_images\/Frame_60433.png"}}},"block_order":["card_slide_tHGgD9","card_slide_rtngYY","card_slide_GdY6YH","card_slide_PtzBEX"],"disabled":true,"name":"Card Carousel","settings":{"section_title":"Tracki solutions for what matters most","title_position":"center","cart_section_layout":"page-width","enable_default_active":true,"enable_line_title_style":false}},"card_slider_new_nWWEBw":{"type":"card-slider-new","blocks":{"card_slide_A97EdU":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/image-270-small.jpg","set_as_default_active":true,"card_icon":"shopify:\/\/shop_images\/icon-fleet.svg","card_title":"Fleet and Logistics tracking","card_description":"<p>Tracki GPS Pro is a <em>professional-grade tracking solution<\/em> designed for businesses managing fleets, containers, packages, and high-value assets. With reliable <em>real-time tracking, geofencing alerts,<\/em> and detailed <em>location history<\/em>. Tracki GPS Pro helps companies improve operational efficiency, reduce loss and theft, and gain full visibility across logistics and supply chain operations. Built for scale and reliability, it delivers continuous monitoring and actionable insights - so businesses stay in control of their assets at all times.<\/p>"}},"card_slide_HjPW3i":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/car-road-porto-rotondo-costa-smeralda-sardinia-island-italy-summer-small.jpg","set_as_default_active":false,"card_icon":"shopify:\/\/shop_images\/icon-car.svg","card_title":"Vehicles and Cars","card_description":"<p>Tracki GPS Tracker offers <em>real-time GPS<\/em> tracking for cars, providing anti-theft protection and fleet management.  It enables geofencing for car rentals, teen driver monitoring with speed alerts, and emergency location data. In case of theft, it helps recover stolen vehicles swiftly, ensuring safety and peace of mind.<\/p>","small_image_1":"shopify:\/\/shop_images\/screen_b.png","small_image_2":"shopify:\/\/shop_images\/screen_s.png","small_image_3":"shopify:\/\/shop_images\/screen_s2.png"}},"card_slide_66qQfg":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/grandfather-spending-time-with-his-granddaughter-park-autumn-day1-small.jpg","set_as_default_active":false,"card_icon":"shopify:\/\/shop_images\/icon-family.svg","card_title":"Loved ones","card_description":"<p>Tracki GPS Tracker ensures safety for kids and the elderly through real-time tracking and geofencing. If a child or senior with the tracker crosses a designated safe zone, you'll receive an instant alert. This feature is ideal for <em>monitoring<\/em> school commutes, park visits, and <em>preventing wandering or getting lost.<\/em><\/p>","small_image_1":"shopify:\/\/shop_images\/Modal.png","small_image_2":"shopify:\/\/shop_images\/screen_s-2.png","small_image_3":"shopify:\/\/shop_images\/alert_2f57853a-3527-4bbb-9871-f806d5b8b7c7.png"}},"card_slide_iC4eFp":{"type":"card_slide","settings":{"background_image":"shopify:\/\/shop_images\/dog-road1-small.jpg","set_as_default_active":false,"card_icon":"shopify:\/\/shop_images\/icon-dog.svg","card_title":"Pets","card_description":"<p>Tracki GPS Tracker is perfect for tracking pets, offering versatility and flexibility with real-time location data to monitor their movements during walks or if they wander off. Geofencing lets you <em>set safe zones, sending alerts if your pet crosses the boundary<\/em>, reducing the risk of getting lost. With Tracki, you can quickly locate and retrieve your pets, ensuring their safety and your peace of mind.<\/p>","small_image_1":"shopify:\/\/shop_images\/content.png","small_image_2":"shopify:\/\/shop_images\/Frame_60433.png"}}},"block_order":["card_slide_A97EdU","card_slide_HjPW3i","card_slide_66qQfg","card_slide_iC4eFp"],"name":"Card Carousel New","settings":{"section_title":"Tracki Solutions","title_position":"center","cart_section_layout":"page-width","enable_default_active":true,"enable_line_title_style":false}},"counter_ex9aag":{"type":"counter","blocks":{"counter_QewGcb":{"type":"counter","settings":{"number":190,"title":"Countries","text":"Works globally in over 190 countries."}},"counter_E8F4cx":{"type":"counter","settings":{"number":2123458,"title":"Devices sold","text":"Tracki devices chosen and used by satisfied customers everywhere."}},"counter_dLyeDc":{"type":"counter","settings":{"number":15,"title":"Years","text":"Trusted by customers worldwide."}}},"block_order":["counter_QewGcb","counter_E8F4cx","counter_dLyeDc"],"name":"Dynamic Counter","settings":{"enable_animation":true}},"steps_phone_slider_RXy93K":{"type":"steps-phone-slider","blocks":{"step_gjghHL":{"type":"step","settings":{"step_number":"1","heading":"Activate","phone_image":"shopify:\/\/shop_images\/step1-phone.png","phone_mobile_image":"shopify:\/\/shop_images\/step1-mobphone.png","extra_text":"<p><strong>Once you receive your Tracki, get started in 3 simple steps:<\/strong><\/p><ol><li>Activate your device<\/li><li><strong>Choose a cost-effective monthly plan<\/strong><\/li><li>Start tracking in real time<\/li><\/ol>","icon":"shopify:\/\/shop_images\/icon_f79dbe5e-be42-4f41-b3df-27b82f342c16.png"}},"step_bw4gVg":{"type":"step","settings":{"step_number":"2","heading":"Place","phone_image":"shopify:\/\/shop_images\/phoneslide2.png","phone_mobile_image":"shopify:\/\/shop_images\/step2-mobimage.png","extra_text":"<p>Place your Tracki GPS tracker with the vehicle, bag, or loved one you want to watch over and stay connected to.<\/p>","icon":"shopify:\/\/shop_images\/HandDeposit.svg"}},"step_Pt8pch":{"type":"step","settings":{"step_number":"3","heading":"Tracking","phone_image":"shopify:\/\/shop_images\/step3-phone.png","extra_text":"<p>Log in to the app to see your Tracki GPS tracker location with real time updates, and history reports, helping you stay close and feel confident knowing what matters most is safe.<\/p>","icon":"shopify:\/\/shop_images\/Path.svg"}}},"block_order":["step_gjghHL","step_bw4gVg","step_Pt8pch"],"name":"Steps Phone Slider","settings":{"section_title":"Easy to use","background_image":"shopify:\/\/shop_images\/bgr-phone-section.png","overlay_opacity":40,"mouse_icon":"shopify:\/\/shop_images\/icon-mouse.svg","link":"#product-slideshow-cards"}},"product_cards_NNnJaz":{"type":"product-cards","blocks":{"product_JEKwB6":{"type":"product","settings":{"activate_card":false,"product":"tracki-pro-gps-tracker","title":"","price":"","button_label":"Details","button_link":""}},"product_M9K6hh":{"type":"product","settings":{"activate_card":true,"product":"tracki-gps-tracker","title":"","price":"","button_label":"Details","button_link":""}},"product_EVCbFM":{"type":"product","settings":{"activate_card":false,"product":"tracki-max-real-time-gps-tracker","title":"","price":"","button_label":"Details","button_link":""}},"product_RBcgah":{"type":"product","settings":{"activate_card":false,"product":"tracki-slim","image":"shopify:\/\/shop_images\/tracki-slim.png","title":"Tracki Slim","price":"$??.??","button_label":"Details","button_link":"#"}},"product_hhJ9qP":{"type":"product","settings":{"activate_card":false,"product":"trackipet","title":"","price":"","button_label":"Details","button_link":"shopify:\/\/products\/trackipet-4g-mini-pet-gps-tracker"}},"product_Aphhqf":{"type":"product","settings":{"activate_card":false,"product":"tracki-plus","image":"shopify:\/\/shop_images\/tracki-plus.png","title":"Tracki Plus","price":"$??.??","button_label":"Details","button_link":"#"}}},"block_order":["product_JEKwB6","product_M9K6hh","product_EVCbFM","product_RBcgah","product_hhJ9qP","product_Aphhqf"],"name":"Product Slide New","settings":{"title":"Tracki Devices","enable_drag":false,"slides_visible":5,"show_arrows":"none","prev_arrow_icon":"chevron-left","next_arrow_icon":"chevron-right"}},"counter_rCgGip":{"type":"counter","blocks":{"counter_Hxqwzt":{"type":"counter","settings":{"number":100,"image_icon":"shopify:\/\/shop_images\/real-time.svg","title":"Global real-time tracking you can rely on","text":"Advanced 4G LTE GPS tracking with multi-band support ensures accurate, real-time location updates across the USA and worldwide, with an international SIM included."}},"counter_xCH9qD":{"type":"counter","settings":{"number":100,"image_icon":"shopify:\/\/shop_images\/real-time-1.svg","title":"Compact, powerful, and built to stay hidden","text":"One of the smallest GPS trackers available, designed for discreet use on vehicles, assets, luggage, pets, or loved ones—easy to install and hard to detect."}},"counter_Mbbqax":{"type":"counter","settings":{"number":100,"image_icon":"shopify:\/\/shop_images\/real-time-2.svg","title":"Built for the long run, backed for life","text":"Enjoy extended battery options, 24\/7 live support, and a lifetime warranty that includes device replacement if it stops working—total peace of mind, long after purchase."}}},"block_order":["counter_Hxqwzt","counter_xCH9qD","counter_Mbbqax"],"name":"Dynamic Counter","settings":{"enable_animation":true}},"amazon_review_JNPRWJ":{"type":"amazon-review","blocks":{"review_ncaaJb":{"type":"review","settings":{"name":"Russell","review":"5","title":"All the features as advertised, really deserve 5 stars","text":"This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great."}},"review_7kQpCD":{"type":"review","settings":{"name":"Eric","review":"5","title":"Accurate and very user friendly. Good customer service.","text":"Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty. He informed me that the Lifetime warranty comes with purchasing Tracki through Amazon- they will replace the device if lost\/stolen or ceases to function- and Tracki has already replaced the first device I purchased (it got lost, or I hid it so well I couldn't find it and the battery died, lol!"}},"review_Lh9EUr":{"type":"review","settings":{"name":"Victoria","review":"5","title":"Great product highly recommended!","text":"I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!"}},"review_iU6Vfr":{"type":"review","settings":{"name":"Monica","review":"5","title":"Accurate and very user friendly. Good customer service.","text":"Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty."}},"review_h9etDx":{"type":"review","settings":{"name":"Ross","review":"4.5","title":"Great product highly recommended!","text":"I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!"}},"review_3tG7fw":{"type":"review","settings":{"name":"Carrol","review":"4","title":"All the features as advertised, really deserve 5 stars","text":"This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great."}}},"block_order":["review_ncaaJb","review_7kQpCD","review_Lh9EUr","review_iU6Vfr","review_h9etDx","review_3tG7fw"],"name":"Amazon Reviews Swiper","settings":{"heading":"40,000+ positive reviews on Amazon","autoplay":true,"loop":true}},"contact_new_R7F76J":{"type":"contact-new","name":"Contact New","settings":{"heading":"Need Help?<span>Our Team Is Ready<\/span>","text":"<p><strong>Let us know how we can help you<\/strong><\/p>","button":"Send request","enable_validation":false}},"contact_information_G38neN":{"type":"contact-information","blocks":{"image_with_text_NpGcWg":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/Headset.svg","heading":"Chat","text":"<p>Our team is online and ready to help 7 days a week 24 hours a day<\/p>","usa_heading":"","usa_number":"","can_heading":"","can_number":"","uk_heading":"","uk_number":"","mex_heading":"","mex_number":"","aus_heading":"","aus_number":"","email":"","btn_text":"Start chatting"}},"image_with_text_nqCg7J":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/DeviceMobileCamera.svg","heading":"Call us","text":"","usa_heading":"USA","usa_number":"+1 323 785 2020","can_heading":"CAN","can_number":"+1 226 741 2505","uk_heading":"UK","uk_number":"+44 7700 175888","mex_heading":"MEX","mex_number":"+52 55 9414 6571","aus_heading":"AUS","aus_number":"+61 272 263 632","email":"","btn_text":""}},"image_with_text_CfExpN":{"type":"image-with-text","settings":{"image":"shopify:\/\/shop_images\/Envelope.svg","heading":"Email","text":"<p>Reach out by email whenever you need a hand - we reply around the clock.<\/p>","usa_heading":"","usa_number":"","can_heading":"","can_number":"","uk_heading":"","uk_number":"","mex_heading":"","mex_number":"","aus_heading":"","aus_number":"","email":"support@tracki.com","btn_text":""}}},"block_order":["image_with_text_NpGcWg","image_with_text_nqCg7J","image_with_text_CfExpN"],"name":"Contact-Info","settings":{}}},"order":["image_banner_iDaF6m","video_hero_jBbnJe","1644821111d5f02984","16447362110bb87100","featured-product","dual_scroll_FDtbDe","1644819422ac1baaaa","1644811296b96dd257","comparison_table_nKCEFG","tab-collage-0","1644811831b4f0fa35","testimonials","16448112989817467f","1657639263294ef946","1644815946c01342e2","hero_slider_rChcH8","card_slider_ny8Hzz","card_slider_new_nWWEBw","counter_ex9aag","steps_phone_slider_RXy93K","product_cards_NNnJaz","counter_rCgGip","amazon_review_JNPRWJ","contact_new_R7F76J","contact_information_G38neN"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_iDaF6m": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_cgL9hG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "text_qE6N6h": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "typeset2",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "button_4TM8JN": {
+          "type": "button",
+          "settings": {
+            "button_size": "medium",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cgL9hG",
+        "text_qE6N6h",
+        "button_4TM8JN"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/bgr-hero-1.webp",
+        "image_2": "shopify://shop_images/bgr-herow-2.webp",
+        "image_position": "center center",
+        "text_box_position": "middle-center",
+        "text_alignment": "center",
+        "image_ratio": "650px",
+        "show_text_box": true,
+        "full_width": true,
+        "show_divider": false,
+        "image_behavior": "ambient",
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "auto",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 28,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_hero_jBbnJe": {
+      "type": "video-hero",
+      "blocks": {
+        "subheading_MB4kKK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<em>DYNASTY HEADPHONE</em>",
+            "subheading_size": "h5",
+            "secondary_color": false,
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        },
+        "heading_hHrwkH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>CRAFTED FOR</em> THE SENSES",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        },
+        "button_bngmVj": {
+          "type": "button",
+          "settings": {
+            "button_size": "medium",
+            "button_label": "From €899",
+            "button_link": "",
+            "button_style_secondary": true,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MB4kKK",
+        "heading_hHrwkH",
+        "button_bngmVj"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.banner__heading {max-width: 30rem; }}"
+      ],
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_box_position": "bottom-left",
+        "text_alignment": "left",
+        "image_ratio": "adapt",
+        "show_text_box": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "400px",
+        "show_text_below": true,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 28,
+        "colors_highlight": "#aa723e",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1644821111d5f02984": {
+      "type": "rich-text",
+      "blocks": {
+        "1644821111a6e15546-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This is a demo store to showcase a real-world example of a one-product store.</p>",
+            "text_size": "typeset2",
+            "secondary_color": true,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "a92f0d1d-9ef3-4735-9d56-a35bfb88cac9": {
+          "type": "button",
+          "settings": {
+            "button_size": "medium",
+            "button_label": "Explore product landing",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1644821111a6e15546-1",
+        "a92f0d1d-9ef3-4735-9d56-a35bfb88cac9"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "horizontal_content": true,
+        "narrow": false,
+        "show_divider": true,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "colors_highlight": "#ffb503",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16447362110bb87100": {
+      "type": "slideshow",
+      "blocks": {
+        "d307d1a5-5b7c-491f-8d15-3ec972ee174e": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "text_box_position": "middle-center",
+            "subheading": "<em>ADAPTIVE ANC</em>",
+            "subheading_size": "h5",
+            "heading": "Put the world on pause",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "text": "Five levels of noise cancellation make Dynasty Headphone our most advanced ANC headphones yet, handling everything from the hum of home life to the commotion of a commute.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        },
+        "1644736211f9403d12-0": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "text_box_position": "middle-center",
+            "subheading": "<em>DYNASTY</em> HEADPHONE",
+            "subheading_size": "h5",
+            "heading": "Like nothing you've heard before",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "text": "Depth, detail and delight. Dialed up beyond expectation. This is, quite simply, our finest headphone experience.",
+            "text_size": "typeset",
+            "button_label": "Shop Now",
+            "button_link": "#shopify-section-template--14471573471292__featured-product",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "circle"
+          }
+        },
+        "1644736211f9403d12-1": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "text_box_position": "middle-center",
+            "subheading": "<em>STANDOUT SOUND QUALITY</em>",
+            "subheading_size": "h5",
+            "heading": "Listen with new ears",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "text": "Custom titanium drivers – nestled under detachable magnetic earcups – are tuned to our tightest tolerance on performance. It's done under the watchful ear of our in-house Tonmeister. The result? More lush lows, punchier mids and crisper highs. Put simply, you'll hear magical details you've never heard before.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "bold-underline"
+          }
+        }
+      },
+      "block_order": [
+        "d307d1a5-5b7c-491f-8d15-3ec972ee174e",
+        "1644736211f9403d12-0",
+        "1644736211f9403d12-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "slideshow_type": "modern",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "full_width": true,
+        "image_behavior": "none",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "300px",
+        "show_text_below": true,
+        "colors_button_label": "#000000",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_background": "#000000",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 92,
+        "colors_navigation_text": "#000000",
+        "colors_navigation_background": "#ffffff",
+        "colors_highlight": "#aa723e",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "blocks": {
+        "2f6cf206-7a70-46dc-88c2-3270e81a35b4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "featured-product-0": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "title_tag": "h2",
+            "show_price": false,
+            "price_size": "medium"
+          }
+        },
+        "featured-product-1": {
+          "type": "rating",
+          "settings": {}
+        },
+        "featured-product-2": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "",
+            "text_style": "subtitle",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "featured-product-4": {
+          "type": "price",
+          "settings": {
+            "price_size": "medium",
+            "show_badges": true,
+            "sale_badge_basis": "auto"
+          }
+        },
+        "featured-product-5": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "swatch_source": "variant",
+            "swatch_type": "round",
+            "enable_swatch_unavailable_click": false,
+            "size_chart": ""
+          }
+        },
+        "4fc040da-9135-47c0-b21d-d0a71a846643": {
+          "type": "text",
+          "settings": {
+            "icon": "return",
+            "text": "30-day free trial",
+            "text_style": "body",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "85dcc59a-693c-4b60-96fd-8c5b85a32897": {
+          "type": "text",
+          "settings": {
+            "icon": "box",
+            "text": "Available gift wrapping",
+            "text_style": "body",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "3c41bd5f-1ea8-43d3-9425-fa9bd0133a46": {
+          "type": "text",
+          "settings": {
+            "icon": "lock",
+            "text": "3 years warranty",
+            "text_style": "body",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "featured-product-6": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "show_inventory_transfer": true,
+            "color_scheme": "accent-3"
+          }
+        },
+        "featured-product-7": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "featured-product-8": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "14b61070-e337-414c-83d1-1603b3f46ff5": {
+          "type": "image",
+          "settings": {
+            "height": 20,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2f6cf206-7a70-46dc-88c2-3270e81a35b4",
+        "featured-product-0",
+        "featured-product-1",
+        "featured-product-2",
+        "featured-product-4",
+        "featured-product-5",
+        "4fc040da-9135-47c0-b21d-d0a71a846643",
+        "85dcc59a-693c-4b60-96fd-8c5b85a32897",
+        "3c41bd5f-1ea8-43d3-9425-fa9bd0133a46",
+        "featured-product-6",
+        "featured-product-7",
+        "featured-product-8",
+        "14b61070-e337-414c-83d1-1603b3f46ff5"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "",
+        "layout": "media_first",
+        "full_width": false,
+        "show_divider": false,
+        "show_featured_media": false,
+        "hide_variants": false,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_layered_images": false,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "dual_scroll_FDtbDe": {
+      "type": "dual-scroll",
+      "blocks": {
+        "slide_wMBJWT": {
+          "type": "slide",
+          "settings": {
+            "title": "Included In The Box",
+            "heading_size": "h1",
+            "description": "<ul><li>Dynasty Headphone</li><li>Aluminium carrying case</li><li>USB-A to USB-C cable</li><li>3.5 mm audio cable</li><li>Flight adaptor</li><li>Microfibre cleaning cloth</li><li>Quick start guide</li><li>Greeting card</li><li>Instruction and care card</li></ul>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "media_background_color": "#000000"
+          }
+        },
+        "slide_MyHVCj": {
+          "type": "slide",
+          "settings": {
+            "title": "Sounding",
+            "heading_size": "h1",
+            "description": "<p><strong>Noise Isolation</strong><br/>Passive Noise Cancelling<br/><br/><strong>Driver Type</strong><br/>Electrodynamic, 5.7 mm diameter<br/><br/><strong>Driver Sensitivity</strong><br/>107dB ± 3dB, 1kHz @-3 dBFS (max volume) with Bluetooth playback<br/><br/><strong>Frequency Range</strong><br/>20 - 20,000 Hz<br/><br/><strong>Customizable Sound EQ<br/></strong>Presets available and fully customisable through the app</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "media_background_color": "#000000"
+          }
+        },
+        "slide_KeDKxw": {
+          "type": "slide",
+          "settings": {
+            "title": "Design",
+            "heading_size": "h1",
+            "description": "<p><strong>Fit</strong><br/>True wireless In-ear<br/>Fit for sport<br/><br/><strong>EarGels</strong><br/>4 pairs of silicone tips (XS, S,M,L)<br/>Comply™ Foam tips (M size)<br/><br/><strong>Materials</strong><br/>Aluminium, Polymer, Silicon<br/><br/><strong>Dust and Waterproof Rating</strong><br/>IP57 rating: <br/><br/><strong>Dimensions (mm)</strong><br/>Earphones: 23 W x 25 H x 21 D<br/>Charging case: 70.6 W x 33.5 H x 35.6 D<br/><br/><strong>Weight</strong><br/>12.8 g<br/><br/>Charging case:<br/>55 g (without earbuds)</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "media_background_color": "#000000"
+          }
+        },
+        "slide_Mfrbjp": {
+          "type": "slide",
+          "settings": {
+            "title": "Battery",
+            "heading_size": "h1",
+            "description": "<p><strong>Battery Life</strong><br/>Up to 30 hours with charging case at moderate volume<br/><br/><strong>Charging Time</strong><br/>Earphones: approx. 2 ½ h<br/>Charging Case (USB-C): 2 h<br/>Charging Case (Qi Wireless): 2 ½ h<br/><br/>Charging for 20 minutes gives approximately 1½ hour playback.<br/><br/><strong>Battery Size</strong><br/>Right (Primary) 60 mAh<br/>Left (Secondary) 60 mAh<br/>Charging Case: 450 mAh</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "media_background_color": "#000000"
+          }
+        },
+        "slide_3MJTrb": {
+          "type": "slide",
+          "settings": {
+            "title": "Connectivity",
+            "heading_size": "h1",
+            "description": "<p><strong>Bluetooth</strong><br/>Bluetooth 5.1<br/><br/><strong>Sound Codecs</strong><br/>SBC, AAC codec, Aptx classic<br/><br/><strong>Microphone</strong><br/>4 - With beamforming signal processing<br/><br/><strong>Inputs and Outputs</strong><br/>1.25 m USB-A to USB-C cable for Charging<br/>Qi Wireless Charging</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker",
+            "highlight_color": "#ffb503",
+            "button_label": "Shop Now",
+            "button_size": "medium",
+            "button_link": "",
+            "media_background_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wMBJWT",
+        "slide_MyHVCj",
+        "slide_KeDKxw",
+        "slide_Mfrbjp",
+        "slide_3MJTrb"
+      ],
+      "disabled": true,
+      "name": "t:sections.dual-scroll.presets.name",
+      "settings": {
+        "heading": "TECH SPECS",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "enable_highlight": false,
+        "highlight_style": "marker",
+        "narrow": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "description_color": "#b2b2b2",
+        "panel_background_color": "#272c32",
+        "border_color": "#2f353c",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "highlight_color": "#ffb503",
+        "transition_type": "scroll",
+        "media_rotation": 0,
+        "media_scale": 80,
+        "enable_media_shadow": false
+      }
+    },
+    "1644819422ac1baaaa": {
+      "type": "guarantees",
+      "blocks": {
+        "164481942257a0f888-0": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "User Guide",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_USER_GUIDE.pdf?v=1646362704\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_USER_GUIDE.pdf?v=1646362704\">Download</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "164481942257a0f888-1": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Quick Start Guide",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_QUICKSTART_GUIDE.pdf?v=1646362705\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_QUICKSTART_GUIDE.pdf?v=1646362705\">Download</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "27547c53-1011-49dd-b83a-bbb7b5b28ac1": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Product sheet",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_PRODUCTSHEET.pdf?v=1646362704\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_PRODUCTSHEET.pdf?v=1646362704\">Download</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "164481942257a0f888-0",
+        "164481942257a0f888-1",
+        "27547c53-1011-49dd-b83a-bbb7b5b28ac1"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "column_alignment": "left",
+        "horizontal_content": false,
+        "full_width": false,
+        "show_divider": false,
+        "columns_desktop": 4,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "use_custom_colors": false,
+        "colors_icon": "#ffffff",
+        "colors_text": "#1a1b18",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "colors_highlight": "#ffb503",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "1644811296b96dd257": {
+      "type": "rich-text",
+      "blocks": {
+        "164481129652949795-2": {
+          "type": "button",
+          "settings": {
+            "button_size": "medium",
+            "button_label": "Experience in Store",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "164481129652949795-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "horizontal_content": false,
+        "narrow": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "colors_highlight": "#ffb503",
+        "gradient_background": "",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "comparison_table_nKCEFG": {
+      "type": "comparison-table",
+      "blocks": {
+        "criteria_b8fH7E": {
+          "type": "criteria",
+          "disabled": true,
+          "settings": {
+            "criteria_1_icon": "none",
+            "criteria_1_text": "BATTERY",
+            "criteria_2_icon": "none",
+            "criteria_2_text": "Criterion 2",
+            "criteria_3_icon": "none",
+            "criteria_3_text": "Criterion 3",
+            "criteria_4_icon": "none",
+            "criteria_4_text": "Criterion 4",
+            "criteria_5_icon": "none",
+            "criteria_5_text": "",
+            "criteria_6_icon": "none",
+            "criteria_6_text": "",
+            "criteria_7_icon": "none",
+            "criteria_7_text": "",
+            "criteria_8_icon": "none",
+            "criteria_8_text": "",
+            "criteria_9_icon": "none",
+            "criteria_9_text": "",
+            "criteria_10_icon": "none",
+            "criteria_10_text": ""
+          }
+        },
+        "product_column_e7wxLt": {
+          "type": "product_column",
+          "settings": {
+            "product": "",
+            "product_description": "",
+            "criteria_1_icon": "none",
+            "criteria_1_text": "<p>40 hours. 25 hours (NC).</p>",
+            "criteria_2_icon": "none",
+            "criteria_2_text": "<p>5.3<br/>Low latency for gaming.</p>",
+            "criteria_3_icon": "none",
+            "criteria_3_text": "<p>1.5 hours.<br/>Fast-charging. USB-C.</p>",
+            "criteria_4_icon": "none",
+            "criteria_4_text": "<p>Active (Hybrid ANC).</p>",
+            "criteria_5_icon": "none",
+            "criteria_5_text": "<p>250g.</p>",
+            "criteria_6_icon": "none",
+            "criteria_6_text": "",
+            "criteria_7_icon": "none",
+            "criteria_7_text": "",
+            "criteria_8_icon": "none",
+            "criteria_8_text": "",
+            "criteria_9_icon": "none",
+            "criteria_9_text": "",
+            "criteria_10_icon": "none",
+            "criteria_10_text": ""
+          }
+        },
+        "product_column_E3rEN3": {
+          "type": "product_column",
+          "settings": {
+            "product": "",
+            "product_description": "",
+            "criteria_1_icon": "none",
+            "criteria_1_text": "<p>30 hours.</p>",
+            "criteria_2_icon": "none",
+            "criteria_2_text": "<p>5.2<br/>Optimized for energy efficiency.</p>",
+            "criteria_3_icon": "none",
+            "criteria_3_text": "<p>2 hours.<br/>Quick-charge support<br/>(15 mins for 4 hrs playing).</p>",
+            "criteria_4_icon": "none",
+            "criteria_4_text": "<p>Passive NC.</p>",
+            "criteria_5_icon": "none",
+            "criteria_5_text": "<p>220g.</p>",
+            "criteria_6_icon": "none",
+            "criteria_6_text": "",
+            "criteria_7_icon": "none",
+            "criteria_7_text": "",
+            "criteria_8_icon": "none",
+            "criteria_8_text": "",
+            "criteria_9_icon": "none",
+            "criteria_9_text": "",
+            "criteria_10_icon": "none",
+            "criteria_10_text": ""
+          }
+        },
+        "product_column_XCJJp3": {
+          "type": "product_column",
+          "settings": {
+            "product": "",
+            "product_description": "",
+            "criteria_1_icon": "none",
+            "criteria_1_text": "<p>25 hours.</p>",
+            "criteria_2_icon": "none",
+            "criteria_2_text": "<p>5.0<br/>Reliable wireless range.</p>",
+            "criteria_3_icon": "none",
+            "criteria_3_text": "<p>1 hour.<br/>Ideal for quick top-ups.</p>",
+            "criteria_4_icon": "none",
+            "criteria_4_text": "<p>Active NC.</p>",
+            "criteria_5_icon": "none",
+            "criteria_5_text": "<p>180g.</p>",
+            "criteria_6_icon": "none",
+            "criteria_6_text": "",
+            "criteria_7_icon": "none",
+            "criteria_7_text": "",
+            "criteria_8_icon": "none",
+            "criteria_8_text": "",
+            "criteria_9_icon": "none",
+            "criteria_9_text": "",
+            "criteria_10_icon": "none",
+            "criteria_10_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "criteria_b8fH7E",
+        "product_column_e7wxLt",
+        "product_column_E3rEN3",
+        "product_column_XCJJp3"
+      ],
+      "disabled": true,
+      "name": "t:sections.comparison_table.presets.inline.name",
+      "settings": {
+        "heading": "COMPARE OUR TOPS",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text_alignment": "center",
+        "narrow": true,
+        "mobile_text_alignment": "center",
+        "show_divider": false,
+        "criteria_header_text": "",
+        "image_ratio": "square",
+        "enable_inline_criteria": true,
+        "enable_table_border_radius": true,
+        "enable_table_shadow": true,
+        "hide_vertical_borders": true,
+        "use_custom_colors": true,
+        "colors_text": "#ffffff",
+        "colors_background": "#000000",
+        "colors_highlight": "#272c32",
+        "colors_border": "#272c32",
+        "colors_table_background": "#121212",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "icon_size": 24
+      }
+    },
+    "tab-collage-0": {
+      "type": "tab-collage",
+      "blocks": {
+        "tab-collage-0-0": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "heading": "CRAFTED FOR THE SENSES",
+            "description": "<p>You can see it in the soft lambskin leather, picked and stitched with exacting attention to detail. You can feel it in the precision-cut aluminium frame that's robust yet beautiful. Even the carry case tells the story. Timeless design, made to last for generations.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "tab-collage-0-1": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "heading": "LESS EFFORT. MORE EMOTION.",
+            "description": "<p>Quick set up, intuitive user controls and Bluetooth 5.1 allow you to connect easily to the devices you already love. And if you want to make a few sounds of your own, four microphones keep your voice crystal clear on calls.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "tab-collage-0-3": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "heading": "STANDOUT ACCESSORIES",
+            "description": "<p>Dynasty Headphone’s finishing touches are made to be touched, with matching aluminium details and woven fabric encasing the audio cable, charging cable and flight adapter.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "212b439a-6a88-4ae4-91aa-5847453b23ee": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "heading": "MUSIC AT YOUR FINGERTIPS",
+            "description": "<p>More bass, more warmth, more you. Personalise your listening experience with the app. The equalizer and noise cancellation adjusters give you complete control over how you listen, with just a tap.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "fec6ec70-153a-4ad9-92cb-a79a5e023380": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "heading": "FIDELITY THAT FLEXES",
+            "description": "<p>For the rare moments you'll take them off, Dynasty Headphone can be folded and placed into the custom hardcase, which is lined with a super soft textile finish. No matter how much you move, they'll be safe and sound.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "tab-collage-0-2": {
+          "type": "image",
+          "settings": {
+            "image_position": "center center",
+            "heading": "ALMOST-<em>UNREAL</em> COMFORT",
+            "description": "<p>So comfortable, it's like you're not wearing them at all. Oval memory foam cushions, soft top grain lambskin and a superior fit invite you to play all day.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        }
+      },
+      "block_order": [
+        "tab-collage-0-0",
+        "tab-collage-0-1",
+        "tab-collage-0-3",
+        "212b439a-6a88-4ae4-91aa-5847453b23ee",
+        "fec6ec70-153a-4ad9-92cb-a79a5e023380",
+        "tab-collage-0-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "text_first",
+        "text_box_position": "top",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "make_collapsible_rows": false,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "WHY <em>DYNASTY HEADPHONE</em>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "mobile_layout": "text_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#ffffff",
+        "colors_border": "#d2d5d9",
+        "colors_background": "#272c32",
+        "gradient_background": "",
+        "colors_highlight": "#aa723e",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_highlight": true,
+        "highlight_style": "solid-color"
+      }
+    },
+    "1644811831b4f0fa35": {
+      "type": "collage",
+      "blocks": {
+        "1644811830db336187-0": {
+          "type": "video",
+          "settings": {
+            "enable_video_looping": false,
+            "video_url": "",
+            "description": "Describe the video for customers using screen readers",
+            "heading": "",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "54317a72-eb48-427d-b5b8-c54437d40a4a": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "link": "",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "18a92390-5b3a-4d60-9478-da18415af0c8": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "link": "",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "1644811830db336187-0",
+        "54317a72-eb48-427d-b5b8-c54437d40a4a",
+        "18a92390-5b3a-4d60-9478-da18415af0c8"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "apply_overlay": true,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "colors_highlight": "#ffb503",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials-0": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5",
+            "text": "<p>The materials for the Dynasty Headphone are luxurious: soft sheep leather for the ear cushions, memory foam for their filler, cow leather for the headband, metal for the main structure.</p>",
+            "author": "Paige Alexander",
+            "enable_highlight": false,
+            "highlight_style": "heavy-squiggle"
+          }
+        },
+        "testimonials-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5",
+            "text": "<p>The Dynasty Headphone’s designers have done a fabulous job of creating a pair of wireless ANC headphones that are super comfortable to wear and sound like a dream.</p>",
+            "author": "Claire Cooper",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "testimonials-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5",
+            "text": "<p>Sound is authentic, giving music recordings a lively presence with superbly balanced frequencies while bringing attention to subtle nuances you would likely miss on any other pair of wireless earbuds.</p>",
+            "author": "Sara Bond",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "testimonials-3": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5",
+            "text": "<p>Dynasty Headphone is a sports version of their completely wireless earplugs. They can join you almost everywhere you go - even underwater.</p>",
+            "author": "Nikolay Balushev",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "testimonials-4": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5",
+            "text": "<p>They look exquisite, sound excellent, and offer seamless connectivity between Xbox and Bluetooth devices.</p>",
+            "author": "Angela McCafferty",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials-0",
+        "testimonials-1",
+        "testimonials-2",
+        "testimonials-3",
+        "testimonials-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "autorotate": true,
+        "autorotate_speed": 5,
+        "hide_images": false,
+        "show_divider": false,
+        "heading": "REVIEWS FROM <em>THE EXPERTS</em>",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "colors_highlight": "#aa723e",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_highlight": true,
+        "highlight_style": "solid-color"
+      }
+    },
+    "16448112989817467f": {
+      "type": "newsletter",
+      "blocks": {
+        "1644811298c0564430-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>SUBSCRIBE</em> TO OUR EMAILS",
+            "heading_tag": "h2",
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        },
+        "1644811298c0564430-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and <em>exclusive offers</em>.</p>",
+            "enable_highlight": true,
+            "highlight_style": "heavy-squiggle"
+          }
+        },
+        "1644811298c0564430-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "1644811298c0564430-0",
+        "1644811298c0564430-1",
+        "1644811298c0564430-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "return_url": "",
+        "text_alignment": "left",
+        "mobile_text_alignment": "left",
+        "full_width": false,
+        "show_divider": false,
+        "colors_text": "#fafafa",
+        "colors_border": "#fafafa",
+        "colors_background": "#18181a",
+        "gradient_background": "",
+        "colors_highlight": "#aa723e",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1657639263294ef946": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "8b58cd48-6a53-41d3-bc7a-353c3d073f75": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "text": "☞ Free shipping and local pickup",
+            "text_size": 42,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8b58cd48-6a53-41d3-bc7a-353c3d073f75"
+      ],
+      "disabled": true,
+      "settings": {
+        "direction": "left",
+        "speed": 1,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_icon": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_background": "#000000",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1644815946c01342e2": {
+      "type": "map",
+      "blocks": {
+        "164481594625edbdd6-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Store",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "456b3e9a-e494-4165-9771-0d72a12f7d61": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Address",
+            "subheading_size": "h5",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "164481594625edbdd6-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Toronto, Canada</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "4994a8aa-6dc3-44a1-8886-187509be4cd7": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Opening hours",
+            "subheading_size": "h5",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "91dbe872-138f-4c17-ba79-b5897d6a1f3c": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<table>\n  <tr>\n    <td>Mon - Fri</td>\n    <td>8:30am - 10:30pm</td>\n  </tr>\n  <tr>\n    <td>Saturday</td>\n    <td>8:30am - 10:30pm</td>\n  </tr>\n  <tr>\n    <td>Sunday</td>\n    <td>8:30am - 10:30pm</td>\n  </tr>\n</table>"
+          }
+        },
+        "164481594625edbdd6-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get directions",
+            "button_link": "https://www.google.com/maps/place/Peter+Bangs+Vej+15,+7600+Struer,+Denmark/@56.4843068,8.6032672,17z/data=!3m1!4b1!4m5!3m4!1s0x464a2dcc4bfc3e09:0x3222e80e09b18b8a!8m2!3d56.484304!4d8.605328",
+            "button_size": "small",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "164481594625edbdd6-0",
+        "456b3e9a-e494-4165-9771-0d72a12f7d61",
+        "164481594625edbdd6-1",
+        "4994a8aa-6dc3-44a1-8886-187509be4cd7",
+        "91dbe872-138f-4c17-ba79-b5897d6a1f3c",
+        "164481594625edbdd6-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "map_address": "Toronto, Canada",
+        "map_api_key": "",
+        "map_zoom": 14,
+        "map_style": "dark",
+        "image_position": "center center",
+        "text_box_position": "middle-left",
+        "text_alignment": "left",
+        "image_ratio": "550px",
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_box_position": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "400px",
+        "colors_button_label": "#18181a",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#18181a",
+        "gradient_overlay": "",
+        "colors_overlay_opacity": 92,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "hero_slider_rChcH8": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide_keDifc": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/home-banner-slide1.png",
+            "heading": "Real-time GPS tracking: Fleets,",
+            "heading_2": "Containers, Vehicles & Business Assets",
+            "subheading": "Real-time visibility, instant alerts, and full operational control.",
+            "product_image": "shopify://shop_images/black-tracker-slide1.png",
+            "product_mobile__image": "shopify://shop_images/tracki-slide1-mob.png",
+            "show_rating": true,
+            "product_rating__text": "42,559 positive reviews on Amazon",
+            "product_more__link": "shopify://products/tracki-pro-gps-tracker",
+            "product_more__text": "More..."
+          }
+        },
+        "slide_gjJ7nR": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/image-272.webp",
+            "heading": "Real-time GPS tracking for Cars",
+            "heading_2": "",
+            "subheading": "Monitor the car, track its status, and secure every journey.",
+            "product_image": "shopify://shop_images/tracki.webp",
+            "product_mobile__image": "shopify://shop_images/tracki-banner-mobile.webp",
+            "show_rating": true,
+            "product_rating__text": "42,559 positive reviews on Amazon",
+            "product_more__link": "shopify://products/tracki-gps-tracker",
+            "product_more__text": "More..."
+          }
+        },
+        "slide_zrajpL": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/home-banner-slide2.png",
+            "heading": "Real-time GPS tracking for Pets",
+            "heading_2": "",
+            "subheading": "Stay close, stay informed, and protect what matters most.",
+            "product_image": "shopify://shop_images/banner-dekstop-image.webp",
+            "product_mobile__image": "shopify://shop_images/banner-mobile-image.webp",
+            "show_rating": true,
+            "product_rating__text": "42,559 positive reviews on Amazon",
+            "product_more__link": "shopify://products/trackipet-4g-mini-pet-gps-tracker",
+            "product_more__text": "More..."
+          }
+        }
+      },
+      "block_order": [
+        "slide_keDifc",
+        "slide_gjJ7nR",
+        "slide_zrajpL"
+      ],
+      "name": "B2B Hero Slider",
+      "settings": {}
+    },
+    "card_slider_ny8Hzz": {
+      "type": "card-slider",
+      "blocks": {
+        "card_slide_tHGgD9": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/image-270-small.jpg",
+            "set_as_default_active": true,
+            "card_icon": "shopify://shop_images/icon-fleet.svg",
+            "card_title": "Fleet and Logistics tracking",
+            "card_description": "<p>Tracki GPS Pro is a professional-grade tracking solution designed for businesses managing fleets, containers, packages, and high-value assets. With reliable real-time tracking, geofencing alerts, and detailed location history. Tracki GPS Pro helps companies improve operational efficiency, reduce loss and theft, and gain full visibility across logistics and supply chain operations. Built for scale and reliability, it delivers continuous monitoring and actionable insights - so businesses stay in control of their assets at all times.</p>"
+          }
+        },
+        "card_slide_rtngYY": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/car-road-porto-rotondo-costa-smeralda-sardinia-island-italy-summer-small.jpg",
+            "set_as_default_active": false,
+            "card_icon": "shopify://shop_images/icon-car.svg",
+            "card_title": "Vehicles and Cars",
+            "card_description": "<p>Tracki GPS Tracker offers real-time GPS tracking for cars, providing anti-theft protection and fleet management.  It enables geofencing for car rentals, teen driver monitoring with speed alerts, and emergency location data. In case of theft, it helps recover stolen vehicles swiftly, ensuring safety and peace of mind.</p>",
+            "small_image_1": "shopify://shop_images/screen_b.png",
+            "small_image_2": "shopify://shop_images/screen_s.png",
+            "small_image_3": "shopify://shop_images/screen_s2.png"
+          }
+        },
+        "card_slide_GdY6YH": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/grandfather-spending-time-with-his-granddaughter-park-autumn-day1-small.jpg",
+            "set_as_default_active": false,
+            "card_icon": "shopify://shop_images/icon-family.svg",
+            "card_title": "Loved ones",
+            "card_description": "<p>Tracki GPS Tracker ensures safety for kids and the elderly through real-time tracking and geofencing. If a child or senior with the tracker crosses a designated safe zone, you'll receive an instant alert. This feature is ideal for monitoring school commutes, park visits, and preventing wandering or getting lost.</p>",
+            "small_image_1": "shopify://shop_images/Modal.png",
+            "small_image_2": "shopify://shop_images/screen_s-2.png",
+            "small_image_3": "shopify://shop_images/alert_2f57853a-3527-4bbb-9871-f806d5b8b7c7.png"
+          }
+        },
+        "card_slide_PtzBEX": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/dog-road1-small.jpg",
+            "set_as_default_active": false,
+            "card_icon": "shopify://shop_images/icon-dog.svg",
+            "card_title": "Pets",
+            "card_description": "<p>Tracki GPS Tracker is perfect for tracking pets, offering versatility and flexibility with real-time location data to monitor their movements during walks or if they wander off. Geofencing lets you set safe zones, sending alerts if your pet crosses the boundary, reducing the risk of getting lost. With Tracki, you can quickly locate and retrieve your pets, ensuring their safety and your peace of mind.</p>",
+            "small_image_1": "shopify://shop_images/content.png",
+            "small_image_2": "shopify://shop_images/Frame_60433.png"
+          }
+        }
+      },
+      "block_order": [
+        "card_slide_tHGgD9",
+        "card_slide_rtngYY",
+        "card_slide_GdY6YH",
+        "card_slide_PtzBEX"
+      ],
+      "disabled": true,
+      "name": "Card Carousel",
+      "settings": {
+        "section_title": "Tracki solutions for what matters most",
+        "title_position": "center",
+        "cart_section_layout": "page-width",
+        "enable_default_active": true,
+        "enable_line_title_style": false
+      }
+    },
+    "card_slider_new_nWWEBw": {
+      "type": "card-slider-new",
+      "blocks": {
+        "card_slide_A97EdU": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/image-270-small.jpg",
+            "set_as_default_active": true,
+            "card_icon": "shopify://shop_images/icon-fleet.svg",
+            "card_title": "Fleet and Logistics tracking",
+            "card_description": "<p>Tracki GPS Pro is a <em>professional-grade tracking solution</em> designed for businesses managing fleets, containers, packages, and high-value assets. With reliable <em>real-time tracking, geofencing alerts,</em> and detailed <em>location history</em>. Tracki GPS Pro helps companies improve operational efficiency, reduce loss and theft, and gain full visibility across logistics and supply chain operations. Built for scale and reliability, it delivers continuous monitoring and actionable insights - so businesses stay in control of their assets at all times.</p>"
+          }
+        },
+        "card_slide_HjPW3i": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/car-road-porto-rotondo-costa-smeralda-sardinia-island-italy-summer-small.jpg",
+            "set_as_default_active": false,
+            "card_icon": "shopify://shop_images/icon-car.svg",
+            "card_title": "Vehicles and Cars",
+            "card_description": "<p>Tracki GPS Tracker offers <em>real-time GPS</em> tracking for cars, providing anti-theft protection and fleet management.  It enables geofencing for car rentals, teen driver monitoring with speed alerts, and emergency location data. In case of theft, it helps recover stolen vehicles swiftly, ensuring safety and peace of mind.</p>",
+            "small_image_1": "shopify://shop_images/screen_b.png",
+            "small_image_2": "shopify://shop_images/screen_s.png",
+            "small_image_3": "shopify://shop_images/screen_s2.png"
+          }
+        },
+        "card_slide_66qQfg": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/grandfather-spending-time-with-his-granddaughter-park-autumn-day1-small.jpg",
+            "set_as_default_active": false,
+            "card_icon": "shopify://shop_images/icon-family.svg",
+            "card_title": "Loved ones",
+            "card_description": "<p>Tracki GPS Tracker ensures safety for kids and the elderly through real-time tracking and geofencing. If a child or senior with the tracker crosses a designated safe zone, you'll receive an instant alert. This feature is ideal for <em>monitoring</em> school commutes, park visits, and <em>preventing wandering or getting lost.</em></p>",
+            "small_image_1": "shopify://shop_images/Modal.png",
+            "small_image_2": "shopify://shop_images/screen_s-2.png",
+            "small_image_3": "shopify://shop_images/alert_2f57853a-3527-4bbb-9871-f806d5b8b7c7.png"
+          }
+        },
+        "card_slide_iC4eFp": {
+          "type": "card_slide",
+          "settings": {
+            "background_image": "shopify://shop_images/dog-road1-small.jpg",
+            "set_as_default_active": false,
+            "card_icon": "shopify://shop_images/icon-dog.svg",
+            "card_title": "Pets",
+            "card_description": "<p>Tracki GPS Tracker is perfect for tracking pets, offering versatility and flexibility with real-time location data to monitor their movements during walks or if they wander off. Geofencing lets you <em>set safe zones, sending alerts if your pet crosses the boundary</em>, reducing the risk of getting lost. With Tracki, you can quickly locate and retrieve your pets, ensuring their safety and your peace of mind.</p>",
+            "small_image_1": "shopify://shop_images/content.png",
+            "small_image_2": "shopify://shop_images/Frame_60433.png"
+          }
+        }
+      },
+      "block_order": [
+        "card_slide_A97EdU",
+        "card_slide_HjPW3i",
+        "card_slide_66qQfg",
+        "card_slide_iC4eFp"
+      ],
+      "name": "Card Carousel New",
+      "settings": {
+        "section_title": "Tracki Solutions",
+        "title_position": "center",
+        "cart_section_layout": "page-width",
+        "enable_default_active": true,
+        "enable_line_title_style": false
+      }
+    },
+    "counter_ex9aag": {
+      "type": "counter",
+      "blocks": {
+        "counter_QewGcb": {
+          "type": "counter",
+          "settings": {
+            "number": 190,
+            "title": "Countries",
+            "text": "Works globally in over 190 countries."
+          }
+        },
+        "counter_E8F4cx": {
+          "type": "counter",
+          "settings": {
+            "number": 2123458,
+            "title": "Devices sold",
+            "text": "Tracki devices chosen and used by satisfied customers everywhere."
+          }
+        },
+        "counter_dLyeDc": {
+          "type": "counter",
+          "settings": {
+            "number": 15,
+            "title": "Years",
+            "text": "Trusted by customers worldwide."
+          }
+        }
+      },
+      "block_order": [
+        "counter_QewGcb",
+        "counter_E8F4cx",
+        "counter_dLyeDc"
+      ],
+      "name": "Dynamic Counter",
+      "settings": {
+        "enable_animation": true
+      }
+    },
+    "steps_phone_slider_RXy93K": {
+      "type": "steps-phone-slider",
+      "blocks": {
+        "step_gjghHL": {
+          "type": "step",
+          "settings": {
+            "step_number": "1",
+            "heading": "Activate",
+            "phone_image": "shopify://shop_images/step1-phone.png",
+            "phone_mobile_image": "shopify://shop_images/step1-mobphone.png",
+            "extra_text": "<p><strong>Once you receive your Tracki, get started in 3 simple steps:</strong></p><ol><li>Activate your device</li><li><strong>Choose a cost-effective monthly plan</strong></li><li>Start tracking in real time</li></ol>",
+            "icon": "shopify://shop_images/icon_f79dbe5e-be42-4f41-b3df-27b82f342c16.png"
+          }
+        },
+        "step_bw4gVg": {
+          "type": "step",
+          "settings": {
+            "step_number": "2",
+            "heading": "Place",
+            "phone_image": "shopify://shop_images/phoneslide2.png",
+            "phone_mobile_image": "shopify://shop_images/step2-mobimage.png",
+            "extra_text": "<p>Place your Tracki GPS tracker with the vehicle, bag, or loved one you want to watch over and stay connected to.</p>",
+            "icon": "shopify://shop_images/HandDeposit.svg"
+          }
+        },
+        "step_Pt8pch": {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "heading": "Tracking",
+            "phone_image": "shopify://shop_images/step3-phone.png",
+            "extra_text": "<p>Log in to the app to see your Tracki GPS tracker location with real time updates, and history reports, helping you stay close and feel confident knowing what matters most is safe.</p>",
+            "icon": "shopify://shop_images/Path.svg"
+          }
+        }
+      },
+      "block_order": [
+        "step_gjghHL",
+        "step_bw4gVg",
+        "step_Pt8pch"
+      ],
+      "name": "Steps Phone Slider",
+      "settings": {
+        "section_title": "Easy to use",
+        "background_image": "shopify://shop_images/bgr-phone-section.png",
+        "overlay_opacity": 40,
+        "mouse_icon": "shopify://shop_images/icon-mouse.svg",
+        "link": "#product-slideshow-cards"
+      }
+    },
+    "product_cards_NNnJaz": {
+      "type": "product-cards",
+      "blocks": {
+        "product_JEKwB6": {
+          "type": "product",
+          "settings": {
+            "activate_card": false,
+            "product": "tracki-pro-gps-tracker",
+            "title": "",
+            "price": "",
+            "button_label": "Details",
+            "button_link": ""
+          }
+        },
+        "product_M9K6hh": {
+          "type": "product",
+          "settings": {
+            "activate_card": true,
+            "product": "tracki-gps-tracker",
+            "title": "",
+            "price": "",
+            "button_label": "Details",
+            "button_link": ""
+          }
+        },
+        "product_EVCbFM": {
+          "type": "product",
+          "settings": {
+            "activate_card": false,
+            "product": "",
+            "title": "",
+            "price": "",
+            "button_label": "Details",
+            "button_link": ""
+          }
+        },
+        "product_RBcgah": {
+          "type": "product",
+          "settings": {
+            "activate_card": false,
+            "product": "tracki-slim",
+            "image": "shopify://shop_images/tracki-slim.png",
+            "title": "Tracki Slim",
+            "price": "$??.??",
+            "button_label": "Details",
+            "button_link": "#"
+          }
+        },
+        "product_hhJ9qP": {
+          "type": "product",
+          "settings": {
+            "activate_card": false,
+            "product": "trackipet",
+            "title": "",
+            "price": "",
+            "button_label": "Details",
+            "button_link": "shopify://products/trackipet-4g-mini-pet-gps-tracker"
+          }
+        },
+        "product_Aphhqf": {
+          "type": "product",
+          "settings": {
+            "activate_card": false,
+            "product": "tracki-plus",
+            "image": "shopify://shop_images/tracki-plus.png",
+            "title": "Tracki Plus",
+            "price": "$??.??",
+            "button_label": "Details",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "product_JEKwB6",
+        "product_M9K6hh",
+        "product_EVCbFM",
+        "product_RBcgah",
+        "product_hhJ9qP",
+        "product_Aphhqf"
+      ],
+      "name": "Product Slide New",
+      "settings": {
+        "title": "Tracki Devices",
+        "enable_drag": false,
+        "slides_visible": 5,
+        "show_arrows": "none",
+        "prev_arrow_icon": "chevron-left",
+        "next_arrow_icon": "chevron-right"
+      }
+    },
+    "counter_rCgGip": {
+      "type": "counter",
+      "blocks": {
+        "counter_Hxqwzt": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "image_icon": "shopify://shop_images/real-time.svg",
+            "title": "Global real-time tracking you can rely on",
+            "text": "Advanced 4G LTE GPS tracking with multi-band support ensures accurate, real-time location updates across the USA and worldwide, with an international SIM included."
+          }
+        },
+        "counter_xCH9qD": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "image_icon": "shopify://shop_images/real-time-1.svg",
+            "title": "Compact, powerful, and built to stay hidden",
+            "text": "One of the smallest GPS trackers available, designed for discreet use on vehicles, assets, luggage, pets, or loved ones—easy to install and hard to detect."
+          }
+        },
+        "counter_Mbbqax": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "image_icon": "shopify://shop_images/real-time-2.svg",
+            "title": "Built for the long run, backed for life",
+            "text": "Enjoy extended battery options, 24/7 live support, and a lifetime warranty that includes device replacement if it stops working—total peace of mind, long after purchase."
+          }
+        }
+      },
+      "block_order": [
+        "counter_Hxqwzt",
+        "counter_xCH9qD",
+        "counter_Mbbqax"
+      ],
+      "name": "Dynamic Counter",
+      "settings": {
+        "enable_animation": true
+      }
+    },
+    "amazon_review_JNPRWJ": {
+      "type": "amazon-review",
+      "blocks": {
+        "review_ncaaJb": {
+          "type": "review",
+          "settings": {
+            "name": "Russell",
+            "review": "5",
+            "title": "All the features as advertised, really deserve 5 stars",
+            "text": "This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great."
+          }
+        },
+        "review_7kQpCD": {
+          "type": "review",
+          "settings": {
+            "name": "Eric",
+            "review": "5",
+            "title": "Accurate and very user friendly. Good customer service.",
+            "text": "Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty. He informed me that the Lifetime warranty comes with purchasing Tracki through Amazon- they will replace the device if lost/stolen or ceases to function- and Tracki has already replaced the first device I purchased (it got lost, or I hid it so well I couldn't find it and the battery died, lol!"
+          }
+        },
+        "review_Lh9EUr": {
+          "type": "review",
+          "settings": {
+            "name": "Victoria",
+            "review": "5",
+            "title": "Great product highly recommended!",
+            "text": "I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!"
+          }
+        },
+        "review_iU6Vfr": {
+          "type": "review",
+          "settings": {
+            "name": "Monica",
+            "review": "5",
+            "title": "Accurate and very user friendly. Good customer service.",
+            "text": "Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty."
+          }
+        },
+        "review_h9etDx": {
+          "type": "review",
+          "settings": {
+            "name": "Ross",
+            "review": "4.5",
+            "title": "Great product highly recommended!",
+            "text": "I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!"
+          }
+        },
+        "review_3tG7fw": {
+          "type": "review",
+          "settings": {
+            "name": "Carrol",
+            "review": "4",
+            "title": "All the features as advertised, really deserve 5 stars",
+            "text": "This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great."
+          }
+        }
+      },
+      "block_order": [
+        "review_ncaaJb",
+        "review_7kQpCD",
+        "review_Lh9EUr",
+        "review_iU6Vfr",
+        "review_h9etDx",
+        "review_3tG7fw"
+      ],
+      "name": "Amazon Reviews Swiper",
+      "settings": {
+        "heading": "40,000+ positive reviews on Amazon",
+        "autoplay": true,
+        "loop": true
+      }
+    },
+    "contact_new_R7F76J": {
+      "type": "contact-new",
+      "name": "Contact New",
+      "settings": {
+        "heading": "Need Help?<span>Our Team Is Ready</span>",
+        "text": "<p><strong>Let us know how we can help you</strong></p>",
+        "button": "Send request",
+        "enable_validation": false
+      }
+    },
+    "contact_information_G38neN": {
+      "type": "contact-information",
+      "blocks": {
+        "image_with_text_NpGcWg": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify://shop_images/Headset.svg",
+            "heading": "Chat",
+            "text": "<p>Our team is online and ready to help 7 days a week 24 hours a day</p>",
+            "usa_heading": "",
+            "usa_number": "",
+            "can_heading": "",
+            "can_number": "",
+            "uk_heading": "",
+            "uk_number": "",
+            "mex_heading": "",
+            "mex_number": "",
+            "aus_heading": "",
+            "aus_number": "",
+            "email": "",
+            "btn_text": "Start chatting"
+          }
+        },
+        "image_with_text_nqCg7J": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify://shop_images/DeviceMobileCamera.svg",
+            "heading": "Call us",
+            "text": "",
+            "usa_heading": "USA",
+            "usa_number": "+1 323 785 2020",
+            "can_heading": "CAN",
+            "can_number": "+1 226 741 2505",
+            "uk_heading": "UK",
+            "uk_number": "+44 7700 175888",
+            "mex_heading": "MEX",
+            "mex_number": "+52 55 9414 6571",
+            "aus_heading": "AUS",
+            "aus_number": "+61 272 263 632",
+            "email": "",
+            "btn_text": ""
+          }
+        },
+        "image_with_text_CfExpN": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify://shop_images/Envelope.svg",
+            "heading": "Email",
+            "text": "<p>Reach out by email whenever you need a hand - we reply around the clock.</p>",
+            "usa_heading": "",
+            "usa_number": "",
+            "can_heading": "",
+            "can_number": "",
+            "uk_heading": "",
+            "uk_number": "",
+            "mex_heading": "",
+            "mex_number": "",
+            "aus_heading": "",
+            "aus_number": "",
+            "email": "support@tracki.com",
+            "btn_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_NpGcWg",
+        "image_with_text_nqCg7J",
+        "image_with_text_CfExpN"
+      ],
+      "name": "Contact-Info",
+      "settings": {}
+    }
+  },
+  "order": [
+    "image_banner_iDaF6m",
+    "video_hero_jBbnJe",
+    "1644821111d5f02984",
+    "16447362110bb87100",
+    "featured-product",
+    "dual_scroll_FDtbDe",
+    "1644819422ac1baaaa",
+    "1644811296b96dd257",
+    "comparison_table_nKCEFG",
+    "tab-collage-0",
+    "1644811831b4f0fa35",
+    "testimonials",
+    "16448112989817467f",
+    "1657639263294ef946",
+    "1644815946c01342e2",
+    "hero_slider_rChcH8",
+    "card_slider_ny8Hzz",
+    "card_slider_new_nWWEBw",
+    "counter_ex9aag",
+    "steps_phone_slider_RXy93K",
+    "product_cards_NNnJaz",
+    "counter_rCgGip",
+    "amazon_review_JNPRWJ",
+    "contact_new_R7F76J",
+    "contact_information_G38neN"
+  ]
+}
