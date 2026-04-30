@@ -851,6 +851,7 @@ background: #26282A;
             {%- render 'sibling-products', block: block, product: product, section_id: section.id -%}
           {%- when 'buy_buttons' -%}
             {% render 'buy-buttons', block: block, product: product, section_id: section.id, product_form_id: product_form_id, show_pickup_availability: true %}
+           Amazon Prime Buy Button 
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid
