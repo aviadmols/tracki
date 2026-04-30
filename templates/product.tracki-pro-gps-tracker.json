@@ -274,7 +274,7 @@
         "custom_liquid_XJjK6i": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<!-- Beginning of Buy With Prime Widget -->\n<script async fetchpriority='high' src='https://code.buywithprime.amazon.com/bwp.v1.js'></script>\n{% if product.sku %}\n    <div\n        id=\"amzn-buy-now\"\n        data-site-id=\"de2dto5jv9\"\n        data-widget-id=\"w-q5cG7rlPOT9LmAzBGFjki3\"\n        data-sku=\"{{product.sku}}\"\n    ></div>\n{% else %}\n    <div\n        id=\"amzn-buy-now\"\n        data-site-id=\"de2dto5jv9\"\n        data-widget-id=\"w-q5cG7rlPOT9LmAzBGFjki3\"\n        data-sku=\"{{product.selected_or_first_available_variant.sku}}\"\n    ></div>\n{% endif %}\n<!-- End of Buy With Prime Widget -->"
+            "custom_liquid": ""
           }
         },
         "share": {
