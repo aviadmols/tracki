@@ -851,7 +851,8 @@ background: #26282A;
             {%- render 'sibling-products', block: block, product: product, section_id: section.id -%}
           {%- when 'buy_buttons' -%}
             {% render 'buy-buttons', block: block, product: product, section_id: section.id, product_form_id: product_form_id, show_pickup_availability: true %}
-           <script async fetchpriority="high" src="https://code.buywithprime.amazon.com/bwp.v1.js"></script>
+{% comment %} Added Button for Amazon pay button by Vishnu {% endcomment %}
+<script async fetchpriority="high" src="https://code.buywithprime.amazon.com/bwp.v1.js"></script>
 
 <div
   id="amzn-buy-now"
@@ -867,6 +868,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+{% comment %}  {% endcomment %}
+
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid
