@@ -271,6 +271,12 @@
             "show_gift_card_recipient": false
           }
         },
+        "custom_liquid_XJjK6i": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- Beginning of Buy With Prime Widget -->\n<script async fetchpriority='high' src='https://code.buywithprime.amazon.com/bwp.v1.js'></script>\n{% if product.sku %}\n    <div\n        id=\"amzn-buy-now\"\n        data-site-id=\"de2dto5jv9\"\n        data-widget-id=\"w-q5cG7rlPOT9LmAzBGFjki3\"\n        data-sku=\"{{product.sku}}\"\n    ></div>\n{% else %}\n    <div\n        id=\"amzn-buy-now\"\n        data-site-id=\"de2dto5jv9\"\n        data-widget-id=\"w-q5cG7rlPOT9LmAzBGFjki3\"\n        data-sku=\"{{product.selected_or_first_available_variant.sku}}\"\n    ></div>\n{% endif %}\n<!-- End of Buy With Prime Widget -->"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -303,6 +309,7 @@
         "fd414a67-531a-4a3a-8941-e78cec888355",
         "inventory_status",
         "buy_buttons",
+        "custom_liquid_XJjK6i",
         "share",
         "54684625-1615-430d-b322-cfb5af689b94",
         "a2f06597-05bf-457d-a1e5-54d6e03ff425"
