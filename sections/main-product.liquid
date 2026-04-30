@@ -851,7 +851,22 @@ background: #26282A;
             {%- render 'sibling-products', block: block, product: product, section_id: section.id -%}
           {%- when 'buy_buttons' -%}
             {% render 'buy-buttons', block: block, product: product, section_id: section.id, product_form_id: product_form_id, show_pickup_availability: true %}
-           Amazon Prime Buy Button 
+           <script async fetchpriority="high" src="https://code.buywithprime.amazon.com/bwp.v1.js"></script>
+
+<div
+  id="amzn-buy-now"
+  data-site-id="de2dto5jv9"
+  data-widget-id="w-q5cG7rlPOT9LmAzBGFjki3"
+  data-sku="{{ product.selected_or_first_available_variant.sku }}"
+></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.BuyWithPrime) {
+    window.BuyWithPrime.render();
+  }
+});
+</script>
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid
