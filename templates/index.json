@@ -1513,7 +1513,7 @@
           "settings": {
             "step_number": "3",
             "heading": "Tracking",
-            "phone_image": "shopify://shop_images/step3-phone.png",
+            "phone_image": "shopify://shop_images/phone_3.webp",
             "extra_text": "<p>Log in to the app to see your Tracki GPS tracker location with real time updates, and history reports, helping you stay close and feel confident knowing what matters most is safe.</p>",
             "icon": "shopify://shop_images/Path.svg"
           }
