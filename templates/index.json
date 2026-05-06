@@ -1491,8 +1491,8 @@
           "settings": {
             "step_number": "1",
             "heading": "Activate",
-            "phone_image": "shopify://shop_images/phone_2.webp",
-            "phone_mobile_image": "shopify://shop_images/phone_2.webp",
+            "phone_image": "shopify://shop_images/step1-phone.png",
+            "phone_mobile_image": "shopify://shop_images/step1-mobphone.png",
             "extra_text": "<p><strong>Once you receive your Tracki, get started in 3 simple steps:</strong></p><ol><li>Activate your device</li><li><strong>Choose a cost-effective monthly plan</strong></li><li>Start tracking in real time</li></ol>",
             "icon": "shopify://shop_images/icon_f79dbe5e-be42-4f41-b3df-27b82f342c16.png"
           }
@@ -1513,7 +1513,7 @@
           "settings": {
             "step_number": "3",
             "heading": "Tracking",
-            "phone_image": "shopify://shop_images/phone_3.webp",
+            "phone_image": "shopify://shop_images/step3-phone.png",
             "extra_text": "<p>Log in to the app to see your Tracki GPS tracker location with real time updates, and history reports, helping you stay close and feel confident knowing what matters most is safe.</p>",
             "icon": "shopify://shop_images/Path.svg"
           }
