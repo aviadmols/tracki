@@ -143,54 +143,6 @@
         "padding_bottom": 0
       }
     },
-    "1644821111d5f02984": {
-      "type": "rich-text",
-      "blocks": {
-        "1644821111a6e15546-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>This is a demo store to showcase a real-world example of a one-product store.</p>",
-            "text_size": "typeset2",
-            "secondary_color": true,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "a92f0d1d-9ef3-4735-9d56-a35bfb88cac9": {
-          "type": "button",
-          "settings": {
-            "button_size": "medium",
-            "button_label": "Explore product landing",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_alt_label": "",
-            "button_alt_link": "",
-            "button_alt_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "1644821111a6e15546-1",
-        "a92f0d1d-9ef3-4735-9d56-a35bfb88cac9"
-      ],
-      "disabled": true,
-      "settings": {
-        "text_alignment": "left",
-        "mobile_text_alignment": "left",
-        "horizontal_content": true,
-        "narrow": false,
-        "show_divider": true,
-        "use_custom_colors": false,
-        "colors_button_label": "#ffffff",
-        "colors_button_background": "#1a1b18",
-        "colors_text": "#212326",
-        "colors_background": "#ffffff",
-        "colors_highlight": "#ffb503",
-        "gradient_background": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "16447362110bb87100": {
       "type": "slideshow",
       "blocks": {
@@ -1823,7 +1775,6 @@
   "order": [
     "image_banner_iDaF6m",
     "video_hero_jBbnJe",
-    "1644821111d5f02984",
     "16447362110bb87100",
     "featured-product",
     "dual_scroll_FDtbDe",
