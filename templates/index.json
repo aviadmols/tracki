@@ -1575,6 +1575,56 @@
         "next_arrow_icon": "chevron-right"
       }
     },
+    "tracki_app_yrN3EH": {
+      "type": "tracki-app",
+      "blocks": {
+        "screen_BP3pxC": {
+          "type": "screen",
+          "settings": {
+            "image": "shopify://shop_images/phone-img1.webp",
+            "default_icon": "shopify://shop_images/pin.svg",
+            "active_icon": "shopify://shop_images/Group_6.svg",
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        },
+        "screen_RiLmQU": {
+          "type": "screen",
+          "settings": {
+            "image": "shopify://shop_images/phone-img2.webp",
+            "default_icon": "shopify://shop_images/app-icon2.svg",
+            "active_icon": "shopify://shop_images/places-active.svg",
+            "label": "Places",
+            "description": "Set tracking perimeters and receive real-time alerts when your tracker exits the safe zone"
+          }
+        },
+        "screen_XrFtVj": {
+          "type": "screen",
+          "settings": {
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        },
+        "screen_HKGAX9": {
+          "type": "screen",
+          "settings": {
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        }
+      },
+      "block_order": [
+        "screen_BP3pxC",
+        "screen_RiLmQU",
+        "screen_XrFtVj",
+        "screen_HKGAX9"
+      ],
+      "disabled": true,
+      "name": "Tracki Mobile Section",
+      "settings": {
+        "heading": "Tracki mobile application"
+      }
+    },
     "counter_rCgGip": {
       "type": "counter",
       "blocks": {
@@ -1793,6 +1843,7 @@
     "counter_ex9aag",
     "steps_phone_slider_RXy93K",
     "product_cards_NNnJaz",
+    "tracki_app_yrN3EH",
     "counter_rCgGip",
     "amazon_review_JNPRWJ",
     "contact_new_R7F76J",
