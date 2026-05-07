@@ -3128,6 +3128,7 @@ footer.footer details[open] summary{margin-bottom:0px;display:none;}
 .step-slide-wrapper .step-slide .phone-frame img{width:100%;}
 .step-slide-wrapper .step-slide:last-child .phone-frame img, .step-slide-wrapper .step-slide:first-child .phone-frame img {
     width: auto;
+    max-width: 100%;
 }
 .footer__content-right .flex-grid{width:100%;}
 /* .product-form__input--pill input[type=radio]:checked + label, .product-form__input--pill input[type=radio] + label{width:100%;} */
