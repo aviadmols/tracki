@@ -1432,6 +1432,10 @@
       ],
       "name": "Dynamic Counter",
       "settings": {
+        "bg_color": "",
+        "counter_wrapper_color": "",
+        "counter_title_color": "",
+        "counter_text_color": "",
         "enable_animation": true
       }
     },
@@ -1625,7 +1629,6 @@
         "screen_XrFtVj",
         "screen_HKGAX9"
       ],
-      "disabled": true,
       "name": "Tracki Mobile Section",
       "settings": {
         "heading": "Tracki mobile application"
@@ -1669,6 +1672,10 @@
       ],
       "name": "Dynamic Counter",
       "settings": {
+        "bg_color": "#394045",
+        "counter_wrapper_color": "#2b2e30",
+        "counter_title_color": "#ffffff",
+        "counter_text_color": "#ffffff",
         "enable_animation": true
       }
     },
