@@ -11,7 +11,11 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
     {% if request.path contains 'pc-cell-phone-spying' %}
+    <meta name="robots" content="noindex,nofollow">
+    {% endif %}
+     {% if request.path contains 'specialized-spy-cams' %}
     <meta name="robots" content="noindex,nofollow">
     {% endif %}
 

@@ -43,7 +43,32 @@
         </div>
   </div>
 </section>
+<style>
+  #shopify-section-template--19267864395891__counter_rCgGip .counter-section {
+    background: {{ section.settings.bg_color }};
+    padding: 0 30px 50px 30px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom:100px;
+  }
+  #shopify-section-template--19267864395891__counter_rCgGip .counter-wrapper {
+    background: {{ section.settings.counter_wrapper_color }};
+  }
 
+  #shopify-section-template--19267864395891__counter_rCgGip .counter-title {
+    color: {{ section.settings.counter_title_color }};
+  }
+
+  #shopify-section-template--19267864395891__counter_rCgGip .counter-text {
+    color: {{ section.settings.counter_text_color }};
+  }
+
+
+  @media(max-width:767px){
+   #shopify-section-template--19267864395891__counter_rCgGip .counter-section{padding:0 15px 30px 15px;}
+   #shopify-section-template--19267864395891__counter_rCgGip .counter-wrapper{padding:64px 15px;gap:64px;}
+   #shopify-section-template--19267864395891__counter_rCgGip .counter-title{margin-top:16px;}
+}
+</style>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll(".counter-number");
@@ -95,56 +120,82 @@
 
 {% schema %}
 {
-  "name": "Dynamic Counter",
-  "settings": [
-    {
-    "type": "checkbox",
-    "id": "enable_animation",
-    "label": "Enable counter animation",
-    "default": true
-  }
-  ],
-  "blocks": [
-    {
-      "type": "counter",
-      "name": "Counter Item",
-      "settings": [
-        {
-          "type": "number",
-          "id": "number",
-          "label": "Counter Number",
-          "default": 100
-        },
-        {
-            "type": "image_picker",
-            "id": "image_icon",
-            "label": "Image Icon"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Countries"
-        },
-        {
-          "type": "textarea",
-          "id": "text",
-          "label": "Description",
-          "default": "Works globally in over 100 countries."
-        }
-      ]
-    }
-  ],
-  "max_blocks": 3,
-  "presets": [
-    {
-      "name": "Dynamic Counter",
-      "blocks": [
-        { "type": "counter" },
-        { "type": "counter" },
-        { "type": "counter" }
-      ]
-    }
-  ]
+   "name":"Dynamic Counter",
+   "settings":[
+      {
+         "type":"color",
+         "id":"bg_color",
+         "label":"Background color"
+      },
+      {
+         "type":"color",
+         "id":"counter_wrapper_color",
+         "label":"Counter Wrapper color"
+      },
+      {
+         "type":"color",
+         "id":"counter_title_color",
+         "label":"Counter Title color"
+      },
+      {
+         "type":"color",
+         "id":"counter_text_color",
+         "label":"Counter Text color"
+      },
+      {
+         "type":"checkbox",
+         "id":"enable_animation",
+         "label":"Enable counter animation",
+         "default":true
+      }
+   ],
+   "blocks":[
+      {
+         "type":"counter",
+         "name":"Counter Item",
+         "settings":[
+            {
+               "type":"number",
+               "id":"number",
+               "label":"Counter Number",
+               "default":100
+            },
+            {
+               "type":"image_picker",
+               "id":"image_icon",
+               "label":"Image Icon"
+            },
+            {
+               "type":"text",
+               "id":"title",
+               "label":"Title",
+               "default":"Countries"
+            },
+            {
+               "type":"textarea",
+               "id":"text",
+               "label":"Description",
+               "default":"Works globally in over 100 countries."
+            }
+         ]
+      }
+   ],
+   "max_blocks":3,
+   "presets":[
+      {
+         "name":"Dynamic Counter",
+         "blocks":[
+            {
+               "type":"counter"
+            },
+            {
+               "type":"counter"
+            },
+            {
+               "type":"counter"
+            }
+         ]
+      }
+   ]
 }
 {% endschema %}
