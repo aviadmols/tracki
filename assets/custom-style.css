@@ -2974,7 +2974,7 @@ nav .menu-drawer__menu-item {
     width:100%;
   }
   .step-slide-wrapper .step-slide .phone-frame img{height:auto;width:auto;}
-   .step-slide-wrapper .step-slide:first-child .phone-frame img{margin-top:-27px;}
+   .step-slide-wrapper .step-slide:first-child .phone-frame img{margin-top:-27px; max-width: 100%;}
   .information-wrapper{flex-direction:column;gap:30px;}
   .box-container{max-width:100%;}
   .box-container:nth-child(2) {
