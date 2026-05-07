@@ -1,0 +1,158 @@
+<div class="tracki-section">
+  <div class="tracki-wrapper">
+
+    <!-- Heading -->
+    <h2 class="tracki-heading">
+      {{ section.settings.heading }}
+    </h2>
+
+    <!-- Phone -->
+    <div class="phone">
+      <img id="phoneImage"
+        src="{{ section.blocks.first.settings.image | img_url: 'master' }}"
+        alt="App screen">
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="icons">
+      {% for block in section.blocks %}
+        <button
+          class="icon-btn {% if forloop.first %}active{% endif %}"
+          data-img="{{ block.settings.image | img_url: 'master' }}"
+          data-desc="{{ block.settings.description }}">
+
+          <img src="{{ block.settings.default_icon | img_url: '100x' }}" alt="" class="default-icon">
+          <img src="{{ block.settings.active_icon | img_url: '100x' }}" alt="" class="active-icon">
+          <span>{{ block.settings.label }}</span>
+        </button>
+      {% endfor %}
+    </div>
+
+    <!-- Bottom Text -->
+    <p class="tracki-desc">
+      {{ section.blocks.first.settings.description }}
+    </p>
+
+  </div>
+</div>
+
+{% comment %} <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".tracki-section");
+  const buttons = section.querySelectorAll(".icon-btn");
+  const phoneImage = section.querySelector("#phoneImage");
+  const desc = section.querySelector(".tracki-desc");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Change image
+      phoneImage.src = btn.dataset.img;
+
+      // Change description
+      desc.textContent = btn.dataset.desc;
+
+      // Toggle active class
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+});
+</script> {% endcomment %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".tracki-section");
+  const buttons = section.querySelectorAll(".icon-btn");
+  const phoneImage = section.querySelector("#phoneImage");
+  const desc = section.querySelector(".tracki-desc");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      // 🔥 Fade out
+      phoneImage.classList.add("fade-out");
+
+      setTimeout(() => {
+        // Change image
+        phoneImage.src = btn.dataset.img;
+
+        // Change description
+        desc.textContent = btn.dataset.desc;
+
+        // Fade in
+        phoneImage.classList.remove("fade-out");
+        phoneImage.classList.add("fade-in");
+
+        setTimeout(() => {
+          phoneImage.classList.remove("fade-in");
+        }, 500);
+
+      }, 400);
+
+      // Toggle active
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Tracki Mobile Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tracki mobile application"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "screen",
+      "name": "App Screen",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Mobile Screen Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "default_icon",
+          "label": "Default Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "active_icon",
+          "label": "Active Icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Devices"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Bottom Description",
+            "default": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tracki Mobile Section",
+      "blocks": [
+        { "type": "screen" },
+        { "type": "screen" },
+        { "type": "screen" },
+        { "type": "screen" }
+      ]
+    }
+  ]
+}
+{% endschema %}
