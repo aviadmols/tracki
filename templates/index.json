@@ -1638,7 +1638,7 @@
           "type": "counter",
           "settings": {
             "number": 100,
-            "image_icon": "shopify://shop_images/real-time.svg",
+            "image_icon": "shopify://shop_images/realtime-track.svg",
             "title": "Global real-time tracking you can rely on",
             "text": "Advanced 4G LTE GPS tracking with multi-band support ensures accurate, real-time location updates across the USA and worldwide, with an international SIM included."
           }
@@ -1647,7 +1647,7 @@
           "type": "counter",
           "settings": {
             "number": 100,
-            "image_icon": "shopify://shop_images/real-time-1.svg",
+            "image_icon": "shopify://shop_images/compact.svg",
             "title": "Compact, powerful, and built to stay hidden",
             "text": "One of the smallest GPS trackers available, designed for discreet use on vehicles, assets, luggage, pets, or loved ones—easy to install and hard to detect."
           }
@@ -1656,7 +1656,7 @@
           "type": "counter",
           "settings": {
             "number": 100,
-            "image_icon": "shopify://shop_images/real-time-2.svg",
+            "image_icon": "shopify://shop_images/secure-lock.svg",
             "title": "Built for the long run, backed for life",
             "text": "Enjoy extended battery options, 24/7 live support, and a lifetime warranty that includes device replacement if it stops working—total peace of mind, long after purchase."
           }
