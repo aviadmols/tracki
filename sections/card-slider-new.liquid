@@ -424,16 +424,36 @@
 
   /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
+  e.preventDefault();
+  e.stopPropagation();
 
-    var $item = $(this).closest(".item");
+  var $item = $(this).closest(".item");
 
-    $carousel.find(".item.active").removeClass("active");
-    $item.addClass("active");
+  $carousel.find(".item.active").removeClass("active");
+  $item.addClass("active");
 
-    $carousel.addClass("popup-open");
-  });
+  $carousel.addClass("popup-open");
+
+  setTimeout(function () {
+
+    // 🔥 STEP 1: HARD RESET slick position
+    $carousel.slick('slickGoTo', 0, true);
+
+    // 🔥 STEP 2: force recalculation (VERY IMPORTANT)
+    $carousel.slick('setPosition');
+
+    // 🔥 STEP 3: force translate reset (fixes “stuck right” issue)
+    $carousel.find('.slick-track').css('transform', 'translate3d(0px, 0px, 0px)');
+
+    // 🔥 STEP 4: scroll active item into center
+    $item[0].scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center"
+    });
+
+  }, 120);
+});
 
   /** BACK BUTTON → CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
