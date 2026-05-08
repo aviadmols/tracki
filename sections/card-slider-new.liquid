@@ -349,7 +349,7 @@
       .addClass('owl-next');
   }
 
-  // Disable ONLY prev on first load (fake disable)
+  // Fake disable prev on first slide
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -405,13 +405,13 @@
 
       setTimeout(function () {
         activateFirstVisible();
-        updatePrevState();   // 👈 disable prev on load
+        updatePrevState();
       }, 50);
 
+      // ✅ FIXED: DO NOT close popup on slide change
       $carousel.on('afterChange', function () {
-        closePopup();
         activateFirstVisible();
-        updatePrevState();   // 👈 update after move
+        updatePrevState();
       });
     }
   }
