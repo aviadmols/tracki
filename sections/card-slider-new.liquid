@@ -352,7 +352,6 @@
       .addClass('owl-next');
   }
 
-  // Fake disable prev on first slide
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -373,6 +372,12 @@
       $carousel.find('.item.active').removeClass('active');
       $firstItem.addClass('active');
     }
+  }
+
+  function openPopup($item) {
+    $carousel.addClass("popup-open");
+    $carousel.find(".item.active").removeClass("active");
+    $item.addClass("active");
   }
 
   function closePopup() {
@@ -411,7 +416,7 @@
         updatePrevState();
       }, 50);
 
-      // ✅ FIXED: DO NOT close popup on slide change
+      // ✅ Only UI sync, NO popup close
       $carousel.on('afterChange', function () {
         activateFirstVisible();
         updatePrevState();
@@ -422,20 +427,16 @@
   initCarousel();
   $(window).on('resize', initCarousel);
 
-  /** MORE BUTTON → OPEN POPUP */
+  /** OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var $item = $(this).closest(".item");
-
-    $carousel.find(".item.active").removeClass("active");
-    $item.addClass("active");
-
-    $carousel.addClass("popup-open");
+    openPopup($item);
   });
 
-  /** BACK BUTTON → CLOSE POPUP */
+  /** CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
