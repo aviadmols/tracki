@@ -95,7 +95,7 @@ $(document).ready(function () {
     return $(window).width() > 769;
   }
 
-  // Responsive hand position
+  // Get hand position
   function setHandPosition() {
 
     var $slide = $slides.eq(1);
@@ -103,31 +103,21 @@ $(document).ready(function () {
 
     if (!$phone.length) return;
 
-    var section = document.querySelector('.steps-slider');
+    var sectionRect = document
+      .querySelector('.steps-slider')
+      .getBoundingClientRect();
 
-    if (!section) return;
-
-    var sectionRect = section.getBoundingClientRect();
     var phoneRect = $phone[0].getBoundingClientRect();
 
-    // Calculate hand position
     var finalX =
-      phoneRect.left +
-      (phoneRect.width * 0.52) -
-      sectionRect.left;
+      phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
 
     var finalY =
-      phoneRect.top +
-      (phoneRect.height * 0.02) -
-      sectionRect.top;
-
-    // Convert to percentage for responsiveness
-    var xPercent = (finalX / sectionRect.width) * 100;
-    var yPercent = (finalY / sectionRect.height) * 100;
+      phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
 
     return {
-      x: xPercent,
-      y: yPercent
+      x: finalX,
+      y: finalY
     };
   }
 
@@ -140,8 +130,8 @@ $(document).ready(function () {
     if (index >= total) index = total - 1;
 
     if (scrolling) return;
-
     scrolling = true;
+
     current = index;
 
     // Move slides
@@ -159,10 +149,10 @@ $(document).ready(function () {
     // Reset hand
     $hand.css({
       opacity: 0,
-      transform: 'translate(-50%, -50%)'
+      transform: 'translateX(-50%)'
     });
 
-    // Show hand on second slide
+    // Show static hand on second slide
     if (current === 1) {
 
       setTimeout(function () {
@@ -172,16 +162,16 @@ $(document).ready(function () {
         if (!pos) return;
 
         $hand.css({
-          left: 51.4324 + '%',
-          top: 17.8611 + '%',
+          left: pos.x + 'px',
+          top: pos.y + 'px',
           opacity: 1,
-          transform: 'translate(-50%, -50%)'
+          transform: 'translateX(-50%)'
         });
 
       }, 700);
     }
 
-    // Unlock scrolling
+    // Unlock scroll
     setTimeout(function () {
       scrolling = false;
     }, 900);
@@ -198,7 +188,7 @@ $(document).ready(function () {
     goToSlide($(this).index());
   });
 
-  // Mouse wheel slider
+  // Mouse wheel
   $('.steps-slider-container').on('wheel', function (e) {
 
     if (!isLargeScreen()) return;
@@ -222,7 +212,7 @@ $(document).ready(function () {
     }
   });
 
-  // Resize handler
+  // Resize
   $(window).on('resize', function () {
 
     if (current === 1) {
@@ -230,15 +220,14 @@ $(document).ready(function () {
       var pos = setHandPosition();
 
       if (pos) {
-
         $hand.css({
-          left: pos.x + '%',
-          top: pos.y + '%'
+          left: pos.x + 'px',
+          top: pos.y + 'px'
         });
       }
     }
 
-    // Reset for mobile
+    // Reset on mobile
     if (!isLargeScreen()) {
 
       $wrapper.css('transform', 'translateY(0)');
@@ -252,7 +241,7 @@ $(document).ready(function () {
 
       $hand.css({
         opacity: 0,
-        transform: 'translate(-50%, -50%)'
+        transform: 'translateX(-50%)'
       });
     }
   });
