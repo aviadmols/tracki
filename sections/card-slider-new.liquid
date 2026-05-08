@@ -424,32 +424,16 @@
 
   /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
-  e.preventDefault();
-  e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-  var $item = $(this).closest(".item");
+    var $item = $(this).closest(".item");
 
-  $carousel.find(".item.active").removeClass("active");
-  $item.addClass("active");
+    $carousel.find(".item.active").removeClass("active");
+    $item.addClass("active");
 
-  $carousel.addClass("popup-open");
-
-  setTimeout(function () {
-
-    // ✅ ALWAYS go to first slide (left)
-    $carousel.slick('slickGoTo', 0, true);
-
-    // ensure layout recalculation
-    $carousel.slick('setPosition');
-
-    // optional: center active item after reset
-    $item[0].scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-
-  }, 100);
-});
+    $carousel.addClass("popup-open");
+  });
 
   /** BACK BUTTON → CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
