@@ -80,6 +80,21 @@
   </div>
 </section>
 
+<style>
+  .steps-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.hand-indicator {
+  position: absolute;
+  z-index: 99;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  will-change: transform, top, left;
+}
+</style>
+
 <script>
 $(document).ready(function () {
 
