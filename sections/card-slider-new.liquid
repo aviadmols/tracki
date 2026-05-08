@@ -90,7 +90,6 @@
   .slick-disabled-init {
   opacity: 0.5;
   pointer-events: none;
-  background: #ffffff;
 }
 </style>
 
@@ -352,7 +351,6 @@
       .addClass('owl-next');
   }
 
-  // Disable ONLY prev on first load (fake disable)
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -378,16 +376,15 @@
   function closePopup() {
     $carousel.removeClass("popup-open");
     $carousel.find(".item.active").removeClass("active");
+    $('body').removeClass("no-scroll");
   }
 
   function initCarousel() {
 
     if ($(window).width() <= 989) {
-
       if ($carousel.hasClass('slick-initialized')) {
         $carousel.slick('unslick');
       }
-
       closePopup();
       return;
     }
@@ -397,24 +394,26 @@
       $carousel.slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: true,
+        infinite: false,        // ✅ IMPORTANT FIX
         variableWidth: true,
         arrows: true,
         dots: false,
         adaptiveHeight: true,
+        centerMode: true,
+        focusOnSelect: true
       });
 
       addNavIcons();
 
       setTimeout(function () {
         activateFirstVisible();
-        updatePrevState();   // 👈 disable prev on load
+        updatePrevState();
       }, 50);
 
       $carousel.on('afterChange', function () {
         closePopup();
         activateFirstVisible();
-        updatePrevState();   // 👈 update after move
+        updatePrevState();
       });
     }
   }
@@ -422,20 +421,33 @@
   initCarousel();
   $(window).on('resize', initCarousel);
 
-  /** MORE BUTTON → OPEN POPUP */
+  /** OPEN POPUP + CENTER ITEM */
   $(document).on("click", ".item-more-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var $item = $(this).closest(".item");
+    var $slide = $item.closest(".slick-slide");
+    var index = $slide.data("slick-index");
 
     $carousel.find(".item.active").removeClass("active");
     $item.addClass("active");
 
     $carousel.addClass("popup-open");
+    $('body').addClass("no-scroll");
+
+    // move slick to clicked item
+    $carousel.slick('slickGoTo', index, true);
+
+    // center vertically in viewport
+    setTimeout(function () {
+      $('html, body').animate({
+        scrollTop: $item.offset().top - (window.innerHeight / 2) + ($item.outerHeight() / 2)
+      }, 300);
+    }, 50);
   });
 
-  /** BACK BUTTON → CLOSE POPUP */
+  /** CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
