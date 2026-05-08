@@ -8,7 +8,7 @@
       background-image: url({{ section.settings.background_image | img_url: '2000x' }}); 
     {% endif %}">
   <div class="hand-wrapper">
-    <img src="{{ 'hand_1.png' | file_url }}" class="hand-indicator" alt="Swipe hand">
+    <img src="{{ 'hand.png' | file_url }}" class="hand-indicator" alt="Swipe hand">
   </div>
 
   <div class="steps-overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }}"></div>
@@ -81,168 +81,128 @@
 </section>
 
 <script>
-$(document).ready(function () {
+$(document).ready(function(){
 
   var $wrapper = $('.step-slide-wrapper');
-  var $slides = $('.step-slide');
-  var total = $slides.length;
-  var current = 0;
+  var $slides  = $('.step-slide');
+  var total    = $slides.length;
+  var current  = 0;
   var scrolling = false;
   var $hand = $('.hand-indicator');
+  var $section = $('.steps-inner');
 
-  // Check screen size
+  // Function to check if screen is large
   function isLargeScreen() {
     return $(window).width() > 769;
   }
 
-  // Get hand position
-  function setHandPosition() {
+ function setHandPosition() {
+  var $slide = $slides.eq(1);
+  var $phone = $slide.find('.phone-frame');
 
-    var $slide = $slides.eq(1);
-    var $phone = $slide.find('.phone-frame');
+  if (!$phone.length) return;
 
-    if (!$phone.length) return;
+  var sectionRect = document.querySelector('.steps-slider').getBoundingClientRect();
+  var phoneRect   = $phone[0].getBoundingClientRect();
 
-    var sectionRect = document
-      .querySelector('.steps-slider')
-      .getBoundingClientRect();
+  var finalX = phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
 
-    var phoneRect = $phone[0].getBoundingClientRect();
+  // 👉 ONLY CALCULATE HERE (no animation logic)
+  var finalY = phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
 
-    var finalX =
-      phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
+  return { x: finalX, y: finalY };
+}
 
-    var finalY =
-      phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
-
-    return {
-      x: finalX,
-      y: finalY
-    };
-  }
-
-  // Slide function
   function goToSlide(index) {
+  if (!isLargeScreen()) return;
 
-    if (!isLargeScreen()) return;
+  if (index < 0) index = 0;
+  if (index >= total) index = total - 1;
 
-    if (index < 0) index = 0;
-    if (index >= total) index = total - 1;
+  if (scrolling) return;
+  scrolling = true;
 
-    if (scrolling) return;
-    scrolling = true;
+  current = index;
 
-    current = index;
+  // Move slide
+  $wrapper.css('transform', 'translateY(-' + (current * 100) + 'vh)');
+  $('.slider-dots span').removeClass('active').eq(current).addClass('active');
 
-    // Move slides
-    $wrapper.css(
-      'transform',
-      'translateY(-' + (current * 100) + 'vh)'
-    );
+  // FULL RESET (IMPORTANT)
+  $hand.removeClass('hand-animate').css({
+  opacity: 0,
+  transform: 'translate(-50%, -120px)' // match CSS start
+});
 
-    // Active dots
-    $('.slider-dots span')
-      .removeClass('active')
-      .eq(current)
-      .addClass('active');
+if (current === 1) {
 
-    // Reset hand
+  setTimeout(function () {
+
+    var pos = setHandPosition();
+
+    // START from top
     $hand.css({
-      opacity: 0,
+      left: pos.x + 'px',
+      top: '0px',
+      opacity: 1,
       transform: 'translateX(-50%)'
     });
 
-    // Show static hand on second slide
-    if (current === 1) {
+    $hand[0].offsetHeight;
 
-      setTimeout(function () {
+    // MOVE to final (this is where you control stop position)
+    $hand.stop().animate(
+      { top: pos.y },
+      {
+        duration: 1200,
+        easing: "swing"
+      }
+    );
 
-        var pos = setHandPosition();
+  }, 700);
+}
 
-        if (!pos) return;
-
-        $hand.css({
-          left: pos.x + 'px',
-          top: pos.y + 'px',
-          opacity: 1,
-          transform: 'translateX(-50%)'
-        });
-
-      }, 700);
-    }
-
-    // Unlock scroll
-    setTimeout(function () {
-      scrolling = false;
-    }, 900);
-  }
-
-  // Initial slide
+  // Unlock scrolling
+  setTimeout(function () {
+    scrolling = false;
+  }, 900);
+}
   goToSlide(0);
 
   // Dot click
-  $('.slider-dots span').on('click', function () {
-
-    if (!isLargeScreen()) return;
-
+  $('.slider-dots span').on('click', function(){
+    if (!isLargeScreen()) return; // Stop sliding on small screens
     goToSlide($(this).index());
   });
 
   // Mouse wheel
-  $('.steps-slider-container').on('wheel', function (e) {
+  $('.steps-slider-container').on('wheel', function(e){
+  if (!isLargeScreen()) return;
 
-    if (!isLargeScreen()) return;
+  var delta = e.originalEvent.deltaY;
 
-    var delta = e.originalEvent.deltaY;
+  if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
+    return; // allow normal scroll at edges
+  }
 
-    // Allow normal page scroll at edges
-    if (
-      (delta > 0 && current === total - 1) ||
-      (delta < 0 && current === 0)
-    ) {
-      return;
-    }
+  e.preventDefault();
 
-    e.preventDefault();
+  if (delta > 0) {
+    goToSlide(current + 1);
+  } else {
+    goToSlide(current - 1);
+  }
+});
 
-    if (delta > 0) {
-      goToSlide(current + 1);
-    } else {
-      goToSlide(current - 1);
-    }
-  });
+  // Window resize
+  $(window).on('resize', function(){
+    if (current === 1) setHandPosition();
 
-  // Resize
-  $(window).on('resize', function () {
-
-    if (current === 1) {
-
-      var pos = setHandPosition();
-
-      if (pos) {
-        $hand.css({
-          left: pos.x + 'px',
-          top: pos.y + 'px'
-        });
-      }
-    }
-
-    // Reset on mobile
     if (!isLargeScreen()) {
-
-      $wrapper.css('transform', 'translateY(0)');
-
+      $wrapper.css('transform', 'translateY(0)'); // reset to first slide
       current = 0;
-
-      $('.slider-dots span')
-        .removeClass('active')
-        .eq(current)
-        .addClass('active');
-
-      $hand.css({
-        opacity: 0,
-        transform: 'translateX(-50%)'
-      });
+      $('.slider-dots span').removeClass('active').eq(current).addClass('active');
+      $hand.removeClass('hand-animate').css('opacity', 0);
     }
   });
 
