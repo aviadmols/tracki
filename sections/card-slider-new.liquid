@@ -428,38 +428,20 @@
   e.stopPropagation();
 
   var $item = $(this).closest(".item");
+  var index = $item.closest('.slick-slide').data('slick-index');
 
   $carousel.find(".item.active").removeClass("active");
   $item.addClass("active");
 
   $carousel.addClass("popup-open");
 
-  // STEP 1: reset to first slide smoothly
-  $carousel.slick('slickGoTo', 0, false);
+  // STEP 1: go to correct slide (smooth)
+  $carousel.slick('slickGoTo', index, false);
 
-  // STEP 2: wait for slick animation to finish properly
+  // STEP 2: stabilize AFTER animation only
   setTimeout(function () {
-
-    // force internal recalculation AFTER movement settles
     $carousel.slick('setPosition');
-
-    // STEP 3: small delay to avoid layout jitter (important)
-    requestAnimationFrame(function () {
-
-      setTimeout(function () {
-
-        // final correction scroll
-        $item[0].scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "center"
-        });
-
-      }, 80);
-
-    });
-
-  }, 350); // matches slick transition time better than 100–200ms
+  }, 300);
 });
 
   /** BACK BUTTON → CLOSE POPUP */
