@@ -429,19 +429,27 @@
 
   var $item = $(this).closest(".item");
 
-  var index = $item.closest('.slick-slide').data('slick-index');
-
   $carousel.find(".item.active").removeClass("active");
   $item.addClass("active");
 
   $carousel.addClass("popup-open");
 
-  // STEP 1: go directly to the clicked slide (not 0)
-  $carousel.slick('slickGoTo', index, false);
+  // STEP 1: go to first slide smoothly
+  $carousel.slick('slickGoTo', 0, false);
 
-  // STEP 2: stabilize layout after animation
+  // STEP 2: wait for slick animation ONLY
   setTimeout(function () {
+
+    // stabilize layout
     $carousel.slick('setPosition');
+
+    // STEP 3: DO NOT scroll page
+    // instead just ensure active slide is visually correct
+
+    $carousel.find('.slick-track').css({
+      transform: $carousel.find('.slick-track').css('transform')
+    });
+
   }, 300);
 });
 
