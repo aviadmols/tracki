@@ -92,33 +92,6 @@
   }
   .game-section .custom-carousel .slick-arrow.slick-disabled-init svg path{stroke:#e3dddb;}
 .game-section .custom-carousel .slick-arrow.slick-disabled-init{background:transparent;}
-
-.custom-carousel.popup-open .slick-list {
-  overflow: visible !important;
-}
-
-/* optional: dark background when popup open */
-.custom-carousel.popup-open {
-  position: relative;
-}
-
-/* Center popup card */
-.custom-carousel.popup-open .item.active {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-
-  width: 420px;
-  max-width: 90%;
-
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.25);
-
-  overflow: auto;
-}
 </style>
 
 <section class="game-section">
@@ -379,6 +352,7 @@
       .addClass('owl-next');
   }
 
+  // Fake disable prev on first slide
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -399,12 +373,6 @@
       $carousel.find('.item.active').removeClass('active');
       $firstItem.addClass('active');
     }
-  }
-
-  function openPopup($item) {
-    $carousel.addClass("popup-open");
-    $carousel.find(".item.active").removeClass("active");
-    $item.addClass("active");
   }
 
   function closePopup() {
@@ -443,7 +411,7 @@
         updatePrevState();
       }, 50);
 
-      // ✅ Only UI sync, NO popup close
+      // ✅ FIXED: DO NOT close popup on slide change
       $carousel.on('afterChange', function () {
         activateFirstVisible();
         updatePrevState();
@@ -454,16 +422,20 @@
   initCarousel();
   $(window).on('resize', initCarousel);
 
-  /** OPEN POPUP */
+  /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var $item = $(this).closest(".item");
-    openPopup($item);
+
+    $carousel.find(".item.active").removeClass("active");
+    $item.addClass("active");
+
+    $carousel.addClass("popup-open");
   });
 
-  /** CLOSE POPUP */
+  /** BACK BUTTON → CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
