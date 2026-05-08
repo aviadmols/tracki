@@ -351,6 +351,7 @@
       .addClass('owl-next');
   }
 
+  // Disable ONLY prev on first load (fake disable)
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -376,15 +377,16 @@
   function closePopup() {
     $carousel.removeClass("popup-open");
     $carousel.find(".item.active").removeClass("active");
-    $('body').removeClass("no-scroll");
   }
 
   function initCarousel() {
 
     if ($(window).width() <= 989) {
+
       if ($carousel.hasClass('slick-initialized')) {
         $carousel.slick('unslick');
       }
+
       closePopup();
       return;
     }
@@ -394,26 +396,24 @@
       $carousel.slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: false,        // ✅ IMPORTANT FIX
+        infinite: true,
         variableWidth: true,
         arrows: true,
         dots: false,
         adaptiveHeight: true,
-        centerMode: true,
-        focusOnSelect: true
       });
 
       addNavIcons();
 
       setTimeout(function () {
         activateFirstVisible();
-        updatePrevState();
+        updatePrevState();   // 👈 disable prev on load
       }, 50);
 
       $carousel.on('afterChange', function () {
         closePopup();
         activateFirstVisible();
-        updatePrevState();
+        updatePrevState();   // 👈 update after move
       });
     }
   }
@@ -421,33 +421,20 @@
   initCarousel();
   $(window).on('resize', initCarousel);
 
-  /** OPEN POPUP + CENTER ITEM */
+  /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var $item = $(this).closest(".item");
-    var $slide = $item.closest(".slick-slide");
-    var index = $slide.data("slick-index");
 
     $carousel.find(".item.active").removeClass("active");
     $item.addClass("active");
 
     $carousel.addClass("popup-open");
-    $('body').addClass("no-scroll");
-
-    // move slick to clicked item
-    $carousel.slick('slickGoTo', index, true);
-
-    // center vertically in viewport
-    setTimeout(function () {
-      $('html, body').animate({
-        scrollTop: $item.offset().top - (window.innerHeight / 2) + ($item.outerHeight() / 2)
-      }, 300);
-    }, 50);
   });
 
-  /** CLOSE POPUP */
+  /** BACK BUTTON → CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
