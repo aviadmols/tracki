@@ -347,17 +347,6 @@
       .addClass('owl-next');
   }
 
-  // Disable ONLY prev on first load (fake disable)
-  function updatePrevState() {
-    var currentSlide = $carousel.slick('slickCurrentSlide');
-
-    if (currentSlide === 0) {
-      $('.slick-prev').addClass('slick-disabled-init');
-    } else {
-      $('.slick-prev').removeClass('slick-disabled-init');
-    }
-  }
-
   function activateFirstVisible() {
     var $firstItem = $carousel
       .find('.slick-slide.slick-active')
@@ -379,11 +368,14 @@
 
     if ($(window).width() <= 989) {
 
+      // Destroy slick on mobile
       if ($carousel.hasClass('slick-initialized')) {
         $carousel.slick('unslick');
       }
 
+      // 🔥 IMPORTANT: On mobile remove active from all
       closePopup();
+
       return;
     }
 
@@ -401,15 +393,11 @@
 
       addNavIcons();
 
-      setTimeout(function () {
-        activateFirstVisible();
-        updatePrevState();   // 👈 disable prev on load
-      }, 50);
+      setTimeout(activateFirstVisible, 50);
 
       $carousel.on('afterChange', function () {
         closePopup();
         activateFirstVisible();
-        updatePrevState();   // 👈 update after move
       });
     }
   }
@@ -417,7 +405,7 @@
   initCarousel();
   $(window).on('resize', initCarousel);
 
-  /** MORE BUTTON → OPEN POPUP */
+  /** MORE BUTTON → OPEN POPUP (WORKS ALL DEVICES) */
   $(document).on("click", ".item-more-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
