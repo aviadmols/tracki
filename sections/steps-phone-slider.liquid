@@ -81,128 +81,168 @@
 </section>
 
 <script>
-$(document).ready(function(){
+$(document).ready(function () {
 
   var $wrapper = $('.step-slide-wrapper');
-  var $slides  = $('.step-slide');
-  var total    = $slides.length;
-  var current  = 0;
+  var $slides = $('.step-slide');
+  var total = $slides.length;
+  var current = 0;
   var scrolling = false;
   var $hand = $('.hand-indicator');
-  var $section = $('.steps-inner');
 
-  // Function to check if screen is large
+  // Check screen size
   function isLargeScreen() {
     return $(window).width() > 769;
   }
 
- function setHandPosition() {
-  var $slide = $slides.eq(1);
-  var $phone = $slide.find('.phone-frame');
+  // Get hand position
+  function setHandPosition() {
 
-  if (!$phone.length) return;
+    var $slide = $slides.eq(1);
+    var $phone = $slide.find('.phone-frame');
 
-  var sectionRect = document.querySelector('.steps-slider').getBoundingClientRect();
-  var phoneRect   = $phone[0].getBoundingClientRect();
+    if (!$phone.length) return;
 
-  var finalX = phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
+    var sectionRect = document
+      .querySelector('.steps-slider')
+      .getBoundingClientRect();
 
-  // 👉 ONLY CALCULATE HERE (no animation logic)
-  var finalY = phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
+    var phoneRect = $phone[0].getBoundingClientRect();
 
-  return { x: finalX, y: finalY };
-}
+    var finalX =
+      phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
 
+    var finalY =
+      phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
+
+    return {
+      x: finalX,
+      y: finalY
+    };
+  }
+
+  // Slide function
   function goToSlide(index) {
-  if (!isLargeScreen()) return;
 
-  if (index < 0) index = 0;
-  if (index >= total) index = total - 1;
+    if (!isLargeScreen()) return;
 
-  if (scrolling) return;
-  scrolling = true;
+    if (index < 0) index = 0;
+    if (index >= total) index = total - 1;
 
-  current = index;
+    if (scrolling) return;
+    scrolling = true;
 
-  // Move slide
-  $wrapper.css('transform', 'translateY(-' + (current * 100) + 'vh)');
-  $('.slider-dots span').removeClass('active').eq(current).addClass('active');
+    current = index;
 
-  // FULL RESET (IMPORTANT)
-  $hand.removeClass('hand-animate').css({
-  opacity: 0,
-  transform: 'translate(-50%, -120px)' // match CSS start
-});
+    // Move slides
+    $wrapper.css(
+      'transform',
+      'translateY(-' + (current * 100) + 'vh)'
+    );
 
-if (current === 1) {
+    // Active dots
+    $('.slider-dots span')
+      .removeClass('active')
+      .eq(current)
+      .addClass('active');
 
-  setTimeout(function () {
-
-    var pos = setHandPosition();
-
-    // START from top
+    // Reset hand
     $hand.css({
-      left: pos.x + 'px',
-      top: '0px',
-      opacity: 1,
+      opacity: 0,
       transform: 'translateX(-50%)'
     });
 
-    $hand[0].offsetHeight;
+    // Show static hand on second slide
+    if (current === 1) {
 
-    // MOVE to final (this is where you control stop position)
-    $hand.stop().animate(
-      { top: pos.y },
-      {
-        duration: 1200,
-        easing: "swing"
-      }
-    );
+      setTimeout(function () {
 
-  }, 700);
-}
+        var pos = setHandPosition();
 
-  // Unlock scrolling
-  setTimeout(function () {
-    scrolling = false;
-  }, 900);
-}
+        if (!pos) return;
+
+        $hand.css({
+          left: pos.x + 'px',
+          top: pos.y + 'px',
+          opacity: 1,
+          transform: 'translateX(-50%)'
+        });
+
+      }, 700);
+    }
+
+    // Unlock scroll
+    setTimeout(function () {
+      scrolling = false;
+    }, 900);
+  }
+
+  // Initial slide
   goToSlide(0);
 
   // Dot click
-  $('.slider-dots span').on('click', function(){
-    if (!isLargeScreen()) return; // Stop sliding on small screens
+  $('.slider-dots span').on('click', function () {
+
+    if (!isLargeScreen()) return;
+
     goToSlide($(this).index());
   });
 
   // Mouse wheel
-  $('.steps-slider-container').on('wheel', function(e){
-  if (!isLargeScreen()) return;
+  $('.steps-slider-container').on('wheel', function (e) {
 
-  var delta = e.originalEvent.deltaY;
+    if (!isLargeScreen()) return;
 
-  if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
-    return; // allow normal scroll at edges
-  }
+    var delta = e.originalEvent.deltaY;
 
-  e.preventDefault();
+    // Allow normal page scroll at edges
+    if (
+      (delta > 0 && current === total - 1) ||
+      (delta < 0 && current === 0)
+    ) {
+      return;
+    }
 
-  if (delta > 0) {
-    goToSlide(current + 1);
-  } else {
-    goToSlide(current - 1);
-  }
-});
+    e.preventDefault();
 
-  // Window resize
-  $(window).on('resize', function(){
-    if (current === 1) setHandPosition();
+    if (delta > 0) {
+      goToSlide(current + 1);
+    } else {
+      goToSlide(current - 1);
+    }
+  });
 
+  // Resize
+  $(window).on('resize', function () {
+
+    if (current === 1) {
+
+      var pos = setHandPosition();
+
+      if (pos) {
+        $hand.css({
+          left: pos.x + 'px',
+          top: pos.y + 'px'
+        });
+      }
+    }
+
+    // Reset on mobile
     if (!isLargeScreen()) {
-      $wrapper.css('transform', 'translateY(0)'); // reset to first slide
+
+      $wrapper.css('transform', 'translateY(0)');
+
       current = 0;
-      $('.slider-dots span').removeClass('active').eq(current).addClass('active');
-      $hand.removeClass('hand-animate').css('opacity', 0);
+
+      $('.slider-dots span')
+        .removeClass('active')
+        .eq(current)
+        .addClass('active');
+
+      $hand.css({
+        opacity: 0,
+        transform: 'translateX(-50%)'
+      });
     }
   });
 
