@@ -434,27 +434,32 @@
 
   $carousel.addClass("popup-open");
 
+  // STEP 1: reset to first slide smoothly
+  $carousel.slick('slickGoTo', 0, false);
+
+  // STEP 2: wait for slick animation to finish properly
   setTimeout(function () {
 
-    // ✅ STEP 1: smooth go to first slide (NOT instant)
-    $carousel.slick('slickGoTo', 0, false);
+    // force internal recalculation AFTER movement settles
+    $carousel.slick('setPosition');
 
-    // ✅ STEP 2: wait for slick animation to start
-    setTimeout(function () {
+    // STEP 3: small delay to avoid layout jitter (important)
+    requestAnimationFrame(function () {
 
-      // recalculation after movement
-      $carousel.slick('setPosition');
+      setTimeout(function () {
 
-      // smooth center scroll of active item
-      $item[0].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center"
-      });
+        // final correction scroll
+        $item[0].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center"
+        });
 
-    }, 300); // match slick animation timing
+      }, 80);
 
-  }, 100);
+    });
+
+  }, 350); // matches slick transition time better than 100–200ms
 });
 
   /** BACK BUTTON → CLOSE POPUP */
