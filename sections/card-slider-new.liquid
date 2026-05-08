@@ -421,27 +421,16 @@
 
   /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
-  e.preventDefault();
-  e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-  var $item = $(this).closest(".item");
-  var $slide = $item.closest(".slick-slide");
-  var index = $slide.data("slick-index");
+    var $item = $(this).closest(".item");
 
-  $carousel.find(".item.active").removeClass("active");
-  $item.addClass("active");
+    $carousel.find(".item.active").removeClass("active");
+    $item.addClass("active");
 
-  $carousel.addClass("popup-open");
-
-  // ✅ THIS is the real fix
-  $carousel.slick('slickGoTo', index, true);
-
-  // force Slick to re-center after layout update
-  setTimeout(function () {
-    $carousel.slick('setPosition');
-    $carousel.slick('slickGoTo', index, true);
-  }, 50);
-});
+    $carousel.addClass("popup-open");
+  });
 
   /** BACK BUTTON → CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
