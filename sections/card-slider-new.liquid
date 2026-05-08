@@ -352,6 +352,7 @@
       .addClass('owl-next');
   }
 
+  // Fake disable prev on first slide
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -377,25 +378,6 @@
   function closePopup() {
     $carousel.removeClass("popup-open");
     $carousel.find(".item.active").removeClass("active");
-
-    $('html, body').animate({
-      scrollTop: $carousel.offset().top - 100
-    }, 300);
-  }
-
-  // ✅ FIX: proper centering + avoids clipping issues
-  function scrollToActiveItem($item) {
-    if (!$item || !$item.length) return;
-
-    var rect = $item[0].getBoundingClientRect();
-    var windowHeight = window.innerHeight;
-
-    var offset = rect.top + window.pageYOffset;
-    var target = offset - (windowHeight / 2) + (rect.height / 2);
-
-    $('html, body').stop().animate({
-      scrollTop: target
-    }, 400);
   }
 
   function initCarousel() {
@@ -429,6 +411,7 @@
         updatePrevState();
       }, 50);
 
+      // ✅ FIXED: DO NOT close popup on slide change
       $carousel.on('afterChange', function () {
         activateFirstVisible();
         updatePrevState();
@@ -450,11 +433,6 @@
     $item.addClass("active");
 
     $carousel.addClass("popup-open");
-
-    setTimeout(function () {
-      $carousel.slick('setPosition'); // 🔥 fixes layout clipping
-      scrollToActiveItem($item);
-    }, 100);
   });
 
   /** BACK BUTTON → CLOSE POPUP */
