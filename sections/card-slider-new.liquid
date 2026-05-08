@@ -423,24 +423,65 @@
   $(window).on('resize', initCarousel);
 
   /** MORE BUTTON → OPEN POPUP */
-  $(document).on("click", ".item-more-btn", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
+  $(document).on("click touchstart", ".item-more-btn", function (e) {
+  e.preventDefault();
 
-    var $item = $(this).closest(".item");
+  console.log("Popup trigger fired");
 
-    $carousel.find(".item.active").removeClass("active");
-    $item.addClass("active");
+  var $item = $(this).closest(".item");
 
-    $carousel.addClass("popup-open");
+  if ($item.length === 0) return;
+
+  $(".js-overlay").remove();
+  $("body").css("overflow", "hidden");
+
+  var $overlay = $('<div class="js-overlay"></div>');
+  var $clone = $item.clone();
+
+  $overlay.append($clone);
+  $("body").append($overlay);
+
+  // overlay styles
+  $overlay.css({
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    background: "rgba(0,0,0,0.6)",
+    display: "flex",
+    "align-items": "center",
+    "justify-content": "center",
+    "z-index": 9999999
   });
+
+  // card styles
+  $clone.css({
+    background: "#fff",
+    width: "420px",
+    "max-width": "90%",
+    "max-height": "90vh",
+    overflow: "auto",
+    "border-radius": "12px",
+    padding: "20px",
+    position: "relative"
+  });
+
+  // ensure close button
+  if ($clone.find(".item-back-btn").length === 0) {
+    $clone.append('<button class="item-back-btn" style="position:absolute;top:10px;right:10px;">×</button>');
+  }
+});
 
   /** BACK BUTTON → CLOSE POPUP */
-  $(document).on("click", ".item-back-btn", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    closePopup();
-  });
+  $(document).on("click", ".item-back-btn, .js-overlay", function (e) {
+
+  if ($(e.target).is(".item-back-btn") || $(e.target).is(".js-overlay")) {
+    $(".js-overlay").remove();
+    $("body").css("overflow", "");
+  }
+
+});
 
 });
  
