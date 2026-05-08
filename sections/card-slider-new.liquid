@@ -436,23 +436,25 @@
 
   setTimeout(function () {
 
-    // 🔥 STEP 1: HARD RESET slick position
-    $carousel.slick('slickGoTo', 0, true);
+    // ✅ STEP 1: smooth go to first slide (NOT instant)
+    $carousel.slick('slickGoTo', 0, false);
 
-    // 🔥 STEP 2: force recalculation (VERY IMPORTANT)
-    $carousel.slick('setPosition');
+    // ✅ STEP 2: wait for slick animation to start
+    setTimeout(function () {
 
-    // 🔥 STEP 3: force translate reset (fixes “stuck right” issue)
-    $carousel.find('.slick-track').css('transform', 'translate3d(0px, 0px, 0px)');
+      // recalculation after movement
+      $carousel.slick('setPosition');
 
-    // 🔥 STEP 4: scroll active item into center
-    $item[0].scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center"
-    });
+      // smooth center scroll of active item
+      $item[0].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center"
+      });
 
-  }, 120);
+    }, 300); // match slick animation timing
+
+  }, 100);
 });
 
   /** BACK BUTTON → CLOSE POPUP */
