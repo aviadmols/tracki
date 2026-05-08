@@ -88,20 +88,21 @@ $(document).ready(function () {
   var total = $slides.length;
   var current = 0;
   var scrolling = false;
+
   var $hand = $('.hand-indicator');
 
-  // Check screen size
+  // Screen check
   function isLargeScreen() {
     return $(window).width() > 769;
   }
 
-  // Get hand position
+  // Exact hand position
   function setHandPosition() {
 
     var $slide = $slides.eq(1);
     var $phone = $slide.find('.phone-frame');
 
-    if (!$phone.length) return;
+    if (!$phone.length) return null;
 
     var sectionRect = document
       .querySelector('.steps-slider')
@@ -109,11 +110,16 @@ $(document).ready(function () {
 
     var phoneRect = $phone[0].getBoundingClientRect();
 
+    /*
+      PIXEL PERFECT OFFSETS
+      Adjust these 2 values only
+    */
+
     var finalX =
-      phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
+      phoneRect.left - sectionRect.left + 40;
 
     var finalY =
-      phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
+      phoneRect.top - sectionRect.top - 140;
 
     return {
       x: finalX,
@@ -130,29 +136,29 @@ $(document).ready(function () {
     if (index >= total) index = total - 1;
 
     if (scrolling) return;
+
     scrolling = true;
 
     current = index;
 
-    // Move slides
+    // Slide movement
     $wrapper.css(
       'transform',
       'translateY(-' + (current * 100) + 'vh)'
     );
 
-    // Active dots
+    // Dots
     $('.slider-dots span')
       .removeClass('active')
       .eq(current)
       .addClass('active');
 
-    // Reset hand
+    // Hide hand initially
     $hand.css({
-      opacity: 0,
-      transform: 'translateX(-50%)'
+      opacity: 0
     });
 
-    // Show static hand on second slide
+    // Show static hand on slide 2
     if (current === 1) {
 
       setTimeout(function () {
@@ -165,10 +171,10 @@ $(document).ready(function () {
           left: pos.x + 'px',
           top: pos.y + 'px',
           opacity: 1,
-          transform: 'translateX(-50%)'
+          transform: 'none'
         });
 
-      }, 700);
+      }, 400);
     }
 
     // Unlock scroll
@@ -177,7 +183,7 @@ $(document).ready(function () {
     }, 900);
   }
 
-  // Initial slide
+  // Init
   goToSlide(0);
 
   // Dot click
@@ -188,7 +194,7 @@ $(document).ready(function () {
     goToSlide($(this).index());
   });
 
-  // Mouse wheel
+  // Wheel
   $('.steps-slider-container').on('wheel', function (e) {
 
     if (!isLargeScreen()) return;
@@ -220,6 +226,7 @@ $(document).ready(function () {
       var pos = setHandPosition();
 
       if (pos) {
+
         $hand.css({
           left: pos.x + 'px',
           top: pos.y + 'px'
@@ -227,7 +234,7 @@ $(document).ready(function () {
       }
     }
 
-    // Reset on mobile
+    // Mobile reset
     if (!isLargeScreen()) {
 
       $wrapper.css('transform', 'translateY(0)');
@@ -236,12 +243,11 @@ $(document).ready(function () {
 
       $('.slider-dots span')
         .removeClass('active')
-        .eq(current)
+        .eq(0)
         .addClass('active');
 
       $hand.css({
-        opacity: 0,
-        transform: 'translateX(-50%)'
+        opacity: 0
       });
     }
   });
