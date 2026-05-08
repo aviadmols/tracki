@@ -103,13 +103,14 @@ $(document).ready(function () {
 
     if (!$phone.length) return;
 
-    var sectionRect = document
-      .querySelector('.steps-slider')
-      .getBoundingClientRect();
+    var section = document.querySelector('.steps-slider');
 
+    if (!section) return;
+
+    var sectionRect = section.getBoundingClientRect();
     var phoneRect = $phone[0].getBoundingClientRect();
 
-    // Responsive positioning
+    // Calculate hand position
     var finalX =
       phoneRect.left +
       (phoneRect.width * 0.52) -
@@ -120,9 +121,13 @@ $(document).ready(function () {
       (phoneRect.height * 0.02) -
       sectionRect.top;
 
+    // Convert to percentage for responsiveness
+    var xPercent = (finalX / sectionRect.width) * 100;
+    var yPercent = (finalY / sectionRect.height) * 100;
+
     return {
-      x: finalX,
-      y: finalY
+      x: xPercent,
+      y: yPercent
     };
   }
 
@@ -135,8 +140,8 @@ $(document).ready(function () {
     if (index >= total) index = total - 1;
 
     if (scrolling) return;
-    scrolling = true;
 
+    scrolling = true;
     current = index;
 
     // Move slides
@@ -154,7 +159,7 @@ $(document).ready(function () {
     // Reset hand
     $hand.css({
       opacity: 0,
-      transform: 'translateX(-50%)'
+      transform: 'translate(-50%, -50%)'
     });
 
     // Show hand on second slide
@@ -167,16 +172,16 @@ $(document).ready(function () {
         if (!pos) return;
 
         $hand.css({
-          left: pos.x + 'px',
-          top: pos.y + 'px',
+          left: pos.x + '%',
+          top: pos.y + '%',
           opacity: 1,
-          transform: 'translateX(-50%)'
+          transform: 'translate(-50%, -50%)'
         });
 
       }, 700);
     }
 
-    // Unlock scroll
+    // Unlock scrolling
     setTimeout(function () {
       scrolling = false;
     }, 900);
@@ -193,7 +198,7 @@ $(document).ready(function () {
     goToSlide($(this).index());
   });
 
-  // Mouse wheel
+  // Mouse wheel slider
   $('.steps-slider-container').on('wheel', function (e) {
 
     if (!isLargeScreen()) return;
@@ -225,14 +230,15 @@ $(document).ready(function () {
       var pos = setHandPosition();
 
       if (pos) {
+
         $hand.css({
-          left: pos.x + 'px',
-          top: pos.y + 'px'
+          left: pos.x + '%',
+          top: pos.y + '%'
         });
       }
     }
 
-    // Reset on mobile
+    // Reset for mobile
     if (!isLargeScreen()) {
 
       $wrapper.css('transform', 'translateY(0)');
@@ -246,7 +252,7 @@ $(document).ready(function () {
 
       $hand.css({
         opacity: 0,
-        transform: 'translateX(-50%)'
+        transform: 'translate(-50%, -50%)'
       });
     }
   });
