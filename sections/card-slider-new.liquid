@@ -424,67 +424,23 @@
 
   /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
-  e.preventDefault();
-  e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-  var $item = $(this).closest(".item");
+    var $item = $(this).closest(".item");
 
-  // remove old popup
-  $(".js-overlay").remove();
+    $carousel.find(".item.active").removeClass("active");
+    $item.addClass("active");
 
-  // clone content safely
-  var $clone = $item.clone();
-
-  // create overlay OUTSIDE slick completely
-  var $overlay = $('<div class="js-overlay"></div>');
-
-  $overlay.append($clone);
-
-  $("body").append($overlay);
-
-  // FORCE BODY SCROLL LOCK (important for slick conflicts)
-  $("body").css("overflow", "hidden");
-
-  // INLINE STYLES (absolute guarantee center)
-  $overlay.css({
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100vw",
-    height: "100vh",
-    background: "rgba(0,0,0,0.6)",
-    display: "flex",
-    "align-items": "center",
-    "justify-content": "center",
-    "z-index": "9999999"
+    $carousel.addClass("popup-open");
   });
 
-  $clone.css({
-    background: "#fff",
-    width: "420px",
-    "max-width": "90%",
-    "max-height": "90vh",
-    overflow: "auto",
-    "border-radius": "12px",
-    padding: "20px",
-    position: "relative"
+  /** BACK BUTTON → CLOSE POPUP */
+  $(document).on("click", ".item-back-btn", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    closePopup();
   });
-
-  // ensure back button exists
-  if ($clone.find(".item-back-btn").length === 0) {
-    $clone.append('<button class="item-back-btn" style="position:absolute;top:10px;right:10px;">×</button>');
-  }
-});
-
-
-/** CLOSE POPUP */
-$(document).on("click", ".item-back-btn, .js-overlay", function (e) {
-  if ($(e.target).is(".item-back-btn") || $(e.target).is(".js-overlay")) {
-
-    $(".js-overlay").remove();
-    $("body").css("overflow", "");
-  }
-});
 
 });
  
