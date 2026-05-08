@@ -92,19 +92,6 @@
   }
   .game-section .custom-carousel .slick-arrow.slick-disabled-init svg path{stroke:#e3dddb;}
 .game-section .custom-carousel .slick-arrow.slick-disabled-init{background:transparent;}
-
-.popup-open .slick-list {
-  overflow: visible !important;
-}
-
-.popup-open .slick-track {
-  overflow: visible !important;
-}
-
-.custom-carousel.popup-open .item.active {
-  z-index: 9999;
-  position: relative;
-}
 </style>
 
 <section class="game-section">
@@ -365,6 +352,7 @@
       .addClass('owl-next');
   }
 
+  // Fake disable prev on first slide
   function updatePrevState() {
     var currentSlide = $carousel.slick('slickCurrentSlide');
 
@@ -390,11 +378,6 @@
   function closePopup() {
     $carousel.removeClass("popup-open");
     $carousel.find(".item.active").removeClass("active");
-
-    // optional: return to carousel position
-    $('html, body').stop().animate({
-      scrollTop: $carousel.offset().top - 100
-    }, 300);
   }
 
   function initCarousel() {
@@ -428,6 +411,7 @@
         updatePrevState();
       }, 50);
 
+      // ✅ FIXED: DO NOT close popup on slide change
       $carousel.on('afterChange', function () {
         activateFirstVisible();
         updatePrevState();
@@ -438,7 +422,7 @@
   initCarousel();
   $(window).on('resize', initCarousel);
 
-  // ✅ OPEN POPUP
+  /** MORE BUTTON → OPEN POPUP */
   $(document).on("click", ".item-more-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -449,23 +433,9 @@
     $item.addClass("active");
 
     $carousel.addClass("popup-open");
-
-    setTimeout(function () {
-
-      // 🔥 FIX 1: force slick recalculation
-      $carousel.slick('setPosition');
-
-      // 🔥 FIX 2: center item properly
-      $item[0].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest"
-      });
-
-    }, 120);
   });
 
-  // ✅ CLOSE POPUP
+  /** BACK BUTTON → CLOSE POPUP */
   $(document).on("click", ".item-back-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
