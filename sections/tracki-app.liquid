@@ -71,7 +71,7 @@ buttons.forEach((btn) => {
         btn.classList.add("active");
 
         slider.style.width = `${btn.offsetWidth}px`;
-
+        slider.style.color = `${btn.offsetColor}`;
         slider.style.transform =
         `translateX(${btn.offsetLeft}px)`;
 
@@ -86,6 +86,9 @@ slider.style.width = `${activeBtn.offsetWidth}px`;
 
 slider.style.transform =
 `translateX(${activeBtn.offsetLeft}px)`;
+
+slider.style.color =
+`translateX(${activeBtn.offsetColor})`;
 </script> 
 
 <script>
