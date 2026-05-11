@@ -44,32 +44,70 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  // Set transition styles with ease
+  // Initial fade styles
   phoneImage.style.opacity = "1";
-  phoneImage.style.transition = "opacity 2s ease";
-
   desc.style.opacity = "1";
-  desc.style.transition = "opacity 6s ease";
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
+
       // Fade out
-      phoneImage.style.opacity = "0";
-      desc.style.opacity = "0";
+      phoneImage.animate(
+        [
+          { opacity: 1 },
+          { opacity: 0 }
+        ],
+        {
+          duration: 500,
+          easing: "ease",
+          fill: "forwards"
+        }
+      );
+
+      desc.animate(
+        [
+          { opacity: 1 },
+          { opacity: 0 }
+        ],
+        {
+          duration: 500,
+          easing: "ease",
+          fill: "forwards"
+        }
+      );
 
       setTimeout(() => {
-        // Change image
+        // Change content
         phoneImage.src = btn.dataset.img;
-
-        // Change description
         desc.textContent = btn.dataset.desc;
 
         // Fade in
-        phoneImage.style.opacity = "1";
-        desc.style.opacity = "1";
-      }, 300);
+        phoneImage.animate(
+          [
+            { opacity: 0 },
+            { opacity: 1 }
+          ],
+          {
+            duration: 500,
+            easing: "ease",
+            fill: "forwards"
+          }
+        );
 
-      // Toggle active class
+        desc.animate(
+          [
+            { opacity: 0 },
+            { opacity: 1 }
+          ],
+          {
+            duration: 500,
+            easing: "ease",
+            fill: "forwards"
+          }
+        );
+      }, 500);
+
+      // Active button
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
