@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const desc = section.querySelector(".tracki-desc");
 
   // Set transition styles with ease
-  
+  phoneImage.style.opacity = "1";
   phoneImage.style.transition = "opacity 2s ease";
 
-  
+  desc.style.opacity = "1";
   desc.style.transition = "opacity 2s ease";
 
   buttons.forEach(btn => {
@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
         desc.textContent = btn.dataset.desc;
 
         // Fade in
-       
+        phoneImage.style.opacity = "1";
+        desc.style.opacity = "1";
       }, 300);
 
       // Toggle active class
