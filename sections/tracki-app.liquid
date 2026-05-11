@@ -58,14 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-const tabs = document.querySelectorAll(".tab");
+const tabs = document.querySelectorAll(".tab.icon-btn");
 const slider = document.querySelector(".slider");
 
 tabs.forEach((tab, index) => {
 
     tab.addEventListener("click", () => {
 
-        document.querySelector(".tab.active")
+        document.querySelector(".tab.icon-btn.active")
             .classList.remove("active");
 
         tab.classList.add("active");
