@@ -39,24 +39,38 @@
 
  <script>
 document.addEventListener("DOMContentLoaded", function () {
+
   const section = document.querySelector(".tracki-section");
   const buttons = section.querySelectorAll(".icon-btn");
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
   buttons.forEach(btn => {
+
     btn.addEventListener("click", () => {
-      // Change image
-      phoneImage.src = btn.dataset.img;
 
-      // Change description
-      desc.textContent = btn.dataset.desc;
+      // smooth fade + move
+      phoneImage.classList.add("switching");
 
-      // Toggle active class
+      setTimeout(() => {
+
+        // change image + text
+        phoneImage.src = btn.dataset.img;
+        desc.textContent = btn.dataset.desc;
+
+        // bring back smoothly
+        phoneImage.classList.remove("switching");
+
+      }, 250);
+
+      // active button
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
     });
+
   });
+
 });
 const buttons = document.querySelectorAll(".icon-btn");
 const slider = document.querySelector(".slider");
