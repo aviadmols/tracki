@@ -36,7 +36,18 @@
 
   </div>
 </div>
+<style>
+  #phoneImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  will-change: opacity;
+}
 
+.tracki-desc {
+  will-change: opacity, transform;
+}
+</style>
  <script>
 document.addEventListener("DOMContentLoaded", function () {
   const section = document.querySelector(".tracki-section");
@@ -44,36 +55,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  // Smooth animation styles
-  phoneImage.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  desc.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+  // Smooth transition setup
+  phoneImage.style.transition = "opacity 0.5s ease";
+  desc.style.transition = "opacity 0.5s ease, transform 0.5s ease";
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-      // Smooth outgoing effect
-      phoneImage.style.opacity = "0.85";
-      phoneImage.style.transform = "translateY(10px)";
+      // Smooth fade only
+      phoneImage.style.opacity = "0.8";
 
-      desc.style.opacity = "0.5";
-      desc.style.transform = "translateY(10px)";
+      desc.style.opacity = "0.6";
+      desc.style.transform = "translateY(5px)";
 
       setTimeout(() => {
 
-        // Change content
-        phoneImage.src = btn.dataset.img;
-        desc.textContent = btn.dataset.desc;
+        // Preload image before changing
+        const newImg = new Image();
+        newImg.src = btn.dataset.img;
 
-        // Smooth incoming effect
-        phoneImage.style.opacity = "1";
-        phoneImage.style.transform = "translateY(0)";
+        newImg.onload = () => {
+          phoneImage.src = btn.dataset.img;
 
-        desc.style.opacity = "1";
-        desc.style.transform = "translateY(0)";
+          // Smooth restore
+          phoneImage.style.opacity = "1";
 
-      }, 150);
+          desc.textContent = btn.dataset.desc;
+          desc.style.opacity = "1";
+          desc.style.transform = "translateY(0)";
+        };
 
-      // Active button
+      }, 120);
+
+      // Active state
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
