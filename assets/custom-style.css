@@ -3874,7 +3874,7 @@ font-weight: 400;
 line-height: 21.866px; /* 150% */
 letter-spacing: 0.292px;
   display: block;
-  transition: color 2s ease-in-out;
+  transition: color 2s ease;
 }
 
 /* ACTIVE */
