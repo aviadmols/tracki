@@ -38,7 +38,7 @@
 </div>
 
  <script>
-document.addEventListener("DOMContentLoaded", function () {
+{% comment %} document.addEventListener("DOMContentLoaded", function () {
   const section = document.querySelector(".tracki-section");
   const buttons = section.querySelectorAll(".icon-btn");
   const phoneImage = section.querySelector("#phoneImage");
@@ -55,6 +55,39 @@ document.addEventListener("DOMContentLoaded", function () {
       // Toggle active class
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+    });
+  });
+}); {% endcomment %}
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".tracki-section");
+  const buttons = section.querySelectorAll(".icon-btn");
+  const phoneImage = section.querySelector("#phoneImage");
+  const desc = section.querySelector(".tracki-desc");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      // remove active
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // fade out image + text first
+      phoneImage.classList.add("fade-out");
+      desc.classList.add("desc-hide");
+
+      setTimeout(() => {
+        // swap content
+        phoneImage.src = btn.dataset.img;
+        desc.textContent = btn.dataset.desc;
+
+        // fade in again
+        phoneImage.classList.remove("fade-out");
+        phoneImage.classList.add("fade-in");
+
+        desc.classList.remove("desc-hide");
+        desc.classList.add("desc-show");
+
+      }, 200);
     });
   });
 });
