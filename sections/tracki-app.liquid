@@ -50,17 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // quick hide
+      // start fade out (slower feel)
       phoneImage.classList.add("fade-out");
       desc.classList.add("desc-hide");
 
+      // wait longer before swapping content
       setTimeout(() => {
 
-        // instant update
         phoneImage.src = btn.dataset.img;
         desc.textContent = btn.dataset.desc;
 
-        // immediate show (no waiting)
+        // slight delay before fade-in for smoothness
         requestAnimationFrame(() => {
           phoneImage.classList.remove("fade-out");
           phoneImage.classList.add("fade-in");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
           desc.classList.add("desc-show");
         });
 
-      }, 120); // ⬅️ very fast hide → gives "blink + update" feel
+      }, 500); // ⬅️ slower swap timing (increase/decrease for feel)
     });
   });
 });
