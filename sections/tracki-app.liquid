@@ -37,67 +37,26 @@
   </div>
 </div>
 
-<script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const section = document.querySelector(".tracki-section");
   const buttons = section.querySelectorAll(".icon-btn");
-
-  const img1 = document.getElementById("img1");
-  const img2 = document.getElementById("img2");
-
+  const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  let activeImg = img1;
-  let nextImg = img2;
-
   buttons.forEach(btn => {
-
     btn.addEventListener("click", () => {
+      // Change image
+      phoneImage.src = btn.dataset.img;
 
-      const newSrc = btn.dataset.img;
-      const newDesc = btn.dataset.desc;
+      // Change description
+      desc.textContent = btn.dataset.desc;
 
-      // preload image first
-      const preload = new Image();
-
-      preload.src = newSrc;
-
-      preload.onload = () => {
-
-        // prepare next image
-        nextImg.src = newSrc;
-
-        // smooth text animation
-        desc.style.opacity = "0";
-        desc.style.transform = "translateY(8px)";
-
-        requestAnimationFrame(() => {
-
-          // crossfade images
-          activeImg.classList.remove("active");
-          nextImg.classList.add("active");
-
-          // text restore
-          setTimeout(() => {
-            desc.textContent = newDesc;
-
-            desc.style.opacity = "1";
-            desc.style.transform = "translateY(0)";
-          }, 180);
-
-          // swap references
-          [activeImg, nextImg] = [nextImg, activeImg];
-        });
-      };
-
-      // active button
+      // Toggle active class
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
-
   });
-
 });
 const buttons = document.querySelectorAll(".icon-btn");
 const slider = document.querySelector(".slider");
