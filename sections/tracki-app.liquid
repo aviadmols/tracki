@@ -14,11 +14,10 @@
     </div>
 
     <!-- Floating Icons -->
-    <div class="icons tabs">
-      <div class="slider"></div>
+    <div class="icons">
       {% for block in section.blocks %}
         <button
-          class="icon-btn tab {% if forloop.first %}active{% endif %}"
+          class="icon-btn {% if forloop.first %}active{% endif %}"
           data-img="{{ block.settings.image | img_url: 'master' }}"
           data-desc="{{ block.settings.description }}">
 
@@ -57,24 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.classList.add("active");
     });
   });
-});
-const tabs = document.querySelectorAll(".tab.icon-btn");
-const slider = document.querySelector(".slider");
-
-tabs.forEach((tab, index) => {
-
-    tab.addEventListener("click", () => {
-
-        document.querySelector(".tab.icon-btn.active")
-            .classList.remove("active");
-
-        tab.classList.add("active");
-
-        tab.style.transform =
-            `translateX(${index * 100}%)`;
-
-    });
-
 });
 </script> 
 
