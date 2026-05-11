@@ -54,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  // Smooth base styles
-  phoneImage.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-  desc.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+  // slower, premium feel
+  phoneImage.style.transition = "opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)";
+  desc.style.transition = "opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
 
   buttons.forEach(btn => {
 
@@ -65,40 +65,41 @@ document.addEventListener("DOMContentLoaded", function () {
       const newImg = btn.dataset.img;
       const newText = btn.dataset.desc;
 
-      // prevent re-click same button
       if (phoneImage.src.includes(newImg)) return;
 
-      // fade + slight scale (no jump effect)
+      // start slow fade out
       phoneImage.style.opacity = "0";
-      phoneImage.style.transform = "scale(0.98)";
+      phoneImage.style.transform = "scale(0.985)";
 
       desc.style.opacity = "0";
-      desc.style.transform = "translateY(8px)";
+      desc.style.transform = "translateY(10px)";
 
-      // preload image (VERY IMPORTANT for smoothness)
-      const img = new Image();
-      img.src = newImg;
+      const preload = new Image();
+      preload.src = newImg;
 
-      img.onload = () => {
+      preload.onload = () => {
 
+        // slightly longer delay = smoother feel
         setTimeout(() => {
 
-          // change content
           phoneImage.src = newImg;
           desc.textContent = newText;
 
-          // animate back in smoothly
-          phoneImage.style.opacity = "1";
-          phoneImage.style.transform = "scale(1)";
+          // slow fade in
+          requestAnimationFrame(() => {
 
-          desc.style.opacity = "1";
-          desc.style.transform = "translateY(0)";
+            phoneImage.style.opacity = "1";
+            phoneImage.style.transform = "scale(1)";
 
-        }, 120);
+            desc.style.opacity = "1";
+            desc.style.transform = "translateY(0)";
+
+          });
+
+        }, 250); // 🔥 key for "slow feel"
 
       };
 
-      // active state
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
