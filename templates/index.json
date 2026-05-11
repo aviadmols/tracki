@@ -1458,7 +1458,7 @@
           "settings": {
             "step_number": "2",
             "heading": "Place",
-            "phone_image": "shopify://shop_images/phoneslide2.png",
+            "phone_image": "shopify://shop_images/phoneslide2-new.webp",
             "phone_mobile_image": "shopify://shop_images/step2-mobimage.png",
             "extra_text": "<p>Place your Tracki GPS tracker with the vehicle, bag, or loved one you want to watch over and stay connected to.</p>",
             "icon": "shopify://shop_images/HandDeposit.svg"
