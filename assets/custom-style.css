@@ -4165,6 +4165,8 @@ letter-spacing: 0.292px;
   .product-grid-section .card-btn, .product-grid-section .card-btn.disabled,
   .product-grid-section .active .card-btn.disabled, .product-grid-section .card-inner:hover .card-btn.disabled, .product-grid-section .active .card-btn, .product-grid-section .card-inner:hover .card-btn{opacity:1;height:50px;border-radius:25px;}
 
+  .product-grid .product-card:nth-child(1){order:2;}
+  .product-grid .product-card:nth-child(2){order:1;}
 }
 
 /* ===== Homepage new product Grid section css end ===== */
