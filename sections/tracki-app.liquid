@@ -14,10 +14,11 @@
     </div>
 
     <!-- Floating Icons -->
-    <div class="icons">
+    <div class="icons tabs">
+      <div class="slider"></div>
       {% for block in section.blocks %}
         <button
-          class="icon-btn {% if forloop.first %}active{% endif %}"
+          class="icon-btn tab {% if forloop.first %}active{% endif %}"
           data-img="{{ block.settings.image | img_url: 'master' }}"
           data-desc="{{ block.settings.description }}">
 
@@ -36,7 +37,7 @@
   </div>
 </div>
 
-{% comment %} <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
   const section = document.querySelector(".tracki-section");
   const buttons = section.querySelectorAll(".icon-btn");
@@ -57,7 +58,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-</script> {% endcomment %}
+const tabs = document.querySelectorAll(".tab");
+const slider = document.querySelector(".slider");
+
+tabs.forEach((tab, index) => {
+
+    tab.addEventListener("click", () => {
+
+        document.querySelector(".tab.active")
+        .classList.remove("active");
+
+        tab.classList.add("active");
+
+        slider.style.transform =
+        `translateX(${index * 100}%)`;
+
+    });
+
+});
+</script> 
 
 <script>
 {% comment %} document.addEventListener("DOMContentLoaded", function () {
