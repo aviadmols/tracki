@@ -3888,7 +3888,8 @@ letter-spacing: 0.292px;
 .slider{
     position: absolute;
     top: 3px;
-    left: 3px;
+    left: 0px;
+    right:0;
     width: 25%;
     height: calc(100% - 6px);
     background: rgba(0, 0, 0, 0.20);
