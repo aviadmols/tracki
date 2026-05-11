@@ -47,27 +47,29 @@ document.addEventListener("DOMContentLoaded", function () {
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-      // remove active
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // fade out image + text first
+      // start fade out (slower feel)
       phoneImage.classList.add("fade-out");
       desc.classList.add("desc-hide");
 
+      // wait longer before swapping content
       setTimeout(() => {
-        // swap content
+
         phoneImage.src = btn.dataset.img;
         desc.textContent = btn.dataset.desc;
 
-        // fade in again
-        phoneImage.classList.remove("fade-out");
-        phoneImage.classList.add("fade-in");
+        // slight delay before fade-in for smoothness
+        requestAnimationFrame(() => {
+          phoneImage.classList.remove("fade-out");
+          phoneImage.classList.add("fade-in");
 
-        desc.classList.remove("desc-hide");
-        desc.classList.add("desc-show");
+          desc.classList.remove("desc-hide");
+          desc.classList.add("desc-show");
+        });
 
-      }, 200);
+      }, 500); // ⬅️ slower swap timing (increase/decrease for feel)
     });
   });
 });
