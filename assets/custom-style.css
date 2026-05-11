@@ -3858,9 +3858,9 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
 
 .icon-btn img {
   width: 40.816px;
-height: 40.816px;
-flex-shrink: 0;
-aspect-ratio: 1/1;
+  height: 40.816px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
 }
 .icon-btn:first-child img{padding:4px;}
 .icon-btn img.default-icon{display:block;}
