@@ -57,6 +57,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+const buttons = document.querySelectorAll(".icon-btn");
+const slider = document.querySelector(".slider");
+
+buttons.forEach((btn, index) => {
+
+    btn.addEventListener("click", () => {
+
+        document.querySelector(".icon-btn.active")
+        .classList.remove("active");
+
+        btn.classList.add("active");
+
+        slider.style.width = `${btn.offsetWidth}px`;
+
+        slider.style.transform =
+        `translateX(${btn.offsetLeft}px)`;
+
+    });
+
+});
+
+/* default active position */
+const activeBtn = document.querySelector(".icon-btn.active");
+
+slider.style.width = `${activeBtn.offsetWidth}px`;
+
+slider.style.transform =
+`translateX(${activeBtn.offsetLeft}px)`;
 </script> 
 
 <script>
