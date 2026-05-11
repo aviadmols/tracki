@@ -36,7 +36,13 @@
 
   </div>
 </div>
-
+<style>
+  #phoneImage,
+.tracki-desc {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+</style>
  <script>
 document.addEventListener("DOMContentLoaded", function () {
   const section = document.querySelector(".tracki-section");
@@ -44,15 +50,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
+  // Smooth animation styles
+  phoneImage.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+  desc.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Change image
-      phoneImage.src = btn.dataset.img;
 
-      // Change description
-      desc.textContent = btn.dataset.desc;
+      // Smooth outgoing effect
+      phoneImage.style.opacity = "0.85";
+      phoneImage.style.transform = "translateY(10px)";
 
-      // Toggle active class
+      desc.style.opacity = "0.5";
+      desc.style.transform = "translateY(10px)";
+
+      setTimeout(() => {
+
+        // Change content
+        phoneImage.src = btn.dataset.img;
+        desc.textContent = btn.dataset.desc;
+
+        // Smooth incoming effect
+        phoneImage.style.opacity = "1";
+        phoneImage.style.transform = "translateY(0)";
+
+        desc.style.opacity = "1";
+        desc.style.transform = "translateY(0)";
+
+      }, 150);
+
+      // Active button
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
