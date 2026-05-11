@@ -66,34 +66,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  const transitionTime = 400; // match CSS (0.4s)
-
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-      // fade out first
+      // 🔥 Fade out
       phoneImage.classList.add("fade-out");
 
       setTimeout(() => {
-
-        // change content AFTER fade out
+        // Change image
         phoneImage.src = btn.dataset.img;
+
+        // Change description
         desc.textContent = btn.dataset.desc;
 
-        // force reflow (important for smooth restart)
-        void phoneImage.offsetWidth;
-
-        // fade in
+        // Fade in
         phoneImage.classList.remove("fade-out");
         phoneImage.classList.add("fade-in");
 
         setTimeout(() => {
           phoneImage.classList.remove("fade-in");
-        }, transitionTime);
+        }, 500);
 
-      }, transitionTime);
+      }, 400);
 
-      // active button
+      // Toggle active
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
