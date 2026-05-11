@@ -3860,6 +3860,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
   height: 40px;
   flex-shrink: 0;
   aspect-ratio: 1/1;
+  transition: all 2s ease;
 }
 .icon-btn:first-of-type img{padding:4px;}
 .icon-btn img.default-icon{display:block;}
