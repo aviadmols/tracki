@@ -3903,7 +3903,7 @@ letter-spacing: 0.292px;
     position:absolute;
     top:6px;
     left:6px;
-    min-width:90px;
+    min-width:calc(100% - 4px);
     height:calc(100% - 12px);
     background:#0003;
     border-radius:50px;
