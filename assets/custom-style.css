@@ -3770,7 +3770,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
 }
 
 /* FLOATING ICON BAR */
-.icons {
+.icons.tabs {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -3802,7 +3802,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
 }
 
 /* Layer 1: Hard light (black 8%) */
-.icons::before {
+.icons.tabs::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -3812,7 +3812,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
 }
 
 /* Layer 2: Color dodge (#262626) */
-.icons::after {
+.icons.tabs::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -3834,7 +3834,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
 } */
 
 /* BUTTON */
-.icon-btn {
+.icon-btn.tabs {
   flex: auto;
   border: none;
   background: transparent;
@@ -3888,7 +3888,7 @@ letter-spacing: 0.292px;
 .icon-btn.active span{color:#fff;font-weight:500;}
 
 
-.icons.tabs{
+/* .icons.tabs{
     position:relative;
     display:flex;
     background:#e9e9e9;
@@ -3896,7 +3896,7 @@ letter-spacing: 0.292px;
     padding:6px;
     width:420px;
     overflow:hidden;
-}
+} */
 
 /* Sliding Background */
 .icons.tabs .slider{
