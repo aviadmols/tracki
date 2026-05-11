@@ -44,68 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  // Initial fade styles
-  phoneImage.style.opacity = "1";
-  desc.style.opacity = "1";
+  // Smooth transition
+  phoneImage.style.transition = "all 0.6s ease";
+  desc.style.transition = "all 0.6s ease";
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-      // Fade out
-      phoneImage.animate(
-        [
-          { opacity: 1 },
-          { opacity: 0 }
-        ],
-        {
-          duration: 500,
-          easing: "ease",
-          fill: "forwards"
-        }
-      );
-
-      desc.animate(
-        [
-          { opacity: 1 },
-          { opacity: 0 }
-        ],
-        {
-          duration: 500,
-          easing: "ease",
-          fill: "forwards"
-        }
-      );
+      // Smooth image change
+      phoneImage.style.opacity = "0.7";
+      desc.style.opacity = "0.7";
 
       setTimeout(() => {
-        // Change content
         phoneImage.src = btn.dataset.img;
         desc.textContent = btn.dataset.desc;
 
-        // Fade in
-        phoneImage.animate(
-          [
-            { opacity: 0 },
-            { opacity: 1 }
-          ],
-          {
-            duration: 500,
-            easing: "ease",
-            fill: "forwards"
-          }
-        );
-
-        desc.animate(
-          [
-            { opacity: 0 },
-            { opacity: 1 }
-          ],
-          {
-            duration: 500,
-            easing: "ease",
-            fill: "forwards"
-          }
-        );
-      }, 500);
+        // Restore smoothly
+        phoneImage.style.opacity = "1";
+        desc.style.opacity = "1";
+      }, 150);
 
       // Active button
       buttons.forEach(b => b.classList.remove("active"));
