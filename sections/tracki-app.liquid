@@ -36,17 +36,7 @@
 
   </div>
 </div>
-<style>
-  #phoneImage,
-.tracki-desc {
-    transition: all 0.3s ease;
-}
 
-.fade-out {
-    opacity: 0;
-    transform: translateY(10px);
-}
-</style>
  <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -59,36 +49,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
         btn.addEventListener("click", () => {
 
-            // prevent clicking same button
+            // avoid re-clicking active button
             if (btn.classList.contains("active")) return;
 
-            // smooth hide
-            phoneImage.classList.add("switching");
-            desc.classList.add("switching");
+            // smooth hide animation
+            phoneImage.classList.add("fade-out");
+            desc.classList.add("fade-out");
 
             setTimeout(() => {
 
-                // preload image before changing
-                const newImg = new Image();
+                // change content
+                phoneImage.src = btn.dataset.img;
+                desc.textContent = btn.dataset.desc;
 
-                newImg.src = btn.dataset.img;
-
-                newImg.onload = () => {
-
-                    phoneImage.src = newImg.src;
-                    desc.textContent = btn.dataset.desc;
-
-                    // smooth show
-                    phoneImage.classList.remove("switching");
-                    desc.classList.remove("switching");
-                };
+                // show smoothly
+                phoneImage.classList.remove("fade-out");
+                desc.classList.remove("fade-out");
 
             }, 300);
 
-            // active state
+            // active button
             buttons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
-
         });
 
     });
