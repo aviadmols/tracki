@@ -3899,9 +3899,6 @@ letter-spacing: 0.292px;
         width 0.3s ease;
 
     z-index: 1;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
 
 /* DESCRIPTION */
