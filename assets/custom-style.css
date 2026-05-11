@@ -3883,7 +3883,7 @@ letter-spacing: 0.292px;
 
 .icon-btn.active img.default-icon{display:none;}
 .icon-btn.active img.active-icon{display:block;}
-.icon-btn.active span{color:#fff;font-weight:500;}
+.icon-btn.active span{color:#fff;font-weight:500;transition: color 2s ease-in-out, font-weight 2s ease-in-out;}
 
 .slider{
     position: absolute;
@@ -3895,7 +3895,7 @@ letter-spacing: 0.292px;
     border-radius: 50px;
 
     transition:
-        transform 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+        transform 2s cubic-bezier(0.77, 0, 0.175, 1),
         width 0.3s ease;
 
     z-index: 1;
