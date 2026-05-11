@@ -50,29 +50,26 @@ document.addEventListener("DOMContentLoaded", function () {
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // STEP 1: start hide
+      // start fade out (slower feel)
       phoneImage.classList.add("fade-out");
       desc.classList.add("desc-hide");
 
-      // STEP 2: force browser to apply hide first
-      requestAnimationFrame(() => {
+      // wait longer before swapping content
+      setTimeout(() => {
 
-        // tiny delay so hide is visible for a moment
-        setTimeout(() => {
+        phoneImage.src = btn.dataset.img;
+        desc.textContent = btn.dataset.desc;
 
-          // STEP 3: swap content
-          phoneImage.src = btn.dataset.img;
-          desc.textContent = btn.dataset.desc;
-
-          // STEP 4: show immediately after swap
+        // slight delay before fade-in for smoothness
+        requestAnimationFrame(() => {
           phoneImage.classList.remove("fade-out");
-          desc.classList.remove("desc-hide");
-
           phoneImage.classList.add("fade-in");
-          desc.classList.add("desc-show");
 
-        }, 80); // 👈 key: very small visible hide
-      });
+          desc.classList.remove("desc-hide");
+          desc.classList.add("desc-show");
+        });
+
+      }, 500); // ⬅️ slower swap timing (increase/decrease for feel)
     });
   });
 });
