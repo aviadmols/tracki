@@ -3902,7 +3902,7 @@ letter-spacing: 0.292px;
     border-radius: 50px;
 
     transition:
-        transform 2s cubic-bezier(0.77, 0, 0.175, 1),
+        transform 1s cubic-bezier(0.77, 0, 0.175, 1),
         width 2s ease;
 
     z-index: 1;
