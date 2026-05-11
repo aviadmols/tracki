@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script> {% endcomment %}
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+{% comment %} document.addEventListener("DOMContentLoaded", function () {
   const section = document.querySelector(".tracki-section");
   const buttons = section.querySelectorAll(".icon-btn");
   const phoneImage = section.querySelector("#phoneImage");
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.classList.add("active");
     });
   });
-});
+}); {% endcomment %}
 </script>
 
 {% schema %}
