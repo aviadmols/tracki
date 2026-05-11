@@ -3885,6 +3885,24 @@ letter-spacing: 0.292px;
 .icon-btn.active img.active-icon{display:block;}
 .icon-btn.active span{color:#fff;font-weight:500;}
 
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    border-radius: 50px;
+
+    transition:
+        transform 0.45s cubic-bezier(0.77, 0, 0.175, 1),
+        width 0.3s ease;
+
+    z-index: 1;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
 
 /* DESCRIPTION */
 .tracki-desc {
