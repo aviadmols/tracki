@@ -63,17 +63,17 @@ const slider = document.querySelector(".slider");
 
 tabs.forEach((tab, index) => {
 
-    tab.addEventListener("click", () => {
+    tab.addEventListener("click", () => {
 
-        document.querySelector(".tab.active")
-        .classList.remove("active");
+        document.querySelector(".tab.active")
+            .classList.remove("active");
 
-        tab.classList.add("active");
+        tab.classList.add("active");
 
-        slider.style.transform =
-        `translateX(${index * 100}%)`;
+        slider.style.transform =
+            `translateX(${index * 100}%)`;
 
-    });
+    });
 
 });
 </script> 
