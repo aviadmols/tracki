@@ -39,48 +39,65 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
   const section = document.querySelector(".tracki-section");
   const buttons = section.querySelectorAll(".icon-btn");
-  const phoneImage = section.querySelector("#phoneImage");
+
+  const img1 = document.getElementById("img1");
+  const img2 = document.getElementById("img2");
+
   const desc = section.querySelector(".tracki-desc");
 
-  // Smooth transition setup
-  phoneImage.style.transition = "opacity 0.5s ease";
-  desc.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+  let activeImg = img1;
+  let nextImg = img2;
 
   buttons.forEach(btn => {
+
     btn.addEventListener("click", () => {
 
-      // Smooth fade only
-      phoneImage.style.opacity = "0.8";
+      const newSrc = btn.dataset.img;
+      const newDesc = btn.dataset.desc;
 
-      desc.style.opacity = "0.6";
-      desc.style.transform = "translateY(5px)";
+      // preload image first
+      const preload = new Image();
 
-      setTimeout(() => {
+      preload.src = newSrc;
 
-        // Preload image before changing
-        const newImg = new Image();
-        newImg.src = btn.dataset.img;
+      preload.onload = () => {
 
-        newImg.onload = () => {
-          phoneImage.src = btn.dataset.img;
+        // prepare next image
+        nextImg.src = newSrc;
 
-          // Smooth restore
-          phoneImage.style.opacity = "1";
+        // smooth text animation
+        desc.style.opacity = "0";
+        desc.style.transform = "translateY(8px)";
 
-          desc.textContent = btn.dataset.desc;
-          desc.style.opacity = "1";
-          desc.style.transform = "translateY(0)";
-        };
+        requestAnimationFrame(() => {
 
-      }, 120);
+          // crossfade images
+          activeImg.classList.remove("active");
+          nextImg.classList.add("active");
 
-      // Active state
+          // text restore
+          setTimeout(() => {
+            desc.textContent = newDesc;
+
+            desc.style.opacity = "1";
+            desc.style.transform = "translateY(0)";
+          }, 180);
+
+          // swap references
+          [activeImg, nextImg] = [nextImg, activeImg];
+        });
+      };
+
+      // active button
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
+
   });
+
 });
 const buttons = document.querySelectorAll(".icon-btn");
 const slider = document.querySelector(".slider");
