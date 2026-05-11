@@ -3885,6 +3885,48 @@ letter-spacing: 0.292px;
 .icon-btn.active img.active-icon{display:block;}
 .icon-btn.active span{color:#fff;font-weight:500;}
 
+
+.icons.tabs{
+    position:relative;
+    display:flex;
+    background:#e9e9e9;
+    border-radius:60px;
+    padding:6px;
+    width:420px;
+    overflow:hidden;
+}
+
+/* Sliding Background */
+.icons.tabs .slider{
+    position:absolute;
+    top:6px;
+    left:6px;
+    width:calc(33.333% - 4px);
+    height:calc(100% - 12px);
+    background:#ff6b00;
+    border-radius:50px;
+    transition:transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index:1;
+}
+
+.icons.tabs .icon-btn.tab{
+    flex:1;
+    padding:14px 10px;
+    border:none;
+    background:transparent;
+    position:relative;
+    z-index:2;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    color:#333;
+    transition:color 0.3s ease;
+}
+
+.icons.tabs .icon-btn.tab.active{
+    color:#fff;
+}
+
 /* DESCRIPTION */
 .tracki-desc {
     color: #F7F1E7;
