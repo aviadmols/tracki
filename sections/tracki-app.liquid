@@ -46,15 +46,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Change image
-      phoneImage.src = btn.dataset.img;
 
-      // Change description
-      desc.textContent = btn.dataset.desc;
-
-      // Toggle active class
+      // remove active
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
+      // fade out image + text first
+      phoneImage.classList.add("fade-out");
+      desc.classList.add("desc-hide");
+
+      setTimeout(() => {
+        // swap content
+        phoneImage.src = btn.dataset.img;
+        desc.textContent = btn.dataset.desc;
+
+        // fade in again
+        phoneImage.classList.remove("fade-out");
+        phoneImage.classList.add("fade-in");
+
+        desc.classList.remove("desc-hide");
+        desc.classList.add("desc-show");
+
+      }, 200);
     });
   });
 });
