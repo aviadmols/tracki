@@ -3873,6 +3873,7 @@ font-weight: 400;
 line-height: 21.866px; /* 150% */
 letter-spacing: 0.292px;
   display: block;
+  transition: color 2s ease-in-out;
 }
 
 /* ACTIVE */
@@ -3883,7 +3884,7 @@ letter-spacing: 0.292px;
 
 .icon-btn.active img.default-icon{display:none;}
 .icon-btn.active img.active-icon{display:block;}
-.icon-btn.active span{color:#fff;font-weight:500;transition: color 2s ease-in-out, font-weight 2s ease-in-out;}
+.icon-btn.active span{color:#fff;font-weight:500;}
 
 .slider{
     position: absolute;
