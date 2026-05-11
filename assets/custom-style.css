@@ -3875,7 +3875,7 @@ letter-spacing: 0.292px;
 /* ACTIVE */
 .icon-btn.active {
   background: rgba(0, 0, 0, 0.20);
-  width:100px;
+  min-width:90px;
 }
 
 .icon-btn.active img.default-icon{display:none;}
