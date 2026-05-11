@@ -3862,7 +3862,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
   flex-shrink: 0;
   aspect-ratio: 1/1;
 }
-.icon-btn:first-child img{padding:4px;}
+.icons.tabs > .icon-btn:first-of-type img{padding:4px;}
 .icon-btn img.default-icon{display:block;}
 .icon-btn img.active-icon{display:none;}
 
