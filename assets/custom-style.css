@@ -3857,7 +3857,7 @@ height: 40.816px;
 flex-shrink: 0;
 aspect-ratio: 1/1;
 }
-.icon-btn:first-child img{padding:5px;}
+.icon-btn:first-child img{padding:3px;}
 .icon-btn img.default-icon{display:block;}
 .icon-btn img.active-icon{display:none;}
 
