@@ -3832,7 +3832,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
 
 /* BUTTON */
 .icon-btn {
-  flex: 1;
+  flex: auto;
   border: none;
   background: transparent;
   color: #d7e7df;
@@ -3840,7 +3840,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 110.787px;
+  width: auto;
   height: 67.055px;
   margin: 0 auto;
   display: flex;
@@ -3874,6 +3874,7 @@ letter-spacing: 0.292px;
 /* ACTIVE */
 .icon-btn.active {
   background: rgba(0, 0, 0, 0.20);
+  width:100px;
 }
 
 .icon-btn.active img.default-icon{display:none;}
