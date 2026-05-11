@@ -44,32 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  // Add transition styles dynamically
-  phoneImage.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  desc.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
+      // Change image
+      phoneImage.src = btn.dataset.img;
 
-      // Fade out image and text first
-      phoneImage.style.opacity = "0";
-      phoneImage.style.transform = "translateY(10px)";
-
-      desc.style.opacity = "0";
-      desc.style.transform = "translateY(10px)";
-
-      setTimeout(() => {
-        // Change image and text after fade out
-        phoneImage.src = btn.dataset.img;
-        desc.textContent = btn.dataset.desc;
-
-        // Fade in image and text
-        phoneImage.style.opacity = "1";
-        phoneImage.style.transform = "translateY(0)";
-
-        desc.style.opacity = "1";
-        desc.style.transform = "translateY(0)";
-      }, 300);
+      // Change description
+      desc.textContent = btn.dataset.desc;
 
       // Toggle active class
       buttons.forEach(b => b.classList.remove("active"));
