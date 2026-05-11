@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Very smooth slow transition
   phoneImage.style.transition = "opacity 2s ease";
-  desc.style.transition = "opacity 2s ease";
+  {% comment %} desc.style.transition = "opacity 2s ease"; {% endcomment %}
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
