@@ -3754,7 +3754,7 @@ h1.tracki-manual__title{font-size:34px;margin:30px auto 25px;line-height:1.2;}
     padding:0px;
 }
 #phoneImage {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 2s ease, transform 2s ease;
 }
 
 /* PHONE */
