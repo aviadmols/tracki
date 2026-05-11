@@ -39,42 +39,24 @@
 
  <script>
 document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".tracki-section");
+  const buttons = section.querySelectorAll(".icon-btn");
+  const phoneImage = section.querySelector("#phoneImage");
+  const desc = section.querySelector(".tracki-desc");
 
-    const section = document.querySelector(".tracki-section");
-    const buttons = section.querySelectorAll(".icon-btn");
-    const phoneImage = section.querySelector("#phoneImage");
-    const desc = section.querySelector(".tracki-desc");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Change image
+      phoneImage.src = btn.dataset.img;
 
-    buttons.forEach(btn => {
+      // Change description
+      desc.textContent = btn.dataset.desc;
 
-        btn.addEventListener("click", () => {
-
-            // avoid re-clicking active button
-            if (btn.classList.contains("active")) return;
-
-            // smooth hide animation
-            phoneImage.classList.add("fade-out");
-            desc.classList.add("fade-out");
-
-            setTimeout(() => {
-
-                // change content
-                phoneImage.src = btn.dataset.img;
-                desc.textContent = btn.dataset.desc;
-
-                // show smoothly
-                phoneImage.classList.remove("fade-out");
-                desc.classList.remove("fade-out");
-
-            }, 300);
-
-            // active button
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-        });
-
+      // Toggle active class
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
     });
-
+  });
 });
 const buttons = document.querySelectorAll(".icon-btn");
 const slider = document.querySelector(".slider");
