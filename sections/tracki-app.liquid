@@ -44,28 +44,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const phoneImage = section.querySelector("#phoneImage");
   const desc = section.querySelector(".tracki-desc");
 
-  // Initial styles using JS
-  phoneImage.style.transition = "opacity 0.4s ease";
-  desc.style.transition = "opacity 0.4s ease";
-
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
+      // Change image
+      phoneImage.src = btn.dataset.img;
 
-      // Fade out
-      phoneImage.style.opacity = "0";
-      desc.style.opacity = "0";
+      // Change description
+      desc.textContent = btn.dataset.desc;
 
-      setTimeout(() => {
-        // Change content
-        phoneImage.src = btn.dataset.img;
-        desc.textContent = btn.dataset.desc;
-
-        // Fade in
-        phoneImage.style.opacity = "1";
-        desc.style.opacity = "1";
-      }, 400);
-
-      // Active button
+      // Toggle active class
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
     });
