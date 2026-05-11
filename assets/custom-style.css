@@ -3904,7 +3904,7 @@ letter-spacing: 0.292px;
     top:6px;
     left:6px;
     min-width:90px;
-    height:37px;
+    height:calc(100% - 12px);
     background:#0003;
     border-radius:50px;
     transition:transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
