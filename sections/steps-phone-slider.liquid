@@ -88,7 +88,6 @@ $(document).ready(function(){
   var total    = $slides.length;
   var current  = 0;
   var scrolling = false;
-  var $hand = $('.hand-indicator');
   var $section = $('.steps-inner');
 
   // Function to check if screen is large
@@ -96,113 +95,63 @@ $(document).ready(function(){
     return $(window).width() > 769;
   }
 
- function setHandPosition() {
-  var $slide = $slides.eq(1);
-  var $phone = $slide.find('.phone-frame');
-
-  if (!$phone.length) return;
-
-  var sectionRect = document.querySelector('.steps-slider').getBoundingClientRect();
-  var phoneRect   = $phone[0].getBoundingClientRect();
-
-  var finalX = phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left;
-
-  // 👉 ONLY CALCULATE HERE (no animation logic)
-  var finalY = phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
-
-  return { x: finalX, y: finalY };
-}
-
   function goToSlide(index) {
-  if (!isLargeScreen()) return;
+    if (!isLargeScreen()) return;
 
-  if (index < 0) index = 0;
-  if (index >= total) index = total - 1;
+    if (index < 0) index = 0;
+    if (index >= total) index = total - 1;
 
-  if (scrolling) return;
-  scrolling = true;
+    if (scrolling) return;
+    scrolling = true;
 
-  current = index;
+    current = index;
 
-  // Move slide
-  $wrapper.css('transform', 'translateY(-' + (current * 100) + 'vh)');
-  $('.slider-dots span').removeClass('active').eq(current).addClass('active');
+    // Move slide
+    $wrapper.css('transform', 'translateY(-' + (current * 100) + 'vh)');
+    $('.slider-dots span').removeClass('active').eq(current).addClass('active');
 
-  // FULL RESET (IMPORTANT)
-  $hand.removeClass('hand-animate').css({
-  opacity: 0,
-  transform: 'translate(-50%, -120px)' // match CSS start
-});
+    // No hand animation anymore
 
-if (current === 1) {
+    // Unlock scrolling
+    setTimeout(function () {
+      scrolling = false;
+    }, 900);
+  }
 
-  setTimeout(function () {
-
-    var pos = setHandPosition();
-
-    // START from top
-    $hand.css({
-      left: pos.x + 'px',
-      top: '0px',
-      opacity: 1,
-      transform: 'translateX(-50%)'
-    });
-
-    $hand[0].offsetHeight;
-
-    // MOVE to final (this is where you control stop position)
-    $hand.stop().animate(
-      { top: pos.y },
-      {
-        duration: 1200,
-        easing: "swing"
-      }
-    );
-
-  }, 700);
-}
-
-  // Unlock scrolling
-  setTimeout(function () {
-    scrolling = false;
-  }, 900);
-}
   goToSlide(0);
 
   // Dot click
   $('.slider-dots span').on('click', function(){
-    if (!isLargeScreen()) return; // Stop sliding on small screens
+    if (!isLargeScreen()) return;
     goToSlide($(this).index());
   });
 
   // Mouse wheel
   $('.steps-slider-container').on('wheel', function(e){
-  if (!isLargeScreen()) return;
+    if (!isLargeScreen()) return;
 
-  var delta = e.originalEvent.deltaY;
+    var delta = e.originalEvent.deltaY;
 
-  if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
-    return; // allow normal scroll at edges
-  }
+    if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
+      return;
+    }
 
-  e.preventDefault();
+    e.preventDefault();
 
-  if (delta > 0) {
-    goToSlide(current + 1);
-  } else {
-    goToSlide(current - 1);
-  }
-});
+    if (delta > 0) {
+      goToSlide(current + 1);
+    } else {
+      goToSlide(current - 1);
+    }
+  });
 
   // Window resize
   $(window).on('resize', function(){
-    if (current === 1) setHandPosition();
 
     if (!isLargeScreen()) {
-      $wrapper.css('transform', 'translateY(0)'); // reset to first slide
+      $wrapper.css('transform', 'translateY(0)');
       current = 0;
       $('.slider-dots span').removeClass('active').eq(current).addClass('active');
-      $hand.removeClass('hand-animate').css('opacity', 0);
     }
   });
 
@@ -212,7 +161,7 @@ if (current === 1) {
 $(document).on('click','.slider-down a',function(event){
   event.preventDefault();
   $('html, body').animate({
-      scrollTop: $(this.hash).offset().top - 50
+    scrollTop: $(this.hash).offset().top - 50
   }, 1000);
 });
 </script>
