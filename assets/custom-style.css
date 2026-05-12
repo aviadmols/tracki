@@ -992,7 +992,7 @@ h2.steps-title {
   box-sizing: border-box;
   padding: 85px 20px 30px;
   opacity:0;
-  transition:all 1s ease;
+  transition:all 0.3s ease;
 }
 .step-slide.active{opacity:1;}
 /* .step-slide:nth-child(2) {padding:100px 20px 30px;}
@@ -2958,6 +2958,7 @@ nav .menu-drawer__menu-item {
     gap:32px;
     margin-bottom:30px;
     padding:0px !important;
+    opacity:1;
   }
   .step-slide:nth-child(2){margin-bottom:45px}
   
