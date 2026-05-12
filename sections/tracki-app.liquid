@@ -65,47 +65,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const desc = section.querySelector(".tracki-desc");
 
   buttons.forEach(btn => {
-
     btn.addEventListener("click", () => {
 
-        /* avoid re-click */
-        if(btn.classList.contains("active")) return;
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-        /* active button */
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+      // start fade out (slower feel)
+      phoneImage.classList.add("fade-out");
+      desc.classList.add("desc-hide");
 
-        /* fade out */
-        phoneImage.classList.add("fade-out");
-        desc.classList.add("fade-out");
+      // wait longer before swapping content
+      setTimeout(() => {
 
-        /* wait for fade out */
-        setTimeout(() => {
+        phoneImage.src = btn.dataset.img;
+        desc.textContent = btn.dataset.desc;
 
-            /* preload image before swap */
-            const newImg = new Image();
+        /* REMOVE HIDE */
+            phoneImage.classList.remove("fade-out");
+            desc.classList.remove("desc-hide");
 
-            newImg.src = btn.dataset.img;
+        // slight delay before fade-in for smoothness
+        requestAnimationFrame(() => {
+          phoneImage.classList.add("fade-in");
+                desc.classList.add("desc-show");
+        });
 
-            newImg.onload = () => {
-
-                /* update content */
-                phoneImage.src = btn.dataset.img;
-                desc.textContent = btn.dataset.desc;
-
-                /* force repaint */
-                void phoneImage.offsetWidth;
-
-                /* fade in */
-                phoneImage.classList.remove("fade-out");
-                desc.classList.remove("fade-out");
-
-            };
-
-        }, 350);
-
+      }, 1200); // ⬅️ slower swap timing (increase/decrease for feel)
     });
-
+  });
 });
 const buttons = document.querySelectorAll(".icon-btn");
 const slider = document.querySelector(".slider");
