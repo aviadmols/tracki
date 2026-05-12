@@ -927,6 +927,18 @@ header .header__icons.header__icons--localization .header__icon, header .header_
   background-color:#394045;
   background-repeat:no-repeat;
 }
+.steps-slider:after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-image:url('https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki-bg.png?v=1778581797');
+  background-position:left bottom;
+  background-size:100% auto;
+  background-repeat:no-repeat;
+  width:425px;
+  height:371px;
+}
 
 .steps-overlay {
   position: absolute;
