@@ -3925,12 +3925,10 @@ letter-spacing: 0.292px;
 
 .desc-hide{
     opacity: 0;
-    transform: translateY(12px);
 }
 
 .desc-show{
     opacity: 1;
-    transform: translateY(0);
 }
 
 @media(max-width:767px){
