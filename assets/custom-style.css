@@ -952,6 +952,8 @@ h2.steps-title {
   padding-bottom:0px;
   color:#F7F1E7;
   text-transform:none;
+  position:relative;
+  z-index:2;
 }
 
 /* ===============================
