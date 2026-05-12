@@ -84,12 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(() => {
           phoneImage.classList.remove("fade-out");
           phoneImage.classList.add("fade-in");
-          phoneImage.classList.fadeToggle("slow");
-          phoneImage.classList.fadeToggle("slow");
-          
+          phoneImage.classList.fadeToggle("slow");   
 
           desc.classList.remove("desc-hide");
           desc.classList.add("desc-show");
+          desc.classList.fadeToggle("slow");
         });
 
       }, 1100); // ⬅️ slower swap timing (increase/decrease for feel)
