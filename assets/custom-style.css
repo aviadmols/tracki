@@ -922,7 +922,7 @@ header .header__icons.header__icons--localization .header__icon, header .header_
   background-size: cover;
   background-position:top center;
   overflow: hidden;
-  background-attachment: scroll;
+  background-attachment: fixed;
   height:896px;
   background-color:#394045;
   background-repeat:no-repeat;
