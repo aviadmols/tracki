@@ -1483,7 +1483,7 @@
       "name": "Steps Phone Slider",
       "settings": {
         "section_title": "Easy to use",
-        "background_image": "shopify://shop_images/bgr-phone-section.png",
+        "background_image": "shopify://shop_images/bgr-phnsection.png",
         "overlay_opacity": 40,
         "mouse_icon": "shopify://shop_images/icon-mouse.svg",
         "link": "#product-slideshow-cards"
