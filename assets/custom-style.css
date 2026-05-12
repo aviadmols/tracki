@@ -1025,7 +1025,7 @@ h2.steps-title {
 
 /* CENTER – PHONE */
 .phone-frame {
-  flex: 415px 0 0;
+  flex: 365px 0 0;
   text-align: center;
   position:relative;
 }
@@ -1034,7 +1034,7 @@ h2.steps-title {
   width: auto;
   height: 660px;
 }
-
+.step-slide-wrapper .step-slide:nth-child(2) .phone-frame{flex:415px 0 0;}
 .step-slide-wrapper .step-slide:nth-child(2) .phone-frame img{
   max-width: unset;
   width: 416px;
@@ -1043,7 +1043,7 @@ h2.steps-title {
   top: -177px;
   left: 0;
 }
-.step-slide-wrapper .step-slide:nth-child(3) .phone-frame{flex:365px 0 0;}
+
 
 /* RIGHT – CONTENT */
 .step-info {
