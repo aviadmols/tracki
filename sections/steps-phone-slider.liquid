@@ -215,26 +215,27 @@ $(document).on('click','.slider-down a',function(event){
       scrollTop: $(this.hash).offset().top - 50
   }, 1000);
 });
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
   const slides = document.querySelectorAll(".step-slide");
 
-  // First slide active initially
-  if (slides.length > 0) {
-    slides[0].classList.add("active");
-  }
+  // Add active only to first slide initially
+  slides.forEach((slide, index) => {
+    if(index === 0){
+      slide.classList.add("active");
+    } else {
+      slide.classList.remove("active");
+    }
 
-  // Only one slide active at a time
-  slides.forEach((slide) => {
-    slide.addEventListener("click", function () {
+    // Click event
+    slide.onclick = function () {
 
-      // Remove active from all slides
-      slides.forEach((s) => s.classList.remove("active"));
+      // Remove active from all
+      slides.forEach(s => s.classList.remove("active"));
 
-      // Add active to current slide
+      // Add active to clicked slide
       this.classList.add("active");
-
-    });
+    };
   });
 
 });
