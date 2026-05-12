@@ -926,6 +926,7 @@ header .header__icons.header__icons--localization .header__icon, header .header_
   height:896px;
   background-color:#394045;
   background-repeat:no-repeat;
+  z-index:2;
 }
 .steps-slider:after{
   content:'';
@@ -938,6 +939,7 @@ header .header__icons.header__icons--localization .header__icon, header .header_
   background-repeat:no-repeat;
   width:425px;
   height:371px;
+  z-index:1;
 }
 
 .steps-overlay {
