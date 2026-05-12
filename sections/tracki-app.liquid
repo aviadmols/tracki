@@ -83,12 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // slight delay before fade-in for smoothness
         requestAnimationFrame(() => {
           phoneImage.classList.remove("fade-out");
-          phoneImage.classList.add("fade-in");
-          phoneImage.classList.fadeToggle("slow");   
+          phoneImage.classList.add("fade-in"); 
 
           desc.classList.remove("desc-hide");
           desc.classList.add("desc-show");
-          desc.classList.fadeToggle("slow");
         });
 
       }, 1100); // ⬅️ slower swap timing (increase/decrease for feel)
