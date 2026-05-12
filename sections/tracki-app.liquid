@@ -80,13 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
         phoneImage.src = btn.dataset.img;
         desc.textContent = btn.dataset.desc;
 
+        /* REMOVE HIDE */
+            phoneImage.classList.remove("fade-out");
+            desc.classList.remove("desc-hide");
+
         // slight delay before fade-in for smoothness
         requestAnimationFrame(() => {
-          phoneImage.classList.remove("fade-out");
           phoneImage.classList.add("fade-in");
-
-          desc.classList.remove("desc-hide");
-          desc.classList.add("desc-show");
+                desc.classList.add("desc-show");
         });
 
       }, 1200); // ⬅️ slower swap timing (increase/decrease for feel)
