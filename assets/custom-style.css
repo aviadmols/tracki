@@ -1025,14 +1025,22 @@ h2.steps-title {
 
 /* CENTER – PHONE */
 .phone-frame {
-  flex: 290px 0 0;
+  flex: 415px 0 0;
   text-align: center;
   position:relative;
 }
 .step-slide-wrapper .step-slide .phone-frame img {
   max-width: unset;
-  width:auto;
-  height:600px;
+  width: 416px;
+  height: auto;
+}
+.step-slide-wrapper .step-slide:nth-child(2) .phone-frame img{
+  max-width: unset;
+  width: 416px;
+  height: auto;
+  position: absolute;
+  top: -177px;
+  left: 0;
 }
 
 /* RIGHT – CONTENT */
