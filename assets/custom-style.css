@@ -1082,6 +1082,10 @@ h2.steps-title {
   margin-left:-5px;
 }
 
+@media(max-width:1199px){
+  .step-big{font-size:220px;}
+}
+
 /* ===============================
    NAVIGATION
 ================================ */
