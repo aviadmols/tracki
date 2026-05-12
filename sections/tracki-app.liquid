@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(() => {
           phoneImage.classList.remove("fade-out");
           phoneImage.classList.add("fade-in");
+          phoneImage.classList.fadeToggle("slow");
+          phoneImage.classList.fadeToggle("slow");
+          
 
           desc.classList.remove("desc-hide");
           desc.classList.add("desc-show");
