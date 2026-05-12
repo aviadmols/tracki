@@ -215,6 +215,28 @@ $(document).on('click','.slider-down a',function(event){
       scrollTop: $(this.hash).offset().top - 50
   }, 1000);
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+  const slides = document.querySelectorAll(".step-slide");
+
+  function setActiveSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  // Example:
+  // First slide active initially
+  setActiveSlide(0);
+
+  // Change active on click
+  slides.forEach((slide, index) => {
+    slide.addEventListener("click", function () {
+      setActiveSlide(index);
+    });
+  });
+
+});
 </script>
 
 
