@@ -972,7 +972,7 @@ h2.steps-title {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 50px;
+  gap: 10px;
   box-sizing: border-box;
   padding: 100px 20px 30px;
 }
