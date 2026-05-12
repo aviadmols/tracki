@@ -1034,6 +1034,7 @@ h2.steps-title {
   width: auto;
   height: 660px;
 }
+.step-slide-wrapper .step-slide:nth-child(2){gap:35px;}
 .step-slide-wrapper .step-slide:nth-child(2) .phone-frame{flex:415px 0 0;}
 .step-slide-wrapper .step-slide:nth-child(2) .phone-frame img{
   max-width: unset;
