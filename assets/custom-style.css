@@ -3927,12 +3927,10 @@ letter-spacing: 0.292px;
 
 .desc-hide, .fade-out{
     opacity: 0;
-    transform: translateY(5px);
 }
 
 .desc-show, .fade-in{
     opacity: 1;
-    transform: translateY(0);
 }
 
 @media(max-width:767px){
