@@ -920,7 +920,7 @@ header .header__icons.header__icons--localization .header__icon, header .header_
   padding: 50px 0 0px;
   color: #fff;
   background-size: cover;
-  background-position: center;
+  background-position:top center;
   overflow: hidden;
   background-attachment: scroll;
   height:896px;
