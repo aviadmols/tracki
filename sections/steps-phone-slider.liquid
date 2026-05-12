@@ -219,20 +219,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const slides = document.querySelectorAll(".step-slide");
 
-  function setActiveSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-    });
+  // First slide active initially
+  if (slides.length > 0) {
+    slides[0].classList.add("active");
   }
 
-  // Example:
-  // First slide active initially
-  setActiveSlide(0);
-
-  // Change active on click
-  slides.forEach((slide, index) => {
+  // Only one slide active at a time
+  slides.forEach((slide) => {
     slide.addEventListener("click", function () {
-      setActiveSlide(index);
+
+      // Remove active from all slides
+      slides.forEach((s) => s.classList.remove("active"));
+
+      // Add active to current slide
+      this.classList.add("active");
+
     });
   });
 
