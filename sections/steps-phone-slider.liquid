@@ -87,15 +87,18 @@ $(document).ready(function(){
   var $slides  = $('.step-slide');
   var total    = $slides.length;
   var current  = 0;
-  var scrolling = false;
+
   var $hand = $('.hand-indicator');
-  var $section = $('.steps-inner');
+
+  // Wheel lock
+  let wheelLocked = false;
 
   // Function to check if screen is large
   function isLargeScreen() {
     return $(window).width() > 769;
   }
 
+  // Hand position
   function setHandPosition() {
 
     var $slide = $slides.eq(1);
@@ -110,9 +113,13 @@ $(document).ready(function(){
 
     var finalY = phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top;
 
-    return { x: finalX, y: finalY };
+    return {
+      x: finalX,
+      y: finalY
+    };
   }
 
+  // Slide change
   function goToSlide(index) {
 
     if (!isLargeScreen()) return;
@@ -120,15 +127,15 @@ $(document).ready(function(){
     if (index < 0) index = 0;
     if (index >= total) index = total - 1;
 
-    if (scrolling) return;
-    scrolling = true;
-
     current = index;
 
-    // Move slide
-    $wrapper.css('transform', 'translateY(-' + (current * 100) + 'vh)');
+    // Move slides
+    $wrapper.css(
+      'transform',
+      'translateY(-' + (current * 100) + 'vh)'
+    );
 
-    // Active dot
+    // Active dots
     $('.slider-dots span')
       .removeClass('active')
       .eq(current)
@@ -140,19 +147,22 @@ $(document).ready(function(){
       .eq(current)
       .addClass('active');
 
-    // FULL RESET
+    // Reset hand
     $hand.removeClass('hand-animate').css({
       opacity: 0,
       transform: 'translate(-50%, -120px)'
     });
 
+    // Hand animation on 2nd slide
     if (current === 1) {
 
       setTimeout(function () {
 
         var pos = setHandPosition();
 
-        // START from top
+        if (!pos) return;
+
+        // Start position
         $hand.css({
           left: pos.x + 'px',
           top: '0px',
@@ -162,7 +172,7 @@ $(document).ready(function(){
 
         $hand[0].offsetHeight;
 
-        // MOVE to final
+        // Animate
         $hand.stop().animate(
           { top: pos.y },
           {
@@ -173,14 +183,9 @@ $(document).ready(function(){
 
       }, 700);
     }
-
-    // Unlock scrolling
-    setTimeout(function () {
-      scrolling = false;
-    }, 900);
   }
 
-  // First slide active initially
+  // Initial slide
   goToSlide(0);
 
   // Dot click
@@ -189,33 +194,63 @@ $(document).ready(function(){
     if (!isLargeScreen()) return;
 
     goToSlide($(this).index());
+
   });
 
-  // Mouse wheel
+  // Mouse wheel scroll
   $('.steps-slider-container').on('wheel', function(e){
 
     if (!isLargeScreen()) return;
 
     var delta = e.originalEvent.deltaY;
 
-    if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
+    // Prevent multiple triggers
+    if (wheelLocked) {
+      e.preventDefault();
       return;
     }
 
-    e.preventDefault();
+    // Scroll down
+    if (delta > 0 && current < total - 1) {
 
-    if (delta > 0) {
+      e.preventDefault();
+
+      wheelLocked = true;
+
       goToSlide(current + 1);
-    } else {
-      goToSlide(current - 1);
+
+      setTimeout(function () {
+        wheelLocked = false;
+      }, 1200);
     }
+
+    // Scroll up
+    else if (delta < 0 && current > 0) {
+
+      e.preventDefault();
+
+      wheelLocked = true;
+
+      goToSlide(current - 1);
+
+      setTimeout(function () {
+        wheelLocked = false;
+      }, 1200);
+    }
+
+    // IMPORTANT:
+    // On first/last slide,
+    // normal page scroll will work automatically
   });
 
-  // Window resize
+  // Resize
   $(window).on('resize', function(){
 
-    if (current === 1) setHandPosition();
+    if (current === 1) {
+      setHandPosition();
+    }
 
+    // Mobile reset
     if (!isLargeScreen()) {
 
       $wrapper.css('transform', 'translateY(0)');
@@ -232,14 +267,17 @@ $(document).ready(function(){
         .eq(current)
         .addClass('active');
 
-      $hand.removeClass('hand-animate').css('opacity', 0);
+      $hand.removeClass('hand-animate').css({
+        opacity: 0
+      });
     }
   });
 
 });
 
+
 // Scroll down button
-$(document).on('click','.slider-down a',function(event){
+$(document).on('click', '.slider-down a', function(event){
 
   event.preventDefault();
 
