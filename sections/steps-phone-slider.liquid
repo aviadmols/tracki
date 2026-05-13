@@ -87,9 +87,12 @@ $(document).ready(function(){
   var $slides  = $('.step-slide');
   var total    = $slides.length;
   var current  = 0;
-  var scrolling = false;
+
   var $hand = $('.hand-indicator');
   var $section = $('.steps-inner');
+
+  // NEW: wheel lock
+  let wheelLocked = false;
 
   // Function to check if screen is large
   function isLargeScreen() {
@@ -120,9 +123,6 @@ $(document).ready(function(){
     if (index < 0) index = 0;
     if (index >= total) index = total - 1;
 
-    if (scrolling) return;
-    scrolling = true;
-
     current = index;
 
     // Move slide
@@ -146,11 +146,14 @@ $(document).ready(function(){
       transform: 'translate(-50%, -120px)'
     });
 
+    // Hand animation only on step 2
     if (current === 1) {
 
       setTimeout(function () {
 
         var pos = setHandPosition();
+
+        if (!pos) return;
 
         // START from top
         $hand.css({
@@ -173,11 +176,6 @@ $(document).ready(function(){
 
       }, 700);
     }
-
-    // Unlock scrolling
-    setTimeout(function () {
-      scrolling = false;
-    }, 900);
   }
 
   // First slide active initially
@@ -196,19 +194,30 @@ $(document).ready(function(){
 
     if (!isLargeScreen()) return;
 
-    var delta = e.originalEvent.deltaY;
-
-    if ((delta > 0 && current === total - 1) || (delta < 0 && current === 0)) {
-      return;
-    }
-
     e.preventDefault();
 
-    if (delta > 0) {
+    // Prevent multiple scroll triggers
+    if (wheelLocked) return;
+
+    wheelLocked = true;
+
+    var delta = e.originalEvent.deltaY;
+
+    // Scroll Down
+    if (delta > 0 && current < total - 1) {
       goToSlide(current + 1);
-    } else {
+    }
+
+    // Scroll Up
+    else if (delta < 0 && current > 0) {
       goToSlide(current - 1);
     }
+
+    // Unlock after transition completes
+    setTimeout(function () {
+      wheelLocked = false;
+    }, 1400);
+
   });
 
   // Window resize
