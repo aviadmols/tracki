@@ -1652,7 +1652,7 @@
             "number": 100,
             "image_icon": "shopify://shop_images/compact.svg",
             "title": "Compact, reliable, and easy to place inside your vehicle",
-            "text": "One of the smallest GPS trackers available, designed for discreet use on vehicles, assets, luggage, pets, or loved ones—easy to install and hard to detect."
+            "text": "One of the smallest GPS trackers available, designed for versatile use on vehicles, assets, luggage, or pets—easy to install and simple to use."
           }
         },
         "counter_Mbbqax": {
@@ -1700,15 +1700,6 @@
             "text": "Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty. He informed me that the Lifetime warranty comes with purchasing Tracki through Amazon- they will replace the device if lost/stolen or ceases to function- and Tracki has already replaced the first device I purchased"
           }
         },
-        "review_Lh9EUr": {
-          "type": "review",
-          "settings": {
-            "name": "Victoria",
-            "review": "5",
-            "title": "Great product highly recommended!",
-            "text": "I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!"
-          }
-        },
         "review_iU6Vfr": {
           "type": "review",
           "settings": {
@@ -1716,15 +1707,6 @@
             "review": "5",
             "title": "Accurate and very user friendly. Good customer service.",
             "text": "Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty."
-          }
-        },
-        "review_h9etDx": {
-          "type": "review",
-          "settings": {
-            "name": "Ross",
-            "review": "4.5",
-            "title": "Great product highly recommended!",
-            "text": "I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!"
           }
         },
         "review_3tG7fw": {
@@ -1740,9 +1722,7 @@
       "block_order": [
         "review_ncaaJb",
         "review_7kQpCD",
-        "review_Lh9EUr",
         "review_iU6Vfr",
-        "review_h9etDx",
         "review_3tG7fw"
       ],
       "name": "Amazon Reviews Swiper",
