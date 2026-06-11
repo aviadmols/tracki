@@ -216,8 +216,8 @@
         "@media (max-width: 768px) {div > div {padding-bottom: 0px !important; padding-top: 0px !important; }}"
       ],
       "settings": {
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "precision_mechanics": {
