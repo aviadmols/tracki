@@ -260,6 +260,7 @@
     },
     "custom_liquid_GJ9Gbg": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         "{background: #fff;}"
       ],
