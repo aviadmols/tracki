@@ -372,7 +372,7 @@
   font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
-  z-index: 999;
+  
 }
 .precision-pdp-hero__actions .product-form__submit.button--primary:hover,
 .precision-pdp-hero__actions .product-form__submit.button--secondary:hover,
