@@ -493,11 +493,22 @@
             "extra_text": "<p>Place your Tracki GPS tracker with the vehicle, bag, or loved one you want to watch over and stay connected to.</p>",
             "icon": "shopify://shop_images/HandDeposit.svg"
           }
+        },
+        "step_DagtNV": {
+          "type": "step",
+          "settings": {
+            "step_number": "3",
+            "heading": "Tracking",
+            "phone_image": "shopify://shop_images/step3-phone.png",
+            "extra_text": "<p>Log in to the app to see your Tracki GPS tracker location with real time updates, and history reports, helping you stay close and feel confident knowing what matters most is safe.</p>",
+            "icon": "shopify://shop_images/Path.svg"
+          }
         }
       },
       "block_order": [
         "step_bMPUTX",
-        "step_BG9KyL"
+        "step_BG9KyL",
+        "step_DagtNV"
       ],
       "custom_css": [
         "{background: #f9f9f9;}"
