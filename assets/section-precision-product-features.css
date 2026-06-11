@@ -37,7 +37,8 @@
 }
 
 .precision-features__title {
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 1rem 0 0.5rem;
@@ -45,7 +46,8 @@
 }
 
 .precision-features__text {
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
+  font-size: 16px;
   line-height: 1.6;
   color: #5c5b5b;
   margin: 0;
