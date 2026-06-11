@@ -65,9 +65,6 @@
         >
           <div class="flex-grid__item product__media-wrapper">
             {% render 'precision-product-gallery', precision_pdp: true %}
-            {%- if section.settings.show_product_information -%}
-        {% render 'precision-product-info-accordion', section: section, product: product %}
-      {%- endif -%}
           </div>
         </div>
       {%- else -%}
@@ -244,7 +241,9 @@
         aria-hidden="true"
       ></div>
 
-      
+      {%- if section.settings.show_product_information -%}
+        {% render 'precision-product-info-accordion', section: section, product: product %}
+      {%- endif -%}
     </div>
   </div>
 
