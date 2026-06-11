@@ -388,10 +388,10 @@
   border-radius: 2px !important;
 }
 
-/* .precision-pdp-hero__actions .product-form__submit:active,
+.precision-pdp-hero__actions .product-form__submit:active,
 .precision-pdp-hero__btn-primary:active {
   transform: scale(0.98);
-} */
+}
 
 .precision-pdp-hero .product-form__buttons {
   display: flex;
