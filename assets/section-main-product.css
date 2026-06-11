@@ -1630,9 +1630,7 @@ product-gallery .product__media-toggle {
   transform: translateX(100%);
   color: #76C773;
 }
-.thumbnail-slider .slider-button--prev {
-  color: #76C773;
-}
+
 .thumbnail-slider .slider-button--next .icon {
   transform: rotate(-90deg);
 }
