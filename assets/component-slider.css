@@ -226,8 +226,7 @@
 
 .slider-button {
   border: none;
-  /* color: rgba(var(--color-foreground), 0.75); */
-  color: #76c773;
+  color: rgba(var(--color-foreground), 0.75);
   background-color: rgb(var(--color-background));
   cursor: pointer;
   padding: 0;
