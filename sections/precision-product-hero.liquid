@@ -234,16 +234,16 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      {%- if section.settings.show_product_information -%}
-        {% render 'precision-product-info-accordion', section: section, product: product %}
-      {%- endif -%}
+
       <div
         id="precision-sticky-sentinel-{{ section.id }}"
         class="precision-pdp-sticky-sentinel"
         aria-hidden="true"
       ></div>
 
-      
+      {%- if section.settings.show_product_information -%}
+        {% render 'precision-product-info-accordion', section: section, product: product %}
+      {%- endif -%}
     </div>
   </div>
 
