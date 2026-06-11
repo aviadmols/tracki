@@ -317,9 +317,9 @@
       "settings": {
         "enable_sticky_info": true,
         "media_position": "left",
-        "media_size": "medium",
+        "media_size": "large",
         "gallery_layout": "thumbnail_slider",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "show_featured_media": false,
         "show_thumbnails": false,
         "hide_variants": false,
