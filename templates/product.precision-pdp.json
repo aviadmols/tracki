@@ -510,9 +510,7 @@
         "step_Vxtatg",
         "step_TqMDPz"
       ],
-      "custom_css": [
-        "{background: #f9f9f9;}"
-      ],
+      "custom_css": [],
       "name": "Steps Phone Slider",
       "settings": {
         "section_title": "Easy to use",
