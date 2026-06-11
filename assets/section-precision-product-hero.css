@@ -356,14 +356,32 @@
 }
 
 /* Theme marks Add to cart as secondary when dynamic checkout is on — restore Precision styling */
-.precision-pdp-hero__actions .product-form__submit.button--primary,
+/* .precision-pdp-hero__actions .product-form__submit.button--primary,
 .precision-pdp-hero__actions .product-form__submit.button--secondary,
 .precision-pdp-hero__btn-primary {
   background: var(--precision-pdp-primary);
   color: var(--precision-pdp-on-primary);
   box-shadow: none;
-}
+} */
+.precision-pdp-hero__actions .product-form__submit.button--primary,
+.precision-pdp-hero__actions .product-form__submit.button--secondary,
+.precision-pdp-hero__btn-primary {
+  background-color: #58c765; /* adjust to your preferred green */
+  color: #000;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 
+  /* Button size */
+  min-height: 64px;
+  padding: 18px 32px;
+
+  /* Text styling */
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
 .precision-pdp-hero__actions .shopify-payment-button {
   width: 100%;
   margin-top: 0;
