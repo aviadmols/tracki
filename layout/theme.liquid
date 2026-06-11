@@ -229,7 +229,7 @@ if(window.location.pathname === "/pages/manual") {
   gtag('config', 'G-2TH19Q908E');
 </script>
   </head>
-  <body class="{% if template == 'index' %}transparent-header{% endif %} {% unless template == 'index' %}innerpages{% endunless %} template-{{ request.page_type }}{% if request.design_mode %} shopify-design-mode{% endif %} {% if request.page_type == 'page' %}{{ page.handle }}{% endif %}{% if template.name == 'page' and template.suffix == 'parentsv2-lander' %} template-parentsv2-lander{% endif %}"
+  <body class="{% if template == 'index' %}transparent-header{% endif %} {% unless template == 'index' %}innerpages{% endunless %} template-{{ request.page_type }}{% if request.design_mode %} shopify-design-mode{% endif %} {% if request.page_type == 'page' %}{{ page.handle }}{% endif %} {% if request.page_type == 'product' %}{{ product.handle }}{% endif %}{% if template.name == 'page' and template.suffix == 'parentsv2-lander' %} template-parentsv2-lander{% endif %}"
     {%- if settings.image_zoom_effect_enabled %} data-animate-image{% endif -%}
     {%- if settings.image_loading_bar_enabled %} data-lazy-image{% endif -%}
     {%- if settings.heading_capitalize %} data-heading-capitalize{% endif -%}
