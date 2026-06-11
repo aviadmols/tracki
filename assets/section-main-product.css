@@ -1626,11 +1626,15 @@ product-gallery .product__media-toggle {
   transform: rotate(90deg);
 }
 
-.thumbnail-slider .slider-button--next .slider-button--prev {
+/* .thumbnail-slider .slider-button--next {
+  transform: translateX(100%);
+  color: #76C773;
+} */
+.thumbnail-slider .slider-button--next,
+.thumbnail-slider .slider-button--prev {
   transform: translateX(100%);
   color: #76C773;
 }
-
 .thumbnail-slider .slider-button--next .icon {
   transform: rotate(-90deg);
 }
