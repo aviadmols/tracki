@@ -468,58 +468,6 @@
         "padding_top": 36,
         "padding_bottom": 16
       }
-    },
-    "steps_phone_slider_Lyicw9": {
-      "type": "steps-phone-slider",
-      "blocks": {
-        "step_bMPUTX": {
-          "type": "step",
-          "settings": {
-            "step_number": "1",
-            "heading": "Activate",
-            "phone_image": "shopify://shop_images/step1-phone.png",
-            "phone_mobile_image": "shopify://shop_images/step1-mobphone.png",
-            "extra_text": "<p><strong>Once you receive your Tracki, get started in 3 simple steps:</strong></p><ol><li>Activate your device</li><li><strong>Choose a cost-effective monthly plan</strong></li><li>Start tracking in real time</li></ol>",
-            "icon": "shopify://shop_images/icon_f79dbe5e-be42-4f41-b3df-27b82f342c16.png"
-          }
-        },
-        "step_BG9KyL": {
-          "type": "step",
-          "settings": {
-            "step_number": "2",
-            "heading": "Place",
-            "phone_image": "shopify://shop_images/phoneslide2.png",
-            "phone_mobile_image": "shopify://shop_images/step2-mobimage.png",
-            "extra_text": "<p>Place your Tracki GPS tracker with the vehicle, bag, or loved one you want to watch over and stay connected to.</p>",
-            "icon": "shopify://shop_images/HandDeposit.svg"
-          }
-        },
-        "step_DagtNV": {
-          "type": "step",
-          "settings": {
-            "step_number": "3",
-            "heading": "Tracking",
-            "phone_image": "shopify://shop_images/step3-phone.png",
-            "extra_text": "<p>Log in to the app to see your Tracki GPS tracker location with real time updates, and history reports, helping you stay close and feel confident knowing what matters most is safe.</p>",
-            "icon": "shopify://shop_images/Path.svg"
-          }
-        }
-      },
-      "block_order": [
-        "step_bMPUTX",
-        "step_BG9KyL",
-        "step_DagtNV"
-      ],
-      "custom_css": [
-        "{background: #f9f9f9;}"
-      ],
-      "name": "Steps Phone Slider",
-      "settings": {
-        "section_title": "Easy to use",
-        "overlay_opacity": 40,
-        "mouse_icon": "shopify://shop_images/icon-mouse.svg",
-        "link": "#product-slideshow-cards"
-      }
     }
   },
   "order": [
@@ -530,7 +478,6 @@
     "custom_liquid_GJ9Gbg",
     "precision_specs_quote",
     "custom_liquid_nDkcXz",
-    "precision_product_faq",
-    "steps_phone_slider_Lyicw9"
+    "precision_product_faq"
   ]
 }
