@@ -211,7 +211,6 @@
         "f3",
         "f4"
       ],
-      "disabled": true,
       "custom_css": [
         "{padding-left: 25px; padding-right: 25px;}",
         "@media (max-width: 768px) {div > div {padding-bottom: 0px !important; padding-top: 0px !important; }}"
@@ -241,7 +240,6 @@
         "b1",
         "b2"
       ],
-      "disabled": true,
       "custom_css": [
         "{padding: 0px !important;}",
         ".precision-mechanics__inner {padding-bottom: 40px !important;}"
@@ -260,7 +258,6 @@
     },
     "custom_liquid_GJ9Gbg": {
       "type": "custom-liquid",
-      "disabled": true,
       "custom_css": [
         "{background: #fff;}"
       ],
@@ -321,7 +318,6 @@
         "s4",
         "q1"
       ],
-      "disabled": true,
       "custom_css": [
         ".precision-specs-quote__spec-value {font-size: 14px;}",
         ".precision-specs-quote__inner {padding-top: 0px !important;}",
@@ -459,7 +455,6 @@
         "collapsible_tab_4YjfDr",
         "collapsible_tab_JQ8TmB"
       ],
-      "disabled": true,
       "custom_css": [
         "{padding-top: 20px !important; padding-bottom: 40px !important; padding-left: 15px; padding-right: 15px;}",
         "p {font-size: 14px !important;}",
@@ -516,7 +511,6 @@
         "step_bw4gVg",
         "step_Pt8pch"
       ],
-      "disabled": true,
       "custom_css": [
         "{background: #f9f9f9;}"
       ],
