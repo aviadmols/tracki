@@ -258,8 +258,7 @@
 }
 
 .slider-button[disabled] .icon {
-  /* color: rgba(var(--color-foreground), 0.3); */
-  color: #76c773;
+  color: rgba(var(--color-foreground), 0.3);
 }
 
 .slider-mobile--overlay .slider-button[disabled] .icon {
