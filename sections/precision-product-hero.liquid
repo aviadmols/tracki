@@ -195,9 +195,6 @@
                 {%- endif -%}
               </div>
             {%- endif -%}
-            {%- if section.settings.show_product_information -%}
-        {% render 'precision-product-info-accordion', section: section, product: product %}
-      {%- endif -%}
           {%- when 'buy_buttons' -%}
             {%- unless precision_pdp_actions_open -%}
               <div class="precision-pdp-hero__actions">
@@ -244,7 +241,9 @@
         aria-hidden="true"
       ></div>
 
-      
+      {%- if section.settings.show_product_information -%}
+        {% render 'precision-product-info-accordion', section: section, product: product %}
+      {%- endif -%}
     </div>
   </div>
 
