@@ -374,6 +374,9 @@
   text-transform: uppercase;
   
 }
+.button{
+  z-index: 999;
+}
 .precision-pdp-hero__actions .product-form__submit.button--primary:hover,
 .precision-pdp-hero__actions .product-form__submit.button--secondary:hover,
 .precision-pdp-hero__btn-primary:hover {
