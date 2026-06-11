@@ -373,12 +373,6 @@
   letter-spacing: 4px;
   text-transform: uppercase;
 }
-.precision-pdp-hero__actions .product-form__submit.button--primary:hover,
-.precision-pdp-hero__actions .product-form__submit.button--secondary:hover,
-.precision-pdp-hero__btn-primary:hover {
-  background-color: #000;
-  /* color: #fff; */
-}
 
 .precision-pdp-hero__actions .shopify-payment-button {
   width: 100%;
