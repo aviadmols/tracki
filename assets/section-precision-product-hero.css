@@ -377,7 +377,7 @@
 .precision-pdp-hero__actions .product-form__submit.button--secondary:hover,
 .precision-pdp-hero__btn-primary:hover {
   background-color: #000;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .precision-pdp-hero__actions .shopify-payment-button {
@@ -394,10 +394,10 @@
   border-radius: 2px !important;
 }
 
-/* .precision-pdp-hero__actions .product-form__submit:active,
+.precision-pdp-hero__actions .product-form__submit:active,
 .precision-pdp-hero__btn-primary:active {
   transform: scale(0.98);
-} */
+}
 
 .precision-pdp-hero .product-form__buttons {
   display: flex;
