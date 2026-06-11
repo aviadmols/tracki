@@ -257,9 +257,9 @@
   height: 1.6rem;
 }
 
-.slider-button[disabled] .icon {
+/* .slider-button[disabled] .icon {
   color: rgba(var(--color-foreground), 0.3);
-}
+} */
 
 .slider-mobile--overlay .slider-button[disabled] .icon {
   color: currentColor;
