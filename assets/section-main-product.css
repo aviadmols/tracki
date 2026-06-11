@@ -1622,11 +1622,11 @@ product-gallery .product__media-toggle {
   transform: translateX(-100%);
 }
 
-.thumbnail-slider .slider-button--prev .slider-button--prev .icon {
+.thumbnail-slider .slider-button--prev .icon {
   transform: rotate(90deg);
 }
 
-.thumbnail-slider .slider-button--next {
+.thumbnail-slider .slider-button--next .slider-button--prev {
   transform: translateX(100%);
   color: #76C773;
 }
