@@ -381,7 +381,7 @@
   background-color: #000;
   color: #fff;
 }
-
+.button--secondary:after { display:none ; }
 .precision-pdp-hero__actions .shopify-payment-button {
   width: 100%;
   margin-top: 0;
