@@ -1,7 +1,4 @@
-{%- if template.suffix == 'precision-pdp' -%}
-  {{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
-  {{ 'section-steps-phone-slider-precision-pdp.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
+
 <section
   class="steps-slider{% if template.suffix == 'precision-pdp' %} steps-slider--precision-pdp{% endif %}"
   style="{% if section.settings.background_image != blank %}
