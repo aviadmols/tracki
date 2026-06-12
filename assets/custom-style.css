@@ -4362,3 +4362,8 @@ letter-spacing: 0.292px;
     display: flex;
     overflow: hidden;
 }
+@media(max-width:767px){
+ .tracki-gps-tracker .step-slide-wrapper {
+    flex-wrap: wrap;
+}
+}
