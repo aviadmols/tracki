@@ -298,28 +298,45 @@ function initStepsSlider() {
 
   function goToSlide(index) {
 
-    if (!isLargeScreen()) return;
+  console.log('goToSlide:', index);
 
-    if (index < 0) index = 0;
-    if (index >= total) index = total - 1;
+  if (!isLargeScreen()) return;
 
-    current = index;
+  if (index < 0) index = 0;
+  if (index >= total) index = total - 1;
 
-    $wrapper.css(
-      'transform',
-      'translateY(-' + (current * 100) + 'vh)'
-    );
+  current = index;
 
-    $('.slider-dots span')
-      .removeClass('active')
-      .eq(current)
-      .addClass('active');
+  $wrapper.css({
+    transform: 'translateY(-' + (current * 100) + 'vh)',
+    transition: 'transform 0.8s ease'
+  });
 
-    $('.step-slide')
-      .removeClass('active')
-      .eq(current)
-      .addClass('active');
-  }
+  console.log('Transform:', 'translateY(-' + (current * 100) + 'vh)');
+
+  $('.slider-dots span')
+    .removeClass('active')
+    .eq(current)
+    .addClass('active');
+
+  $('.step-slide')
+    .removeClass('active')
+    .eq(current)
+    .addClass('active');
+}
+
+// Delegated click event
+$(document)
+  .off('click.stepsSlider')
+  .on('click.stepsSlider', '.slider-dots span', function (e) {
+
+    e.preventDefault();
+
+    console.log('Dot clicked');
+    console.log('Index:', $(this).index());
+
+    goToSlide($(this).index());
+});
 
   goToSlide(0);
 
