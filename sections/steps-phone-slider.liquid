@@ -81,7 +81,7 @@
 </section>
 
 <script>
-{% comment %} $(document).ready(function(){
+$(document).ready(function(){
 
   var $wrapper = $('.step-slide-wrapper');
   var $slides  = $('.step-slide');
@@ -191,8 +191,6 @@
   // Dot click
   $('.slider-dots span').on('click', function(){
 
-    console.log('slider-dots');
-
     if (!isLargeScreen()) return;
 
     goToSlide($(this).index());
@@ -275,161 +273,8 @@
     }
   });
 
-}); {% endcomment %}
-
-$(function () {
-
-  $('.steps-slider').each(function () {
-
-    var $section = $(this);
-
-    var $wrapper = $section.find('.step-slide-wrapper');
-    var $slides  = $section.find('.step-slide');
-    var $dots    = $section.find('.slider-dots span');
-    var $hand    = $section.find('.hand-indicator');
-
-    var total   = $slides.length;
-    var current = 0;
-
-    let wheelLocked = false;
-
-    function isLargeScreen() {
-      return window.innerWidth > 769;
-    }
-
-    function setHandPosition() {
-
-      var $slide = $slides.eq(1);
-      var $phone = $slide.find('.phone-frame');
-
-      if (!$phone.length) return;
-
-      var sectionRect = $section[0].getBoundingClientRect();
-      var phoneRect   = $phone[0].getBoundingClientRect();
-
-      return {
-        x: phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left,
-        y: phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top
-      };
-    }
-
-    function goToSlide(index) {
-
-      if (!isLargeScreen()) return;
-
-      if (index < 0) index = 0;
-      if (index >= total) index = total - 1;
-
-      current = index;
-
-      $wrapper.css(
-        'transform',
-        'translateY(-' + (current * 100) + 'vh)'
-      );
-
-      $dots.removeClass('active')
-        .eq(current).addClass('active');
-
-      $slides.removeClass('active')
-        .eq(current).addClass('active');
-
-      $hand.css({
-        opacity: 0,
-        transform: 'translate(-50%, -120px)'
-      });
-
-      if (current === 1) {
-
-        setTimeout(function () {
-
-          var pos = setHandPosition();
-          if (!pos) return;
-
-          $hand.css({
-            left: pos.x + 'px',
-            top: '0px',
-            opacity: 1,
-            transform: 'translateX(-50%)'
-          });
-
-          $hand[0].offsetHeight;
-
-          $hand.stop().animate(
-            { top: pos.y },
-            {
-              duration: 1200,
-              easing: "swing"
-            }
-          );
-
-        }, 700);
-      }
-    }
-
-    // ✅ DOT CLICK (FIXED - ALWAYS WORKS)
-    $dots.each(function (i) {
-      $(this).off('click').on('click', function () {
-        console.log('dot clicked:', i);
-        goToSlide(i);
-      });
-    });
-
-    // wheel scroll
-    $section.find('.steps-slider-container').on('wheel', function (e) {
-
-      if (!isLargeScreen()) return;
-
-      var delta = e.originalEvent.deltaY;
-
-      if (wheelLocked) {
-        e.preventDefault();
-        return;
-      }
-
-      if (delta > 0 && current < total - 1) {
-
-        e.preventDefault();
-
-        wheelLocked = true;
-        goToSlide(current + 1);
-
-        setTimeout(() => wheelLocked = false, 1200);
-      }
-
-      else if (delta < 0 && current > 0) {
-
-        e.preventDefault();
-
-        wheelLocked = true;
-        goToSlide(current - 1);
-
-        setTimeout(() => wheelLocked = false, 1200);
-      }
-    });
-
-    // resize
-    $(window).on('resize', function () {
-
-      if (current === 1) setHandPosition();
-
-      if (!isLargeScreen()) {
-
-        $wrapper.css('transform', 'translateY(0)');
-        current = 0;
-
-        $dots.removeClass('active').eq(0).addClass('active');
-        $slides.removeClass('active').eq(0).addClass('active');
-
-        $hand.css({ opacity: 0 });
-      }
-    });
-
-    // init
-    goToSlide(0);
-
-  });
-
 });
+
 
 // Scroll down button
 $(document).on('click', '.slider-down a', function(event){
