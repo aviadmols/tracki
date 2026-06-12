@@ -4351,9 +4351,9 @@ letter-spacing: 0.292px;
 }
 /* user manual css end */
 
-/* .tracki-gps-tracker .steps-slider:after {
+.tracki-gps-tracker .steps-slider:after {
     display: none;
-} */
+}
 .tracki-gps-tracker .step-slide-wrapper .step-slide {
     min-width: 100%;
     opacity: 1;
