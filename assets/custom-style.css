@@ -4371,3 +4371,9 @@ margin-top: 50px;
 left: 0;
 }
 }
+@media screen and (min-width: 768px) {
+  .tracki-gps-tracker .precision-pdp-product-info {
+margin-top: 50px;
+left: 0;
+}
+}
