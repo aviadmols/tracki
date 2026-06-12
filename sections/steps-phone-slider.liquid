@@ -81,7 +81,7 @@
 </section>
 
 <script>
-$(document).ready(function(){
+{% comment %} $(document).ready(function(){
 
   var $wrapper = $('.step-slide-wrapper');
   var $slides  = $('.step-slide');
@@ -273,9 +273,179 @@ $(document).ready(function(){
     }
   });
 
+}); {% endcomment %}
+
+$(window).on('load', function () {
+
+  $('.steps-slider').each(function () {
+
+    var $section = $(this);
+
+    var $wrapper = $section.find('.step-slide-wrapper');
+    var $slides  = $section.find('.step-slide');
+    var total    = $slides.length;
+    var current  = 0;
+
+    var $hand = $section.find('.hand-indicator');
+
+    let wheelLocked = false;
+
+    function isLargeScreen() {
+      return window.innerWidth > 769;
+    }
+
+    function setHandPosition() {
+
+      var $slide = $slides.eq(1);
+      var $phone = $slide.find('.phone-frame');
+
+      if (!$phone.length) return null;
+
+      var sectionRect = $section[0].getBoundingClientRect();
+      var phoneRect   = $phone[0].getBoundingClientRect();
+
+      return {
+        x: phoneRect.left + (phoneRect.width * 0.55) - sectionRect.left,
+        y: phoneRect.top + (phoneRect.height * 0.12) - sectionRect.top
+      };
+    }
+
+    function goToSlide(index) {
+
+      if (!isLargeScreen()) return;
+
+      if (index < 0) index = 0;
+      if (index >= total) index = total - 1;
+
+      current = index;
+
+      $wrapper.css(
+        'transform',
+        'translateY(-' + (current * 100) + 'vh)'
+      );
+
+      $section.find('.slider-dots span')
+        .removeClass('active')
+        .eq(current)
+        .addClass('active');
+
+      $slides
+        .removeClass('active')
+        .eq(current)
+        .addClass('active');
+
+      // Safe hand reset
+      if ($hand.length) {
+        $hand.stop(true, true).css({
+          opacity: 0,
+          transform: 'translate(-50%, -120px)'
+        });
+      }
+
+      // Hand animation (slide 2)
+      if (current === 1 && $hand.length) {
+
+        setTimeout(function () {
+
+          var pos = setHandPosition();
+          if (!pos) return;
+
+          $hand.css({
+            left: pos.x + 'px',
+            top: '0px',
+            opacity: 1,
+            transform: 'translateX(-50%)'
+          });
+
+          if ($hand[0]) {
+            $hand[0].offsetHeight; // force reflow
+          }
+
+          $hand.stop().animate(
+            { top: pos.y },
+            {
+              duration: 1200,
+              easing: "swing"
+            }
+          );
+
+        }, 700);
+      }
+    }
+
+    // INIT
+    goToSlide(0);
+
+    // DOT CLICK
+    $section.find('.slider-dots span').on('click', function () {
+      if (!isLargeScreen()) return;
+      goToSlide($(this).index());
+    });
+
+    // WHEEL SCROLL
+    $section.find('.steps-slider-container').on('wheel', function (e) {
+
+      if (!isLargeScreen()) return;
+
+      var delta = e.originalEvent.deltaY;
+
+      if (wheelLocked) {
+        e.preventDefault();
+        return;
+      }
+
+      if (delta > 0 && current < total - 1) {
+
+        e.preventDefault();
+        wheelLocked = true;
+
+        goToSlide(current + 1);
+
+        setTimeout(function () {
+          wheelLocked = false;
+        }, 1200);
+
+      } else if (delta < 0 && current > 0) {
+
+        e.preventDefault();
+        wheelLocked = true;
+
+        goToSlide(current - 1);
+
+        setTimeout(function () {
+          wheelLocked = false;
+        }, 1200);
+      }
+    });
+
+    // RESIZE
+    $(window).on('resize', function () {
+
+      if (current === 1) {
+        setHandPosition();
+      }
+
+      if (!isLargeScreen()) {
+
+        $wrapper.css('transform', 'translateY(0)');
+        current = 0;
+
+        $section.find('.slider-dots span')
+          .removeClass('active')
+          .eq(0)
+          .addClass('active');
+
+        $slides.removeClass('active').eq(0).addClass('active');
+
+        if ($hand.length) {
+          $hand.css({ opacity: 0 });
+        }
+      }
+    });
+
+  });
+
 });
-
-
 // Scroll down button
 $(document).on('click', '.slider-down a', function(event){
 
