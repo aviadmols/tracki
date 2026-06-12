@@ -510,7 +510,9 @@
         "step_mdmPDD",
         "step_UfewBy"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "{background: #f9f9f9;}"
+      ],
       "name": "Steps Phone Slider",
       "settings": {
         "section_title": "Easy to use",
