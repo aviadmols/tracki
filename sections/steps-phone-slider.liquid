@@ -1,6 +1,7 @@
 {%- if template.suffix == 'precision-pdp' -%}
   {{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
   {{ 'section-steps-phone-slider-precision-pdp.css' | asset_url | stylesheet_tag }}
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
 {%- endif -%}
 <section
   class="steps-slider{% if template.suffix == 'precision-pdp' %} steps-slider--precision-pdp{% endif %}"
