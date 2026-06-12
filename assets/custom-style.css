@@ -4351,7 +4351,7 @@ letter-spacing: 0.292px;
 }
 /* user manual css end */
 
-.tracki-gps-tracker .steps-slider:after {
+/* .tracki-gps-tracker .steps-slider:after {
     display: none;
 }
 .tracki-gps-tracker .step-slide-wrapper .step-slide {
@@ -4359,9 +4359,9 @@ letter-spacing: 0.292px;
     opacity: 1;
 }
 .tracki-gps-tracker .step-slide-wrapper {
-    display: block;
+    display: flex;
     overflow: hidden;
-}
+} */
 @media(max-width:767px){
  .tracki-gps-tracker .step-slide-wrapper {
 flex-wrap: wrap;
