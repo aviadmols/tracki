@@ -1,7 +1,6 @@
 {%- if template.suffix == 'precision-pdp' -%}
   {{ 'precision-pdp-design-tokens.css' | asset_url | stylesheet_tag }}
   {{ 'section-steps-phone-slider-precision-pdp.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'section-steps-phone-slider-precision-pdp.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 <section
   class="steps-slider{% if template.suffix == 'precision-pdp' %} steps-slider--precision-pdp{% endif %}"
@@ -88,7 +87,7 @@ $(document).ready(function(){
 
   console.log('Steps Slider:', $('.steps-slider').length);
   console.log('Dots:', $('.slider-dots span').length);
-
+  
   var $wrapper = $('.step-slide-wrapper');
   var $slides  = $('.step-slide');
   var total    = $slides.length;
