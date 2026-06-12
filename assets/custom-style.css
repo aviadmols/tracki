@@ -4366,4 +4366,8 @@ letter-spacing: 0.292px;
  .tracki-gps-tracker .step-slide-wrapper {
 flex-wrap: wrap;
 }
+.tracki-gps-tracker .precision-pdp-product-info {
+margin-top: 50px;
+left: 0;
+}
 }
