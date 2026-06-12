@@ -298,9 +298,13 @@ function initStepsSlider() {
 
   function goToSlide(index) {
 
+  var $wrapper = $('.step-slide-wrapper');
+  var $slides = $('.step-slide');
+  var total = $slides.length;
+
   console.log('goToSlide:', index);
 
-  if (!isLargeScreen()) return;
+  if ($(window).width() <= 769) return;
 
   if (index < 0) index = 0;
   if (index >= total) index = total - 1;
@@ -312,31 +316,16 @@ function initStepsSlider() {
     transition: 'transform 0.8s ease'
   });
 
-  console.log('Transform:', 'translateY(-' + (current * 100) + 'vh)');
-
   $('.slider-dots span')
     .removeClass('active')
     .eq(current)
     .addClass('active');
 
-  $('.step-slide')
+  $slides
     .removeClass('active')
     .eq(current)
     .addClass('active');
 }
-
-// Delegated click event
-$(document)
-  .off('click.stepsSlider')
-  .on('click.stepsSlider', '.slider-dots span', function (e) {
-
-    e.preventDefault();
-
-    console.log('Dot clicked');
-    console.log('Index:', $(this).index());
-
-    goToSlide($(this).index());
-});
 
   goToSlide(0);
 
