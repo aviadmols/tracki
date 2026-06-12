@@ -4359,7 +4359,7 @@ letter-spacing: 0.292px;
     opacity: 1;
 }
 .tracki-gps-tracker .step-slide-wrapper {
-    display: flex;
+    display: block;
     overflow: hidden;
 }
 @media(max-width:767px){
