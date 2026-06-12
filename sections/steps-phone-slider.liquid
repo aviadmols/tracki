@@ -191,6 +191,8 @@ $(document).ready(function(){
   // Dot click
   $('.slider-dots span').on('click', function(){
 
+    console.log('slider-dots');
+
     if (!isLargeScreen()) return;
 
     goToSlide($(this).index());
