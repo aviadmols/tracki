@@ -81,7 +81,7 @@
 </section>
 
 <script>
-{% comment %} $(document).ready(function(){
+$(document).ready(function(){
 
   console.log('step-slide');
 
@@ -124,68 +124,45 @@
   // Slide change
   function goToSlide(index) {
 
-    if (!isLargeScreen()) return;
+  console.log('goToSlide:', index);
 
-    if (index < 0) index = 0;
-    if (index >= total) index = total - 1;
+  if (!isLargeScreen()) return;
 
-    current = index;
+  if (index < 0) index = 0;
+  if (index >= total) index = total - 1;
 
-    // Move slides
-    $wrapper.css(
-      'transform',
-      'translateY(-' + (current * 100) + 'vh)'
-    );
+  current = index;
 
-    // Active dots
-    $('.slider-dots span')
-      .removeClass('active')
-      .eq(current)
-      .addClass('active');
+  $wrapper.css({
+    transform: 'translateY(-' + (current * 100) + 'vh)',
+    transition: 'transform 0.8s ease'
+  });
 
-    // Active slide
-    $('.step-slide')
-      .removeClass('active')
-      .eq(current)
-      .addClass('active');
+  console.log('Transform:', 'translateY(-' + (current * 100) + 'vh)');
 
-    // Reset hand
-    $hand.removeClass('hand-animate').css({
-      opacity: 0,
-      transform: 'translate(-50%, -120px)'
-    });
+  $('.slider-dots span')
+    .removeClass('active')
+    .eq(current)
+    .addClass('active');
 
-    // Hand animation on 2nd slide
-    if (current === 1) {
+  $('.step-slide')
+    .removeClass('active')
+    .eq(current)
+    .addClass('active');
+}
 
-      setTimeout(function () {
+// Delegated click event
+$(document)
+  .off('click.stepsSlider')
+  .on('click.stepsSlider', '.slider-dots span', function (e) {
 
-        var pos = setHandPosition();
+    e.preventDefault();
 
-        if (!pos) return;
+    console.log('Dot clicked');
+    console.log('Index:', $(this).index());
 
-        // Start position
-        $hand.css({
-          left: pos.x + 'px',
-          top: '0px',
-          opacity: 1,
-          transform: 'translateX(-50%)'
-        });
-
-        $hand[0].offsetHeight;
-
-        // Animate
-        $hand.stop().animate(
-          { top: pos.y },
-          {
-            duration: 1200,
-            easing: "swing"
-          }
-        );
-
-      }, 700);
-    }
-  }
+    goToSlide($(this).index());
+});
 
   // Initial slide
   goToSlide(0);
@@ -275,146 +252,8 @@
     }
   });
 
-}); {% endcomment %}
-
-function initStepsSlider() {
-
-  console.log('Steps Slider Init');
-
-  var $wrapper = $('.step-slide-wrapper');
-
-  if (!$wrapper.length) {
-    console.log('Slider not found');
-    return;
-  }
-
-  var $slides = $('.step-slide');
-  var total = $slides.length;
-  var current = 0;
-
-  function isLargeScreen() {
-    return window.innerWidth > 769;
-  }
-
-  function goToSlide(index) {
-
-  var $wrapper = $('.step-slide-wrapper');
-  var $slides = $('.step-slide');
-  var total = $slides.length;
-
-  console.log('goToSlide:', index);
-
-  if ($(window).width() <= 769) return;
-
-  if (index < 0) index = 0;
-  if (index >= total) index = total - 1;
-
-  current = index;
-
-  $wrapper.css({
-    transform: 'translateY(-' + (current * 100) + 'vh)',
-    transition: 'transform 0.8s ease'
-  });
-
-  $('.slider-dots span')
-    .removeClass('active')
-    .eq(current)
-    .addClass('active');
-
-  $slides
-    .removeClass('active')
-    .eq(current)
-    .addClass('active');
-}
-
-  goToSlide(0);
-
-  // Remove old handlers first
-  $(document).off('click.stepsSlider');
-
-  // Delegated click event
-  $(document).on('click.stepsSlider', '.slider-dots span', function () {
-
-    console.log('Dot clicked');
-
-    if (!isLargeScreen()) return;
-
-    goToSlide($(this).index());
-  });
-
-  let wheelLocked = false;
-
-  $(document).off('wheel.stepsSlider');
-
-  $(document).on('wheel.stepsSlider', '.steps-slider-container', function (e) {
-
-    if (!isLargeScreen()) return;
-
-    var delta = e.originalEvent.deltaY;
-
-    if (wheelLocked) {
-      e.preventDefault();
-      return;
-    }
-
-    if (delta > 0 && current < total - 1) {
-
-      e.preventDefault();
-
-      wheelLocked = true;
-
-      goToSlide(current + 1);
-
-      setTimeout(function () {
-        wheelLocked = false;
-      }, 1200);
-
-    } else if (delta < 0 && current > 0) {
-
-      e.preventDefault();
-
-      wheelLocked = true;
-
-      goToSlide(current - 1);
-
-      setTimeout(function () {
-        wheelLocked = false;
-      }, 1200);
-    }
-  });
-
-  $(window).off('resize.stepsSlider');
-
-  $(window).on('resize.stepsSlider', function () {
-
-    if (!isLargeScreen()) {
-
-      $wrapper.css('transform', 'translateY(0)');
-
-      current = 0;
-
-      $('.slider-dots span')
-        .removeClass('active')
-        .eq(0)
-        .addClass('active');
-
-      $('.step-slide')
-        .removeClass('active')
-        .eq(0)
-        .addClass('active');
-    }
-  });
-}
-
-// Initial page load
-document.addEventListener('DOMContentLoaded', function () {
-  initStepsSlider();
 });
 
-// Shopify section reload
-document.addEventListener('shopify:section:load', function () {
-  initStepsSlider();
-});
 
 // Scroll down button
 $(document).on('click', '.slider-down a', function(event){
