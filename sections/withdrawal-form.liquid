@@ -23,9 +23,9 @@
       <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
 
       <!-- These cannot be fetched without backend -->
-      <p><strong>Order Date:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
+      <p><strong>Order Date:</strong> <span style="color:#777;">{{ order.created_at }}</span></p>
 
-      <p><strong>Order Status:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
+      <p><strong>Order Status:</strong> <span style="color:#777;">{{ order.financial_status }}</span></p>
 
     </div>
 
