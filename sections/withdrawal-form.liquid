@@ -153,74 +153,89 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    /*
-    Replace this object with your Shopify API response
-    */
+    try {
 
-    const orderData = {
-      name: orderNumber,
-      created_at: '2026-06-15',
-      fulfillment_status: 'Delivered',
-      line_items: [
-        {
-          title: 'Tracki GPS Tracker',
-          quantity: 1
-        },
-        {
-          title: 'Magnetic Waterproof Case',
-          quantity: 1
-        }
-      ]
-    };
-
-    const orderDate = orderData.created_at;
-    const status = orderData.fulfillment_status;
-
-    let productsHtml = '';
-
-    orderData.line_items.forEach(product => {
-      productsHtml += `
-        <li>${product.title} × ${product.quantity}</li>
+      document.getElementById('review-info').innerHTML = `
+        <p>Loading order information...</p>
       `;
-    });
 
-    document.getElementById('review-info').innerHTML = `
-      <div class="order-section">
-        <strong>Order Number</strong>
-        <ul>
-          <li>${orderData.name}</li>
-        </ul>
-      </div>
+      const response = await fetch('/apps/withdrawal-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          orderNumber: orderNumber,
+          email: email
+        })
+      });
 
-      <div class="order-section">
-        <strong>Order Date</strong>
-        <ul>
-          <li>${orderDate}</li>
-        </ul>
-      </div>
+      const orderData = await response.json();
 
-      <div class="order-section">
-        <strong>Items Ordered</strong>
-        <ul>
-          ${productsHtml}
-        </ul>
-      </div>
+      if (!orderData.success) {
+        alert('Order not found');
+        return;
+      }
 
-      <div class="order-section">
-        <strong>Order Status</strong>
-        <ul>
-          <li>${status}</li>
-        </ul>
-      </div>
-    `;
+      const orderDate = new Date(
+        orderData.created_at
+      ).toLocaleDateString();
 
-    document.getElementById('contact_order_number').value = orderNumber;
-    document.getElementById('contact_email').value = email;
-    document.getElementById('contact_first_name').value = firstName;
-    document.getElementById('contact_last_name').value = lastName;
+      const status =
+        orderData.fulfillment_status ||
+        orderData.financial_status ||
+        'Pending';
 
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
+      let productsHtml = '';
+
+      orderData.line_items.forEach(product => {
+        productsHtml += `
+          <li>${product.title} × ${product.quantity}</li>
+        `;
+      });
+
+      document.getElementById('review-info').innerHTML = `
+        <div class="order-section">
+          <strong>Order Number</strong>
+          <ul>
+            <li>${orderData.name}</li>
+          </ul>
+        </div>
+
+        <div class="order-section">
+          <strong>Order Date</strong>
+          <ul>
+            <li>${orderDate}</li>
+          </ul>
+        </div>
+
+        <div class="order-section">
+          <strong>Items Ordered</strong>
+          <ul>
+            ${productsHtml}
+          </ul>
+        </div>
+
+        <div class="order-section">
+          <strong>Order Status</strong>
+          <ul>
+            <li>${status}</li>
+          </ul>
+        </div>
+      `;
+
+      document.getElementById('contact_order_number').value = orderData.name;
+      document.getElementById('contact_email').value = email;
+      document.getElementById('contact_first_name').value = firstName;
+      document.getElementById('contact_last_name').value = lastName;
+
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+
+    } catch (error) {
+      console.error(error);
+      alert('Unable to load order information.');
+    }
 
   });
 
