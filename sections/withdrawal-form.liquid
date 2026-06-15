@@ -30,18 +30,18 @@
 
       <input type="hidden" name="contact[email]" id="contact_email">
 
-      <input
-        type="hidden"
-        name="contact[Submitted At]"
-        value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}"
-      >
+      <input type="hidden"
+             name="contact[Submitted At]"
+             value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
 
-      <label class="withdrawal-confirm">
+      <label>
         <input type="checkbox" required>
-        <span>I confirm that I wish to withdraw from this contract.</span>
+        I confirm that I wish to withdraw from this contract.
       </label>
 
-      <button type="submit" class="withdraw-submit">
+      <br><br>
+
+      <button type="submit">
         Confirm Withdrawal
       </button>
 
@@ -49,195 +49,3 @@
   </div>
 
 </div>
-
-<style>
-#withdrawal-form {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 40px;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.05);
-}
-
-#withdrawal-form h2 {
-  margin-bottom: 25px;
-  font-size: 28px;
-  font-weight: 600;
-}
-
-#withdrawal-form input[type="text"],
-#withdrawal-form input[type="email"] {
-  width: 100%;
-  height: 50px;
-  padding: 0 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-#withdrawal-form button {
-  width: 100%;
-  height: 50px;
-  background: #000;
-  color: #fff;
-  border: 0;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-#withdrawal-form button:hover {
-  background: #333;
-}
-
-#review-info {
-  background: #f8f8f8;
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 25px;
-}
-
-.order-section {
-  margin-bottom: 20px;
-}
-
-.order-section strong {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 18px;
-}
-
-.order-section ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.order-section li {
-  margin-bottom: 6px;
-}
-
-.withdrawal-confirm {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  align-items: flex-start;
-}
-
-.withdraw-submit {
-  width: 100%;
-}
-
-@media(max-width:749px){
-  #withdrawal-form{
-    margin:20px;
-    padding:24px;
-  }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  document.getElementById('continue-btn').addEventListener('click', async function () {
-
-    const orderNumber = document.getElementById('order_number').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const firstName = document.getElementById('first_name').value.trim();
-    const lastName = document.getElementById('last_name').value.trim();
-
-    if (!orderNumber || !email || !firstName || !lastName) {
-      alert('Please fill all fields');
-      return;
-    }
-
-    try {
-
-      document.getElementById('review-info').innerHTML = `
-        <p>Loading order information...</p>
-      `;
-
-      const response = await fetch('/apps/withdrawal-order', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          orderNumber: orderNumber,
-          email: email
-        })
-      });
-
-      const orderData = await response.json();
-
-      if (!orderData.success) {
-        alert('Order not found');
-        return;
-      }
-
-      const orderDate = new Date(
-        orderData.created_at
-      ).toLocaleDateString();
-
-      const status =
-        orderData.fulfillment_status ||
-        orderData.financial_status ||
-        'Pending';
-
-      let productsHtml = '';
-
-      orderData.line_items.forEach(product => {
-        productsHtml += `
-          <li>${product.title} × ${product.quantity}</li>
-        `;
-      });
-
-      document.getElementById('review-info').innerHTML = `
-        <div class="order-section">
-          <strong>Order Number</strong>
-          <ul>
-            <li>${orderData.name}</li>
-          </ul>
-        </div>
-
-        <div class="order-section">
-          <strong>Order Date</strong>
-          <ul>
-            <li>${orderDate}</li>
-          </ul>
-        </div>
-
-        <div class="order-section">
-          <strong>Items Ordered</strong>
-          <ul>
-            ${productsHtml}
-          </ul>
-        </div>
-
-        <div class="order-section">
-          <strong>Order Status</strong>
-          <ul>
-            <li>${status}</li>
-          </ul>
-        </div>
-      `;
-
-      document.getElementById('contact_order_number').value = orderData.name;
-      document.getElementById('contact_email').value = email;
-      document.getElementById('contact_first_name').value = firstName;
-      document.getElementById('contact_last_name').value = lastName;
-
-      document.getElementById('step1').style.display = 'none';
-      document.getElementById('step2').style.display = 'block';
-
-    } catch (error) {
-      console.error(error);
-      alert('Unable to load order information.');
-    }
-
-  });
-
-});
-</script>
