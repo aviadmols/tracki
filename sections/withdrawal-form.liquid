@@ -17,15 +17,41 @@
 
     <p style="color:#444;">Please confirm your request.</p>
 
-    <!-- ORDER INFO (SAFE DISPLAY ONLY) -->
+    <!-- ORDER INFO -->
     <div style="background:#f5f5f5;padding:15px;border-radius:8px;color:#111;">
 
       <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
 
-      <!-- These cannot be fetched without backend -->
-      <p><strong>Order Date:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
+      {% if customer %}
+        {% assign found_order = nil %}
 
-      <p><strong>Order Status:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
+        {% for order in customer.orders %}
+          {% if order.name == blank %}
+          {% endif %}
+        {% endfor %}
+
+        {% for order in customer.orders %}
+          <script>
+            window._orders = window._orders || [];
+            window._orders.push({
+              name: "{{ order.name }}",
+              date: "{{ order.created_at | date: '%d %B %Y' }}",
+              status: "{{ order.financial_status }}"
+            });
+          </script>
+        {% endfor %}
+
+      {% endif %}
+
+      <p>
+        <strong>Order Date:</strong>
+        <span id="order_date" style="color:#111;">--</span>
+      </p>
+
+      <p>
+        <strong>Order Status:</strong>
+        <span id="order_status" style="color:#111;">--</span>
+      </p>
 
     </div>
 
@@ -99,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
   btn.addEventListener('click', function () {
 
     const orderNumber = document.getElementById('order_number')?.value;
-
     const email = document.getElementById('email')?.value;
     const firstName = document.getElementById('first_name')?.value;
     const lastName = document.getElementById('last_name')?.value;
@@ -109,9 +134,21 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // store order number for later use
-    const hiddenOrder = document.getElementById('contact_order_number');
-    if (hiddenOrder) hiddenOrder.value = orderNumber;
+    // preview order
+    document.getElementById('preview_order').innerText = orderNumber;
+    document.getElementById('contact_order_number').value = orderNumber;
+
+    // try match order from Shopify Liquid data
+    const orders = window._orders || [];
+    const match = orders.find(o => o.name === orderNumber);
+
+    if (match) {
+      document.getElementById('order_date').innerText = match.date;
+      document.getElementById('order_status').innerText = match.status;
+    } else {
+      document.getElementById('order_date').innerText = "Not found";
+      document.getElementById('order_status').innerText = "Not found";
+    }
 
     // switch steps
     document.getElementById('step1').style.display = 'none';
