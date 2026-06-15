@@ -91,27 +91,41 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  document.getElementById('continue-btn').addEventListener('click', function () {
+  const btn = document.getElementById('continue-btn');
 
-    const orderNumber = document.getElementById('order_number').value;
-    const email = document.getElementById('email').value;
-    const firstName = document.getElementById('first_name').value;
-    const lastName = document.getElementById('last_name').value;
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+
+    const orderNumber = document.getElementById('order_number')?.value;
+    const email = document.getElementById('email')?.value;
+    const firstName = document.getElementById('first_name')?.value;
+    const lastName = document.getElementById('last_name')?.value;
 
     if (!orderNumber || !email || !firstName || !lastName) {
       alert('Please fill all fields');
       return;
     }
 
-    // Fill hidden fields
-    document.getElementById('contact_order_number').value = orderNumber;
-    document.getElementById('contact_email').value = email;
-    document.getElementById('contact_first_name').value = firstName;
-    document.getElementById('contact_last_name').value = lastName;
+    // STEP 2: Fill hidden fields safely
+    const orderField = document.getElementById('contact_order_number');
+    const emailField = document.getElementById('contact_email');
+    const firstField = document.getElementById('contact_first_name');
+    const lastField = document.getElementById('contact_last_name');
 
-    // Switch steps
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
+    if (orderField) orderField.value = orderNumber;
+    if (emailField) emailField.value = email;
+    if (firstField) firstField.value = firstName;
+    if (lastField) lastField.value = lastName;
+
+    // SHOW STEP 2 ALWAYS
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+
+    if (step1) step1.style.display = 'none';
+    if (step2) step2.style.display = 'block';
+
+    console.log('Step 2 loaded successfully');
 
   });
 
