@@ -3929,7 +3929,7 @@ letter-spacing: 0.292px;
 }
 .icon-btn.active span{color:#fff;font-weight:500;}
 
-/* .slider{
+ .slider{
     position: absolute;
     top: 3px;
     left: 0px;
@@ -3944,7 +3944,7 @@ letter-spacing: 0.292px;
         width 2s ease;
 
     z-index: 1;
-} */
+} 
 
 /* DESCRIPTION */
 .tracki-desc {
