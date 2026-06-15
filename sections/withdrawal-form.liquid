@@ -1,5 +1,8 @@
 <div id="withdrawal-form">
 
+  <!-- ================= STEP 1 ================= -->
+  {% if request.params.order == blank %}
+
   <div id="step1">
     <h2>Withdraw from Contract</h2>
 
@@ -11,28 +14,58 @@
     <button type="button" id="continue-btn">Continue</button>
   </div>
 
-  <div id="step2" style="display:none;">
+  {% endif %}
+
+  <!-- ================= STEP 2 ================= -->
+  {% assign order_number = request.params.order %}
+  {% assign found_order = nil %}
+
+  {% if order_number != blank and customer %}
+
+    {% for order in customer.orders %}
+      {% if order.name == order_number %}
+        {% assign found_order = order %}
+      {% endif %}
+    {% endfor %}
+
+  {% endif %}
+
+  {% if order_number != blank %}
+
+  <div id="step2">
 
     <h2 style="color:#111;">Confirm Withdrawal</h2>
 
     <p style="color:#444;">Please confirm your request.</p>
 
-    <!-- ORDER INFO (SAFE DISPLAY ONLY) -->
     <div style="background:#f5f5f5;padding:15px;border-radius:8px;color:#111;">
 
-      <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
+      <p><strong>Order Number:</strong> {{ order_number }}</p>
 
-      <!-- These cannot be fetched without backend -->
-      <p><strong>Order Date:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
+      {% if found_order %}
 
-      <p><strong>Order Status:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
+        <p><strong>Order Date:</strong>
+          {{ found_order.created_at | date: "%Y-%m-%d" }}
+        </p>
+
+        <p><strong>Order Status:</strong>
+          {{ found_order.financial_status }} / {{ found_order.fulfillment_status }}
+        </p>
+
+      {% else %}
+
+        <p style="color:red;">
+          Order not found OR you are not logged in.
+        </p>
+
+      {% endif %}
 
     </div>
 
     {% form 'contact' %}
 
       <input type="hidden" name="contact[Request Type]" value="EU Withdrawal Request">
-      <input type="hidden" name="contact[Order Number]" id="contact_order_number">
+      <input type="hidden" name="contact[Order Number]" value="{{ order_number }}">
       <input type="hidden" name="contact[Submitted At]" value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
 
       <label>
@@ -45,7 +78,10 @@
       <button type="submit">Confirm Withdrawal</button>
 
     {% endform %}
+
   </div>
+
+  {% endif %}
 
 </div>
 
@@ -96,28 +132,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const btn = document.getElementById('continue-btn');
 
-  btn.addEventListener('click', function () {
+  if (btn) {
+    btn.addEventListener('click', function () {
 
-    const orderNumber = document.getElementById('order_number')?.value;
+      const orderNumber = document.getElementById('order_number').value;
+      const email = document.getElementById('email').value;
+      const firstName = document.getElementById('first_name').value;
+      const lastName = document.getElementById('last_name').value;
 
-    const email = document.getElementById('email')?.value;
-    const firstName = document.getElementById('first_name')?.value;
-    const lastName = document.getElementById('last_name')?.value;
+      if (!orderNumber || !email || !firstName || !lastName) {
+        alert('Please fill all fields');
+        return;
+      }
 
-    if (!orderNumber || !email || !firstName || !lastName) {
-      alert('Please fill all fields');
-      return;
-    }
-
-    // store order number for later use
-    const hiddenOrder = document.getElementById('contact_order_number');
-    if (hiddenOrder) hiddenOrder.value = orderNumber;
-
-    // switch steps
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
-
-  });
+      // redirect to Step 2
+      window.location.href =
+        window.location.pathname + '?order=' + encodeURIComponent(orderNumber);
+    });
+  }
 
 });
 </script>
