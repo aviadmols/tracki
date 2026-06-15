@@ -11,68 +11,10 @@
   "sections": {
     "main": {
       "type": "withdrawal-form",
-      "disabled": true,
-      "settings": {}
-    },
-    "1781519060e42eaee3": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_9d4e5de_y7dh7q": {
-          "type": "ai_gen_block_9d4e5de",
-          "settings": {
-            "heading": "Withdraw from Contract",
-            "description": "<p>You have the right to withdraw from this contract within 14 days without giving any reason. To exercise your right of withdrawal, please complete this form.</p>",
-            "info_message": "<p>According to EU consumer protection laws, you have 14 days from receipt of goods to withdraw from your purchase. No login required.</p>",
-            "order_number_label": "Order number",
-            "order_number_placeholder": "e.g. #1001",
-            "email_label": "Email address",
-            "email_placeholder": "your@email.com",
-            "first_name_label": "First name",
-            "first_name_placeholder": "",
-            "last_name_label": "Last name",
-            "last_name_placeholder": "",
-            "reason_label": "Reason for withdrawal (optional)",
-            "reason_placeholder": "Please tell us why you wish to withdraw...",
-            "continue_button_text": "Continue to confirmation",
-            "summary_heading": "Order information",
-            "confirmation_text": "<p>I confirm that I wish to withdraw from this contract. I understand that this withdrawal request will be processed according to applicable EU consumer protection laws.</p>",
-            "back_button_text": "Back",
-            "submit_button_text": "Confirm withdrawal",
-            "success_heading": "Withdrawal request received",
-            "success_message": "<p>We have received your withdrawal request and will review it according to applicable EU consumer protection laws. You will receive a confirmation email shortly.</p>",
-            "desktop_width_percent": 100,
-            "border_radius": 8,
-            "input_border_radius": 4,
-            "button_border_radius": 4,
-            "heading_size": 32,
-            "text_size": 15,
-            "background_color": "#ffffff",
-            "heading_color": "#000000",
-            "text_color": "#333333",
-            "input_background_color": "#ffffff",
-            "input_text_color": "#000000",
-            "input_border_color": "#d2d5d9",
-            "button_color": "#1a1b18",
-            "button_text_color": "#ffffff",
-            "button_hover_color": "#000000",
-            "summary_background_color": "#f9f9f9",
-            "info_background_color": "#f0f7ff",
-            "info_border_color": "#0066cc",
-            "focus_color": "#87adf5",
-            "error_color": "#d72c0d",
-            "success_color": "#008060"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_9d4e5de_y7dh7q"
-      ],
       "settings": {}
     }
   },
   "order": [
-    "main",
-    "1781519060e42eaee3"
+    "main"
   ]
 }
