@@ -122,6 +122,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when '@app' %}
+      {% render block %}
+  {% endcase %}
+{% endfor %}
+
 {% schema %}
 {
   "name": "Withdrawal Form",
