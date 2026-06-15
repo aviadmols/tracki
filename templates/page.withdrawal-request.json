@@ -14,54 +14,48 @@
       "disabled": true,
       "settings": {}
     },
-    "17815166267cd8460e": {
+    "1781517305c6baf580": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_a99ba97_mJKVbr": {
-          "type": "ai_gen_block_a99ba97",
+        "ai_gen_block_4d80724_JCKwqY": {
+          "type": "ai_gen_block_4d80724",
           "settings": {
-            "heading": "Withdraw from Contract",
-            "description": "<p>Submit your withdrawal request according to EU consumer protection laws.</p>",
-            "confirmation_text": "I confirm that I wish to withdraw from this contract. I understand that this request will be reviewed according to applicable EU consumer protection laws.",
-            "success_title": "Withdrawal Request Received",
-            "success_message": "<p>We have received your withdrawal request and will review it according to applicable EU consumer protection laws. You will receive a confirmation email shortly.</p>",
+            "heading": "Withdrawal Request",
+            "step_1_label": "Your Details",
+            "step_2_label": "Confirmation",
+            "confirmation_text": "I confirm that I want to withdraw from this order according to EU consumer protection laws. I understand that this request will be reviewed and processed accordingly.",
+            "success_heading": "Request Submitted",
+            "success_message": "We have received your withdrawal request and will review it according to applicable EU consumer protection laws. You will receive a confirmation email shortly.",
             "desktop_width_percent": 100,
             "border_radius": 8,
-            "background_color": "#ffffff",
-            "heading_color": "#272c32",
-            "text_color": "#272c32",
-            "label_color": "#272c32",
-            "step_active_color": "#ffffff",
-            "step_inactive_color": "#d2d5d9",
-            "input_background_color": "#ffffff",
-            "input_text_color": "#272c32",
-            "input_border_color": "#d2d5d9",
-            "input_focus_color": "#87adf5",
             "input_border_radius": 4,
-            "button_primary_color": "#ffffff",
-            "button_primary_text_color": "#272c32",
-            "button_primary_hover_color": "#f0f0f0",
-            "button_secondary_color": "#d2d5d9",
-            "button_secondary_text_color": "#272c32",
-            "button_secondary_hover_color": "#c0c3c6",
             "button_border_radius": 4,
-            "info_box_background": "#f9f9f9",
-            "error_color": "#d72c0d",
+            "heading_size": 28,
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "text_color": "#333333",
+            "input_background_color": "#ffffff",
+            "input_border_color": "#cccccc",
+            "info_background_color": "#f5f5f5",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#333333",
+            "step_active_color": "#000000",
+            "step_inactive_color": "#cccccc",
             "success_color": "#008060",
-            "heading_size": 32,
-            "text_size": 14
+            "error_color": "#d72c0d"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_a99ba97_mJKVbr"
+        "ai_gen_block_4d80724_JCKwqY"
       ],
       "settings": {}
     }
   },
   "order": [
     "main",
-    "17815166267cd8460e"
+    "1781517305c6baf580"
   ]
 }
