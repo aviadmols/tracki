@@ -8,40 +8,24 @@
     <input type="text" id="first_name" placeholder="First Name" required>
     <input type="text" id="last_name" placeholder="Last Name" required>
 
-    <button type="button" id="continue-btn">Continue</button>
+    <button type="button" id="continue-btn">
+      Continue
+    </button>
   </div>
 
-  <!-- STEP 2 (Now rendered using Shopify Liquid) -->
   <div id="step2" style="display:none;">
+    <h2>Confirm Withdrawal</h2>
 
-    <h2>Review Request</h2>
-
-    {% if customer %}
-
-      {% assign found_order = nil %}
-
-      {% for order in customer.orders %}
-        {% if order.name == blank %}
-          {% continue %}
-        {% endif %}
-      {% endfor %}
-
-      <!-- Try to match order by JS injected value -->
-      <div id="review-info">
-        Loading order details...
-      </div>
-
-    {% else %}
-      <p><strong>Please log in to view your order details.</strong></p>
-    {% endif %}
+    <p>Please confirm your details and submit the request.</p>
 
     {% form 'contact' %}
 
       <input type="hidden" name="contact[Request Type]" value="EU Withdrawal Request">
+
       <input type="hidden" name="contact[Order Number]" id="contact_order_number">
-      <input type="hidden" name="contact[email]" id="contact_email">
       <input type="hidden" name="contact[First Name]" id="contact_first_name">
       <input type="hidden" name="contact[Last Name]" id="contact_last_name">
+      <input type="hidden" name="contact[email]" id="contact_email">
 
       <input type="hidden" name="contact[Submitted At]" value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
 
@@ -52,7 +36,9 @@
 
       <br><br>
 
-      <button type="submit">Confirm Withdrawal</button>
+      <button type="submit">
+        Confirm Withdrawal
+      </button>
 
     {% endform %}
   </div>
@@ -117,20 +103,13 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // STEP 2 UI
-    document.getElementById('review-info').innerHTML = `
-      <p><strong>Order Number:</strong> ${orderNumber}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-    `;
-
     // Fill hidden fields
     document.getElementById('contact_order_number').value = orderNumber;
     document.getElementById('contact_email').value = email;
     document.getElementById('contact_first_name').value = firstName;
     document.getElementById('contact_last_name').value = lastName;
 
-    // switch steps
+    // Switch steps
     document.getElementById('step1').style.display = 'none';
     document.getElementById('step2').style.display = 'block';
 
