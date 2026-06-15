@@ -22,36 +22,9 @@
 
       <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
 
-      {% if customer %}
-        {% assign found_order = nil %}
+      <p><strong>Order Date:</strong> <span id="order_date">--</span></p>
 
-        {% for order in customer.orders %}
-          {% if order.name == blank %}
-          {% endif %}
-        {% endfor %}
-
-        {% for order in customer.orders %}
-          <script>
-            window._orders = window._orders || [];
-            window._orders.push({
-              name: "{{ order.name }}",
-              date: "{{ order.created_at | date: '%d %B %Y' }}",
-              status: "{{ order.financial_status }}"
-            });
-          </script>
-        {% endfor %}
-
-      {% endif %}
-
-      <p>
-        <strong>Order Date:</strong>
-        <span id="order_date" style="color:#111;">--</span>
-      </p>
-
-      <p>
-        <strong>Order Status:</strong>
-        <span id="order_status" style="color:#111;">--</span>
-      </p>
+      <p><strong>Order Status:</strong> <span id="order_status">--</span></p>
 
     </div>
 
@@ -71,8 +44,8 @@
       <button type="submit">Confirm Withdrawal</button>
 
     {% endform %}
-  </div>
 
+  </div>
 </div>
 
 <!-- ================= CSS ================= -->
@@ -116,6 +89,22 @@
 }
 </style>
 
+<!-- ================= LIQUID ORDER MAP ================= -->
+{% if customer %}
+
+<script>
+window.orderMap = {
+  {% for order in customer.orders %}
+    "{{ order.name | remove: '#' | strip }}": {
+      date: "{{ order.created_at | date: '%d %B %Y' }}",
+      status: "{{ order.financial_status }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+};
+</script>
+
+{% endif %}
+
 <!-- ================= JS ================= -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -124,33 +113,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btn.addEventListener('click', function () {
 
-    const orderNumber = document.getElementById('order_number')?.value;
-    const email = document.getElementById('email')?.value;
-    const firstName = document.getElementById('first_name')?.value;
-    const lastName = document.getElementById('last_name')?.value;
+    let orderNumber = document.getElementById('order_number').value.trim();
+
+    const email = document.getElementById('email').value.trim();
+    const firstName = document.getElementById('first_name').value.trim();
+    const lastName = document.getElementById('last_name').value.trim();
 
     if (!orderNumber || !email || !firstName || !lastName) {
       alert('Please fill all fields');
       return;
     }
 
-    // preview order
-    document.getElementById('preview_order').innerText = orderNumber;
+    // normalize (#1001 → 1001)
+    orderNumber = orderNumber.replace('#', '').trim();
+
+    document.getElementById('preview_order').innerText = "#" + orderNumber;
     document.getElementById('contact_order_number').value = orderNumber;
 
-    // try match order from Shopify Liquid data
-    const orders = window._orders || [];
-    const match = orders.find(o => o.name === orderNumber);
+    const order = window.orderMap?.[orderNumber];
 
-    if (match) {
-      document.getElementById('order_date').innerText = match.date;
-      document.getElementById('order_status').innerText = match.status;
+    if (order) {
+      document.getElementById('order_date').innerText = order.date;
+      document.getElementById('order_status').innerText = order.status;
     } else {
       document.getElementById('order_date').innerText = "Not found";
       document.getElementById('order_status').innerText = "Not found";
     }
 
-    // switch steps
     document.getElementById('step1').style.display = 'none';
     document.getElementById('step2').style.display = 'block';
 
