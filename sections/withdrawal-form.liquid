@@ -30,18 +30,18 @@
 
       <input type="hidden" name="contact[email]" id="contact_email">
 
-      <input type="hidden"
-             name="contact[Submitted At]"
-             value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
+      <input
+        type="hidden"
+        name="contact[Submitted At]"
+        value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}"
+      >
 
-      <label>
+      <label class="withdrawal-confirm">
         <input type="checkbox" required>
-        I confirm that I wish to withdraw from this contract.
+        <span>I confirm that I wish to withdraw from this contract.</span>
       </label>
 
-      <br><br>
-
-      <button type="submit">
+      <button type="submit" class="withdraw-submit">
         Confirm Withdrawal
       </button>
 
@@ -49,23 +49,22 @@
   </div>
 
 </div>
+
 <style>
-    #withdrawal-form {
+#withdrawal-form {
   max-width: 700px;
   margin: 50px auto;
   padding: 40px;
   background: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
 }
 
 #withdrawal-form h2 {
   margin-bottom: 25px;
   font-size: 28px;
-  line-height: 1.3;
   font-weight: 600;
-  color: #222;
 }
 
 #withdrawal-form input[type="text"],
@@ -73,34 +72,20 @@
   width: 100%;
   height: 50px;
   padding: 0 15px;
-  margin-bottom: 16px;
-  border: 1px solid #dcdcdc;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 15px;
-  transition: all 0.3s ease;
-}
-
-#withdrawal-form input[type="text"]:focus,
-#withdrawal-form input[type="email"]:focus {
-  outline: none;
-  border-color: #000;
 }
 
 #withdrawal-form button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 180px;
+  width: 100%;
   height: 50px;
-  padding: 0 24px;
   background: #000;
   color: #fff;
-  border: none;
+  border: 0;
   border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
-  transition: all .3s ease;
+  font-weight: 600;
 }
 
 #withdrawal-form button:hover {
@@ -115,76 +100,118 @@
   margin-bottom: 25px;
 }
 
-#review-info p {
-  margin: 0 0 10px;
-  font-size: 15px;
-  color: #333;
+.order-section {
+  margin-bottom: 20px;
 }
 
-#review-info p:last-child {
-  margin-bottom: 0;
+.order-section strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 
-#review-info strong {
-  color: #000;
+.order-section ul {
+  margin: 0;
+  padding-left: 20px;
 }
 
-#step2 label {
+.order-section li {
+  margin-bottom: 6px;
+}
+
+.withdrawal-confirm {
   display: flex;
-  align-items: flex-start;
   gap: 10px;
   margin-bottom: 20px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #444;
+  align-items: flex-start;
 }
 
-#step2 input[type="checkbox"] {
-  margin-top: 3px;
-  width: 18px;
-  height: 18px;
-}
-
-.contact__button,
-#step2 button {
+.withdraw-submit {
   width: 100%;
 }
 
-@media screen and (max-width: 749px) {
-  #withdrawal-form {
-    margin: 20px;
-    padding: 24px;
-  }
-
-  #withdrawal-form h2 {
-    font-size: 24px;
-  }
-
-  #withdrawal-form button {
-    width: 100%;
+@media(max-width:749px){
+  #withdrawal-form{
+    margin:20px;
+    padding:24px;
   }
 }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
-  document.getElementById('continue-btn').addEventListener('click', function() {
+  document.getElementById('continue-btn').addEventListener('click', async function () {
 
-    const orderNumber = document.getElementById('order_number').value;
-    const email = document.getElementById('email').value;
-    const firstName = document.getElementById('first_name').value;
-    const lastName = document.getElementById('last_name').value;
+    const orderNumber = document.getElementById('order_number').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const firstName = document.getElementById('first_name').value.trim();
+    const lastName = document.getElementById('last_name').value.trim();
 
     if (!orderNumber || !email || !firstName || !lastName) {
       alert('Please fill all fields');
       return;
     }
 
+    /*
+    Replace this object with your Shopify API response
+    */
+
+    const orderData = {
+      name: orderNumber,
+      created_at: '2026-06-15',
+      fulfillment_status: 'Delivered',
+      line_items: [
+        {
+          title: 'Tracki GPS Tracker',
+          quantity: 1
+        },
+        {
+          title: 'Magnetic Waterproof Case',
+          quantity: 1
+        }
+      ]
+    };
+
+    const orderDate = orderData.created_at;
+    const status = orderData.fulfillment_status;
+
+    let productsHtml = '';
+
+    orderData.line_items.forEach(product => {
+      productsHtml += `
+        <li>${product.title} × ${product.quantity}</li>
+      `;
+    });
+
     document.getElementById('review-info').innerHTML = `
-      <p><strong>Order Number:</strong> ${orderNumber}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+      <div class="order-section">
+        <strong>Order Number</strong>
+        <ul>
+          <li>${orderData.name}</li>
+        </ul>
+      </div>
+
+      <div class="order-section">
+        <strong>Order Date</strong>
+        <ul>
+          <li>${orderDate}</li>
+        </ul>
+      </div>
+
+      <div class="order-section">
+        <strong>Items Ordered</strong>
+        <ul>
+          ${productsHtml}
+        </ul>
+      </div>
+
+      <div class="order-section">
+        <strong>Order Status</strong>
+        <ul>
+          <li>${status}</li>
+        </ul>
+      </div>
     `;
 
     document.getElementById('contact_order_number').value = orderNumber;
@@ -194,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('step1').style.display = 'none';
     document.getElementById('step2').style.display = 'block';
+
   });
 
 });
