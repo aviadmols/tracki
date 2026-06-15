@@ -15,15 +15,20 @@
 
   <div id="step2" style="display:none;">
 
-    <h2>Confirm Withdrawal</h2>
+    <h2 style="color:#111;">Confirm Withdrawal</h2>
 
-    <p>Please confirm your details and submit the request.</p>
+    <p style="color:#444;">
+      Please confirm your details and submit the request.
+    </p>
 
-    <!-- ✅ NEW: Preview box (THIS fixes “nothing showing” issue) -->
-    <div id="order-preview" style="background:#f5f5f5;padding:15px;border-radius:8px;margin-bottom:20px;">
+    <!-- ✅ PREVIEW BOX -->
+    <div id="order-preview"
+         style="background:#f6f6f6;padding:15px;border-radius:8px;margin-bottom:20px;color:#111;">
+
       <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
       <p><strong>Email:</strong> <span id="preview_email"></span></p>
       <p><strong>Name:</strong> <span id="preview_name"></span></p>
+
     </div>
 
     {% form 'contact' %}
@@ -37,7 +42,7 @@
 
       <input type="hidden" name="contact[Submitted At]" value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
 
-      <label>
+      <label style="display:flex;gap:10px;align-items:flex-start;color:#333;">
         <input type="checkbox" required>
         I confirm that I wish to withdraw from this contract.
       </label>
@@ -77,6 +82,7 @@
   margin-bottom: 16px;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
+  font-size: 15px;
 }
 
 #withdrawal-form button {
@@ -88,6 +94,7 @@
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
+  cursor: pointer;
 }
 </style>
 
@@ -100,26 +107,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btn.addEventListener('click', function () {
 
-    const orderNumber = document.getElementById('order_number')?.value;
-    const email = document.getElementById('email')?.value;
-    const firstName = document.getElementById('first_name')?.value;
-    const lastName = document.getElementById('last_name')?.value;
+    const orderNumber = document.getElementById('order_number')?.value || '';
+    const email = document.getElementById('email')?.value || '';
+    const firstName = document.getElementById('first_name')?.value || '';
+    const lastName = document.getElementById('last_name')?.value || '';
 
     if (!orderNumber || !email || !firstName || !lastName) {
       alert('Please fill all fields');
       return;
     }
 
-    // ✅ Fill hidden fields
-    document.getElementById('contact_order_number').value = orderNumber;
-    document.getElementById('contact_email').value = email;
-    document.getElementById('contact_first_name').value = firstName;
-    document.getElementById('contact_last_name').value = lastName;
+    // hidden fields
+    const orderField = document.getElementById('contact_order_number');
+    const emailField = document.getElementById('contact_email');
+    const firstField = document.getElementById('contact_first_name');
+    const lastField = document.getElementById('contact_last_name');
 
-    // ✅ SHOW PREVIEW DATA (THIS FIXES YOUR ISSUE)
-    document.getElementById('preview_order').innerText = orderNumber;
-    document.getElementById('preview_email').innerText = email;
-    document.getElementById('preview_name').innerText = firstName + ' ' + lastName;
+    if (orderField) orderField.value = orderNumber;
+    if (emailField) emailField.value = email;
+    if (firstField) firstField.value = firstName;
+    if (lastField) lastField.value = lastName;
+
+    // preview values
+    const po = document.getElementById('preview_order');
+    const pe = document.getElementById('preview_email');
+    const pn = document.getElementById('preview_name');
+
+    if (po) po.innerText = orderNumber;
+    if (pe) pe.innerText = email;
+    if (pn) pn.innerText = firstName + ' ' + lastName;
 
     // switch steps
     document.getElementById('step1').style.display = 'none';
