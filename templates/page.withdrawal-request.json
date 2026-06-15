@@ -11,51 +11,10 @@
   "sections": {
     "main": {
       "type": "withdrawal-form",
-      "disabled": true,
-      "settings": {}
-    },
-    "1781517305c6baf580": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_4d80724_JCKwqY": {
-          "type": "ai_gen_block_4d80724",
-          "settings": {
-            "heading": "Withdrawal Request",
-            "step_1_label": "Your Details",
-            "step_2_label": "Confirmation",
-            "confirmation_text": "I confirm that I want to withdraw from this order according to EU consumer protection laws. I understand that this request will be reviewed and processed accordingly.",
-            "success_heading": "Request Submitted",
-            "success_message": "We have received your withdrawal request and will review it according to applicable EU consumer protection laws. You will receive a confirmation email shortly.",
-            "desktop_width_percent": 100,
-            "border_radius": 8,
-            "input_border_radius": 4,
-            "button_border_radius": 4,
-            "heading_size": 28,
-            "background_color": "#ffffff",
-            "heading_color": "#000000",
-            "text_color": "#333333",
-            "input_background_color": "#ffffff",
-            "input_border_color": "#cccccc",
-            "info_background_color": "#f5f5f5",
-            "button_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_hover_color": "#333333",
-            "step_active_color": "#000000",
-            "step_inactive_color": "#cccccc",
-            "success_color": "#008060",
-            "error_color": "#d72c0d"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_4d80724_JCKwqY"
-      ],
       "settings": {}
     }
   },
   "order": [
-    "main",
-    "1781517305c6baf580"
+    "main"
   ]
 }
