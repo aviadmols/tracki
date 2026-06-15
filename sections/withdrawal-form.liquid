@@ -1,5 +1,6 @@
 <div id="withdrawal-form">
 
+  <!-- STEP 1 -->
   <div id="step1">
     <h2>Withdraw from Contract</h2>
 
@@ -13,36 +14,56 @@
     </button>
   </div>
 
+  <!-- STEP 2 -->
   <div id="step2" style="display:none;">
 
     <h2 style="color:#111;">Confirm Withdrawal</h2>
 
-    <p style="color:#444;">
-      Please confirm your details and submit the request.
-    </p>
+    <p style="color:#444;">Please confirm your order details.</p>
 
-    <!-- ✅ PREVIEW BOX -->
-    <div id="order-preview"
-         style="background:#f6f6f6;padding:15px;border-radius:8px;margin-bottom:20px;color:#111;">
+    {% if customer %}
 
-      <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
-      <p><strong>Email:</strong> <span id="preview_email"></span></p>
-      <p><strong>Name:</strong> <span id="preview_name"></span></p>
+      {% assign input_order = '' %}
 
-    </div>
+      <!-- we store JS value into hidden field instead of trying Liquid match -->
+      <input type="hidden" id="temp_order_holder">
+
+      <div id="order-preview" style="background:#f5f5f5;padding:15px;border-radius:8px;margin-bottom:20px;color:#111;">
+
+        {% assign found = false %}
+
+        {% for order in customer.orders %}
+
+          {% if order.name == input_order %}
+            {% assign found = true %}
+
+            <p><strong>Order Number:</strong> {{ order.name }}</p>
+            <p><strong>Order Date:</strong> {{ order.created_at | date: "%d %b %Y" }}</p>
+            <p><strong>Order Status:</strong> {{ order.financial_status }}</p>
+
+          {% endif %}
+
+        {% endfor %}
+
+        {% if found == false %}
+          <p><strong>Note:</strong> Order details will appear after backend verification.</p>
+        {% endif %}
+
+      </div>
+
+    {% else %}
+      <p style="color:red;">
+        Please log in to view order details.
+      </p>
+    {% endif %}
 
     {% form 'contact' %}
 
       <input type="hidden" name="contact[Request Type]" value="EU Withdrawal Request">
-
       <input type="hidden" name="contact[Order Number]" id="contact_order_number">
-      <input type="hidden" name="contact[First Name]" id="contact_first_name">
-      <input type="hidden" name="contact[Last Name]" id="contact_last_name">
-      <input type="hidden" name="contact[email]" id="contact_email">
-
       <input type="hidden" name="contact[Submitted At]" value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
 
-      <label style="display:flex;gap:10px;align-items:flex-start;color:#333;">
+      <label>
         <input type="checkbox" required>
         I confirm that I wish to withdraw from this contract.
       </label>
@@ -58,6 +79,7 @@
 
 </div>
 
+<!-- ================= CSS ================= -->
 <style>
 #withdrawal-form {
   max-width: 700px;
@@ -73,6 +95,7 @@
   margin-bottom: 25px;
   font-size: 28px;
   font-weight: 600;
+  color: #111;
 }
 
 #withdrawal-form input {
@@ -94,48 +117,31 @@
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
 }
 </style>
 
+<!-- ================= JS ================= -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
   const btn = document.getElementById('continue-btn');
 
-  if (!btn) return;
-
   btn.addEventListener('click', function () {
 
-    const orderNumber = document.getElementById('order_number')?.value || '';
-    const email = document.getElementById('email')?.value || '';
-    const firstName = document.getElementById('first_name')?.value || '';
-    const lastName = document.getElementById('last_name')?.value || '';
+    const orderNumber = document.getElementById('order_number')?.value;
+
+    const email = document.getElementById('email')?.value;
+    const firstName = document.getElementById('first_name')?.value;
+    const lastName = document.getElementById('last_name')?.value;
 
     if (!orderNumber || !email || !firstName || !lastName) {
       alert('Please fill all fields');
       return;
     }
 
-    // hidden fields
-    const orderField = document.getElementById('contact_order_number');
-    const emailField = document.getElementById('contact_email');
-    const firstField = document.getElementById('contact_first_name');
-    const lastField = document.getElementById('contact_last_name');
-
-    if (orderField) orderField.value = orderNumber;
-    if (emailField) emailField.value = email;
-    if (firstField) firstField.value = firstName;
-    if (lastField) lastField.value = lastName;
-
-    // preview values
-    const po = document.getElementById('preview_order');
-    const pe = document.getElementById('preview_email');
-    const pn = document.getElementById('preview_name');
-
-    if (po) po.innerText = orderNumber;
-    if (pe) pe.innerText = email;
-    if (pn) pn.innerText = firstName + ' ' + lastName;
+    // store order number for later use
+    const hiddenOrder = document.getElementById('contact_order_number');
+    if (hiddenOrder) hiddenOrder.value = orderNumber;
 
     // switch steps
     document.getElementById('step1').style.display = 'none';
