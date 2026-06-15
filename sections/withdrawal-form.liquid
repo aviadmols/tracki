@@ -1,6 +1,5 @@
 <div id="withdrawal-form">
 
-  <!-- STEP 1 -->
   <div id="step1">
     <h2>Withdraw from Contract</h2>
 
@@ -12,20 +11,21 @@
     <button type="button" id="continue-btn">Continue</button>
   </div>
 
-  <!-- STEP 2 -->
   <div id="step2" style="display:none;">
 
-    <h2>Confirm Withdrawal</h2>
+    <h2 style="color:#111;">Confirm Withdrawal</h2>
 
-    <p>Please confirm your request.</p>
+    <p style="color:#444;">Please confirm your request.</p>
 
-    <div class="order-box">
+    <!-- ORDER INFO (SAFE DISPLAY ONLY) -->
+    <div style="background:#f5f5f5;padding:15px;border-radius:8px;color:#111;">
 
       <p><strong>Order Number:</strong> <span id="preview_order"></span></p>
 
-      <p><strong>Order Date:</strong> <span id="order_date">Not found</span></p>
+      <!-- These cannot be fetched without backend -->
+      <p><strong>Order Date:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
 
-      <p><strong>Order Status:</strong> <span id="order_status">Not found</span></p>
+      <p><strong>Order Status:</strong> <span style="color:#777;">Not available in Shopify theme</span></p>
 
     </div>
 
@@ -35,10 +35,12 @@
       <input type="hidden" name="contact[Order Number]" id="contact_order_number">
       <input type="hidden" name="contact[Submitted At]" value="{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}">
 
-      <label class="checkbox">
+      <label>
         <input type="checkbox" required>
         I confirm that I wish to withdraw from this contract.
       </label>
+
+      <br><br>
 
       <button type="submit">Confirm Withdrawal</button>
 
@@ -46,19 +48,6 @@
   </div>
 
 </div>
-
-<!-- ================= ORDER DATA (SHOPIFY LIQUID) ================= -->
-{% if customer %}
-<div id="orders-data" style="display:none;">
-  {% for order in customer.orders %}
-    <div
-      data-order="{{ order.name | remove: '#' | strip }}"
-      data-date="{{ order.created_at | date: '%d %B %Y' }}"
-      data-status="{{ order.financial_status }}">
-    </div>
-  {% endfor %}
-</div>
-{% endif %}
 
 <!-- ================= CSS ================= -->
 <style>
@@ -70,23 +59,23 @@
   border: 1px solid #e5e5e5;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  font-family: Arial, sans-serif;
 }
 
 #withdrawal-form h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
   color: #111;
 }
 
 #withdrawal-form input {
   width: 100%;
   height: 50px;
-  margin-bottom: 15px;
-  padding: 0 12px;
-  border: 1px solid #ddd;
+  padding: 0 15px;
+  margin-bottom: 16px;
+  border: 1px solid #dcdcdc;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 #withdrawal-form button {
@@ -96,23 +85,8 @@
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.order-box {
-  background: #f7f7f7;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 15px 0;
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 15px 0;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 600;
 }
 </style>
 
@@ -124,39 +98,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btn.addEventListener('click', function () {
 
-    let orderNumber = document.getElementById('order_number').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const firstName = document.getElementById('first_name').value.trim();
-    const lastName = document.getElementById('last_name').value.trim();
+    const orderNumber = document.getElementById('order_number')?.value;
+
+    const email = document.getElementById('email')?.value;
+    const firstName = document.getElementById('first_name')?.value;
+    const lastName = document.getElementById('last_name')?.value;
 
     if (!orderNumber || !email || !firstName || !lastName) {
       alert('Please fill all fields');
       return;
     }
 
-    // normalize order number (#1001 → 1001)
-    orderNumber = orderNumber.replace('#', '').trim();
+    // store order number for later use
+    const hiddenOrder = document.getElementById('contact_order_number');
+    if (hiddenOrder) hiddenOrder.value = orderNumber;
 
-    document.getElementById('preview_order').innerText = "#" + orderNumber;
-    document.getElementById('contact_order_number').value = orderNumber;
-
-    const orders = document.querySelectorAll('#orders-data div');
-
-    let found = false;
-
-    orders.forEach(order => {
-      if (order.dataset.order === orderNumber) {
-        document.getElementById('order_date').innerText = order.dataset.date;
-        document.getElementById('order_status').innerText = order.dataset.status;
-        found = true;
-      }
-    });
-
-    if (!found) {
-      document.getElementById('order_date').innerText = "Not found";
-      document.getElementById('order_status').innerText = "Not found";
-    }
-
+    // switch steps
     document.getElementById('step1').style.display = 'none';
     document.getElementById('step2').style.display = 'block';
 
