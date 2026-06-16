@@ -1,16 +1,18 @@
-<div class="custom-accordion">
-  {% for block in section.blocks %}
-    <div class="accordion-item" {{ block.shopify_attributes }}>
-      <button class="accordion-header">
-        <span>{{ block.settings.heading }}</span>
-        <span class="accordion-icon">⌄</span>
-      </button>
+<div class="accordion-wrapper">
+  <div class="custom-accordion">
+    {% for block in section.blocks %}
+      <div class="accordion-item" {{ block.shopify_attributes }}>
+        <button class="accordion-header" type="button">
+          <span>{{ block.settings.heading }}</span>
+          <span class="accordion-icon">⌄</span>
+        </button>
 
-      <div class="accordion-content">
-        {{ block.settings.content }}
+        <div class="accordion-content">
+          {{ block.settings.content }}
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
 <style>
@@ -23,45 +25,45 @@
 .custom-accordion {
   max-width: 1000px;
   margin: 0 auto;
-  background: #fff;
+  width: 100%;
 }
 
 .accordion-item {
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid #d9d9d9;
 }
 
 .accordion-item:last-child {
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 .accordion-header {
   width: 100%;
+  padding: 32px 0;
   background: transparent;
-  border: 0;
-  padding: 28px 0;
+  border: none;
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
 
   color: #000;
   font-size: 15px;
   font-weight: 700;
-  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0;
+  text-align: left;
+  line-height: 1.2;
 }
 
 .accordion-icon {
+  font-size: 18px;
   color: #000;
-  font-size: 16px;
-  line-height: 1;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 
 .accordion-content {
   display: none;
-  padding: 0 0 28px;
+  padding: 0 0 30px;
   color: #000;
   font-size: 14px;
   line-height: 1.7;
@@ -75,7 +77,13 @@
   transform: rotate(180deg);
 }
 
-@media (max-width: 749px) {
+@media screen and (max-width: 1024px) {
+  .custom-accordion {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 749px) {
   .accordion-wrapper {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -89,13 +97,19 @@
     font-size: 14px;
     padding: 24px 0;
   }
+
+  .accordion-content {
+    font-size: 13px;
+  }
 }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.accordion-header').forEach(button => {
-    button.addEventListener('click', function() {
+  const headers = document.querySelectorAll('.accordion-header');
+
+  headers.forEach(function(header) {
+    header.addEventListener('click', function() {
       const item = this.parentElement;
 
       item.classList.toggle('active');
@@ -106,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 {% schema %}
 {
-  "name": "Product Accordion",
+  "name": "Custom Accordion",
   "settings": [],
   "blocks": [
     {
@@ -130,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ],
   "presets": [
     {
-      "name": "Product Accordion",
+      "name": "Custom Accordion",
       "blocks": [
         {
           "type": "accordion"
