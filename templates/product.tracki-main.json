@@ -74,7 +74,7 @@
       "type": "image-banner-overlay",
       "name": "Image Banner Overlay",
       "settings": {
-        "image": "shopify://shop_images/home-banner-slide1.png",
+        "image": "shopify://shop_images/elderly-hero.jpg",
         "heading": "RECYCLED MATERIALS",
         "text": "<p>We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.</p>"
       }
