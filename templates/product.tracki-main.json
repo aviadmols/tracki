@@ -112,12 +112,22 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "product_showcase_kPpKRA": {
+      "type": "product-showcase",
+      "name": "Luxury Product Showcase",
+      "settings": {
+        "countdown_heading": "Our seasonal sale ends soon",
+        "countdown_date": "2025-12-31",
+        "details": ""
+      }
     }
   },
   "order": [
     "main",
     "product_accordion_wT4mEU",
     "image_banner_overlay_XddUPB",
-    "image_promo_grid_z7xcan"
+    "image_promo_grid_z7xcan",
+    "product_showcase_kPpKRA"
   ]
 }
