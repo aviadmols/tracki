@@ -1,34 +1,31 @@
-{{ 'product-showcase.css' | asset_url | stylesheet_tag }}
+<section class="luxury-product">
 
-{% assign product = section.settings.product %}
+  <div class="luxury-product__wrapper">
 
-{% if product %}
-<section class="product-showcase">
-
-  <div class="product-showcase__wrapper">
-
-    <!-- LEFT SIDE -->
-    <div class="product-showcase__gallery">
+    <!-- LEFT COLUMN -->
+    <div class="luxury-product__gallery">
 
       {% for image in product.images %}
         <div class="gallery-card">
-          <img
-            src="{{ image | image_url: width: 1400 }}"
-            alt="{{ image.alt | escape }}"
-            class="gallery-image"
-            loading="lazy"
-          >
+          {{
+            image
+            | image_url: width: 1800
+            | image_tag:
+              loading: 'lazy',
+              class: 'gallery-image',
+              alt: image.alt
+          }}
         </div>
       {% endfor %}
 
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="product-showcase__content">
+    <!-- RIGHT COLUMN -->
+    <div class="luxury-product__content">
 
-      {% if section.settings.preorder_text != blank %}
-        <span class="badge">
-          {{ section.settings.preorder_text }}
+      {% if section.settings.badge_text != blank %}
+        <span class="product-badge">
+          {{ section.settings.badge_text }}
         </span>
       {% endif %}
 
@@ -40,43 +37,41 @@
         {{ product.price | money }}
       </div>
 
-      {% if product.inventory_quantity < 10 and product.inventory_quantity > 0 %}
-        <div class="inventory-warning">
-          Hurry! Low inventory
+      {% if product.available %}
+        <div class="inventory-message">
+          In Stock
+        </div>
+      {% else %}
+        <div class="inventory-message soldout">
+          Sold Out
         </div>
       {% endif %}
 
-      <!-- COLOR SWATCHES -->
+      <!-- VARIANTS -->
 
-      {% assign color_option = nil %}
+      {% unless product.has_only_default_variant %}
 
-      {% for option in product.options_with_values %}
-        {% if option.name contains 'Color'
-          or option.name contains 'Colour'
-        %}
-          {% assign color_option = option %}
-        {% endif %}
-      {% endfor %}
+        {% for option in product.options_with_values %}
 
-      {% if color_option %}
-        <div class="variant-colors">
+          <div class="variant-group">
 
-          <label>Color</label>
+            <label>{{ option.name }}</label>
 
-          <div class="swatches">
+            <div class="variant-values">
 
-            {% for value in color_option.values %}
-              <span
-                class="swatch"
-                title="{{ value }}"
-                style="background-color: {{ value | downcase }};"
-              ></span>
-            {% endfor %}
+              {% for value in option.values %}
+                <span class="variant-pill">
+                  {{ value }}
+                </span>
+              {% endfor %}
+
+            </div>
 
           </div>
 
-        </div>
-      {% endif %}
+        {% endfor %}
+
+      {% endunless %}
 
       <!-- COUNTDOWN -->
 
@@ -86,7 +81,11 @@
           {{ section.settings.countdown_heading }}
         </div>
 
-        <div class="countdown" id="countdown-{{ section.id }}">
+        <div
+          class="countdown"
+          id="countdown-{{ section.id }}"
+        >
+
           <div>
             <strong class="days">00</strong>
             <span>Days</span>
@@ -106,15 +105,16 @@
             <strong class="seconds">00</strong>
             <span>Seconds</span>
           </div>
+
         </div>
 
       </div>
 
-      <!-- ACCORDIONS -->
+      <!-- ACCORDION -->
 
-      <div class="accordion">
+      <div class="accordion-wrapper">
 
-        <details>
+        <details open>
           <summary>Description</summary>
 
           <div class="accordion-content">
@@ -123,7 +123,7 @@
         </details>
 
         <details>
-          <summary>Details</summary>
+          <summary>Product Details</summary>
 
           <div class="accordion-content">
             {{ section.settings.details }}
@@ -132,23 +132,31 @@
 
       </div>
 
-      <!-- BENEFITS -->
+      <!-- ICONS -->
 
       <div class="benefits">
 
         {% for block in section.blocks %}
-          <div class="benefit" {{ block.shopify_attributes }}>
+
+          <div
+            class="benefit-item"
+            {{ block.shopify_attributes }}
+          >
 
             {% if block.settings.icon %}
-              <img
-                src="{{ block.settings.icon | image_url: width: 50 }}"
-                alt=""
-              >
+              {{
+                block.settings.icon
+                | image_url: width: 60
+                | image_tag
+              }}
             {% endif %}
 
-            <span>{{ block.settings.text }}</span>
+            <span>
+              {{ block.settings.text }}
+            </span>
 
           </div>
+
         {% endfor %}
 
       </div>
@@ -163,22 +171,22 @@
           value="{{ product.selected_or_first_available_variant.id }}"
         >
 
-        <div class="purchase-row">
+        <div class="purchase-wrapper">
 
-          <div class="qty-selector">
+          <div class="qty-box">
 
             <button
               type="button"
               class="qty-minus"
             >
-              −
+              -
             </button>
 
             <input
               type="number"
-              name="quantity"
               value="1"
               min="1"
+              name="quantity"
               class="qty-input"
             >
 
@@ -195,7 +203,7 @@
             type="submit"
             class="add-to-cart"
           >
-            {{ section.settings.button_text }}
+            Add To Cart · {{ product.price | money }}
           </button>
 
         </div>
@@ -207,85 +215,96 @@
   </div>
 
 </section>
+
 <style>
-    .product-showcase{
+.luxury-product{
+  background:#fff;
   padding:60px 20px;
 }
 
-.product-showcase__wrapper{
+.luxury-product__wrapper{
   max-width:1400px;
-  margin:auto;
+  margin:0 auto;
   display:grid;
   grid-template-columns:60% 40%;
   gap:50px;
+  background:#fff;
 }
 
-.product-showcase__gallery{
+.luxury-product__gallery{
   display:flex;
   flex-direction:column;
   gap:20px;
+  background:#fff;
 }
 
 .gallery-card{
-  background:#fff;
-  padding:40px;
+  background:#fff !important;
+  min-height:700px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .gallery-image{
   width:100%;
-  display:block;
+  max-height:650px;
   object-fit:contain;
+  display:block;
+  background:#fff;
 }
 
-.product-showcase__content{
-  padding:20px;
+.luxury-product__content{
+  background:#fff;
 }
 
-.badge{
-  display:inline-block;
+.product-badge{
   background:#4f4035;
   color:#fff;
   padding:6px 12px;
+  display:inline-block;
   font-size:12px;
   margin-bottom:15px;
 }
 
 .product-title{
-  font-size:32px;
+  font-size:34px;
   margin:0 0 10px;
 }
 
 .product-price{
-  font-size:22px;
+  font-size:24px;
   margin-bottom:15px;
 }
 
-.inventory-warning{
-  color:#c8903b;
-  margin-bottom:25px;
+.inventory-message{
+  color:#2e7d32;
+  margin-bottom:20px;
 }
 
-.variant-colors{
-  margin-bottom:25px;
+.soldout{
+  color:#c62828;
 }
 
-.swatches{
+.variant-group{
+  margin-bottom:20px;
+}
+
+.variant-values{
   display:flex;
   gap:10px;
   margin-top:10px;
 }
 
-.swatch{
-  width:28px;
-  height:28px;
-  border-radius:50%;
+.variant-pill{
   border:1px solid #ddd;
+  padding:8px 14px;
 }
 
 .countdown-box{
   background:#ead9cf;
   padding:20px;
-  margin-bottom:25px;
+  margin:25px 0;
 }
 
 .countdown{
@@ -295,7 +314,7 @@
 
 .countdown strong{
   display:block;
-  font-size:22px;
+  font-size:24px;
 }
 
 details{
@@ -312,29 +331,29 @@ summary{
   margin-top:25px;
 }
 
-.benefit{
+.benefit-item{
   display:flex;
-  gap:12px;
   align-items:center;
+  gap:10px;
   margin-bottom:12px;
 }
 
-.benefit img{
+.benefit-item img{
   width:20px;
 }
 
-.purchase-row{
+.purchase-wrapper{
   display:flex;
   gap:15px;
   margin-top:30px;
 }
 
-.qty-selector{
+.qty-box{
   display:flex;
   border:1px solid #ddd;
 }
 
-.qty-selector button{
+.qty-box button{
   width:40px;
   border:none;
   background:#fff;
@@ -342,7 +361,7 @@ summary{
 }
 
 .qty-input{
-  width:50px;
+  width:60px;
   text-align:center;
   border:none;
 }
@@ -352,80 +371,66 @@ summary{
   background:#000;
   color:#fff;
   border:none;
-  padding:15px;
   cursor:pointer;
+  padding:15px;
 }
 
 @media(max-width:768px){
 
-  .product-showcase__wrapper{
+  .luxury-product__wrapper{
     grid-template-columns:1fr;
   }
 
   .gallery-card{
+    min-height:auto;
     padding:20px;
   }
+
 }
 </style>
+
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener('DOMContentLoaded', () => {
 
-  const sectionId = "{{ section.id }}";
-
-  const countdown =
+  const timer =
     document.getElementById(
-      "countdown-" + sectionId
+      'countdown-{{ section.id }}'
     );
 
-  if(countdown){
+  const targetDate =
+    new Date(
+      '{{ section.settings.countdown_date }}'
+    ).getTime();
 
-    const targetDate =
-      new Date(
-        "{{ section.settings.countdown_date }}"
-      ).getTime();
+  function updateCountdown(){
 
-    function updateTimer(){
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+    if(distance <= 0) return;
 
-      if(distance < 0) return;
+    timer.querySelector('.days').innerHTML =
+      Math.floor(distance / (1000*60*60*24));
 
-      countdown.querySelector(".days").innerHTML =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+    timer.querySelector('.hours').innerHTML =
+      Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
 
-      countdown.querySelector(".hours").innerHTML =
-        Math.floor(
-          (distance % (1000 * 60 * 60 * 24))
-          / (1000 * 60 * 60)
-        );
+    timer.querySelector('.minutes').innerHTML =
+      Math.floor((distance % (1000*60*60)) / (1000*60));
 
-      countdown.querySelector(".minutes").innerHTML =
-        Math.floor(
-          (distance % (1000 * 60 * 60))
-          / (1000 * 60)
-        );
-
-      countdown.querySelector(".seconds").innerHTML =
-        Math.floor(
-          (distance % (1000 * 60))
-          / 1000
-        );
-    }
-
-    updateTimer();
-    setInterval(updateTimer,1000);
+    timer.querySelector('.seconds').innerHTML =
+      Math.floor((distance % (1000*60)) / 1000);
   }
 
-  document.querySelectorAll(".qty-plus")
-  .forEach(btn => {
+  updateCountdown();
+  setInterval(updateCountdown,1000);
 
-    btn.addEventListener("click", function(){
+  document.querySelectorAll('.qty-plus').forEach(btn => {
+
+    btn.addEventListener('click', () => {
 
       const input =
-        this.parentNode.querySelector(
-          ".qty-input"
-        );
+        btn.parentElement.querySelector('.qty-input');
 
       input.value =
         parseInt(input.value) + 1;
@@ -434,15 +439,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
   });
 
-  document.querySelectorAll(".qty-minus")
-  .forEach(btn => {
+  document.querySelectorAll('.qty-minus').forEach(btn => {
 
-    btn.addEventListener("click", function(){
+    btn.addEventListener('click', () => {
 
       const input =
-        this.parentNode.querySelector(
-          ".qty-input"
-        );
+        btn.parentElement.querySelector('.qty-input');
 
       if(parseInt(input.value) > 1){
 
@@ -458,28 +460,21 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
-{% endif %}
-
 {% schema %}
 {
   "name": "Luxury Product Showcase",
   "settings": [
     {
-      "type": "product",
-      "id": "product",
-      "label": "Product"
-    },
-    {
       "type": "text",
-      "id": "preorder_text",
-      "label": "Badge",
+      "id": "badge_text",
+      "label": "Badge Text",
       "default": "Pre-order"
     },
     {
       "type": "text",
       "id": "countdown_heading",
       "label": "Countdown Heading",
-      "default": "Our seasonal sale ends soon"
+      "default": "Offer Ends Soon"
     },
     {
       "type": "text",
@@ -490,13 +485,7 @@ document.addEventListener("DOMContentLoaded", function(){
     {
       "type": "richtext",
       "id": "details",
-      "label": "Details"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "PRE-ORDER"
+      "label": "Product Details"
     }
   ],
   "blocks": [
