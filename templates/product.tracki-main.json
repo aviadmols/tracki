@@ -11,7 +11,31 @@
   "sections": {
     "main": {
       "type": "marquee",
-      "settings": {}
+      "blocks": {
+        "announcement_tAqPCD": {
+          "type": "announcement",
+          "settings": {
+            "text": "Track your own assets, vehicles, and loved ones",
+            "link": ""
+          }
+        },
+        "announcement_d4H3ka": {
+          "type": "announcement",
+          "settings": {
+            "text": "Lifetime warranty",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_tAqPCD",
+        "announcement_d4H3ka"
+      ],
+      "settings": {
+        "bg_color": "#111111",
+        "text_color": "#ffffff",
+        "speed": 25
+      }
     }
   },
   "order": [
