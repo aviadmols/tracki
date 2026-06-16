@@ -106,7 +106,7 @@
         <details open>
           <summary>Description</summary>
           <div class="accordion-content">
-            {{ product.description }}
+            {{ product.description | truncatewords: 34, '' }}
           </div>
         </details>
         {% endif %}
