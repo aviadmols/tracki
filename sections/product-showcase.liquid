@@ -373,7 +373,24 @@ summary{
   padding:15px;
   cursor:pointer;
 }
+details .accordion-content {
+  overflow: hidden;
+}
 
+details[open] .accordion-content {
+  animation: fadeSlide .3s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* MOBILE */
 @media(max-width:768px){
   .luxury-product__wrapper{
