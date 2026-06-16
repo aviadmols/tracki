@@ -1,8 +1,8 @@
-<div class="announcement-marquee" style="background: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+<div class="announcement-marquee" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
   <div class="announcement-track">
-    {% for i in (1..2) %}
+    {% for i in (1..10) %}
       {% for block in section.blocks %}
-        <span class="announcement-item">
+        <span class="announcement-item" {{ block.shopify_attributes }}>
           {% if block.settings.link != blank %}
             <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
           {% else %}
@@ -17,23 +17,27 @@
 
 <style>
 .announcement-marquee {
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
-  padding: 12px 0;
+  padding: 14px 0;
 }
 
 .announcement-track {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: max-content;
   animation: marquee {{ section.settings.speed }}s linear infinite;
 }
 
 .announcement-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  flex-shrink: 0;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .announcement-item a {
@@ -50,7 +54,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-10%);
   }
 }
 </style>
@@ -58,6 +62,8 @@
 {% schema %}
 {
   "name": "Announcement Marquee",
+  "tag": "section",
+  "class": "announcement-marquee-section",
   "settings": [
     {
       "type": "color",
@@ -74,12 +80,12 @@
     {
       "type": "range",
       "id": "speed",
-      "label": "Scroll Speed",
+      "label": "Animation Speed",
       "min": 10,
       "max": 60,
       "step": 5,
       "unit": "s",
-      "default": 25
+      "default": 30
     }
   ],
   "blocks": [
@@ -105,6 +111,9 @@
     {
       "name": "Announcement Marquee",
       "blocks": [
+        {
+          "type": "announcement"
+        },
         {
           "type": "announcement"
         },
