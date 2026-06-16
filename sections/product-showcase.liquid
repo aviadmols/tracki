@@ -1,0 +1,444 @@
+<section class="product-showcase">
+  <div class="product-showcase__wrapper">
+
+    <!-- LEFT SIDE -->
+    <div class="product-showcase__gallery">
+      {% if section.settings.main_image != blank %}
+        <img
+          src="{{ section.settings.main_image | image_url: width: 1000 }}"
+          alt="{{ section.settings.title }}"
+          class="gallery-image"
+        >
+      {% endif %}
+
+      {% if section.settings.secondary_image != blank %}
+        <img
+          src="{{ section.settings.secondary_image | image_url: width: 1000 }}"
+          alt="{{ section.settings.title }}"
+          class="gallery-image"
+        >
+      {% endif %}
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="product-showcase__content">
+
+      {% if section.settings.preorder_text != blank %}
+        <span class="preorder-badge">
+          {{ section.settings.preorder_text }}
+        </span>
+      {% endif %}
+
+      <h2>{{ section.settings.title }}</h2>
+
+      <div class="price">
+        {{ section.settings.price }}
+      </div>
+
+      {% if section.settings.inventory_text != blank %}
+        <div class="inventory-warning">
+          ● {{ section.settings.inventory_text }}
+        </div>
+      {% endif %}
+
+      <!-- Color Swatches -->
+      <div class="swatches">
+        <label>Color</label>
+
+        <div class="swatch-wrap">
+          <span
+            class="swatch"
+            style="background: {{ section.settings.color_1 }}"
+          ></span>
+
+          <span
+            class="swatch"
+            style="background: {{ section.settings.color_2 }}"
+          ></span>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-box">
+        <p>{{ section.settings.countdown_heading }}</p>
+
+        <div id="countdown">
+          <span><strong id="days">00</strong> Days</span>
+          <span><strong id="hours">00</strong> Hours</span>
+          <span><strong id="minutes">00</strong> Minutes</span>
+          <span><strong id="seconds">00</strong> Seconds</span>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <details>
+        <summary>Description</summary>
+        <div class="accordion-content">
+          {{ section.settings.description }}
+        </div>
+      </details>
+
+      <details>
+        <summary>Details</summary>
+        <div class="accordion-content">
+          {{ section.settings.details }}
+        </div>
+      </details>
+
+      <!-- Benefits -->
+      <div class="benefits">
+        {% for block in section.blocks %}
+          {% if block.type == 'benefit' %}
+            <div class="benefit">
+              {% if block.settings.icon != blank %}
+                <img
+                  src="{{ block.settings.icon | image_url: width: 60 }}"
+                  alt=""
+                >
+              {% endif %}
+              <span>{{ block.settings.text }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Quantity -->
+      <div class="purchase-row">
+        <div class="qty-box">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="1" min="1">
+          <button type="button" class="plus">+</button>
+        </div>
+
+        <button class="add-to-cart-btn">
+          {{ section.settings.button_text }}
+        </button>
+      </div>
+
+      <!-- Recommended Product -->
+      {% if section.settings.recommended_product != blank %}
+        <div class="recommendation">
+
+          <p>Complete the look:</p>
+
+          {% assign rec_product = all_products[section.settings.recommended_product] %}
+
+          <div class="recommended-card">
+
+            <img
+              src="{{ rec_product.featured_image | image_url: width: 200 }}"
+              alt="{{ rec_product.title }}"
+            >
+
+            <div>
+              <h4>{{ rec_product.title }}</h4>
+              <span>{{ rec_product.price | money }}</span>
+            </div>
+
+          </div>
+
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+<style>
+    .product-showcase {
+  padding: 60px 20px;
+}
+
+.product-showcase__wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.product-showcase__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery-image {
+  width: 100%;
+  display: block;
+}
+
+.preorder-badge {
+  background: #5a4638;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.product-showcase h2 {
+  margin: 15px 0;
+  font-size: 28px;
+}
+
+.price {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.inventory-warning {
+  color: #b5844c;
+  margin-bottom: 25px;
+}
+
+.swatches {
+  margin-bottom: 25px;
+}
+
+.swatch-wrap {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.countdown-box {
+  background: #ead9cf;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+#countdown {
+  display: flex;
+  gap: 20px;
+}
+
+#countdown strong {
+  display: block;
+  font-size: 22px;
+}
+
+details {
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.benefits {
+  margin: 25px 0;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.benefit img {
+  width: 20px;
+}
+
+.purchase-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.qty-box {
+  display: flex;
+  border: 1px solid #ddd;
+}
+
+.qty-box input {
+  width: 50px;
+  text-align: center;
+  border: none;
+}
+
+.qty-box button {
+  width: 40px;
+  border: none;
+  background: #fff;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.recommendation {
+  margin-top: 30px;
+}
+
+.recommended-card {
+  display: flex;
+  gap: 15px;
+  background: #f7f7f7;
+  padding: 12px;
+}
+
+.recommended-card img {
+  width: 80px;
+}
+
+@media (max-width: 768px) {
+
+  .product-showcase__wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const targetDate = new Date("{{ section.settings.countdown_date }}").getTime();
+
+  function updateCountdown() {
+
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+
+    if(diff < 0) return;
+
+    document.getElementById('days').innerHTML =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    document.getElementById('hours').innerHTML =
+      Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+
+    document.getElementById('minutes').innerHTML =
+      Math.floor((diff % (1000*60*60))/(1000*60));
+
+    document.getElementById('seconds').innerHTML =
+      Math.floor((diff % (1000*60))/1000);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown,1000);
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "secondary_image",
+      "label": "Secondary Image"
+    },
+    {
+      "type": "text",
+      "id": "preorder_text",
+      "label": "Pre-order Badge",
+      "default": "Pre-order"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Product Title"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "$120.00"
+    },
+    {
+      "type": "text",
+      "id": "inventory_text",
+      "label": "Inventory Text",
+      "default": "Hurry! Low Inventory"
+    },
+    {
+      "type": "color",
+      "id": "color_1",
+      "label": "Color 1",
+      "default": "#C89C2B"
+    },
+    {
+      "type": "color",
+      "id": "color_2",
+      "label": "Color 2",
+      "default": "#D9D9D9"
+    },
+    {
+      "type": "text",
+      "id": "countdown_heading",
+      "label": "Countdown Heading",
+      "default": "Sale Ends Soon"
+    },
+    {
+      "type": "text",
+      "id": "countdown_date",
+      "label": "Countdown Date",
+      "default": "2025-12-31"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "PRE-ORDER - $120.00"
+    },
+    {
+      "type": "product",
+      "id": "recommended_product",
+      "label": "Recommended Product"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Showcase"
+    }
+  ]
+}
+{% endschema %}
