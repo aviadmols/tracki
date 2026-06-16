@@ -2,48 +2,53 @@
 
   <div class="luxury-product__wrapper">
 
-    <!-- LEFT COLUMN -->
+    <!-- LEFT COLUMN (SLIDER) -->
     {% if product.images.size > 0 %}
-    <div class="luxury-product__gallery">
 
-      {% for image in product.images %}
-        <div class="gallery-card">
-          {{
-            image
-            | image_url: width: 1800
-            | image_tag:
-              loading: 'lazy',
-              class: 'gallery-image',
-              alt: image.alt
-          }}
-        </div>
-      {% endfor %}
+    <div class="luxury-slider">
+
+      <div class="luxury-slider__track" id="slider-{{ section.id }}">
+
+        {% for image in product.images %}
+          <div class="luxury-slide">
+
+            {{
+              image
+              | image_url: width: 2000
+              | image_tag:
+                loading: 'lazy',
+                class: 'gallery-image',
+                alt: image.alt
+            }}
+
+          </div>
+        {% endfor %}
+
+      </div>
+
+      <button class="slider-btn prev" type="button">&#10094;</button>
+      <button class="slider-btn next" type="button">&#10095;</button>
 
     </div>
+
     {% endif %}
 
     <!-- RIGHT COLUMN -->
     <div class="luxury-product__content">
 
       {% if section.settings.badge_text != blank %}
-        <span class="product-badge">
-          {{ section.settings.badge_text }}
-        </span>
+        <span class="product-badge">{{ section.settings.badge_text }}</span>
       {% endif %}
 
-      <h1 class="product-title">
-        {{ product.title }}
-      </h1>
+      <h1 class="product-title">{{ product.title }}</h1>
 
-      <div class="product-price">
-        {{ product.price | money }}
-      </div>
+      <div class="product-price">{{ product.price | money }}</div>
 
       <div class="inventory-message">
         {% if product.available %}In Stock{% else %}Sold Out{% endif %}
       </div>
 
-      <!-- VARIANTS (NO EMPTY SPACES) -->
+      <!-- VARIANTS -->
       {% unless product.has_only_default_variant %}
 
         {% for option in product.options_with_values %}
@@ -58,9 +63,7 @@
 
                 {% for value in option.values %}
                   {% if value != blank %}
-                    <span class="variant-pill">
-                      {{ value }}
-                    </span>
+                    <span class="variant-pill">{{ value }}</span>
                   {% endif %}
                 {% endfor %}
 
@@ -74,7 +77,7 @@
 
       {% endunless %}
 
-      <!-- COUNTDOWN (SAFE) -->
+      <!-- COUNTDOWN -->
       {% if section.settings.countdown_date != blank %}
 
       <div class="countdown-box">
@@ -96,7 +99,7 @@
 
       {% endif %}
 
-      <!-- ACCORDION (NO EMPTY SPACE) -->
+      <!-- ACCORDION -->
       <div class="accordion-wrapper">
 
         {% if product.description != blank %}
@@ -119,7 +122,7 @@
 
       </div>
 
-      <!-- BENEFITS (NO EMPTY SPACE) -->
+      <!-- BENEFITS -->
       {% assign has_benefits = false %}
       {% for block in section.blocks %}
         {% if block.settings.text != blank or block.settings.icon != blank %}
@@ -169,14 +172,10 @@
         <div class="purchase-wrapper">
 
           <div class="qty-box">
-
             <button type="button" class="qty-minus">-</button>
-
             <input type="number" value="1" min="1"
               name="quantity" class="qty-input">
-
             <button type="button" class="qty-plus">+</button>
-
           </div>
 
           <button type="submit" class="add-to-cart">
@@ -201,80 +200,87 @@
 
 .luxury-product__wrapper{
   max-width:1400px;
-  margin:0 auto;
+  margin:auto;
   display:grid;
   grid-template-columns:60% 40%;
   gap:50px;
 }
 
-.luxury-product__gallery{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+/* SLIDER */
+.luxury-slider{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
 }
 
-.gallery-card{
-  background:#fff !important;
+.luxury-slider__track{
+  display:flex;
+  transition:transform .5s ease;
+}
+
+.luxury-slide{
+  min-width:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:700px;
+  background:#fff;
+  padding:40px;
 }
 
 .gallery-image{
   width:100%;
-  max-height:650px;
+  max-height:700px;
   object-fit:contain;
   background:#fff;
 }
 
+/* ARROWS */
+.slider-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:40px;
+  height:40px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  z-index:10;
+}
+
+.slider-btn.prev{left:10px;}
+.slider-btn.next{right:10px;}
+
+/* CONTENT */
 .product-badge{
   background:#4f4035;
   color:#fff;
   padding:6px 12px;
-  display:inline-block;
   font-size:12px;
+  display:inline-block;
   margin-bottom:15px;
 }
 
 .product-title{font-size:34px;margin:0 0 10px;}
 .product-price{font-size:24px;margin-bottom:15px;}
 
-.inventory-message{
-  margin-bottom:20px;
-}
+.inventory-message{margin-bottom:20px;}
 
-.variant-group{
-  margin-bottom:20px;
-}
+/* VARIANTS */
+.variant-group{margin-bottom:20px;}
+.variant-values{display:flex;gap:10px;margin-top:10px;}
+.variant-pill{border:1px solid #ddd;padding:8px 14px;}
 
-.variant-values{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-}
-
-.variant-pill{
-  border:1px solid #ddd;
-  padding:8px 14px;
-}
-
+/* COUNTDOWN */
 .countdown-box{
   background:#ead9cf;
   padding:20px;
   margin:25px 0;
 }
 
-.countdown{
-  display:flex;
-  gap:20px;
-}
+.countdown{display:flex;gap:20px;}
+.countdown strong{font-size:24px;display:block;}
 
-.countdown strong{
-  font-size:24px;
-  display:block;
-}
-
+/* ACCORDION */
 details{
   border-top:1px solid #ddd;
   padding:15px 0;
@@ -285,19 +291,17 @@ summary{
   font-weight:600;
 }
 
-.benefits{
-  margin-top:25px;
-}
-
+/* BENEFITS */
+.benefits{margin-top:25px;}
 .benefit-item{
   display:flex;
   gap:10px;
   align-items:center;
   margin-bottom:12px;
 }
-
 .benefit-item img{width:20px;}
 
+/* ADD TO CART */
 .purchase-wrapper{
   display:flex;
   gap:15px;
@@ -330,13 +334,14 @@ summary{
   cursor:pointer;
 }
 
+/* MOBILE */
 @media(max-width:768px){
   .luxury-product__wrapper{
     grid-template-columns:1fr;
   }
 
-  .gallery-card{
-    min-height:auto;
+  .luxury-slide{
+    padding:20px;
   }
 }
 </style>
@@ -344,39 +349,47 @@ summary{
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  const timer = document.getElementById('countdown-{{ section.id }}');
+  /* SLIDER */
+  const track = document.getElementById("slider-{{ section.id }}");
 
-  if(timer){
+  if(track){
 
-    const targetDate =
-      new Date('{{ section.settings.countdown_date }}').getTime();
+    let index = 0;
+    const slides = track.children.length;
 
-    function update(){
+    const update = () => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    };
 
-      const now = new Date().getTime();
-      const diff = targetDate - now;
+    document.querySelector(".luxury-slider .next")?.addEventListener("click", () => {
+      index = (index + 1) % slides;
+      update();
+    });
 
-      if(diff <= 0) return;
+    document.querySelector(".luxury-slider .prev")?.addEventListener("click", () => {
+      index = (index - 1 + slides) % slides;
+      update();
+    });
 
-      timer.querySelector('.days').innerHTML =
-        Math.floor(diff / 86400000);
+    /* SWIPE */
+    let startX = 0;
 
-      timer.querySelector('.hours').innerHTML =
-        Math.floor((diff % 86400000)/3600000);
+    track.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
 
-      timer.querySelector('.minutes').innerHTML =
-        Math.floor((diff % 3600000)/60000);
+    track.addEventListener("touchend", e => {
+      let endX = e.changedTouches[0].clientX;
 
-      timer.querySelector('.seconds').innerHTML =
-        Math.floor((diff % 60000)/1000);
+      if(startX > endX + 50) index = (index + 1) % slides;
+      if(startX < endX - 50) index = (index - 1 + slides) % slides;
 
-    }
-
-    update();
-    setInterval(update,1000);
+      update();
+    });
 
   }
 
+  /* QTY */
   document.querySelectorAll('.qty-plus').forEach(btn=>{
     btn.addEventListener('click',()=>{
       btn.parentElement.querySelector('.qty-input').value++;
@@ -390,6 +403,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* COUNTDOWN */
+  const timer = document.getElementById('countdown-{{ section.id }}');
+
+  if(timer){
+
+    const target = new Date('{{ section.settings.countdown_date }}').getTime();
+
+    function tick(){
+      const now = new Date().getTime();
+      const diff = target - now;
+
+      if(diff <= 0) return;
+
+      timer.querySelector('.days').innerHTML = Math.floor(diff/86400000);
+      timer.querySelector('.hours').innerHTML = Math.floor((diff%86400000)/3600000);
+      timer.querySelector('.minutes').innerHTML = Math.floor((diff%3600000)/60000);
+      timer.querySelector('.seconds').innerHTML = Math.floor((diff%60000)/1000);
+    }
+
+    tick();
+    setInterval(tick,1000);
+
+  }
+
 });
 </script>
 
@@ -397,27 +434,10 @@ document.addEventListener('DOMContentLoaded', () => {
 {
   "name": "Luxury Product Showcase",
   "settings": [
-    {
-      "type": "text",
-      "id": "badge_text",
-      "label": "Badge Text"
-    },
-    {
-      "type": "text",
-      "id": "countdown_heading",
-      "label": "Countdown Heading",
-      "default": "Offer Ends Soon"
-    },
-    {
-      "type": "text",
-      "id": "countdown_date",
-      "label": "Countdown Date"
-    },
-    {
-      "type": "richtext",
-      "id": "details",
-      "label": "Product Details"
-    }
+    { "type": "text", "id": "badge_text", "label": "Badge Text" },
+    { "type": "text", "id": "countdown_heading", "label": "Countdown Heading" },
+    { "type": "text", "id": "countdown_date", "label": "Countdown Date" },
+    { "type": "richtext", "id": "details", "label": "Product Details" }
   ],
   "blocks": [
     {
@@ -430,9 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ],
   "presets": [
-    {
-      "name": "Luxury Product Showcase"
-    }
+    { "name": "Luxury Product Showcase" }
   ]
 }
 {% endschema %}
