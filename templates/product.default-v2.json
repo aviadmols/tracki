@@ -229,6 +229,22 @@
             "sale_badge_basis": "auto"
           }
         },
+        "text_tWBP7M": {
+          "type": "text",
+          "settings": {
+            "icon": "star",
+            "text": "Track your own assets, vehicles, and loved ones",
+            "text_style": "body"
+          }
+        },
+        "fd414a67-531a-4a3a-8941-e78cec888355": {
+          "type": "text",
+          "settings": {
+            "icon": "lock",
+            "text": "Lifetime warranty",
+            "text_style": "body"
+          }
+        },
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02": {
           "type": "text",
           "disabled": true,
@@ -244,14 +260,6 @@
           "settings": {
             "icon": "box",
             "text": "Available gift wrapping",
-            "text_style": "body"
-          }
-        },
-        "fd414a67-531a-4a3a-8941-e78cec888355": {
-          "type": "text",
-          "settings": {
-            "icon": "lock",
-            "text": "Lifetime warranty",
             "text_style": "body"
           }
         },
@@ -304,9 +312,10 @@
         "subtitle",
         "variant_picker",
         "price",
+        "text_tWBP7M",
+        "fd414a67-531a-4a3a-8941-e78cec888355",
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02",
         "dd734640-b7b1-44ad-96b6-3d7c9affc69e",
-        "fd414a67-531a-4a3a-8941-e78cec888355",
         "inventory_status",
         "buy_buttons",
         "custom_liquid_XJjK6i",
