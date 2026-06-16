@@ -36,9 +36,43 @@
         "text_color": "#ffffff",
         "speed": 25
       }
+    },
+    "product_accordion_wT4mEU": {
+      "type": "product-accordion",
+      "blocks": {
+        "accordion_tA4aQJ": {
+          "type": "accordion",
+          "settings": {
+            "heading": "CARE INSTRUCTIONS",
+            "content": "<p>Add your content here.</p>"
+          }
+        },
+        "accordion_cqErk6": {
+          "type": "accordion",
+          "settings": {
+            "heading": "CARE INSTRUCTIONS",
+            "content": "<p>Add your content here.</p>"
+          }
+        },
+        "accordion_mpiQC9": {
+          "type": "accordion",
+          "settings": {
+            "heading": "CARE INSTRUCTIONS",
+            "content": "<p>Add your content here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_tA4aQJ",
+        "accordion_cqErk6",
+        "accordion_mpiQC9"
+      ],
+      "name": "Product Accordion",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "product_accordion_wT4mEU"
   ]
 }
