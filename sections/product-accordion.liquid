@@ -1,0 +1,132 @@
+<div class="custom-accordion">
+  {% for block in section.blocks %}
+    <div class="accordion-item" {{ block.shopify_attributes }}>
+      <button class="accordion-header">
+        <span>{{ block.settings.heading }}</span>
+        <span class="accordion-icon">⌄</span>
+      </button>
+
+      <div class="accordion-content">
+        {{ block.settings.content }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+.custom-accordion {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.accordion-item {
+  border-top: 1px solid #d9d9d9;
+  background: #ffffff;
+}
+
+.accordion-item:last-child {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.accordion-header {
+  width: 100%;
+  background: #ffffff;
+  border: none;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.accordion-icon {
+  color: #000000;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  display: none;
+  padding: 0 0 30px;
+  color: #000000;
+  background: #ffffff;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .accordion-header {
+    font-size: 16px;
+    padding: 20px 0;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.accordion-header').forEach(button => {
+    button.addEventListener('click', function() {
+      const item = this.parentElement;
+
+      item.classList.toggle('active');
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Accordion",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "CARE INSTRUCTIONS"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Add your content here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Accordion",
+      "blocks": [
+        {
+          "type": "accordion"
+        },
+        {
+          "type": "accordion"
+        },
+        {
+          "type": "accordion"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
