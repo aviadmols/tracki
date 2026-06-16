@@ -468,6 +468,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+document.addEventListener("DOMContentLoaded", () => {
+
+  const accordions = document.querySelectorAll(".accordion-wrapper details");
+
+  if(!accordions.length) return;
+
+  accordions.forEach((detail) => {
+
+    detail.addEventListener("toggle", () => {
+
+      // OPTIONAL: Close other accordions (luxury UX style)
+      if(detail.open){
+
+        accordions.forEach((other) => {
+          if(other !== detail){
+            other.removeAttribute("open");
+          }
+        });
+
+      }
+
+    });
+
+  });
+
+});
 </script>
 
 {% schema %}
