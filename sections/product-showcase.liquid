@@ -3,6 +3,7 @@
   <div class="luxury-product__wrapper">
 
     <!-- LEFT COLUMN -->
+    {% if product.images.size > 0 %}
     <div class="luxury-product__gallery">
 
       {% for image in product.images %}
@@ -19,6 +20,7 @@
       {% endfor %}
 
     </div>
+    {% endif %}
 
     <!-- RIGHT COLUMN -->
     <div class="luxury-product__content">
@@ -37,43 +39,43 @@
         {{ product.price | money }}
       </div>
 
-      {% if product.available %}
-        <div class="inventory-message">
-          In Stock
-        </div>
-      {% else %}
-        <div class="inventory-message soldout">
-          Sold Out
-        </div>
-      {% endif %}
+      <div class="inventory-message">
+        {% if product.available %}In Stock{% else %}Sold Out{% endif %}
+      </div>
 
-      <!-- VARIANTS -->
-
+      <!-- VARIANTS (NO EMPTY SPACES) -->
       {% unless product.has_only_default_variant %}
 
         {% for option in product.options_with_values %}
 
-          <div class="variant-group">
+          {% if option.values.size > 0 %}
 
-            <label>{{ option.name }}</label>
+            <div class="variant-group">
 
-            <div class="variant-values">
+              <label>{{ option.name }}</label>
 
-              {% for value in option.values %}
-                <span class="variant-pill">
-                  {{ value }}
-                </span>
-              {% endfor %}
+              <div class="variant-values">
+
+                {% for value in option.values %}
+                  {% if value != blank %}
+                    <span class="variant-pill">
+                      {{ value }}
+                    </span>
+                  {% endif %}
+                {% endfor %}
+
+              </div>
 
             </div>
 
-          </div>
+          {% endif %}
 
         {% endfor %}
 
       {% endunless %}
 
-      <!-- COUNTDOWN -->
+      <!-- COUNTDOWN (SAFE) -->
+      {% if section.settings.countdown_date != blank %}
 
       <div class="countdown-box">
 
@@ -81,128 +83,103 @@
           {{ section.settings.countdown_heading }}
         </div>
 
-        <div
-          class="countdown"
-          id="countdown-{{ section.id }}"
-        >
+        <div class="countdown" id="countdown-{{ section.id }}">
 
-          <div>
-            <strong class="days">00</strong>
-            <span>Days</span>
-          </div>
-
-          <div>
-            <strong class="hours">00</strong>
-            <span>Hours</span>
-          </div>
-
-          <div>
-            <strong class="minutes">00</strong>
-            <span>Minutes</span>
-          </div>
-
-          <div>
-            <strong class="seconds">00</strong>
-            <span>Seconds</span>
-          </div>
+          <div><strong class="days">00</strong><span>Days</span></div>
+          <div><strong class="hours">00</strong><span>Hours</span></div>
+          <div><strong class="minutes">00</strong><span>Minutes</span></div>
+          <div><strong class="seconds">00</strong><span>Seconds</span></div>
 
         </div>
 
       </div>
 
-      <!-- ACCORDION -->
+      {% endif %}
 
+      <!-- ACCORDION (NO EMPTY SPACE) -->
       <div class="accordion-wrapper">
 
+        {% if product.description != blank %}
         <details open>
           <summary>Description</summary>
-
           <div class="accordion-content">
             {{ product.description }}
           </div>
         </details>
+        {% endif %}
 
+        {% if section.settings.details != blank %}
         <details>
           <summary>Product Details</summary>
-
           <div class="accordion-content">
             {{ section.settings.details }}
           </div>
         </details>
+        {% endif %}
 
       </div>
 
-      <!-- ICONS -->
+      <!-- BENEFITS (NO EMPTY SPACE) -->
+      {% assign has_benefits = false %}
+      {% for block in section.blocks %}
+        {% if block.settings.text != blank or block.settings.icon != blank %}
+          {% assign has_benefits = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% if has_benefits %}
 
       <div class="benefits">
 
         {% for block in section.blocks %}
 
-          <div
-            class="benefit-item"
-            {{ block.shopify_attributes }}
-          >
+          {% if block.settings.text != blank or block.settings.icon != blank %}
 
-            {% if block.settings.icon %}
-              {{
-                block.settings.icon
-                | image_url: width: 60
-                | image_tag
-              }}
-            {% endif %}
+            <div class="benefit-item" {{ block.shopify_attributes }}>
 
-            <span>
-              {{ block.settings.text }}
-            </span>
+              {% if block.settings.icon %}
+                {{
+                  block.settings.icon
+                  | image_url: width: 60
+                  | image_tag
+                }}
+              {% endif %}
 
-          </div>
+              {% if block.settings.text != blank %}
+                <span>{{ block.settings.text }}</span>
+              {% endif %}
+
+            </div>
+
+          {% endif %}
 
         {% endfor %}
 
       </div>
 
-      <!-- PRODUCT FORM -->
+      {% endif %}
 
+      <!-- ADD TO CART -->
       {% form 'product', product %}
 
-        <input
-          type="hidden"
-          name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-        >
+        <input type="hidden" name="id"
+          value="{{ product.selected_or_first_available_variant.id }}">
 
         <div class="purchase-wrapper">
 
           <div class="qty-box">
 
-            <button
-              type="button"
-              class="qty-minus"
-            >
-              -
-            </button>
+            <button type="button" class="qty-minus">-</button>
 
-            <input
-              type="number"
-              value="1"
-              min="1"
-              name="quantity"
-              class="qty-input"
-            >
+            <input type="number" value="1" min="1"
+              name="quantity" class="qty-input">
 
-            <button
-              type="button"
-              class="qty-plus"
-            >
-              +
-            </button>
+            <button type="button" class="qty-plus">+</button>
 
           </div>
 
-          <button
-            type="submit"
-            class="add-to-cart"
-          >
+          <button type="submit" class="add-to-cart">
             Add To Cart · {{ product.price | money }}
           </button>
 
@@ -228,33 +205,26 @@
   display:grid;
   grid-template-columns:60% 40%;
   gap:50px;
-  background:#fff;
 }
 
 .luxury-product__gallery{
   display:flex;
   flex-direction:column;
   gap:20px;
-  background:#fff;
 }
 
 .gallery-card{
   background:#fff !important;
-  min-height:700px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  min-height:700px;
 }
 
 .gallery-image{
   width:100%;
   max-height:650px;
   object-fit:contain;
-  display:block;
-  background:#fff;
-}
-
-.luxury-product__content{
   background:#fff;
 }
 
@@ -267,23 +237,11 @@
   margin-bottom:15px;
 }
 
-.product-title{
-  font-size:34px;
-  margin:0 0 10px;
-}
-
-.product-price{
-  font-size:24px;
-  margin-bottom:15px;
-}
+.product-title{font-size:34px;margin:0 0 10px;}
+.product-price{font-size:24px;margin-bottom:15px;}
 
 .inventory-message{
-  color:#2e7d32;
   margin-bottom:20px;
-}
-
-.soldout{
-  color:#c62828;
 }
 
 .variant-group{
@@ -313,8 +271,8 @@
 }
 
 .countdown strong{
-  display:block;
   font-size:24px;
+  display:block;
 }
 
 details{
@@ -333,14 +291,12 @@ summary{
 
 .benefit-item{
   display:flex;
-  align-items:center;
   gap:10px;
+  align-items:center;
   margin-bottom:12px;
 }
 
-.benefit-item img{
-  width:20px;
-}
+.benefit-item img{width:20px;}
 
 .purchase-wrapper{
   display:flex;
@@ -357,7 +313,6 @@ summary{
   width:40px;
   border:none;
   background:#fff;
-  cursor:pointer;
 }
 
 .qty-input{
@@ -371,90 +326,68 @@ summary{
   background:#000;
   color:#fff;
   border:none;
-  cursor:pointer;
   padding:15px;
+  cursor:pointer;
 }
 
 @media(max-width:768px){
-
   .luxury-product__wrapper{
     grid-template-columns:1fr;
   }
 
   .gallery-card{
     min-height:auto;
-    padding:20px;
   }
-
 }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  const timer =
-    document.getElementById(
-      'countdown-{{ section.id }}'
-    );
+  const timer = document.getElementById('countdown-{{ section.id }}');
 
-  const targetDate =
-    new Date(
-      '{{ section.settings.countdown_date }}'
-    ).getTime();
+  if(timer){
 
-  function updateCountdown(){
+    const targetDate =
+      new Date('{{ section.settings.countdown_date }}').getTime();
 
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    function update(){
 
-    if(distance <= 0) return;
+      const now = new Date().getTime();
+      const diff = targetDate - now;
 
-    timer.querySelector('.days').innerHTML =
-      Math.floor(distance / (1000*60*60*24));
+      if(diff <= 0) return;
 
-    timer.querySelector('.hours').innerHTML =
-      Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+      timer.querySelector('.days').innerHTML =
+        Math.floor(diff / 86400000);
 
-    timer.querySelector('.minutes').innerHTML =
-      Math.floor((distance % (1000*60*60)) / (1000*60));
+      timer.querySelector('.hours').innerHTML =
+        Math.floor((diff % 86400000)/3600000);
 
-    timer.querySelector('.seconds').innerHTML =
-      Math.floor((distance % (1000*60)) / 1000);
+      timer.querySelector('.minutes').innerHTML =
+        Math.floor((diff % 3600000)/60000);
+
+      timer.querySelector('.seconds').innerHTML =
+        Math.floor((diff % 60000)/1000);
+
+    }
+
+    update();
+    setInterval(update,1000);
+
   }
 
-  updateCountdown();
-  setInterval(updateCountdown,1000);
-
-  document.querySelectorAll('.qty-plus').forEach(btn => {
-
-    btn.addEventListener('click', () => {
-
-      const input =
-        btn.parentElement.querySelector('.qty-input');
-
-      input.value =
-        parseInt(input.value) + 1;
-
+  document.querySelectorAll('.qty-plus').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.querySelector('.qty-input').value++;
     });
-
   });
 
-  document.querySelectorAll('.qty-minus').forEach(btn => {
-
-    btn.addEventListener('click', () => {
-
-      const input =
-        btn.parentElement.querySelector('.qty-input');
-
-      if(parseInt(input.value) > 1){
-
-        input.value =
-          parseInt(input.value) - 1;
-
-      }
-
+  document.querySelectorAll('.qty-minus').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const input = btn.parentElement.querySelector('.qty-input');
+      if(input.value > 1) input.value--;
     });
-
   });
 
 });
@@ -467,8 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       "type": "text",
       "id": "badge_text",
-      "label": "Badge Text",
-      "default": "Pre-order"
+      "label": "Badge Text"
     },
     {
       "type": "text",
@@ -479,8 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       "type": "text",
       "id": "countdown_date",
-      "label": "Countdown Date",
-      "default": "2025-12-31"
+      "label": "Countdown Date"
     },
     {
       "type": "richtext",
@@ -493,16 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "type": "benefit",
       "name": "Benefit",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Icon"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text"
-        }
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "text", "label": "Text" }
       ]
     }
   ],
