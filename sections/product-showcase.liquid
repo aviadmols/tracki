@@ -196,8 +196,14 @@
 .luxury-product{
   background:#fff;
   padding:60px 20px;
+  color:#000; /* ✅ FIX: default text black */
 }
 
+.luxury-product *{
+  color:#000; /* ✅ ensures all inherited text is visible */
+}
+
+/* WRAPPER */
 .luxury-product__wrapper{
   max-width:1400px;
   margin:auto;
@@ -253,22 +259,43 @@
 /* CONTENT */
 .product-badge{
   background:#4f4035;
-  color:#fff;
+  color:#fff !important; /* keep badge readable */
   padding:6px 12px;
   font-size:12px;
   display:inline-block;
   margin-bottom:15px;
 }
 
-.product-title{font-size:34px;margin:0 0 10px;}
-.product-price{font-size:24px;margin-bottom:15px;}
+.product-title{
+  font-size:34px;
+  margin:0 0 10px;
+}
 
-.inventory-message{margin-bottom:20px;}
+.product-price{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+/* INVENTORY */
+.inventory-message{
+  margin-bottom:20px;
+}
 
 /* VARIANTS */
-.variant-group{margin-bottom:20px;}
-.variant-values{display:flex;gap:10px;margin-top:10px;}
-.variant-pill{border:1px solid #ddd;padding:8px 14px;}
+.variant-group{
+  margin-bottom:20px;
+}
+
+.variant-values{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.variant-pill{
+  border:1px solid #ddd;
+  padding:8px 14px;
+}
 
 /* COUNTDOWN */
 .countdown-box{
@@ -277,8 +304,15 @@
   margin:25px 0;
 }
 
-.countdown{display:flex;gap:20px;}
-.countdown strong{font-size:24px;display:block;}
+.countdown{
+  display:flex;
+  gap:20px;
+}
+
+.countdown strong{
+  font-size:24px;
+  display:block;
+}
 
 /* ACCORDION */
 details{
@@ -292,14 +326,20 @@ summary{
 }
 
 /* BENEFITS */
-.benefits{margin-top:25px;}
+.benefits{
+  margin-top:25px;
+}
+
 .benefit-item{
   display:flex;
   gap:10px;
   align-items:center;
   margin-bottom:12px;
 }
-.benefit-item img{width:20px;}
+
+.benefit-item img{
+  width:20px;
+}
 
 /* ADD TO CART */
 .purchase-wrapper{
@@ -328,7 +368,7 @@ summary{
 .add-to-cart{
   flex:1;
   background:#000;
-  color:#fff;
+  color:#fff !important;
   border:none;
   padding:15px;
   cursor:pointer;
