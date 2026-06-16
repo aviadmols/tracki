@@ -44,17 +44,16 @@
 
 <style>
 #promo-grid-{{ section.id }}{
+  background: #ffffff;
   padding-top:{{ section.settings.padding_top }}px;
   padding-bottom:{{ section.settings.padding_bottom }}px;
 }
 
 #promo-grid-{{ section.id }} .promo-grid-container{
-  max-width:975px;
-  margin:0 auto;
-
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:28px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 18px;
+  background: #ffffff;
 }
 
 #promo-grid-{{ section.id }} .promo-card{
