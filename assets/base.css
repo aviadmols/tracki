@@ -3875,3 +3875,4 @@ details em:not(.highlighted-text),
     font-size: max(var (--text-sm), 16px) ;
   }
 }
+.widerruf-form-branding__text{display:none !important;}
