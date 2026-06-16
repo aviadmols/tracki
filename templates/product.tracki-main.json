@@ -82,31 +82,36 @@
     "image_promo_grid_z7xcan": {
       "type": "image-promo-grid",
       "blocks": {
-        "promo_7KbQTp": {
-          "type": "promo",
+        "card_MikD4r": {
+          "type": "card",
           "settings": {
+            "image": "shopify://shop_images/parentsv2-hero-bg.jpg",
             "heading": "PIECES TO KEEP FOREVER",
-            "text": "Thoughtfully designed jewelry to wear everyday",
-            "button_label": "Learn More",
+            "description": "Thoughtfully designed jewelry to wear everyday",
+            "button_text": "LEARN MORE",
             "button_link": ""
           }
         },
-        "promo_7xgmPG": {
-          "type": "promo",
+        "card_GjVzyR": {
+          "type": "card",
           "settings": {
+            "image": "shopify://shop_images/parentsv2-scare-child.jpg",
             "heading": "PIECES TO KEEP FOREVER",
-            "text": "Thoughtfully designed jewelry to wear everyday",
-            "button_label": "Learn More",
+            "description": "Thoughtfully designed jewelry to wear everyday",
+            "button_text": "LEARN MORE",
             "button_link": ""
           }
         }
       },
       "block_order": [
-        "promo_7KbQTp",
-        "promo_7xgmPG"
+        "card_MikD4r",
+        "card_GjVzyR"
       ],
       "name": "Image Promo Grid",
-      "settings": {}
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
