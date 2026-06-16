@@ -112,20 +112,9 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "product_showcase_B9WK8V": {
-      "type": "product-showcase",
-      "name": "Luxury Product Showcase",
-      "settings": {
-        "badge_text": "",
-        "countdown_heading": "Offer Ends Soon",
-        "countdown_date": "",
-        "details": ""
-      }
     }
   },
   "order": [
-    "product_showcase_B9WK8V",
     "main",
     "product_accordion_wT4mEU",
     "image_banner_overlay_XddUPB",
