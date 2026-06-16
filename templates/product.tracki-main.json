@@ -78,11 +78,41 @@
         "heading": "RECYCLED MATERIALS",
         "text": "<p>We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.</p>"
       }
+    },
+    "image_promo_grid_z7xcan": {
+      "type": "image-promo-grid",
+      "blocks": {
+        "promo_7KbQTp": {
+          "type": "promo",
+          "settings": {
+            "heading": "PIECES TO KEEP FOREVER",
+            "text": "Thoughtfully designed jewelry to wear everyday",
+            "button_label": "Learn More",
+            "button_link": ""
+          }
+        },
+        "promo_7xgmPG": {
+          "type": "promo",
+          "settings": {
+            "heading": "PIECES TO KEEP FOREVER",
+            "text": "Thoughtfully designed jewelry to wear everyday",
+            "button_label": "Learn More",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "promo_7KbQTp",
+        "promo_7xgmPG"
+      ],
+      "name": "Image Promo Grid",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "product_accordion_wT4mEU",
-    "image_banner_overlay_XddUPB"
+    "image_banner_overlay_XddUPB",
+    "image_promo_grid_z7xcan"
   ]
 }
