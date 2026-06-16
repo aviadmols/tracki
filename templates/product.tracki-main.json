@@ -43,22 +43,22 @@
         "accordion_tA4aQJ": {
           "type": "accordion",
           "settings": {
-            "heading": "CARE INSTRUCTIONS",
-            "content": "<p>Add your content here.</p>"
+            "heading": "Ultra Long Battery Life",
+            "content": "<p>The tracker has a battery life of up to 2 - 12 months per charge, depending on the mode of operation and cellular network conditions.</p>"
           }
         },
         "accordion_cqErk6": {
           "type": "accordion",
           "settings": {
-            "heading": "CARE INSTRUCTIONS",
-            "content": "<p>Add your content here.</p>"
+            "heading": "Durable & Waterproof",
+            "content": "<p>Designed to be durable and waterproof, ensuring that it can withstand harsh industrial environments. Waterproof out of the box. No need for extra accessories.</p>"
           }
         },
         "accordion_mpiQC9": {
           "type": "accordion",
           "settings": {
-            "heading": "CARE INSTRUCTIONS",
-            "content": "<p>Add your content here.</p>"
+            "heading": "What's in the Box",
+            "content": "<ul><li>Tracki Pro GPS Tracker</li><li>Magnet Mount</li><li>Charging Cable</li><li>Mounting Plate</li><li>3M Ultimate Bond Strength Tape</li></ul>"
           }
         }
       },
