@@ -112,9 +112,28 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "product_showcase_F4afWJ": {
+      "type": "product-showcase",
+      "name": "Product Showcase",
+      "settings": {
+        "preorder_text": "Pre-order",
+        "title": "",
+        "price": "$120.00",
+        "inventory_text": "Hurry! Low Inventory",
+        "color_1": "#C89C2B",
+        "color_2": "#D9D9D9",
+        "countdown_heading": "Sale Ends Soon",
+        "countdown_date": "2025-12-31",
+        "description": "",
+        "details": "",
+        "button_text": "PRE-ORDER - $120.00",
+        "recommended_product": ""
+      }
     }
   },
   "order": [
+    "product_showcase_F4afWJ",
     "main",
     "product_accordion_wT4mEU",
     "image_banner_overlay_XddUPB",
