@@ -14,50 +14,57 @@
 </div>
 
 <style>
+.accordion-wrapper {
+  background: #ffffff;
+  padding-top: 75px;
+  padding-bottom: 80px;
+}
+
 .custom-accordion {
   max-width: 1000px;
   margin: 0 auto;
-  background: #ffffff;
+  background: #fff;
 }
 
 .accordion-item {
-  border-top: 1px solid #d9d9d9;
-  background: #ffffff;
+  border-top: 1px solid #d8d8d8;
 }
 
 .accordion-item:last-child {
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d8d8d8;
 }
 
 .accordion-header {
   width: 100%;
-  background: #ffffff;
-  border: none;
-  padding: 30px 0;
+  background: transparent;
+  border: 0;
+  padding: 28px 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
 
-  color: #000000;
-  font-size: 18px;
+  color: #000;
+  font-size: 15px;
   font-weight: 700;
+  line-height: 1;
   text-transform: uppercase;
+  letter-spacing: 0;
 }
 
 .accordion-icon {
-  color: #000000;
-  font-size: 18px;
-  transition: transform 0.3s ease;
+  color: #000;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform .3s ease;
 }
 
 .accordion-content {
   display: none;
-  padding: 0 0 30px;
-  color: #000000;
-  background: #ffffff;
-  font-size: 15px;
-  line-height: 1.6;
+  padding: 0 0 28px;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .accordion-item.active .accordion-content {
@@ -68,10 +75,19 @@
   transform: rotate(180deg);
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 749px) {
+  .accordion-wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .custom-accordion {
+    padding: 0 20px;
+  }
+
   .accordion-header {
-    font-size: 16px;
-    padding: 20px 0;
+    font-size: 14px;
+    padding: 24px 0;
   }
 }
 </style>
