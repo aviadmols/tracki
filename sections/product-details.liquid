@@ -71,9 +71,9 @@
                   </details>
                 </accordion-tab>
               {%- else -%}
-                {% if template == 'product.default-new' %}
+                {% if template == 'product.default-new' or template == 'product.default-v2' %}
   <div class="product__description rte typeset" {{ block.shopify_attributes }}>
-    {{ product.description }}
+    {{ product.description | truncatewords: 30 }}
   </div>
 {% else %}
   <div class="product__description rte typeset" {{ block.shopify_attributes }}>
