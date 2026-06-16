@@ -342,6 +342,7 @@
         },
         "product-details-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Specifications",
             "content": "<p>Item Weight:    18 ounces/ 263 Grams<br/><br/>Dimensions:     3.54”(L) x 2.48”(W) x 1.46”(H)<br/><br/>Network Band: 4G Band 1/2/3/4/5/7/12/13/17/18/19/20/25/26/38/41<br/><br/>Update rate:    15 Seconds - 1 Minute, depending on subscription<br/><br/>Batteries   10,000mAh Lithium-ion battery<br/><br/>Battery Life    2 to 12 months per charge<br/><br/>Product Warranty    Lifetime<br/><br/></p>",
@@ -350,6 +351,7 @@
         },
         "product-details-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Key Benefits",
             "content": "<ul><li>Accurate Tracking: Provides reliable location information even in buildings.</li><li>Long-Lasting Power: Reduces the need for frequent recharging.</li><li>Rugged Design: Ensures durability in tough environments.</li><li>User-Friendly: Quick and easy setup with no extra accessories needed.</li><li>Versatile Notifications: Stay informed with various alert options.</li><li>Flexible Attachment: Easy to attach to different surfaces and items.</li><li>Lifetime Warranty: Includes coverage for lost or damaged devices.</li><li>Affordable Plans: Monthly fee options starting at $9.95 for long-term plans.</li></ul>",
@@ -358,6 +360,7 @@
         },
         "product-details-3": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Ultra Long Battery Life",
             "content": "<p>The tracker has a battery life of up to 2 - 12 months per charge, depending on the mode of operation and cellular network conditions.</p>",
@@ -366,6 +369,7 @@
         },
         "60eeb066-dd65-49d7-b86e-8ef785719e6b": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Durable & Waterproof",
             "content": "<p>Designed to be durable and waterproof, ensuring that it can withstand harsh industrial environments. Waterproof out of the box. No need for extra accessories.</p>",
@@ -374,6 +378,7 @@
         },
         "collapsible_tab_kNHXA4": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "What's in the Box",
             "content": "<ul><li>Tracki Pro GPS Tracker</li><li>Magnet Mount</li><li>Charging Cable</li><li>Mounting Plate</li><li>3M Ultimate Bond Strength Tape</li></ul>",
@@ -382,6 +387,7 @@
         },
         "collapsible_tab_7Jma4m": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Warranty Information",
             "content": "<p>Lifetime warranty (including lost or damaged device)</p>",

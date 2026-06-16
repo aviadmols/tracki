@@ -28,7 +28,7 @@
             "field_spacing": 10,
             "max_width": 760,
             "section_padding": 24,
-            "text_color": "#25282A",
+            "text_color": "#25282a",
             "secondary_text_color": "#6b7280",
             "input_background_color": "#ffffff",
             "name_placeholder": "-",
