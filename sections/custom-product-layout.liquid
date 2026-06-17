@@ -139,129 +139,265 @@
   </div>
 </section>
 <style>
-    .custom-product {
-  padding: 40px 20px;
+   .custom-product {
+  background: #ffffff;
+  color: #111111;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
 }
 
+/* GRID */
 .custom-product__grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 50px;
+  gap: 60px;
   max-width: 1200px;
   margin: auto;
+  padding: 60px 20px;
+  background: #fff;
 }
 
-.main-image {
-  width: 100%;
-  border-radius: 4px;
+/* IMAGES */
+.custom-product__media {
+  background: #fff;
 }
 
+.main-image,
 .sub-image {
   width: 100%;
-  margin-top: 20px;
+  display: block;
+  background: #fff;
 }
 
+/* BADGE */
 .badge {
   display: inline-block;
   padding: 4px 10px;
-  background: #111;
-  color: #fff;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #111;
+  color: #111;
+  background: transparent;
+  margin-bottom: 12px;
+}
+
+/* TITLE */
+.title {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #111;
   margin-bottom: 10px;
 }
 
-.title {
-  font-size: 26px;
-  margin: 10px 0;
-}
-
+/* PRICE */
 .price {
   font-size: 18px;
-  margin-bottom: 10px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 18px;
 }
 
+/* INVENTORY */
 .inventory {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #666;
-  margin-bottom: 20px;
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 25px;
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 2px solid gold;
+  border: 1px solid #c9a24a;
 }
 
-.option-group {
-  margin-bottom: 15px;
+/* VARIANTS */
+.option-group label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
 }
 
 .swatches {
   display: flex;
   gap: 10px;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .swatch {
-  padding: 6px 12px;
   border: 1px solid #ddd;
   background: #fff;
+  color: #111;
+  padding: 6px 14px;
+  font-size: 13px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
+.swatch:hover {
+  border-color: #111;
+}
+
+/* ACCORDION */
 .accordion details {
   border-top: 1px solid #eee;
-  padding: 10px 0;
+  padding: 14px 0;
+  color: #111;
 }
 
+.accordion summary {
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.accordion .content {
+  padding-top: 10px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* FEATURES */
 .features {
-  margin-top: 15px;
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  font-size: 13px;
   color: #555;
 }
 
-.buy-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+/* SIZE GUIDE */
+.size-guide {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #111;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
 }
 
+/* BUY ROW */
+.buy-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* QTY */
 .qty {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #ddd;
-  padding: 5px;
+  width: 120px;
+  padding: 8px 10px;
+  background: #fff;
 }
 
 .qty input {
-  width: 50px;
-  text-align: center;
+  width: 40px;
   border: none;
+  text-align: center;
+  font-size: 14px;
+  background: transparent;
 }
 
+.qty button {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ADD TO CART */
 .atc-btn {
   flex: 1;
-  background: black;
-  color: white;
+  background: #111;
+  color: #fff;
   border: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   padding: 14px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.atc-btn:hover {
+  background: #000;
+}
+
+/* COMPLETE LOOK */
+.complete {
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.complete h3 {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .complete-card {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
 }
 
+.complete-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  background: #fff;
+}
+
+.complete-card p {
+  font-size: 13px;
+  color: #111;
+}
+
+.complete-card span {
+  font-size: 13px;
+  color: #555;
+}
+
+/* HELP */
 .help {
-  margin-top: 20px;
+  margin-top: 25px;
+  font-size: 13px;
   color: #666;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .custom-product__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 16px;
+  }
+
+  .buy-row {
+    flex-direction: column;
+  }
+
+  .qty {
+    width: 100%;
+  }
 }
 </style>
 <script>
