@@ -152,15 +152,21 @@
         "screen_PdtwDJ": {
           "type": "screen",
           "settings": {
-            "label": "Devices",
-            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+            "image": "shopify://shop_images/phone-img3.webp",
+            "default_icon": "shopify://shop_images/app-icon3.svg",
+            "active_icon": "shopify://shop_images/notifications-active.svg",
+            "label": "Notifications",
+            "description": "Get alerts for unusual activity and the notifications you configure"
           }
         },
         "screen_MWerrd": {
           "type": "screen",
           "settings": {
-            "label": "Devices",
-            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+            "image": "shopify://shop_images/phone-img4.webp",
+            "default_icon": "shopify://shop_images/app-icon4.svg",
+            "active_icon": "shopify://shop_images/account-active.svg",
+            "label": "Account",
+            "description": "Manage profile information, update preferences, and control how the app works"
           }
         }
       },
