@@ -7,14 +7,14 @@
     <!-- Product Images -->
     <div class="custom-product__gallery">
       {% for media in product.media %}
-        <div class="gallery-item">
-          {{
-            media
-            | image_url: width: 1200
-            | image_tag: loading: 'lazy'
-          }}
-        </div>
-      {% endfor %}
+  {% if media.media_type == 'image' %}
+    {{
+      media
+      | image_url: width: 1200
+      | image_tag
+    }}
+  {% endif %}
+{% endfor %}
     </div>
 
     <!-- Product Info -->
