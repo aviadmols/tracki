@@ -36,9 +36,43 @@
         "text_color": "#ffffff",
         "speed": 30
       }
+    },
+    "product_accordion_zjXgit": {
+      "type": "product-accordion",
+      "blocks": {
+        "accordion_TbeE3A": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Key Benefits",
+            "content": "<ul><li>Accurate Tracking: Provides reliable location information even in buildings.</li><li>Long-Lasting Power: Reduces the need for frequent recharging.</li><li>Rugged Design: Ensures durability in tough environments.</li><li>User-Friendly: Quick and easy setup with no extra accessories needed.</li><li>Versatile Notifications: Stay informed with various alert options.</li><li>Flexible Attachment: Easy to attach to different surfaces and items.</li><li>Lifetime Warranty: Includes coverage for lost or damaged devices.</li><li>Affordable Plans: Monthly fee options starting at $9.95 for long-term plans.</li></ul>"
+          }
+        },
+        "accordion_YAJkqN": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Ultra Long Battery Life",
+            "content": "<p>The tracker has a battery life of up to 2 - 12 months per charge, depending on the mode of operation and cellular network conditions.</p>"
+          }
+        },
+        "accordion_fmFRQ3": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Durable & Waterproof",
+            "content": "<p>Designed to be durable and waterproof, ensuring that it can withstand harsh industrial environments. Waterproof out of the box. No need for extra accessories.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_TbeE3A",
+        "accordion_YAJkqN",
+        "accordion_fmFRQ3"
+      ],
+      "name": "Custom Accordion",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "product_accordion_zjXgit"
   ]
 }
