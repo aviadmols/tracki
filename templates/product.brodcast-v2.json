@@ -11,18 +11,6 @@
   "sections": {
     "custom_product_layout_xJUBg4": {
       "type": "custom-product-layout",
-      "blocks": {
-        "accordion_6WzVFd": {
-          "type": "accordion",
-          "settings": {
-            "title": "Description",
-            "content": "<p>With a <strong>Tracki®</strong> device,<br/>easily track vehicles, assets, or authorized individuals in real time.  <strong>Tracki®</strong>  Worldwide GPS Tracker allows you to monitors location with pinpoint accuracy and track anywhere in real time while giving you real-time updates.</p><p>Tracki comes with international sim card included & built in. No need to look for extra SIM card. Tracki works out-of-the-box within 5 minutes. Just like a cellphone a tracker needs a data connection using the cellular network. MONTHLY FEE is required for internet data connection.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordion_6WzVFd"
-      ],
       "name": "Custom Product Layout",
       "settings": {
         "badge": "",
@@ -56,6 +44,7 @@
         "announcement_kAxh8a",
         "announcement_MLJBGW"
       ],
+      "disabled": true,
       "settings": {
         "bg_color": "#111111",
         "text_color": "#ffffff",
