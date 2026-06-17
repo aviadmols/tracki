@@ -9,6 +9,19 @@
  */
 {
   "sections": {
+    "product_details_main": {
+      "type": "product-details-main",
+      "name": "Product Details Main",
+      "settings": {
+        "preorder_text": "Pre-order",
+        "details_text": "",
+        "feature_1": "Free 30 Days Returns",
+        "feature_2": "Free shipping over $100",
+        "feature_3": "1 year warranty",
+        "feature_4": "14k Solid Gold"
+      }
+    },
+
     "main": {
       "type": "marquee",
       "blocks": {
@@ -37,6 +50,7 @@
         "speed": 25
       }
     },
+
     "product_accordion": {
       "type": "product-accordion",
       "blocks": {
@@ -70,6 +84,7 @@
       "name": "Product Accordion",
       "settings": {}
     },
+
     "image_banner_overlay": {
       "type": "image-banner-overlay",
       "name": "Image Banner Overlay",
@@ -79,6 +94,7 @@
         "text": "<p>Ethically sourced and sustainable materials.</p>"
       }
     },
+
     "image_promo_grid": {
       "type": "image-promo-grid",
       "blocks": {
@@ -114,7 +130,9 @@
       }
     }
   },
+
   "order": [
+    "product_details_main",
     "main",
     "product_accordion",
     "image_banner_overlay",
