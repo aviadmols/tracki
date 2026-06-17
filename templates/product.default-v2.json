@@ -413,6 +413,7 @@
         "collapsible_tab_kNHXA4",
         "collapsible_tab_7Jma4m"
       ],
+      "disabled": true,
       "settings": {
         "force_light_style": false,
         "open_first_collapsible_row": false,
@@ -811,7 +812,6 @@
         "1644818997c04c6254-4",
         "testimonial_aQJRUb"
       ],
-      "disabled": true,
       "settings": {
         "autorotate": true,
         "autorotate_speed": 5,
@@ -940,6 +940,7 @@
         "6c32a2ea-9c8b-4f87-8621-db65ff9182b2",
         "1644821694a2720bf8-2"
       ],
+      "disabled": true,
       "settings": {
         "map_address": "Toronto, Canada",
         "map_api_key": "",
