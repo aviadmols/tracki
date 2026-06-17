@@ -125,6 +125,52 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "tracki_app_Nbd33W": {
+      "type": "tracki-app",
+      "blocks": {
+        "screen_jnTx8R": {
+          "type": "screen",
+          "settings": {
+            "image": "shopify://shop_images/phone-img1.webp",
+            "default_icon": "shopify://shop_images/pin.svg",
+            "active_icon": "shopify://shop_images/Group_6.svg",
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        },
+        "screen_Trmixq": {
+          "type": "screen",
+          "settings": {
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        },
+        "screen_PdtwDJ": {
+          "type": "screen",
+          "settings": {
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        },
+        "screen_MWerrd": {
+          "type": "screen",
+          "settings": {
+            "label": "Devices",
+            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+          }
+        }
+      },
+      "block_order": [
+        "screen_jnTx8R",
+        "screen_Trmixq",
+        "screen_PdtwDJ",
+        "screen_MWerrd"
+      ],
+      "name": "Tracki Mobile Section",
+      "settings": {
+        "heading": "Tracki mobile application"
+      }
     }
   },
   "order": [
@@ -132,6 +178,7 @@
     "main",
     "product_accordion_zjXgit",
     "image_banner_overlay_mYa8x3",
-    "image_promo_grid_4JrFBN"
+    "image_promo_grid_4JrFBN",
+    "tracki_app_Nbd33W"
   ]
 }
