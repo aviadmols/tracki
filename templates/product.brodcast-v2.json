@@ -9,6 +9,19 @@
  */
 {
   "sections": {
+    "custom_product_layout_xJUBg4": {
+      "type": "custom-product-layout",
+      "name": "Custom Product Layout",
+      "settings": {
+        "badge": "Pre-order",
+        "inventory_text": "Hurry! Low stock",
+        "size_guide": "Size Guide",
+        "button_text": "ADD TO CART",
+        "complete_product": "",
+        "complete_title": "Complete the look",
+        "help_text": ""
+      }
+    },
     "main": {
       "type": "marquee",
       "blocks": {
@@ -112,26 +125,13 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "custom_product_layout_xJUBg4": {
-      "type": "custom-product-layout",
-      "name": "Custom Product Layout",
-      "settings": {
-        "badge": "Pre-order",
-        "inventory_text": "Hurry! Low stock",
-        "size_guide": "Size Guide",
-        "button_text": "ADD TO CART",
-        "complete_product": "",
-        "complete_title": "Complete the look",
-        "help_text": ""
-      }
     }
   },
   "order": [
+    "custom_product_layout_xJUBg4",
     "main",
     "product_accordion_zjXgit",
     "image_banner_overlay_mYa8x3",
-    "image_promo_grid_4JrFBN",
-    "custom_product_layout_xJUBg4"
+    "image_promo_grid_4JrFBN"
   ]
 }
