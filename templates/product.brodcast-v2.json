@@ -18,10 +18,18 @@
             "text": "FREE SHIPPING ON ORDERS OVER $200",
             "link": ""
           }
+        },
+        "announcement_MLJBGW": {
+          "type": "announcement",
+          "settings": {
+            "text": "Track your own assets, vehicles, and loved ones",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement_kAxh8a"
+        "announcement_kAxh8a",
+        "announcement_MLJBGW"
       ],
       "settings": {
         "bg_color": "#111111",
