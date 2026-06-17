@@ -32,10 +32,12 @@
         {{ product.price | money }}
       </div>
 
-      <div class="inventory">
-        <span class="dot"></span>
-        {{ section.settings.inventory_text }}
-      </div>
+      {% if product.selected_or_first_available_variant.inventory_quantity < 10 %}
+  <div class="inventory">
+    <span class="dot"></span>
+    {{ section.settings.inventory_text }}
+  </div>
+{% endif %}
 
       <!-- VARIANTS -->
       {% unless product.has_only_default_variant %}
