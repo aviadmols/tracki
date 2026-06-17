@@ -11,7 +11,23 @@
   "sections": {
     "main": {
       "type": "marquee",
-      "settings": {}
+      "blocks": {
+        "announcement_PE9EyE": {
+          "type": "announcement",
+          "settings": {
+            "text": "FREE SHIPPING ON ORDERS OVER $200",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_PE9EyE"
+      ],
+      "settings": {
+        "bg_color": "#111111",
+        "text_color": "#ffffff",
+        "speed": 30
+      }
     }
   },
   "order": [
