@@ -1,0 +1,103 @@
+<section class="withdrawal-page">
+  <div class="page-width">
+
+    <h1>Withdraw</h1>
+
+    <div class="withdrawal-content">
+      <p>You may request a refund within 14 days of your purchase.</p>
+
+      <p>To begin the refund process, please provide below:</p>
+
+      <ul>
+        <li>Your tracker ID</li>
+        <li>The email address associated with your account</li>
+        <li>Your full name</li>
+        <li>Your country</li>
+        <li>Your phone number (optional)</li>
+      </ul>
+
+      <p>
+        Once your request is submitted, you will receive an email with
+        instructions on how to return your tracker.
+      </p>
+
+      <p>
+        The tracker must be returned before your refund can be processed.
+      </p>
+    </div>
+
+    <h2>Withdrawal request form</h2>
+
+    {% form 'contact' %}
+
+      <div class="withdrawal-grid">
+
+        <div class="field">
+          <input
+            type="text"
+            name="contact[Full Name]"
+            placeholder="Full name *"
+            required>
+        </div>
+
+        <div class="field">
+          <input
+            type="text"
+            name="contact[Country]"
+            placeholder="Country *"
+            required>
+        </div>
+
+        <div class="field">
+          <input
+            type="text"
+            name="contact[Tracker ID]"
+            placeholder="Tracker ID *"
+            required>
+        </div>
+
+        <div class="field">
+          <input
+            type="email"
+            name="contact[email]"
+            placeholder="Email *"
+            required>
+        </div>
+
+        <div class="field">
+          <input
+            type="date"
+            name="contact[Purchase Date]">
+        </div>
+
+        <div class="field">
+          <input
+            type="tel"
+            name="contact[Phone Number]"
+            placeholder="Phone number">
+        </div>
+
+      </div>
+
+      <div class="field upload-wrapper">
+        <label>Upload Invoice File</label>
+        <input
+          type="file"
+          id="invoice-file">
+      </div>
+
+      <button type="submit" class="withdraw-btn">
+        REQUEST THE WITHDRAW
+      </button>
+
+    {% endform %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Withdrawal Form Figma",
+  "settings": []
+}
+{% endschema %}
