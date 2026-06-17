@@ -114,7 +114,7 @@
       }
     },
     "product_custom_mGjFWe": {
-      "type": "product-custom",
+      "type": "product-custom-v2",
       "name": "Product Details V2",
       "settings": {
         "preorder_text": "Pre-order",
