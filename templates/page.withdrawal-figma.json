@@ -16,15 +16,22 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "narrow": true,
         "padding_top": 60,
         "padding_bottom": 72
       }
+    },
+    "withdrawal_form_jHrVG3": {
+      "type": "withdrawal-form",
+      "name": "Withdrawal Form",
+      "settings": {}
     }
   },
   "order": [
     "new_bredcrump_BTVPzW",
-    "main"
+    "main",
+    "withdrawal_form_jHrVG3"
   ]
 }
