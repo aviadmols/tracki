@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "product_details_main": {
+    "product_details_main_xE3fNV": {
       "type": "product-details-main",
       "name": "Product Details Main",
       "settings": {
@@ -21,7 +21,6 @@
         "feature_4": "14k Solid Gold"
       }
     },
-
     "main": {
       "type": "marquee",
       "blocks": {
@@ -50,29 +49,28 @@
         "speed": 25
       }
     },
-
-    "product_accordion": {
+    "product_accordion_wT4mEU": {
       "type": "product-accordion",
       "blocks": {
         "accordion_tA4aQJ": {
           "type": "accordion",
           "settings": {
             "heading": "Ultra Long Battery Life",
-            "content": "<p>The tracker has a battery life of up to 2 - 12 months per charge.</p>"
+            "content": "<p>The tracker has a battery life of up to 2 - 12 months per charge, depending on the mode of operation and cellular network conditions.</p>"
           }
         },
         "accordion_cqErk6": {
           "type": "accordion",
           "settings": {
             "heading": "Durable & Waterproof",
-            "content": "<p>Designed to be waterproof and durable.</p>"
+            "content": "<p>Designed to be durable and waterproof, ensuring that it can withstand harsh industrial environments. Waterproof out of the box. No need for extra accessories.</p>"
           }
         },
         "accordion_mpiQC9": {
           "type": "accordion",
           "settings": {
             "heading": "What's in the Box",
-            "content": "<ul><li>Tracker</li><li>Magnet Mount</li><li>Charging Cable</li></ul>"
+            "content": "<ul><li>Tracki Pro GPS Tracker</li><li>Magnet Mount</li><li>Charging Cable</li><li>Mounting Plate</li><li>3M Ultimate Bond Strength Tape</li></ul>"
           }
         }
       },
@@ -84,44 +82,42 @@
       "name": "Product Accordion",
       "settings": {}
     },
-
-    "image_banner_overlay": {
+    "image_banner_overlay_XddUPB": {
       "type": "image-banner-overlay",
       "name": "Image Banner Overlay",
       "settings": {
         "image": "shopify://shop_images/elderly-hero.jpg",
         "heading": "RECYCLED MATERIALS",
-        "text": "<p>Ethically sourced and sustainable materials.</p>"
+        "text": "<p>We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.</p>"
       }
     },
-
-    "image_promo_grid": {
+    "image_promo_grid_z7xcan": {
       "type": "image-promo-grid",
       "blocks": {
-        "card_1": {
+        "card_MikD4r": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/parentsv2-hero-bg.jpg",
             "heading": "PIECES TO KEEP FOREVER",
-            "description": "Thoughtfully designed jewelry",
+            "description": "Thoughtfully designed jewelry to wear everyday",
             "button_text": "LEARN MORE",
             "button_link": ""
           }
         },
-        "card_2": {
+        "card_GjVzyR": {
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/parentsv2-scare-child.jpg",
-            "heading": "EVERYDAY LUXURY",
-            "description": "Minimal and elegant design",
-            "button_text": "SHOP NOW",
+            "heading": "PIECES TO KEEP FOREVER",
+            "description": "Thoughtfully designed jewelry to wear everyday",
+            "button_text": "Shop Now",
             "button_link": ""
           }
         }
       },
       "block_order": [
-        "card_1",
-        "card_2"
+        "card_MikD4r",
+        "card_GjVzyR"
       ],
       "name": "Image Promo Grid",
       "settings": {
@@ -130,12 +126,11 @@
       }
     }
   },
-
   "order": [
-    "product_details_main",
+    "product_details_main_xE3fNV",
     "main",
-    "product_accordion",
-    "image_banner_overlay",
-    "image_promo_grid"
+    "product_accordion_wT4mEU",
+    "image_banner_overlay_XddUPB",
+    "image_promo_grid_z7xcan"
   ]
 }
