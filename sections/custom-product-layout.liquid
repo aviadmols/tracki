@@ -1,0 +1,364 @@
+<section class="custom-product">
+
+  <div class="custom-product__grid">
+
+    <!-- LEFT IMAGES -->
+    <div class="custom-product__media">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | image_url: width: 1400 }}"
+          class="main-image"
+        >
+      {% endif %}
+
+      {% if product.images[1] %}
+        <img
+          src="{{ product.images[1] | image_url: width: 1400 }}"
+          class="sub-image"
+        >
+      {% endif %}
+    </div>
+
+    <!-- RIGHT INFO -->
+    <div class="custom-product__info">
+
+      {% if section.settings.badge != blank %}
+        <div class="badge">{{ section.settings.badge }}</div>
+      {% endif %}
+
+      <h1 class="title">{{ product.title }}</h1>
+
+      <div class="price">
+        {{ product.price | money }}
+      </div>
+
+      <div class="inventory">
+        <span class="dot"></span>
+        {{ section.settings.inventory_text }}
+      </div>
+
+      <!-- VARIANTS -->
+      {% unless product.has_only_default_variant %}
+        <div class="variants">
+          {% for option in product.options_with_values %}
+            <div class="option-group">
+              <label>{{ option.name }}</label>
+
+              <div class="swatches">
+                {% for value in option.values %}
+                  <button
+                    class="swatch"
+                    type="button"
+                    data-value="{{ value }}"
+                  >
+                    {{ value }}
+                  </button>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endunless %}
+
+      <!-- ACCORDION -->
+      <div class="accordion">
+        {% for block in section.blocks %}
+          {% if block.type == 'accordion' %}
+            <details>
+              <summary>{{ block.settings.title }}</summary>
+              <div class="content">
+                {{ block.settings.content }}
+              </div>
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- FEATURES -->
+      <div class="features">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature' %}
+            <div class="feature">
+              {{ block.settings.text }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- SIZE GUIDE -->
+      {% if section.settings.size_guide != blank %}
+        <div class="size-guide">
+          {{ section.settings.size_guide }}
+        </div>
+      {% endif %}
+
+      <!-- ADD TO CART -->
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        <div class="buy-row">
+
+          <div class="qty">
+            <button type="button" class="qty-minus">-</button>
+            <input type="number" name="quantity" value="1" min="1">
+            <button type="button" class="qty-plus">+</button>
+          </div>
+
+          <button type="submit" class="atc-btn">
+            {{ section.settings.button_text }} — {{ product.price | money }}
+          </button>
+
+        </div>
+      {% endform %}
+
+      <!-- COMPLETE LOOK -->
+      {% if section.settings.complete_product != blank %}
+        {% assign cp = all_products[section.settings.complete_product] %}
+
+        <div class="complete">
+          <h3>{{ section.settings.complete_title }}</h3>
+
+          <div class="complete-card">
+            <img src="{{ cp.featured_image | image_url: width: 200 }}">
+            <div>
+              <p>{{ cp.title }}</p>
+              <span>{{ cp.price | money }}</span>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- HELP -->
+      {% if section.settings.help_text != blank %}
+        <div class="help">
+          {{ section.settings.help_text }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+<style>
+    .custom-product {
+  padding: 40px 20px;
+}
+
+.custom-product__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.sub-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.inventory {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid gold;
+}
+
+.option-group {
+  margin-bottom: 15px;
+}
+
+.swatches {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.swatch {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.accordion details {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.features {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #555;
+}
+
+.buy-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.qty input {
+  width: 50px;
+  text-align: center;
+  border: none;
+}
+
+.atc-btn {
+  flex: 1;
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.complete-card {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.help {
+  margin-top: 20px;
+  color: #666;
+}
+</style>
+<script>
+    document.addEventListener("click", function (e) {
+
+  // qty -
+  if (e.target.classList.contains("qty-minus")) {
+    const input = e.target.parentElement.querySelector("input");
+    input.value = Math.max(1, parseInt(input.value) - 1);
+  }
+
+  // qty +
+  if (e.target.classList.contains("qty-plus")) {
+    const input = e.target.parentElement.querySelector("input");
+    input.value = parseInt(input.value) + 1;
+  }
+
+});
+</script>
+{% schema %}
+{
+  "name": "Custom Product Layout",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge",
+      "default": "Pre-order"
+    },
+    {
+      "type": "text",
+      "id": "inventory_text",
+      "label": "Inventory Text",
+      "default": "Hurry! Low stock"
+    },
+    {
+      "type": "text",
+      "id": "size_guide",
+      "label": "Size Guide",
+      "default": "Size Guide"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "ADD TO CART"
+    },
+    {
+      "type": "product",
+      "id": "complete_product",
+      "label": "Complete Look Product"
+    },
+    {
+      "type": "text",
+      "id": "complete_title",
+      "label": "Complete Look Title",
+      "default": "Complete the look"
+    },
+    {
+      "type": "richtext",
+      "id": "help_text",
+      "label": "Help Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Layout"
+    }
+  ]
+}
+{% endschema %}
