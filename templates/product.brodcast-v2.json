@@ -11,6 +11,38 @@
   "sections": {
     "custom_product_layout_xJUBg4": {
       "type": "custom-product-layout",
+      "blocks": {
+        "feature_ecH8PC": {
+          "type": "feature",
+          "settings": {
+            "text": "Free 30 Days Returns"
+          }
+        },
+        "feature_8pfD6w": {
+          "type": "feature",
+          "settings": {
+            "text": "Free shipping on orders over $100"
+          }
+        },
+        "feature_aWf7PT": {
+          "type": "feature",
+          "settings": {
+            "text": "1 year warranty"
+          }
+        },
+        "feature_XMMRPx": {
+          "type": "feature",
+          "settings": {
+            "text": "14k Solid Gold"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ecH8PC",
+        "feature_8pfD6w",
+        "feature_aWf7PT",
+        "feature_XMMRPx"
+      ],
       "name": "Custom Product Layout",
       "settings": {
         "badge": "",
