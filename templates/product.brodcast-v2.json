@@ -13,7 +13,7 @@
       "type": "custom-product-layout",
       "name": "Custom Product Layout",
       "settings": {
-        "badge": "Pre-order",
+        "badge": "",
         "inventory_text": "Hurry! Low stock",
         "size_guide": "Size Guide",
         "button_text": "ADD TO CART",
