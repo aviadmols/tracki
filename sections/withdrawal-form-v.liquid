@@ -59,113 +59,105 @@
   }
 }    
 </style>
-<section class="withdrawal-page">
+<div class="withdrawal-page color-{{ section.settings.color_scheme }}">
   <div class="page-width">
 
-    <h1>Withdraw</h1>
+    <h1 class="withdrawal-title">{{ page.title }}</h1>
 
-    <div class="withdrawal-content">
-      <p>You may request a refund within 14 days of your purchase.</p>
-
-      <p>To begin the refund process, please provide below:</p>
-
-      <ul>
-        <li>Your tracker ID</li>
-        <li>The email address associated with your account</li>
-        <li>Your full name</li>
-        <li>Your country</li>
-        <li>Your phone number (optional)</li>
-      </ul>
-
-      <p>
-        Once your request is submitted, you will receive an email with
-        instructions on how to return your tracker.
-      </p>
-
-      <p>
-        The tracker must be returned before your refund can be processed.
-      </p>
+    <div class="withdrawal-content rte">
+      {{ page.content }}
     </div>
 
-    <h2>Withdrawal request form</h2>
+    <div class="withdrawal-form-wrapper">
 
-    {% form 'contact' %}
+      {% form 'contact' %}
 
-      <div class="withdrawal-grid">
+        {% if form.posted_successfully? %}
+          <div class="form-status success">
+            Request submitted successfully.
+          </div>
+        {% endif %}
 
-        <div class="field">
-          <input
-            type="text"
-            name="contact[Full Name]"
-            placeholder="Full name *"
-            required>
+        {{ form.errors | default_errors }}
+
+        <h2>Withdrawal request form</h2>
+
+        <div class="withdrawal-grid">
+
+          <div>
+            <input
+              type="text"
+              name="contact[Full Name]"
+              placeholder="Full name *"
+              required>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="contact[Country]"
+              placeholder="Country *"
+              required>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="contact[Tracker ID]"
+              placeholder="Tracker ID *"
+              required>
+          </div>
+
+          <div>
+            <input
+              type="email"
+              name="contact[email]"
+              placeholder="Email *"
+              required>
+          </div>
+
+          <div>
+            <input
+              type="date"
+              name="contact[Purchase Date]">
+          </div>
+
+          <div>
+            <input
+              type="tel"
+              name="contact[Phone]"
+              placeholder="Phone number">
+          </div>
+
         </div>
 
-        <div class="field">
-          <input
-            type="text"
-            name="contact[Country]"
-            placeholder="Country *"
-            required>
-        </div>
+        <textarea
+          name="contact[Reason]"
+          rows="5"
+          placeholder="Reason for withdrawal"></textarea>
 
-        <div class="field">
-          <input
-            type="text"
-            name="contact[Tracker ID]"
-            placeholder="Tracker ID *"
-            required>
-        </div>
+        <button type="submit" class="button button--primary">
+          REQUEST THE WITHDRAWAL
+        </button>
 
-        <div class="field">
-          <input
-            type="email"
-            name="contact[email]"
-            placeholder="Email *"
-            required>
-        </div>
+      {% endform %}
 
-        <div class="field">
-          <input
-            type="date"
-            name="contact[Purchase Date]">
-        </div>
-
-        <div class="field">
-          <input
-            type="tel"
-            name="contact[Phone Number]"
-            placeholder="Phone number">
-        </div>
-
-      </div>
-
-      <div class="field upload-wrapper">
-        <label>Upload Invoice File</label>
-        <input
-          type="file"
-          id="invoice-file">
-      </div>
-
-      <button type="submit" class="withdraw-btn">
-        REQUEST THE WITHDRAW
-      </button>
-
-    {% endform %}
+    </div>
 
   </div>
-</section>
+</div>
 
 {% schema %}
 {
   "name": "Withdrawal Form Figma",
   "settings": [
-    ],
-  "blocks": [
-  {
-    "type": "@app"
-  }
-],
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    }
+  ],
   "presets": [
     {
       "name": "Withdrawal Form Figma"
