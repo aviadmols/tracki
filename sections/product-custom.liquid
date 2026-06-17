@@ -1,0 +1,280 @@
+<section class="custom-product">
+  <div class="custom-product__grid">
+
+    <!-- Product Images -->
+    <div class="custom-product__gallery">
+      {% for media in product.media %}
+        <div class="gallery-item">
+          {{
+            media
+            | image_url: width: 1200
+            | image_tag: loading: 'lazy'
+          }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Product Info -->
+    <div class="custom-product__info">
+
+      {% if section.settings.preorder_text != blank %}
+        <span class="preorder-badge">
+          {{ section.settings.preorder_text }}
+        </span>
+      {% endif %}
+
+      <h1 class="product-title">
+        {{ product.title }}
+      </h1>
+
+      <div class="product-price">
+        {{ product.price | money }}
+      </div>
+
+      <!-- Inventory -->
+      {% if product.selected_or_first_available_variant.inventory_quantity < 10 %}
+        <div class="inventory-warning">
+          Hurry! Low inventory
+        </div>
+      {% endif %}
+
+      <!-- Variants -->
+      {% unless product.has_only_default_variant %}
+        <div class="variant-wrapper">
+          {% for option in product.options_with_values %}
+            <label>{{ option.name }}</label>
+
+            <div class="swatches">
+              {% for value in option.values %}
+                <input
+                  type="radio"
+                  id="{{ value }}"
+                  name="{{ option.name }}"
+                  value="{{ value }}"
+                >
+                <label for="{{ value }}">
+                  {{ value }}
+                </label>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endunless %}
+
+      <!-- Countdown -->
+      <div class="countdown-box">
+        <p>Our seasonal sale ends soon</p>
+        <div id="countdown"></div>
+      </div>
+
+      <!-- Accordions -->
+      <details open>
+        <summary>Description</summary>
+        {{ product.description }}
+      </details>
+
+      <details>
+        <summary>Details</summary>
+        {{ section.settings.details_text }}
+      </details>
+
+      <!-- Features -->
+      <ul class="feature-list">
+        <li>{{ section.settings.feature_1 }}</li>
+        <li>{{ section.settings.feature_2 }}</li>
+        <li>{{ section.settings.feature_3 }}</li>
+        <li>{{ section.settings.feature_4 }}</li>
+      </ul>
+
+      <!-- Quantity + Add To Cart -->
+      {% form 'product', product %}
+        <div class="purchase-row">
+
+          <input
+            type="number"
+            name="quantity"
+            value="1"
+            min="1"
+          >
+
+          <button
+            type="submit"
+            class="add-cart-btn"
+          >
+            PRE-ORDER • {{ product.price | money }}
+          </button>
+
+        </div>
+      {% endform %}
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+    .custom-product {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.custom-product__grid {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 40px;
+}
+
+.custom-product__gallery img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-item {
+  margin-bottom: 20px;
+  background: #f5f5f5;
+}
+
+.custom-product__info {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+
+.preorder-badge {
+  background: #6b5a4a;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 15px 0 8px;
+  text-transform: uppercase;
+}
+
+.product-price {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.inventory-warning {
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.variant-wrapper {
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+.swatches {
+  display: flex;
+  gap: 10px;
+}
+
+.swatches label {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.countdown-box {
+  background: #e8d8cd;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+details {
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+}
+
+.purchase-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.purchase-row input {
+  width: 80px;
+  height: 52px;
+  text-align: center;
+}
+
+.add-cart-btn {
+  flex: 1;
+  height: 52px;
+  border: none;
+  border-radius: 40px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom Product Layout",
+  "settings": [
+    {
+      "type": "text",
+      "id": "preorder_text",
+      "label": "Preorder Badge",
+      "default": "Pre-order"
+    },
+    {
+      "type": "textarea",
+      "id": "details_text",
+      "label": "Details Content"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature 1",
+      "default": "Free 30 Days Returns"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "Free shipping over $100"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "1 year warranty"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "Feature 4",
+      "default": "14k Solid Gold"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Product Layout"
+    }
+  ]
+}
+{% endschema %}
