@@ -142,8 +142,11 @@
         "screen_Trmixq": {
           "type": "screen",
           "settings": {
-            "label": "Devices",
-            "description": "Automatic real-time reports every 60 seconds & 5 seconds manual ping alerts"
+            "image": "shopify://shop_images/phone-img2.webp",
+            "default_icon": "shopify://shop_images/app-icon2.svg",
+            "active_icon": "shopify://shop_images/places-active.svg",
+            "label": "Places",
+            "description": "Set tracking perimeters and receive real-time alerts when your tracker exits the safe zone"
           }
         },
         "screen_PdtwDJ": {
