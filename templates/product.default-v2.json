@@ -858,6 +858,7 @@
         "16447459539c38746f-1",
         "16447459539c38746f-2"
       ],
+      "disabled": true,
       "settings": {
         "return_url": "",
         "text_alignment": "left",
