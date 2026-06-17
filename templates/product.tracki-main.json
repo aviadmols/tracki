@@ -112,12 +112,25 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "product_custom_mGjFWe": {
+      "type": "product-custom",
+      "name": "Product Details V2",
+      "settings": {
+        "preorder_text": "Pre-order",
+        "details_text": "",
+        "feature_1": "Free 30 Days Returns",
+        "feature_2": "Free shipping over $100",
+        "feature_3": "1 year warranty",
+        "feature_4": "14k Solid Gold"
+      }
     }
   },
   "order": [
     "main",
     "product_accordion_wT4mEU",
     "image_banner_overlay_XddUPB",
-    "image_promo_grid_z7xcan"
+    "image_promo_grid_z7xcan",
+    "product_custom_mGjFWe"
   ]
 }
