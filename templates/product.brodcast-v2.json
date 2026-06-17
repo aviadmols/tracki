@@ -69,10 +69,20 @@
       ],
       "name": "Custom Accordion",
       "settings": {}
+    },
+    "image_banner_overlay_mYa8x3": {
+      "type": "image-banner-overlay",
+      "name": "Image Banner Overlay",
+      "settings": {
+        "image": "shopify://shop_images/elderly-hero.jpg",
+        "heading": "RECYCLED MATERIALS",
+        "text": "<p>We partner with high quality jewellers who only use recycled gold, AAA-grade gemstones, and ethically sourced diamonds.</p>"
+      }
     }
   },
   "order": [
     "main",
-    "product_accordion_zjXgit"
+    "product_accordion_zjXgit",
+    "image_banner_overlay_mYa8x3"
   ]
 }
