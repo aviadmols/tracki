@@ -323,6 +323,7 @@
         "54684625-1615-430d-b322-cfb5af689b94",
         "a2f06597-05bf-457d-a1e5-54d6e03ff425"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "media_position": "left",
@@ -413,6 +414,7 @@
         "collapsible_tab_kNHXA4",
         "collapsible_tab_7Jma4m"
       ],
+      "disabled": true,
       "settings": {
         "force_light_style": false,
         "open_first_collapsible_row": false,
@@ -811,6 +813,7 @@
         "1644818997c04c6254-4",
         "testimonial_aQJRUb"
       ],
+      "disabled": true,
       "settings": {
         "autorotate": true,
         "autorotate_speed": 5,
@@ -857,6 +860,7 @@
         "16447459539c38746f-1",
         "16447459539c38746f-2"
       ],
+      "disabled": true,
       "settings": {
         "return_url": "",
         "text_alignment": "left",
@@ -964,6 +968,18 @@
         "padding_top": 36,
         "padding_bottom": 0
       }
+    },
+    "product_details_main_be8FdR": {
+      "type": "product-details-main",
+      "name": "Product Details Main",
+      "settings": {
+        "preorder_text": "Pre-order",
+        "details_text": "",
+        "feature_1": "Free 30 Days Returns",
+        "feature_2": "Free shipping over $100",
+        "feature_3": "1 year warranty",
+        "feature_4": "14k Solid Gold"
+      }
     }
   },
   "order": [
@@ -979,6 +995,7 @@
     "tab-collage",
     "1644818998cec1e2a6",
     "1644745953392511db",
-    "1644821694668dc64a"
+    "1644821694668dc64a",
+    "product_details_main_be8FdR"
   ]
 }
