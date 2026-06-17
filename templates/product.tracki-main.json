@@ -132,8 +132,8 @@
   },
 
   "order": [
-    "main",
     "product_details_main",
+    "main",
     "product_accordion",
     "image_banner_overlay",
     "image_promo_grid"
