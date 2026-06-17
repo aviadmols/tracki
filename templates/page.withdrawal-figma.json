@@ -23,15 +23,15 @@
         "padding_bottom": 72
       }
     },
-    "withdrawal_form_jHrVG3": {
-      "type": "withdrawal-form",
-      "name": "Withdrawal Form",
+    "withdrawal_form_v_49nMqB": {
+      "type": "withdrawal-form-v",
+      "name": "Withdrawal Form Figma",
       "settings": {}
     }
   },
   "order": [
     "new_bredcrump_BTVPzW",
     "main",
-    "withdrawal_form_jHrVG3"
+    "withdrawal_form_v_49nMqB"
   ]
 }
