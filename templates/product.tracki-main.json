@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "product_custom_L6xPKq": {
+      "type": "product-custom",
+      "name": "Custom Product Layout",
+      "settings": {
+        "preorder_text": "Pre-order",
+        "details_text": "",
+        "feature_1": "Free 30 Days Returns",
+        "feature_2": "Free shipping over $100",
+        "feature_3": "1 year warranty",
+        "feature_4": "14k Solid Gold"
+      }
+    },
     "main": {
       "type": "marquee",
       "blocks": {
@@ -35,18 +47,6 @@
         "bg_color": "#111111",
         "text_color": "#ffffff",
         "speed": 25
-      }
-    },
-    "product_custom_L6xPKq": {
-      "type": "product-custom",
-      "name": "Custom Product Layout",
-      "settings": {
-        "preorder_text": "Pre-order",
-        "details_text": "",
-        "feature_1": "Free 30 Days Returns",
-        "feature_2": "Free shipping over $100",
-        "feature_3": "1 year warranty",
-        "feature_4": "14k Solid Gold"
       }
     },
     "product_accordion_wT4mEU": {
@@ -127,8 +127,8 @@
     }
   },
   "order": [
-    "main",
     "product_custom_L6xPKq",
+    "main",
     "product_accordion_wT4mEU",
     "image_banner_overlay_XddUPB",
     "image_promo_grid_z7xcan"
