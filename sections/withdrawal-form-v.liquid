@@ -40,9 +40,35 @@ line-height: normal;
 }
 
 .upload-wrapper input[type="file"] {
-  width: 100%;
-  padding: 15px;
-  background: #7bc46a;
+  display: none;
+}
+
+.upload-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 420px;
+  height: 50px;
+
+  background: #76C773;
+  color: #25282A;
+
+  font-family: "Circular Std", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.upload-btn.file-selected {
+  background: #394045;
+  color: #FFFFFF;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .withdraw-btn {
@@ -347,7 +373,7 @@ line-height: normal;
     required
   >
 
-  <label for="invoice-upload" class="upload-btn">
+  <label for="invoice-upload" class="upload-btn" id="upload-label">
     UPLOAD INVOICE FILE
   </label>
 </div>
