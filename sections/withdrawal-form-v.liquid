@@ -127,6 +127,27 @@ line-height: normal;
 .upload-btn:hover {
   background: #76C773;
 }
+.button--primary {
+  width: 380px;      /* adjust as needed */
+  height: 45px;
+  background: #3b434c;
+  color: #1f2328;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: not-allowed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button--primary:disabled {
+  background: #3b434c;
+  color: #1f2328;
+  opacity: 1;
+}
 @media screen and (max-width:749px){
 
   .withdrawal-grid{
@@ -263,9 +284,12 @@ line-height: normal;
 
   </div>
 
-  <button type="submit" class="button button--primary">
-    REQUEST THE WITHDRAWAL
-  </button>
+  <button type="submit"
+        class="button button--primary"
+        id="withdrawBtn"
+        disabled>
+  REQUEST THE WITHDRAWAL
+</button>
 
 {% endform %}
 
