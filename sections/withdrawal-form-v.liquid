@@ -479,7 +479,7 @@ removeBtn.addEventListener('click', function () {
     uploadBtn.style.display = 'inline-block';
 });
 const invoiceUpload = document.getElementById('invoice-upload');
-const fileName = document.querySelector('.file-name');
+const fileName2 = document.querySelector('.file-name');
 const preview = document.getElementById('filePreview');
 const hiddenUrl = document.getElementById('invoice-download-link');
 
@@ -490,7 +490,7 @@ invoiceUpload.addEventListener('change', function(){
 
     if(file){
 
-        fileName.textContent = file.name;
+        fileName2.textContent = file.name;
         preview.style.display = "flex";
 
 
@@ -528,7 +528,7 @@ invoiceUpload.addEventListener('change', function(){
 document.getElementById('removeFile').addEventListener('click',function(){
 
     invoiceUpload.value="";
-    fileName.textContent="";
+    fileName2.textContent="";
     hiddenUrl.value="";
 
 });
