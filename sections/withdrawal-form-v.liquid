@@ -8,7 +8,7 @@
       {{ page.content }}
     </div>
 
-    <div class="withdrawal-form-wrapper">
+<div class="withdrawal-form-wrapper">
   <div class="page-width">
   <iframe
     src="https://guide.tracki.com/shopify/EU-Request-form/"
@@ -20,7 +20,7 @@
 </div>
 
 
-      {% form 'contact' %}
+{% comment %} {% form 'contact' %}
 
   {% if form.posted_successfully? %}
   <div class="success-message">
@@ -204,7 +204,7 @@
     REQUEST THE WITHDRAWAL
 </button>
 
-{% endform %}
+{% endform %} {% endcomment %}
 
     </div>
 
