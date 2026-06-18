@@ -95,7 +95,35 @@ line-height: normal;
 .withdrawal-form-wrapper button{
   min-width:300px;
 }
+.upload-wrapper {
+  position: relative;
+  width: 100%;
+}
 
+/* Hide default file input */
+.upload-wrapper input[type="file"] {
+  display: none;
+}
+
+/* Custom button */
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  background: #7bc46a; /* green like your SS */
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.upload-btn:hover {
+  background: #6ab85c;
+}
 @media screen and (max-width:749px){
 
   .withdrawal-grid{
@@ -169,7 +197,7 @@ line-height: normal;
         placeholder="Tracker ID *"
         required>
     </div>
-    
+
     <!-- Full Name -->
     <div>
       <input
@@ -215,13 +243,20 @@ line-height: normal;
     </div>
 
     <!-- Upload Invoice -->
-    <div>
-      <input
-        type="file"
-        name="contact[Invoice]"
-        accept=".jpg,.jpeg,.png,.pdf"
-        required>
-    </div>
+    <!-- Upload Invoice -->
+<div class="upload-wrapper">
+  <input
+    type="file"
+    id="invoice-upload"
+    name="contact[Invoice]"
+    accept=".jpg,.jpeg,.png,.pdf"
+    required
+  >
+
+  <label for="invoice-upload" class="upload-btn">
+    UPLOAD INVOICE FILE
+  </label>
+</div>
 
   </div>
 
