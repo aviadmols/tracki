@@ -4599,8 +4599,8 @@ line-height: normal;
     align-items: center;
     justify-content: space-between;
     border: none;
-    padding: 2px 0;
-    margin-top: 0;
+    padding: 6px 0;
+    margin: auto 0;
 }
 
 .file-info {
@@ -4608,6 +4608,7 @@ line-height: normal;
     align-items: center;
     gap: 15px;
 }
+
 
 .file-name {
     color: #fff;
@@ -4618,7 +4619,7 @@ line-height: normal;
     font-style: normal;
 }
 
-.file-preview .remove-file {
+.file-preview .remove-file , .file-icon{
     min-width: 0;
     padding: 0;
     width: 32px;
