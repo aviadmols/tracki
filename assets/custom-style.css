@@ -4598,26 +4598,34 @@ line-height: normal;
     display: none;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #666;
-    padding: 12px 16px;
-    margin-top: 15px;
+    border: none;
+    padding: 2px 0;
+    margin-top: 0;
 }
 
 .file-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .file-name {
     color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 3%;
+    font-weight: 450;
+    font-style: normal;
 }
 
-.remove-file {
-    background: none;
-    border: 0;
-    cursor: pointer;
+.file-preview .remove-file {
+    min-width: 0;
     padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .withdraw-btn {
