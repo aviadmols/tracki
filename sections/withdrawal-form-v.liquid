@@ -370,44 +370,55 @@ line-height: normal;
 
     <!-- Upload Invoice -->
     <!-- Upload Invoice -->
+<!-- Upload Invoice -->
 <div class="upload-wrapper">
+
     <input
         type="file"
         id="invoice-upload"
+        name="contact[Invoice File]"
         accept=".jpg,.jpeg,.png,.pdf"
         required
+    >
+
+    <!-- Hidden field to send download URL -->
+    <input
+        type="hidden"
+        name="contact[Invoice Download Link]"
+        id="invoice-download-link"
     >
 
     <label for="invoice-upload" class="upload-btn">
         UPLOAD INVOICE FILE
     </label>
 
+
     <div class="file-preview" id="filePreview">
+
         <div class="file-info">
+
             <span class="file-icon">
-                <!-- File SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M25 28H7C6.73478 28 6.48043 27.8946 6.29289 27.7071C6.10536 27.5196 6 27.2652 6 27V5C6 4.73478 6.10536 4.48043 6.29289 4.29289C6.48043 4.10536 6.73478 4 7 4H19L26 11V27C26 27.2652 25.8946 27.5196 25.7071 27.7071C25.5196 27.8946 25.2652 28 25 28Z" stroke="#F3F1F0" stroke-width="1.5"/>
-                    <path d="M19 4V11H26" stroke="#F3F1F0" stroke-width="1.5"/>
-                    <path d="M12 17H20" stroke="#F3F1F0" stroke-width="1.5"/>
-                    <path d="M12 21H20" stroke="#F3F1F0" stroke-width="1.5"/>
                 </svg>
             </span>
 
             <span class="file-name"></span>
+
         </div>
 
+
         <button type="button" class="remove-file" id="removeFile">
-            <!-- Delete SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
                 <path d="M27 7H5" stroke="#FF2E17" stroke-width="1.5"/>
-                <path d="M13 13V21" stroke="#FF2E17" stroke-width="1.5"/>
-                <path d="M19 13V21" stroke="#FF2E17" stroke-width="1.5"/>
-                <path d="M25 7V26C25 26.2652 24.8946 26.5196 24.7071 26.7071C24.5196 26.8946 24.2652 27 24 27H8C7.73478 27 7.48043 26.8946 7.29289 26.7071C7.10536 26.5196 7 26.2652 7 26V7" stroke="#FF2E17" stroke-width="1.5"/>
-                <path d="M21 7V5C21 4.46957 20.7893 3.96086 20.4142 3.58579C20.0391 3.21071 19.5304 3 19 3H13C12.4696 3 11.9609 3.21071 11.5858 3.58579C11.2107 3.96086 11 4.46957 11 5V7" stroke="#FF2E17" stroke-width="1.5"/>
             </svg>
+
         </button>
+
+
     </div>
+
 </div>
 
   </div>
@@ -466,6 +477,61 @@ removeBtn.addEventListener('click', function () {
 
     filePreview.style.display = 'none';
     uploadBtn.style.display = 'inline-block';
+});
+
+const invoiceUpload = document.getElementById('invoice-upload');
+const fileName = document.querySelector('.file-name');
+const preview = document.getElementById('filePreview');
+const hiddenUrl = document.getElementById('invoice-download-link');
+
+
+invoiceUpload.addEventListener('change', function(){
+
+    const file = this.files[0];
+
+    if(file){
+
+        fileName.textContent = file.name;
+        preview.style.display = "flex";
+
+
+        /*
+          IMPORTANT:
+          Replace this with your upload URL.
+          The server should return:
+          {
+             "url":"https://your-domain.com/file.pdf"
+          }
+        */
+
+        let uploadData = new FormData();
+        uploadData.append("file", file);
+
+
+        fetch("YOUR_UPLOAD_API_URL", {
+            method:"POST",
+            body:uploadData
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            hiddenUrl.value = data.url;
+
+        });
+
+
+    }
+
+});
+
+
+
+document.getElementById('removeFile').addEventListener('click',function(){
+
+    invoiceUpload.value="";
+    fileName.textContent="";
+    hiddenUrl.value="";
+
 });
 </script>
 {% schema %}
