@@ -4528,14 +4528,27 @@ left: 0;
 
 /* Withdrawal form css start */
 
-.withdrawal-page h1 {
-  color: #FFF;
-font-size: 50px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+
+.withdrawal-page .page-width {
+    max-width: 1020px;
 }
 
+.withdrawal-page h1 {
+    color: #FFF;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 0 60px;
+}
+.withdrawal-page form h2 {
+    color: #FFFFFF;
+    font-size: 28px;
+    line-height: normal;
+    font-weight: 700;
+    letter-spacing: 0;
+    font-style: normal;
+}
 .withdrawal-content {
   color: var(--Text-Light, #F7F1E7);
 text-align: justify;
@@ -4621,13 +4634,10 @@ line-height: normal;
   }
 } 
 
-.withdrawal-page{
-  padding:80px 0;
+.withdrawal-page {
+    padding: 60px 0;
 }
 
-.withdrawal-title{
-  margin-bottom:40px;
-}
 
 .withdrawal-content{
   max-width:900px;
