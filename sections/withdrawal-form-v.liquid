@@ -411,7 +411,18 @@ document.querySelectorAll('[required]').forEach(field => {
     field.addEventListener('input', checkRequiredFields);
     field.addEventListener('change', checkRequiredFields);
 });
+const fileInput = document.getElementById('invoice-upload');
+const uploadLabel = document.getElementById('upload-label');
 
+fileInput.addEventListener('change', function () {
+  if (this.files.length > 0) {
+    uploadLabel.textContent = this.files[0].name;
+    uploadLabel.classList.add('file-selected');
+  } else {
+    uploadLabel.textContent = 'UPLOAD INVOICE FILE';
+    uploadLabel.classList.remove('file-selected');
+  }
+});
 checkRequiredFields();
 </script>
 {% schema %}
