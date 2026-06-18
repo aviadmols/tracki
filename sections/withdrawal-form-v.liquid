@@ -123,76 +123,104 @@ line-height: normal;
 
       {% form 'contact' %}
 
-        {% if form.posted_successfully? %}
-          <div class="form-status success">
-            Request submitted successfully.
-          </div>
-        {% endif %}
+  {% if form.posted_successfully? %}
+    <div class="form-status success">
+      Request submitted successfully.
+    </div>
+  {% endif %}
 
-        {{ form.errors | default_errors }}
+  {{ form.errors | default_errors }}
 
-        <h2>Withdrawal request form</h2>
+  <h2>Withdrawal request form</h2>
 
-        <div class="withdrawal-grid">
+  <div class="withdrawal-grid">
 
-          <div>
-            <input
-              type="text"
-              name="contact[Full Name]"
-              placeholder="Full name *"
-              required>
-          </div>
+    <!-- Purchase Date -->
+    <div>
+      <input
+        type="date"
+        name="contact[Purchase Date]"
+        value="{{ 'now' | date: '%Y-%m-%d' }}">
+    </div>
 
-          <div>
-            <input
-              type="text"
-              name="contact[Country]"
-              placeholder="Country *"
-              required>
-          </div>
+    <!-- Order Number -->
+    <div>
+      <input
+        type="text"
+        name="contact[Order Number]"
+        placeholder="Order number *"
+        required>
+    </div>
 
-          <div>
-            <input
-              type="text"
-              name="contact[Tracker ID]"
-              placeholder="Tracker ID *"
-              required>
-          </div>
+    <!-- Tracker ID -->
+    <div>
+      <input
+        type="text"
+        name="contact[Tracker ID]"
+        placeholder="Tracker ID *"
+        required>
+    </div>
 
-          <div>
-            <input
-              type="email"
-              name="contact[email]"
-              placeholder="Email *"
-              required>
-          </div>
+    <!-- Full Name -->
+    <div>
+      <input
+        type="text"
+        name="contact[Full Name]"
+        placeholder="Full name *"
+        required>
+    </div>
 
-          <div>
-  <input
-    type="date"
-    name="contact[Purchase Date]"
-    value="{{ 'now' | date: '%Y-%m-%d' }}">
-</div>
+    <!-- Email -->
+    <div>
+      <input
+        type="email"
+        name="contact[email]"
+        placeholder="Email *"
+        required>
+    </div>
 
-          <div>
-            <input
-              type="tel"
-              name="contact[Phone]"
-              placeholder="Phone number">
-          </div>
+    <!-- Country -->
+    <div>
+      <input
+        type="text"
+        name="contact[Country]"
+        placeholder="Country *"
+        required>
+    </div>
 
-        </div>
+    <!-- Home Address -->
+    <div>
+      <input
+        type="text"
+        name="contact[Home Address]"
+        placeholder="Home address *"
+        required>
+    </div>
 
-        {% comment %} <textarea
-          name="contact[Reason]"
-          rows="5"
-          placeholder="Reason for withdrawal"></textarea> {% endcomment %}
+    <!-- Phone -->
+    <div>
+      <input
+        type="tel"
+        name="contact[Phone]"
+        placeholder="Phone number">
+    </div>
 
-        <button type="submit" class="button button--primary">
-          REQUEST THE WITHDRAWAL
-        </button>
+    <!-- Upload Invoice -->
+    <div>
+      <input
+        type="file"
+        name="contact[Invoice]"
+        accept=".jpg,.jpeg,.png,.pdf"
+        required>
+    </div>
 
-      {% endform %}
+  </div>
+
+  <button type="submit" class="button button--primary">
+    REQUEST THE WITHDRAWAL
+  </button>
+
+{% endform %}
 
     </div>
 
