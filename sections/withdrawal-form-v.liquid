@@ -234,57 +234,67 @@ removeBtn.addEventListener('click', function () {
     uploadBtn.style.display = 'inline-block';
 });
 const invoiceUpload = document.getElementById('invoice-upload');
-const fileName2 = document.querySelector('.file-name');
-const preview = document.getElementById('filePreview');
 const hiddenUrl = document.getElementById('invoice-download-link');
+const fileName = document.querySelector('.file-name');
+const preview = document.getElementById('filePreview');
+const uploadBtn = document.querySelector('.upload-btn');
 
-console.log('invoice-download-link=',invoice-download-link);
-invoiceUpload.addEventListener('change', function(){
+invoiceUpload.addEventListener('change', async function () {
 
     const file = this.files[0];
 
-    if(file){
+    console.log('========== FILE SELECTED ==========');
 
-        fileName2.textContent = file.name;
-        preview.style.display = "flex";
+    if (!file) {
+        console.log('No file selected');
+        return;
+    }
 
+    console.log('File Name:', file.name);
+    console.log('File Size:', file.size);
+    console.log('File Type:', file.type);
 
-        /*
-          IMPORTANT:
-          Replace this with your upload URL.
-          The server should return:
-          {
-             "url":"https://your-domain.com/file.pdf"
-          }
-        */
+    fileName.textContent = file.name;
+    preview.style.display = 'flex';
+    uploadBtn.style.display = 'none';
 
-        let uploadData = new FormData();
-        uploadData.append("file", file);
+    const uploadData = new FormData();
+    uploadData.append('file', file);
 
+    try {
 
-        fetch("YOUR_UPLOAD_API_URL", {
-            method:"POST",
-            body:uploadData
-        })
-        .then(response => response.json())
-        .then(data => {
+        console.log('Uploading file...');
+
+        const response = await fetch('YOUR_UPLOAD_API_URL', {
+            method: 'POST',
+            body: uploadData
+        });
+
+        console.log('Response Status:', response.status);
+
+        const data = await response.json();
+
+        console.log('Upload Response:', data);
+
+        if (data.url) {
 
             hiddenUrl.value = data.url;
 
-        });
+            console.log('SUCCESS');
+            console.log('PDF URL:', data.url);
+            console.log('Hidden Field Value:', hiddenUrl.value);
 
+        } else {
+
+            console.error('No URL returned from API');
+
+        }
+
+    } catch (error) {
+
+        console.error('Upload Error:', error);
 
     }
-
-});
-
-
-
-document.getElementById('removeFile').addEventListener('click',function(){
-
-    invoiceUpload.value="";
-    fileName2.textContent="";
-    hiddenUrl.value="";
 
 });
 </script>
