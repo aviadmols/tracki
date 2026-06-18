@@ -4667,12 +4667,20 @@ line-height: normal;
 color:#7E878D;
 }
 
-.withdrawal-grid input::focus-visible,  .withdrawal-form-wrapper textarea::focus-visible, .withdrawal-grid input:focus,
+/* .withdrawal-grid input::focus-visible,  .withdrawal-form-wrapper textarea::focus-visible, .withdrawal-grid input:focus,
 .withdrawal-form-wrapper textarea:focus {
     outline: none;
     outline-offset: 0;
     box-shadow: none;
     border-color: #F3F1F0 !important;
+} */
+
+
+.withdrawal-grid *:focus-visible,
+.withdrawal-form-wrapper *:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
 }
 
 .withdrawal-grid input.bg_light_grey {
