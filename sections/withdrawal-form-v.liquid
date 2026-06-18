@@ -129,12 +129,12 @@ line-height: normal;
 }
 .button--primary {
   display: flex;
-  width: 420px;
-  height: 50px;
-  padding: 9px 130px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+
+  width: 420px;
+  height: 50px;
+  margin: 0 auto; /* centers the button */
 
   background: #394045;
   border: none;
@@ -142,19 +142,12 @@ line-height: normal;
   color: #25282A;
   font-family: "Circular Std", sans-serif;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   letter-spacing: 2.1px;
   text-transform: uppercase;
 
+  white-space: nowrap; /* prevents text wrapping */
   cursor: not-allowed;
-}
-
-.button--primary:disabled {
-  background: #394045;
-  color: #25282A;
-  opacity: 1;
 }
 @media screen and (max-width:749px){
 
