@@ -235,7 +235,7 @@ removeBtn.addEventListener('click', function () {
 });
 const invoiceUpload = document.getElementById('invoice-upload');
 const hiddenUrl = document.getElementById('invoice-download-link');
-const fileName = document.querySelector('.file-name');
+const InvoicefileName = document.querySelector('.file-name');
 const preview = document.getElementById('filePreview');
 const uploadBtn = document.querySelector('.upload-btn');
 
@@ -254,7 +254,7 @@ invoiceUpload.addEventListener('change', async function () {
     console.log('File Size:', file.size);
     console.log('File Type:', file.type);
 
-    fileName.textContent = file.name;
+    InvoicefileName.textContent = file.name;
     preview.style.display = 'flex';
     uploadBtn.style.display = 'none';
 
