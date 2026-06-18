@@ -4707,7 +4707,7 @@ color:#7E878D;
 
 /* Custom button */
 .upload-btn {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
