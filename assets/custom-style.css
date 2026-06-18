@@ -4664,8 +4664,8 @@ line-height: normal;
     line-height: 1;
 }
 .withdrawal-grid input::placeholder, .withdrawal-form-wrapper textarea::placeholder {
+color:#7E878D;
 
-  
 }
 .withdrawal-form-wrapper button{
   min-width:300px;
