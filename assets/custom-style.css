@@ -4671,6 +4671,7 @@ color:#7E878D;
     outline: none;
     outline-offset: 0;
     box-shadow: none;
+    border-color: #F3F1F0 !important;
 }
 
 .withdrawal-grid input.bg_light_grey {
