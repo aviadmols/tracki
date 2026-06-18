@@ -127,27 +127,34 @@ line-height: normal;
 .upload-btn:hover {
   background: #76C773;
 }
-.button--primary {
+/* Disabled state */
+.button--primary:disabled {
   display: flex;
   justify-content: center;
   align-items: center;
 
   width: 420px;
   height: 50px;
-  margin: 0 auto; /* centers the button */
+  margin: 0 auto;
 
-  background: #394045;
-  border: none;
-
+  background: #394045; /* dark gray */
   color: #25282A;
-  font-family: "Circular Std", sans-serif;
+
+  border: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 2.1px;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 2.1px;
-  text-transform: uppercase;
 
-  white-space: nowrap; /* prevents text wrapping */
   cursor: not-allowed;
+}
+
+/* Enabled state */
+.button--primary:not(:disabled) {
+  background: #76C773; /* green from your screenshot */
+  color: #25282A;
+  cursor: pointer;
 }
 @media screen and (max-width:749px){
 
@@ -286,7 +293,7 @@ line-height: normal;
   </div>
 
   <button type="submit" class="button--primary" disabled>
-  REQUEST THE WITHDRAWAL
+    REQUEST THE WITHDRAWAL
 </button>
 
 {% endform %}
@@ -296,6 +303,29 @@ line-height: normal;
   </div>
 </div>
 </div>
+<script>
+  const submitBtn = document.querySelector('.button--primary');
+
+function checkRequiredFields() {
+    const requiredFields = document.querySelectorAll('[required]');
+
+    const allFilled = [...requiredFields].every(field => {
+        if (field.type === 'checkbox') {
+            return field.checked;
+        }
+        return field.value.trim() !== '';
+    });
+
+    submitBtn.disabled = !allFilled;
+}
+
+document.querySelectorAll('[required]').forEach(field => {
+    field.addEventListener('input', checkRequiredFields);
+    field.addEventListener('change', checkRequiredFields);
+});
+
+checkRequiredFields();
+</script>
 {% schema %}
 {
   "name": "Withdrawal Form Figma",
