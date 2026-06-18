@@ -172,6 +172,32 @@ line-height: normal;
 
   cursor: not-allowed;
 }
+.success-message {
+  width: 420px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.success-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.success-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.success-message p {
+  color: var(--Green-light, #76C773);
+text-align: center;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
 @media screen and (max-width:749px){
 
   .withdrawal-grid{
@@ -200,10 +226,30 @@ line-height: normal;
       {% form 'contact' %}
 
   {% if form.posted_successfully? %}
-    <div class="form-status success">
-      Request submitted successfully.
+  <div class="success-message">
+
+    <div class="success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <g clip-path="url(#clip0_4477_13005)">
+          <path d="M30.4147 11.3638L14.3647 27.4138C13.9897 27.7885 13.4812 27.9991 12.9509 27.9991C12.4207 27.9991 11.9122 27.7885 11.5372 27.4138L2.5847 18.4138C2.21029 18.0388 2 17.5305 2 17.0006C2 16.4707 2.21029 15.9625 2.5847 15.5875L5.0847 13.0875C5.45953 12.7142 5.96697 12.5047 6.49595 12.5047C7.02493 12.5047 7.53237 12.7142 7.9072 13.0875L13.0009 18.0275L25.0959 6.08125C25.4708 5.70761 25.9785 5.4978 26.5078 5.4978C27.0371 5.4978 27.5448 5.70761 27.9197 6.08125L30.4134 8.52375C30.601 8.7096 30.7499 8.93073 30.8515 9.17441C30.9532 9.41808 31.0056 9.67947 31.0057 9.94349C31.0058 10.2075 30.9536 10.469 30.8522 10.7127C30.7508 10.9565 30.6021 11.1777 30.4147 11.3638Z" fill="#76C773"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_4477_13005">
+            <rect width="32" height="32" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
     </div>
-  {% endif %}
+
+    <h3>THANK YOU!</h3>
+
+    <p>
+      Your request has been received.<br>
+      Please check your email for return instructions and additional details.
+    </p>
+
+  </div>
+{% endif %}
 
   {{ form.errors | default_errors }}
 
