@@ -233,66 +233,175 @@ removeBtn.addEventListener('click', function () {
     filePreview.style.display = 'none';
     uploadBtn.style.display = 'inline-block';
 });
-const invoiceUpload = document.getElementById('invoice-upload');
-const hiddenUrl = document.getElementById('invoice-download-link');
-const InvoicefileName = document.querySelector('.file-name');
-const preview = document.getElementById('filePreview');
-const uploadBtn2 = document.querySelector('.upload-btn');
+document.addEventListener('DOMContentLoaded', function () {
 
-invoiceUpload.addEventListener('change', async function () {
+    const submitBtn = document.querySelector('.button--primary');
 
-    const file = this.files[0];
+    function checkRequiredFields() {
 
-    console.log('========== FILE SELECTED ==========');
+        const requiredFields = document.querySelectorAll('[required]');
 
-    if (!file) {
-        console.log('No file selected');
-        return;
-    }
+        const allFilled = [...requiredFields].every(field => {
 
-    console.log('File Name:', file.name);
-    console.log('File Size:', file.size);
-    console.log('File Type:', file.type);
+            if (field.type === 'checkbox') {
+                return field.checked;
+            }
 
-    InvoicefileName.textContent = file.name;
-    preview.style.display = 'flex';
-    uploadBtn2.style.display = 'none';
+            return field.value.trim() !== '';
 
-    const uploadData = new FormData();
-    uploadData.append('file', file);
-
-    try {
-
-        console.log('Uploading file...');
-
-        const response = await fetch('YOUR_UPLOAD_API_URL', {
-            method: 'POST',
-            body: uploadData
         });
 
-        console.log('Response Status:', response.status);
+        submitBtn.disabled = !allFilled;
 
-        const data = await response.json();
+    }
 
-        console.log('Upload Response:', data);
+    document.querySelectorAll('[required]').forEach(field => {
 
-        if (data.url) {
+        field.addEventListener('input', checkRequiredFields);
+        field.addEventListener('change', checkRequiredFields);
 
-            hiddenUrl.value = data.url;
+    });
 
-            console.log('SUCCESS');
-            console.log('PDF URL:', data.url);
-            console.log('Hidden Field Value:', hiddenUrl.value);
+    checkRequiredFields();
 
-        } else {
 
-            console.error('No URL returned from API');
+    const invoiceUpload = document.getElementById('invoice-upload');
+    const hiddenUrl = document.getElementById('invoice-download-link');
+
+    const invoiceFileName = document.querySelector('.file-name');
+    const preview = document.getElementById('filePreview');
+
+    const uploadBtn = document.querySelector('.upload-btn');
+    const removeBtn = document.getElementById('removeFile');
+
+
+    invoiceUpload.addEventListener('change', async function () {
+
+        const file = this.files[0];
+
+        console.log('==============================');
+        console.log('FILE SELECTED');
+        console.log('==============================');
+
+        if (!file) {
+
+            console.log('No file selected');
+            return;
 
         }
 
-    } catch (error) {
+        console.log('File Name:', file.name);
+        console.log('File Size:', file.size);
+        console.log('File Type:', file.type);
 
-        console.error('Upload Error:', error);
+        invoiceFileName.textContent = file.name;
+
+        uploadBtn.style.display = 'none';
+        preview.style.display = 'flex';
+
+        /*
+         TEMP TEST
+         Uncomment these lines to verify Shopify email receives the URL
+        */
+
+        hiddenUrl.value = 'https://test.com/sample.pdf';
+
+        console.log('TEST PDF URL:', hiddenUrl.value);
+
+        /*
+         REAL UPLOAD CODE
+         Replace YOUR_UPLOAD_API_URL with your actual API
+        */
+
+        try {
+
+            console.log('Uploading file...');
+
+            const uploadData = new FormData();
+            uploadData.append('file', file);
+
+            const response = await fetch('YOUR_UPLOAD_API_URL', {
+                method: 'POST',
+                body: uploadData
+            });
+
+            console.log('Response Object:', response);
+            console.log('Response Status:', response.status);
+
+            const responseText = await response.text();
+
+            console.log('Raw Response:', responseText);
+
+            try {
+
+                const data = JSON.parse(responseText);
+
+                console.log('Parsed Response:', data);
+
+                if (data.url) {
+
+                    hiddenUrl.value = data.url;
+
+                    console.log('SUCCESS');
+                    console.log('PDF URL:', data.url);
+                    console.log('Hidden Field Value:', hiddenUrl.value);
+
+                } else {
+
+                    console.error('No URL returned from API');
+
+                }
+
+            } catch (jsonError) {
+
+                console.error('JSON Parse Error');
+                console.error(jsonError);
+
+            }
+
+        } catch (error) {
+
+            console.error('UPLOAD FAILED');
+            console.error(error);
+
+        }
+
+    });
+
+
+    removeBtn.addEventListener('click', function () {
+
+        invoiceUpload.value = '';
+
+        invoiceFileName.textContent = '';
+
+        hiddenUrl.value = '';
+
+        preview.style.display = 'none';
+
+        uploadBtn.style.display = 'inline-block';
+
+        console.log('File Removed');
+
+    });
+
+
+    const form = document.querySelector('form');
+
+    if (form) {
+
+        form.addEventListener('submit', function () {
+
+            console.log('==============================');
+            console.log('FORM SUBMIT');
+            console.log('==============================');
+
+            console.log(
+                'Invoice Download Link:',
+                hiddenUrl.value
+            );
+
+        });
 
     }
 
