@@ -4541,6 +4541,8 @@ left: 0;
     line-height: normal;
     margin: 0 0 60px;
 }
+
+
 .withdrawal-page form h2 {
     color: #FFFFFF;
     font-size: 28px;
@@ -4548,7 +4550,10 @@ left: 0;
     font-weight: 700;
     letter-spacing: 0;
     font-style: normal;
+    margin: 0 0 30px;
 }
+
+
 .withdrawal-content {
   color: var(--Text-Light, #F7F1E7);
 text-align: justify;
@@ -4575,10 +4580,6 @@ line-height: normal;
   border: 1px solid #40464f;
   color: #fff;
   padding: 15px;
-}
-
-.upload-wrapper {
-    margin: 25px 0;
 }
 
 #invoice-upload {
@@ -4651,16 +4652,16 @@ line-height: normal;
   margin-bottom:20px;
 }
 
-.withdrawal-grid input,
-.withdrawal-form-wrapper textarea{
-  width:100%;
-  padding:16px;
-  border:1px solid rgba(var(--color-foreground),0.15);
-  background:transparent;
-}
-
-.withdrawal-form-wrapper textarea{
-  margin-bottom:24px;
+.withdrawal-grid input, .withdrawal-form-wrapper textarea {
+    width: 100%;
+    border: 1px solid #394045;
+    background: transparent;
+    padding: 14px 20px;
+    color: #F7F1E7;
+    letter-spacing: 3%;
+    font-size: 13px;
+    font-weight: 450;
+    line-height: 1;
 }
 
 .withdrawal-form-wrapper button{
@@ -4669,6 +4670,7 @@ line-height: normal;
 .upload-wrapper {
   position: relative;
   width: 100%;
+  margin:25px 0 0;
 }
 
 /* Hide default file input */
