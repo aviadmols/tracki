@@ -4528,7 +4528,7 @@ left: 0;
 
 /* Withdrawal form css start */
 
-
+/* 
 .withdrawal-page .page-width {
     max-width: 1020px;
 }
@@ -4698,15 +4698,15 @@ color:#7E878D;
 .upload-wrapper {
   position: relative;
   width: 100%;
-  /* margin:25px 0 0; */
-}
+  /* margin:25px 0 0; 
+} */
 
-/* Hide default file input */
+/* Hide default file input 
 .upload-wrapper input[type="file"] {
   display: none;
 }
 
-/* Custom button */
+/* Custom button 
 .upload-btn {
     display: flex;
     align-items: center;
@@ -4728,7 +4728,7 @@ color:#7E878D;
 .upload-btn:hover {
   background: #76C773;
 }
-/* Disabled state */
+/* Disabled state 
 .button--primary:disabled {
   display: flex;
   justify-content: center;
@@ -4738,7 +4738,7 @@ color:#7E878D;
   height: 50px;
   margin: 0 auto;
 
-  background: #394045; /* dark gray */
+  background: #394045; /* dark gray
   color: #25282A;
 
   border: none;
@@ -4751,7 +4751,7 @@ color:#7E878D;
   cursor: not-allowed;
 }
 
-/* Enabled state */
+/* Enabled state 
 .button--primary:not(:disabled) {
   display: flex;
   justify-content: center;
@@ -4761,7 +4761,7 @@ color:#7E878D;
   height: 50px;
   margin: 0 auto;
 
-  background: #76C773; /* dark gray */
+  background: #76C773; /* dark gray
   color: #25282A;
 
   border: none;
