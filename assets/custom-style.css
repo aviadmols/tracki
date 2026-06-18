@@ -4667,6 +4667,12 @@ line-height: normal;
 color:#7E878D;
 }
 
+.withdrawal-grid input::focus-visible,  .withdrawal-form-wrapper textarea::focus-visible {
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
 .withdrawal-grid input.bg_light_grey {
     background: #394045;
 }
