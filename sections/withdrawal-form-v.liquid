@@ -40,35 +40,9 @@ line-height: normal;
 }
 
 .upload-wrapper input[type="file"] {
-  display: none;
-}
-
-.upload-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 420px;
-  height: 50px;
-
-  background: #76C773;
-  color: #25282A;
-
-  font-family: "Circular Std", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 2.1px;
-  text-transform: uppercase;
-
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.upload-btn.file-selected {
-  background: #394045;
-  color: #FFFFFF;
-  text-transform: none;
-  letter-spacing: 0;
+  width: 100%;
+  padding: 15px;
+  background: #7bc46a;
 }
 
 .withdraw-btn {
@@ -373,7 +347,7 @@ line-height: normal;
     required
   >
 
-  <label for="invoice-upload" class="upload-btn" id="upload-label">
+  <label for="invoice-upload" class="upload-btn">
     UPLOAD INVOICE FILE
   </label>
 </div>
@@ -411,18 +385,7 @@ document.querySelectorAll('[required]').forEach(field => {
     field.addEventListener('input', checkRequiredFields);
     field.addEventListener('change', checkRequiredFields);
 });
-const fileInput = document.getElementById('invoice-upload');
-const uploadLabel = document.getElementById('upload-label');
 
-fileInput.addEventListener('change', function () {
-  if (this.files.length > 0) {
-    uploadLabel.textContent = this.files[0].name;
-    uploadLabel.classList.add('file-selected');
-  } else {
-    uploadLabel.textContent = 'UPLOAD INVOICE FILE';
-    uploadLabel.classList.remove('file-selected');
-  }
-});
 checkRequiredFields();
 </script>
 {% schema %}
