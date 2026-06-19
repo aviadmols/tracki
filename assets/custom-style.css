@@ -4569,6 +4569,6 @@ left: 0;
     height: 800px;
 }
 .withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width iframe html {
-    height: 800px;
+    overflow:hidden;
 }
 }
