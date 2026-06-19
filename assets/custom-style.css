@@ -4565,10 +4565,12 @@ left: 0;
 }
 }
 @media screen and (max-width:1023px) {
-.withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width iframe {
-    height: 850px;
-}
 .withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width iframe html {
     overflow:hidden;
+}
+}
+@media screen and (max-width:767px) {
+.withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width iframe {
+    height: 800px;
 }
 }
