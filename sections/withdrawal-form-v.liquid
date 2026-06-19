@@ -455,10 +455,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* AJAX FORM SUBMIT */
 
-/* AJAX FORM SUBMIT */
-
-/* AJAX FORM SUBMIT */
-
 document.addEventListener('DOMContentLoaded', function () {
 
     const form = document.querySelector('form');
@@ -478,29 +474,33 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.text())
         .then(data => {
 
-            console.log('Response:', data);
+            if (data.trim().toLowerCase() === 'success') {
 
-            /* Hide form */
-            form.style.display = 'none';
+                /* Hide Form */
+                form.style.display = 'none';
 
-            /* Show success message */
-            const successMessage = document.getElementById('successMessage');
+                /* Show Success Message */
+                const successMessage = document.getElementById('successMessage');
 
-            if (successMessage) {
+                if (successMessage) {
+                    successMessage.style.display = 'block';
 
-                successMessage.style.display = 'block';
+                    window.scrollTo({
+                        top: successMessage.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
 
-                window.scrollTo({
-                    top: successMessage.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+            } else {
+
+                alert(data);
+
             }
 
         })
         .catch(error => {
 
             console.error(error);
-
             alert('Something went wrong. Please try again.');
 
         });
