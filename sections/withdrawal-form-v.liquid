@@ -453,20 +453,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+/* AJAX FORM SUBMIT */
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const form = document.querySelector('form');
 
-    if (!form) {
-        console.log('Form not found');
-        return;
-    }
+    if (!form) return;
 
     form.addEventListener('submit', function (e) {
 
         e.preventDefault();
-
-        alert('Form submit intercepted');
 
         const formData = new FormData(this);
 
@@ -482,16 +479,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 data.toLowerCase().includes('sent')
             ) {
 
+                /* Hide form */
+                form.style.display = 'none';
+
+                /* Show success message */
                 const successMessage = document.getElementById('successMessage');
 
                 if (successMessage) {
-                    form.style.display = 'none';
                     successMessage.style.display = 'block';
+
+                    window.scrollTo({
+                        top: successMessage.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
                 }
 
             } else {
                 alert(data);
             }
+
+        })
+        .catch(error => {
+
+            console.error(error);
+            alert('Server Error');
 
         });
 
