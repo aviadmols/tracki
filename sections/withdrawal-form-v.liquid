@@ -457,7 +457,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* AJAX FORM SUBMIT */
 
+document.addEventListener('DOMContentLoaded', function () {
 
+    const form = document.querySelector('form');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('send-email.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+
+            console.log('Response:', data);
+
+            if (data.trim().toLowerCase() === 'success') {
+
+                /* Hide Form */
+                form.style.display = 'block';
+
+                /* Show Success Message */
+                const successMessage = document.getElementById('successMessage');
+
+                if (successMessage) {
+
+                    successMessage.style.display = 'block';
+
+                    window.scrollTo({
+                        top: successMessage.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+
+            } else {
+
+                alert(data);
+
+            }
+
+        })
+        .catch(error => {
+
+            console.error(error);
+            alert('Server Error');
+
+        });
+
+    });
+
+});
 </script> 
 {% schema %}
 {
