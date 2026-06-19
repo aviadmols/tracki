@@ -4558,7 +4558,38 @@ left: 0;
 .withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width iframe {
     height: 500px;
 }
+.form-main-wrapper #successMessage {
+    display: none;
+    width: 100%;
+    margin: 150px 0;
+}
 
+.form-main-wrapper .withdrawal-success {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.form-main-wrapper .success-icon {
+    margin-bottom: 20px;
+}
+
+.form-main-wrapper .success-text {
+    color: #76C773;
+    font-size: 28px;
+    font-weight: 500 !important;
+    line-height: 1;
+    font-family: "Circular Std", sans-serif !important;
+}
+
+.form-main-wrapper .success-text strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-main-wrapper .success-text span {
+    display: block;
+}
 @media screen and (max-width:1200px) {
   .withdrawal-request .withdrawal-page .page-width {
     padding:0;
