@@ -470,32 +470,15 @@ if (form) {
         .then(response => response.text())
         .then(data => {
 
-            console.log('Response:', data);
+            console.log(data);
 
             if (
                 data.toLowerCase().includes('success') ||
                 data.toLowerCase().includes('sent')
             ) {
 
-                /* Hide form */
-                form.style.display = 'none';
-
-                /* Show success message */
-                const successMessage = document.getElementById('successMessage');
-
-                if (successMessage) {
-
-                    successMessage.style.display = 'block';
-
-                    window.scrollTo({
-                        top: successMessage.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-
-                } else {
-
-                    console.error('successMessage div not found');
-                }
+                // Redirect to success page
+                window.location.href = '/pages/withdrawal-success';
 
             } else {
 
@@ -507,6 +490,7 @@ if (form) {
 
             console.error(error);
             alert('Server Error');
+
         });
 
     });
