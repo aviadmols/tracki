@@ -4535,7 +4535,7 @@ left: 0;
   padding:0 0 ;
 }
 
-.withdrawal-page .withdrawal-form-wrapper h1.withdrawal-title {
+.withdrawal-page h1.withdrawal-title {
     color: #FFF;
     font-size: 50px;
     font-style: normal;
