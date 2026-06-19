@@ -4558,3 +4558,9 @@ left: 0;
 .withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width iframe {
     height: 500px;
 }
+
+@media screen and (max-width:1200px) {
+  .withdrawal-request .withdrawal-page .page-width {
+    padding:0 1.5rem;
+}
+}
