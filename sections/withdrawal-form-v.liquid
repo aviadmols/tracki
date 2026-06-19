@@ -470,6 +470,8 @@ if (form) {
         .then(response => response.text())
         .then(data => {
 
+            console.log('Response:', data);
+
             if (
                 data.toLowerCase().includes('success') ||
                 data.toLowerCase().includes('sent')
@@ -482,20 +484,27 @@ if (form) {
                 const successMessage = document.getElementById('successMessage');
 
                 if (successMessage) {
+
                     successMessage.style.display = 'block';
 
                     window.scrollTo({
                         top: successMessage.offsetTop - 100,
                         behavior: 'smooth'
                     });
+
+                } else {
+
+                    console.error('successMessage div not found');
                 }
 
             } else {
+
                 alert(data);
             }
 
         })
         .catch(error => {
+
             console.error(error);
             alert('Server Error');
         });
