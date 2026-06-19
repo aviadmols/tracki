@@ -4527,17 +4527,17 @@ left: 0;
 }
 
 
-/* .transition-content {
+.withdrawal-request .transition-content {
   padding:60px 0;
 }
-.withdrawal-page .page-width {
+.withdrawal-request .withdrawal-page .page-width {
     max-width: 1020px;
 }
-.withdrawal-page .page-width .withdrawal-form-wrapper .page-width {
+.withdrawal-request .withdrawal-page .page-width .withdrawal-form-wrapper .page-width {
   padding:0 0 ;
 }
 
-.withdrawal-page h1.withdrawal-title {
+.withdrawal-request .withdrawal-page h1.withdrawal-title {
     color: #FFF;
     font-size: 50px;
     font-style: normal;
@@ -4546,7 +4546,7 @@ left: 0;
     margin: 0 0 60px;
 }
 
-.withdrawal-page .withdrawal-content {
+.withdrawal-request .withdrawal-page .withdrawal-content {
     color: #F7F1E7;
     text-align: justify;
     font-size: 20px;
@@ -4554,4 +4554,4 @@ left: 0;
     font-weight: 500;
     line-height: 1.3;
     margin-bottom:60px;
-} */
+}
