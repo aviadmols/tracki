@@ -4527,7 +4527,9 @@ left: 0;
 }
 
 
-
+.transition-content {
+  padding:60px 0;
+}
 .withdrawal-page .page-width {
     max-width: 1020px;
 }
