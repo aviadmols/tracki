@@ -4525,3 +4525,12 @@ left: 0;
         width:100%;
     }
 }
+
+
+
+.withdrawal-page .page-width {
+    max-width: 1020px;
+}
+.withdrawal-page .page-width .withdrawal-form-wrapper .page-width {
+  padding:0 0 ;
+}
