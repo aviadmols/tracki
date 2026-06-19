@@ -453,13 +453,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-const form = document.getElementById('withdrawalForm');
+document.addEventListener('DOMContentLoaded', function () {
 
-if (form) {
+    const form = document.querySelector('form');
+
+    if (!form) {
+        console.log('Form not found');
+        return;
+    }
 
     form.addEventListener('submit', function (e) {
 
         e.preventDefault();
+
+        alert('Form submit intercepted');
 
         const formData = new FormData(this);
 
@@ -470,32 +477,27 @@ if (form) {
         .then(response => response.text())
         .then(data => {
 
-            console.log(data);
-
             if (
                 data.toLowerCase().includes('success') ||
                 data.toLowerCase().includes('sent')
             ) {
 
-                // Redirect to success page
-                window.location.href = '/pages/withdrawal-success';
+                const successMessage = document.getElementById('successMessage');
+
+                if (successMessage) {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
 
             } else {
-
                 alert(data);
             }
-
-        })
-        .catch(error => {
-
-            console.error(error);
-            alert('Server Error');
 
         });
 
     });
 
-}
+});
 </script> 
 {% schema %}
 {
