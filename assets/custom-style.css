@@ -4528,10 +4528,10 @@ left: 0;
     }
 }
 
-
-.withdrawal-request .transition-content {
-  padding:60px 0;
+.withdrawal-request .withdrawal-page.color- {
+    padding: 60px 0;
 }
+
 .withdrawal-request .withdrawal-page .page-width {
     max-width: 1020px;
 }
