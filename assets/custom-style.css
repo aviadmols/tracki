@@ -4561,6 +4561,6 @@ left: 0;
 
 @media screen and (max-width:1200px) {
   .withdrawal-request .withdrawal-page .page-width {
-    padding:0 1.5rem;
+    padding:0;
 }
 }
