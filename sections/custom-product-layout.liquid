@@ -79,17 +79,12 @@
       <!-- FEATURES -->
       <div class="features">
         {% for block in section.blocks %}
-  {% if block.type == 'feature' %}
-    <div class="feature">
-      <span class="feature-icon">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-recycle" viewBox="0 0 24 24"><path d="M21.168 8A10.003 10.003 0 0 0 12 2c-5.185 0-9.45 3.947-9.95 9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 8h4.4a.6.6 0 0 0 .6-.6V3M2.881 16c1.544 3.532 5.068 6 9.168 6 5.186 0 9.45-3.947 9.951-9" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.05 16h-4.4a.6.6 0 0 0-.6.6V21" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-      <span class="feature-text">
-        {{ block.settings.text }}
-      </span>
-    </div>
-  {% endif %}
-{% endfor %}
+          {% if block.type == 'feature' %}
+            <div class="feature">
+              {{ block.settings.text }}
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
 
       <!-- SIZE GUIDE -->
@@ -153,15 +148,19 @@
 
 /* GRID */
 .custom-product__grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 30px;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-  background: #fff;
+  grid-template-columns: 560px 320px;
+  gap: 30px;
+  justify-content: center;
 }
-
+.custom-product__info {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
 /* IMAGES */
 .custom-product__media {
   background: #fff;
@@ -189,19 +188,18 @@
 
 /* TITLE */
 .title {
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: #111;
-  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-bottom: 6px;
 }
 
 /* PRICE */
 .price {
-  font-size: 18px;
-  font-weight: 400;
-  color: #111;
-  margin-bottom: 18px;
+  font-size: 12px;
+  margin-bottom: 16px;
 }
 
 /* INVENTORY */
@@ -209,9 +207,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  color: #444;
-  margin-bottom: 25px;
+  font-size: 11px;
+  color: #666;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #ddd;
 }
 
 .dot {
@@ -231,44 +231,53 @@
 
 .swatches {
   display: flex;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .swatch {
   border: 1px solid #ddd;
   background: #fff;
-  color: #111;
-  padding: 6px 14px;
-  font-size: 13px;
+  font-size: 11px;
+  padding: 7px 12px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.swatch:hover {
+.swatch:hover,
+.swatch.active {
   border-color: #111;
 }
 
 /* ACCORDION */
+.accordion {
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
 .accordion details {
-  {% comment %} border-top: 1px solid #eee; {% endcomment %}
-  padding: 14px 0;
-  color: #111;
+  border-bottom: 1px solid #ddd;
+  padding: 0;
 }
 
 .accordion summary {
-  cursor: pointer;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  padding: 14px 0;
+  font-size: 11px;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: #111;
+  list-style: none;
 }
 
-.accordion .content {
-  padding-top: 10px;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: "+";
+  float: right;
+}
+
+.accordion details[open] summary::after {
+  content: "−";
 }
 
 /* FEATURES */
@@ -280,12 +289,7 @@
   font-size: 13px;
   color: #555;
 }
-.feature-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #76C773;
-}
+
 /* SIZE GUIDE */
 .size-guide {
   margin-top: 18px;
@@ -304,21 +308,16 @@
 
 /* QTY */
 .qty {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 65px;
+  height: 34px;
   border: 1px solid #ddd;
-  width: 120px;
-  padding: 8px 10px;
-  background: #fff;
+  border-radius: 20px;
+  padding: 0 10px;
 }
 
 .qty input {
-  width: 40px;
-  border: none;
-  text-align: center;
-  font-size: 14px;
-  background: transparent;
+  width: 20px;
+  font-size: 11px;
 }
 
 .qty button {
@@ -332,15 +331,15 @@
 /* ADD TO CART */
 .atc-btn {
   flex: 1;
+  height: 34px;
+  border: none;
+  border-radius: 20px;
   background: #111;
   color: #fff;
-  border: none;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 14px;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .atc-btn:hover {
