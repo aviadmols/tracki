@@ -148,19 +148,15 @@
 
 /* GRID */
 .custom-product__grid {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 20px 30px;
   display: grid;
-  grid-template-columns: 560px 320px;
-  gap: 30px;
-  justify-content: center;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+  background: #fff;
 }
-.custom-product__info {
-  position: sticky;
-  top: 20px;
-  align-self: start;
-}
+
 /* IMAGES */
 .custom-product__media {
   background: #fff;
@@ -188,18 +184,19 @@
 
 /* TITLE */
 .title {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  line-height: 1.4;
-  margin-bottom: 6px;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #111;
+  margin-bottom: 10px;
 }
 
 /* PRICE */
 .price {
-  font-size: 12px;
-  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 18px;
 }
 
 /* INVENTORY */
@@ -207,11 +204,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
-  color: #666;
-  padding-bottom: 18px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 25px;
 }
 
 .dot {
@@ -231,53 +226,44 @@
 
 .swatches {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .swatch {
   border: 1px solid #ddd;
   background: #fff;
-  font-size: 11px;
-  padding: 7px 12px;
+  color: #111;
+  padding: 6px 14px;
+  font-size: 13px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-.swatch:hover,
-.swatch.active {
+.swatch:hover {
   border-color: #111;
 }
 
 /* ACCORDION */
-.accordion {
-  border-top: 1px solid #ddd;
-  margin-top: 20px;
-}
-
 .accordion details {
-  border-bottom: 1px solid #ddd;
-  padding: 0;
+  {% comment %} border-top: 1px solid #eee; {% endcomment %}
+  padding: 14px 0;
+  color: #111;
 }
 
 .accordion summary {
-  padding: 14px 0;
-  font-size: 11px;
-  letter-spacing: .08em;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  list-style: none;
+  color: #111;
 }
 
-.accordion summary::-webkit-details-marker {
-  display: none;
-}
-
-.accordion summary::after {
-  content: "+";
-  float: right;
-}
-
-.accordion details[open] summary::after {
-  content: "−";
+.accordion .content {
+  padding-top: 10px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
 }
 
 /* FEATURES */
@@ -308,16 +294,21 @@
 
 /* QTY */
 .qty {
-  width: 65px;
-  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 0 10px;
+  width: 120px;
+  padding: 8px 10px;
+  background: #fff;
 }
 
 .qty input {
-  width: 20px;
-  font-size: 11px;
+  width: 40px;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  background: transparent;
 }
 
 .qty button {
@@ -331,15 +322,15 @@
 /* ADD TO CART */
 .atc-btn {
   flex: 1;
-  height: 34px;
-  border: none;
-  border-radius: 20px;
   background: #111;
   color: #fff;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .atc-btn:hover {
