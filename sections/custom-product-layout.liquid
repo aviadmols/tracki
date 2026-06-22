@@ -1,5 +1,4 @@
 <section class="custom-product">
-
   <div class="custom-product__grid">
 
     <!-- LEFT IMAGES -->
@@ -7,23 +6,25 @@
       {% if product.featured_image %}
         <img
           src="{{ product.featured_image | image_url: width: 1400 }}"
-          class="main-image"
-        >
+          alt="{{ product.title }}"
+          class="main-image">
       {% endif %}
 
       {% if product.images[1] %}
         <img
           src="{{ product.images[1] | image_url: width: 1400 }}"
-          class="sub-image"
-        >
+          alt="{{ product.title }}"
+          class="sub-image">
       {% endif %}
     </div>
 
-    <!-- RIGHT INFO -->
+    <!-- RIGHT COLUMN -->
     <div class="custom-product__info">
 
       {% if section.settings.badge != blank %}
-        <div class="badge">{{ section.settings.badge }}</div>
+        <span class="badge">
+          {{ section.settings.badge }}
+        </span>
       {% endif %}
 
       <h1 class="title">{{ product.title }}</h1>
@@ -33,34 +34,58 @@
       </div>
 
       {% if product.selected_or_first_available_variant.inventory_quantity < 10 %}
-  <div class="inventory">
-    <span class="dot"></span>
-    {{ section.settings.inventory_text }}
-  </div>
-{% endif %}
+        <div class="inventory">
+          <span class="dot"></span>
+          {{ section.settings.inventory_text }}
+        </div>
+      {% endif %}
 
       <!-- VARIANTS -->
       {% unless product.has_only_default_variant %}
-        <div class="variants">
-          {% for option in product.options_with_values %}
-            <div class="option-group">
-              <label>{{ option.name }}</label>
+        {% for option in product.options_with_values %}
+          <div class="option-group">
+            <label>{{ option.name }}</label>
 
-              <div class="swatches">
-                {% for value in option.values %}
-                  <button
-                    class="swatch"
-                    type="button"
-                    data-value="{{ value }}"
-                  >
-                    {{ value }}
-                  </button>
-                {% endfor %}
-              </div>
+            <div class="swatches">
+              {% for value in option.values %}
+                <button class="swatch" type="button">
+                </button>
+              {% endfor %}
             </div>
-          {% endfor %}
-        </div>
+
+            <span class="variant-name">
+              {{ option.selected_value }}
+            </span>
+          </div>
+        {% endfor %}
       {% endunless %}
+
+      <!-- TIMER -->
+      <div class="offer-box">
+        <p>Our seasonal sale ends soon</p>
+
+        <div class="timer">
+          <div>
+            <strong>08</strong>
+            <span>Days</span>
+          </div>
+
+          <div>
+            <strong>10</strong>
+            <span>Hours</span>
+          </div>
+
+          <div>
+            <strong>10</strong>
+            <span>Minutes</span>
+          </div>
+
+          <div>
+            <strong>36</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
 
       <!-- ACCORDION -->
       <div class="accordion">
@@ -68,6 +93,7 @@
           {% if block.type == 'accordion' %}
             <details>
               <summary>{{ block.settings.title }}</summary>
+
               <div class="content">
                 {{ block.settings.content }}
               </div>
@@ -81,33 +107,42 @@
         {% for block in section.blocks %}
           {% if block.type == 'feature' %}
             <div class="feature">
-              {{ block.settings.text }}
+              ✓ {{ block.settings.text }}
             </div>
           {% endif %}
         {% endfor %}
       </div>
 
       <!-- SIZE GUIDE -->
-      {% if section.settings.size_guide != blank %}
-        <div class="size-guide">
-          {{ section.settings.size_guide }}
-        </div>
-      {% endif %}
+      <div class="size-guide">
+        {{ section.settings.size_guide }}
+      </div>
 
       <!-- ADD TO CART -->
       {% form 'product', product %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}">
 
         <div class="buy-row">
 
           <div class="qty">
-            <button type="button" class="qty-minus">-</button>
-            <input type="number" name="quantity" value="1" min="1">
+            <button type="button" class="qty-minus">−</button>
+
+            <input
+              type="number"
+              name="quantity"
+              value="1"
+              min="1">
+
             <button type="button" class="qty-plus">+</button>
           </div>
 
           <button type="submit" class="atc-btn">
-            {{ section.settings.button_text }} — {{ product.price | money }}
+            {{ section.settings.button_text }}
+            -
+            {{ product.price | money }}
           </button>
 
         </div>
@@ -121,275 +156,356 @@
           <h3>{{ section.settings.complete_title }}</h3>
 
           <div class="complete-card">
-            <img src="{{ cp.featured_image | image_url: width: 200 }}">
-            <div>
+            <img
+              src="{{ cp.featured_image | image_url: width: 150 }}"
+              alt="{{ cp.title }}">
+
+            <div class="complete-content">
               <p>{{ cp.title }}</p>
               <span>{{ cp.price | money }}</span>
             </div>
           </div>
+
+          <div class="slider-dots">
+            <span></span>
+            <span class="active"></span>
+            <span></span>
+          </div>
         </div>
       {% endif %}
 
-      <!-- HELP -->
-      {% if section.settings.help_text != blank %}
-        <div class="help">
-          {{ section.settings.help_text }}
-        </div>
-      {% endif %}
+      <div class="help">
+        <strong>Need styling help?</strong>
+        <p>Book an appointment with our virtual stylist Chat now</p>
+      </div>
 
     </div>
   </div>
 </section>
 <style>
    .custom-product {
-  background: #ffffff;
-  color: #111111;
+  background: #fff;
 }
 
-/* GRID */
 .custom-product__grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: auto;
-  padding: 60px 20px;
-  background: #fff;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 24px;
 }
 
-/* IMAGES */
-.custom-product__media {
-  background: #fff;
+.custom-product__info {
+  position: sticky;
+  top: 20px;
 }
 
-.main-image,
-.sub-image {
+/* Images */
+
+.custom-product__media img {
   width: 100%;
   display: block;
-  background: #fff;
+  background: #f4f2f1;
 }
 
-/* BADGE */
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid #111;
-  color: #111;
-  background: transparent;
+.main-image {
   margin-bottom: 12px;
 }
 
-/* TITLE */
+/* Badge */
+
+.badge {
+  background: #74685d;
+  color: #fff;
+  font-size: 10px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/* Title */
+
 .title {
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: #111;
-  margin-bottom: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-/* PRICE */
 .price {
-  font-size: 18px;
-  font-weight: 400;
-  color: #111;
-  margin-bottom: 18px;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
-/* INVENTORY */
+/* Inventory */
+
 .inventory {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  color: #444;
-  margin-bottom: 25px;
+  font-size: 12px;
+  color: #666;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #d3a93f;
   border-radius: 50%;
-  border: 1px solid #c9a24a;
 }
 
-/* VARIANTS */
+/* Options */
+
+.option-group {
+  margin: 20px 0;
+}
+
 .option-group label {
+  display: block;
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #555;
+  margin-bottom: 10px;
 }
 
 .swatches {
   display: flex;
   gap: 10px;
-  margin-top: 8px;
 }
 
 .swatch {
-  border: 1px solid #ddd;
-  background: #fff;
-  color: #111;
-  padding: 6px 14px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: 0.2s;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #d1ae44;
 }
 
-.swatch:hover {
-  border-color: #111;
+.swatch:last-child {
+  background: #d8d8d8;
 }
 
-/* ACCORDION */
+.variant-name {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Timer */
+
+.offer-box {
+  background: #ead9cc;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.offer-box p {
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.timer strong {
+  display: block;
+  font-size: 20px;
+}
+
+.timer span {
+  font-size: 10px;
+}
+
+/* Accordion */
+
+.accordion {
+  border-top: 1px solid #ddd;
+}
+
 .accordion details {
-  {% comment %} border-top: 1px solid #eee; {% endcomment %}
-  padding: 14px 0;
-  color: #111;
+  border-bottom: 1px solid #ddd;
 }
 
 .accordion summary {
+  padding: 15px 0;
   cursor: pointer;
+  list-style: none;
   font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #111;
 }
 
-.accordion .content {
-  padding-top: 10px;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
+.accordion summary::-webkit-details-marker {
+  display: none;
 }
 
-/* FEATURES */
-.features {
-  margin-top: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 13px;
-  color: #555;
+.accordion summary::after {
+  content: "+";
+  float: right;
 }
 
-/* SIZE GUIDE */
-.size-guide {
-  margin-top: 18px;
-  font-size: 13px;
-  color: #111;
-  border-bottom: 1px solid #eee;
+.accordion details[open] summary::after {
+  content: "-";
+}
+
+.content {
   padding-bottom: 15px;
+  color: #666;
+  font-size: 13px;
 }
 
-/* BUY ROW */
+/* Features */
+
+.features {
+  margin: 20px 0;
+}
+
+.feature {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Size guide */
+
+.size-guide {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+/* Buy row */
+
 .buy-row {
   display: flex;
-  gap: 12px;
-  margin-top: 25px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-/* QTY */
 .qty {
+  width: 65px;
+  height: 42px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ddd;
-  width: 120px;
-  padding: 8px 10px;
-  background: #fff;
-}
-
-.qty input {
-  width: 40px;
-  border: none;
-  text-align: center;
-  font-size: 14px;
-  background: transparent;
+  padding: 0 10px;
 }
 
 .qty button {
   border: none;
   background: transparent;
-  font-size: 16px;
   cursor: pointer;
-  color: #111;
 }
 
-/* ADD TO CART */
+.qty input {
+  width: 20px;
+  border: none;
+  text-align: center;
+}
+
+.qty input:focus {
+  outline: none;
+}
+
 .atc-btn {
   flex: 1;
-  background: #111;
-  color: #fff;
   border: none;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.atc-btn:hover {
+  border-radius: 30px;
   background: #000;
+  color: #fff;
+  height: 42px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-/* COMPLETE LOOK */
+/* Complete */
+
 .complete {
   margin-top: 30px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ddd;
   padding-top: 20px;
 }
 
 .complete h3 {
   font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .complete-card {
+  background: #f7f5f2;
+  padding: 15px;
   display: flex;
-  gap: 12px;
-  align-items: center;
-  background: #fff;
+  gap: 15px;
 }
 
 .complete-card img {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  background: #fff;
 }
 
-.complete-card p {
+.complete-content p {
   font-size: 13px;
-  color: #111;
+  margin-bottom: 5px;
 }
 
-.complete-card span {
+.complete-content span {
   font-size: 13px;
-  color: #555;
 }
 
-/* HELP */
+.slider-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.slider-dots span {
+  width: 6px;
+  height: 6px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.slider-dots .active {
+  background: #000;
+}
+
+/* Help */
+
 .help {
+  border-top: 1px solid #ddd;
   margin-top: 25px;
-  font-size: 13px;
-  color: #666;
-  border-top: 1px solid #eee;
   padding-top: 20px;
 }
 
-/* MOBILE */
+.help strong {
+  font-size: 13px;
+}
+
+.help p {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Mobile */
+
 @media (max-width: 768px) {
   .custom-product__grid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 30px 16px;
+  }
+
+  .custom-product__info {
+    position: static;
   }
 
   .buy-row {
@@ -398,6 +514,8 @@
 
   .qty {
     width: 100%;
+    justify-content: center;
+    gap: 20px;
   }
 }
 </style>
