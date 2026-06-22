@@ -212,43 +212,6 @@
       "settings": {
         "heading": "Tracki mobile application"
       }
-    },
-    "custom_product_layout_v2_AkVPJV": {
-      "type": "custom-product-layout-v2",
-      "blocks": {
-        "accordion_6dfBXN": {
-          "type": "accordion",
-          "settings": {
-            "title": "Product Details",
-            "content": "<p>Add your content here.</p>"
-          }
-        },
-        "accordion_B3jEBD": {
-          "type": "accordion",
-          "settings": {
-            "title": "Product Details",
-            "content": "<p>Add your content here.</p>"
-          }
-        },
-        "accordion_y6BFhh": {
-          "type": "accordion",
-          "settings": {
-            "title": "Product Details",
-            "content": "<p>Add your content here.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordion_6dfBXN",
-        "accordion_B3jEBD",
-        "accordion_y6BFhh"
-      ],
-      "name": "Custom Product Layout V2",
-      "settings": {
-        "badge": "PRE ORDER",
-        "inventory_text": "Low stock available",
-        "button_text": "Add to Cart"
-      }
     }
   },
   "order": [
@@ -257,7 +220,6 @@
     "product_accordion_zjXgit",
     "image_banner_overlay_mYa8x3",
     "image_promo_grid_4JrFBN",
-    "tracki_app_Nbd33W",
-    "custom_product_layout_v2_AkVPJV"
+    "tracki_app_Nbd33W"
   ]
 }
