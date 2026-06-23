@@ -49,22 +49,23 @@
               <div class="swatches">
                 {% for value in option.values %}
                   <button
-                    class="swatch"
-                    type="button"
-                    data-value="{{ value }}"
-                  <svg xmlns="http://www.w3.org/2000/svg"
-     width="16"
-     height="16"
-     viewBox="0 0 24 24"
-     fill="none"
-     stroke="#000000"
-     stroke-width="2.5"
-     stroke-linecap="round"
-     stroke-linejoin="round">
-  <polyline points="6 9 12 15 18 9"/>
-</svg>
-                    {{ value }}
-                  </button>
+  class="swatch"
+  type="button"
+  data-value="{{ value }}"
+>
+  <span>{{ value }}</span>
+
+  <svg class="swatch-icon"
+       xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#000"
+       stroke-width="2.5"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
+</button>
                 {% endfor %}
               </div>
             </div>
@@ -266,16 +267,38 @@
   display: flex;
   gap: 10px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
-.swatch {
+.swatch-btn {
   border: 1px solid #ddd;
   background: #f3f1f0;
   color: #25282a;
-  padding: 6px 14px;
+  padding: 8px 16px;
   font-size: 13px;
   cursor: pointer;
   transition: 0.2s;
+  min-height: 42px;
+}
+
+@media screen and (max-width: 767px) {
+  .swatches {
+    gap: 8px;
+  }
+
+  .swatch-btn {
+    flex: 1 1 calc(50% - 4px);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .swatch-btn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
 }
 
 .swatch:hover {
