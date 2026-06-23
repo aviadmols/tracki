@@ -514,38 +514,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const dots = document.querySelectorAll('.complete-dots span');
 
-  let current = 0;
-
   function goToSlide(index) {
     slider.scrollTo({
       left: slider.offsetWidth * index,
       behavior: 'smooth'
     });
 
-    dots.forEach(dot => dot.classList.remove('active'));
+    dots.forEach(function(dot) {
+      dot.classList.remove('active');
+    });
 
-    if (dots[index]) {
-      dots[index].classList.add('active');
-    }
-
-    current = index;
+    dots[index].classList.add('active');
   }
 
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', function () {
+  dots.forEach(function(dot, index) {
+    dot.addEventListener('click', function() {
       goToSlide(index);
     });
   });
-
-  setInterval(function () {
-    current++;
-
-    if (current >= dots.length) {
-      current = 0;
-    }
-
-    goToSlide(current);
-  }, 4000);
 
 });
 </script>
