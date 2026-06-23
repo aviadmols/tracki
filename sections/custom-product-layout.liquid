@@ -478,11 +478,23 @@
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+/* =========================
+   TABLET (991px)
+========================= */
+@media screen and (max-width: 991px) {
+
   .custom-product__grid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 30px 16px;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 16px;
   }
 
   .buy-row {
@@ -491,6 +503,161 @@
 
   .qty {
     width: 100%;
+  }
+
+  .atc-btn {
+    width: 100%;
+  }
+
+  .complete-card {
+    padding: 12px;
+  }
+}
+
+
+/* =========================
+   MOBILE (767px)
+========================= */
+@media screen and (max-width: 767px) {
+
+  .custom-product__grid {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .price {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .inventory {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .option-group label {
+    font-size: 11px;
+  }
+
+  .swatches {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .swatch {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .accordion summary {
+    font-size: 12px;
+  }
+
+  .accordion .content,
+  .features,
+  .help,
+  .size-guide {
+    font-size: 12px;
+  }
+
+  .feature-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .buy-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .qty {
+    width: 100%;
+    height: 48px;
+  }
+
+  .atc-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .complete-card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .complete-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .complete-info p {
+    font-size: 13px;
+  }
+
+  .complete-info span {
+    font-size: 12px;
+  }
+
+  .complete-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (480px)
+========================= */
+@media screen and (max-width: 480px) {
+
+  .custom-product__grid {
+    padding: 20px 12px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .complete-card {
+    padding: 10px;
+  }
+
+  .complete-card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .complete-info p {
+    font-size: 12px;
+  }
+
+  .complete-info span {
+    font-size: 11px;
+  }
+
+  .complete-dots {
+    margin-top: 12px;
+  }
+
+  .complete-dots span {
+    width: 6px;
+    height: 6px;
   }
 }
 </style>
