@@ -15,25 +15,29 @@
         "feature_ecH8PC": {
           "type": "feature",
           "settings": {
-            "text": "Free 30 Days Returns"
+            "text": "Free 30 Days Returns",
+            "icon": "shopify://shop_images/return.svg"
           }
         },
         "feature_8pfD6w": {
           "type": "feature",
           "settings": {
-            "text": "Free shipping on orders over $100"
+            "text": "Free shipping on orders over $100",
+            "icon": "shopify://shop_images/return.svg"
           }
         },
         "feature_aWf7PT": {
           "type": "feature",
           "settings": {
-            "text": "1 year warranty"
+            "text": "1 year warranty",
+            "icon": "shopify://shop_images/return.svg"
           }
         },
         "feature_XMMRPx": {
           "type": "feature",
           "settings": {
-            "text": "14k Solid Gold"
+            "text": "14k Solid Gold",
+            "icon": "shopify://shop_images/return.svg"
           }
         }
       },
