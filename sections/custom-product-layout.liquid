@@ -124,21 +124,36 @@
       {% endform %}
 
       <!-- COMPLETE LOOK -->
-      {% if section.settings.complete_product != blank %}
-        {% assign cp = all_products[section.settings.complete_product] %}
+      <!-- COMPLETE LOOK -->
+{% if section.settings.complete_products != blank %}
 
-        <div class="complete">
-          <h3>{{ section.settings.complete_title }}</h3>
+<div class="complete">
+  <h3>{{ section.settings.complete_title }}</h3>
 
-          <div class="complete-card">
-            <img src="{{ cp.featured_image | image_url: width: 200 }}">
-            <div>
-              <p>{{ cp.title }}</p>
-              <span>{{ cp.price | money }}</span>
-            </div>
-          </div>
+  <div class="complete-slider">
+    {% for cp in section.settings.complete_products %}
+      <div class="complete-card">
+
+        <img
+          src="{{ cp.featured_image | image_url: width: 200 }}"
+          alt="{{ cp.title }}"
+        >
+
+        <div class="complete-info">
+          <p>{{ cp.title }}</p>
+          <span>{{ cp.price | money }}</span>
         </div>
-      {% endif %}
+
+        <div class="complete-lock">
+          +
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endif %}
 
       <!-- HELP -->
       {% if section.settings.help_text != blank %}
@@ -359,6 +374,7 @@
 }
 
 /* COMPLETE LOOK */
+/* COMPLETE LOOK */
 .complete {
   margin-top: 30px;
   border-top: 1px solid #eee;
@@ -367,33 +383,59 @@
 
 .complete h3 {
   font-size: 13px;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.complete-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .complete-card {
   display: flex;
-  gap: 12px;
   align-items: center;
-  background: #fff;
+  gap: 15px;
+  padding: 14px;
+  background: #f5f3ef;
 }
 
 .complete-card img {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  background: #fff;
+  flex-shrink: 0;
 }
 
-.complete-card p {
-  font-size: 13px;
+.complete-info {
+  flex: 1;
+}
+
+.complete-info p {
+  margin: 0;
+  font-size: 14px;
   color: #111;
 }
 
-.complete-card span {
+.complete-info span {
+  display: block;
+  margin-top: 4px;
   font-size: 13px;
-  color: #555;
+  color: #666;
+}
+
+.complete-lock {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 /* HELP */
@@ -468,9 +510,9 @@
       "default": "ADD TO CART"
     },
     {
-      "type": "product",
-      "id": "complete_product",
-      "label": "Complete Look Product"
+      "type": "product_list",
+      "id": "complete_products",
+      "label": "Complete Look Products"
     },
     {
       "type": "text",
