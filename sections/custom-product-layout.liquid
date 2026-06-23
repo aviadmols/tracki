@@ -98,11 +98,11 @@
       </div>
 
       <!-- SIZE GUIDE -->
-      {% if section.settings.size_guide != blank %}
+      {% comment %} {% if section.settings.size_guide != blank %}
         <div class="size-guide">
           {{ section.settings.size_guide }}
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
 
       <!-- ADD TO CART -->
       {% form 'product', product %}
