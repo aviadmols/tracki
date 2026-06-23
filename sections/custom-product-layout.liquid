@@ -124,13 +124,13 @@
       {% endform %}
 
       <!-- COMPLETE LOOK -->
-      <!-- COMPLETE LOOK -->
 {% if section.settings.complete_products != blank %}
 
 <div class="complete">
   <h3>{{ section.settings.complete_title }}</h3>
 
   <div class="complete-slider">
+
     {% for cp in section.settings.complete_products %}
       <div class="complete-card">
 
@@ -144,12 +144,13 @@
           <span>{{ cp.price | money }}</span>
         </div>
 
-        <div class="complete-lock">
+        <div class="complete-icon">
           +
         </div>
 
       </div>
     {% endfor %}
+
   </div>
 </div>
 
@@ -373,8 +374,6 @@
   background: #000;
 }
 
-/* COMPLETE LOOK */
-/* COMPLETE LOOK */
 .complete {
   margin-top: 30px;
   border-top: 1px solid #eee;
@@ -390,23 +389,30 @@
 
 .complete-slider {
   display: flex;
-  flex-direction: column;
   gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.complete-slider::-webkit-scrollbar {
+  display: none;
 }
 
 .complete-card {
+  min-width: 100%;
+  scroll-snap-align: start;
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 14px;
   background: #f5f3ef;
+  padding: 14px;
 }
 
 .complete-card img {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .complete-info {
@@ -426,7 +432,7 @@
   color: #666;
 }
 
-.complete-lock {
+.complete-icon {
   width: 30px;
   height: 30px;
   border: 1px solid #ddd;
