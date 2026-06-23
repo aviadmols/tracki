@@ -49,7 +49,10 @@
         "inventory_text": "Hurry! Low stock",
         "size_guide": "",
         "button_text": "ADD TO CART",
-        "complete_product": "",
+        "complete_products": [
+          "trackipet",
+          "tracki-pro-gps-tracker"
+        ],
         "complete_title": "Complete the look",
         "help_text": ""
       }
