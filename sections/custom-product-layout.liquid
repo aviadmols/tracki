@@ -55,14 +55,17 @@
               <span>{{ option.selected_value }}</span>
             </div>
 
-            <div class="swatches">
-              {% for value in option.values %}
-                <button
-                  type="button"
-                  class="swatch">
-                </button>
-              {% endfor %}
-            </div>
+            {% if option.name == 'Color' %}
+  <div class="swatches">
+    {% for value in option.values %}
+      <button
+        type="button"
+        class="swatch"
+        title="{{ value }}">
+      </button>
+    {% endfor %}
+  </div>
+{% endif %}
 
           </div>
         {% endfor %}
