@@ -205,67 +205,100 @@
 </section>
 
 <style>
-   ```css
+   
 .custom-product {
+    background: #fff !important;
+    color: #111;
     padding: 40px 0;
 }
 
 .custom-product__grid {
     max-width: 1400px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: 58% 42%;
     gap: 80px;
+    background: #fff;
 }
 
-.custom-product__info {
-    max-width: 500px;
+/* LEFT IMAGES */
+
+.custom-product__media {
+    background: #fff;
 }
 
 .main-image,
 .sub-image {
     width: 100%;
     display: block;
+    background: #fff;
+}
+
+.main-image {
     margin-bottom: 20px;
 }
 
+/* RIGHT COLUMN */
+
+.custom-product__info {
+    background: #fff;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* BADGE */
+
 .badge {
     display: inline-block;
-    background: #5c564d;
+    background: #5c554d;
     color: #fff;
-    font-size: 11px;
     padding: 5px 12px;
+    font-size: 11px;
     text-transform: uppercase;
+    letter-spacing: .05em;
     margin-bottom: 15px;
 }
+
+/* TITLE */
 
 .title {
     font-size: 26px;
     line-height: 1.3;
+    font-weight: 500;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
+    color: #111;
 }
 
+/* PRICE */
+
 .price {
+    font-size: 15px;
     color: #777;
     margin-bottom: 20px;
 }
 
+/* INVENTORY */
+
 .inventory {
     display: flex;
-    gap: 8px;
     align-items: center;
-    font-size: 13px;
-    border-bottom: 1px solid #e5e5e5;
+    gap: 8px;
     padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #666;
 }
 
 .dot {
     width: 8px;
     height: 8px;
-    background: #d08c5c;
+    background: #d28d65;
     border-radius: 50%;
 }
+
+/* VARIANTS */
 
 .option-group {
     padding: 20px 0;
@@ -276,6 +309,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    font-size: 13px;
+    color: #555;
 }
 
 .swatches {
@@ -287,15 +322,31 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 2px solid #d2ab47;
-    background: #d2ab47;
+    border: 2px solid #d1ab49;
+    background: #d1ab49;
+    padding: 0;
+    cursor: pointer;
 }
 
+.swatch:nth-child(2) {
+    background: #d9d9d9;
+    border-color: #d9d9d9;
+}
+
+/* COUNTDOWN */
+
 .sale-box {
-    background: #ead9ce;
+    background: #fff;
+    border: 1px solid #e5e5e5;
     padding: 20px;
     margin: 25px 0;
     text-align: center;
+}
+
+.sale-box p {
+    margin: 0 0 15px;
+    font-size: 13px;
+    color: #444;
 }
 
 .timer {
@@ -307,11 +358,16 @@
 .timer strong {
     display: block;
     font-size: 22px;
+    font-weight: 500;
+    color: #111;
 }
 
 .timer span {
     font-size: 11px;
+    color: #777;
 }
+
+/* ACCORDION */
 
 .accordion details {
     border-bottom: 1px solid #e5e5e5;
@@ -321,11 +377,33 @@
 .accordion summary {
     cursor: pointer;
     list-style: none;
+    position: relative;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+}
+
+.accordion details[open] summary::after {
+    content: "-";
 }
 
 .content {
     padding-top: 10px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 13px;
 }
+
+/* FEATURES */
 
 .features {
     padding: 20px 0;
@@ -333,12 +411,21 @@
 }
 
 .feature {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #555;
 }
+
+/* SIZE GUIDE */
 
 .size-guide {
     padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #111;
 }
+
+/* BUY ROW */
 
 .buy-row {
     display: flex;
@@ -346,47 +433,76 @@
     margin-top: 25px;
 }
 
+/* QUANTITY */
+
 .qty {
     width: 100px;
     height: 50px;
-    border: 1px solid #ddd;
+    border: 1px solid #d9d9d9;
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-
-.qty input {
-    width: 30px;
-    border: none;
-    text-align: center;
+    background: #fff;
 }
 
 .qty button {
     border: none;
     background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    color: #111;
 }
+
+.qty input {
+    width: 30px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+/* BUTTON */
 
 .atc-btn {
     flex: 1;
     height: 50px;
-    border-radius: 30px;
     border: none;
+    border-radius: 30px;
     background: #000;
     color: #fff;
     text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    cursor: pointer;
 }
+
+.atc-btn:hover {
+    background: #222;
+}
+
+/* COMPLETE LOOK */
 
 .complete {
     margin-top: 30px;
-    border-top: 1px solid #e5e5e5;
     padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.complete h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 .complete-card {
     display: flex;
     gap: 15px;
-    background: #f4f1ed;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e5e5e5;
     padding: 15px;
 }
 
@@ -396,18 +512,63 @@
     object-fit: cover;
 }
 
+.complete-card p {
+    margin: 0 0 5px;
+    font-size: 13px;
+    color: #111;
+}
+
+.complete-card span {
+    color: #777;
+    font-size: 12px;
+}
+
+/* DOTS */
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.slider-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.slider-dots .active {
+    background: #111;
+}
+
+/* HELP */
+
 .help {
     margin-top: 25px;
     padding-top: 20px;
     border-top: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #666;
 }
 
+/* MOBILE */
+
 @media screen and (max-width: 768px) {
+
+    .custom-product {
+        padding: 20px 0;
+    }
 
     .custom-product__grid {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 0 15px;
+    }
+
+    .custom-product__info {
+        max-width: 100%;
     }
 
     .buy-row {
@@ -421,9 +582,15 @@
     .timer {
         gap: 15px;
     }
-}
-```
 
+    .timer strong {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+}
 </style>
 <script>
     document.addEventListener("click", function (e) {
