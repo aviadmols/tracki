@@ -129,7 +129,7 @@
 <div class="complete">
   <h3>{{ section.settings.complete_title }}</h3>
 
-  <div class="complete-slider">
+  <div class="complete-slider" id="complete-slider">
 
     {% for cp in section.settings.complete_products %}
       <div class="complete-card">
@@ -152,10 +152,16 @@
     {% endfor %}
 
   </div>
+
+  <div class="complete-dots">
+    {% for cp in section.settings.complete_products %}
+      <span class="{% if forloop.first %}active{% endif %}"></span>
+    {% endfor %}
+  </div>
+
 </div>
 
 {% endif %}
-<div class="complete-dots"></div>
       <!-- HELP -->
       {% if section.settings.help_text != blank %}
         <div class="help">
@@ -389,24 +395,19 @@
 
 .complete-slider {
   display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.complete-slider::-webkit-scrollbar {
-  display: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .complete-card {
   min-width: 100%;
-  scroll-snap-align: start;
+  flex: 0 0 100%;
   display: flex;
   align-items: center;
   gap: 15px;
   background: #f5f3ef;
   padding: 14px;
+  box-sizing: border-box;
 }
 
 .complete-card img {
@@ -442,6 +443,25 @@
   align-items: center;
   justify-content: center;
   font-size: 18px;
+}
+
+.complete-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.complete-dots span {
+  width: 7px;
+  height: 7px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.complete-dots span.active {
+  background: #111;
 }
 
 /* HELP */
