@@ -679,26 +679,28 @@
 });
 document.addEventListener('DOMContentLoaded', function () {
   const slider = document.getElementById('complete-slider');
-  const dots = document.querySelectorAll('.complete-dots span');
 
   if (!slider) return;
 
   const slides = slider.querySelectorAll('.complete-card');
+  const dots = document.querySelectorAll('.complete-dots span');
+
   let current = 0;
 
   function goToSlide(index) {
     slider.scrollTo({
-      left: slider.offsetWidth * index,
+      left: slides[index].offsetLeft,
       behavior: 'smooth'
     });
 
     dots.forEach(dot => dot.classList.remove('active'));
+
     if (dots[index]) {
       dots[index].classList.add('active');
     }
   }
 
-  setInterval(function () {
+  setInterval(() => {
     current++;
 
     if (current >= slides.length) {
@@ -706,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     goToSlide(current);
-  }, 5000); // Change slide every 3 seconds
+  }, 5000);
 });
 </script>
 {% schema %}
