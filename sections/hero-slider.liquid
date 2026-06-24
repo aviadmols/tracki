@@ -128,38 +128,46 @@
   .b2b-hero__grid {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .b2b-hero__content {
-    order: 1;
-    position: relative;
+    width: 100%;
+    text-align: center;
     z-index: 2;
   }
 
-  .b2b-hero__image {
-    order: 2;
+  .discount-banner {
+    display: inline-block;
+    width: calc(100% - 40px);
+    max-width: 320px;
+
+    padding: 8px 14px;
+    margin: 15px auto;
+
+    font-size: 18px;
+    line-height: 1.2;
+
     position: relative;
-    z-index: 1;
+    z-index: 3;
+  }
+
+  .b2b-hero__image {
+    position: relative;
+    z-index: 2;
+
     margin-top: 20px;
     text-align: center;
+
+    width: 100%;
   }
 
   .product-mobile-image,
   .product-dekstop-image {
     display: block;
-    max-width: 180px;
-    width: 100%;
+    width: 180px;
+    max-width: 100%;
     margin: 0 auto;
-  }
-
-  .discount-banner {
-    position: relative;
-    z-index: 10;
-    margin: 15px auto;
-    width: calc(100% - 30px);
-    max-width: 320px;
-    font-size: 18px;
-    padding: 8px 14px;
   }
 }
 </style>
