@@ -679,25 +679,34 @@
 });
 document.addEventListener('DOMContentLoaded', function () {
   const slider = document.getElementById('complete-slider');
-  const slides = slider.querySelectorAll('.complete-card');
   const dots = document.querySelectorAll('.complete-dots span');
 
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.complete-card');
   let current = 0;
 
   function goToSlide(index) {
     slider.scrollTo({
-      left: slides[index].offsetLeft,
+      left: slider.offsetWidth * index,
       behavior: 'smooth'
     });
 
     dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
+    if (dots[index]) {
+      dots[index].classList.add('active');
+    }
   }
 
-  setInterval(() => {
-    current = (current + 1) % slides.length;
+  setInterval(function () {
+    current++;
+
+    if (current >= slides.length) {
+      current = 0;
+    }
+
     goToSlide(current);
-  }, 5000);
+  }, 5000); // Change slide every 3 seconds
 });
 </script>
 {% schema %}
