@@ -66,25 +66,52 @@
   </div>
 </section>
 <style>
-  .discount-banner {
+ .discount-banner {
   display: inline-block;
-  margin-top: 20px;
-  padding: 18px 35px;
-  background: rgba(39, 128, 74, 0.95);
-  border: 2px solid rgba(255,255,255,0.25);
-  border-radius: 18px;
+  margin-top: 18px;
+  padding: 14px 30px;
+  max-width: 780px;
+
+  background: rgba(42, 146, 90, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 2px solid rgba(255,255,255,0.35);
+  border-radius: 14px;
+
   color: #fff;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.2;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  backdrop-filter: blur(8px);
-  max-width: 850px;
+
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.1;
+
+  text-shadow:
+    0 3px 8px rgba(0,0,0,0.45);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+
+  position: relative;
+  overflow: hidden;
 }
 
-.discount-banner strong {
-  font-weight: 800;
+.discount-banner::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 120%;
+  height: 70%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0)
+  );
+
+  pointer-events: none;
 }
 
 @media screen and (max-width: 749px) {
