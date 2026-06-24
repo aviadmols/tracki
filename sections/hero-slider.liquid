@@ -8,6 +8,11 @@
               <div class="b2b-hero__content-top {% if forloop.index == 1 %}title_1   {% elsif forloop.index == 2 %}title_2   {% endif %}">
                 <h1>{{ block.settings.heading }}<span><br/>{{ block.settings.heading_2 }}</span></h1>
                 <p>{{ block.settings.subheading }}</p>
+                {% if block.settings.discount_text != blank %}
+                  <div class="discount-banner">
+                    {{ block.settings.discount_text }}
+                  </div>
+                {% endif %}
               </div>
               {% if block.settings.show_rating %}
                 <div class="b2b-rating">
@@ -60,7 +65,37 @@
     <div class="swiper-pagination b2b-swiper-pagination"></div>
   </div>
 </section>
+<style>
+  .discount-banner {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 35px;
+  background: rgba(39, 128, 74, 0.95);
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 18px;
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+  max-width: 850px;
+}
 
+.discount-banner strong {
+  font-weight: 800;
+}
+
+@media screen and (max-width: 749px) {
+  .discount-banner {
+    font-size: 22px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+  }
+}
+</style>
 {% schema %}
 {
   "name": "B2B Hero Slider",
@@ -89,6 +124,11 @@
           "type": "textarea",
           "id": "subheading",
           "label": "Subheading"
+        },
+        {
+          "type": "text",
+          "id": "discount_text",
+          "label": "Discount Text"
         },
         {
           "type": "image_picker",
