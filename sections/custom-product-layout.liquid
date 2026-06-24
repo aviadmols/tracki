@@ -398,7 +398,7 @@
 
 .complete-card {
   flex: 0 0 100%;
-  min-width: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -678,37 +678,32 @@
 
 });
 document.addEventListener('DOMContentLoaded', function () {
+
   const slider = document.getElementById('complete-slider');
 
   if (!slider) return;
 
-  const slides = slider.querySelectorAll('.complete-card');
   const dots = document.querySelectorAll('.complete-dots span');
-
-  let current = 0;
 
   function goToSlide(index) {
     slider.scrollTo({
-      left: slides[index].offsetLeft,
+      left: slider.offsetWidth * index,
       behavior: 'smooth'
     });
 
-    dots.forEach(dot => dot.classList.remove('active'));
+    dots.forEach(function(dot) {
+      dot.classList.remove('active');
+    });
 
-    if (dots[index]) {
-      dots[index].classList.add('active');
-    }
+    dots[index].classList.add('active');
   }
 
-  setInterval(() => {
-    current++;
+  dots.forEach(function(dot, index) {
+    dot.addEventListener('click', function() {
+      goToSlide(index);
+    });
+  });
 
-    if (current >= slides.length) {
-      current = 0;
-    }
-
-    goToSlide(current);
-  }, 5000);
 });
 </script>
 {% schema %}
