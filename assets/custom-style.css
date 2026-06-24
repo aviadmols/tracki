@@ -88,7 +88,7 @@ body.innerpages .inner-page .header__icons--localization .desktop-localization-w
   position: relative;
   overflow: hidden;
 }
-.b2b-hero-slider .b2b-swiper{height:700px;}
+.b2b-hero-slider .b2b-swiper{height:750px;}
 
 .b2b-slide {
   min-height: 100vh;
@@ -117,7 +117,7 @@ body.innerpages .inner-page .header__icons--localization .desktop-localization-w
   background-repeat:no-repeat;
   border-radius:0 0 10px 10px;
   position:relative;
-  height:700px;
+  height:750px;
   min-height:auto;
 }
 
