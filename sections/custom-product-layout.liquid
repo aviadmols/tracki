@@ -684,6 +684,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!slider) return;
 
   const dots = document.querySelectorAll('.complete-dots span');
+  const totalSlides = dots.length;
+  let current = 0;
 
   function goToSlide(index) {
     slider.scrollTo({
@@ -696,13 +698,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     dots[index].classList.add('active');
+
+    current = index;
   }
 
+  // Dot click
   dots.forEach(function(dot, index) {
     dot.addEventListener('click', function() {
       goToSlide(index);
     });
   });
+
+  // Auto slide: 0 → 1 → 2 → 3 → 0
+  setInterval(function () {
+    current++;
+
+    if (current >= totalSlides) {
+      current = 0;
+    }
+
+    goToSlide(current);
+  }, 3000); // Change slide every 3 seconds
 
 });
 </script>
