@@ -124,13 +124,53 @@
     pointer-events: none;
 }
 
-@media (max-width: 749px) {
-    .discount-banner {
-        font-size: 22px;
-        padding: 10px 16px;
-        max-width: 100%;
-        border-radius: 12px;
-    }
+/* Tablet */
+@media screen and (max-width: 991px) {
+  .discount-banner {
+    max-width: 620px;
+    padding: 12px 20px;
+    font-size: 26px;
+    line-height: 1.15;
+    border-radius: 14px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .discount-banner {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 10px 16px;
+    margin-top: 12px;
+
+    font-size: 22px;
+    line-height: 1.2;
+
+    border-radius: 12px;
+  }
+
+  .discount-banner::before {
+    height: 40%;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .discount-banner {
+    padding: 8px 12px;
+    font-size: 18px;
+    line-height: 1.2;
+    border-radius: 10px;
+  }
+}
+
+/* Very Small Devices */
+@media screen and (max-width: 375px) {
+  .discount-banner {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
 }
 </style>
 {% schema %}
