@@ -678,12 +678,13 @@
 
 });
 document.addEventListener('DOMContentLoaded', function () {
-
   const slider = document.getElementById('complete-slider');
+  const dots = document.querySelectorAll('.complete-dots span');
 
   if (!slider) return;
 
-  const dots = document.querySelectorAll('.complete-dots span');
+  const slides = slider.querySelectorAll('.complete-card');
+  let current = 0;
 
   function goToSlide(index) {
     slider.scrollTo({
@@ -691,19 +692,21 @@ document.addEventListener('DOMContentLoaded', function () {
       behavior: 'smooth'
     });
 
-    dots.forEach(function(dot) {
-      dot.classList.remove('active');
-    });
-
-    dots[index].classList.add('active');
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[index]) {
+      dots[index].classList.add('active');
+    }
   }
 
-  dots.forEach(function(dot, index) {
-    dot.addEventListener('click', function() {
-      goToSlide(index);
-    });
-  });
+  setInterval(function () {
+    current++;
 
+    if (current >= slides.length) {
+      current = 0;
+    }
+
+    goToSlide(current);
+  }, 3000); // Change slide every 3 seconds
 });
 </script>
 {% schema %}
