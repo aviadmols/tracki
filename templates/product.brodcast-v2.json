@@ -54,9 +54,9 @@
         "size_guide": "",
         "button_text": "ADD TO CART",
         "complete_products": [
-          "tracki-obd-wiring-cable",
           "trackipet-4g-mini-pet-gps-tracker",
-          "600mah-battery-for-tracki-gps-tracker"
+          "waterproof-magnetic-box-for-gps-tracker-3500mah-battery-extender",
+          "tracki-universal-real-time-gps-tracker-1-month-subscription"
         ],
         "complete_title": "Complete the look",
         "help_text": ""
@@ -85,8 +85,8 @@
         "announcement_MLJBGW"
       ],
       "settings": {
-        "bg_color": "#25282A",
-        "text_color": "#F3F1F0",
+        "bg_color": "#25282a",
+        "text_color": "#f3f1f0",
         "speed": 30
       }
     },
