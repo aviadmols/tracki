@@ -447,6 +447,7 @@
         "collapsible_tab_JQ8TmB"
       ],
       "settings": {
+        "force_light_style": false,
         "open_first_collapsible_row": false,
         "heading": "",
         "heading_size": "h1",
