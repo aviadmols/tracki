@@ -223,10 +223,10 @@ if(window.location.pathname === "/pages/manual") {
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TH19Q908E"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2TH19Q908E');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2TH19Q908E');
 </script>
   </head>
   <body class="{% if template == 'index' %}transparent-header{% endif %} {% unless template == 'index' %}innerpages{% endunless %} template-{{ request.page_type }}{% if request.design_mode %} shopify-design-mode{% endif %} {% if request.page_type == 'page' %}{{ page.handle }}{% endif %} {% if request.page_type == 'product' %}{{ product.handle }}{% endif %}{% if template.name == 'page' and template.suffix == 'parentsv2-lander' %} template-parentsv2-lander{% endif %}"
