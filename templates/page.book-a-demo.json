@@ -11,6 +11,7 @@
   "sections": {
     "new_bredcrump_BTVPzW": {
       "type": "new-bredcrump",
+      "disabled": true,
       "name": "New bredcrump",
       "settings": {}
     },
@@ -21,6 +22,41 @@
         "narrow": true,
         "padding_top": 60,
         "padding_bottom": 72
+      }
+    },
+    "rich_text_hcgDGA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GBTh9t": {
+          "type": "heading",
+          "settings": {
+            "heading": "Book A Demo!",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GBTh9t"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "horizontal_content": false,
+        "narrow": false,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#212326",
+        "colors_background": "#ffffff",
+        "colors_highlight": "#ffb503",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "custom_liquid_FTjzxf": {
@@ -38,6 +74,7 @@
   "order": [
     "new_bredcrump_BTVPzW",
     "main",
+    "rich_text_hcgDGA",
     "custom_liquid_FTjzxf"
   ]
 }
