@@ -45,7 +45,7 @@
     "show_cart_note": true,
     "show_shipping_calculator": true,
     "disable_view_cart": true,
-    "show_free_shipping_message": true,
+    "show_free_shipping_message": false,
     "free_shipping_minimum_amount": "USD:1000,EUR:950,JPY:130000",
     "cart_recommendations_enabled": true,
     "empty_cart_button_secondary": false,
