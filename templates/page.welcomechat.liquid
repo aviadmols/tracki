@@ -5,8 +5,27 @@
     src="https://cdn.shopify.com/s/files/1/0075/3677/1145/files/tracki_logo_blank.png?v=1709173792"
     alt="logo-blank-page"
   >
+    <script>
+  (function(d,t) {
+    var BASE_URL="https://omni.tracki.com";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'sCREj4MDQ5WZLQ7wgZKgRFvL',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
+
+
 </div>
 <script>
+  
 
 (function(d,t) {
   var BASE_URL="https://omni.tracki.com";
