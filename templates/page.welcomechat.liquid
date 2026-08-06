@@ -1,7 +1,8 @@
 {% layout 'theme.blank' %}
 
 <style>
-  .woot-widget-holder {
+    /* --- Force the widget to fill the whole viewport (desktop) --- */
+    .woot-widget-holder {
       top: 0 !important;
       left: 0 !important;
       right: 0 !important;
@@ -40,16 +41,7 @@
     
 </div>
 <script>
-    // 1) Configure the widget BEFORE it loads.
-    window.chatwootSettings = {
-      hideMessageBubble: true,  // never show the launcher bubble
-      showPopoutButton: false,
-      position: 'right',
-      type: 'standard',
-      launcherTitle: 'Chat with us'
-    };
-
-    // 2) Load the Chatwoot SDK.
+     // 2) Load the Chatwoot SDK.
     (function (d, t) {
       var BASE_URL = "https://app.chatwoot.com";      // <-- your base URL
       var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
