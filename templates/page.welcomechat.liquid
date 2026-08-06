@@ -11,16 +11,6 @@
   body.cw-fullscreen > *:not(script):not(.woot-widget-holder) { visibility: hidden; }
 </style>
 
-<script>
-  const wantFullscreen = new URLSearchParams(location.search).get('chat') === 'fullscreen';
-
-  window.addEventListener('chatwoot:ready', function () {
-    if (!wantFullscreen) return;
-    document.body.classList.add('cw-fullscreen');
-    window.$chatwoot.toggleBubbleVisibility('hide');
-    window.$chatwoot.toggle('open');
-  });
-</script>
 <div style="min-height: 100vh; display: flex; justify-content: center; align-items: center">
   <img
     width="45%"
@@ -56,8 +46,17 @@
     })(document, "script");
 
     // 3) When the widget is ready, open it automatically.
-    window.addEventListener('chatwoot:ready', function () {
-      window.$chatwoot.toggleBubbleVisibility('hide'); // belt-and-suspenders
-      window.$chatwoot.toggle('open');                 // auto-open the chat
-    });
+ 
   </script>
+
+
+<script>
+  const wantFullscreen = new URLSearchParams(location.search).get('chat') === 'fullscreen';
+
+  window.addEventListener('chatwoot:ready', function () {
+    if (!wantFullscreen) return;
+    document.body.classList.add('cw-fullscreen');
+    window.$chatwoot.toggleBubbleVisibility('hide');
+    window.$chatwoot.toggle('open');
+  });
+</script>
