@@ -41,7 +41,16 @@
     
 </div>
 <script>
-     // 2) Load the Chatwoot SDK.
+  // 1) Configure the widget BEFORE it loads.
+    window.chatwootSettings = {
+      hideMessageBubble: true,  // never show the launcher bubble
+      showPopoutButton: false,
+      position: 'center',
+      type: 'standard',
+      launcherTitle: 'Chat with us'
+    };
+
+  // 2) Load the Chatwoot SDK.
     (function (d, t) {
       var BASE_URL = "https://app.chatwoot.com";      // <-- your base URL
       var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
