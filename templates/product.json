@@ -352,7 +352,7 @@
             "custom_icon": "",
             "title": "User Guide",
             "title_size": "h3",
-            "text": "<p>Learn. Set Up. Track.</p>",
+            "text": "<p><a href=\"https://guide.tracki.com/\" title=\"https://guide.tracki.com/\">Learn. Set Up. Track.</a></p>",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -365,7 +365,7 @@
             "custom_icon": "",
             "title": "Quick Start Guide",
             "title_size": "h3",
-            "text": "<p>Get Started in Minutes.</p>",
+            "text": "<p><a href=\"https://tracki.com/pages/how-to-use\" title=\"https://tracki.com/pages/how-to-use\">Get Started in Minutes.</a></p>",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -378,7 +378,7 @@
             "custom_icon": "",
             "title": "Product Information",
             "title_size": "h3",
-            "text": "<p>Features & Specs at a Glance.</p>",
+            "text": "<p><a href=\"https://guide.tracki.com/devices-guide/tracki-max/\" title=\"https://guide.tracki.com/devices-guide/tracki-max/\">Features & Specs at a Glance.</a></p>",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -391,7 +391,7 @@
       ],
       "settings": {
         "layout": "default",
-        "column_alignment": "center",
+        "column_alignment": "left",
         "horizontal_content": false,
         "full_width": false,
         "show_divider": false,
