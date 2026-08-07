@@ -31,6 +31,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/TRACKI-MAX_PAGE-IMAGE.jpg",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-left",
             "subheading": "Rugged & Off-Road Focus",
