@@ -391,7 +391,7 @@
       ],
       "settings": {
         "layout": "default",
-        "column_alignment": "left",
+        "column_alignment": "center",
         "horizontal_content": false,
         "full_width": false,
         "show_divider": false,
