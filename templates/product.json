@@ -56,6 +56,8 @@
         "164480660521311b94-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-center",
             "subheading": "Ultimate Fleet & Asset Protection",
@@ -80,6 +82,8 @@
         "164480660521311b94-0": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3-_mobile.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-right",
             "subheading": "Personal & Vehicle Security",
@@ -292,7 +296,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Specifications",
-            "content": "<p><strong>Network Compatibility: </strong>4G LTE / 3G / 2G Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>Tracking Methods: </strong>GPS + Wi-Fi + Cell Tower Triangulation</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p>",
+            "content": "<p><strong>Dimensions</strong>: 60 mm x 37 mm x 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Network Compatibility: </strong>4G LTE / 3G / 2G Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>Tracking Methods: </strong>GPS + Wi-Fi + Cell Tower Triangulation</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p>",
             "page": ""
           }
         },
@@ -489,7 +493,7 @@
         "tab-collage-0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-1_15071b48-2c95-46f2-88fc-0c3b841dce88.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2.png",
             "image_position": "center center",
             "heading": "Instant <em>Smart Alerts</em>",
             "description": "<p>Receive push notifications, SMS, or email alerts for geofence boundaries (safe zones), speed limits, unexpected movement, low battery, and emergency SOS presses.</p>",
@@ -504,7 +508,7 @@
         "tab-collage-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-1_15071b48-2c95-46f2-88fc-0c3b841dce88.png",
             "image_position": "center center",
             "heading": "Built-In Emergency <em>SOS Button</em>",
             "description": "<p>A prominent panic button allows drivers, elderly family members, or children to instantly alert emergency contacts with their exact coordinates.</p>",
@@ -549,6 +553,59 @@
         "highlight_style": "marker"
       }
     },
+    "video_hero_7tqaLF": {
+      "type": "video-hero",
+      "blocks": {
+        "text_gbdQBU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Heavy-duty 4G GPS tracking designed to withstand tough outdoor conditions while delivering pinpoint location accuracy worldwide.</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "button_jCrLx6": {
+          "type": "button",
+          "settings": {
+            "button_size": "medium",
+            "button_label": "Buy Now",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "text_gbdQBU",
+        "button_jCrLx6"
+      ],
+      "name": "t:sections.video-hero.presets.name",
+      "settings": {
+        "video": "shopify://files/videos/Animate_this_image_1.mp4",
+        "video_url": "",
+        "text_box_position": "middle-center",
+        "text_alignment": "center",
+        "image_ratio": "650px",
+        "show_text_box": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "auto",
+        "show_text_below": true,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 28,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "16448079723140b4d6": {
       "type": "collage",
       "blocks": {
@@ -587,6 +644,7 @@
         "cf00eccf-b810-423e-b980-c7140a8d8f03",
         "5a6fcbbe-82e4-4199-9799-ac7dc39024a6"
       ],
+      "disabled": true,
       "settings": {
         "desktop_layout": "left",
         "mobile_layout": "collage",
@@ -610,8 +668,8 @@
           "type": "testimonial",
           "settings": {
             "icon": "5",
-            "text": "<p>The materials for the Dynasty Headphone are luxurious: soft sheep leather for the ear cushions, memory foam for their filler, cow leather for the headband, metal for the main structure.</p>",
-            "author": "Paige Alexander",
+            "text": "<p><strong>\"Compact and dependable\"</strong></p><p>The battery holds up great even with high-frequency updates. It fits easily into small spaces, making it perfect for tracking gear while traveling.</p>",
+            "author": "Michael L.",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -620,8 +678,8 @@
           "type": "testimonial",
           "settings": {
             "icon": "5",
-            "text": "<p>Dynasty Headphone’s designers have done a fabulous job of creating a pair of wireless ANC headphones that are super comfortable to wear and sound like a dream.</p>",
-            "author": "Claire Cooper",
+            "text": "<p><strong>\"Small size, big performance\"</strong></p><p>It is barely the size of a matchbox and very easy to hide. Setup was fast, and the custom boundary alerts on my phone give me great peace of mind</p>",
+            "author": "Sarah L.",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -630,28 +688,8 @@
           "type": "testimonial",
           "settings": {
             "icon": "5",
-            "text": "<p>Sound is authentic, giving music recordings a lively presence with superbly balanced frequencies while bringing attention to subtle nuances you would likely miss on any other pair of wireless earbuds.</p>",
-            "author": "Sara Bond",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "1644818997c04c6254-3": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5",
-            "text": "<p>Dynasty Headphone is a sports version of their completely wireless earplugs. They can join you almost everywhere you go - even underwater.</p>",
-            "author": "Nikolay Balushev",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "1644818997c04c6254-4": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5",
-            "text": "<p>They look exquisite, sound excellent, and offer seamless connectivity between Xbox and Bluetooth devices.</p>",
-            "author": "Angela McCafferty",
+            "text": "<p><strong>\"Survived muddy trails\"</strong></p><p>Strapped this to my bike frame, and it got completely covered in grime and water. It still works flawlessly. This device is truly built for harsh environments.</p>",
+            "author": "David R.",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -660,22 +698,20 @@
       "block_order": [
         "1644818997c04c6254-0",
         "1644818997c04c6254-1",
-        "1644818997c04c6254-2",
-        "1644818997c04c6254-3",
-        "1644818997c04c6254-4"
+        "1644818997c04c6254-2"
       ],
       "settings": {
         "autorotate": true,
-        "autorotate_speed": 5,
+        "autorotate_speed": 7,
         "hide_images": false,
         "show_divider": false,
         "heading": "REVIEWS FROM <em>THE EXPERTS</em>",
         "heading_size": "h1",
         "heading_alignment": "center",
         "heading_tag": "h2",
-        "colors_highlight": "#aa723e",
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "colors_highlight": "#00B600",
+        "padding_top": 24,
+        "padding_bottom": 24,
         "enable_highlight": true,
         "highlight_style": "solid-color"
       }
@@ -828,6 +864,7 @@
     "product-recommendations",
     "164476417040d4bb5c",
     "tab-collage",
+    "video_hero_7tqaLF",
     "16448079723140b4d6",
     "1644818998cec1e2a6",
     "1644745953392511db",
