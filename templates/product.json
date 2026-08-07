@@ -56,14 +56,14 @@
         "164480660521311b94-1": {
           "type": "image",
           "settings": {
-            "image_position": "center center",
-            "text_box_position": "middle-center",
-            "subheading": "<em>ADAPTIVE</em> ANC",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-center",
+            "subheading": "Ultimate Fleet & Asset Protection",
             "subheading_size": "h5",
-            "heading": "PUT THE WORLD ON PAUSE",
-            "heading_size": "h1",
+            "heading": "Complete Fleet <em>Visibility</em> in the Palm of Your Hand",
+            "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "Five levels of noise cancellation make Dynasty Headphone our most advanced ANC headphones yet, handling everything from the hum of home life to the commotion of a commute.",
+            "text": "Monitor movement, set custom geofences, and receive real-time speed and boundary alerts on any smart device.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -74,20 +74,20 @@
             "button_alt_size": "medium",
             "button_alt_style_secondary": false,
             "enable_highlight": true,
-            "highlight_style": "squiggle"
+            "highlight_style": "marker"
           }
         },
         "164480660521311b94-0": {
           "type": "image",
           "settings": {
-            "image_position": "center center",
-            "text_box_position": "middle-center",
-            "subheading": "<em>STANDOUT SOUND QUALITY</em>",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-right",
+            "subheading": "Personal & Vehicle Security",
             "subheading_size": "h5",
-            "heading": "LISTEN WITH NEW EARS",
+            "heading": "Instant Emergency Alerts & One-Touch SOS Safeguards",
             "heading_size": "h1",
             "heading_tag": "h2",
-            "text": "Custom titanium drivers are placed under detachable magnetic earcups for optimal performance. This is achieved with strict attention to detail in-house.",
+            "text": "Equipped with a dedicated SOS button and instant mobile push notifications to keep loved ones and vehicles safe 24/7.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -123,10 +123,10 @@
         "colors_text": "#ffffff",
         "colors_background": "#000000",
         "colors_overlay": "#000000",
-        "colors_overlay_opacity": 92,
+        "colors_overlay_opacity": 0,
         "colors_navigation_text": "#000000",
         "colors_navigation_background": "#ffffff",
-        "colors_highlight": "#aa723e",
+        "colors_highlight": "#00B600",
         "padding_top": 0,
         "padding_bottom": 36
       }
@@ -154,16 +154,9 @@
           "type": "rating",
           "settings": {}
         },
-        "subtitle": {
-          "type": "text",
-          "settings": {
-            "icon": "none",
-            "text": "",
-            "text_style": "subtitle"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "show_variant_labels": true,
             "picker_type": "button",
@@ -203,7 +196,7 @@
           "type": "text",
           "settings": {
             "icon": "lock",
-            "text": "3 years warranty",
+            "text": "Lifetime warranty",
             "text_style": "body"
           }
         },
@@ -223,23 +216,24 @@
             "show_gift_card_recipient": false
           }
         },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "Keep track of what matters most—anywhere in the world. The Tracki Max 4G LTE GPS Tracker delivers real-time location tracking with pinpoint accuracy for vehicles, equipment, high-value assets, and loved ones. Featuring an upgraded 1950mAh rechargeable battery, smart alert triggers, and seamless iOS/Android smartphone integration, the Tracki Max offers total peace of mind in a compact, easily concealable footprint.",
+            "text_style": "body"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
           }
         },
-        "54684625-1615-430d-b322-cfb5af689b94": {
-          "type": "image",
-          "settings": {
-            "height": 20,
-            "link": ""
-          }
-        },
         "a2f06597-05bf-457d-a1e5-54d6e03ff425": {
           "type": "sticky_cart",
           "settings": {
-            "show_quantity_selector": false
+            "show_quantity_selector": true
           }
         },
         "dealeasy_vd_cards_PKWbpi": {
@@ -248,13 +242,19 @@
             "lb-product-handle": "",
             "lb-product-id": ""
           }
+        },
+        "image_wUtwgq": {
+          "type": "image",
+          "settings": {
+            "height": 20,
+            "link": ""
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "rating",
-        "subtitle",
         "variant_picker",
         "price",
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02",
@@ -262,10 +262,11 @@
         "fd414a67-531a-4a3a-8941-e78cec888355",
         "inventory_status",
         "buy_buttons",
+        "subtitle",
         "share",
-        "54684625-1615-430d-b322-cfb5af689b94",
         "a2f06597-05bf-457d-a1e5-54d6e03ff425",
-        "dealeasy_vd_cards_PKWbpi"
+        "dealeasy_vd_cards_PKWbpi",
+        "image_wUtwgq"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -287,10 +288,12 @@
     "product-details": {
       "type": "product-details",
       "blocks": {
-        "product-details-0": {
-          "type": "description",
+        "60eeb066-dd65-49d7-b86e-8ef785719e6b": {
+          "type": "collapsible_tab",
           "settings": {
-            "heading": "Key Features & Benefits"
+            "heading": "Specifications",
+            "content": "<p><strong>Network Compatibility: </strong>4G LTE / 3G / 2G Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>Tracking Methods: </strong>GPS + Wi-Fi + Cell Tower Triangulation</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p>",
+            "page": ""
           }
         },
         "product-details-1": {
@@ -305,7 +308,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Rugged & Harsh-Environment Ready",
-            "content": "<p>Engineered to handle mud, dust, moisture, and rough outdoor conditions—making it ideal for off-road vehicles, construction machinery, trailers, and exposed equipment.</p>",
+            "content": "<p>Engineered to handle <em>mud, dust, moisture, and rough outdoor conditions</em>—making it ideal for off-road vehicles, construction machinery, trailers, and exposed equipment.</p>",
             "page": ""
           }
         },
@@ -316,22 +319,13 @@
             "content": "<p>Built-in high-capacity <strong>1950mAh rechargeable lithium-ion battery</strong> provides significantly longer operation between charges compared to standard micro-trackers.</p>",
             "page": ""
           }
-        },
-        "60eeb066-dd65-49d7-b86e-8ef785719e6b": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Instant Smart Alerts",
-            "content": "<p>Receive push notifications, SMS, or email alerts for geofence boundaries (safe zones), speed limits, unexpected movement, low battery, and emergency SOS presses.</p><p></p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
-        "product-details-0",
+        "60eeb066-dd65-49d7-b86e-8ef785719e6b",
         "product-details-1",
         "product-details-2",
-        "product-details-3",
-        "60eeb066-dd65-49d7-b86e-8ef785719e6b"
+        "product-details-3"
       ],
       "settings": {
         "force_light_style": false,
@@ -354,7 +348,7 @@
             "custom_icon": "",
             "title": "User Guide",
             "title_size": "h3",
-            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_USER_GUIDE.pdf?v=1646362704\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_USER_GUIDE.pdf?v=1646362704\">Download</a></p>",
+            "text": "<p>Learn. Set Up. Track.</p>",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -367,7 +361,7 @@
             "custom_icon": "",
             "title": "Quick Start Guide",
             "title_size": "h3",
-            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_QUICKSTART_GUIDE.pdf?v=1646362705\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_QUICKSTART_GUIDE.pdf?v=1646362705\">Download</a></p>",
+            "text": "<p>Get Started in Minutes.</p>",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -378,9 +372,9 @@
             "icon": "none",
             "icon_size": "medium",
             "custom_icon": "",
-            "title": "Product sheet",
+            "title": "Product Information",
             "title_size": "h3",
-            "text": "<p><a href=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_PRODUCTSHEET.pdf?v=1646362704\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0554/5276/2172/files/SAMPLE_EMPTY_PRODUCTSHEET.pdf?v=1646362704\">Download</a></p>",
+            "text": "<p>Features & Specs at a Glance.</p>",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -450,7 +444,7 @@
         "16447641709f1fda34-0": {
           "type": "heading",
           "settings": {
-            "heading": "BUILT-IN EMERGENCY SOS BUTTON",
+            "heading": "Versatile Vehicle & Asset Protection",
             "heading_size": "h1",
             "heading_tag": "h2",
             "enable_highlight": true,
@@ -460,7 +454,7 @@
         "8f0e02f8-7b30-4e8f-bcac-eed174468f4d": {
           "type": "text",
           "settings": {
-            "text": "<p>A prominent panic button allows drivers, elderly family members, or children to instantly alert emergency contacts with their exact coordinates.</p>",
+            "text": "<p>Easily secure inside cars, trucks, motorcycles, trailers, fleet vehicles, construction equipment, or luggage.</p>",
             "text_size": "typeset",
             "secondary_color": true,
             "enable_highlight": false,
@@ -483,10 +477,10 @@
         "colors_button_background": "#1a1b18",
         "colors_text": "#212326",
         "colors_background": "#ffffff",
-        "colors_highlight": "#aa723e",
+        "colors_highlight": "#00B600",
         "gradient_background": "",
-        "padding_top": 36,
-        "padding_bottom": 0
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "tab-collage": {
@@ -495,37 +489,10 @@
         "tab-collage-0": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-1_15071b48-2c95-46f2-88fc-0c3b841dce88.png",
             "image_position": "center center",
-            "heading": "CRAFTED FOR THE SENSES",
-            "description": "<p>You can see it in the soft lambskin leather, picked and stitched with exacting attention to detail. You can feel it in the precision-cut aluminium frame that's robust yet beautiful. Even the carry case tells the story. Timeless design, made to last for generations.</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "tab-collage-1": {
-          "type": "image",
-          "settings": {
-            "image_position": "center center",
-            "heading": "LESS EFFORT. MORE EMOTION.",
-            "description": "<p>Quick set up, intuitive user controls and Bluetooth 5.1 allow you to connect easily to the devices you already love. And if you want to make a few sounds of your own, four microphones keep your voice crystal clear on calls.</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "tab-collage-2": {
-          "type": "image",
-          "settings": {
-            "image_position": "center center",
-            "heading": "ALMOST-<em>UNREAL</em> COMFORT",
-            "description": "<p>So comfortable, it's like you're not wearing them at all. Oval memory foam cushions, soft top grain lambskin and a superior fit invite you to play all day.</p>",
+            "heading": "Instant <em>Smart Alerts</em>",
+            "description": "<p>Receive push notifications, SMS, or email alerts for geofence boundaries (safe zones), speed limits, unexpected movement, low battery, and emergency SOS presses.</p>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -534,40 +501,13 @@
             "highlight_style": "marker"
           }
         },
-        "tab-collage-3": {
+        "tab-collage-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2.png",
             "image_position": "center center",
-            "heading": "STANDOUR ACCESSORIES TO FIT",
-            "description": "<p>Dynasty Headphone’s finishing touches are made to be touched, with matching aluminium details and woven fabric encasing the audio cable, charging cable and flight adapter.</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "28d772cd-0ee2-447d-8186-c9837111d070": {
-          "type": "image",
-          "settings": {
-            "image_position": "center center",
-            "heading": "FIDILITY THAT FLEXES",
-            "description": "<p>For the rare moments you'll take them off, Dynasty Headphone can be folded and placed into the custom hardcase, which is lined with a super soft textile finish. No matter how much you move, they'll be safe and sound.</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "4e7e819e-05a4-4e3c-82fd-aed257c54b3c": {
-          "type": "image",
-          "settings": {
-            "image_position": "center center",
-            "heading": "MUSIC AT YOUR <em>FINGERTIPS</em>",
-            "description": "<p>More bass, more warmth, more you. Personalise your listening experience with the app. The equalizer and noise cancellation adjusters give you complete control over how you listen, with just a tap.</p>",
+            "heading": "Built-In Emergency <em>SOS Button</em>",
+            "description": "<p>A prominent panic button allows drivers, elderly family members, or children to instantly alert emergency contacts with their exact coordinates.</p>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -579,17 +519,13 @@
       },
       "block_order": [
         "tab-collage-0",
-        "tab-collage-1",
-        "tab-collage-2",
-        "tab-collage-3",
-        "28d772cd-0ee2-447d-8186-c9837111d070",
-        "4e7e819e-05a4-4e3c-82fd-aed257c54b3c"
+        "tab-collage-1"
       ],
       "settings": {
         "layout": "text_first",
         "text_box_position": "top",
         "text_alignment": "left",
-        "image_ratio": "650px",
+        "image_ratio": "450px",
         "make_collapsible_rows": false,
         "full_width": false,
         "show_divider": false,
