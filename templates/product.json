@@ -296,7 +296,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Specifications",
-            "content": "<p><strong>Dimensions</strong>: 60 mm x 37 mm x 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Network Compatibility: </strong>4G LTE / 3G / 2G Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>GNSS: </strong>GPS, Galileo, Beidou, GLONASS, QZSS and SBAS</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p><p><strong>Waterproof</strong>: IP68</p>",
+            "content": "<p><strong>Dimensions</strong>: 60 mm x 37 mm x 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Network Compatibility: </strong>4G LTE Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>GNSS: </strong>GPS, Galileo, Beidou, GLONASS, QZSS and SBAS</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p><p><strong>Waterproof</strong>: IP68</p>",
             "page": ""
           }
         },
