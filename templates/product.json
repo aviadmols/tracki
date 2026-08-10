@@ -56,8 +56,8 @@
         "164480660521311b94-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2.png",
-            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2_d1d228d2-31e2-49e5-aec6-a21538d7ef4a.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile_d18755bf-04da-4698-af7b-ba69be0bdcec.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-center",
             "subheading": "Ultimate Fleet & Asset Protection",
@@ -130,7 +130,7 @@
         "colors_overlay_opacity": 0,
         "colors_navigation_text": "#000000",
         "colors_navigation_background": "#ffffff",
-        "colors_highlight": "#00B600",
+        "colors_highlight": "#00b600",
         "padding_top": 0,
         "padding_bottom": 36
       }
@@ -296,7 +296,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Specifications",
-            "content": "<p><strong>Dimensions</strong>: 60 mm x 37 mm x 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Network Compatibility: </strong>4G LTE / 3G / 2G Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>Tracking Methods: </strong>GPS + Wi-Fi + Cell Tower Triangulation</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p>",
+            "content": "<p><strong>Dimensions</strong>: 60 mm x 37 mm x 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Network Compatibility: </strong>4G LTE / 3G / 2G Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>GNSS: </strong>GPS, Galileo, Beidou, GLONASS, QZSS and SBAS</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p><p><strong>Waterproof</strong>: IP68</p>",
             "page": ""
           }
         },
@@ -304,7 +304,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Real-Time Global Tracking",
-            "content": "<p>Leverages 4G LTE, 3G, 2G, Wi-Fi, and GPS technologies to deliver accurate location updates worldwide across all major mobile networks.</p>",
+            "content": "<p>Leverages 4G LTE, Wi-Fi, and GPS technologies to deliver accurate location updates worldwide across all major mobile networks.</p>",
             "page": ""
           }
         },
@@ -481,7 +481,7 @@
         "colors_button_background": "#1a1b18",
         "colors_text": "#212326",
         "colors_background": "#ffffff",
-        "colors_highlight": "#00B600",
+        "colors_highlight": "#00b600",
         "gradient_background": "",
         "padding_top": 40,
         "padding_bottom": 40
@@ -553,6 +553,99 @@
         "highlight_style": "marker"
       }
     },
+    "multicolumn_wKeNaP": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_nKNTbW": {
+          "type": "column",
+          "settings": {
+            "background_color": "#f2f2f2",
+            "heading_color": "#000000",
+            "text_color": "#333333",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-3.png",
+            "title": "<strong>SILICONE CLIP</strong>",
+            "title_size": "h3",
+            "text": "<p><em>Belts, Straps & Gear</em> - Flexibly wraps around personal accessories, backpack straps, and waistbands, providing a snug, slip-resistant hold for everyday mobility and safety.</p>",
+            "show_popup": false,
+            "popup_image_position": "top",
+            "justify_text": false,
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "column_wNnHxg": {
+          "type": "column",
+          "settings": {
+            "background_color": "#f2f2f2",
+            "heading_color": "#000000",
+            "text_color": "#333333",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-4.png",
+            "title": "<strong>Magnet Clip </strong>",
+            "title_size": "h3",
+            "text": "<p><em>Vehicles & Metal Assets</em> - High-strength industrial magnet mounts instantly to vehicle undercarriages, machinery, and steel surfaces without extra tools.</p>",
+            "show_popup": false,
+            "popup_image_position": "top",
+            "justify_text": false,
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "column_C3pAXz": {
+          "type": "column",
+          "settings": {
+            "background_color": "#f2f2f2",
+            "heading_color": "#000000",
+            "text_color": "#333333",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-3.png",
+            "title": "<strong>Tracker</strong>",
+            "title_size": "h3",
+            "text": "<p><em>Concealed Placement </em>- Slim, low-profile form factor engineered for easy, covert placement inside luggage, asset boxes, toolboxes, or hidden vehicle spots.</p>",
+            "show_popup": false,
+            "popup_image_position": "top",
+            "justify_text": false,
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "column_nKNTbW",
+        "column_wNnHxg",
+        "column_C3pAXz"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "image_ratio": "landscape",
+        "image_position": "center center",
+        "text_alignment": "left",
+        "show_divider": false,
+        "image_width": "full",
+        "columns_desktop": 3,
+        "open_in_new_tab": false,
+        "heading": "One Device, Every Scenario.",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "mobile_text_alignment": "left",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "card_border_radius": 0,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
     "video_hero_7tqaLF": {
       "type": "video-hero",
       "blocks": {
@@ -585,7 +678,7 @@
       ],
       "name": "t:sections.video-hero.presets.name",
       "settings": {
-        "video": "shopify://files/videos/Animate_this_image_1.mp4",
+        "video": "shopify://files/videos/Please_make_a_short_video_for.mp4",
         "video_url": "",
         "text_box_position": "middle-center",
         "text_alignment": "center",
@@ -709,7 +802,7 @@
         "heading_size": "h1",
         "heading_alignment": "center",
         "heading_tag": "h2",
-        "colors_highlight": "#00B600",
+        "colors_highlight": "#00b600",
         "padding_top": 24,
         "padding_bottom": 24,
         "enable_highlight": true,
@@ -864,6 +957,7 @@
     "product-recommendations",
     "164476417040d4bb5c",
     "tab-collage",
+    "multicolumn_wKeNaP",
     "video_hero_7tqaLF",
     "16448079723140b4d6",
     "1644818998cec1e2a6",
