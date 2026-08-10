@@ -519,11 +519,27 @@
             "enable_highlight": true,
             "highlight_style": "circle"
           }
+        },
+        "image_fV4jnx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-6.png",
+            "image_position": "center center",
+            "heading": "<em>Built To Last</em>, Engineered for More",
+            "description": "<p>Whether you're tracking vehicles, assets, or loved ones — the Tracki MAX is built to keep up. <em>Rugged</em>, <em>reliable, and ready wherever you need it.</em></p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
         }
       },
       "block_order": [
         "tab-collage-0",
-        "tab-collage-1"
+        "tab-collage-1",
+        "image_fV4jnx"
       ],
       "settings": {
         "layout": "text_first",
@@ -546,7 +562,7 @@
         "colors_border": "#d2d5d9",
         "colors_background": "#272c31",
         "gradient_background": "",
-        "colors_highlight": "#aa723e",
+        "colors_highlight": "#00B600",
         "padding_top": 36,
         "padding_bottom": 36,
         "enable_highlight": false,
