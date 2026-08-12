@@ -1805,6 +1805,95 @@ span.iti__country-name {
 .contry-number span.c-code{font-size:16px;color:#7E878D;text-transform:uppercase;font-weight:450;}
 .contry-number > span:last-child{color:#25282A;font-size:20px;font-weight:450;}
 
+/* click to call block */
+  .call-icon {
+    display: flex;
+    color: #76C773;
+  }
+  .call-icon svg { width: 40px; height: 40px; }
+  .box-container--call .box-button a svg { width: 20px; height: 20px; flex: none; }
+  /* the other blocks push their button down with an empty .phone-section */
+  .box-container--call .box-button { padding-top: 15px; }
+  .call-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 14px;
+    color: var(--Text-Grey, #7E878D);
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 1.2;
+  }
+  .call-note svg { width: 16px; height: 16px; flex: none; }
+  /* with the call block in front, the bordered middle column shifts from the 2nd to the 3rd block */
+  .information-wrapper--with-call .box-container:nth-child(2) {
+    border-right: 0 none;
+    border-left: 2px solid #F3F1F0;
+    max-width: 330px;
+    padding: 0 0 0 30px;
+  }
+  .information-wrapper--with-call .box-container:nth-child(3) {
+    border-right: 2px solid #F3F1F0;
+    border-left: 2px solid #F3F1F0;
+    max-width: 500px;
+    padding: 0 30px;
+  }
+  /* four columns need ~1660px to breathe - below that fall back to 2 rows x 2 columns */
+  @media(min-width:769px) and (max-width:1699px){
+    .information-wrapper--with-call {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .information-wrapper--with-call .box-container,
+    .information-wrapper--with-call .box-container:nth-child(2),
+    .information-wrapper--with-call .box-container:nth-child(3) {
+      max-width: none;
+      border: 0 none;
+      padding: 0 30px 40px;
+    }
+    .information-wrapper--with-call .box-container:nth-child(3),
+    .information-wrapper--with-call .box-container:nth-child(4) {
+      padding: 40px 30px 0;
+    }
+    .information-wrapper--with-call .box-container:nth-child(odd) {
+      border-right: 2px solid #F3F1F0;
+    }
+    .information-wrapper--with-call .box-container:nth-child(1),
+    .information-wrapper--with-call .box-container:nth-child(2) {
+      border-bottom: 2px solid #F3F1F0;
+    }
+    .information-wrapper--with-call .box-container > * {
+      width: 100%;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* the phone list carries two numbers per row, so it needs more room */
+    .information-wrapper--with-call .box-container:nth-child(3) > * {
+      max-width: 460px;
+    }
+    .information-wrapper--with-call .devider { display: none; }
+  }
+  @media(max-width:768px){
+    .information-wrapper--with-call .box-container:nth-child(2){
+      max-width:100%;
+      flex:1 0 0;
+      border:0 none;
+      border-top:2px solid #F3F1F0;
+      padding:30px 0 0;
+    }
+    .information-wrapper--with-call .box-container:nth-child(3){
+      border-top: 2px solid #F3F1F0;
+      border-bottom: 2px solid #F3F1F0;
+      border-right: 0 none;
+      border-left: 0 none;
+      flex: 44% 0 0;
+      padding: 30px 0;
+      max-width: unset;
+    }
+  }
 
 
 /* footer css start */
