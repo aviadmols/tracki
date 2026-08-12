@@ -1,7 +1,61 @@
+{% assign has_call_card = false %}
+{% for block in section.blocks %}
+  {% if block.type == 'click-to-call' %}
+    {% assign has_call_card = true %}
+  {% endif %}
+{% endfor %}
+
 <div class="information-wrapper-section">
 
-  <div class="information-wrapper">
+  <div class="information-wrapper{% if has_call_card %} information-wrapper--with-call{% endif %}">
     {% for block in section.blocks %}
+    {% if block.type == 'click-to-call' %}
+    <div class="box-container box-container--call">
+      <div class="content-item">
+        <span class="call-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <g transform="translate(-2.2 7.3) scale(1.35)" fill="currentColor" stroke="none">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.53.57 1 1 0 011 1v3.5a1 1 0 01-1 1A19.95 19.95 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.53 1 1 0 01-.21 1.11l-2.2 2.2z"/>
+            </g>
+            <g stroke-width="1.7">
+              <circle cx="23" cy="16.5" r="6"/>
+              <path d="M17 16.5h12"/>
+              <path d="M23 10.5c2.1 1.8 3.4 3.4 3.4 6s-1.3 4.2-3.4 6c-2.1-1.8-3.4-3.4-3.4-6s1.3-4.2 3.4-6z"/>
+            </g>
+            <g stroke-width="2.4">
+              <path d="M25.5 7.3A9.5 9.5 0 0 1 31.6 12.5"/>
+              <path d="M26.4 3.9A13 13 0 0 1 34.8 11"/>
+            </g>
+          </svg>
+        </span>
+        {% if block.settings.heading != '' %}
+          <h3>{{ block.settings.heading }}</h3>
+        {% endif %}
+        {% if block.settings.text != '' %}
+          {{ block.settings.text }}
+        {% endif %}
+      </div>
+      {% if block.settings.btn_text != '' %}
+        <div class="box-button">
+          <a href="{{ block.settings.btn_link | default: '#' }}">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.53.57 1 1 0 011 1v3.5a1 1 0 01-1 1A19.95 19.95 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.53 1 1 0 01-.21 1.11l-2.2 2.2z"/>
+            </svg>
+            {{ block.settings.btn_text }}
+          </a>
+        </div>
+      {% endif %}
+      {% if block.settings.note != '' %}
+        <div class="call-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="4" y="10" width="16" height="11" rx="2.5"/>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+          </svg>
+          <span>{{ block.settings.note }}</span>
+        </div>
+      {% endif %}
+    </div>
+    {% else %}
     <div class="box-container">
       <div class="content-item">
       {% if block.settings.image != blank %}
@@ -55,6 +109,7 @@
       {% endif %}
       <div class="devider"></div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 
@@ -69,6 +124,42 @@
       
    ],
    "blocks":[
+      {
+         "name":"Click To Call",
+         "type":"click-to-call",
+         "limit":1,
+         "settings":[
+            {
+               "type":"textarea",
+               "id":"heading",
+               "label":"Heading",
+               "default":"Click to Call"
+            },
+            {
+               "type":"richtext",
+               "id":"text",
+               "label":"Text",
+               "default":"<p>Instantly connect with our customer service team.</p>"
+            },
+            {
+               "type":"text",
+               "id":"btn_text",
+               "label":"Button Text",
+               "default":"Click to Call"
+            },
+            {
+               "type":"url",
+               "id":"btn_link",
+               "label":"Button Link"
+            },
+            {
+               "type":"text",
+               "id":"note",
+               "label":"Note Under Button",
+               "default":"Internet call • No charges"
+            }
+         ]
+      },
       {
          "name":"Image With Text",
          "type":"image-with-text",
