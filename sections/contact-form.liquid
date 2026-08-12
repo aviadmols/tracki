@@ -86,11 +86,134 @@ color: #7E878D;
   border-color: #f3f1f0;
   outline: none; /* remove default focus outline */
 } */
+.contact__subheading {
+  color: var(--Text-Grey, #7E878D);
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 1.5;
+  max-width: 640px;
+  margin: 12px 0 0;
+}
+/* selectors need one extra class to outrank section-contact-form.css, which loads after this block */
+.contact .contact__list--with-call {
+  row-gap: 2.8rem;
+}
+/* the card is too tall to sit in the 2-across grid the stylesheet uses under 750px */
+.contact .contact__list--with-call > li {
+  flex: 0 0 100%;
+}
+/* thin rule between the plain contact blocks - the call card brings its own border */
+.contact__list--with-call > li + li:not(.contact__call) {
+  border-top: 1px solid rgba(243, 241, 240, 0.14);
+  padding-top: 2.8rem;
+}
+.contact__list .contact__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.contact__list .contact__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact__list .contact__row-icon {
+  display: flex;
+  flex: none;
+  color: var(--Green-light, #76C773);
+}
+.contact__list .contact__row-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.contact__list .contact__call {
+  border-radius: 16px;
+  border: 1px solid rgba(118, 199, 115, 0.55);
+  background: rgba(118, 199, 115, 0.06);
+  box-shadow: 0 0 24px rgba(118, 199, 115, 0.28);
+  padding: 24px;
+}
+.contact__list .contact__call-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact__list .contact__call-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(118, 199, 115, 0.16);
+  color: var(--Green-light, #76C773);
+}
+.contact__list .contact__call-badge svg {
+  width: 36px;
+  height: 36px;
+}
+.contact__list .contact__call-head .h3 {
+  margin-bottom: 6px;
+}
+.contact__list .contact__call-text {
+  color: #C4CCC8;
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 1.4;
+  margin: 0;
+}
+.contact__list .contact__call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--Green-light, #76C773);
+  box-shadow: 0 2px 12px rgba(118, 199, 115, 0.45);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: all .3s;
+}
+.contact__list .contact__call-btn:hover {
+  background: #5FB35C;
+  color: #fff;
+}
+.contact__list .contact__call-btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.contact__list .contact__call-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--Text-Grey, #7E878D);
+  font-size: 15px;
+  font-weight: 450;
+  line-height: 1.2;
+}
+.contact__list .contact__call-note svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
 {%- endstyle -%}
 
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
 {%- assign custom_fields = section.blocks | where: "type", "custom_field" -%}
+{%- assign call_blocks = section.blocks | where: "type", "click-to-call" -%}
 <div class="section--padding{% if section.settings.show_divider %} section--divider{% endif %}">
   <div class="contact page-width{% unless section.blocks.size > 0 and section.blocks.size > custom_fields.size %} page-width--inner{% endunless %}">
     {%- if section.blocks.size > 0 and section.blocks.size > custom_fields.size -%}
@@ -100,6 +223,9 @@ color: #7E878D;
 
       <div class="title-wrapper{% if section.settings.heading == blank %} title-wrapper--no-heading{% endif %}">
         <{{ section.settings.heading_tag }} class="title {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</{{ section.settings.heading_tag }}>
+        {%- if section.settings.subheading != blank -%}
+          <p class="contact__subheading">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
       </div>
       
       <form-state>
@@ -257,62 +383,95 @@ color: #7E878D;
     {%- if section.blocks.size > 0 and section.blocks.size > custom_fields.size -%}
         </div>
         <div class="flex-grid__item flex-grid__item--one-third">
-          <ul class="contact__list list-unstyled">
+          <ul class="contact__list list-unstyled{% if call_blocks.size > 0 %} contact__list--with-call{% endif %}">
             {%- for block in section.blocks -%}
-              {%- if block.type != 'custom_field' -%}
+              {%- if block.type == 'click-to-call' -%}
+                <li class="contact__call" {{ block.shopify_attributes }}>
+                  <div class="contact__call-head">
+                    <span class="contact__call-badge">
+                      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <g transform="translate(-2.2 7.3) scale(1.35)" fill="currentColor" stroke="none">
+                          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.53.57 1 1 0 011 1v3.5a1 1 0 01-1 1A19.95 19.95 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.53 1 1 0 01-.21 1.11l-2.2 2.2z"/>
+                        </g>
+                        <g stroke-width="1.7">
+                          <circle cx="23" cy="16.5" r="6"/>
+                          <path d="M17 16.5h12"/>
+                          <path d="M23 10.5c2.1 1.8 3.4 3.4 3.4 6s-1.3 4.2-3.4 6c-2.1-1.8-3.4-3.4-3.4-6s1.3-4.2 3.4-6z"/>
+                        </g>
+                        <g stroke-width="2.4">
+                          <path d="M25.5 7.3A9.5 9.5 0 0 1 31.6 12.5"/>
+                          <path d="M26.4 3.9A13 13 0 0 1 34.8 11"/>
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="contact__call-copy">
+                      <p class="h3">{{ block.settings.heading | escape }}</p>
+                      {%- if block.settings.text != blank -%}
+                        <p class="contact__call-text">{{ block.settings.text | escape }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                  {%- if block.settings.btn_text != blank -%}
+                    <a class="contact__call-btn" href="{{ block.settings.btn_link | default: '#' }}">
+                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.53.57 1 1 0 011 1v3.5a1 1 0 01-1 1A19.95 19.95 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.53 1 1 0 01-.21 1.11l-2.2 2.2z"/>
+                      </svg>
+                      {{ block.settings.btn_text | escape }}
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.note != blank -%}
+                    <span class="contact__call-note">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <rect x="4" y="10" width="16" height="11" rx="2.5"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                      </svg>
+                      {{ block.settings.note | escape }}
+                    </span>
+                  {%- endif -%}
+                </li>
+              {%- elsif block.type == 'contact' -%}
                 <li {{ block.shopify_attributes }}>
                   <p class="h3">{{ block.settings.heading | escape }}</p>
-
-                  {%- case block.type -%}
-                    {%- when 'contact' -%}
-                      {%- if block.settings.link != blank -%}
-                        <a class="link" href="{{ block.settings.link }}">
+                  {%- capture contact_rows -%}{{ block.settings.text }}~^~{{ block.settings.link }}~|~{{ block.settings.text2 }}~^~{{ block.settings.link2 }}~|~{{ block.settings.text3 }}~^~{{ block.settings.link3 }}~|~{{ block.settings.text4 }}~^~{{ block.settings.link4 }}~|~{{ block.settings.text5 }}~^~{{ block.settings.link5 }}{%- endcapture -%}
+                  {%- assign contact_rows = contact_rows | split: '~|~' -%}
+                  <ul class="contact__rows list-unstyled">
+                    {%- for contact_row in contact_rows -%}
+                      {%- assign row_parts = contact_row | split: '~^~' -%}
+                      {%- assign row_text = row_parts[0] | strip -%}
+                      {%- assign row_link = row_parts[1] | strip -%}
+                      {%- if row_text != blank -%}
+                        <li class="contact__row">
+                          {%- if row_link contains 'mailto:' -%}
+                            <span class="contact__row-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                <rect x="2.5" y="5" width="19" height="14" rx="1.5"/>
+                                <path d="M2.5 6.5 12 13.5l9.5-7"/>
+                              </svg>
+                            </span>
+                          {%- elsif row_link contains 'tel:' -%}
+                            <span class="contact__row-icon">
+                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.53.57 1 1 0 011 1v3.5a1 1 0 01-1 1A19.95 19.95 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.53 1 1 0 01-.21 1.11l-2.2 2.2z"/>
+                              </svg>
+                            </span>
+                          {%- endif -%}
+                          {%- if row_link != blank -%}
+                            <a class="link" href="{{ row_link }}">{{ row_text | escape }}</a>
+                          {%- else -%}
+                            <span>{{ row_text | escape }}</span>
+                          {%- endif -%}
+                        </li>
                       {%- endif -%}
-                        {{ block.settings.text | escape }}
-                      {%- if block.settings.link != blank -%}
-                        </a>
-                      {%- endif -%}
-                      
-                    {%- when 'media' -%}
-                      <ul class="list-unstyled list-social" role="lsit">
-                        {%- render 'social-icons' -%}
-                      </ul>
-                  {%- endcase -%}
-                  <br>
-                  {%- if block.settings.link2 != blank -%}
-                        <a class="link" href="{{ block.settings.link2 }}">
-                      {%- endif -%}
-                        {{ block.settings.text2 | escape }}
-                      {%- if block.settings.link2 != blank -%}
-                        </a>
-                      {%- endif -%}
-                      {% if block.settings.link3 != blank %}<br>{% endif %}
-                      {%- if block.settings.link3 != blank -%}
-                        <a class="link" href="{{ block.settings.link3 }}">
-                      {%- endif -%}
-                        {{ block.settings.text3 | escape }}
-                      {%- if block.settings.link3 != blank -%}
-                        </a>
-                      {%- endif -%}
-                      {% if block.settings.link4 != blank %}<br>{% endif %}
-                      {%- if block.settings.link4 != blank -%}
-                        <a class="link" href="{{ block.settings.link4 }}">
-                      {%- endif -%}
-                        {{ block.settings.text4 | escape }}
-                      {%- if block.settings.link4 != blank -%}
-                        </a>
-                      {%- endif -%}
-                      {% if block.settings.link5 != blank %}<br>{% endif %}
-                      {%- if block.settings.link5 != blank -%}
-                        <a class="link" href="{{ block.settings.link5 }}">
-                      {%- endif -%}
-                        {{ block.settings.text5 | escape }}
-                      {%- if block.settings.link5 != blank -%}
-                        </a>
-                      {%- endif -%}
-                  
+                    {%- endfor -%}
+                  </ul>
                 </li>
-                 
+              {%- elsif block.type == 'media' -%}
+                <li {{ block.shopify_attributes }}>
+                  <p class="h3">{{ block.settings.heading | escape }}</p>
+                  <ul class="list-unstyled list-social" role="list">
+                    {%- render 'social-icons' -%}
+                  </ul>
+                </li>
               {%- endif -%}
             {%- endfor -%}
             
@@ -414,6 +573,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "id": "heading",
       "default": "Get in touch",
       "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
     },
     {
       "type": "select",
@@ -566,6 +730,42 @@ document.addEventListener("DOMContentLoaded", function () {
           "type": "url",
           "id": "link5",
           "label": "Link5"
+        }
+      ]
+    },
+    {
+      "type": "click-to-call",
+      "name": "Click To Call",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Click to Call",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Instantly connect with our customer service team.",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "default": "Click to Call",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "default": "Internet call • No charges",
+          "label": "Note Under Button"
         }
       ]
     },
