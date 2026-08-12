@@ -1748,6 +1748,16 @@
     "contact_information_G38neN": {
       "type": "contact-information",
       "blocks": {
+        "click_to_call_Kp3xWa": {
+          "type": "click-to-call",
+          "settings": {
+            "heading": "Click to Call",
+            "text": "<p>Instantly connect with our customer service team.</p>",
+            "btn_text": "Click to Call",
+            "btn_link": "https://call.tracki.com/",
+            "note": "Internet call • No charges"
+          }
+        },
         "image_with_text_NpGcWg": {
           "type": "image-with-text",
           "settings": {
@@ -1810,6 +1820,7 @@
         }
       },
       "block_order": [
+        "click_to_call_Kp3xWa",
         "image_with_text_NpGcWg",
         "image_with_text_nqCg7J",
         "image_with_text_CfExpN"
