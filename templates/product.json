@@ -39,7 +39,7 @@
             "heading": "Track Anything, Anywhere—<em>Rain, Dust, or Mud</em>",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "Built tough for off-road vehicles, trailers, and heavy machinery with ultra-precise 4G LTE global tracking.",
+            "text": "Standard trackers fail in harsh conditions. Tracki Max is IP68 waterproof and shock-resistant, built specifically to endure extreme environments on off-road vehicles, boats, trailers, and heavy machinery.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -65,7 +65,7 @@
             "heading": "Complete Fleet <em>Visibility</em> in the Palm of Your Hand",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "Monitor movement, set custom geofences, and receive real-time speed and boundary alerts on any smart device.",
+            "text": "Control all your devices under a single account using iOS, Android, Web, or desktop apps. Draw custom geofence boundaries, monitor speed, and access up to <strong>365 days of full travel history</strong> to prevent theft and optimize routes.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -91,7 +91,7 @@
             "heading": "Instant Emergency Alerts & One-Touch SOS Safeguards",
             "heading_size": "h1",
             "heading_tag": "h2",
-            "text": "Equipped with a dedicated SOS button and instant mobile push notifications to keep loved ones and vehicles safe 24/7.",
+            "text": "Get instant push notifications, SMS, or email alerts the second unauthorized movement or speeding occurs. For lone workers or family members, the integrated <strong>one-touch SOS button</strong> delivers immediate location alerts in emergency situations.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -224,7 +224,7 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "text": "Keep track of what matters most—anywhere in the world. The Tracki Max 4G LTE GPS Tracker delivers real-time location tracking with pinpoint accuracy for vehicles, equipment, high-value assets, and loved ones. Featuring an upgraded 1950mAh rechargeable battery, smart alert triggers, and seamless iOS/Android smartphone integration, the Tracki Max offers total peace of mind in a compact, easily concealable footprint.",
+            "text": "Keep track of what matters most—anywhere in the world. The Tracki Max 4G LTE GPS Tracker delivers real-time location updates with pinpoint accuracy, making it the ultimate solution for vehicles, machinery, valuable assets, and loved ones. Packed with an upgraded 1950mAh rechargeable battery, intelligent alert triggers, and seamless iOS/Android app integration, Tracki Max offers complete security in a compact, easily concealable design.",
             "text_style": "body"
           }
         },
@@ -292,6 +292,14 @@
     "product-details": {
       "type": "product-details",
       "blocks": {
+        "collapsible_tab_nCP388": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Key Highlights at a Glance:",
+            "content": "<p><strong>Unrivaled Battery Life:</strong> Up to 6 weeks (1.5 months) of continuous operation on a single rechargeable USB-C charge.</p><p><strong>Built to Survive:</strong> IP68 100% waterproof rating and operating temperature range from -20°C to +60°C.</p><p><strong>Precision Live Updates:</strong> Refresh rates as fast as every 5 seconds with accuracy within 5 meters.</p><p><strong>Global Roaming Out of the Box:</strong> Pre-configured with an embedded SIM for seamless worldwide 4G Cat 1 tracking.</p><p><strong>Ready to Mount:</strong> Includes clip and high-strength magnet attachments right in the box.</p>",
+            "page": ""
+          }
+        },
         "60eeb066-dd65-49d7-b86e-8ef785719e6b": {
           "type": "collapsible_tab",
           "settings": {
@@ -326,6 +334,7 @@
         }
       },
       "block_order": [
+        "collapsible_tab_nCP388",
         "60eeb066-dd65-49d7-b86e-8ef785719e6b",
         "product-details-1",
         "product-details-2",
@@ -333,7 +342,7 @@
       ],
       "settings": {
         "force_light_style": false,
-        "open_first_collapsible_row": false,
+        "open_first_collapsible_row": true,
         "heading": "",
         "heading_size": "h1",
         "heading_tag": "h2",
@@ -496,7 +505,7 @@
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2.png",
             "image_position": "center center",
             "heading": "Instant <em>Smart Alerts</em>",
-            "description": "<p>Receive push notifications, SMS, or email alerts for geofence boundaries (safe zones), speed limits, unexpected movement, low battery, and emergency SOS presses.</p>",
+            "description": "<ul><li><strong>Stay Informed 24/7  - </strong>Receive real-time push notifications, SMS, or email alerts the moment your vehicle or asset moves.</li><li><strong>Custom Security Triggers - </strong>Get notified instantly for geofence safe-zone breaches, speed limit violations, low battery warnings, or unexpected motion.</li></ul>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -511,7 +520,7 @@
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-1_15071b48-2c95-46f2-88fc-0c3b841dce88.png",
             "image_position": "center center",
             "heading": "Built-In Emergency <em>SOS Button</em>",
-            "description": "<p>A prominent panic button allows drivers, elderly family members, or children to instantly alert emergency contacts with their exact coordinates.</p>",
+            "description": "<ul><li><strong>One-Touch Safeguards - </strong>A prominent, dedicated panic button allows drivers, elderly family members, or children to call for help instantly.</li><li><strong>Precision Coordinates - </strong>Sends immediate emergency alerts with exact live location coordinates directly to designated contacts.</li></ul>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -526,7 +535,7 @@
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-6.png",
             "image_position": "center center",
             "heading": "<em>Built To Last</em>, Engineered for More",
-            "description": "<p>Whether you're tracking vehicles, assets, or loved ones — the Tracki MAX is built to keep up. <em>Rugged</em>, <em>reliable, and ready wherever you need it.</em></p>",
+            "description": "<ul><li><strong>Rugged & Reliable Performance - </strong>Whether monitoring fleet vehicles, safeguarding valuable machinery, or protecting loved ones, Tracki Max is engineered to withstand tough conditions and keep up with your busy life.</li><li><strong>Complete Peace of Mind, Anywhere - </strong>Built with a durable design, long battery endurance, and instant alert technology—giving you powerful, reliable security wherever you need it most.</li></ul>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -580,8 +589,8 @@
             "text_color": "#333333",
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-3_90b4f5b9-6e70-4c4c-8dcf-984d42e89881.png",
             "title": "<strong>Silicone Clip</strong>",
-            "title_size": "h3",
-            "text": "<p><em>Belts, Straps & Gear</em> - Flexibly wraps around personal accessories, backpack straps, and waistbands, providing a snug, slip-resistant hold for everyday mobility and safety.</p>",
+            "title_size": "h4",
+            "text": "<p><em>A flexible, protective silicone case with a snug clip wrap.</em></p><p>Perfect for everyday personal safety. It fastens securely to belts, backpack straps, and waistbands without slipping—keeping kids, elderly family, lone workers, or outdoor gear protected during daily movement.</p>",
             "show_popup": false,
             "popup_image_position": "top",
             "justify_text": false,
@@ -601,7 +610,7 @@
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-4_1dbf06ee-5435-4330-9e87-0d62ce10ff35.png",
             "title": "<strong>Magnet Attachment</strong>",
             "title_size": "h3",
-            "text": "<p><em>Vehicles & Metal Assets</em> - High-strength industrial magnet mounts instantly to vehicle undercarriages, machinery, and steel surfaces without extra tools.</p>",
+            "text": "<p><em>A heavy-duty, high-strength magnet attachment.</em></p><p> Ideal for quick, tool-free installation on heavy machinery, trailers, steel equipment, or vehicle undercarriages. It locks directly onto metal surfaces and stays put, even through rough terrain and harsh weather.</p>",
             "show_popup": false,
             "popup_image_position": "top",
             "justify_text": false,
@@ -619,9 +628,9 @@
             "heading_color": "#000000",
             "text_color": "#333333",
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-5.png",
-            "title": "<strong>Tracker</strong>",
+            "title": "Discrete Tracker Body",
             "title_size": "h3",
-            "text": "<p><em>Concealed Placement </em>- Slim, low-profile form factor engineered for easy, covert placement inside luggage, asset boxes, toolboxes, or hidden vehicle spots.</p>",
+            "text": "<p><em>The core tracker’s ultra-compact, low-profile footprint (55g, 60mm x 37mm x 20mm).</em></p><p>Essential for covert asset protection. Its slim form factor lets you easily hide the device inside luggage, toolboxes, glove compartments, or deep inside valuable equipment without drawing attention.</p>",
             "show_popup": false,
             "popup_image_position": "top",
             "justify_text": false,
@@ -668,7 +677,7 @@
         "text_gbdQBU": {
           "type": "text",
           "settings": {
-            "text": "<p>Heavy-duty 4G GPS tracking designed to withstand tough outdoor conditions while delivering pinpoint location accuracy worldwide.</p>",
+            "text": "<p>Tracki Max is a heavy-duty, weather-proof 4G GPS tracker built for extreme environments. While standard trackers fail in harsh weather, Tracki Max delivers pinpoint location accuracy worldwide—giving you instant visibility and total protection for off-road vehicles, machinery, and gear anywhere on Earth.</p>",
             "text_size": "typeset",
             "secondary_color": false,
             "enable_highlight": false,
