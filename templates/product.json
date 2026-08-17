@@ -9,28 +9,13 @@
  */
 {
   "sections": {
-    "content_scrollspy_iWw77J": {
-      "type": "content-scrollspy",
-      "name": "t:sections.content_scrollspy.presets.name",
-      "settings": {
-        "heading_selector": "h1.product__heading, .accordion__title, h2.title",
-        "background_color": "#272c32",
-        "text_color": "#ffffff",
-        "active_color": "#aa723e",
-        "border_color": "#aa723e",
-        "enable_animations": true,
-        "animation_threshold": 0.6,
-        "hide_on_scroll_up": true,
-        "show_scroll_indicator": true
-      }
-    },
     "16448066058b9355f9": {
       "type": "slideshow",
       "blocks": {
         "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX_PAGE-IMAGE.jpg",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile_be408abc-4907-417b-9402-d1019fd5e532.png",
             "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-left",
@@ -56,8 +41,8 @@
         "164480660521311b94-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2_d1d228d2-31e2-49e5-aec6-a21538d7ef4a.png",
-            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile_d18755bf-04da-4698-af7b-ba69be0bdcec.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2_118ab3ff-966f-4b4a-b7a7-cd5b17338f80.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile_da6749e8-a9b3-4d32-a243-66bfba262c9e.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-center",
             "subheading": "Ultimate Fleet & Asset Protection",
@@ -413,7 +398,7 @@
         "use_custom_colors": false,
         "colors_icon": "#ffffff",
         "colors_text": "#1a1b18",
-        "colors_background": "#ffffff",
+        "colors_background": "#FFFFFF",
         "gradient_background": "",
         "colors_highlight": "#ffb503",
         "padding_top": 0,
@@ -451,156 +436,14 @@
         "highlight_style": "marker"
       }
     },
-    "164476417040d4bb5c": {
-      "type": "rich-text",
-      "blocks": {
-        "16447641709f1fda34-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Versatile Vehicle & Asset Protection",
-            "heading_size": "h1",
-            "heading_tag": "h2",
-            "enable_highlight": true,
-            "highlight_style": "solid-color"
-          }
-        },
-        "8f0e02f8-7b30-4e8f-bcac-eed174468f4d": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Easily secure inside cars, trucks, motorcycles, trailers, fleet vehicles, construction equipment, or luggage.</p>",
-            "text_size": "typeset",
-            "secondary_color": true,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        }
-      },
-      "block_order": [
-        "16447641709f1fda34-0",
-        "8f0e02f8-7b30-4e8f-bcac-eed174468f4d"
-      ],
-      "settings": {
-        "text_alignment": "center",
-        "mobile_text_alignment": "left",
-        "horizontal_content": false,
-        "narrow": false,
-        "show_divider": false,
-        "use_custom_colors": false,
-        "colors_button_label": "#ffffff",
-        "colors_button_background": "#1a1b18",
-        "colors_text": "#212326",
-        "colors_background": "#ffffff",
-        "colors_highlight": "#00b600",
-        "gradient_background": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "tab-collage": {
-      "type": "tab-collage",
-      "blocks": {
-        "tab-collage-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2.png",
-            "image_position": "center center",
-            "heading": "Instant <em>Smart Alerts</em>",
-            "description": "<ul><li><strong>Stay Informed 24/7  - </strong>Receive real-time push notifications, SMS, or email alerts the moment your vehicle or asset moves.</li><li><strong>Custom Security Triggers - </strong>Get notified instantly for geofence safe-zone breaches, speed limit violations, low battery warnings, or unexpected motion.</li></ul>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": true,
-            "highlight_style": "marker"
-          }
-        },
-        "tab-collage-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-1_15071b48-2c95-46f2-88fc-0c3b841dce88.png",
-            "image_position": "center center",
-            "heading": "Built-In Emergency <em>SOS Button</em>",
-            "description": "<ul><li><strong>One-Touch Safeguards - </strong>A prominent, dedicated panic button allows drivers, elderly family members, or children to call for help instantly.</li><li><strong>Precision Coordinates - </strong>Sends immediate emergency alerts with exact live location coordinates directly to designated contacts.</li></ul>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": true,
-            "highlight_style": "circle"
-          }
-        },
-        "image_fV4jnx": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-6.png",
-            "image_position": "center center",
-            "heading": "<em>Built To Last</em>, Engineered for More",
-            "description": "<ul><li><strong>Rugged & Reliable Performance - </strong>Whether monitoring fleet vehicles, safeguarding valuable machinery, or protecting loved ones, Tracki Max is engineered to withstand tough conditions and keep up with your busy life.</li><li><strong>Complete Peace of Mind, Anywhere - </strong>Built with a durable design, long battery endurance, and instant alert technology—giving you powerful, reliable security wherever you need it most.</li></ul>",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "enable_highlight": true,
-            "highlight_style": "marker"
-          }
-        }
-      },
-      "block_order": [
-        "tab-collage-0",
-        "tab-collage-1",
-        "image_fV4jnx"
-      ],
-      "settings": {
-        "layout": "text_first",
-        "text_box_position": "top",
-        "text_alignment": "left",
-        "image_ratio": "450px",
-        "make_collapsible_rows": false,
-        "full_width": false,
-        "show_divider": false,
-        "heading": "",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "heading_tag": "h2",
-        "mobile_layout": "text_first",
-        "mobile_text_alignment": "left",
-        "mobile_image_ratio": "250px",
-        "colors_button_label": "#ffffff",
-        "colors_button_background": "#1a1b18",
-        "colors_text": "#ffffff",
-        "colors_border": "#d2d5d9",
-        "colors_background": "#272c31",
-        "gradient_background": "",
-        "colors_highlight": "#00b600",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "enable_highlight": false,
-        "highlight_style": "marker"
-      }
+    "how_to_use_text_PGe3a8": {
+      "type": "how-to-use-text",
+      "name": "How TO Use Text",
+      "settings": {}
     },
     "multicolumn_wKeNaP": {
       "type": "multicolumn",
       "blocks": {
-        "column_nKNTbW": {
-          "type": "column",
-          "settings": {
-            "background_color": "#f2f2f2",
-            "heading_color": "#000000",
-            "text_color": "#333333",
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-3_90b4f5b9-6e70-4c4c-8dcf-984d42e89881.png",
-            "title": "<strong>Silicone Clip</strong>",
-            "title_size": "h4",
-            "text": "<p><em>A flexible, protective silicone case with a snug clip wrap.</em></p><p>Perfect for everyday personal safety. It fastens securely to belts, backpack straps, and waistbands without slipping—keeping kids, elderly family, lone workers, or outdoor gear protected during daily movement.</p>",
-            "show_popup": false,
-            "popup_image_position": "top",
-            "justify_text": false,
-            "button_label": "",
-            "button_link": "",
-            "button_style_secondary": false,
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
         "column_wNnHxg": {
           "type": "column",
           "settings": {
@@ -643,7 +486,6 @@
         }
       },
       "block_order": [
-        "column_nKNTbW",
         "column_wNnHxg",
         "column_C3pAXz"
       ],
@@ -654,7 +496,7 @@
         "text_alignment": "left",
         "show_divider": false,
         "image_width": "full",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "open_in_new_tab": false,
         "heading": "One Device, Every Scenario.",
         "heading_size": "h1",
@@ -667,6 +509,88 @@
         "padding_top": 36,
         "padding_bottom": 36,
         "card_border_radius": 0,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "tab-collage": {
+      "type": "tab-collage",
+      "blocks": {
+        "tab-collage-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2_f08f0636-ac4d-44dd-bbb1-ad3a56d98877.png",
+            "image_position": "center center",
+            "heading": "Instant <em>Smart Alerts</em>",
+            "description": "<p><strong>Stay Informed 24/7  - </strong>Receive real-time push notifications, SMS, or email alerts the moment your vehicle or asset moves.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        },
+        "tab-collage-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-1_15071b48-2c95-46f2-88fc-0c3b841dce88.png",
+            "image_position": "center center",
+            "heading": "Built-In Emergency <em>SOS Button</em>",
+            "description": "<p><strong>One-Touch Safeguards - </strong>A prominent, dedicated panic button allows drivers, elderly family members, or children to call for help instantly.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "circle"
+          }
+        },
+        "image_fV4jnx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-6.png",
+            "image_position": "center center",
+            "heading": "<em>Built To Last</em>, Engineered for More",
+            "description": "<p><strong>Rugged & Reliable Performance - </strong>Whether monitoring fleet vehicles, safeguarding valuable machinery, or protecting loved ones, Tracki Max is engineered to withstand tough conditions and keep up with your busy life.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "tab-collage-0",
+        "tab-collage-1",
+        "image_fV4jnx"
+      ],
+      "settings": {
+        "layout": "text_first",
+        "text_box_position": "top",
+        "text_alignment": "left",
+        "image_ratio": "450px",
+        "make_collapsible_rows": false,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "mobile_layout": "text_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#ffffff",
+        "colors_border": "#d2d5d9",
+        "colors_background": "#27282A",
+        "gradient_background": "",
+        "colors_highlight": "#00b600",
+        "padding_top": 36,
+        "padding_bottom": 36,
         "enable_highlight": false,
         "highlight_style": "marker"
       }
@@ -974,15 +898,14 @@
     }
   },
   "order": [
-    "content_scrollspy_iWw77J",
     "16448066058b9355f9",
     "main",
     "product-details",
     "164481981344fb48df",
     "product-recommendations",
-    "164476417040d4bb5c",
-    "tab-collage",
+    "how_to_use_text_PGe3a8",
     "multicolumn_wKeNaP",
+    "tab-collage",
     "video_hero_7tqaLF",
     "16448079723140b4d6",
     "1644818998cec1e2a6",
