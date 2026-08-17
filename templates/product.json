@@ -335,78 +335,6 @@
         "padding_bottom": 16
       }
     },
-    "164481981344fb48df": {
-      "type": "guarantees",
-      "blocks": {
-        "1644819813a770d5f2-0": {
-          "type": "guarantee",
-          "settings": {
-            "icon": "none",
-            "icon_size": "medium",
-            "custom_icon": "",
-            "title": "User Guide",
-            "title_size": "h3",
-            "text": "<p><a href=\"https://guide.tracki.com/\" title=\"https://guide.tracki.com/\">Learn. Set Up. Track.</a></p>",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "1644819813a770d5f2-1": {
-          "type": "guarantee",
-          "settings": {
-            "icon": "none",
-            "icon_size": "medium",
-            "custom_icon": "",
-            "title": "Quick Start Guide",
-            "title_size": "h3",
-            "text": "<p><a href=\"https://tracki.com/pages/how-to-use\" title=\"https://tracki.com/pages/how-to-use\">Get Started in Minutes.</a></p>",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "f01dd96c-55b5-49da-b07a-89cb3dec8853": {
-          "type": "guarantee",
-          "settings": {
-            "icon": "none",
-            "icon_size": "medium",
-            "custom_icon": "",
-            "title": "Product Information",
-            "title_size": "h3",
-            "text": "<p><a href=\"https://guide.tracki.com/devices-guide/tracki-max/\" title=\"https://guide.tracki.com/devices-guide/tracki-max/\">Features & Specs at a Glance.</a></p>",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        }
-      },
-      "block_order": [
-        "1644819813a770d5f2-0",
-        "1644819813a770d5f2-1",
-        "f01dd96c-55b5-49da-b07a-89cb3dec8853"
-      ],
-      "settings": {
-        "layout": "default",
-        "column_alignment": "left",
-        "horizontal_content": false,
-        "full_width": false,
-        "show_divider": false,
-        "columns_desktop": 4,
-        "heading": "",
-        "heading_size": "h1",
-        "heading_tag": "h2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "use_custom_colors": false,
-        "colors_icon": "#ffffff",
-        "colors_text": "#1a1b18",
-        "colors_background": "#FFFFFF",
-        "gradient_background": "",
-        "colors_highlight": "#ffb503",
-        "padding_top": 0,
-        "padding_bottom": 36,
-        "enable_highlight": false,
-        "highlight_style": "marker"
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -646,6 +574,78 @@
         "colors_highlight": "#ffb503",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "164481981344fb48df": {
+      "type": "guarantees",
+      "blocks": {
+        "1644819813a770d5f2-0": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "User Guide",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://guide.tracki.com/\" title=\"https://guide.tracki.com/\">Learn. Set Up. Track.</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "1644819813a770d5f2-1": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Quick Start Guide",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://tracki.com/pages/how-to-use\" title=\"https://tracki.com/pages/how-to-use\">Get Started in Minutes.</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "f01dd96c-55b5-49da-b07a-89cb3dec8853": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "title": "Product Information",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://guide.tracki.com/devices-guide/tracki-max/\" title=\"https://guide.tracki.com/devices-guide/tracki-max/\">Features & Specs at a Glance.</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "1644819813a770d5f2-0",
+        "1644819813a770d5f2-1",
+        "f01dd96c-55b5-49da-b07a-89cb3dec8853"
+      ],
+      "settings": {
+        "layout": "default",
+        "column_alignment": "left",
+        "horizontal_content": false,
+        "full_width": false,
+        "show_divider": false,
+        "columns_desktop": 4,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "use_custom_colors": false,
+        "colors_icon": "#ffffff",
+        "colors_text": "#1a1b18",
+        "colors_background": "#FFFFFF",
+        "gradient_background": "",
+        "colors_highlight": "#ffb503",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "enable_highlight": false,
+        "highlight_style": "marker"
       }
     },
     "16448079723140b4d6": {
@@ -901,12 +901,12 @@
     "16448066058b9355f9",
     "main",
     "product-details",
-    "164481981344fb48df",
     "product-recommendations",
     "how_to_use_text_PGe3a8",
     "multicolumn_wKeNaP",
     "tab-collage",
     "video_hero_7tqaLF",
+    "164481981344fb48df",
     "16448079723140b4d6",
     "1644818998cec1e2a6",
     "1644745953392511db",
