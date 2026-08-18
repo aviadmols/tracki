@@ -638,7 +638,7 @@
         "swipe_on_mobile": true,
         "use_custom_colors": true,
         "colors_icon": "#ffffff",
-        "colors_text": "#FFFFFF",
+        "colors_text": "#ffffff",
         "colors_background": "#f5fff5",
         "gradient_background": "linear-gradient(292deg, rgba(5, 93, 28, 1) 20%, rgba(168, 255, 251, 1) 100%)",
         "colors_highlight": "#ffb503",
@@ -747,7 +747,7 @@
         "autorotate_speed": 7,
         "hide_images": false,
         "show_divider": false,
-        "heading": "REVIEWS FROM <em>THE EXPERTS</em>",
+        "heading": "<em><strong>Positive</strong></em> Reviews",
         "heading_size": "h1",
         "heading_alignment": "center",
         "heading_tag": "h2",
@@ -756,51 +756,6 @@
         "padding_bottom": 24,
         "enable_highlight": true,
         "highlight_style": "solid-color"
-      }
-    },
-    "1644745953392511db": {
-      "type": "newsletter",
-      "blocks": {
-        "16447459539c38746f-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em>SUBSCRIBE</em> TO OUR EMAILS",
-            "heading_tag": "h2",
-            "enable_highlight": true,
-            "highlight_style": "bold-underline"
-          }
-        },
-        "16447459539c38746f-1": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>Be the first to know about new collections and exclusive <em>offers</em>.</p>",
-            "enable_highlight": true,
-            "highlight_style": "modern-underline"
-          }
-        },
-        "16447459539c38746f-2": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "16447459539c38746f-0",
-        "16447459539c38746f-1",
-        "16447459539c38746f-2"
-      ],
-      "settings": {
-        "return_url": "",
-        "text_alignment": "left",
-        "mobile_text_alignment": "left",
-        "full_width": false,
-        "show_divider": false,
-        "colors_text": "#fafafa",
-        "colors_border": "#fafafa",
-        "colors_background": "#27282a",
-        "gradient_background": "",
-        "colors_highlight": "#ffb503",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "1644821694668dc64a": {
@@ -951,7 +906,6 @@
     "164481981344fb48df",
     "16448079723140b4d6",
     "1644818998cec1e2a6",
-    "1644745953392511db",
     "1644821694668dc64a",
     "counter_RyXetH"
   ]

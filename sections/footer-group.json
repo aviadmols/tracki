@@ -11,6 +11,16 @@
   "name": "t:sections.footer-group.name",
   "type": "footer",
   "sections": {
+    "contact_new_iekHbp": {
+      "type": "contact-new",
+      "name": "Contact New",
+      "settings": {
+        "heading": "Need Help?<span>Our Team Is Ready</span>",
+        "text": "<p><strong>Let us know how we can help you</strong></p>",
+        "button": "Send request",
+        "enable_validation": false
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -112,6 +122,7 @@
     }
   },
   "order": [
+    "contact_new_iekHbp",
     "footer"
   ]
 }
