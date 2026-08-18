@@ -1,6 +1,823 @@
+{% doc %}
+  @prompt
+    Task: Create a custom, schema-configurable Liquid section for a Shopify full-width hero header banner.Layout & Visual Structure:Container: Full-bleed header hero banner ($100vw$ width, customizable height).Background: Clean studio white / light grey gradient backdrop featuring a hero product shot (centered or right-aligned).Callout Pins: Floating glowing indicator dots connected by thin leader lines pointing to key features on the product image (similar to an infographic / benefit breakdown layout).Text & Content Blocks:Support 2–3 stacked feature blocks (Bold Headline + 2-line Subtext Body).Main Product Title / Logo text block (e.g., Large bold typography on the right or side).Animation Requirements:Trigger: On scroll-into-view or initial page load.Effect: Sequential slide-pop / keyframe entrance animation for each text block ($0.2s$ stagger).Text elements slide in horizontally (left-to-right) with a subtle elastic over-shoot ("pop") effect using CSS cubic-bezier(0.175, 0.885, 0.32, 1.275).Shopify Schema Settings Required:Text Alignment: Dropdown setting for content block alignment (Left, Center, Right).Content Position: Desktop flex alignment (Flex-Start, Center, Flex-End).Image Picker: Desktop and Mobile hero product image uploads.Block Repeater: Repeatable blocks for feature callouts (Title, Subtext, Dot $X/Y$ coordinates in percentage).Animation Toggle: Enable/disable entry slide-pop animation.Please provide the full .liquid code including HTML structure, Schema settings, responsive CSS, and minimal JS for animation triggering.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-banner-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: {{ block.settings.hero_height }}px;
+    background: {{ block.settings.background_gradient }};
+    overflow: hidden;
+  }
+
+  .ai-hero-banner__container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    align-items: {{ block.settings.content_vertical_position }};
+    justify-content: {{ block.settings.content_horizontal_position }};
+  }
+
+  .ai-hero-banner__image-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: {{ block.settings.image_position }};
+    z-index: 1;
+  }
+
+  .ai-hero-banner__image-{{ ai_gen_id }} {
+    max-width: {{ block.settings.image_max_width }}%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-hero-banner__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .ai-hero-banner__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    opacity: 0.3;
+  }
+
+  .ai-hero-banner__content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    max-width: {{ block.settings.content_max_width }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-hero-banner__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 20px;
+    line-height: 1.2;
+  }
+
+  .ai-hero-banner__feature-blocks-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.feature_spacing }}px;
+  }
+
+  .ai-hero-banner__feature-block-{{ ai_gen_id }} {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  {% if block.settings.enable_animation %}
+    .ai-hero-banner-{{ ai_gen_id }}.animated .ai-hero-banner__feature-block-{{ ai_gen_id }} {
+      animation: ai-hero-slide-pop-{{ ai_gen_id }} 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .ai-hero-banner-{{ ai_gen_id }}.animated .ai-hero-banner__feature-block-{{ ai_gen_id }}:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .ai-hero-banner-{{ ai_gen_id }}.animated .ai-hero-banner__feature-block-{{ ai_gen_id }}:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .ai-hero-banner-{{ ai_gen_id }}.animated .ai-hero-banner__feature-block-{{ ai_gen_id }}:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes ai-hero-slide-pop-{{ ai_gen_id }} {
+      0% {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  {% else %}
+    .ai-hero-banner__feature-block-{{ ai_gen_id }} {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  {% endif %}
+
+  .ai-hero-banner__feature-headline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_headline_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.feature_headline_color }};
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .ai-hero-banner__feature-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_text_size }}px;
+    color: {{ block.settings.feature_text_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-hero-banner__callout-{{ ai_gen_id }} {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .ai-hero-banner__callout-dot-{{ ai_gen_id }} {
+    width: {{ block.settings.callout_dot_size }}px;
+    height: {{ block.settings.callout_dot_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.callout_dot_color }};
+    box-shadow: 0 0 0 0 {{ block.settings.callout_dot_color }};
+    animation: ai-hero-pulse-{{ ai_gen_id }} 2s infinite;
+    position: relative;
+  }
+
+  @keyframes ai-hero-pulse-{{ ai_gen_id }} {
+    0% {
+      box-shadow: 0 0 0 0 {{ block.settings.callout_dot_color }};
+    }
+    50% {
+      box-shadow: 0 0 0 {{ block.settings.callout_dot_size | divided_by: 2 }}px rgba({{ block.settings.callout_dot_color | color_extract: 'red' }}, {{ block.settings.callout_dot_color | color_extract: 'green' }}, {{ block.settings.callout_dot_color | color_extract: 'blue' }}, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba({{ block.settings.callout_dot_color | color_extract: 'red' }}, {{ block.settings.callout_dot_color | color_extract: 'green' }}, {{ block.settings.callout_dot_color | color_extract: 'blue' }}, 0);
+    }
+  }
+
+  .ai-hero-banner__callout-line-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: {{ block.settings.callout_line_length }}px;
+    height: 2px;
+    background-color: {{ block.settings.callout_line_color }};
+    transform-origin: left center;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-{{ ai_gen_id }} {
+      height: {{ block.settings.hero_height_mobile }}px;
+    }
+
+    .ai-hero-banner__container-{{ ai_gen_id }} {
+      padding: 20px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ai-hero-banner__image-wrapper-{{ ai_gen_id }} {
+      position: relative;
+      height: 50%;
+      margin-bottom: 20px;
+    }
+
+    .ai-hero-banner__content-{{ ai_gen_id }} {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .ai-hero-banner__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.6 }}px;
+    }
+
+    .ai-hero-banner__feature-headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.feature_headline_size | times: 0.8 }}px;
+    }
+
+    .ai-hero-banner__feature-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.feature_text_size | times: 0.9 }}px;
+    }
+
+    .ai-hero-banner__callout-{{ ai_gen_id }} {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+<hero-banner-{{ ai_gen_id }}
+  class="ai-hero-banner-{{ ai_gen_id }}"
+  data-enable-animation="{{ block.settings.enable_animation }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-hero-banner__container-{{ ai_gen_id }}">
+    <div class="ai-hero-banner__image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.hero_image_desktop %}
+        <img
+          src="{{ block.settings.hero_image_desktop | image_url: width: 2000 }}"
+          alt="{{ block.settings.hero_image_desktop.alt | escape }}"
+          loading="eager"
+          width="{{ block.settings.hero_image_desktop.width }}"
+          height="{{ block.settings.hero_image_desktop.height }}"
+          class="ai-hero-banner__image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-hero-banner__image-placeholder-{{ ai_gen_id }}">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.callout_1_enabled %}
+        <div
+          class="ai-hero-banner__callout-{{ ai_gen_id }}"
+          style="
+            top: {{ block.settings.callout_1_y }}%;
+            left: {{ block.settings.callout_1_x }}%;
+          "
+        >
+          <div class="ai-hero-banner__callout-dot-{{ ai_gen_id }}"></div>
+          <div
+            class="ai-hero-banner__callout-line-{{ ai_gen_id }}"
+            style="transform: rotate({{ block.settings.callout_1_angle }}deg);"
+          ></div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.callout_2_enabled %}
+        <div
+          class="ai-hero-banner__callout-{{ ai_gen_id }}"
+          style="
+            top: {{ block.settings.callout_2_y }}%;
+            left: {{ block.settings.callout_2_x }}%;
+          "
+        >
+          <div class="ai-hero-banner__callout-dot-{{ ai_gen_id }}"></div>
+          <div
+            class="ai-hero-banner__callout-line-{{ ai_gen_id }}"
+            style="transform: rotate({{ block.settings.callout_2_angle }}deg);"
+          ></div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.callout_3_enabled %}
+        <div
+          class="ai-hero-banner__callout-{{ ai_gen_id }}"
+          style="
+            top: {{ block.settings.callout_3_y }}%;
+            left: {{ block.settings.callout_3_x }}%;
+          "
+        >
+          <div class="ai-hero-banner__callout-dot-{{ ai_gen_id }}"></div>
+          <div
+            class="ai-hero-banner__callout-line-{{ ai_gen_id }}"
+            style="transform: rotate({{ block.settings.callout_3_angle }}deg);"
+          ></div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-hero-banner__content-{{ ai_gen_id }}">
+      {% if block.settings.main_title != blank %}
+        <h1 class="ai-hero-banner__title-{{ ai_gen_id }}">{{ block.settings.main_title }}</h1>
+      {% endif %}
+
+      <div class="ai-hero-banner__feature-blocks-{{ ai_gen_id }}">
+        {% if block.settings.feature_1_headline != blank or block.settings.feature_1_text != blank %}
+          <div class="ai-hero-banner__feature-block-{{ ai_gen_id }}">
+            {% if block.settings.feature_1_headline != blank %}
+              <h3 class="ai-hero-banner__feature-headline-{{ ai_gen_id }}">
+                {{ block.settings.feature_1_headline }}
+              </h3>
+            {% endif %}
+            {% if block.settings.feature_1_text != blank %}
+              <p class="ai-hero-banner__feature-text-{{ ai_gen_id }}">
+                {{ block.settings.feature_1_text }}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_2_headline != blank or block.settings.feature_2_text != blank %}
+          <div class="ai-hero-banner__feature-block-{{ ai_gen_id }}">
+            {% if block.settings.feature_2_headline != blank %}
+              <h3 class="ai-hero-banner__feature-headline-{{ ai_gen_id }}">
+                {{ block.settings.feature_2_headline }}
+              </h3>
+            {% endif %}
+            {% if block.settings.feature_2_text != blank %}
+              <p class="ai-hero-banner__feature-text-{{ ai_gen_id }}">
+                {{ block.settings.feature_2_text }}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_3_headline != blank or block.settings.feature_3_text != blank %}
+          <div class="ai-hero-banner__feature-block-{{ ai_gen_id }}">
+            {% if block.settings.feature_3_headline != blank %}
+              <h3 class="ai-hero-banner__feature-headline-{{ ai_gen_id }}">
+                {{ block.settings.feature_3_headline }}
+              </h3>
+            {% endif %}
+            {% if block.settings.feature_3_text != blank %}
+              <p class="ai-hero-banner__feature-text-{{ ai_gen_id }}">
+                {{ block.settings.feature_3_text }}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</hero-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeroBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.enableAnimation = this.dataset.enableAnimation === 'true';
+      }
+
+      connectedCallback() {
+        if (this.enableAnimation) {
+          this.setupIntersectionObserver();
+        }
+      }
+
+      setupIntersectionObserver() {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.classList.add('animated');
+              observer.unobserve(this);
+            }
+          });
+        }, options);
+
+        observer.observe(this);
+      }
+    }
+
+    customElements.define('hero-banner-{{ ai_gen_id }}', HeroBanner{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Hero banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "hero_height",
+      "label": "Desktop height",
+      "min": 400,
+      "max": 900,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "hero_height_mobile",
+      "label": "Mobile height",
+      "min": 400,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background",
+      "default": "linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%)"
+    },
+    {
+      "type": "header",
+      "content": "Hero image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "flex-end"
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "label": "Image max width",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Content position"
+    },
+    {
+      "type": "select",
+      "id": "content_horizontal_position",
+      "label": "Horizontal position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_position",
+      "label": "Vertical position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Main title"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Title",
+      "default": "Discover Innovation"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#212326"
+    },
+    {
+      "type": "header",
+      "content": "Feature blocks style"
+    },
+    {
+      "type": "range",
+      "id": "feature_spacing",
+      "label": "Spacing between features",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "feature_headline_size",
+      "label": "Headline size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "feature_headline_color",
+      "label": "Headline color",
+      "default": "#212326"
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_headline",
+      "label": "Headline",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_1_text",
+      "label": "Text",
+      "default": "Crafted with precision and attention to detail for exceptional performance."
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_headline",
+      "label": "Headline",
+      "default": "Advanced Technology"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_2_text",
+      "label": "Text",
+      "default": "Powered by cutting-edge innovation to deliver superior results."
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_headline",
+      "label": "Headline",
+      "default": "Trusted Worldwide"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_3_text",
+      "label": "Text",
+      "default": "Join thousands of satisfied customers who rely on our products."
+    },
+    {
+      "type": "header",
+      "content": "Callout pins style"
+    },
+    {
+      "type": "range",
+      "id": "callout_dot_size",
+      "label": "Dot size",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "callout_dot_color",
+      "label": "Dot color",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "range",
+      "id": "callout_line_length",
+      "label": "Line length",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "callout_line_color",
+      "label": "Line color",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "header",
+      "content": "Callout pin 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "callout_1_enabled",
+      "label": "Enable callout 1",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "callout_1_x",
+      "label": "Horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 65
+    },
+    {
+      "type": "range",
+      "id": "callout_1_y",
+      "label": "Vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "callout_1_angle",
+      "label": "Line angle",
+      "min": 0,
+      "max": 360,
+      "step": 15,
+      "unit": "deg",
+      "default": 135
+    },
+    {
+      "type": "header",
+      "content": "Callout pin 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "callout_2_enabled",
+      "label": "Enable callout 2",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "callout_2_x",
+      "label": "Horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "callout_2_y",
+      "label": "Vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "callout_2_angle",
+      "label": "Line angle",
+      "min": 0,
+      "max": 360,
+      "step": 15,
+      "unit": "deg",
+      "default": 90
+    },
+    {
+      "type": "header",
+      "content": "Callout pin 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "callout_3_enabled",
+      "label": "Enable callout 3",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "callout_3_x",
+      "label": "Horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "callout_3_y",
+      "label": "Vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "callout_3_angle",
+      "label": "Line angle",
+      "min": 0,
+      "max": 360,
+      "step": 15,
+      "unit": "deg",
+      "default": 45
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable slide-pop animation",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
 {% endschema %}
