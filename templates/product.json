@@ -249,7 +249,7 @@
         "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile_be408abc-4907-417b-9402-d1019fd5e532.png",
+            "image": "shopify://shop_images/TRACKI-MAX_PAGE-IMAGE.jpg",
             "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-left",
@@ -258,7 +258,7 @@
             "heading": "Track Anything, Anywhere—<em>Rain, Dust, or Mud</em>",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "Standard trackers fail in harsh conditions. Tracki Max is IP68 waterproof and shock-resistant, built specifically to endure extreme environments on off-road vehicles, boats, trailers, and heavy machinery.",
+            "text": "Built for the extreme. IP68 waterproof and shock-resistant, Tracki Max endures off-road vehicles, boats, trailers, and heavy machinery where standard trackers fail.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -284,7 +284,7 @@
             "heading": "Complete Fleet <em>Visibility</em> in the Palm of Your Hand",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "Control all your devices under a single account using iOS, Android, Web, or desktop apps. Draw custom geofence boundaries, monitor speed, and access up to <strong>365 days of full travel history</strong> to prevent theft and optimize routes.",
+            "text": "Manage all your devices in one app across iOS, Android, and Web. Set custom geofences, monitor speed, and review up to <strong>365 days of travel history to prevent theft and optimize routes.</strong>",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
