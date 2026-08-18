@@ -9,116 +9,62 @@
  */
 {
   "sections": {
-    "16448066058b9355f9": {
-      "type": "slideshow",
+    "1787047544f15c8025": {
+      "type": "_blocks",
       "blocks": {
-        "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
-          "type": "image",
+        "ai_gen_block_f2f05c2_wE9XQb": {
+          "type": "ai_gen_block_f2f05c2",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile_be408abc-4907-417b-9402-d1019fd5e532.png",
-            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile.png",
-            "image_position": "80% 50%",
-            "text_box_position": "bottom-left",
-            "subheading": "Rugged & Off-Road Focus",
-            "subheading_size": "h5",
-            "heading": "Track Anything, Anywhere—<em>Rain, Dust, or Mud</em>",
-            "heading_size": "h2",
-            "heading_tag": "h2",
-            "text": "Standard trackers fail in harsh conditions. Tracki Max is IP68 waterproof and shock-resistant, built specifically to endure extreme environments on off-road vehicles, boats, trailers, and heavy machinery.",
-            "text_size": "typeset",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "button_alt_label": "",
-            "button_alt_link": "",
-            "button_alt_size": "medium",
-            "button_alt_style_secondary": false,
-            "enable_highlight": true,
-            "highlight_style": "marker"
-          }
-        },
-        "164480660521311b94-1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2_118ab3ff-966f-4b4a-b7a7-cd5b17338f80.png",
-            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile_da6749e8-a9b3-4d32-a243-66bfba262c9e.png",
-            "image_position": "80% 50%",
-            "text_box_position": "bottom-center",
-            "subheading": "Ultimate Fleet & Asset Protection",
-            "subheading_size": "h5",
-            "heading": "Complete Fleet <em>Visibility</em> in the Palm of Your Hand",
-            "heading_size": "h2",
-            "heading_tag": "h2",
-            "text": "Control all your devices under a single account using iOS, Android, Web, or desktop apps. Draw custom geofence boundaries, monitor speed, and access up to <strong>365 days of full travel history</strong> to prevent theft and optimize routes.",
-            "text_size": "typeset",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "button_alt_label": "",
-            "button_alt_link": "",
-            "button_alt_size": "medium",
-            "button_alt_style_secondary": false,
-            "enable_highlight": true,
-            "highlight_style": "marker"
-          }
-        },
-        "164480660521311b94-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3_566c1650-5080-492e-9f24-739359cf1e46.png",
-            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3-_mobile.png",
-            "image_position": "80% 50%",
-            "text_box_position": "bottom-right",
-            "subheading": "Personal & Vehicle Security",
-            "subheading_size": "h5",
-            "heading": "Instant Emergency Alerts & One-Touch SOS Safeguards",
-            "heading_size": "h1",
-            "heading_tag": "h2",
-            "text": "Get instant push notifications, SMS, or email alerts the second unauthorized movement or speeding occurs. For lone workers or family members, the integrated <strong>one-touch SOS button</strong> delivers immediate location alerts in emergency situations.",
-            "text_size": "typeset",
-            "button_label": "",
-            "button_link": "",
-            "button_size": "medium",
-            "button_style_secondary": false,
-            "button_alt_label": "",
-            "button_alt_link": "",
-            "button_alt_size": "medium",
-            "button_alt_style_secondary": false,
-            "enable_highlight": true,
-            "highlight_style": "solid-color"
-          }
+            "hero_height": 700,
+            "hero_height_mobile": 600,
+            "background_gradient": "radial-gradient(rgba(245, 245, 247, 1), rgba(245, 245, 247, 1) 100%, rgba(215, 204, 250, 1) 100%)",
+            "hero_image_desktop": "shopify://shop_images/image-1Slide-1-copy-2.png",
+            "image_position": "flex-end",
+            "image_max_width": 90,
+            "content_horizontal_position": "flex-start",
+            "content_vertical_position": "center",
+            "content_max_width": 600,
+            "text_alignment": "left",
+            "main_title": "Tracki Max",
+            "title_size": 56,
+            "title_color": "#212326",
+            "feature_spacing": 35,
+            "feature_headline_size": 24,
+            "feature_headline_color": "#212326",
+            "feature_text_size": 16,
+            "feature_text_color": "#666666",
+            "feature_1_headline": "Never Lose Sight of What Matters",
+            "feature_1_text": "Track your car, valuables, or the people you love in real time over 4G LTE across 185+ countries, right from your phone.",
+            "feature_2_headline": "Up to 1.5 Months on a Single Charge",
+            "feature_2_text": "A powerful 1950 mAh battery means less recharging and more uninterrupted protection.",
+            "feature_3_headline": "Anywhere, Rain or Shine",
+            "feature_3_text": "A strong magnet and waterproof design let you hide it in a bag, on gear, or under a car, reliable through any weather.",
+            "callout_dot_size": 12,
+            "callout_dot_color": "#54A21F",
+            "callout_line_length": 100,
+            "callout_line_color": "#27282A",
+            "callout_1_enabled": true,
+            "callout_1_x": 59,
+            "callout_1_y": 24,
+            "callout_1_angle": 150,
+            "callout_2_enabled": true,
+            "callout_2_x": 56,
+            "callout_2_y": 52,
+            "callout_2_angle": 180,
+            "callout_3_enabled": true,
+            "callout_3_x": 54,
+            "callout_3_y": 70,
+            "callout_3_angle": 165,
+            "enable_animation": true
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "bf10fce0-c41b-435a-ba73-cddba1b5be12",
-        "164480660521311b94-1",
-        "164480660521311b94-0"
+        "ai_gen_block_f2f05c2_wE9XQb"
       ],
-      "settings": {
-        "slideshow_type": "legacy",
-        "text_alignment": "left",
-        "image_ratio": "650px",
-        "autorotate": true,
-        "autorotate_speed": 5,
-        "full_width": true,
-        "image_behavior": "none",
-        "mobile_text_alignment": "left",
-        "mobile_image_ratio": "300px",
-        "show_text_below": false,
-        "colors_button_label": "#ffffff",
-        "colors_button_background": "#1a1b18",
-        "colors_text": "#ffffff",
-        "colors_background": "#000000",
-        "colors_overlay": "#000000",
-        "colors_overlay_opacity": 0,
-        "colors_navigation_text": "#000000",
-        "colors_navigation_background": "#ffffff",
-        "colors_highlight": "#00b600",
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
+      "name": "Hero Bullet",
+      "settings": {}
     },
     "main": {
       "type": "main-product",
@@ -274,6 +220,117 @@
         "padding_bottom": 36
       }
     },
+    "16448066058b9355f9": {
+      "type": "slideshow",
+      "blocks": {
+        "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile_be408abc-4907-417b-9402-d1019fd5e532.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile.png",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-left",
+            "subheading": "Rugged & Off-Road Focus",
+            "subheading_size": "h5",
+            "heading": "Track Anything, Anywhere—<em>Rain, Dust, or Mud</em>",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "text": "Standard trackers fail in harsh conditions. Tracki Max is IP68 waterproof and shock-resistant, built specifically to endure extreme environments on off-road vehicles, boats, trailers, and heavy machinery.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        },
+        "164480660521311b94-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2_118ab3ff-966f-4b4a-b7a7-cd5b17338f80.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile_da6749e8-a9b3-4d32-a243-66bfba262c9e.png",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-center",
+            "subheading": "Ultimate Fleet & Asset Protection",
+            "subheading_size": "h5",
+            "heading": "Complete Fleet <em>Visibility</em> in the Palm of Your Hand",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "text": "Control all your devices under a single account using iOS, Android, Web, or desktop apps. Draw custom geofence boundaries, monitor speed, and access up to <strong>365 days of full travel history</strong> to prevent theft and optimize routes.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        },
+        "164480660521311b94-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3_566c1650-5080-492e-9f24-739359cf1e46.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3-_mobile.png",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-right",
+            "subheading": "Personal & Vehicle Security",
+            "subheading_size": "h5",
+            "heading": "Instant Emergency Alerts & One-Touch SOS Safeguards",
+            "heading_size": "h1",
+            "heading_tag": "h2",
+            "text": "Get instant push notifications, SMS, or email alerts the second unauthorized movement or speeding occurs. For lone workers or family members, the integrated <strong>one-touch SOS button</strong> delivers immediate location alerts in emergency situations.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        }
+      },
+      "block_order": [
+        "bf10fce0-c41b-435a-ba73-cddba1b5be12",
+        "164480660521311b94-1",
+        "164480660521311b94-0"
+      ],
+      "settings": {
+        "slideshow_type": "legacy",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "autorotate": true,
+        "autorotate_speed": 5,
+        "full_width": true,
+        "image_behavior": "none",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "300px",
+        "show_text_below": false,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#ffffff",
+        "colors_background": "#000000",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 0,
+        "colors_navigation_text": "#000000",
+        "colors_navigation_background": "#ffffff",
+        "colors_highlight": "#00b600",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
     "product-details": {
       "type": "product-details",
       "blocks": {
@@ -325,6 +382,7 @@
         "product-details-2",
         "product-details-3"
       ],
+      "custom_css": [],
       "settings": {
         "force_light_style": false,
         "open_first_collapsible_row": true,
@@ -367,6 +425,10 @@
     "how_to_use_text_PGe3a8": {
       "type": "how-to-use-text",
       "name": "How TO Use Text",
+      "settings": {}
+    },
+    "17870468929edde249": {
+      "type": "_blocks",
       "settings": {}
     },
     "multicolumn_wKeNaP": {
@@ -892,14 +954,20 @@
         "counter_text_color": "",
         "enable_animation": false
       }
+    },
+    "17870526332906f1d6": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
-    "16448066058b9355f9",
+    "1787047544f15c8025",
     "main",
+    "16448066058b9355f9",
     "product-details",
     "product-recommendations",
     "how_to_use_text_PGe3a8",
+    "17870468929edde249",
     "multicolumn_wKeNaP",
     "tab-collage",
     "video_hero_7tqaLF",
@@ -907,6 +975,7 @@
     "16448079723140b4d6",
     "1644818998cec1e2a6",
     "1644821694668dc64a",
-    "counter_RyXetH"
+    "counter_RyXetH",
+    "17870526332906f1d6"
   ]
 }
