@@ -625,25 +625,25 @@
         "f01dd96c-55b5-49da-b07a-89cb3dec8853"
       ],
       "settings": {
-        "layout": "default",
-        "column_alignment": "left",
+        "layout": "sidebar",
+        "column_alignment": "center",
         "horizontal_content": false,
         "full_width": false,
         "show_divider": false,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "heading": "",
         "heading_size": "h1",
         "heading_tag": "h2",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "use_custom_colors": false,
+        "use_custom_colors": true,
         "colors_icon": "#ffffff",
-        "colors_text": "#1a1b18",
-        "colors_background": "#ffffff",
-        "gradient_background": "",
+        "colors_text": "#FFFFFF",
+        "colors_background": "#f5fff5",
+        "gradient_background": "linear-gradient(292deg, rgba(5, 93, 28, 1) 20%, rgba(168, 255, 251, 1) 100%)",
         "colors_highlight": "#ffb503",
-        "padding_top": 0,
-        "padding_bottom": 36,
+        "padding_top": 60,
+        "padding_bottom": 60,
         "enable_highlight": false,
         "highlight_style": "marker"
       }
@@ -796,7 +796,7 @@
         "show_divider": false,
         "colors_text": "#fafafa",
         "colors_border": "#fafafa",
-        "colors_background": "#27282A",
+        "colors_background": "#27282a",
         "gradient_background": "",
         "colors_highlight": "#ffb503",
         "padding_top": 36,
@@ -895,6 +895,48 @@
         "padding_top": 36,
         "padding_bottom": 0
       }
+    },
+    "counter_RyXetH": {
+      "type": "counter",
+      "blocks": {
+        "counter_xTAGGM": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "title": "Countries",
+            "text": "Works globally in over 100 countries."
+          }
+        },
+        "counter_GNkYdW": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "title": "Countries",
+            "text": "Works globally in over 100 countries."
+          }
+        },
+        "counter_xn9bcE": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "title": "Countries",
+            "text": "Works globally in over 100 countries."
+          }
+        }
+      },
+      "block_order": [
+        "counter_xTAGGM",
+        "counter_GNkYdW",
+        "counter_xn9bcE"
+      ],
+      "name": "Dynamic Counter",
+      "settings": {
+        "bg_color": "",
+        "counter_wrapper_color": "",
+        "counter_title_color": "",
+        "counter_text_color": "",
+        "enable_animation": false
+      }
     }
   },
   "order": [
@@ -910,6 +952,7 @@
     "16448079723140b4d6",
     "1644818998cec1e2a6",
     "1644745953392511db",
-    "1644821694668dc64a"
+    "1644821694668dc64a",
+    "counter_RyXetH"
   ]
 }
