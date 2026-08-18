@@ -1,6 +1,858 @@
+{% doc %}
+  @prompt
+    <section class="review-section">
+      <!-- Section Header -->
+      <div class="review-header">
+        <h2>What Our Customers Say</h2>
+        <p>Read honest feedback from verified buyers who use our products every day.</p>
+      </div>
+    
+      <!-- Review Cards Container (Slider) -->
+      <div class="reviews-slider">
+        <!-- Card 1 -->
+        <div class="review-card">
+          <div class="reviewer-name">Sarah Jenkins</div>
+          <div class="stars">★★★★★</div>
+          <div class="review-headline">Exceeded my expectations!</div>
+          <p class="review-text">The quality of the material is outstanding, and customer support helped me resolve my question within minutes. Highly recommend!</p>
+          <div class="review-date">August 12, 2026</div>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="review-card">
+          <div class="reviewer-name">David Chen</div>
+          <div class="stars">★★★★★</div>
+          <div class="review-headline">Saves me hours every week</div>
+          <p class="review-text">Super easy to set up and seamless integration into my daily workflow. I cannot imagine going back to the old way.</p>
+          <div class="review-date">August 10, 2026</div>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="review-card">
+          <div class="reviewer-name">Emily Rivera</div>
+          <div class="stars">★★★★★</div>
+          <div class="review-headline">Best purchase this year</div>
+          <p class="review-text">I was skeptical at first, but after using it for a month, it has proven worth every single penny. Beautifully designed.</p>
+          <div class="review-date">August 05, 2026</div>
+        </div>
+    
+        <!-- Card 4 -->
+        <div class="review-card">
+          <div class="reviewer-name">Marcus Vance</div>
+          <div class="stars">★★★★★</div>
+          <div class="review-headline">Top tier customer service</div>
+          <p class="review-text">Fast shipping, elegant packaging, and the product works flawlessly out of the box. Will definitely be ordering again.</p>
+          <div class="review-date">July 28, 2026</div>
+        </div>
+    
+        <!-- Card 5 -->
+        <div class="review-card">
+          <div class="reviewer-name">Jessica Taylor</div>
+          <div class="stars">★★★★★</div>
+          <div class="review-headline">Incredible attention to detail</div>
+          <p class="review-text">Every feature feels thought-out and intentionally built. It completely transformed how our team manages projects.</p>
+          <div class="review-date">July 22, 2026</div>
+        </div>
+    
+        <!-- Card 6 -->
+        <div class="review-card">
+          <div class="reviewer-name">Alex Thorne</div>
+          <div class="stars">★★★★★</div>
+          <div class="review-headline">Simple, reliable, effective</div>
+          <p class="review-text">Does exactly what it promises without any bloat or unnecessary complexity. A solid 5-star experience all around.</p>
+          <div class="review-date">July 15, 2026</div>
+        </div>
+      </div>
+    </section>
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-reviews-section-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-reviews-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-reviews-header-{{ ai_gen_id }} h2 {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 12px;
+  }
+
+  .ai-reviews-header-{{ ai_gen_id }} p {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    margin: 0;
+  }
+
+  .ai-reviews-slider-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .ai-reviews-slider-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.card_gap }}px;
+    {% if block.settings.auto_scroll %}
+      animation: ai-reviews-scroll-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+    {% endif %}
+  }
+
+  {% if block.settings.auto_scroll %}
+    .ai-reviews-slider-{{ ai_gen_id }}:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes ai-reviews-scroll-{{ ai_gen_id }} {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% - {{ block.settings.card_gap }}px));
+      }
+    }
+  {% endif %}
+
+  .ai-review-card-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.card_width }}px;
+    background-color: {{ block.settings.card_background }};
+    border: {{ block.settings.card_border_thickness }}px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    box-shadow: {{ block.settings.card_shadow_horizontal }}px {{ block.settings.card_shadow_vertical }}px {{ block.settings.card_shadow_blur }}px {{ block.settings.card_shadow_color }};
+  }
+
+  .ai-reviewer-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.name_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.name_color }};
+    margin-bottom: 8px;
+  }
+
+  .ai-stars-{{ ai_gen_id }} {
+    font-size: {{ block.settings.star_size }}px;
+    color: {{ block.settings.star_color }};
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .ai-review-headline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.headline_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.headline_color }};
+    margin-bottom: 10px;
+  }
+
+  .ai-review-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .ai-review-date-{{ ai_gen_id }} {
+    font-size: {{ block.settings.date_size }}px;
+    color: {{ block.settings.date_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-reviews-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.6 }}px 16px;
+    }
+
+    .ai-reviews-header-{{ ai_gen_id }} h2 {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-reviews-header-{{ ai_gen_id }} p {
+      font-size: {{ block.settings.subheading_size | times: 0.9 }}px;
+    }
+
+    .ai-review-card-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.card_width | times: 0.85 }}px;
+      padding: {{ block.settings.card_padding | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<customer-reviews-{{ ai_gen_id }} class="ai-reviews-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-reviews-header-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2>{{ block.settings.heading }}</h2>
+    {% endif %}
+    {% if block.settings.subheading != blank %}
+      <p>{{ block.settings.subheading }}</p>
+    {% endif %}
+  </div>
+
+  <div class="ai-reviews-slider-wrapper-{{ ai_gen_id }}">
+    <div class="ai-reviews-slider-{{ ai_gen_id }}">
+      {% for i in (1..6) %}
+        {% liquid
+          assign name_key = 'review_' | append: i | append: '_name'
+          assign headline_key = 'review_' | append: i | append: '_headline'
+          assign text_key = 'review_' | append: i | append: '_text'
+          assign date_key = 'review_' | append: i | append: '_date'
+          assign rating_key = 'review_' | append: i | append: '_rating'
+
+          assign reviewer_name = block.settings[name_key]
+          assign headline = block.settings[headline_key]
+          assign review_text = block.settings[text_key]
+          assign review_date = block.settings[date_key]
+          assign rating = block.settings[rating_key]
+        %}
+
+        <div class="ai-review-card-{{ ai_gen_id }}">
+          {% if reviewer_name != blank %}
+            <div class="ai-reviewer-name-{{ ai_gen_id }}">{{ reviewer_name }}</div>
+          {% endif %}
+
+          <div class="ai-stars-{{ ai_gen_id }}" role="img" aria-label="{{ rating }} out of 5 stars">
+            {% for star in (1..rating) %}★{% endfor %}
+          </div>
+
+          {% if headline != blank %}
+            <div class="ai-review-headline-{{ ai_gen_id }}">{{ headline }}</div>
+          {% endif %}
+
+          {% if review_text != blank %}
+            <p class="ai-review-text-{{ ai_gen_id }}">{{ review_text }}</p>
+          {% endif %}
+
+          {% if review_date != blank %}
+            <div class="ai-review-date-{{ ai_gen_id }}">{{ review_date }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      {% if block.settings.auto_scroll %}
+        {% for i in (1..6) %}
+          {% liquid
+            assign name_key = 'review_' | append: i | append: '_name'
+            assign headline_key = 'review_' | append: i | append: '_headline'
+            assign text_key = 'review_' | append: i | append: '_text'
+            assign date_key = 'review_' | append: i | append: '_date'
+            assign rating_key = 'review_' | append: i | append: '_rating'
+
+            assign reviewer_name = block.settings[name_key]
+            assign headline = block.settings[headline_key]
+            assign review_text = block.settings[text_key]
+            assign review_date = block.settings[date_key]
+            assign rating = block.settings[rating_key]
+          %}
+
+          <div class="ai-review-card-{{ ai_gen_id }}" aria-hidden="true">
+            {% if reviewer_name != blank %}
+              <div class="ai-reviewer-name-{{ ai_gen_id }}">{{ reviewer_name }}</div>
+            {% endif %}
+
+            <div class="ai-stars-{{ ai_gen_id }}">
+              {% for star in (1..rating) %}★{% endfor %}
+            </div>
+
+            {% if headline != blank %}
+              <div class="ai-review-headline-{{ ai_gen_id }}">{{ headline }}</div>
+            {% endif %}
+
+            {% if review_text != blank %}
+              <p class="ai-review-text-{{ ai_gen_id }}">{{ review_text }}</p>
+            {% endif %}
+
+            {% if review_date != blank %}
+              <div class="ai-review-date-{{ ai_gen_id }}">{{ review_date }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</customer-reviews-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CustomerReviews{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.slider = this.querySelector('.ai-reviews-slider-{{ ai_gen_id }}');
+        if (!this.slider) return;
+
+        const autoScroll = {{ block.settings.auto_scroll | json }};
+        if (!autoScroll) {
+          this.enableManualScroll();
+        }
+      }
+
+      enableManualScroll() {
+        const wrapper = this.querySelector('.ai-reviews-slider-wrapper-{{ ai_gen_id }}');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        wrapper.addEventListener('mousedown', (e) => {
+          isDown = true;
+          wrapper.style.cursor = 'grabbing';
+          startX = e.pageX - wrapper.offsetLeft;
+          scrollLeft = wrapper.scrollLeft;
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+          isDown = false;
+          wrapper.style.cursor = 'grab';
+        });
+
+        wrapper.addEventListener('mouseup', () => {
+          isDown = false;
+          wrapper.style.cursor = 'grab';
+        });
+
+        wrapper.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - wrapper.offsetLeft;
+          const walk = (x - startX) * 2;
+          wrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        wrapper.style.cursor = 'grab';
+        wrapper.style.overflowX = 'auto';
+      }
+    }
+
+    customElements.define('customer-reviews-{{ ai_gen_id }}', CustomerReviews{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Customer reviews",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Our Customers Say"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Read honest feedback from verified buyers who use our products every day."
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#fafafa"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "header",
+      "content": "Slider settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_scroll",
+      "label": "Enable auto scroll",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "label": "Card width",
+      "min": 200,
+      "max": 400,
+      "step": 20,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Card gap",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Padding",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_border_thickness",
+      "label": "Border thickness",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#272c32"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_horizontal",
+      "label": "Shadow horizontal",
+      "min": -10,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_vertical",
+      "label": "Shadow vertical",
+      "min": -10,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_blur",
+      "label": "Shadow blur",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "card_shadow_color",
+      "label": "Shadow color",
+      "default": "#00000015"
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Name size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name color",
+      "default": "#212326"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Star size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#ffb503"
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "label": "Headline size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline color",
+      "default": "#212326"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Review text size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Review text color",
+      "default": "#212326"
+    },
+    {
+      "type": "range",
+      "id": "date_size",
+      "label": "Date size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "date_color",
+      "label": "Date color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Review 1"
+    },
+    {
+      "type": "text",
+      "id": "review_1_name",
+      "label": "Name",
+      "default": "Sarah Jenkins"
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_1_headline",
+      "label": "Headline",
+      "default": "Exceeded my expectations!"
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Review text",
+      "default": "The quality of the material is outstanding, and customer support helped me resolve my question within minutes. Highly recommend!"
+    },
+    {
+      "type": "text",
+      "id": "review_1_date",
+      "label": "Date"
+    },
+    {
+      "type": "header",
+      "content": "Review 2"
+    },
+    {
+      "type": "text",
+      "id": "review_2_name",
+      "label": "Name",
+      "default": "David Chen"
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_2_headline",
+      "label": "Headline",
+      "default": "Saves me hours every week"
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Review text",
+      "default": "Super easy to set up and seamless integration into my daily workflow. I cannot imagine going back to the old way."
+    },
+    {
+      "type": "text",
+      "id": "review_2_date",
+      "label": "Date"
+    },
+    {
+      "type": "header",
+      "content": "Review 3"
+    },
+    {
+      "type": "text",
+      "id": "review_3_name",
+      "label": "Name",
+      "default": "Emily Rivera"
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_3_headline",
+      "label": "Headline",
+      "default": "Best purchase this year"
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Review text",
+      "default": "I was skeptical at first, but after using it for a month, it has proven worth every single penny. Beautifully designed."
+    },
+    {
+      "type": "text",
+      "id": "review_3_date",
+      "label": "Date"
+    },
+    {
+      "type": "header",
+      "content": "Review 4"
+    },
+    {
+      "type": "text",
+      "id": "review_4_name",
+      "label": "Name",
+      "default": "Marcus Vance"
+    },
+    {
+      "type": "range",
+      "id": "review_4_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_4_headline",
+      "label": "Headline",
+      "default": "Top tier customer service"
+    },
+    {
+      "type": "textarea",
+      "id": "review_4_text",
+      "label": "Review text",
+      "default": "Fast shipping, elegant packaging, and the product works flawlessly out of the box. Will definitely be ordering again."
+    },
+    {
+      "type": "text",
+      "id": "review_4_date",
+      "label": "Date"
+    },
+    {
+      "type": "header",
+      "content": "Review 5"
+    },
+    {
+      "type": "text",
+      "id": "review_5_name",
+      "label": "Name",
+      "default": "Jessica Taylor"
+    },
+    {
+      "type": "range",
+      "id": "review_5_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_5_headline",
+      "label": "Headline",
+      "default": "Incredible attention to detail"
+    },
+    {
+      "type": "textarea",
+      "id": "review_5_text",
+      "label": "Review text",
+      "default": "Every feature feels thought-out and intentionally built. It completely transformed how our team manages projects."
+    },
+    {
+      "type": "text",
+      "id": "review_5_date",
+      "label": "Date"
+    },
+    {
+      "type": "header",
+      "content": "Review 6"
+    },
+    {
+      "type": "text",
+      "id": "review_6_name",
+      "label": "Name",
+      "default": "Alex Thorne"
+    },
+    {
+      "type": "range",
+      "id": "review_6_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_6_headline",
+      "label": "Headline",
+      "default": "Simple, reliable, effective"
+    },
+    {
+      "type": "textarea",
+      "id": "review_6_text",
+      "label": "Review text",
+      "default": "Does exactly what it promises without any bloat or unnecessary complexity. A solid 5-star experience all around."
+    },
+    {
+      "type": "text",
+      "id": "review_6_date",
+      "label": "Date"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer reviews"
+    }
+  ]
+}
 {% endschema %}
