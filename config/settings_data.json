@@ -10,9 +10,9 @@
 {
   "current": {
     "colors_solid_button_labels": "#272c32",
-    "colors_accent": "#27282A",
-    "colors_background": "#54A21F",
-    "colors_text": "#fafafa",
+    "colors_accent": "#F5F5F7",
+    "colors_background": "#27282A",
+    "colors_text": "#FFFFFF",
     "colors_heading": "#ffffff",
     "colors_price": "#ffffff",
     "colors_sale_price": "#d72c0d",
