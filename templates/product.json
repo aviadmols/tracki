@@ -9,14 +9,19 @@
  */
 {
   "sections": {
+    "17870526332906f1d6": {
+      "type": "_blocks",
+      "settings": {}
+    },
     "178705443560698a7b": {
       "type": "_blocks",
       "blocks": {
         "ai_gen_block_7576672_QRwHeQ": {
           "type": "ai_gen_block_7576672",
           "settings": {
-            "desktop_image": "shopify://shop_images/image-1Slide-1-copy.png",
-            "desktop_width_percent": 100
+            "desktop_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max_8ac6fadb-70c6-49cd-99d4-8e9431bf18dc.png",
+            "desktop_width_percent": 100,
+            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile.png"
           },
           "blocks": {}
         }
@@ -656,6 +661,85 @@
         "padding_bottom": 36
       }
     },
+    "17870582111aba83be": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_34e97e1_fnT9d4": {
+          "type": "ai_gen_block_34e97e1",
+          "settings": {
+            "heading": "What Our Customers Say",
+            "subheading": "Read honest feedback from verified buyers who use our products every day.",
+            "heading_size": 32,
+            "subheading_size": 16,
+            "heading_color": "#597C3B",
+            "subheading_color": "#27282A",
+            "header_spacing": 40,
+            "desktop_width_percent": 100,
+            "section_padding": 60,
+            "background_color": "#f4f4f4",
+            "auto_scroll": true,
+            "scroll_speed": 30,
+            "card_width": 320,
+            "card_gap": 20,
+            "card_background": "#ffffff",
+            "card_padding": 24,
+            "card_border_thickness": 0,
+            "card_border_color": "#272c32",
+            "card_border_radius": 8,
+            "card_shadow_horizontal": 0,
+            "card_shadow_vertical": 4,
+            "card_shadow_blur": 12,
+            "card_shadow_color": "#00000015",
+            "name_size": 16,
+            "name_color": "#212326",
+            "star_size": 18,
+            "star_color": "#5CE201",
+            "headline_size": 18,
+            "headline_color": "#212326",
+            "text_size": 14,
+            "text_color": "#212326",
+            "date_size": 12,
+            "date_color": "#666666",
+            "review_1_name": "Marcus D.",
+            "review_1_rating": 5,
+            "review_1_headline": "Survived mud, rain, and rocks.",
+            "review_1_text": "I put this on my dirt bike frame to test the durability claim. After two weekends of heavy trail riding, getting plastered in mud and sprayed by water crossings, the tracker is still ticking. It's built like a tank. The app updates are fast, and I haven't had any signal drop-offs even in the middle of the forest. Definitely worth it for the peace of mind",
+            "review_1_date": "",
+            "review_2_name": "Sarah L.",
+            "review_2_rating": 5,
+            "review_2_headline": "Small size, big performance",
+            "review_2_text": "It is barely the size of a matchbox and very easy to hide. Setup was fast, and the custom boundary alerts on my phone give me great peace of mind",
+            "review_2_date": "",
+            "review_3_name": "David R.",
+            "review_3_rating": 5,
+            "review_3_headline": "Survived muddy trails",
+            "review_3_text": "Strapped this to my bike frame, and it got completely covered in grime and water. It still works flawlessly. This device is truly built for harsh environments.",
+            "review_3_date": "",
+            "review_4_name": "Marcus V",
+            "review_4_rating": 5,
+            "review_4_headline": "Top tier customer service",
+            "review_4_text": "Fast shipping, elegant packaging, and the product works flawlessly out of the box. Will definitely be ordering again.",
+            "review_4_date": "",
+            "review_5_name": "J. Thompson",
+            "review_5_rating": 5,
+            "review_5_headline": "Compact and dependable",
+            "review_5_text": "The battery holds up great even with high-frequency updates. It fits easily into small spaces, making it perfect for tracking gear while traveling",
+            "review_5_date": "",
+            "review_6_name": "Teddy T.",
+            "review_6_rating": 5,
+            "review_6_headline": "Excellent security feature for shipping",
+            "review_6_text": "I used this to track a high-value parcel | sent cross-country. The light sensor feature is a game-changer—knowing I'd get an instant alert if the box was opened in transit gave me complete confidence.",
+            "review_6_date": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_34e97e1_fnT9d4"
+      ],
+      "name": "Review",
+      "settings": {}
+    },
     "164481981344fb48df": {
       "type": "guarantees",
       "blocks": {
@@ -783,61 +867,6 @@
         "highlight_style": "marker"
       }
     },
-    "1644818998cec1e2a6": {
-      "type": "testimonials",
-      "blocks": {
-        "1644818997c04c6254-0": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5",
-            "text": "<p><strong>\"Compact and dependable\"</strong></p><p>The battery holds up great even with high-frequency updates. It fits easily into small spaces, making it perfect for tracking gear while traveling.</p>",
-            "author": "Michael L.",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "1644818997c04c6254-1": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5",
-            "text": "<p><strong>\"Small size, big performance\"</strong></p><p>It is barely the size of a matchbox and very easy to hide. Setup was fast, and the custom boundary alerts on my phone give me great peace of mind</p>",
-            "author": "Sarah L.",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "1644818997c04c6254-2": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5",
-            "text": "<p><strong>\"Survived muddy trails\"</strong></p><p>Strapped this to my bike frame, and it got completely covered in grime and water. It still works flawlessly. This device is truly built for harsh environments.</p>",
-            "author": "David R.",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        }
-      },
-      "block_order": [
-        "1644818997c04c6254-0",
-        "1644818997c04c6254-1",
-        "1644818997c04c6254-2"
-      ],
-      "settings": {
-        "autorotate": true,
-        "autorotate_speed": 7,
-        "hide_images": false,
-        "show_divider": false,
-        "heading": "<em><strong>Positive</strong></em> Reviews",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "heading_tag": "h2",
-        "colors_highlight": "#00b600",
-        "padding_top": 24,
-        "padding_bottom": 24,
-        "enable_highlight": true,
-        "highlight_style": "solid-color"
-      }
-    },
     "1644821694668dc64a": {
       "type": "map",
       "blocks": {
@@ -930,92 +959,10 @@
         "padding_top": 36,
         "padding_bottom": 0
       }
-    },
-    "counter_RyXetH": {
-      "type": "counter",
-      "blocks": {
-        "counter_xTAGGM": {
-          "type": "counter",
-          "settings": {
-            "number": 100,
-            "title": "Countries",
-            "text": "Works globally in over 100 countries."
-          }
-        },
-        "counter_GNkYdW": {
-          "type": "counter",
-          "settings": {
-            "number": 100,
-            "title": "Countries",
-            "text": "Works globally in over 100 countries."
-          }
-        },
-        "counter_xn9bcE": {
-          "type": "counter",
-          "settings": {
-            "number": 100,
-            "title": "Countries",
-            "text": "Works globally in over 100 countries."
-          }
-        }
-      },
-      "block_order": [
-        "counter_xTAGGM",
-        "counter_GNkYdW",
-        "counter_xn9bcE"
-      ],
-      "name": "Dynamic Counter",
-      "settings": {
-        "bg_color": "",
-        "counter_wrapper_color": "",
-        "counter_title_color": "",
-        "counter_text_color": "",
-        "enable_animation": false
-      }
-    },
-    "17870526332906f1d6": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_5e18309_fjp7RJ": {
-          "type": "ai_gen_block_5e18309",
-          "settings": {
-            "desktop_width_percent": 100,
-            "banner_height": 600,
-            "bg_color": "#ffffff",
-            "image_desktop": "shopify://shop_images/image-1Slide-1-copy-2.png",
-            "image_max_width": 200,
-            "text_color": "#000000",
-            "title_size": 20,
-            "subtext_size": 14,
-            "left_text_align": "right",
-            "right_text_align": "left",
-            "pointer_color": "#54A21F",
-            "pointer_line_width": 60,
-            "pointer_dot_size": 12,
-            "pointer_glow_size": 10,
-            "left_feature_1_title": "Premium quality",
-            "left_feature_1_subtext": "Built to last with premium materials",
-            "left_feature_2_title": "Fast shipping",
-            "left_feature_2_subtext": "Free delivery on orders over $50",
-            "left_feature_3_title": "Eco-friendly",
-            "left_feature_3_subtext": "Sustainably sourced and packaged",
-            "right_feature_1_title": "Easy returns",
-            "right_feature_1_subtext": "30-day hassle-free returns",
-            "right_feature_2_title": "Warranty",
-            "right_feature_2_subtext": "2-year manufacturer warranty",
-            "right_feature_3_title": "Support",
-            "right_feature_3_subtext": "24/7 customer support available"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_5e18309_fjp7RJ"
-      ],
-      "settings": {}
     }
   },
   "order": [
+    "17870526332906f1d6",
     "178705443560698a7b",
     "1787047544f15c8025",
     "main",
@@ -1027,11 +974,9 @@
     "multicolumn_wKeNaP",
     "tab-collage",
     "video_hero_7tqaLF",
+    "17870582111aba83be",
     "164481981344fb48df",
     "16448079723140b4d6",
-    "1644818998cec1e2a6",
-    "1644821694668dc64a",
-    "counter_RyXetH",
-    "17870526332906f1d6"
+    "1644821694668dc64a"
   ]
 }
