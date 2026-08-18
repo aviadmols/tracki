@@ -1,6 +1,898 @@
+{% doc %}
+  @prompt
+    {% comment %}
+      Hero Banner with Dynamic Feature Blocks & Slide-Pop Animations
+    {% endcomment %}
+    
+    <div class="hero-banner-{{ section.id }} hero-banner-wrapper" data-section-id="{{ section.id }}">
+      <div class="hero-banner-container position-{{ section.settings.content_position }}">
+        
+        {% comment %} Hero Background / Product Image {% endcomment %}
+        <div class="hero-banner-image-wrapper">
+          {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image | image_url: width: 2000 }}" 
+                 alt="{{ section.settings.image.alt | escape }}" 
+                 loading="lazy" 
+                 class="hero-banner-image">
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-banner-placeholder' }}
+          {% endif %}
+        </div>
+    
+        {% comment %} Dynamic Feature Blocks (Up to 6) {% endcomment %}
+        <div class="hero-banner-features align-{{ section.settings.text_alignment }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="feature-item feature-item-{{ block.id }}" 
+                   style="--pin-x: {{ block.settings.pin_x }}%; --pin-y: {{ block.settings.pin_y }}%; --delay-index: {{ forloop.index0 }};" 
+                   {{ block.shopify_attributes }}>
+                
+                {% if block.settings.show_pin %}
+                  <div class="feature-pin-dot"></div>
+                  <div class="feature-pin-line"></div>
+                {% endif %}
+    
+                <div class="feature-content">
+                  {% if block.settings.title != blank %}
+                    <h3 class="feature-title">{{ block.settings.title | escape }}</h3>
+                  {% endif %}
+                  {% if block.settings.subtext != blank %}
+                    <p class="feature-subtext">{{ block.settings.subtext | escape }}</p>
+                  {% endif %}
+                </div>
+    
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+    
+      </div>
+    </div>
+    
+    <style>
+      .hero-banner-{{ section.id }} {
+        position: relative;
+        width: 100%;
+        min-height: {{ section.settings.banner_height }}px;
+        overflow: hidden;
+        background-color: {{ section.settings.bg_color }};
+      }
+    
+      .hero-banner-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+      }
+    
+      /* Flex Layout Position Controls */
+      .hero-banner-container.position-flex-start { justify-content: flex-start; }
+      .hero-banner-container.position-center { justify-content: center; }
+      .hero-banner-container.position-flex-end { justify-content: flex-end; }
+    
+      .hero-banner-image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    
+      .hero-banner-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    
+      .hero-banner-features {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        padding: 40px 20px;
+      }
+    
+      /* Text Alignment Controls */
+      .hero-banner-features.align-left .feature-content { text-align: left; }
+      .hero-banner-features.align-center .feature-content { text-align: center; }
+      .hero-banner-features.align-right .feature-content { text-align: right; }
+    
+      .feature-item {
+        position: absolute;
+        top: var(--pin-y);
+        left: var(--pin-x);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 320px;
+        opacity: 0;
+        transform: translateX(-30px) scale(0.95);
+        transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+    
+      /* Keyframe Stagger Trigger */
+      .hero-banner-{{ section.id }}.is-visible .feature-item {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        transition-delay: calc(var(--delay-index) * 0.15s);
+      }
+    
+      .feature-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+        color: {{ section.settings.text_color }};
+      }
+    
+      .feature-subtext {
+        font-size: 0.9rem;
+        margin: 0;
+        color: {{ section.settings.text_color }};
+        opacity: 0.85;
+      }
+    
+      .feature-pin-dot {
+        width: 12px;
+        height: 12px;
+        background-color: {{ section.settings.accent_color }};
+        border-radius: 50%;
+        box-shadow: 0 0 10px {{ section.settings.accent_color }};
+        flex-shrink: 0;
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const section = document.querySelector('.hero-banner-{{ section.id }}');
+        if (!section) return;
+    
+        {% if section.settings.enable_animation %}
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                section.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.2 });
+    
+          observer.observe(section);
+        {% else %}
+          section.classList.add('is-visible');
+        {% endif %}
+      });
+    </script>
+    
+    {% schema %}
+    {
+      "name": "Hero Banner (6 Features)",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "H
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-banner-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    min-height: {{ block.settings.banner_height }}px;
+    overflow: hidden;
+    background-color: {{ block.settings.bg_color }};
+    display: block;
+  }
+
+  .ai-hero-banner-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: {{ block.settings.banner_height }}px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    {% if block.settings.content_position == 'left' %}
+      justify-content: flex-start;
+    {% elsif block.settings.content_position == 'center' %}
+      justify-content: center;
+    {% elsif block.settings.content_position == 'right' %}
+      justify-content: flex-end;
+    {% endif %}
+  }
+
+  .ai-hero-banner-image-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-hero-banner-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-hero-banner-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .ai-hero-banner-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .ai-hero-banner-features-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+  }
+
+  .ai-hero-feature-item-{{ ai_gen_id }} {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 320px;
+    opacity: 0;
+    transform: translateX(-30px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .ai-hero-banner-{{ ai_gen_id }}.is-visible .ai-hero-feature-item-{{ ai_gen_id }} {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  .ai-hero-feature-pin-dot-{{ ai_gen_id }} {
+    width: 12px;
+    height: 12px;
+    background-color: {{ block.settings.accent_color }};
+    border-radius: 50%;
+    box-shadow: 0 0 10px {{ block.settings.accent_color }};
+    flex-shrink: 0;
+  }
+
+  .ai-hero-feature-content-{{ ai_gen_id }} {
+    {% if block.settings.text_alignment == 'left' %}
+      text-align: left;
+    {% elsif block.settings.text_alignment == 'center' %}
+      text-align: center;
+    {% elsif block.settings.text_alignment == 'right' %}
+      text-align: right;
+    {% endif %}
+  }
+
+  .ai-hero-feature-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_title_size }}px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-hero-feature-subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_text_size }}px;
+    margin: 0;
+    color: {{ block.settings.text_color }};
+    opacity: 0.85;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-{{ ai_gen_id }} {
+      min-height: {{ block.settings.banner_height | times: 0.7 }}px;
+    }
+
+    .ai-hero-banner-container-{{ ai_gen_id }} {
+      min-height: {{ block.settings.banner_height | times: 0.7 }}px;
+    }
+
+    .ai-hero-feature-item-{{ ai_gen_id }} {
+      max-width: 250px;
+    }
+
+    .ai-hero-feature-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.feature_title_size | times: 0.9 }}px;
+    }
+
+    .ai-hero-feature-subtext-{{ ai_gen_id }} {
+      font-size: {{ block.settings.feature_text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<hero-banner-{{ ai_gen_id }} class="ai-hero-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-banner-container-{{ ai_gen_id }}">
+    
+    <div class="ai-hero-banner-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image != blank %}
+        <img
+          src="{{ block.settings.image | image_url: width: 2000 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-hero-banner-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-hero-banner-placeholder-{{ ai_gen_id }}">
+          {{ 'lifestyle-1' | placeholder_svg_tag }}
+          <div class="ai-hero-banner-empty-state-{{ ai_gen_id }}">
+            Next, add a hero image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-hero-banner-features-{{ ai_gen_id }}">
+      {% if block.settings.feature_1_enabled %}
+        <div
+          class="ai-hero-feature-item-{{ ai_gen_id }}"
+          style="top: {{ block.settings.feature_1_y }}%; left: {{ block.settings.feature_1_x }}%; transition-delay: 0s;"
+        >
+          {% if block.settings.show_pins %}
+            <div class="ai-hero-feature-pin-dot-{{ ai_gen_id }}"></div>
+          {% endif %}
+          <div class="ai-hero-feature-content-{{ ai_gen_id }}">
+            {% if block.settings.feature_1_title != blank %}
+              <h3 class="ai-hero-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_1_title }}</h3>
+            {% endif %}
+            {% if block.settings.feature_1_subtext != blank %}
+              <p class="ai-hero-feature-subtext-{{ ai_gen_id }}">{{ block.settings.feature_1_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_2_enabled %}
+        <div
+          class="ai-hero-feature-item-{{ ai_gen_id }}"
+          style="top: {{ block.settings.feature_2_y }}%; left: {{ block.settings.feature_2_x }}%; transition-delay: 0.15s;"
+        >
+          {% if block.settings.show_pins %}
+            <div class="ai-hero-feature-pin-dot-{{ ai_gen_id }}"></div>
+          {% endif %}
+          <div class="ai-hero-feature-content-{{ ai_gen_id }}">
+            {% if block.settings.feature_2_title != blank %}
+              <h3 class="ai-hero-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_2_title }}</h3>
+            {% endif %}
+            {% if block.settings.feature_2_subtext != blank %}
+              <p class="ai-hero-feature-subtext-{{ ai_gen_id }}">{{ block.settings.feature_2_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_3_enabled %}
+        <div
+          class="ai-hero-feature-item-{{ ai_gen_id }}"
+          style="top: {{ block.settings.feature_3_y }}%; left: {{ block.settings.feature_3_x }}%; transition-delay: 0.3s;"
+        >
+          {% if block.settings.show_pins %}
+            <div class="ai-hero-feature-pin-dot-{{ ai_gen_id }}"></div>
+          {% endif %}
+          <div class="ai-hero-feature-content-{{ ai_gen_id }}">
+            {% if block.settings.feature_3_title != blank %}
+              <h3 class="ai-hero-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_3_title }}</h3>
+            {% endif %}
+            {% if block.settings.feature_3_subtext != blank %}
+              <p class="ai-hero-feature-subtext-{{ ai_gen_id }}">{{ block.settings.feature_3_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_4_enabled %}
+        <div
+          class="ai-hero-feature-item-{{ ai_gen_id }}"
+          style="top: {{ block.settings.feature_4_y }}%; left: {{ block.settings.feature_4_x }}%; transition-delay: 0.45s;"
+        >
+          {% if block.settings.show_pins %}
+            <div class="ai-hero-feature-pin-dot-{{ ai_gen_id }}"></div>
+          {% endif %}
+          <div class="ai-hero-feature-content-{{ ai_gen_id }}">
+            {% if block.settings.feature_4_title != blank %}
+              <h3 class="ai-hero-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_4_title }}</h3>
+            {% endif %}
+            {% if block.settings.feature_4_subtext != blank %}
+              <p class="ai-hero-feature-subtext-{{ ai_gen_id }}">{{ block.settings.feature_4_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_5_enabled %}
+        <div
+          class="ai-hero-feature-item-{{ ai_gen_id }}"
+          style="top: {{ block.settings.feature_5_y }}%; left: {{ block.settings.feature_5_x }}%; transition-delay: 0.6s;"
+        >
+          {% if block.settings.show_pins %}
+            <div class="ai-hero-feature-pin-dot-{{ ai_gen_id }}"></div>
+          {% endif %}
+          <div class="ai-hero-feature-content-{{ ai_gen_id }}">
+            {% if block.settings.feature_5_title != blank %}
+              <h3 class="ai-hero-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_5_title }}</h3>
+            {% endif %}
+            {% if block.settings.feature_5_subtext != blank %}
+              <p class="ai-hero-feature-subtext-{{ ai_gen_id }}">{{ block.settings.feature_5_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_6_enabled %}
+        <div
+          class="ai-hero-feature-item-{{ ai_gen_id }}"
+          style="top: {{ block.settings.feature_6_y }}%; left: {{ block.settings.feature_6_x }}%; transition-delay: 0.75s;"
+        >
+          {% if block.settings.show_pins %}
+            <div class="ai-hero-feature-pin-dot-{{ ai_gen_id }}"></div>
+          {% endif %}
+          <div class="ai-hero-feature-content-{{ ai_gen_id }}">
+            {% if block.settings.feature_6_title != blank %}
+              <h3 class="ai-hero-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_6_title }}</h3>
+            {% endif %}
+            {% if block.settings.feature_6_subtext != blank %}
+              <p class="ai-hero-feature-subtext-{{ ai_gen_id }}">{{ block.settings.feature_6_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</hero-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeroBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        {% if block.settings.enable_animation %}
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                this.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.2 });
+
+          observer.observe(this);
+        {% else %}
+          this.classList.add('is-visible');
+        {% endif %}
+      }
+    }
+
+    customElements.define('hero-banner-{{ ai_gen_id }}', HeroBanner{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Hero banner with features",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    },
+    {
+      "type": "range",
+      "id": "banner_height",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Banner height",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#aa723e"
+    },
+    {
+      "type": "header",
+      "content": "Feature style"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pins",
+      "label": "Show pin dots",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable slide-in animation",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_1_enabled",
+      "label": "Enable feature 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Title",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_subtext",
+      "label": "Subtext",
+      "default": "Built to last"
+    },
+    {
+      "type": "range",
+      "id": "feature_1_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "feature_1_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_2_enabled",
+      "label": "Enable feature 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Title",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_subtext",
+      "label": "Subtext",
+      "default": "Delivered in 2-3 days"
+    },
+    {
+      "type": "range",
+      "id": "feature_2_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "feature_2_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 35
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_3_enabled",
+      "label": "Enable feature 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Title",
+      "default": "Eco-Friendly"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_subtext",
+      "label": "Subtext",
+      "default": "Sustainable materials"
+    },
+    {
+      "type": "range",
+      "id": "feature_3_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "feature_3_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Feature 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_4_enabled",
+      "label": "Enable feature 4",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "feature_4_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "range",
+      "id": "feature_4_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "feature_4_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 65
+    },
+    {
+      "type": "header",
+      "content": "Feature 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_5_enabled",
+      "label": "Enable feature 5",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "feature_5_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_5_subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "range",
+      "id": "feature_5_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "feature_5_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 75
+    },
+    {
+      "type": "header",
+      "content": "Feature 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_6_enabled",
+      "label": "Enable feature 6",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "feature_6_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_6_subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "range",
+      "id": "feature_6_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "feature_6_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 85
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner with features"
+    }
+  ]
+}
 {% endschema %}
