@@ -9,6 +9,23 @@
  */
 {
   "sections": {
+    "178705443560698a7b": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7576672_QRwHeQ": {
+          "type": "ai_gen_block_7576672",
+          "settings": {
+            "desktop_image": "shopify://shop_images/image-1Slide-1-copy.png",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7576672_QRwHeQ"
+      ],
+      "settings": {}
+    },
     "1787047544f15c8025": {
       "type": "_blocks",
       "blocks": {
@@ -63,6 +80,7 @@
       "block_order": [
         "ai_gen_block_f2f05c2_wE9XQb"
       ],
+      "disabled": true,
       "name": "Hero Bullet",
       "settings": {}
     },
@@ -957,10 +975,48 @@
     },
     "17870526332906f1d6": {
       "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5e18309_fjp7RJ": {
+          "type": "ai_gen_block_5e18309",
+          "settings": {
+            "desktop_width_percent": 100,
+            "banner_height": 600,
+            "bg_color": "#ffffff",
+            "image_desktop": "shopify://shop_images/image-1Slide-1-copy-2.png",
+            "image_max_width": 200,
+            "text_color": "#000000",
+            "title_size": 20,
+            "subtext_size": 14,
+            "left_text_align": "right",
+            "right_text_align": "left",
+            "pointer_color": "#54A21F",
+            "pointer_line_width": 60,
+            "pointer_dot_size": 12,
+            "pointer_glow_size": 10,
+            "left_feature_1_title": "Premium quality",
+            "left_feature_1_subtext": "Built to last with premium materials",
+            "left_feature_2_title": "Fast shipping",
+            "left_feature_2_subtext": "Free delivery on orders over $50",
+            "left_feature_3_title": "Eco-friendly",
+            "left_feature_3_subtext": "Sustainably sourced and packaged",
+            "right_feature_1_title": "Easy returns",
+            "right_feature_1_subtext": "30-day hassle-free returns",
+            "right_feature_2_title": "Warranty",
+            "right_feature_2_subtext": "2-year manufacturer warranty",
+            "right_feature_3_title": "Support",
+            "right_feature_3_subtext": "24/7 customer support available"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5e18309_fjp7RJ"
+      ],
       "settings": {}
     }
   },
   "order": [
+    "178705443560698a7b",
     "1787047544f15c8025",
     "main",
     "16448066058b9355f9",
