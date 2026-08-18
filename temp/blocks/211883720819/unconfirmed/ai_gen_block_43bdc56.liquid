@@ -1,6 +1,951 @@
+{% doc %}
+  @prompt
+    Task: Update the custom Liquid section to feature a two-stage sliding/rotating feature sequence with text alignment options.Sequential Animation Workflow:Batch 1 Display: 3 feature callout text blocks slide-pop in sequentially ($0.15s$ stagger between blocks).Hold & Transition: Batch 1 holds on screen for 4–5 seconds, then smoothly slides out / fades out to the left.Batch 2 Display: Batch 2 (3 new feature callout text blocks + updated pin highlight coordinates) slide-pops into view from the right.Loop Option: Loop automatically or pause on Batch 2 once completed.Layout & Alignment Controls:Text Alignment: Configurable setting in schema to set text alignment to Left, Center, or Right.Positioning: Desktop flex positioning (Flex-Start, Center, Flex-End) to position feature blocks relative to the banner layout.Shopify Schema Settings Required:Batch 1 Blocks: 3 repeatable blocks for initial features (Title, Subtext, Pin Dot $X/Y$ coordinates).Batch 2 Blocks: 3 repeatable blocks for second feature set (Title, Subtext, Pin Dot $X/Y$ coordinates).Rotation Timing: Range slider setting ($3s$ to $10s$) to control delay before Batch 1 transitions to Batch 2.Text Alignment: Dropdown setting for text direction (Left, Middle/Center, Right).Image Pickers: Desktop & Mobile hero background/product images.Please provide the full .liquid code, responsive CSS animations (using cubic-bezier(0.175, 0.885, 0.32, 1.275) for the pop effect), and vanilla JS to handle class toggling for the Batch 1 $\rightarrow$ Batch 2 transition.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-feature-banner-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .ai-feature-banner-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .ai-feature-banner-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-feature-banner-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-feature-banner-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .ai-feature-banner-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-feature-banner-features-container-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.align-left {
+    left: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.align-center {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.align-right {
+    right: 0;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.justify-start {
+    top: 20%;
+    transform: translateY(0);
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.justify-center {
+    top: 50%;
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.justify-end {
+    top: auto;
+    bottom: 20%;
+    transform: translateY(0);
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.align-center.justify-start {
+    transform: translate(-50%, 0);
+  }
+
+  .ai-feature-banner-features-{{ ai_gen_id }}.align-center.justify-end {
+    transform: translate(-50%, 0);
+  }
+
+  .ai-feature-banner-feature-{{ ai_gen_id }} {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.9);
+    pointer-events: auto;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.active .ai-feature-banner-feature-{{ ai_gen_id }} {
+    animation: ai-feature-slide-pop-{{ ai_gen_id }} 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.active .ai-feature-banner-feature-{{ ai_gen_id }}:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.active .ai-feature-banner-feature-{{ ai_gen_id }}:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.active .ai-feature-banner-feature-{{ ai_gen_id }}:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.slide-out-left .ai-feature-banner-feature-{{ ai_gen_id }} {
+    animation: ai-feature-slide-out-left-{{ ai_gen_id }} 0.5s ease forwards;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.slide-out-left .ai-feature-banner-feature-{{ ai_gen_id }}:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.slide-out-left .ai-feature-banner-feature-{{ ai_gen_id }}:nth-child(2) {
+    animation-delay: 0.05s;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.slide-out-left .ai-feature-banner-feature-{{ ai_gen_id }}:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+
+  @keyframes ai-feature-slide-pop-{{ ai_gen_id }} {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes ai-feature-slide-out-left-{{ ai_gen_id }} {
+    0% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50px) scale(0.95);
+    }
+  }
+
+  .ai-feature-banner-feature-content-{{ ai_gen_id }} {
+    background-color: {{ block.settings.feature_bg_color }};
+    padding: {{ block.settings.feature_padding }}px;
+    border-radius: {{ block.settings.feature_border_radius }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-feature-banner-feature-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.feature_title_color }};
+    margin: 0 0 8px;
+  }
+
+  .ai-feature-banner-feature-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_text_size }}px;
+    color: {{ block.settings.feature_text_color }};
+    margin: 0;
+  }
+
+  .ai-feature-banner-pin-{{ ai_gen_id }} {
+    position: absolute;
+    width: {{ block.settings.pin_size }}px;
+    height: {{ block.settings.pin_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.pin_color }};
+    border: {{ block.settings.pin_border_width }}px solid {{ block.settings.pin_border_color }};
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-feature-banner-batch-{{ ai_gen_id }}.active .ai-feature-banner-pin-{{ ai_gen_id }} {
+    opacity: 1;
+  }
+
+  .ai-feature-banner-pin-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: {{ block.settings.pin_color }};
+    animation: ai-feature-pin-pulse-{{ ai_gen_id }} 2s infinite;
+  }
+
+  @keyframes ai-feature-pin-pulse-{{ ai_gen_id }} {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-feature-banner-features-{{ ai_gen_id }} {
+      max-width: 90%;
+      padding: 15px;
+      gap: 15px;
+    }
+
+    .ai-feature-banner-feature-content-{{ ai_gen_id }} {
+      padding: {{ block.settings.feature_padding | times: 0.8 }}px;
+    }
+
+    .ai-feature-banner-feature-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.feature_title_size | times: 0.9 }}px;
+    }
+
+    .ai-feature-banner-feature-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.feature_text_size | times: 0.9 }}px;
+    }
+
+    .ai-feature-banner-pin-{{ ai_gen_id }} {
+      width: {{ block.settings.pin_size | times: 0.8 }}px;
+      height: {{ block.settings.pin_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<feature-banner-{{ ai_gen_id }}
+  class="ai-feature-banner-{{ ai_gen_id }}"
+  data-rotation-delay="{{ block.settings.rotation_delay }}"
+  data-auto-rotate="{{ block.settings.auto_rotate }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-feature-banner-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.desktop_image %}
+      <img
+        src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.desktop_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.desktop_image.width }}"
+        height="{{ block.settings.desktop_image.height }}"
+        class="ai-feature-banner-image-{{ ai_gen_id }} ai-feature-banner-desktop-image-{{ ai_gen_id }}"
+        style="display: block;"
+      >
+    {% else %}
+      <div class="ai-feature-banner-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-feature-banner-empty-state-{{ ai_gen_id }}">
+          Add a desktop image to get started
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.mobile_image %}
+      <img
+        src="{{ block.settings.mobile_image | image_url: width: 1000 }}"
+        alt="{{ block.settings.mobile_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.mobile_image.width }}"
+        height="{{ block.settings.mobile_image.height }}"
+        class="ai-feature-banner-image-{{ ai_gen_id }} ai-feature-banner-mobile-image-{{ ai_gen_id }}"
+        style="display: none;"
+      >
+    {% endif %}
+
+    <div class="ai-feature-banner-features-container-{{ ai_gen_id }}">
+      <div class="ai-feature-banner-batch-{{ ai_gen_id }} ai-feature-banner-batch-1-{{ ai_gen_id }} active" data-batch="1">
+        <div class="ai-feature-banner-features-{{ ai_gen_id }} align-{{ block.settings.text_alignment }} justify-{{ block.settings.desktop_positioning }}">
+          {% for i in (1..3) %}
+            {% liquid
+              assign feature_enabled_key = 'batch_1_feature_' | append: i | append: '_enabled'
+              assign feature_title_key = 'batch_1_feature_' | append: i | append: '_title'
+              assign feature_text_key = 'batch_1_feature_' | append: i | append: '_text'
+              assign pin_x_key = 'batch_1_pin_' | append: i | append: '_x'
+              assign pin_y_key = 'batch_1_pin_' | append: i | append: '_y'
+
+              assign feature_enabled = block.settings[feature_enabled_key]
+              assign feature_title = block.settings[feature_title_key]
+              assign feature_text = block.settings[feature_text_key]
+              assign pin_x = block.settings[pin_x_key]
+              assign pin_y = block.settings[pin_y_key]
+            %}
+
+            {% if feature_enabled %}
+              <div class="ai-feature-banner-feature-{{ ai_gen_id }}">
+                <div class="ai-feature-banner-feature-content-{{ ai_gen_id }}">
+                  {% if feature_title != blank %}
+                    <h3 class="ai-feature-banner-feature-title-{{ ai_gen_id }}">{{ feature_title }}</h3>
+                  {% endif %}
+                  {% if feature_text != blank %}
+                    <p class="ai-feature-banner-feature-text-{{ ai_gen_id }}">{{ feature_text }}</p>
+                  {% endif %}
+                </div>
+              </div>
+
+              {% if block.settings.show_pins %}
+                <div
+                  class="ai-feature-banner-pin-{{ ai_gen_id }}"
+                  style="left: {{ pin_x }}%; top: {{ pin_y }}%;"
+                ></div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="ai-feature-banner-batch-{{ ai_gen_id }} ai-feature-banner-batch-2-{{ ai_gen_id }}" data-batch="2">
+        <div class="ai-feature-banner-features-{{ ai_gen_id }} align-{{ block.settings.text_alignment }} justify-{{ block.settings.desktop_positioning }}">
+          {% for i in (1..3) %}
+            {% liquid
+              assign feature_enabled_key = 'batch_2_feature_' | append: i | append: '_enabled'
+              assign feature_title_key = 'batch_2_feature_' | append: i | append: '_title'
+              assign feature_text_key = 'batch_2_feature_' | append: i | append: '_text'
+              assign pin_x_key = 'batch_2_pin_' | append: i | append: '_x'
+              assign pin_y_key = 'batch_2_pin_' | append: i | append: '_y'
+
+              assign feature_enabled = block.settings[feature_enabled_key]
+              assign feature_title = block.settings[feature_title_key]
+              assign feature_text = block.settings[feature_text_key]
+              assign pin_x = block.settings[pin_x_key]
+              assign pin_y = block.settings[pin_y_key]
+            %}
+
+            {% if feature_enabled %}
+              <div class="ai-feature-banner-feature-{{ ai_gen_id }}">
+                <div class="ai-feature-banner-feature-content-{{ ai_gen_id }}">
+                  {% if feature_title != blank %}
+                    <h3 class="ai-feature-banner-feature-title-{{ ai_gen_id }}">{{ feature_title }}</h3>
+                  {% endif %}
+                  {% if feature_text != blank %}
+                    <p class="ai-feature-banner-feature-text-{{ ai_gen_id }}">{{ feature_text }}</p>
+                  {% endif %}
+                </div>
+              </div>
+
+              {% if block.settings.show_pins %}
+                <div
+                  class="ai-feature-banner-pin-{{ ai_gen_id }}"
+                  style="left: {{ pin_x }}%; top: {{ pin_y }}%;"
+                ></div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</feature-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FeatureBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentBatch = 1;
+        this.rotationTimer = null;
+      }
+
+      connectedCallback() {
+        this.rotationDelay = parseInt(this.dataset.rotationDelay) * 1000;
+        this.autoRotate = this.dataset.autoRotate === 'true';
+        this.batch1 = this.querySelector('.ai-feature-banner-batch-1-{{ ai_gen_id }}');
+        this.batch2 = this.querySelector('.ai-feature-banner-batch-2-{{ ai_gen_id }}');
+
+        this.setupResponsiveImages();
+
+        if (this.autoRotate) {
+          this.startRotation();
+        }
+      }
+
+      setupResponsiveImages() {
+        const desktopImage = this.querySelector('.ai-feature-banner-desktop-image-{{ ai_gen_id }}');
+        const mobileImage = this.querySelector('.ai-feature-banner-mobile-image-{{ ai_gen_id }}');
+
+        if (desktopImage && mobileImage) {
+          const updateImageVisibility = () => {
+            if (window.innerWidth <= 749) {
+              desktopImage.style.display = 'none';
+              mobileImage.style.display = 'block';
+            } else {
+              desktopImage.style.display = 'block';
+              mobileImage.style.display = 'none';
+            }
+          };
+
+          updateImageVisibility();
+          window.addEventListener('resize', updateImageVisibility);
+        }
+      }
+
+      startRotation() {
+        this.rotationTimer = setTimeout(() => {
+          this.switchBatch();
+        }, this.rotationDelay);
+      }
+
+      switchBatch() {
+        if (this.currentBatch === 1) {
+          this.batch1.classList.add('slide-out-left');
+
+          setTimeout(() => {
+            this.batch1.classList.remove('active', 'slide-out-left');
+            this.batch2.classList.add('active');
+            this.currentBatch = 2;
+
+            if (this.autoRotate) {
+              this.rotationTimer = setTimeout(() => {
+                this.switchBatch();
+              }, this.rotationDelay);
+            }
+          }, 600);
+        } else {
+          this.batch2.classList.add('slide-out-left');
+
+          setTimeout(() => {
+            this.batch2.classList.remove('active', 'slide-out-left');
+            this.batch1.classList.add('active');
+            this.currentBatch = 1;
+
+            if (this.autoRotate) {
+              this.rotationTimer = setTimeout(() => {
+                this.switchBatch();
+              }, this.rotationDelay);
+            }
+          }, 600);
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.rotationTimer) {
+          clearTimeout(this.rotationTimer);
+        }
+      }
+    }
+
+    customElements.define('feature-banner-{{ ai_gen_id }}', FeatureBanner{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Feature banner rotation",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "desktop_positioning",
+      "label": "Desktop vertical position",
+      "options": [
+        {
+          "value": "start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Rotation settings"
+    },
+    {
+      "type": "range",
+      "id": "rotation_delay",
+      "label": "Rotation delay",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Auto rotate",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Feature style"
+    },
+    {
+      "type": "color",
+      "id": "feature_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "feature_title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size",
+      "label": "Title size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "feature_padding",
+      "label": "Padding",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "feature_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Pin dots"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pins",
+      "label": "Show pin dots",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "pin_color",
+      "label": "Pin color",
+      "default": "#ff0000"
+    },
+    {
+      "type": "color",
+      "id": "pin_border_color",
+      "label": "Pin border color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "pin_size",
+      "label": "Pin size",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "pin_border_width",
+      "label": "Pin border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Batch 1 - Feature 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "batch_1_feature_1_enabled",
+      "label": "Enable feature 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "batch_1_feature_1_title",
+      "label": "Title",
+      "default": "Feature 1"
+    },
+    {
+      "type": "textarea",
+      "id": "batch_1_feature_1_text",
+      "label": "Text",
+      "default": "Description for feature 1"
+    },
+    {
+      "type": "range",
+      "id": "batch_1_pin_1_x",
+      "label": "Pin horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "batch_1_pin_1_y",
+      "label": "Pin vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Batch 1 - Feature 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "batch_1_feature_2_enabled",
+      "label": "Enable feature 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "batch_1_feature_2_title",
+      "label": "Title",
+      "default": "Feature 2"
+    },
+    {
+      "type": "textarea",
+      "id": "batch_1_feature_2_text",
+      "label": "Text",
+      "default": "Description for feature 2"
+    },
+    {
+      "type": "range",
+      "id": "batch_1_pin_2_x",
+      "label": "Pin horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "batch_1_pin_2_y",
+      "label": "Pin vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Batch 1 - Feature 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "batch_1_feature_3_enabled",
+      "label": "Enable feature 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "batch_1_feature_3_title",
+      "label": "Title",
+      "default": "Feature 3"
+    },
+    {
+      "type": "textarea",
+      "id": "batch_1_feature_3_text",
+      "label": "Text",
+      "default": "Description for feature 3"
+    },
+    {
+      "type": "range",
+      "id": "batch_1_pin_3_x",
+      "label": "Pin horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "batch_1_pin_3_y",
+      "label": "Pin vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Batch 2 - Feature 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "batch_2_feature_1_enabled",
+      "label": "Enable feature 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "batch_2_feature_1_title",
+      "label": "Title",
+      "default": "Feature 4"
+    },
+    {
+      "type": "textarea",
+      "id": "batch_2_feature_1_text",
+      "label": "Text",
+      "default": "Description for feature 4"
+    },
+    {
+      "type": "range",
+      "id": "batch_2_pin_1_x",
+      "label": "Pin horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "batch_2_pin_1_y",
+      "label": "Pin vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Batch 2 - Feature 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "batch_2_feature_2_enabled",
+      "label": "Enable feature 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "batch_2_feature_2_title",
+      "label": "Title",
+      "default": "Feature 5"
+    },
+    {
+      "type": "textarea",
+      "id": "batch_2_feature_2_text",
+      "label": "Text",
+      "default": "Description for feature 5"
+    },
+    {
+      "type": "range",
+      "id": "batch_2_pin_2_x",
+      "label": "Pin horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "batch_2_pin_2_y",
+      "label": "Pin vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 35
+    },
+    {
+      "type": "header",
+      "content": "Batch 2 - Feature 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "batch_2_feature_3_enabled",
+      "label": "Enable feature 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "batch_2_feature_3_title",
+      "label": "Title",
+      "default": "Feature 6"
+    },
+    {
+      "type": "textarea",
+      "id": "batch_2_feature_3_text",
+      "label": "Text",
+      "default": "Description for feature 6"
+    },
+    {
+      "type": "range",
+      "id": "batch_2_pin_3_x",
+      "label": "Pin horizontal position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "batch_2_pin_3_y",
+      "label": "Pin vertical position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature banner rotation"
+    }
+  ]
+}
 {% endschema %}
