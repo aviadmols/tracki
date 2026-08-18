@@ -1,6 +1,157 @@
+{% doc %}
+  @prompt
+    neyon divider
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-neon-divider-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.spacing_top }}px 0 {{ block.settings.spacing_bottom }}px;
+  }
+
+  .ai-neon-divider__line-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.line_height }}px;
+    background: {{ block.settings.neon_color }};
+    border-radius: {{ block.settings.line_height | divided_by: 2.0 }}px;
+    box-shadow: 
+      0 0 {{ block.settings.glow_intensity }}px {{ block.settings.neon_color }},
+      0 0 {{ block.settings.glow_intensity | times: 2 }}px {{ block.settings.neon_color }},
+      0 0 {{ block.settings.glow_intensity | times: 3 }}px {{ block.settings.neon_color }};
+  }
+
+  {% if block.settings.animation_enabled %}
+    @keyframes ai-neon-pulse-{{ ai_gen_id }} {
+      0%, 100% {
+        opacity: 1;
+        box-shadow: 
+          0 0 {{ block.settings.glow_intensity }}px {{ block.settings.neon_color }},
+          0 0 {{ block.settings.glow_intensity | times: 2 }}px {{ block.settings.neon_color }},
+          0 0 {{ block.settings.glow_intensity | times: 3 }}px {{ block.settings.neon_color }};
+      }
+      50% {
+        opacity: 0.8;
+        box-shadow: 
+          0 0 {{ block.settings.glow_intensity | times: 0.5 }}px {{ block.settings.neon_color }},
+          0 0 {{ block.settings.glow_intensity }}px {{ block.settings.neon_color }},
+          0 0 {{ block.settings.glow_intensity | times: 1.5 }}px {{ block.settings.neon_color }};
+      }
+    }
+
+    .ai-neon-divider__line-{{ ai_gen_id }} {
+      animation: ai-neon-pulse-{{ ai_gen_id }} {{ block.settings.animation_speed }}s ease-in-out infinite;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .ai-neon-divider-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-neon-divider-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-neon-divider__line-{{ ai_gen_id }}"></div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Neon divider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Neon style"
+    },
+    {
+      "type": "color",
+      "id": "neon_color",
+      "label": "Neon color",
+      "default": "#00ffff"
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "label": "Line thickness",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "glow_intensity",
+      "label": "Glow intensity",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_enabled",
+      "label": "Enable pulse animation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "label": "Animation speed",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "s",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "spacing_top",
+      "label": "Spacing top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "spacing_bottom",
+      "label": "Spacing bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Neon divider"
+    }
+  ]
+}
 {% endschema %}
