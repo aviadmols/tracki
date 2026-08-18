@@ -1,6 +1,795 @@
+{% doc %}
+  @prompt
+    {% comment %}
+      Hero Banner with 6 Callouts (3 Left / 3 Right) & Staggered Slide-Pop Animations
+    {% endcomment %}
+    
+    <div class="hero-banner-{{ section.id }} hero-banner-wrapper">
+      <div class="hero-banner-container">
+        
+        {% comment %} Left Column Features (3 Blocks) {% endcomment %}
+        <div class="hero-column column-left align-{{ section.settings.left_text_align }}">
+          {% assign left_count = 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature_left' %}
+              {% assign left_count = left_count | plus: 1 %}
+              <div class="feature-item item-left" style="--stagger-delay: {{ left_count | times: 0.15 }}s;" {{ block.shopify_attributes }}>
+                <div class="feature-text-wrapper">
+                  {% if block.settings.title != blank %}
+                    <h3 class="feature-title">{{ block.settings.title | escape }}</h3>
+                  {% endif %}
+                  {% if block.settings.subtext != blank %}
+                    <p class="feature-subtext">{{ block.settings.subtext | escape }}</p>
+                  {% endif %}
+                </div>
+                <div class="pointer-wrapper">
+                  <div class="pointer-line"></div>
+                  <div class="pointer-dot"></div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+    
+        {% comment %} Center Product Image {% endcomment %}
+        <div class="hero-column column-center">
+          {% if section.settings.image_desktop != blank %}
+            <picture>
+              {% if section.settings.image_mobile != blank %}
+                <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url: width: 800 }}">
+              {% endif %}
+              <img src="{{ section.settings.image_desktop | image_url: width: 1200 }}" 
+                   alt="{{ section.settings.image_desktop.alt | escape }}" 
+                   loading="lazy" 
+                   class="product-image">
+            </picture>
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'product-placeholder' }}
+          {% endif %}
+        </div>
+    
+        {% comment %} Right Column Features (3 Blocks) {% endcomment %}
+        <div class="hero-column column-right align-{{ section.settings.right_text_align }}">
+          {% assign right_count = 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature_right' %}
+              {% assign right_count = right_count | plus: 1 %}
+              <div class="feature-item item-right" style="--stagger-delay: {{ right_count | times: 0.15 }}s;" {{ block.shopify_attributes }}>
+                <div class="pointer-wrapper">
+                  <div class="pointer-dot"></div>
+                  <div class="pointer-line"></div>
+                </div>
+                <div class="feature-text-wrapper">
+                  {% if block.settings.title != blank %}
+                    <h3 class="feature-title">{{ block.settings.title | escape }}</h3>
+                  {% endif %}
+                  {% if block.settings.subtext != blank %}
+                    <p class="feature-subtext">{{ block.settings.subtext | escape }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+    
+      </div>
+    </div>
+    
+    <style>
+      .hero-banner-{{ section.id }} {
+        width: 100%;
+        min-height: {{ section.settings.banner_height }}px;
+        background-color: {{ section.settings.bg_color }};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        overflow: hidden;
+      }
+    
+      .hero-banner-{{ section.id }} .hero-banner-container {
+        width: 100%;
+        max-width: 1400px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+    
+      .hero-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 48px;
+      }
+    
+      /* Alignment Utility */
+      .align-left .feature-text-wrapper { text-align: left; }
+      .align-center .feature-text-wrapper { text-align: center; }
+      .align-right .feature-text-wrapper { text-align: right; }
+    
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        opacity: 0;
+      }
+    
+      .item-left {
+        transform: translateX(-40px) scale(0.95);
+      }
+    
+      .item-right {
+        transform: translateX(40px) scale(0.95);
+      }
+    
+      /* Slide-Pop Animation Trigger */
+      .hero-banner-{{ section.id }}.is-visible .feature-item {
+        animation: slidePop 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        animation-delay: var(--stagger-delay);
+      }
+    
+      @keyframes slidePop {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+    
+      .feature-text-wrapper {
+        flex: 1;
+      }
+    
+      .feature-title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin: 0 0 6px 0;
+        color: {{ section.settings.text_color }};
+      }
+    
+      .feature-subtext {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin: 0;
+        color: {{ section.settings.text_color }};
+        opacity: 0.8;
+      }
+    
+      /* Pointer Line & Glowing Dot */
+      .poin
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .hero-banner-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    min-height: {{ block.settings.banner_height }}px;
+    background-color: {{ block.settings.bg_color }};
+    padding: 60px 20px;
+    overflow: hidden;
+  }
+
+  .hero-banner-container-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .align-left-{{ ai_gen_id }} .feature-text-wrapper-{{ ai_gen_id }} { 
+    text-align: left; 
+  }
+  
+  .align-center-{{ ai_gen_id }} .feature-text-wrapper-{{ ai_gen_id }} { 
+    text-align: center; 
+  }
+  
+  .align-right-{{ ai_gen_id }} .feature-text-wrapper-{{ ai_gen_id }} { 
+    text-align: right; 
+  }
+
+  .feature-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+  }
+
+  .item-left-{{ ai_gen_id }} {
+    transform: translateX(-40px) scale(0.95);
+  }
+
+  .item-right-{{ ai_gen_id }} {
+    transform: translateX(40px) scale(0.95);
+  }
+
+  .hero-banner-{{ ai_gen_id }}.is-visible .feature-item-{{ ai_gen_id }} {
+    animation: slidePop-{{ ai_gen_id }} 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: var(--stagger-delay);
+  }
+
+  @keyframes slidePop-{{ ai_gen_id }} {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .feature-text-wrapper-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .feature-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 6px 0;
+    color: {{ block.settings.text_color }};
+  }
+
+  .feature-subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtext_size }}px;
+    line-height: 1.4;
+    margin: 0;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+  }
+
+  .pointer-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .pointer-line-{{ ai_gen_id }} {
+    width: {{ block.settings.pointer_line_width }}px;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      {{ block.settings.pointer_color }},
+      transparent
+    );
+  }
+
+  .item-right-{{ ai_gen_id }} .pointer-line-{{ ai_gen_id }} {
+    background: linear-gradient(
+      to left,
+      {{ block.settings.pointer_color }},
+      transparent
+    );
+  }
+
+  .pointer-dot-{{ ai_gen_id }} {
+    width: {{ block.settings.pointer_dot_size }}px;
+    height: {{ block.settings.pointer_dot_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.pointer_color }};
+    box-shadow: 0 0 {{ block.settings.pointer_glow_size }}px {{ block.settings.pointer_color }};
+    animation: pulse-{{ ai_gen_id }} 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-{{ ai_gen_id }} {
+    0%, 100% {
+      box-shadow: 0 0 {{ block.settings.pointer_glow_size }}px {{ block.settings.pointer_color }};
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 {{ block.settings.pointer_glow_size | times: 1.5 }}px {{ block.settings.pointer_color }};
+      transform: scale(1.1);
+    }
+  }
+
+  .column-center-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-image-{{ ai_gen_id }} {
+    max-width: {{ block.settings.image_max_width }}px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .product-placeholder-{{ ai_gen_id }} {
+    max-width: {{ block.settings.image_max_width }}px;
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 989px) {
+    .hero-banner-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .hero-column-{{ ai_gen_id }} {
+      gap: 24px;
+    }
+
+    .feature-item-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+
+    .feature-text-wrapper-{{ ai_gen_id }} {
+      text-align: center;
+    }
+
+    .column-center-{{ ai_gen_id }} {
+      order: -1;
+    }
+  }
+{% endstyle %}
+
+<hero-banner-{{ ai_gen_id }} class="hero-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="hero-banner-container-{{ ai_gen_id }}">
+    
+    <div class="hero-column-{{ ai_gen_id }} column-left-{{ ai_gen_id }} align-{{ block.settings.left_text_align }}-{{ ai_gen_id }}">
+      {% if block.settings.left_feature_1_title != blank or block.settings.left_feature_1_subtext != blank %}
+        <div class="feature-item-{{ ai_gen_id }} item-left-{{ ai_gen_id }}" style="--stagger-delay: 0s;">
+          <div class="feature-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.left_feature_1_title != blank %}
+              <h3 class="feature-title-{{ ai_gen_id }}">{{ block.settings.left_feature_1_title }}</h3>
+            {% endif %}
+            {% if block.settings.left_feature_1_subtext != blank %}
+              <p class="feature-subtext-{{ ai_gen_id }}">{{ block.settings.left_feature_1_subtext }}</p>
+            {% endif %}
+          </div>
+          <div class="pointer-wrapper-{{ ai_gen_id }}">
+            <div class="pointer-line-{{ ai_gen_id }}"></div>
+            <div class="pointer-dot-{{ ai_gen_id }}"></div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.left_feature_2_title != blank or block.settings.left_feature_2_subtext != blank %}
+        <div class="feature-item-{{ ai_gen_id }} item-left-{{ ai_gen_id }}" style="--stagger-delay: 0.15s;">
+          <div class="feature-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.left_feature_2_title != blank %}
+              <h3 class="feature-title-{{ ai_gen_id }}">{{ block.settings.left_feature_2_title }}</h3>
+            {% endif %}
+            {% if block.settings.left_feature_2_subtext != blank %}
+              <p class="feature-subtext-{{ ai_gen_id }}">{{ block.settings.left_feature_2_subtext }}</p>
+            {% endif %}
+          </div>
+          <div class="pointer-wrapper-{{ ai_gen_id }}">
+            <div class="pointer-line-{{ ai_gen_id }}"></div>
+            <div class="pointer-dot-{{ ai_gen_id }}"></div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.left_feature_3_title != blank or block.settings.left_feature_3_subtext != blank %}
+        <div class="feature-item-{{ ai_gen_id }} item-left-{{ ai_gen_id }}" style="--stagger-delay: 0.3s;">
+          <div class="feature-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.left_feature_3_title != blank %}
+              <h3 class="feature-title-{{ ai_gen_id }}">{{ block.settings.left_feature_3_title }}</h3>
+            {% endif %}
+            {% if block.settings.left_feature_3_subtext != blank %}
+              <p class="feature-subtext-{{ ai_gen_id }}">{{ block.settings.left_feature_3_subtext }}</p>
+            {% endif %}
+          </div>
+          <div class="pointer-wrapper-{{ ai_gen_id }}">
+            <div class="pointer-line-{{ ai_gen_id }}"></div>
+            <div class="pointer-dot-{{ ai_gen_id }}"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="hero-column-{{ ai_gen_id }} column-center-{{ ai_gen_id }}">
+      {% if block.settings.image_desktop != blank %}
+        <picture>
+          {% if block.settings.image_mobile != blank %}
+            <source media="(max-width: 767px)" srcset="{{ block.settings.image_mobile | image_url: width: 800 }}">
+          {% endif %}
+          <img src="{{ block.settings.image_desktop | image_url: width: 1200 }}" 
+               alt="{{ block.settings.image_desktop.alt | escape }}" 
+               loading="lazy" 
+               width="{{ block.settings.image_desktop.width }}"
+               height="{{ block.settings.image_desktop.height }}"
+               class="product-image-{{ ai_gen_id }}">
+        </picture>
+      {% else %}
+        <div class="product-placeholder-{{ ai_gen_id }}">
+          {{ 'product-1' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="hero-column-{{ ai_gen_id }} column-right-{{ ai_gen_id }} align-{{ block.settings.right_text_align }}-{{ ai_gen_id }}">
+      {% if block.settings.right_feature_1_title != blank or block.settings.right_feature_1_subtext != blank %}
+        <div class="feature-item-{{ ai_gen_id }} item-right-{{ ai_gen_id }}" style="--stagger-delay: 0s;">
+          <div class="pointer-wrapper-{{ ai_gen_id }}">
+            <div class="pointer-dot-{{ ai_gen_id }}"></div>
+            <div class="pointer-line-{{ ai_gen_id }}"></div>
+          </div>
+          <div class="feature-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.right_feature_1_title != blank %}
+              <h3 class="feature-title-{{ ai_gen_id }}">{{ block.settings.right_feature_1_title }}</h3>
+            {% endif %}
+            {% if block.settings.right_feature_1_subtext != blank %}
+              <p class="feature-subtext-{{ ai_gen_id }}">{{ block.settings.right_feature_1_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.right_feature_2_title != blank or block.settings.right_feature_2_subtext != blank %}
+        <div class="feature-item-{{ ai_gen_id }} item-right-{{ ai_gen_id }}" style="--stagger-delay: 0.15s;">
+          <div class="pointer-wrapper-{{ ai_gen_id }}">
+            <div class="pointer-dot-{{ ai_gen_id }}"></div>
+            <div class="pointer-line-{{ ai_gen_id }}"></div>
+          </div>
+          <div class="feature-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.right_feature_2_title != blank %}
+              <h3 class="feature-title-{{ ai_gen_id }}">{{ block.settings.right_feature_2_title }}</h3>
+            {% endif %}
+            {% if block.settings.right_feature_2_subtext != blank %}
+              <p class="feature-subtext-{{ ai_gen_id }}">{{ block.settings.right_feature_2_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.right_feature_3_title != blank or block.settings.right_feature_3_subtext != blank %}
+        <div class="feature-item-{{ ai_gen_id }} item-right-{{ ai_gen_id }}" style="--stagger-delay: 0.3s;">
+          <div class="pointer-wrapper-{{ ai_gen_id }}">
+            <div class="pointer-dot-{{ ai_gen_id }}"></div>
+            <div class="pointer-line-{{ ai_gen_id }}"></div>
+          </div>
+          <div class="feature-text-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.right_feature_3_title != blank %}
+              <h3 class="feature-title-{{ ai_gen_id }}">{{ block.settings.right_feature_3_title }}</h3>
+            {% endif %}
+            {% if block.settings.right_feature_3_subtext != blank %}
+              <p class="feature-subtext-{{ ai_gen_id }}">{{ block.settings.right_feature_3_subtext }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</hero-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeroBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.hasAnimated = false;
+      }
+
+      connectedCallback() {
+        this.setupIntersectionObserver();
+      }
+
+      setupIntersectionObserver() {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !this.hasAnimated) {
+              this.classList.add('is-visible');
+              this.hasAnimated = true;
+              observer.unobserve(this);
+            }
+          });
+        }, options);
+
+        observer.observe(this);
+      }
+    }
+
+    customElements.define('hero-banner-{{ ai_gen_id }}', HeroBanner{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Hero banner with callouts",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "banner_height",
+      "label": "Minimum height",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Center image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "label": "Image max width",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "label": "Subtext size",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "left_text_align",
+      "label": "Left column alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "right_text_align",
+      "label": "Right column alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Pointer style"
+    },
+    {
+      "type": "color",
+      "id": "pointer_color",
+      "label": "Pointer color",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "range",
+      "id": "pointer_line_width",
+      "label": "Line width",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "pointer_dot_size",
+      "label": "Dot size",
+      "min": 6,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "pointer_glow_size",
+      "label": "Glow size",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Left feature 1"
+    },
+    {
+      "type": "text",
+      "id": "left_feature_1_title",
+      "label": "Title",
+      "default": "Premium quality"
+    },
+    {
+      "type": "text",
+      "id": "left_feature_1_subtext",
+      "label": "Subtext",
+      "default": "Built to last with premium materials"
+    },
+    {
+      "type": "header",
+      "content": "Left feature 2"
+    },
+    {
+      "type": "text",
+      "id": "left_feature_2_title",
+      "label": "Title",
+      "default": "Fast shipping"
+    },
+    {
+      "type": "text",
+      "id": "left_feature_2_subtext",
+      "label": "Subtext",
+      "default": "Free delivery on orders over $50"
+    },
+    {
+      "type": "header",
+      "content": "Left feature 3"
+    },
+    {
+      "type": "text",
+      "id": "left_feature_3_title",
+      "label": "Title",
+      "default": "Eco-friendly"
+    },
+    {
+      "type": "text",
+      "id": "left_feature_3_subtext",
+      "label": "Subtext",
+      "default": "Sustainably sourced and packaged"
+    },
+    {
+      "type": "header",
+      "content": "Right feature 1"
+    },
+    {
+      "type": "text",
+      "id": "right_feature_1_title",
+      "label": "Title",
+      "default": "Easy returns"
+    },
+    {
+      "type": "text",
+      "id": "right_feature_1_subtext",
+      "label": "Subtext",
+      "default": "30-day hassle-free returns"
+    },
+    {
+      "type": "header",
+      "content": "Right feature 2"
+    },
+    {
+      "type": "text",
+      "id": "right_feature_2_title",
+      "label": "Title",
+      "default": "Warranty"
+    },
+    {
+      "type": "text",
+      "id": "right_feature_2_subtext",
+      "label": "Subtext",
+      "default": "2-year manufacturer warranty"
+    },
+    {
+      "type": "header",
+      "content": "Right feature 3"
+    },
+    {
+      "type": "text",
+      "id": "right_feature_3_title",
+      "label": "Title",
+      "default": "Support"
+    },
+    {
+      "type": "text",
+      "id": "right_feature_3_subtext",
+      "label": "Subtext",
+      "default": "24/7 customer support available"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner with callouts"
+    }
+  ]
+}
 {% endschema %}
