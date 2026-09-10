@@ -354,14 +354,61 @@
         "padding_bottom": 60
       }
     },
+    "17890078342d3dc4b5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c37a919_9w4t9M": {
+          "type": "ai_gen_block_c37a919",
+          "settings": {
+            "heading": "Key Highlights at a Glance:",
+            "row_1_label": "Ultra-Slim Design",
+            "row_1_content": "<p>Compact footprint measuring <strong>86 mm x 54 mm x 6.5 mm</strong> weighing just <strong>44g</strong></p>",
+            "row_2_label": "Durable & Waterproof:",
+            "row_2_content": "<p>IP67-rated waterproof housing built for harsh indoor and outdoor environments.</p>",
+            "row_3_label": "Long Active Battery:",
+            "row_3_content": "<p>Rechargeable 800mAh Li-ion battery providing up to <strong>16 days</strong> of continuous operation.</p>",
+            "row_4_label": "Precision Live Updates:",
+            "row_4_content": "<p>Add another specificatioMulti-constellation GNSS (GPS, Galileo, Beidou, GLONASS, QZSS, SBAS) with refresh rates as fast as <strong>5 seconds</strong> in Live Tracking mode.n</p>",
+            "row_5_label": "",
+            "row_5_content": "<p>Add another specification</p>",
+            "row_6_label": "",
+            "row_6_content": "<p>Add another specification</p>",
+            "desktop_width_percent": 100,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "mobile_padding_top": 24,
+            "mobile_padding_bottom": 24,
+            "border_radius": 16,
+            "heading_font": "jost_n6",
+            "body_font": "figtree_n4",
+            "heading_size": 24,
+            "mobile_heading_size": 22,
+            "body_size": 16,
+            "background_color": "#333333",
+            "heading_color": "#FFFFFF",
+            "text_color": "#FFFFFF",
+            "label_color": "#D8DADD",
+            "border_color": "#424246",
+            "divider_color": "#737579"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c37a919_9w4t9M"
+      ],
+      "name": "product-specs.liquid",
+      "settings": {}
+    },
     "product-details": {
       "type": "product-details",
       "blocks": {
         "collapsible_tab_nCP388": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Key Highlights at a Glance:",
-            "content": "<p><strong>Unrivaled Battery Life:</strong> Up to 6 weeks (1.5 months) of continuous operation on a single rechargeable USB-C charge.</p><p><strong>Built to Survive:</strong> IP68 100% waterproof rating and operating temperature range from -20°C to +60°C.</p><p><strong>Precision Live Updates:</strong> Refresh rates as fast as every 5 seconds with accuracy within 5 meters.</p><p><strong>Global Roaming Out of the Box:</strong> Pre-configured with an embedded SIM for seamless worldwide 4G Cat 1 tracking.</p><p><strong>Ready to Mount:</strong> Includes clip and high-strength magnet attachments right in the box.</p>",
+            "content": "<p>Ultra-Slim Design: Compact footprint measuring <strong>86 mm x 54 mm x 6.5 mm</strong> weighing just <strong>44g</strong>.</p><p><strong>Built to Survive:</strong> IP68 100% waterproof rating and operating temperature range from -20°C to +60°C.</p><p><strong>Precision Live Updates:</strong> Refresh rates as fast as every 5 seconds with accuracy within 5 meters.</p><p><strong>Global Roaming Out of the Box:</strong> Pre-configured with an embedded SIM for seamless worldwide 4G Cat 1 tracking.</p><p><strong>Ready to Mount:</strong> Includes clip and high-strength magnet attachments right in the box.</p>",
             "page": ""
           }
         },
@@ -471,7 +518,7 @@
         "column_C3pAXz": {
           "type": "column",
           "settings": {
-            "background_color": "#FFFFFF",
+            "background_color": "#F5F5F7",
             "heading_color": "#000000",
             "text_color": "#333333",
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-5.png",
@@ -1040,6 +1087,7 @@
     "1787047544f15c8025",
     "main",
     "16448066058b9355f9",
+    "17890078342d3dc4b5",
     "product-details",
     "product-recommendations",
     "how_to_use_text_PGe3a8",
