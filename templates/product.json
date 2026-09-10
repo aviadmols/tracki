@@ -369,7 +369,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Specifications",
-            "content": "<p><strong>Dimensions</strong>: 60 mm x 37 mm x 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Network Compatibility: </strong>4G LTE Cellular + Wi-Fi Positioning</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 3.8V, 1950mAh (7.41Wh)</p><p><strong>GNSS: </strong>GPS, Galileo, Beidou, GLONASS, QZSS and SBAS</p><p><strong>Alert Types: </strong>Geofence, Speeding, Movement, SOS Button, Low Battery</p><p><strong>Waterproof</strong>: IP68</p>",
+            "content": "<p><strong>Dimensions</strong>: 86 mm x 54 mm x 6.5 mm</p><p><strong>Weight</strong>: 44g</p><p><strong>Waterproof Rating: </strong>IP67</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 800mAh</p><p><strong>Active Battery:</strong> Up to 16 days (depending on mode & cellular conditions)</p><p><strong>Network & SIM: </strong>LTE (4G) CAT1 with Embedded SIM & Global Roaming</p><p><strong>GNSS Standards: </strong>GPS, Galileo, Beidou, GLONASS, QZSS, SBAS</p><p><strong>Sensors: </strong>Accelerometer, Dual Light Sensors</p><p><strong>Connectivity: </strong>Wi-Fi (802.11b/g/n), Bluetooth BLE 5.0</p><p><strong>Apps Supported: </strong>iOS / Android / Windows / Mac</p>",
             "page": ""
           }
         },
@@ -377,23 +377,15 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Real-Time Global Tracking",
-            "content": "<p>Leverages 4G LTE, Wi-Fi, and GPS technologies to deliver accurate location updates worldwide across all major mobile networks.</p>",
+            "content": "<p>Leverages 4G LTE, Wi-Fi, and multi-system GNSS technologies to deliver accurate location updates (&lt;5 meters open sky) worldwide across major networks.</p>",
             "page": ""
           }
         },
         "product-details-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Rugged & Harsh-Environment Ready",
-            "content": "<p>Engineered to handle <em>mud, dust, moisture, and rough outdoor conditions</em>—making it ideal for off-road vehicles, construction machinery, trailers, and exposed equipment.</p>",
-            "page": ""
-          }
-        },
-        "product-details-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Extended Battery Performance",
-            "content": "<p>Built-in high-capacity <strong>1950mAh rechargeable lithium-ion battery</strong> provides significantly longer operation between charges compared to standard micro-trackers.</p>",
+            "heading": "Smart Alert Suite",
+            "content": "<p>Receive customizable real-time notifications via Push, SMS, or Email for Geofencing, Speeding, Low Battery, and Light Sensor triggers</p>",
             "page": ""
           }
         }
@@ -402,8 +394,7 @@
         "collapsible_tab_nCP388",
         "60eeb066-dd65-49d7-b86e-8ef785719e6b",
         "product-details-1",
-        "product-details-2",
-        "product-details-3"
+        "product-details-2"
       ],
       "custom_css": [],
       "settings": {
@@ -460,7 +451,7 @@
         "column_wNnHxg": {
           "type": "column",
           "settings": {
-            "background_color": "#f2f2f2",
+            "background_color": "#FFFFFF",
             "heading_color": "#000000",
             "text_color": "#333333",
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-4_1dbf06ee-5435-4330-9e87-0d62ce10ff35.png",
@@ -480,7 +471,7 @@
         "column_C3pAXz": {
           "type": "column",
           "settings": {
-            "background_color": "#f2f2f2",
+            "background_color": "#FFFFFF",
             "heading_color": "#000000",
             "text_color": "#333333",
             "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-5.png",
@@ -688,11 +679,11 @@
             "max_width": 1100,
             "corner_styling": "soft",
             "card_spacing": "medium",
-            "header_text_color": "#FFFFFF",
-            "star_and_reviewer_name_color": "#F9F9F9",
+            "header_text_color": "#ffffff",
+            "star_and_reviewer_name_color": "#f9f9f9",
             "drop_shadow_color": "#000000",
-            "overlay_and_background_color": "#4FB25F",
-            "content_color": "#F9F9F9",
+            "overlay_and_background_color": "#4fb25f",
+            "content_color": "#f9f9f9",
             "header_text": "From our customers",
             "show_average_rating": true,
             "rating_display": "default"
