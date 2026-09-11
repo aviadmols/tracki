@@ -19,9 +19,9 @@
         "ai_gen_block_7576672_QRwHeQ": {
           "type": "ai_gen_block_7576672",
           "settings": {
-            "desktop_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max_8ac6fadb-70c6-49cd-99d4-8e9431bf18dc.png",
+            "desktop_image": "shopify://shop_images/image-1.png",
             "desktop_width_percent": 100,
-            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile.png"
+            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile_ae79d495-0ad6-462e-a4fe-162af0e03585.png"
           },
           "blocks": {}
         }
@@ -295,8 +295,8 @@
         "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1.png",
-            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1-_mobile.png",
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1_9095f8fa-08d4-4b56-ae6e-205fe9e2ab64.png",
+            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1-_mobile_49627ff9-ae33-46d6-b364-ce5c7a233984.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-left",
             "subheading": "Ultra-Slim & Discrete Profile",
@@ -321,8 +321,8 @@
         "164480660521311b94-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2.png",
-            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2-_mobile.png",
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2_b17ad7e4-c216-447f-8368-c54ecc202bfb.png",
+            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2-_mobile_f9716dc8-9d23-49b7-9c6f-45b784745f82.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-center",
             "subheading": "<strong>Advanced Anti-Tamper Protection</strong>",
@@ -348,7 +348,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3.png",
-            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3-_mobile.png",
+            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3-_mobile_d21ef67e-28ff-41ec-8aee-6def82b05331.png",
             "image_position": "center center",
             "text_box_position": "bottom-left",
             "subheading": "<strong>Complete Global Visibility</strong>",
