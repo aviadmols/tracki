@@ -1,0 +1,1102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "17870526332906f1d6": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "178705443560698a7b": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7576672_QRwHeQ": {
+          "type": "ai_gen_block_7576672",
+          "settings": {
+            "desktop_image": "shopify://shop_images/image-1_699eef26-97df-4f42-bbd7-e5020094d476.jpg",
+            "desktop_width_percent": 100,
+            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile_ae79d495-0ad6-462e-a4fe-162af0e03585.png"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7576672_QRwHeQ"
+      ],
+      "settings": {}
+    },
+    "1787047544f15c8025": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f2f05c2_wE9XQb": {
+          "type": "ai_gen_block_f2f05c2",
+          "settings": {
+            "hero_height": 700,
+            "hero_height_mobile": 600,
+            "background_gradient": "radial-gradient(rgba(245, 245, 247, 1), rgba(245, 245, 247, 1) 100%, rgba(215, 204, 250, 1) 100%)",
+            "hero_image_desktop": "shopify://shop_images/image-1Slide-1-copy-2.png",
+            "image_position": "flex-end",
+            "image_max_width": 90,
+            "content_horizontal_position": "flex-start",
+            "content_vertical_position": "center",
+            "content_max_width": 600,
+            "text_alignment": "left",
+            "main_title": "Tracki Max",
+            "title_size": 56,
+            "title_color": "#212326",
+            "feature_spacing": 35,
+            "feature_headline_size": 24,
+            "feature_headline_color": "#212326",
+            "feature_text_size": 16,
+            "feature_text_color": "#666666",
+            "feature_1_headline": "Never Lose Sight of What Matters",
+            "feature_1_text": "Track your car, valuables, or the people you love in real time over 4G LTE across 185+ countries, right from your phone.",
+            "feature_2_headline": "Up to 1.5 Months on a Single Charge",
+            "feature_2_text": "A powerful 1950 mAh battery means less recharging and more uninterrupted protection.",
+            "feature_3_headline": "Anywhere, Rain or Shine",
+            "feature_3_text": "A strong magnet and waterproof design let you hide it in a bag, on gear, or under a car, reliable through any weather.",
+            "callout_dot_size": 12,
+            "callout_dot_color": "#54a21f",
+            "callout_line_length": 100,
+            "callout_line_color": "#27282a",
+            "callout_1_enabled": true,
+            "callout_1_x": 59,
+            "callout_1_y": 24,
+            "callout_1_angle": 150,
+            "callout_2_enabled": true,
+            "callout_2_x": 56,
+            "callout_2_y": 52,
+            "callout_2_angle": 180,
+            "callout_3_enabled": true,
+            "callout_3_x": 54,
+            "callout_3_y": 70,
+            "callout_3_angle": 165,
+            "enable_animation": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f2f05c2_wE9XQb"
+      ],
+      "disabled": true,
+      "name": "Hero Bullet",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "show_price": false,
+            "price_size": "medium"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "swatch_source": "variant",
+            "swatch_type": "round",
+            "enable_swatch_unavailable_click": false,
+            "size_chart": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "medium",
+            "show_badges": true,
+            "sale_badge_basis": "auto"
+          }
+        },
+        "99d9a132-b5b6-41b4-826d-b33fd2d33b02": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "return",
+            "text": "30-day free trial",
+            "text_style": "body"
+          }
+        },
+        "dd734640-b7b1-44ad-96b6-3d7c9affc69e": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "box",
+            "text": "Available gift wrapping",
+            "text_style": "body"
+          }
+        },
+        "fd414a67-531a-4a3a-8941-e78cec888355": {
+          "type": "text",
+          "settings": {
+            "icon": "lock",
+            "text": "Lifetime warranty",
+            "text_style": "body"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "show_inventory_transfer": true,
+            "color_scheme": "accent-3"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "text": "Keep track of what matters most—anywhere in the world. The Tracki Max 4G LTE GPS Tracker delivers real-time location updates with pinpoint accuracy, making it the ultimate solution for vehicles, machinery, valuable assets, and loved ones. Packed with an upgraded 1950mAh rechargeable battery, intelligent alert triggers, and seamless iOS/Android app integration, Tracki Max offers complete security in a compact, easily concealable design.",
+            "text_style": "body"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "a2f06597-05bf-457d-a1e5-54d6e03ff425": {
+          "type": "sticky_cart",
+          "settings": {
+            "show_quantity_selector": true
+          }
+        },
+        "dealeasy_vd_cards_PKWbpi": {
+          "type": "shopify://apps/dealeasy/blocks/vd-cards/e47a8634-0496-480d-9e46-6f7fafd34b30",
+          "settings": {
+            "lb-product-handle": "",
+            "lb-product-id": ""
+          }
+        },
+        "image_wUtwgq": {
+          "type": "image",
+          "settings": {
+            "height": 20,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "rating",
+        "variant_picker",
+        "price",
+        "99d9a132-b5b6-41b4-826d-b33fd2d33b02",
+        "dd734640-b7b1-44ad-96b6-3d7c9affc69e",
+        "fd414a67-531a-4a3a-8941-e78cec888355",
+        "inventory_status",
+        "buy_buttons",
+        "subtitle",
+        "share",
+        "a2f06597-05bf-457d-a1e5-54d6e03ff425",
+        "dealeasy_vd_cards_PKWbpi",
+        "image_wUtwgq"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_position": "left",
+        "media_size": "large",
+        "gallery_layout": "thumbnail_slider",
+        "image_ratio": "adapt",
+        "show_featured_media": false,
+        "show_thumbnails": true,
+        "hide_variants": false,
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "mobile_image_ratio": "adapt_first",
+        "show_mobile_thumbnails": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "17890078342d3dc4b5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c37a919_9w4t9M": {
+          "type": "ai_gen_block_c37a919",
+          "settings": {
+            "heading": "Key Highlights at a Glance:",
+            "row_1_label": "Ultra-Slim Design",
+            "row_1_content": "<p>Compact footprint measuring <strong>86 mm x 54 mm x 6.5 mm</strong> weighing just <strong>44g</strong></p>",
+            "row_2_label": "Durable & Waterproof:",
+            "row_2_content": "<p>IP67-rated waterproof housing built for harsh indoor and outdoor environments.</p>",
+            "row_3_label": "Long Active Battery:",
+            "row_3_content": "<p>Rechargeable 800mAh Li-ion battery providing up to <strong>16 days</strong> of continuous operation.</p>",
+            "row_4_label": "Precision Live Updates:",
+            "row_4_content": "<p>Add another specificatioMulti-constellation GNSS (GPS, Galileo, Beidou, GLONASS, QZSS, SBAS) with refresh rates as fast as <strong>5 seconds</strong> in Live Tracking mode.</p>",
+            "row_5_label": "Light Sensor Anti-Tamper:",
+            "row_5_content": "<p>Dual light sensors trigger instant alert notifications when cargo or luggage is opened.</p>",
+            "row_6_label": "Global Roaming Ready:",
+            "row_6_content": "<p>Pre-configured embedded SIM with worldwide 4G LTE Cat1 connectivity.</p>",
+            "desktop_width_percent": 100,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "mobile_padding_top": 24,
+            "mobile_padding_bottom": 24,
+            "border_radius": 16,
+            "heading_font": "jost_n6",
+            "body_font": "figtree_n4",
+            "heading_size": 24,
+            "mobile_heading_size": 22,
+            "body_size": 16,
+            "background_color": "#333333",
+            "heading_color": "#ffffff",
+            "text_color": "#c0fd97",
+            "label_color": "#d8dadd",
+            "border_color": "#424246",
+            "divider_color": "#737579"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c37a919_9w4t9M"
+      ],
+      "name": "product-specs.liquid",
+      "settings": {}
+    },
+    "16448066058b9355f9": {
+      "type": "slideshow",
+      "blocks": {
+        "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1_9095f8fa-08d4-4b56-ae6e-205fe9e2ab64.png",
+            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1-_mobile_49627ff9-ae33-46d6-b364-ce5c7a233984.png",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-left",
+            "subheading": "Ultra-Slim & Discrete Profile",
+            "subheading_size": "h5",
+            "heading": "Smooth, Slim, <strong>Fits Anywhere You Need</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "text": "At just 6.5mm thick and weighing only 44g, TrackiSlim easily slips into wallets, luggage, mailers, or personal bags without adding bulk or drawing unwanted attention.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        },
+        "164480660521311b94-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2_b17ad7e4-c216-447f-8368-c54ecc202bfb.png",
+            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2-_mobile_f9716dc8-9d23-49b7-9c6f-45b784745f82.png",
+            "image_position": "80% 50%",
+            "text_box_position": "bottom-center",
+            "subheading": "<strong>Advanced Anti-Tamper Protection</strong>",
+            "subheading_size": "h5",
+            "heading": "<strong>Dual Light Sensor</strong> Security Alerts",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "text": "Get immediate notifications the moment your package, bag, or shipment is opened in transit with integrated dual light sensors.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        },
+        "164480660521311b94-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3.png",
+            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3-_mobile_d21ef67e-28ff-41ec-8aee-6def82b05331.png",
+            "image_position": "center center",
+            "text_box_position": "bottom-left",
+            "subheading": "<strong>Complete Global Visibility</strong>",
+            "subheading_size": "h5",
+            "heading": "Worldwide Tracking in the <strong>Palm of Your Hand</strong>",
+            "heading_size": "h2",
+            "heading_tag": "h1",
+            "text": "Manage all your devices from one unified account across iOS, Android, Mac, or Windows. Monitor real-time movements, set custom geofences, track speed, and view up to 365 days of historical travel logs.",
+            "text_size": "typeset",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_size": "medium",
+            "button_alt_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "solid-color"
+          }
+        }
+      },
+      "block_order": [
+        "bf10fce0-c41b-435a-ba73-cddba1b5be12",
+        "164480660521311b94-1",
+        "164480660521311b94-0"
+      ],
+      "settings": {
+        "slideshow_type": "legacy",
+        "text_alignment": "left",
+        "image_ratio": "650px",
+        "autorotate": true,
+        "autorotate_speed": 5,
+        "full_width": true,
+        "image_behavior": "none",
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "400px",
+        "show_text_below": true,
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#ffffff",
+        "colors_background": "#000000",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 0,
+        "colors_navigation_text": "#000000",
+        "colors_navigation_background": "#ffffff",
+        "colors_highlight": "#00b600",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "product-details": {
+      "type": "product-details",
+      "blocks": {
+        "collapsible_tab_nCP388": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Key Highlights at a Glance:",
+            "content": "<p>Ultra-Slim Design: Compact footprint measuring <strong>86 mm x 54 mm x 6.5 mm</strong> weighing just <strong>44g</strong>.</p><p><strong>Built to Survive:</strong> IP68 100% waterproof rating and operating temperature range from -20°C to +60°C.</p><p><strong>Precision Live Updates:</strong> Refresh rates as fast as every 5 seconds with accuracy within 5 meters.</p><p><strong>Global Roaming Out of the Box:</strong> Pre-configured with an embedded SIM for seamless worldwide 4G Cat 1 tracking.</p><p><strong>Ready to Mount:</strong> Includes clip and high-strength magnet attachments right in the box.</p>",
+            "page": ""
+          }
+        },
+        "60eeb066-dd65-49d7-b86e-8ef785719e6b": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Specifications",
+            "content": "<p><strong>Dimensions</strong>: 86 mm x 54 mm x 6.5 mm</p><p><strong>Weight</strong>: 44g</p><p><strong>Waterproof Rating: </strong>IP67</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 800mAh</p><p><strong>Active Battery:</strong> Up to 16 days (depending on mode & cellular conditions)</p><p><strong>Network & SIM: </strong>LTE (4G) CAT1 with Embedded SIM & Global Roaming</p><p><strong>GNSS Standards: </strong>GPS, Galileo, Beidou, GLONASS, QZSS, SBAS</p><p><strong>Sensors: </strong>Accelerometer, Dual Light Sensors</p><p><strong>Connectivity: </strong>Wi-Fi (802.11b/g/n), Bluetooth BLE 5.0</p><p><strong>Apps Supported: </strong>iOS / Android / Windows / Mac</p>",
+            "page": ""
+          }
+        },
+        "product-details-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Real-Time Global Tracking",
+            "content": "<p>Leverages 4G LTE, Wi-Fi, and multi-system GNSS technologies to deliver accurate location updates (&lt;5 meters open sky) worldwide across major networks.</p>",
+            "page": ""
+          }
+        },
+        "product-details-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Smart Alert Suite",
+            "content": "<p>Receive customizable real-time notifications via Push, SMS, or Email for Geofencing, Speeding, Low Battery, and Light Sensor triggers</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_nCP388",
+        "60eeb066-dd65-49d7-b86e-8ef785719e6b",
+        "product-details-1",
+        "product-details-2"
+      ],
+      "custom_css": [],
+      "settings": {
+        "force_light_style": false,
+        "open_first_collapsible_row": true,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_list_limit": 4,
+        "show_divider": false,
+        "heading": "You May Also Like",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
+        "image_position": "center center",
+        "enable_image_fill": true,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "show_quick_buy": true,
+        "enable_quick_view": true,
+        "enable_color_swatches": true,
+        "enable_countdown": true,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "how_to_use_text_PGe3a8": {
+      "type": "how-to-use-text",
+      "name": "How TO Use Text",
+      "settings": {}
+    },
+    "17870468929edde249": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "multicolumn_wKeNaP": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_wNnHxg": {
+          "type": "column",
+          "settings": {
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "text_color": "#333333",
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGEImage-4.jpg",
+            "title": "Portability & Versatility Focus",
+            "title_size": "h3",
+            "text": "<p><em>Ultra-Slim 4G GPS Tracking with Instant Light-Sensor Alerts</em></p><p>Protect your valuables, shipments, and luggage with TrackiSlim. At just 6.5mm thick, it slips unnoticed into any bag or package while dual light sensors alert you immediately if it is opened in transit.</p>",
+            "show_popup": false,
+            "popup_image_position": "top",
+            "justify_text": false,
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "column_C3pAXz": {
+          "type": "column",
+          "settings": {
+            "background_color": "#f5f5f7",
+            "heading_color": "#000000",
+            "text_color": "#333333",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-4_b58fac26-8178-4f03-90b3-0e558b177e42.jpg",
+            "title": "Sleek, Durable, and Ready for Worldwide Travel",
+            "title_size": "h3",
+            "text": "<p><em>Powerful Tracking in a Credit Card </em></p><p>TrackiSlim delivers real-time location updates every 5 seconds in an ultra-compact 44g design. Featuring IP67 waterproofing, geofence alerts, and an instant SOS button, it ensures complete security anywhere on Earth.</p>",
+            "show_popup": false,
+            "popup_image_position": "top",
+            "justify_text": false,
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "column_wNnHxg",
+        "column_C3pAXz"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "image_ratio": "landscape",
+        "image_position": "center center",
+        "text_alignment": "left",
+        "show_divider": false,
+        "image_width": "full",
+        "columns_desktop": 2,
+        "open_in_new_tab": false,
+        "heading": "Never Lose Track of What Matters",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "mobile_text_alignment": "left",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "colors_highlight": "#ffb503",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "card_border_radius": 20,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "tab-collage": {
+      "type": "tab-collage",
+      "blocks": {
+        "tab-collage-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-2_f08f0636-ac4d-44dd-bbb1-ad3a56d98877.png",
+            "image_position": "center center",
+            "heading": "Instant <em>Smart Alerts</em>",
+            "description": "<p><strong>Stay Informed 24/7  - </strong>Receive real-time push notifications, SMS, or email alerts the moment your vehicle or asset moves.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        },
+        "tab-collage-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGEImage-1.jpg",
+            "image_position": "center center",
+            "heading": "Real-Time Opening Alerts",
+            "description": "<p><strong>Instant Detection with Dual Light Sensors - </strong>Receive immediate notifications on your phone the moment someone opens your package, luggage, or shipment.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "circle"
+          }
+        },
+        "image_fV4jnx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-1-IMAGEImage-1.jpg",
+            "image_position": "center center",
+            "heading": "Discreet Protection in a 6.5mm Frame",
+            "description": "<p><strong>Fits Effortlessly Into Wallets, Envelopes, and Bags</strong></p><p>Measuring only 86mm x 54mm with a 6.5mm thickness and weighing just 44g, TrackiSlim provides heavy-duty tracking without adding bulk. Keep your high-value assets and travel items secure with effortless, low-profile portability.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "medium",
+            "button_style_secondary": false,
+            "enable_highlight": true,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "tab-collage-0",
+        "tab-collage-1",
+        "image_fV4jnx"
+      ],
+      "settings": {
+        "layout": "text_first",
+        "text_box_position": "top",
+        "text_alignment": "left",
+        "image_ratio": "450px",
+        "make_collapsible_rows": false,
+        "full_width": false,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "heading_tag": "h2",
+        "mobile_layout": "text_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "250px",
+        "colors_button_label": "#ffffff",
+        "colors_button_background": "#1a1b18",
+        "colors_text": "#ffffff",
+        "colors_border": "#d2d5d9",
+        "colors_background": "#27282a",
+        "gradient_background": "",
+        "colors_highlight": "#00b600",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "video_hero_7tqaLF": {
+      "type": "video-hero",
+      "blocks": {
+        "text_gbdQBU": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>TRACKI SLIM</strong></p><p><strong>Smooth, Slim, Fits Anywhere You Need</strong></p><h3></h3>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "button_jCrLx6": {
+          "type": "button",
+          "settings": {
+            "button_size": "medium",
+            "button_label": "Buy Now",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_alt_label": "",
+            "button_alt_link": "",
+            "button_alt_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "text_gbdQBU",
+        "button_jCrLx6"
+      ],
+      "name": "t:sections.video-hero.presets.name",
+      "settings": {
+        "video": "shopify://files/videos/This_is_clip_is_a_product_over_Gemini_Omni_11_Flash_85817.mp4",
+        "video_url": "",
+        "text_box_position": "middle-center",
+        "text_alignment": "center",
+        "image_ratio": "650px",
+        "show_text_box": false,
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_alignment": "center",
+        "mobile_image_ratio": "auto",
+        "show_text_below": true,
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#000000",
+        "colors_overlay_opacity": 28,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17870582111aba83be": {
+      "type": "_blocks",
+      "blocks": {
+        "judge_me_reviews_reviews_grid_widget_x3AdhF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/reviews_grid_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "review_selection": "product_reviews",
+            "products": [],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "show_media_only": false,
+            "display_order": "media_first",
+            "card_grouping": "per_media",
+            "columns_desktop": 3,
+            "rows_desktop": 2,
+            "columns_mobile": "2",
+            "rows_mobile": 3,
+            "show_stars": true,
+            "show_reviewer_name": true,
+            "show_review_title_on_hover_desktop": true,
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "card_spacing": "medium",
+            "header_text_color": "#ffffff",
+            "star_and_reviewer_name_color": "#f9f9f9",
+            "drop_shadow_color": "#000000",
+            "overlay_and_background_color": "#4fb25f",
+            "content_color": "#f9f9f9",
+            "header_text": "From our customers",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        },
+        "ai_gen_block_34e97e1_fnT9d4": {
+          "type": "ai_gen_block_34e97e1",
+          "disabled": true,
+          "settings": {
+            "heading": "What Our Customers Say",
+            "subheading": "Read honest feedback from verified buyers who use our products every day.",
+            "heading_size": 32,
+            "subheading_size": 16,
+            "heading_color": "#597c3b",
+            "subheading_color": "#27282a",
+            "header_spacing": 40,
+            "desktop_width_percent": 100,
+            "section_padding": 60,
+            "background_color": "#f4f4f4",
+            "auto_scroll": true,
+            "scroll_speed": 30,
+            "card_width": 320,
+            "card_gap": 20,
+            "card_background": "#ffffff",
+            "card_padding": 24,
+            "card_border_thickness": 0,
+            "card_border_color": "#272c32",
+            "card_border_radius": 8,
+            "card_shadow_horizontal": 0,
+            "card_shadow_vertical": 4,
+            "card_shadow_blur": 12,
+            "card_shadow_color": "#00000014",
+            "name_size": 16,
+            "name_color": "#212326",
+            "star_size": 18,
+            "star_color": "#5ce201",
+            "headline_size": 18,
+            "headline_color": "#212326",
+            "text_size": 14,
+            "text_color": "#212326",
+            "date_size": 12,
+            "date_color": "#666666",
+            "review_1_name": "Marcus D.",
+            "review_1_rating": 5,
+            "review_1_headline": "Survived mud, rain, and rocks.",
+            "review_1_text": "I put this on my dirt bike frame to test the durability claim. After two weekends of heavy trail riding, getting plastered in mud and sprayed by water crossings, the tracker is still ticking. It's built like a tank. The app updates are fast, and I haven't had any signal drop-offs even in the middle of the forest. Definitely worth it for the peace of mind",
+            "review_1_date": "",
+            "review_2_name": "Sarah L.",
+            "review_2_rating": 5,
+            "review_2_headline": "Small size, big performance",
+            "review_2_text": "It is barely the size of a matchbox and very easy to hide. Setup was fast, and the custom boundary alerts on my phone give me great peace of mind",
+            "review_2_date": "",
+            "review_3_name": "David R.",
+            "review_3_rating": 5,
+            "review_3_headline": "Survived muddy trails",
+            "review_3_text": "Strapped this to my bike frame, and it got completely covered in grime and water. It still works flawlessly. This device is truly built for harsh environments.",
+            "review_3_date": "",
+            "review_4_name": "Marcus V",
+            "review_4_rating": 5,
+            "review_4_headline": "Top tier customer service",
+            "review_4_text": "Fast shipping, elegant packaging, and the product works flawlessly out of the box. Will definitely be ordering again.",
+            "review_4_date": "",
+            "review_5_name": "J. Thompson",
+            "review_5_rating": 5,
+            "review_5_headline": "Compact and dependable",
+            "review_5_text": "The battery holds up great even with high-frequency updates. It fits easily into small spaces, making it perfect for tracking gear while traveling",
+            "review_5_date": "",
+            "review_6_name": "Teddy T.",
+            "review_6_rating": 5,
+            "review_6_headline": "Excellent security feature for shipping",
+            "review_6_text": "I used this to track a high-value parcel | sent cross-country. The light sensor feature is a game-changer—knowing I'd get an instant alert if the box was opened in transit gave me complete confidence.",
+            "review_6_date": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_reviews_grid_widget_x3AdhF",
+        "ai_gen_block_34e97e1_fnT9d4"
+      ],
+      "name": "Review",
+      "settings": {}
+    },
+    "16448079723140b4d6": {
+      "type": "collage",
+      "blocks": {
+        "16448079726c05f8a0-0": {
+          "type": "video",
+          "settings": {
+            "enable_video_looping": false,
+            "video_url": "",
+            "description": "Describe the video for customers using screen readers",
+            "heading": "",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "cf00eccf-b810-423e-b980-c7140a8d8f03": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "link": "",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "5a6fcbbe-82e4-4199-9799-ac7dc39024a6": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "link": "",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "16448079726c05f8a0-0",
+        "cf00eccf-b810-423e-b980-c7140a8d8f03",
+        "5a6fcbbe-82e4-4199-9799-ac7dc39024a6"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "apply_overlay": true,
+        "show_divider": false,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "heading_tag": "h2",
+        "colors_highlight": "#ffb503",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "1644821694668dc64a": {
+      "type": "map",
+      "blocks": {
+        "1644821694a2720bf8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Store",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "6a4255bc-9d31-4bf4-9465-c68f9b6e6e10": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Address",
+            "subheading_size": "h5",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "1644821694a2720bf8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Toronto, Canada</p>",
+            "text_size": "typeset",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "5d72de6c-2101-43ce-997d-ae1035d76c00": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Opening hours",
+            "subheading_size": "h5",
+            "secondary_color": false,
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "6c32a2ea-9c8b-4f87-8621-db65ff9182b2": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<table>\n  <tr>\n    <td>Mon - Fri</td>\n    <td>8:30am - 10:30pm</td>\n  </tr>\n  <tr>\n    <td>Saturday</td>\n    <td>8:30am - 10:30pm</td>\n  </tr>\n  <tr>\n    <td>Sunday</td>\n    <td>8:30am - 10:30pm</td>\n  </tr>\n</table>"
+          }
+        },
+        "1644821694a2720bf8-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get directions",
+            "button_link": "https://www.google.com/maps/search/Toronto,+Canada/",
+            "button_size": "small",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1644821694a2720bf8-0",
+        "6a4255bc-9d31-4bf4-9465-c68f9b6e6e10",
+        "1644821694a2720bf8-1",
+        "5d72de6c-2101-43ce-997d-ae1035d76c00",
+        "6c32a2ea-9c8b-4f87-8621-db65ff9182b2",
+        "1644821694a2720bf8-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "map_address": "Toronto, Canada",
+        "map_api_key": "",
+        "map_zoom": 14,
+        "map_style": "dark",
+        "image_position": "center center",
+        "text_box_position": "middle-left",
+        "text_alignment": "left",
+        "image_ratio": "550px",
+        "full_width": true,
+        "show_divider": false,
+        "mobile_text_box_position": "image_first",
+        "mobile_text_alignment": "left",
+        "mobile_image_ratio": "400px",
+        "colors_button_label": "#1a1b18",
+        "colors_button_background": "#ffffff",
+        "colors_text": "#ffffff",
+        "colors_overlay": "#18181a",
+        "gradient_overlay": "",
+        "colors_overlay_opacity": 92,
+        "colors_highlight": "#ffb503",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "164481981344fb48df": {
+      "type": "guarantees",
+      "blocks": {
+        "1644819813a770d5f2-0": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "large",
+            "image": "shopify://shop_images/Tool.svg",
+            "custom_icon": "<!--?xml version=\"1.0\" encoding=\"UTF-8\"?-->\n<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewbox=\"0 0 1122 1122\">\n  <!-- Generator: Adobe Illustrator 30.7.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 114)  -->\n  <defs>\n    <style>\n      .st0 {\n        fill: none;\n      }\n\n      .st1 {\n        fill: #00f76a;\n      }\n\n      .st2 {\n        fill: #fff;\n      }\n\n      .st3 {\n        fill: #616e7d;\n      }\n\n      .st4 {\n        display: none;\n      }\n    </style>\n  </defs>\n  <g id=\"Bg\" class=\"st4\">\n    <rect class=\"st2\" width=\"1122\" height=\"1122\"></rect>\n  </g>\n  <g id=\"Object\">\n    <g>\n      <path class=\"st0\" d=\"M330.51,324.38c-78.07,6.78-135.84,75.62-129.09,153.71,6.82,78.06,75.67,135.89,153.75,129.06,78.08-6.78,135.84-75.61,129.05-153.73-6.75-78.05-75.6-135.86-153.72-129.04Z\"></path>\n      <path class=\"st0\" d=\"M810.55,652.95c-44.06,27.27-59.33,86.67-33.86,131.78,27.17,48.03,88.28,64.25,135.59,36.29,46.7-27.63,62.16-87.89,34.54-134.59-27.97-47.2-89.35-62.54-136.27-33.49Z\"></path>\n      <path class=\"st2\" d=\"M668.85,576.07c8.78-25.84,14.49-52.96,16.83-80.9l-55.79-27.02c.06-9.04-.26-18.15-1.08-27.3-.23-3.16-.65-6.27-1.01-9.42l52.48-33.17c-5.46-27.55-14.13-53.86-25.67-78.46l-61.99,4.5c-6.05-10.74-12.8-21.06-20.15-30.82l28.85-54.87c-18.22-20.73-38.92-39.22-61.54-55.08l-51.4,34.84c-10.53-6.21-21.47-11.78-32.82-16.66l-2.44-61.94c-25.83-8.77-52.97-14.5-80.87-16.9l-27.03,55.84c-9.03-.08-18.1.27-27.29,1.06-3.19.28-6.31.68-9.42,1.05l-33.12-52.54c-27.58,5.51-53.9,14.19-78.53,25.71l4.52,61.98c-10.73,6.07-21.06,12.8-30.8,20.17l-54.91-28.87c-20.76,18.26-39.26,38.94-55.05,61.59l34.87,51.37c-6.24,10.54-11.87,21.48-16.7,32.79l-61.97,2.43c-8.77,25.83-14.46,52.92-16.83,80.91l55.82,27.02c-.06,9.05.24,18.15,1.02,27.31.28,3.16.68,6.26,1.1,9.41l-52.54,33.14c5.52,27.55,14.16,53.87,25.7,78.47l61.96-4.49c6.08,10.73,12.81,21.01,20.15,30.81l-28.86,54.86c18.23,20.8,38.96,39.28,61.58,55.09l51.37-34.84c10.56,6.27,21.51,11.86,32.82,16.7l2.44,61.95c25.83,8.75,52.89,14.49,80.83,16.85l27.1-55.82c9.01.06,18.14-.25,27.3-1.04,3.15-.25,6.27-.69,9.35-1.09l33.14,52.58c27.62-5.52,53.9-14.17,78.54-25.68l-4.48-62c10.68-6.11,20.98-12.82,30.8-20.16l54.88,28.86c20.73-18.26,39.22-38.93,55.04-61.57l-34.81-51.37c6.18-10.56,11.77-21.51,16.68-32.83l61.93-2.42ZM342.86,668.08c-111.58,0-202.32-90.76-202.32-202.32s90.74-202.32,202.32-202.32,202.3,90.76,202.3,202.32c0,111.56-90.75,202.32-202.3,202.32Z\"></path>\n      <path class=\"st3\" d=\"M154.99,465.76c0,103.58,84.25,187.86,187.87,187.86s187.84-84.28,187.84-187.86-84.25-187.87-187.84-187.87-187.87,84.28-187.87,187.87ZM484.23,453.41c6.79,78.12-50.97,146.96-129.05,153.73-78.08,6.83-146.93-51-153.75-129.06-6.76-78.09,51.01-146.93,129.09-153.71,78.11-6.82,146.96,50.99,153.72,129.04Z\"></path>\n      <path class=\"st3\" d=\"M701.02,735.75c-1.85,88.77,68.86,162.51,157.61,164.36,88.77,1.87,162.5-68.86,164.35-157.6,1.88-88.77-68.82-162.5-157.62-164.36-88.77-1.86-162.49,68.84-164.34,157.61ZM946.82,686.43c27.62,46.7,12.16,106.96-34.54,134.59-47.31,27.96-108.42,11.74-135.59-36.29-25.47-45.11-10.2-104.51,33.86-131.78,46.92-29.05,108.3-13.72,136.27,33.49Z\"></path>\n      <path class=\"st2\" d=\"M1120.75,764.65c1.82-18.73,1.66-37.61-.58-56.49l-43.81-10.48c-2.3-11.48-5.56-22.94-9.65-34.16l32.1-31.67c-3.86-8.52-8.21-16.92-13.09-25.13-4.82-8.17-10.07-15.99-15.7-23.5l-43.22,12.91c-7.86-9.06-16.31-17.38-25.34-24.88l11.96-43.44c-15.47-11.05-31.94-20.31-49.23-27.72l-31.03,32.82c-11.18-3.87-22.65-6.82-34.28-8.84l-11.47-43.71c-18.69-1.81-37.59-1.61-56.38.7l-10.57,43.79c-11.5,2.23-22.87,5.47-34.08,9.63l-31.71-32.08c-8.45,3.82-16.93,8.12-25.12,13.02-8.19,4.83-16.02,10.1-23.5,15.66l12.87,43.29c-9.03,7.87-17.35,16.31-24.86,25.32l-43.44-11.93c-11.08,15.41-20.31,31.9-27.72,49.14l32.79,31.06c-3.87,11.19-6.72,22.67-8.77,34.29l-43.67,11.46c-1.85,18.69-1.66,37.6.59,56.45l43.87,10.44c2.24,11.55,5.45,22.94,9.55,34.21l-32.07,31.66c3.84,8.53,8.15,16.89,13.03,25.05,4.87,8.23,10.11,16.09,15.69,23.54l43.28-12.88c7.84,9.03,16.35,17.34,25.32,24.84l-11.9,43.49c15.44,11.03,31.88,20.33,49.1,27.65l31.1-32.76c11.21,3.9,22.58,6.81,34.31,8.8l11.43,43.71c18.66,1.77,37.6,1.65,56.44-.6l10.43-43.84c11.53-2.23,22.93-5.47,34.15-9.62l31.81,32.09c8.45-3.8,16.83-8.16,25.02-13.01,8.21-4.85,15.98-10.1,23.48-15.73l-12.86-43.22c9.04-7.85,17.36-16.34,24.86-25.33l43.47,11.91c11.05-15.44,20.34-31.92,27.66-49.16l-32.79-31.1c3.84-11.12,6.82-22.56,8.84-34.24l43.67-11.41ZM858.48,907.08c-92.6-1.94-166.37-78.86-164.41-171.48,1.91-92.6,78.83-166.37,171.46-164.43,92.6,1.94,166.35,78.86,164.44,171.48-1.95,92.61-78.85,166.38-171.49,164.43Z\"></path>\n      <path class=\"st1\" d=\"M140.53,465.76c0,111.56,90.74,202.32,202.32,202.32s202.3-90.76,202.3-202.32-90.75-202.32-202.3-202.32c-111.58,0-202.32,90.76-202.32,202.32ZM530.7,465.76c0,103.58-84.25,187.86-187.84,187.86s-187.87-84.28-187.87-187.86,84.25-187.87,187.87-187.87,187.84,84.28,187.84,187.87Z\"></path>\n      <path class=\"st1\" d=\"M694.07,735.6c-1.95,92.62,71.81,169.54,164.41,171.48,92.64,1.95,169.54-71.82,171.49-164.43,1.91-92.62-71.84-169.54-164.44-171.48-92.63-1.94-169.55,71.83-171.46,164.43ZM1022.99,742.51c-1.85,88.75-75.58,159.47-164.35,157.6-88.76-1.85-159.47-75.59-157.61-164.36,1.85-88.77,75.57-159.47,164.34-157.61,88.8,1.86,159.5,75.6,157.62,164.36Z\"></path>\n    </g>\n  </g>\n</svg>",
+            "title": "User Guide",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://guide.tracki.com/\" title=\"https://guide.tracki.com/\">Learn. Set Up. Track.</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "1644819813a770d5f2-1": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "large",
+            "image": "shopify://shop_images/Manual_c0cff5ed-44ae-4b33-933d-890890cbbb50.svg",
+            "custom_icon": "",
+            "title": "Quick Start Guide",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://tracki.com/pages/how-to-use\" title=\"https://tracki.com/pages/how-to-use\">Get Started in Minutes.</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        },
+        "f01dd96c-55b5-49da-b07a-89cb3dec8853": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "none",
+            "icon_size": "large",
+            "image": "shopify://shop_images/info_b5351f8e-35ce-4aa4-bbf4-a3f5920e85e4.svg",
+            "custom_icon": "",
+            "title": "Product Information",
+            "title_size": "h3",
+            "text": "<p><a href=\"https://guide.tracki.com/devices-guide/tracki-max/\" title=\"https://guide.tracki.com/devices-guide/tracki-max/\">Features & Specs at a Glance.</a></p>",
+            "enable_highlight": false,
+            "highlight_style": "marker"
+          }
+        }
+      },
+      "block_order": [
+        "1644819813a770d5f2-0",
+        "1644819813a770d5f2-1",
+        "f01dd96c-55b5-49da-b07a-89cb3dec8853"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "sidebar",
+        "column_alignment": "center",
+        "horizontal_content": false,
+        "full_width": false,
+        "show_divider": false,
+        "columns_desktop": 3,
+        "heading": "",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "use_custom_colors": true,
+        "colors_icon": "#27282a",
+        "colors_text": "#ffffff",
+        "colors_background": "#f5fff5",
+        "gradient_background": "linear-gradient(292deg, rgba(5, 93, 28, 1) 20%, rgba(168, 255, 251, 1) 100%)",
+        "colors_highlight": "#ffb503",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "enable_highlight": false,
+        "highlight_style": "marker"
+      }
+    },
+    "1788800707fd30578a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_snippet_widget_eXPQBD": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "reviews_selection": "product",
+            "products": [
+              "tracki-max-real-time-gps-tracker"
+            ],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "min_star_rating": "inherit",
+            "show_review_media": true,
+            "max_reviews": 5,
+            "review_length": "large",
+            "text_size": "large",
+            "max_width": 1600,
+            "max_image_size": "small",
+            "arrows_visibility": "always_shown",
+            "transition_speed": 5,
+            "corner_styling": "round",
+            "text_color": "",
+            "card_color": "",
+            "stars_color": "",
+            "arrows_color": "",
+            "arrows_background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_snippet_widget_eXPQBD"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "show_divider": false,
+        "padding_top": 76,
+        "padding_bottom": 76
+      }
+    }
+  },
+  "order": [
+    "17870526332906f1d6",
+    "178705443560698a7b",
+    "1787047544f15c8025",
+    "main",
+    "17890078342d3dc4b5",
+    "16448066058b9355f9",
+    "product-details",
+    "product-recommendations",
+    "how_to_use_text_PGe3a8",
+    "17870468929edde249",
+    "multicolumn_wKeNaP",
+    "tab-collage",
+    "video_hero_7tqaLF",
+    "17870582111aba83be",
+    "16448079723140b4d6",
+    "1644821694668dc64a",
+    "164481981344fb48df",
+    "1788800707fd30578a"
+  ]
+}
