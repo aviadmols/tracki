@@ -158,7 +158,7 @@
 
     {%- render 'js-variables' -%}
     <script>
-(function(d,t) {
+{% comment %} (function(d,t) {
   var BASE_URL="https://omni.tracki.com";
   var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
   g.src=BASE_URL+"/packs/js/sdk.js";
@@ -187,8 +187,24 @@
     }, 500);
   }
 
-})(document,"script");
+})(document,"script"); {% endcomment %}
 
+</script>
+<script>
+  (function(d,t) {
+    var BASE_URL="https://omni.tracki.com";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: '1jdgxHeeY3sTsSujxezRgYAL',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
 </script>
 <script>
   if (window.location.pathname === "/pages/tracki-pet-mini") {
