@@ -19,9 +19,9 @@
         "ai_gen_block_7576672_QRwHeQ": {
           "type": "ai_gen_block_7576672",
           "settings": {
-            "desktop_image": "shopify://shop_images/image-1_699eef26-97df-4f42-bbd7-e5020094d476.jpg",
+            "desktop_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max_8ac6fadb-70c6-49cd-99d4-8e9431bf18dc.png",
             "desktop_width_percent": 100,
-            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile_ae79d495-0ad6-462e-a4fe-162af0e03585.png"
+            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile.png"
           },
           "blocks": {}
         }
@@ -250,18 +250,18 @@
           "type": "ai_gen_block_c37a919",
           "settings": {
             "heading": "Key Highlights at a Glance:",
-            "row_1_label": "Ultra-Slim Design",
-            "row_1_content": "<p>Compact footprint measuring <strong>86 mm x 54 mm x 6.5 mm</strong> weighing just <strong>44g</strong></p>",
-            "row_2_label": "Durable & Waterproof:",
-            "row_2_content": "<p>IP67-rated waterproof housing built for harsh indoor and outdoor environments.</p>",
-            "row_3_label": "Long Active Battery:",
-            "row_3_content": "<p>Rechargeable 800mAh Li-ion battery providing up to <strong>16 days</strong> of continuous operation.</p>",
-            "row_4_label": "Precision Live Updates:",
-            "row_4_content": "<p>Add another specificatioMulti-constellation GNSS (GPS, Galileo, Beidou, GLONASS, QZSS, SBAS) with refresh rates as fast as <strong>5 seconds</strong> in Live Tracking mode.</p>",
-            "row_5_label": "Light Sensor Anti-Tamper:",
-            "row_5_content": "<p>Dual light sensors trigger instant alert notifications when cargo or luggage is opened.</p>",
-            "row_6_label": "Global Roaming Ready:",
-            "row_6_content": "<p>Pre-configured embedded SIM with worldwide 4G LTE Cat1 connectivity.</p>",
+            "row_1_label": "Ultra-Long 6-Week Battery Life",
+            "row_1_content": "<p>Powered by a 1950mAh rechargeable battery that delivers up to 1.5 months of continuous tracking on a single charge.</p>",
+            "row_2_label": "Global 4G LTE Connectivity:",
+            "row_2_content": "<p>Seamless real-time tracking across international borders with worldwide 4G Cat 1 network roaming.</p>",
+            "row_3_label": "Precision Multi-System Tracking:",
+            "row_3_content": "<p>Combines GPS, Galileo, GLONASS, Beidou, Wi-Fi, and Bluetooth (BLE 5.0) for accurate indoor and outdoor positioning.</p>",
+            "row_4_label": "IP68 Heavy-Duty Waterproofing:",
+            "row_4_content": "<p>Fully sealed, rugged housing engineered to withstand harsh environments, heavy weather, and water immersion.</p>",
+            "row_5_label": "Instant Emergency SOS Alert:",
+            "row_5_content": "<p>One-touch SOS button sends instant panic alerts via Push, SMS, or Email.</p>",
+            "row_6_label": "Rapid 5-Second Updates:",
+            "row_6_content": "<p>Configurable location tracking frequency with real-time updates as fast as every 5 seconds.</p>",
             "desktop_width_percent": 100,
             "padding_top": 36,
             "padding_bottom": 36,
@@ -295,16 +295,16 @@
         "bf10fce0-c41b-435a-ba73-cddba1b5be12": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1_9095f8fa-08d4-4b56-ae6e-205fe9e2ab64.png",
-            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-1-_mobile_49627ff9-ae33-46d6-b364-ce5c7a233984.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2_118ab3ff-966f-4b4a-b7a7-cd5b17338f80.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-2-_mobile_da6749e8-a9b3-4d32-a243-66bfba262c9e.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-left",
-            "subheading": "Ultra-Slim & Discrete Profile",
+            "subheading": "High-Impact & Direct Value",
             "subheading_size": "h5",
-            "heading": "Smooth, Slim, <strong>Fits Anywhere You Need</strong>",
+            "heading": "<strong>Compact Size. Harsh-Environment Ready. Global Reach.</strong>",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "At just 6.5mm thick and weighing only 44g, TrackiSlim easily slips into wallets, luggage, mailers, or personal bags without adding bulk or drawing unwanted attention.",
+            "text": "Heavy-duty 4G GPS tracking designed to withstand tough outdoor conditions while delivering pinpoint location accuracy worldwide.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -321,16 +321,16 @@
         "164480660521311b94-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2_b17ad7e4-c216-447f-8368-c54ecc202bfb.png",
-            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-2-_mobile_f9716dc8-9d23-49b7-9c6f-45b784745f82.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1_16edfcc8-2b75-4858-98c2-18bdc39d5a7b.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-1-_mobile_23fdcdb9-8b5f-46eb-94da-0bee7f4b2214.png",
             "image_position": "80% 50%",
             "text_box_position": "bottom-center",
-            "subheading": "<strong>Advanced Anti-Tamper Protection</strong>",
+            "subheading": "Rugged & Off-Road Focus",
             "subheading_size": "h5",
-            "heading": "<strong>Dual Light Sensor</strong> Security Alerts",
+            "heading": "Track Anything, Anywhere—Rain, Dust, or Mud",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "text": "Get immediate notifications the moment your package, bag, or shipment is opened in transit with integrated dual light sensors.",
+            "text": "Built tough for off-road vehicles, trailers, and heavy machinery with ultra-precise 4G LTE global tracking.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -347,16 +347,16 @@
         "164480660521311b94-0": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3.png",
-            "image_mobile": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGESlide-3-_mobile_d21ef67e-28ff-41ec-8aee-6def82b05331.png",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3.png",
+            "image_mobile": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGESlide-3-_mobile_c055680d-ce99-4d4d-93ab-ac1aa6d5a997.png",
             "image_position": "center center",
             "text_box_position": "bottom-left",
-            "subheading": "<strong>Complete Global Visibility</strong>",
+            "subheading": "Ultimate Fleet & Asset Protection",
             "subheading_size": "h5",
-            "heading": "Worldwide Tracking in the <strong>Palm of Your Hand</strong>",
+            "heading": "Complete Fleet Visibility in the <strong>Palm of Your Hand</strong>",
             "heading_size": "h2",
             "heading_tag": "h1",
-            "text": "Manage all your devices from one unified account across iOS, Android, Mac, or Windows. Monitor real-time movements, set custom geofences, track speed, and view up to 365 days of historical travel logs.",
+            "text": "Monitor movement, set custom geofences, and receive real-time speed and boundary alerts on any smart device.",
             "text_size": "typeset",
             "button_label": "",
             "button_link": "",
@@ -416,23 +416,31 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Specifications",
-            "content": "<p><strong>Dimensions</strong>: 86 mm x 54 mm x 6.5 mm</p><p><strong>Weight</strong>: 44g</p><p><strong>Waterproof Rating: </strong>IP67</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 800mAh</p><p><strong>Active Battery:</strong> Up to 16 days (depending on mode & cellular conditions)</p><p><strong>Network & SIM: </strong>LTE (4G) CAT1 with Embedded SIM & Global Roaming</p><p><strong>GNSS Standards: </strong>GPS, Galileo, Beidou, GLONASS, QZSS, SBAS</p><p><strong>Sensors: </strong>Accelerometer, Dual Light Sensors</p><p><strong>Connectivity: </strong>Wi-Fi (802.11b/g/n), Bluetooth BLE 5.0</p><p><strong>Apps Supported: </strong>iOS / Android / Windows / Mac</p>",
+            "content": "<p><strong>Dimensions</strong>: 60 mm × 37 mm × 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Waterproof Rating</strong>: IP68</p><p><strong>Network Technology: </strong>LTE (4G) CAT1 with worldwide roaming</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 1950mAh</p><p><strong>Active Battery:</strong> Up to 1.5 months (6 weeks)</p><p><strong>Network & SIM: </strong>Embedded SIM (or nano-SIM option) LTE (4G) CAT1 with worldwide roaming</p><p><strong>Connectivity: </strong>Wi-Fi & Bluetooth (BLE 5.0)</p><p><strong>Apps Supported: </strong>iOS / Android / Windows / Mac</p>",
             "page": ""
           }
         },
         "product-details-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Real-Time Global Tracking",
-            "content": "<p>Leverages 4G LTE, Wi-Fi, and multi-system GNSS technologies to deliver accurate location updates (&lt;5 meters open sky) worldwide across major networks.</p>",
+            "heading": "Global 4G LTE Coverage",
+            "content": "<p>Unlimited distance real-time tracking with worldwide 4G Cat 1 roaming networks.</p>",
             "page": ""
           }
         },
         "product-details-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Smart Alert Suite",
-            "content": "<p>Receive customizable real-time notifications via Push, SMS, or Email for Geofencing, Speeding, Low Battery, and Light Sensor triggers</p>",
+            "heading": "Ultra-Long Battery Life",
+            "content": "<p>Advanced 1950mAh rechargeable battery lasts up to 1.5 months (6 weeks) on a single charge.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_GzVEEd": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Multi-Sensor Positioning",
+            "content": "<p>Combines GPS, Galileo, Beidou, GLONASS, Wi-Fi, and Bluetooth (BLE 5.0) for precision indoor and outdoor location accuracy.</p>",
             "page": ""
           }
         }
@@ -441,7 +449,8 @@
         "collapsible_tab_nCP388",
         "60eeb066-dd65-49d7-b86e-8ef785719e6b",
         "product-details-1",
-        "product-details-2"
+        "product-details-2",
+        "collapsible_tab_GzVEEd"
       ],
       "custom_css": [],
       "settings": {
@@ -501,10 +510,10 @@
             "background_color": "#ffffff",
             "heading_color": "#000000",
             "text_color": "#333333",
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGEImage-4.jpg",
-            "title": "Portability & Versatility Focus",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-4_1dbf06ee-5435-4330-9e87-0d62ce10ff35.png",
+            "title": "Magnetic Mount",
             "title_size": "h3",
-            "text": "<p><em>Ultra-Slim 4G GPS Tracking with Instant Light-Sensor Alerts</em></p><p>Protect your valuables, shipments, and luggage with TrackiSlim. At just 6.5mm thick, it slips unnoticed into any bag or package while dual light sensors alert you immediately if it is opened in transit.</p>",
+            "text": "<p><em><strong>A heavy-duty, high-strength magnet attachment.</strong></em></p><p>Ideal for quick, tool-free installation on heavy machinery, trailers, steel equipment, or vehicle undercarriages. It locks directly onto metal surfaces and stays put, even through rough terrain and harsh weather.</p>",
             "show_popup": false,
             "popup_image_position": "top",
             "justify_text": false,
@@ -521,10 +530,10 @@
             "background_color": "#f5f5f7",
             "heading_color": "#000000",
             "text_color": "#333333",
-            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-4_b58fac26-8178-4f03-90b3-0e558b177e42.jpg",
-            "title": "Sleek, Durable, and Ready for Worldwide Travel",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-5.png",
+            "title": "<strong>Discrete Tracker Body</strong>",
             "title_size": "h3",
-            "text": "<p><em>Powerful Tracking in a Credit Card </em></p><p>TrackiSlim delivers real-time location updates every 5 seconds in an ultra-compact 44g design. Featuring IP67 waterproofing, geofence alerts, and an instant SOS button, it ensures complete security anywhere on Earth.</p>",
+            "text": "<p><em><strong>The core tracker’s ultra-compact, low-profile footprint (55g, 60mm x 37mm x 20mm).</strong></em></p><p>Essential for covert asset protection. Its slim form factor lets you easily hide the device inside luggage, toolboxes, glove compartments, or deep inside valuable equipment without drawing attention.</p>",
             "show_popup": false,
             "popup_image_position": "top",
             "justify_text": false,
@@ -549,7 +558,7 @@
         "image_width": "full",
         "columns_desktop": 2,
         "open_in_new_tab": false,
-        "heading": "Never Lose Track of What Matters",
+        "heading": "<strong>Never Lose Sight of What Matters Most</strong>",
         "heading_size": "h1",
         "heading_alignment": "center",
         "heading_tag": "h2",
@@ -587,8 +596,8 @@
           "settings": {
             "image": "shopify://shop_images/TRACKI-SLIM-PAGE-IMAGEImage-1.jpg",
             "image_position": "center center",
-            "heading": "Real-Time Opening Alerts",
-            "description": "<p><strong>Instant Detection with Dual Light Sensors - </strong>Receive immediate notifications on your phone the moment someone opens your package, luggage, or shipment.</p>",
+            "heading": "Built-In <strong>Emergency SOS Button</strong>",
+            "description": "<p><em><strong>One-Touch Safeguards - </strong></em>A prominent, dedicated panic button allows drivers, elderly family members, or children to call for help instantly.</p>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -600,10 +609,10 @@
         "image_fV4jnx": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRACKI-SLIM-PAGE-1-IMAGEImage-1.jpg",
+            "image": "shopify://shop_images/TRACKI-MAX-PAGE-IMAGEImage-6.png",
             "image_position": "center center",
-            "heading": "Discreet Protection in a 6.5mm Frame",
-            "description": "<p><strong>Fits Effortlessly Into Wallets, Envelopes, and Bags</strong></p><p>Measuring only 86mm x 54mm with a 6.5mm thickness and weighing just 44g, TrackiSlim provides heavy-duty tracking without adding bulk. Keep your high-value assets and travel items secure with effortless, low-profile portability.</p>",
+            "heading": "Built To Last, Engineered for More",
+            "description": "<p><strong>Rugged & Reliable Performance - </strong>Whether monitoring fleet vehicles, safeguarding valuable machinery, or protecting loved ones, Tracki Max is engineered to withstand tough conditions and keep up with your busy life.</p>",
             "button_label": "",
             "button_link": "",
             "button_size": "medium",
@@ -652,7 +661,7 @@
         "text_gbdQBU": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>TRACKI SLIM</strong></p><p><strong>Smooth, Slim, Fits Anywhere You Need</strong></p><h3></h3>",
+            "text": "<p><strong>TRACKI MAX</strong></p><p>Heavy-duty 4G GPS tracking designed to withstand tough outdoor conditions while delivering pinpoint location accuracy worldwide.</p><h3></h3>",
             "text_size": "typeset",
             "secondary_color": false,
             "enable_highlight": false,
@@ -678,7 +687,7 @@
       ],
       "name": "t:sections.video-hero.presets.name",
       "settings": {
-        "video": "shopify://files/videos/This_is_clip_is_a_product_over_Gemini_Omni_11_Flash_85817.mp4",
+        "video": "shopify://files/videos/Please_make_a_short_video_for_1.mp4",
         "video_url": "",
         "text_box_position": "middle-center",
         "text_alignment": "center",
