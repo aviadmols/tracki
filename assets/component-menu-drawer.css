@@ -64,7 +64,7 @@
   .menu-mobile--opening .shopify-section-header:not(.shopify-section-header-sticky) .header-wrapper,
   .menu-mobile--closing .shopify-section-header:not(.shopify-section-header-sticky) .header-wrapper {
     z-index: 30;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .menu-mobile--open drawer-close-button.header__icon--menu::after {
