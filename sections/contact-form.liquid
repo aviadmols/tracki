@@ -208,6 +208,27 @@ color: #7E878D;
   height: 15px;
   flex: none;
 }
+/* Fix browser autofill styling */
+.contact-form .field__input:-webkit-autofill,
+.contact-form .field__input:-webkit-autofill:hover,
+.contact-form .field__input:-webkit-autofill:focus,
+.contact-form .field__input:-webkit-autofill:active {
+  -webkit-text-fill-color: #f3f1f0 !important;
+  caret-color: #f3f1f0 !important;
+
+  /* Keep your dark/transparent input background */
+  -webkit-box-shadow: 0 0 0 1000px #25282A inset !important;
+  box-shadow: 0 0 0 1000px #25282A inset !important;
+
+  border: 1px solid var(--Bgr-dark, #394045) !important;
+
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+/* Autofilled input after it contains a value */
+.contact-form .field__input:-webkit-autofill {
+  border-color: #f3f1f0 !important;
+}
 {%- endstyle -%}
 
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
