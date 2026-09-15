@@ -3003,9 +3003,10 @@ nav .menu-drawer__menu-item {
     background-color: transparent !important;
 }
 .menu-drawer__utility-links .svg-wrapper svg path {
-    fill: #000;
+    fill: #fff;
 }
-.menu-drawer__utility-links .menu-drawer__account{font-size: 21px;font-weight:700;color:rgb(var(--color-foreground));}
+.link-with-icon .label{padding-left:10px;}
+.menu-drawer__utility-links .menu-drawer__account{font-size: 21px;font-weight:700;color:rgb(var(--color-foreground));margin-top:-10px;}
 .menu-drawer__utility-links .menu-drawer__account:hover{ color: #76c773 !important;}
 .counter-wrapper{padding: 50px 20px;gap:30px;}
 /* h2.related-products__heading{text-align:center;}
