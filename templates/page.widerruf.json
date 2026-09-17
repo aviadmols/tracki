@@ -27,6 +27,7 @@
       "blocks": {
         "eu_widerruf_button_form_inline_mUFtRa": {
           "type": "shopify://apps/eu-widerruf-button/blocks/form-inline/019b2ca9-9838-7858-9694-3a8051afa76e",
+          "disabled": true,
           "settings": {
             "show_heading": true,
             "heading": "-",
