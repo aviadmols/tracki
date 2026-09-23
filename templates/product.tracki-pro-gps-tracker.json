@@ -325,7 +325,7 @@
       "settings": {
         "enable_sticky_info": true,
         "media_position": "left",
-        "media_size": "large",
+        "media_size": "medium",
         "gallery_layout": "thumbnail_slider",
         "image_ratio": "adapt",
         "show_featured_media": false,
