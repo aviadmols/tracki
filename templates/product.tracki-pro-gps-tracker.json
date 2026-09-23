@@ -396,6 +396,14 @@
             "content": "<p>Lifetime warranty (including lost or damaged device)</p>",
             "page": ""
           }
+        },
+        "collapsible_tab_tWWR6r": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free Shipping",
+            "content": "<p>Free shipping in US & Lifetime Warranty</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -405,7 +413,8 @@
         "product-details-3",
         "60eeb066-dd65-49d7-b86e-8ef785719e6b",
         "collapsible_tab_kNHXA4",
-        "collapsible_tab_7Jma4m"
+        "collapsible_tab_7Jma4m",
+        "collapsible_tab_tWWR6r"
       ],
       "settings": {
         "force_light_style": false,
