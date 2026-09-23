@@ -224,7 +224,7 @@
         "price": {
           "type": "price",
           "settings": {
-            "price_size": "small",
+            "price_size": "medium",
             "show_badges": false,
             "sale_badge_basis": "disable"
           }
