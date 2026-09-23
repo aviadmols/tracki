@@ -196,11 +196,6 @@
             "price_size": "medium"
           }
         },
-        "rating": {
-          "type": "rating",
-          "disabled": true,
-          "settings": {}
-        },
         "subtitle": {
           "type": "text",
           "settings": {
@@ -228,6 +223,10 @@
             "show_badges": false,
             "sale_badge_basis": "disable"
           }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
         },
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02": {
           "type": "text",
@@ -308,10 +307,10 @@
       "block_order": [
         "vendor",
         "title",
-        "rating",
         "subtitle",
         "variant_picker",
         "price",
+        "rating",
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02",
         "dd734640-b7b1-44ad-96b6-3d7c9affc69e",
         "fd414a67-531a-4a3a-8941-e78cec888355",
