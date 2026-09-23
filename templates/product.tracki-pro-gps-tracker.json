@@ -224,9 +224,9 @@
         "price": {
           "type": "price",
           "settings": {
-            "price_size": "medium",
+            "price_size": "small",
             "show_badges": false,
-            "sale_badge_basis": "auto"
+            "sale_badge_basis": "disable"
           }
         },
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02": {
@@ -251,7 +251,7 @@
           "type": "text",
           "settings": {
             "icon": "lock",
-            "text": "Lifetime warranty",
+            "text": "Free shipping in US & Lifetime Warranty",
             "text_style": "body"
           }
         },
@@ -399,6 +399,7 @@
         },
         "collapsible_tab_tWWR6r": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Free Shipping",
             "content": "<p>Free shipping in US & Lifetime Warranty</p>",
