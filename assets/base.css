@@ -1009,7 +1009,7 @@ summary::-webkit-details-marker {
   justify-content: flex-end;
 }
 
-.title-wrapper .title {
+.title-wrapper .title, .title-wrapper .title strong {
   margin: 0;
   letter-spacing:0px;
   font-weight:600;
