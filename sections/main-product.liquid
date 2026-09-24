@@ -657,7 +657,9 @@ a.amazon-text {
             {% render block %}
           {%- when 'text' -%}
             {%- if block.settings.text != blank -%}
-              <p class="product__text {% if block.type == 'text' and forloop.index == 9 %} text-wrap-desc{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+              <p class="product__text {% if forloop.index == 7 or forloop.index == 8 %}
+    text-wrap-desc
+  {% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
                 {%- liquid
                   if block.settings.text != product.vendor
                     render 'icon-accordion', icon: block.settings.icon
