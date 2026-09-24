@@ -17,6 +17,7 @@
   flex-direction: column;
   gap: 2rem;
 }
+.precision-pdp-hero__price-wrap .price bdi{font-size:28px;}
 
 @media (min-width: 990px) {
   .precision-pdp-hero__inner {
@@ -294,7 +295,7 @@
 }
 
 .precision-pdp-hero__price-wrap {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .precision-pdp-hero__price-wrap .price {
