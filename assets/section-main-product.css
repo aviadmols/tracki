@@ -1694,7 +1694,7 @@ product-gallery .product__media-toggle {
   }
 }
 
-@media screen and (min-width: 750px) {
+/* @media screen and (min-width: 750px) {
   [data-animate-image] .product--thumbnail_slider use-animate[data-animate=fade-up] {
     transform: none;
   }
@@ -1751,7 +1751,88 @@ product-gallery .product__media-toggle {
   .thumbnail-list.slider--tablet-up[data-media-count="3"] {
     max-width: 20.4rem;
   }
+} */
+
+@media screen and (min-width: 750px) {
+
+  /* Product image section */
+  .product--thumbnail_slider .product__media-wrapper {
+    position: relative !important;
+    padding-left: 90px !important;
+  }
+
+  /* Thumbnail container */
+  .product--thumbnail_slider .thumbnail-slider {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 80px !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 10 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Thumbnail list */
+  .product--thumbnail_slider .thumbnail-list {
+    display: flex !important;
+
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+
+    width: 80px !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  /* Each thumbnail */
+  .product--thumbnail_slider .thumbnail-list__item {
+    flex: 0 0 70px !important;
+
+    width: 70px !important;
+    height: 70px !important;
+
+    margin: 0 !important;
+  }
+
+  /* Thumbnail button */
+  .product--thumbnail_slider .thumbnail {
+    width: 70px !important;
+    height: 70px !important;
+
+    padding: 2px !important;
+
+    display: block !important;
+  }
+
+  /* Thumbnail image */
+  .product--thumbnail_slider .thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+  }
 }
+
 
 .thumbnail {
   width: 100%;
