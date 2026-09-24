@@ -1694,7 +1694,7 @@ product-gallery .product__media-toggle {
   }
 }
 
-/* @media screen and (min-width: 750px) {
+@media screen and (min-width: 750px) {
   [data-animate-image] .product--thumbnail_slider use-animate[data-animate=fade-up] {
     transform: none;
   }
@@ -1751,91 +1751,7 @@ product-gallery .product__media-toggle {
   .thumbnail-list.slider--tablet-up[data-media-count="3"] {
     max-width: 20.4rem;
   }
-} */
-
-/* ================================
-   PRODUCT THUMBNAILS - TOP LEFT
-   ================================ */
-
-@media screen and (min-width: 750px) {
-
-  /* Product media area */
-  .product--thumbnail_slider .product__media-wrapper {
-    position: relative !important;
-  }
-
-  /* Thumbnail outer container */
-  .product--thumbnail_slider .thumbnail-slider {
-    position: absolute !important;
-    z-index: 999 !important;
-
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 350px !important;
-    height: 95px !important;
-
-    margin: 0 !important;
-    padding: 8px !important;
-
-    display: block !important;
-
-    background: #fff !important;
-  }
-
-  /* Actual thumbnail list */
-  .product--thumbnail_slider .thumbnail-list {
-    display: flex !important;
-
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-
-    align-items: center !important;
-    justify-content: flex-start !important;
-
-    gap: 8px !important;
-
-    width: 100% !important;
-    height: 78px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-  }
-
-  /* Each thumbnail */
-  .product--thumbnail_slider .thumbnail-list__item {
-    flex: 0 0 70px !important;
-
-    width: 70px !important;
-    height: 70px !important;
-
-    margin: 0 !important;
-  }
-
-  /* Thumbnail button */
-  .product--thumbnail_slider .thumbnail {
-    display: block !important;
-
-    width: 70px !important;
-    height: 70px !important;
-
-    padding: 2px !important;
-
-    border: 1px solid #ddd !important;
-  }
-
-  /* Thumbnail image */
-  .product--thumbnail_slider .thumbnail img {
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-  }
 }
-
 
 .thumbnail {
   width: 100%;
