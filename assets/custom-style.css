@@ -4688,7 +4688,8 @@ left: 0;
     letter-spacing: 1px;
 
 }
-.precision-pdp-hero__media .product--thumbnail_slider .slider-button{transform:translate(-50%) rotate(90deg)!important;}
+.precision-pdp-hero__media .product--thumbnail_slider .slider-button.slider-button--prev{transform:translate(-50%) rotate(90deg)!important;}
+.precision-pdp-hero__media .product--thumbnail_slider .slider-button.slider-button--next{transform:translate(-50%) rotate(-90deg)!important;}
 
 @media(max-width:1300px){
   .template-product .page-width.section--padding, .ai-product-specs-atujorw5pdgdjewtraaigenblockc37a9199w4t9m__container, 
