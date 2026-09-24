@@ -3449,83 +3449,122 @@ if (!customElements.get('tabbed-collections')) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const thumbnailSlider = document.querySelector(
-    '.product--thumbnail_slider .thumbnail-slider'
-  );
-
-  if (!thumbnailSlider) return;
-
-  const thumbnailList = thumbnailSlider.querySelector('.thumbnail-list');
-  const nextButton = thumbnailSlider.querySelector('.slider-button--next');
-  const prevButton = thumbnailSlider.querySelector('.slider-button--prev');
-
-  if (!thumbnailList || !nextButton || !prevButton) return;
-
-  const thumbnailButtons = Array.from(
-    thumbnailList.querySelectorAll('.thumbnail')
-  );
-
-  if (!thumbnailButtons.length) return;
-
-  let currentIndex = thumbnailButtons.findIndex(button =>
-    button.classList.contains('is-active')
-  );
-
-  if (currentIndex < 0) {
-    currentIndex = 0;
-  }
-
-  function changeImage(index) {
-    if (index < 0 || index >= thumbnailButtons.length) return;
-
-    currentIndex = index;
-
-    /*
-     * Use Dawn's actual thumbnail button.
-     * This triggers Dawn's gallery image change.
-     */
-    thumbnailButtons[index].click();
-
-    /*
-     * Scroll the vertical thumbnail list
-     */
-    const item = thumbnailButtons[index].closest(
-      '.thumbnail-list__item'
+  function initVerticalThumbnailSlider() {
+    const galleries = document.querySelectorAll(
+      '.product--thumbnail_slider .thumbnail-slider'
     );
 
-    if (item) {
-      item.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest'
-      });
-    }
+    galleries.forEach(function (slider) {
+      if (slider.dataset.verticalSliderInit === 'true') return;
+
+      const list = slider.querySelector('.thumbnail-list');
+      const next = slider.querySelector('.slider-button--next');
+      const prev = slider.querySelector('.slider-button--prev');
+
+      if (!list || !next || !prev) return;
+
+      const items = Array.from(
+        list.querySelectorAll('.thumbnail-list__item')
+      );
+
+      if (!items.length) return;
+
+      slider.dataset.verticalSliderInit = 'true';
+
+      function getCurrentIndex() {
+        const activeItem = list.querySelector(
+          '.thumbnail-list__item[aria-current="true"],' +
+          '.thumbnail-list__item.is-active,' +
+          '.thumbnail[aria-current="true"]'
+        );
+
+        if (activeItem) {
+          const item = activeItem.closest('.thumbnail-list__item');
+          const index = items.indexOf(item);
+
+          if (index !== -1) return index;
+        }
+
+        const activeButton = list.querySelector(
+          '.thumbnail[aria-current="true"]'
+        );
+
+        if (activeButton) {
+          const item = activeButton.closest('.thumbnail-list__item');
+          const index = items.indexOf(item);
+
+          if (index !== -1) return index;
+        }
+
+        return 0;
+      }
+
+      function selectThumbnail(index) {
+        if (index < 0 || index >= items.length) return;
+
+        const item = items[index];
+
+        /*
+         * Find Dawn's actual thumbnail button
+         */
+        const thumbnailButton = item.querySelector('.thumbnail');
+
+        if (!thumbnailButton) return;
+
+        /*
+         * Click the thumbnail.
+         * Dawn's existing gallery JS will change
+         * the main product image.
+         */
+        thumbnailButton.click();
+
+        /*
+         * Scroll thumbnail into visible area
+         */
+        item.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        });
+      }
+
+      next.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        const currentIndex = getCurrentIndex();
+        const nextIndex = currentIndex + 1;
+
+        if (nextIndex < items.length) {
+          selectThumbnail(nextIndex);
+        }
+      }, true);
+
+      prev.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        const currentIndex = getCurrentIndex();
+        const prevIndex = currentIndex - 1;
+
+        if (prevIndex >= 0) {
+          selectThumbnail(prevIndex);
+        }
+      }, true);
+    });
   }
 
-  nextButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (currentIndex < thumbnailButtons.length - 1) {
-      changeImage(currentIndex + 1);
-    }
-  });
-
-  prevButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (currentIndex > 0) {
-      changeImage(currentIndex - 1);
-    }
-  });
+  initVerticalThumbnailSlider();
 
   /*
-   * Keep currentIndex updated when user manually
-   * clicks a thumbnail.
+   * Shopify can dynamically update the product gallery,
+   * so initialize again if the gallery changes.
    */
-  thumbnailButtons.forEach(function (button, index) {
-    button.addEventListener('click', function () {
-      currentIndex = index;
-    });
+  const observer = new MutationObserver(function () {
+    initVerticalThumbnailSlider();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
   });
 });
