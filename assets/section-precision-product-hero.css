@@ -633,8 +633,8 @@ body.precision-pdp-sticky-atc-open {
 
 .precision-pdp-sticky-atc__title {
   margin: 0;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   color: #000000;
   white-space: nowrap;
   overflow: hidden;
