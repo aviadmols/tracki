@@ -3447,3 +3447,85 @@ if (!customElements.get('tabbed-collections')) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const thumbnailSlider = document.querySelector(
+    '.product--thumbnail_slider .thumbnail-slider'
+  );
+
+  if (!thumbnailSlider) return;
+
+  const thumbnailList = thumbnailSlider.querySelector('.thumbnail-list');
+  const nextButton = thumbnailSlider.querySelector('.slider-button--next');
+  const prevButton = thumbnailSlider.querySelector('.slider-button--prev');
+
+  if (!thumbnailList || !nextButton || !prevButton) return;
+
+  const thumbnailButtons = Array.from(
+    thumbnailList.querySelectorAll('.thumbnail')
+  );
+
+  if (!thumbnailButtons.length) return;
+
+  let currentIndex = thumbnailButtons.findIndex(button =>
+    button.classList.contains('is-active')
+  );
+
+  if (currentIndex < 0) {
+    currentIndex = 0;
+  }
+
+  function changeImage(index) {
+    if (index < 0 || index >= thumbnailButtons.length) return;
+
+    currentIndex = index;
+
+    /*
+     * Use Dawn's actual thumbnail button.
+     * This triggers Dawn's gallery image change.
+     */
+    thumbnailButtons[index].click();
+
+    /*
+     * Scroll the vertical thumbnail list
+     */
+    const item = thumbnailButtons[index].closest(
+      '.thumbnail-list__item'
+    );
+
+    if (item) {
+      item.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    }
+  }
+
+  nextButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (currentIndex < thumbnailButtons.length - 1) {
+      changeImage(currentIndex + 1);
+    }
+  });
+
+  prevButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (currentIndex > 0) {
+      changeImage(currentIndex - 1);
+    }
+  });
+
+  /*
+   * Keep currentIndex updated when user manually
+   * clicks a thumbnail.
+   */
+  thumbnailButtons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      currentIndex = index;
+    });
+  });
+});
