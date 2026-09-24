@@ -4673,7 +4673,8 @@ left: 0;
 
 
 /* product tracki-pro-gps-tracker page css start */
-.template-product .page-width.section--padding{max-width:80rem;padding:2rem 1.5rem;}
+.template-product .page-width.section--padding,
+.ai-product-specs-atujorw5pdgdjewtraaigenblockc37a9199w4t9m__container{max-width:80rem;padding:2rem 1.5rem;margin:0 auto;}
 .product-form__buttons .product-form__submit.button{
     background: #76c773;
     border-color: #76c773;
@@ -4688,13 +4689,13 @@ left: 0;
 }
 
 @media(max-width:1300px){
-  .template-product .page-width.section--padding{
+  .template-product .page-width.section--padding, .ai-product-specs-atujorw5pdgdjewtraaigenblockc37a9199w4t9m__container{
     max-width:80%;
   }
 }
 
 @media(max-width:767px){
-  .template-product .page-width.section--padding{
+  .template-product .page-width.section--padding, .ai-product-specs-atujorw5pdgdjewtraaigenblockc37a9199w4t9m__container{
     max-width:100%;
   }
 }
