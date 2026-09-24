@@ -98,9 +98,9 @@
 }
 
 .product-details .accordion .accordion__title {
-  color: currentColor;
+  color: #fff;
 }
-
+.product-details .accordion .icon-plus-alt:before, .product-details .accordion .icon-plus-alt:after{background-color:#fff;}
 .product-details .accordion__content {
   padding: 0 0 3rem;
 }
