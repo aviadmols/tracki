@@ -1802,9 +1802,9 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
-    /* 8 thumbnails:
-       8 × 70px + 7 × 8px gap = 616px */
-    height: 616px !important;
+    /* 5 thumbnails:
+       5 × 70px + 4 × 8px gap = 382px */
+    height: 382px !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -1832,28 +1832,26 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
-    height: 616px !important;
-    max-height: 616px !important;
+    height: 382px !important;
+    max-height: 382px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
-    /* Enable scrolling */
     overflow-x: hidden !important;
     overflow-y: auto !important;
 
-    /* Hide scrollbar - Firefox */
     scrollbar-width: none !important;
-
-    /* Hide scrollbar - IE/Edge */
     -ms-overflow-style: none !important;
   }
 
 
-  /* Hide scrollbar - Chrome/Safari/Edge */
+  /* ========================================
+     HIDE SCROLLBAR
+     ======================================== */
+
   .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
     display: none !important;
-
     width: 0 !important;
     height: 0 !important;
   }
@@ -1900,16 +1898,6 @@ product-gallery .product__media-toggle {
 
     object-fit: contain !important;
   }
-
-
-  /* ========================================
-     REMOVE THUMBNAIL ARROWS
-     ======================================== */
-
-  /* .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
-  .product--thumbnail_slider .thumbnail-slider .slider-button--next {
-    display: none !important;
-  } */
 
 }
 
