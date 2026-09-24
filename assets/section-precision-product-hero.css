@@ -281,7 +281,7 @@
 .precision-pdp-hero__rating-row .rating-star::before {
   background: linear-gradient(
     90deg,
-    var(--precision-pdp-primary) var(--percent),
+    #76c773 var(--percent),
     rgba(0, 0, 0, 0.14) var(--percent)
   );
   -webkit-background-clip: text;
