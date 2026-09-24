@@ -736,12 +736,13 @@ fieldset.product-form__input .form__label {
   font-size: inherit;
   line-height: calc(1 + 0.4 / var(--font-body-scale));
 }
-
-.product__text .icon {
-  /* fill: rgb(var(--color-foreground));
+.product__text.text-wrap-desc .icon {
+  fill: rgb(var(--color-foreground));
   height: calc(var(--font-heading-scale) * 2rem);
   width: calc(var(--font-heading-scale) * 2rem);
-  margin-right: calc(var(--font-heading-scale) * 1rem); */
+  margin-right: calc(var(--font-heading-scale) * 1rem);
+}
+.product__text.text-wrap-desc .icon {
   fill: #458243;
   height: 42px;
   width: 42px;
