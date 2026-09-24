@@ -372,7 +372,72 @@ document.addEventListener('DOMContentLoaded', function () {
 });
     </script>
     {% comment %} Country Flags in phone contact form {% endcomment %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector(
+    '.product--thumbnail_slider .thumbnail-slider'
+  );
 
+  if (!slider) return;
+
+  const thumbnailList = slider.querySelector('.thumbnail-list');
+  const nextButton = slider.querySelector('.slider-button--next');
+  const prevButton = slider.querySelector('.slider-button--prev');
+
+  if (!thumbnailList || !nextButton || !prevButton) return;
+
+  let currentIndex = 0;
+
+  const thumbnails = Array.from(
+    thumbnailList.querySelectorAll('.thumbnail-list__item')
+  );
+
+  function showThumbnail(index) {
+    if (!thumbnails[index]) return;
+
+    currentIndex = index;
+
+    const button = thumbnails[index].querySelector('.thumbnail');
+
+    if (button) {
+      button.click();
+    }
+
+    thumbnails[index].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }
+
+  nextButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (currentIndex < thumbnails.length - 1) {
+      showThumbnail(currentIndex + 1);
+    }
+  });
+
+  prevButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (currentIndex > 0) {
+      showThumbnail(currentIndex - 1);
+    }
+  });
+
+  thumbnails.forEach(function (thumbnail, index) {
+    const button = thumbnail.querySelector('.thumbnail');
+
+    if (button) {
+      button.addEventListener('click', function () {
+        currentIndex = index;
+      });
+    }
+  });
+});
+</script>
+
+</body>
   	{% include 'yta-widgets' %}
 {%- render "ecom_footer"-%}</body>
 </html>
