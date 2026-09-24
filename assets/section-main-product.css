@@ -1821,6 +1821,10 @@ product-gallery .product__media-toggle {
 
     object-fit: contain !important;
   }
+  .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
+.product--thumbnail_slider .thumbnail-slider .slider-button--next {
+  display: none !important;
+}
 }
 
 
