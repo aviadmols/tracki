@@ -155,6 +155,7 @@ media-gallery .media-wrapper.media-wrapper--intrinsic-size {
     padding-top: 3rem;
     padding-inline-start: 3rem;
   }
+  .product__info-container .product__heading.h2{font-size:clamp(2rem,4vw,3.1rem);}
 
   .product__media-wrapper .slider-buttons {
     display: none;
