@@ -157,19 +157,19 @@
 
 .precision-mechanics__list li {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 6px;
   margin-bottom: 1rem;
   color: #000000;
 }
 
 .precision-mechanics__list .material-symbols-outlined {
-  color: #000000;
-  font-size: 1.25rem;
+  color: #458243;
+  font-size: 18px;
   flex-shrink: 0;
 }
 
 .precision-mechanics__list span:last-child {
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
 }
