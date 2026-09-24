@@ -1782,22 +1782,26 @@ product-gallery .product__media-toggle {
 
   .product--thumbnail_slider .product__media-wrapper {
     position: relative !important;
+    display: block !important;
   }
 
   /* THUMBNAIL CONTAINER */
   .product--thumbnail_slider .thumbnail-slider {
     position: absolute !important;
+
     left: -85px !important;
     top: 0 !important;
 
     width: 75px !important;
-    height: 390px !important;
+
+    /* 4 thumbnails */
+    height: 300px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
-    display: block !important;
-    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
 
     z-index: 20 !important;
   }
@@ -1805,24 +1809,24 @@ product-gallery .product__media-toggle {
   /* THUMBNAIL LIST */
   .product--thumbnail_slider .thumbnail-list {
     display: flex !important;
+
     flex-direction: column !important;
 
     align-items: center !important;
     justify-content: flex-start !important;
 
-    width: 75px !important;
-    height: 390px !important;
-    max-height: 390px !important;
-
     gap: 8px !important;
+
+    width: 75px !important;
+
+    height: 300px !important;
+    max-height: 300px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
     overflow-x: hidden !important;
     overflow-y: auto !important;
-
-    transform: none !important;
 
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
@@ -1832,7 +1836,7 @@ product-gallery .product__media-toggle {
     display: none !important;
   }
 
-  /* EACH THUMBNAIL */
+  /* INDIVIDUAL THUMBNAIL */
   .product--thumbnail_slider .thumbnail-list__item {
     width: 70px !important;
     min-width: 70px !important;
@@ -1843,18 +1847,14 @@ product-gallery .product__media-toggle {
     flex: 0 0 70px !important;
 
     margin: 0 !important;
-    padding: 0 !important;
   }
 
-  /* BUTTON */
+  /* THUMBNAIL BUTTON */
   .product--thumbnail_slider .thumbnail {
     width: 70px !important;
     height: 70px !important;
 
-    min-height: 70px !important;
-
     padding: 2px !important;
-    margin: 0 !important;
 
     display: block !important;
   }
@@ -1865,7 +1865,6 @@ product-gallery .product__media-toggle {
     height: 100% !important;
 
     object-fit: contain !important;
-    display: block !important;
   }
 }
 
