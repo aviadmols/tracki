@@ -24,8 +24,8 @@
 
 .precision-specs-quote__specs-heading {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: 0px;
   margin: 0 0 3rem;
   color: #000000;
 }
