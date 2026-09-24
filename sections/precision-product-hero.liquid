@@ -132,6 +132,9 @@
           </div> {% endcomment %}
           <span class="precision-pdp-hero__rating-caption">
             {% comment %} {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }} {% endcomment %}
+             <span class="rating-text">
+    {{ section.settings.rating }}
+  </span>
              <span
     aria-hidden="true"
     class="rating-star"
