@@ -1728,16 +1728,33 @@ product-gallery .product__media-toggle {
   }
 
   .product--thumbnail_slider .thumbnail-slider {
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 0;
-
     position: absolute;
     left: -85px;
     top: 0;
+    z-index: 5;
+
+    margin-top: 0;
+    width: 70px;
+  }
+
+  .product--thumbnail_slider .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 70px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .product--thumbnail_slider .thumbnail-list__item {
+    flex: 0 0 70px;
+    width: 70px;
+  }
+
+  .product--thumbnail_slider .thumbnail {
+    width: 70px;
   }
   .product--thumbnail_slider .thumbnail-slider {
     z-index: 5;
