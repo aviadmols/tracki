@@ -1780,18 +1780,14 @@ product-gallery .product__media-toggle {
 
 @media screen and (min-width: 750px) {
 
-  /* =====================================================
-     PRODUCT MEDIA WRAPPER
-     ===================================================== */
-
   .product--thumbnail_slider .product__media-wrapper {
     position: relative !important;
   }
 
 
-  /* =====================================================
-     THUMBNAIL SLIDER CONTAINER
-     ===================================================== */
+  /* =========================
+     THUMBNAIL SLIDER
+     ========================= */
 
   .product--thumbnail_slider .thumbnail-slider {
     position: absolute !important;
@@ -1800,9 +1796,7 @@ product-gallery .product__media-toggle {
     top: 0 !important;
 
     width: 75px !important;
-
-    /* Space for 4 thumbnails + arrows */
-    height: 360px !important;
+    height: 100% !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -1813,9 +1807,9 @@ product-gallery .product__media-toggle {
   }
 
 
-  /* =====================================================
+  /* =========================
      THUMBNAIL LIST
-     ===================================================== */
+     ========================= */
 
   .product--thumbnail_slider .thumbnail-list {
 
@@ -1831,24 +1825,13 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
-    /*
-     * 4 thumbnails:
-     * 70px × 4 = 280px
-     * 8px × 3  = 24px
-     * Total     = 304px
-     */
-    height: 304px !important;
+    height: 100% !important;
 
-    max-height: 304px !important;
+    max-height: 100% !important;
 
     margin: 0 !important;
 
-    /*
-     * Space for top and bottom arrows
-     */
     padding: 42px 0 !important;
-
-    box-sizing: border-box !important;
 
     overflow-x: hidden !important;
 
@@ -1862,18 +1845,14 @@ product-gallery .product__media-toggle {
   }
 
 
-  /* Hide scrollbar - Chrome / Safari / Edge */
-
   .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
     display: none !important;
-    width: 0 !important;
-    height: 0 !important;
   }
 
 
-  /* =====================================================
-     INDIVIDUAL THUMBNAIL
-     ===================================================== */
+  /* =========================
+     THUMBNAILS
+     ========================= */
 
   .product--thumbnail_slider .thumbnail-list__item {
 
@@ -1888,16 +1867,8 @@ product-gallery .product__media-toggle {
     flex: 0 0 70px !important;
 
     margin: 0 !important;
-
-    padding: 0 !important;
-
-    box-sizing: border-box !important;
   }
 
-
-  /* =====================================================
-     THUMBNAIL BUTTON
-     ===================================================== */
 
   .product--thumbnail_slider .thumbnail {
 
@@ -1905,23 +1876,11 @@ product-gallery .product__media-toggle {
 
     height: 70px !important;
 
-    min-width: 70px !important;
-
-    min-height: 70px !important;
-
     padding: 2px !important;
 
-    margin: 0 !important;
-
     display: block !important;
-
-    box-sizing: border-box !important;
   }
 
-
-  /* =====================================================
-     THUMBNAIL IMAGE
-     ===================================================== */
 
   .product--thumbnail_slider .thumbnail img {
 
@@ -1930,14 +1889,12 @@ product-gallery .product__media-toggle {
     height: 100% !important;
 
     object-fit: contain !important;
-
-    display: block !important;
   }
 
 
-  /* =====================================================
+  /* =========================
      ARROWS
-     ===================================================== */
+     ========================= */
 
   .product--thumbnail_slider .slider-button {
 
@@ -1950,10 +1907,6 @@ product-gallery .product__media-toggle {
     width: 36px !important;
 
     height: 32px !important;
-
-    min-width: 36px !important;
-
-    min-height: 32px !important;
 
     padding: 0 !important;
 
@@ -1971,17 +1924,11 @@ product-gallery .product__media-toggle {
 
     border: 0 !important;
 
-    border-radius: 0 !important;
-
     cursor: pointer !important;
-
-    box-sizing: border-box !important;
   }
 
 
-  /* =====================================================
-     TOP / PREVIOUS ARROW
-     ===================================================== */
+  /* TOP */
 
   .product--thumbnail_slider .slider-button--prev {
 
@@ -1989,13 +1936,10 @@ product-gallery .product__media-toggle {
 
     bottom: auto !important;
 
-    right: auto !important;
   }
 
 
-  /* =====================================================
-     BOTTOM / NEXT ARROW
-     ===================================================== */
+  /* BOTTOM */
 
   .product--thumbnail_slider .slider-button--next {
 
@@ -2003,13 +1947,10 @@ product-gallery .product__media-toggle {
 
     bottom: 0 !important;
 
-    right: auto !important;
   }
 
 
-  /* =====================================================
-     ARROW ICON
-     ===================================================== */
+  /* ICON */
 
   .product--thumbnail_slider .slider-button .icon {
 
@@ -2017,29 +1958,24 @@ product-gallery .product__media-toggle {
 
     height: 16px !important;
 
-    display: block !important;
   }
 
-
-  /* Previous = UP */
 
   .product--thumbnail_slider .slider-button--prev .icon {
 
     transform: rotate(90deg) !important;
+
   }
 
-
-  /* Next = DOWN */
 
   .product--thumbnail_slider .slider-button--next .icon {
 
     transform: rotate(90deg) !important;
+
   }
 
 
-  /* =====================================================
-     DISABLED ARROWS
-     ===================================================== */
+  /* DISABLED */
 
   .product--thumbnail_slider .slider-button:disabled {
 
@@ -2047,35 +1983,9 @@ product-gallery .product__media-toggle {
 
     cursor: default !important;
 
-    pointer-events: auto !important;
-  }
-
-
-  /* =====================================================
-     ACTIVE THUMBNAIL
-     ===================================================== */
-
-  .product--thumbnail_slider .thumbnail[aria-current="true"] {
-
-    opacity: 1 !important;
-  }
-
-
-  /* =====================================================
-     PREVENT HORIZONTAL THUMBNAIL BEHAVIOR
-     ===================================================== */
-
-  .product--thumbnail_slider .thumbnail-list {
-
-    scroll-snap-type: none !important;
-
-    overscroll-behavior-x: none !important;
-
-    overscroll-behavior-y: contain !important;
   }
 
 }
-
 
 
 
