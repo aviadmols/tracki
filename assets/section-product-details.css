@@ -121,8 +121,8 @@
 
 @media screen and (max-width: 749px) {
   .product-details .flex-grid__item {
-    flex: 0 0 100%;
-    max-width: 100%;
-    width:100%;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width:100% !important;
   }
 }
