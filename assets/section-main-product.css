@@ -1029,7 +1029,7 @@ related-buttons.is-flipped a:first-child:only-child {
 }
 
 .product__info-container .price--medium bdi {
-  font-size: 28px;
+  font-size: 28px !important;
 }
 
 @media screen and (min-width: 750px) {
