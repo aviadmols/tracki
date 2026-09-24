@@ -236,8 +236,8 @@
   visibility: visible;
   opacity: 1;
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  /* letter-spacing: -0.02em; */
   line-height: 1.1;
   margin: 0 0 0.75rem;
   color: #000000;
