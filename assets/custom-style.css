@@ -4686,4 +4686,11 @@ left: 0;
     letter-spacing: 1px;
 
 }
+
+@media(max-width:1080px){
+  .template-product .page-width.section--padding{
+    max-width:80%;
+  padding:0px 5rem;
+  }
+}
 /* product tracki-pro-gps-tracker page css end */
