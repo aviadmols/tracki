@@ -657,7 +657,7 @@ a.amazon-text {
             {% render block %}
           {%- when 'text' -%}
             {%- if block.settings.text != blank -%}
-              <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+              <p class="product__text text-wrap{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
                 {%- liquid
                   if block.settings.text != product.vendor
                     render 'icon-accordion', icon: block.settings.icon
@@ -907,7 +907,9 @@ document.addEventListener("DOMContentLoaded", function () {
   <span class="rating-text">
     ({{ section.settings.review_count }})
   </span>
-<a href="#" class="amazon-text">(42,559 positive reviews on Amazon)</a>
+{% if section.settings.amazon_text != '' %}
+  <a href="{{ section.settings.amazon_link }}" class="amazon-text">{{ section.settings.amazon_text }}</a>
+{% endif %}
 </div>
 
 
