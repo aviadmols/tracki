@@ -105,7 +105,7 @@
 .product-details .accordion__content {
   padding: 0 0 3rem;
 }
-.product-details .typeset{font-size:16px;}
+.product-details .typeset{font-size:18px;line-height:1.6;}
 
 @media screen and (min-width: 750px) {
   .product-details .accordion .summary__title {
