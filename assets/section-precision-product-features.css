@@ -29,7 +29,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
-#shopify-section-template--19367601438835__precision_features, .precision-features section-template--19367601438835__precision_features-padding{background: #eaf9f3 !important;}
+#shopify-section-template--19367601438835__precision_features, .precision-features{background: #eaf9f3 !important;}
 .precision-features__item .material-symbols-outlined {
   font-size: 40px;
   color: #76C773;
