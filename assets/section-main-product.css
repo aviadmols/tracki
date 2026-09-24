@@ -1881,10 +1881,7 @@ product-gallery .product__media-toggle {
      REMOVE THUMBNAIL ARROWS
      ======================================== */
 
-  .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
-  .product--thumbnail_slider .thumbnail-slider .slider-button--next {
-    display: none !important;
-  }
+  
 
 }
 
