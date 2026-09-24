@@ -76,6 +76,12 @@
 .price--sold-out .price__badge-sold-out,
 .price--on-sale .price__badge-sale {
   display: inline-flex;
+  background: rgb(78, 156, 64);
+  border-radius: 10px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
 }
 
 .price--on-sale .price__sale {
