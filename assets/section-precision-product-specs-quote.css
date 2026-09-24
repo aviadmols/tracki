@@ -33,7 +33,7 @@
 .precision-specs-quote__spec-rows {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.1rem;
 }
 
 .precision-specs-quote__spec-row {
