@@ -236,7 +236,7 @@
   display: block;
   visibility: visible;
   opacity: 1;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3.1rem);
   font-weight: 600;
   /* letter-spacing: -0.02em; */
   line-height: 1.1;
@@ -375,6 +375,7 @@
   text-transform: uppercase;
   
 }
+
 .shopify-payment-button .accelerated-checkout-button {
     --gravity-button-height: 50px;
     --gravity-button-border-radius:30px;
