@@ -688,7 +688,9 @@ fieldset.product-form__input .form__label {
 }
 
 .product__info-container .rating {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .product__info-container .rating .rating-star {
