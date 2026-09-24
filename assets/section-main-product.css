@@ -720,11 +720,11 @@ fieldset.product-form__input .form__label {
   margin-bottom: 1rem;
   line-height: calc(1 + 0.6 / var(--font-body-scale));
   font-family: Figtree, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
 }
 
 .product__text .link {
