@@ -23,7 +23,8 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    {% comment %} object-fit: cover; {% endcomment %}
+     object-fit: contain;
   }
 
   .ai-banner-desktop-{{ ai_gen_id }} {
