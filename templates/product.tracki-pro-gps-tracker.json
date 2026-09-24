@@ -345,7 +345,11 @@
         "mobile_image_ratio": "adapt_first",
         "show_mobile_thumbnails": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "rating": "4.3",
+        "review_count": "3,997",
+        "amazon_text": "(42,559 positive reviews on Amazon)",
+        "amazon_link": "https://www.amazon.com/dp/B0CG2D8FZ5?th=1"
       }
     },
     "product-details": {
