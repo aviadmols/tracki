@@ -438,7 +438,7 @@
 .precision-pdp-hero__trust-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 10px;
 }
 
 .precision-pdp-hero__trust-item .material-symbols-outlined {
