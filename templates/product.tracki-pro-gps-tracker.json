@@ -249,8 +249,16 @@
         "fd414a67-531a-4a3a-8941-e78cec888355": {
           "type": "text",
           "settings": {
+            "icon": "truck",
+            "text": "Free shipping in US",
+            "text_style": "body"
+          }
+        },
+        "text_anBmCp": {
+          "type": "text",
+          "settings": {
             "icon": "lock",
-            "text": "Free shipping in US & Lifetime Warranty",
+            "text": "Lifetime Warranty",
             "text_style": "body"
           }
         },
@@ -314,6 +322,7 @@
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02",
         "dd734640-b7b1-44ad-96b6-3d7c9affc69e",
         "fd414a67-531a-4a3a-8941-e78cec888355",
+        "text_anBmCp",
         "inventory_status",
         "buy_buttons",
         "text_QKXqJG",
