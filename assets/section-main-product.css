@@ -1756,17 +1756,16 @@ product-gallery .product__media-toggle {
 @media screen and (min-width: 750px) {
 
   /* ========================================
-     MAIN PRODUCT IMAGE
+     PRODUCT MEDIA WRAPPER
      ======================================== */
 
   .product--thumbnail_slider .product__media-wrapper {
     position: relative !important;
-    display: block !important;
   }
 
 
   /* ========================================
-     THUMBNAIL CONTAINER
+     THUMBNAIL SLIDER
      ======================================== */
 
   .product--thumbnail_slider .thumbnail-slider {
@@ -1777,15 +1776,14 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
-    /* 8 thumbnails:
-       8 × 70px + 7 × 8px gap = 616px */
-    height: 616px !important;
+    height: 460px !important;
 
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 40px 0 !important;
 
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
 
     z-index: 20 !important;
   }
@@ -1796,46 +1794,38 @@ product-gallery .product__media-toggle {
      ======================================== */
 
   .product--thumbnail_slider .thumbnail-list {
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: center !important;
-    justify-content: flex-start !important;
-
-    gap: 8px !important;
-
     width: 75px !important;
 
-    height: 616px !important;
-    max-height: 616px !important;
+    height: 380px !important;
+    max-height: 380px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
-    /* Enable scrolling */
-    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    gap: 8px !important;
+
     overflow-y: auto !important;
+    overflow-x: hidden !important;
 
-    /* Hide scrollbar - Firefox */
     scrollbar-width: none !important;
-
-    /* Hide scrollbar - IE/Edge */
     -ms-overflow-style: none !important;
+
+    scroll-behavior: smooth !important;
   }
 
 
-  /* Hide scrollbar - Chrome/Safari/Edge */
   .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
     display: none !important;
-
-    width: 0 !important;
-    height: 0 !important;
   }
 
 
   /* ========================================
-     INDIVIDUAL THUMBNAIL
+     5 THUMBNAILS
      ======================================== */
 
   .product--thumbnail_slider .thumbnail-list__item {
@@ -1852,7 +1842,7 @@ product-gallery .product__media-toggle {
 
 
   /* ========================================
-     THUMBNAIL BUTTON
+     THUMBNAIL
      ======================================== */
 
   .product--thumbnail_slider .thumbnail {
@@ -1865,10 +1855,6 @@ product-gallery .product__media-toggle {
   }
 
 
-  /* ========================================
-     THUMBNAIL IMAGE
-     ======================================== */
-
   .product--thumbnail_slider .thumbnail img {
     width: 100% !important;
     height: 100% !important;
@@ -1878,12 +1864,51 @@ product-gallery .product__media-toggle {
 
 
   /* ========================================
-     REMOVE THUMBNAIL ARROWS
+     PREVIOUS / NEXT ARROWS
      ======================================== */
 
-  .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
-  .product--thumbnail_slider .thumbnail-slider .slider-button--next {
-    display: none !important;
+  .product--thumbnail_slider .thumbnail-slider > .slider-button {
+    display: flex !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    padding: 0 !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 50 !important;
+  }
+
+
+  /* TOP ARROW */
+
+  .product--thumbnail_slider .thumbnail-slider
+  > .slider-button--prev {
+    top: 0 !important;
+  }
+
+
+  /* BOTTOM ARROW */
+
+  .product--thumbnail_slider .thumbnail-slider
+  > .slider-button--next {
+    bottom: 0 !important;
+  }
+
+
+  /* ========================================
+     ARROW ICON
+     ======================================== */
+
+  .product--thumbnail_slider .thumbnail-slider
+  > .slider-button svg {
+    width: 16px !important;
+    height: 16px !important;
   }
 
 }
