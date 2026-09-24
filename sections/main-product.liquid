@@ -888,9 +888,8 @@ document.addEventListener("DOMContentLoaded", function () {
 {% assign rating_count = product.metafields.custom.display_rating_count.value %}
 
 {% if rating != blank %}
-  {% assign rating_decimal = rating | modulo: 1 %}
-
   <div class="rating-wrapper">
+
     <div
       class="rating"
       role="img"
@@ -900,9 +899,9 @@ document.addEventListener("DOMContentLoaded", function () {
         aria-hidden="true"
         class="rating-star"
         style="
-          --rating: {{ rating | floor }};
+          --rating: {{ rating }};
           --rating-max: 5;
-          --rating-decimal: {{ rating_decimal }};
+          --rating-decimal: 0;
         "
       ></span>
     </div>
@@ -910,8 +909,9 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="rating-value">{{ rating }}</span>
 
     {% if rating_count != blank %}
-      <span class="rating-count">({{ rating_count | default: 0 | number_with_delimiter }})</span>
+      <span class="rating-count">({{ rating_count }})</span>
     {% endif %}
+
   </div>
 {% endif %}
 
