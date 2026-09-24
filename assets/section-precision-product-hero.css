@@ -353,7 +353,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.15s ease;
+  /* transition: opacity 0.2s ease, transform 0.15s ease; */
 }
 
 /* Theme marks Add to cart as secondary when dynamic checkout is on — restore Precision styling */
