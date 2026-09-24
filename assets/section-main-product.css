@@ -1780,49 +1780,89 @@ product-gallery .product__media-toggle {
 
 @media screen and (min-width: 750px) {
 
+  /* ========================================
+     MAIN PRODUCT IMAGE
+     ======================================== */
+
   .product--thumbnail_slider .product__media-wrapper {
     position: relative !important;
+    display: block !important;
   }
 
-  /* Move thumbnail area to the left */
+
+  /* ========================================
+     THUMBNAIL CONTAINER
+     ======================================== */
+
   .product--thumbnail_slider .thumbnail-slider {
     position: absolute !important;
+
     left: -85px !important;
     top: 0 !important;
 
     width: 75px !important;
-    height: 382px !important;
+
+    /* 8 thumbnails:
+       8 × 70px + 7 × 8px gap = 616px */
+    height: 616px !important;
 
     margin: 0 !important;
     padding: 0 !important;
-
-    z-index: 5 !important;
 
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+
+    z-index: 20 !important;
   }
 
-  /*
-   * IMPORTANT:
-   * Keep Harmony's thumbnail list as a horizontal slider.
-   * Do not change flex-direction here.
-   */
+
+  /* ========================================
+     THUMBNAIL LIST
+     ======================================== */
+
   .product--thumbnail_slider .thumbnail-list {
     display: flex !important;
 
-    width: 382px !important;
-    max-width: 382px !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: flex-start !important;
 
     gap: 8px !important;
 
-    overflow: hidden !important;
+    width: 75px !important;
+
+    height: 616px !important;
+    max-height: 616px !important;
 
     margin: 0 !important;
     padding: 0 !important;
+
+    /* Enable scrolling */
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    /* Hide scrollbar - Firefox */
+    scrollbar-width: none !important;
+
+    /* Hide scrollbar - IE/Edge */
+    -ms-overflow-style: none !important;
   }
 
-  /* 70px thumbnails */
+
+  /* Hide scrollbar - Chrome/Safari/Edge */
+  .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
+    display: none !important;
+
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+
+  /* ========================================
+     INDIVIDUAL THUMBNAIL
+     ======================================== */
+
   .product--thumbnail_slider .thumbnail-list__item {
     width: 70px !important;
     min-width: 70px !important;
@@ -1835,21 +1875,41 @@ product-gallery .product__media-toggle {
     margin: 0 !important;
   }
 
+
+  /* ========================================
+     THUMBNAIL BUTTON
+     ======================================== */
+
   .product--thumbnail_slider .thumbnail {
     width: 70px !important;
     height: 70px !important;
+
+    padding: 2px !important;
+
+    display: block !important;
   }
+
+
+  /* ========================================
+     THUMBNAIL IMAGE
+     ======================================== */
 
   .product--thumbnail_slider .thumbnail img {
     width: 100% !important;
     height: 100% !important;
+
     object-fit: contain !important;
   }
 
-  /* Keep Harmony buttons */
-  .product--thumbnail_slider .slider-mobile-gutter .slider-button {
-    display: block !important;
-  }
+
+  /* ========================================
+     REMOVE THUMBNAIL ARROWS
+     ======================================== */
+
+  /* .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
+  .product--thumbnail_slider .thumbnail-slider .slider-button--next {
+    display: none !important;
+  } */
 
 }
 
