@@ -159,7 +159,7 @@ media-gallery .media-wrapper.media-wrapper--intrinsic-size {
     padding-top: 3rem;
     padding-inline-start: 3rem;
   }
-  .product__info-container .product__heading.h2{font-size:clamp(2rem,4vw,3.1rem);}
+  .product__info-container .product__heading.h2, .product__info-container .product__heading.h1{font-size:clamp(2rem,4vw,3.1rem);}
 
   .product__media-wrapper .slider-buttons {
     display: none;
@@ -1906,10 +1906,10 @@ product-gallery .product__media-toggle {
      REMOVE THUMBNAIL ARROWS
      ======================================== */
 
-  .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
+  /* .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
   .product--thumbnail_slider .thumbnail-slider .slider-button--next {
     display: none !important;
-  }
+  } */
 
 }
 
