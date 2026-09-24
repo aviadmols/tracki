@@ -125,14 +125,14 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #000000;
+  color: #458243;
   margin: 0 0 0.5rem;
 }
 
 .precision-mechanics__heading {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: 0;
   line-height: 1.1;
   margin: 0 0 1.5rem;
   color: #000000;
