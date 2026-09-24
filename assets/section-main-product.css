@@ -1021,15 +1021,15 @@ related-buttons.is-flipped a:first-child:only-child {
 .product__info-container .price .unit-price,
 .product__info-container .price .unit-price bdi,
 .product__info-container .price--on-sale .price-item--regular bdi {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .product__info-container .price--large bdi {
-  font-size: calc(var(--font-heading-scale) * 2.8rem);
+  font-size: 30px;
 }
 
 .product__info-container .price--medium bdi {
-  font-size: 28px !important;
+  font-size: 30px !important;
 }
 
 @media screen and (min-width: 750px) {
