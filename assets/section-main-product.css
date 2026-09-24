@@ -1802,15 +1802,17 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
+    /* 5 thumbnails:
+       5 × 70px + 4 × 8px gap = 382px */
+    height: 382px !important;
+
     margin: 0 !important;
     padding: 0 !important;
 
-    z-index: 20 !important;
-
-    /* DO NOT make the slider itself vertical */
     display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    flex-direction: column !important;
+
+    z-index: 20 !important;
   }
 
 
@@ -1821,21 +1823,37 @@ product-gallery .product__media-toggle {
   .product--thumbnail_slider .thumbnail-list {
     display: flex !important;
 
-    /* Keep Harmony's native slider direction */
-    flex-direction: row !important;
+    flex-direction: column !important;
 
     align-items: center !important;
     justify-content: flex-start !important;
 
+    gap: 8px !important;
+
     width: 75px !important;
+
+    height: 382px !important;
+    max-height: 382px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
     overflow-x: hidden !important;
-    overflow-y: hidden !important;
+    overflow-y: auto !important;
 
-    gap: 8px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+
+  /* ========================================
+     HIDE SCROLLBAR
+     ======================================== */
+
+  .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
 
