@@ -13,6 +13,7 @@
   "sections": {
     "contact_new_iekHbp": {
       "type": "contact-new",
+      "disabled": true,
       "name": "Contact New",
       "settings": {
         "heading": "Need Help?<span>Our Team Is Ready</span>",
