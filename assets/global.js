@@ -3447,3 +3447,56 @@ if (!customElements.get('tabbed-collections')) {
     }
   });
 }
+document.addEventListener('DOMContentLoaded', function () {
+
+  document.querySelectorAll('.product--thumbnail_slider .thumbnail-slider').forEach(function (slider) {
+
+    const list = slider.querySelector('.thumbnail-list');
+    const prev = slider.querySelector('.slider-button--prev');
+    const next = slider.querySelector('.slider-button--next');
+
+    if (!list || !prev || !next) return;
+
+    function getScrollAmount() {
+      const item = list.querySelector('.thumbnail-list__item');
+
+      if (!item) return 78;
+
+      const style = window.getComputedStyle(list);
+      const gap = parseFloat(style.rowGap || style.gap) || 0;
+
+      return item.offsetHeight + gap;
+    }
+
+    /* NEXT */
+    next.addEventListener('click', function (event) {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      list.scrollBy({
+        top: getScrollAmount(),
+        left: 0,
+        behavior: 'smooth'
+      });
+
+    }, true);
+
+
+    /* PREVIOUS */
+    prev.addEventListener('click', function (event) {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      list.scrollBy({
+        top: -getScrollAmount(),
+        left: 0,
+        behavior: 'smooth'
+      });
+
+    }, true);
+
+  });
+
+});
