@@ -405,7 +405,8 @@ document.addEventListener('DOMContentLoaded', function () {
       list.style.overflowY = 'auto';
       list.style.overflowX = 'hidden';
 
-      list.style.scrollBehavior = 'smooth';
+      /* REMOVE SMOOTH SCROLL */
+      list.style.scrollBehavior = 'auto';
 
 
       /* =========================
@@ -448,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       /* =========================
-         NEXT
+         NEXT - SMALL JUMP
          ========================= */
 
       next.addEventListener('click', function (e) {
@@ -457,13 +458,15 @@ document.addEventListener('DOMContentLoaded', function () {
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-        list.scrollTop += getAmount();
+        const amount = getAmount();
+
+        list.scrollTop = list.scrollTop + amount + 6;
 
       });
 
 
       /* =========================
-         PREVIOUS
+         PREVIOUS - SMALL JUMP
          ========================= */
 
       prev.addEventListener('click', function (e) {
@@ -472,7 +475,9 @@ document.addEventListener('DOMContentLoaded', function () {
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-        list.scrollTop -= getAmount();
+        const amount = getAmount();
+
+        list.scrollTop = list.scrollTop - amount - 6;
 
       });
 
@@ -516,6 +521,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
 </script>
 
 </body>
