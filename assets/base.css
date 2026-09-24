@@ -1011,6 +1011,7 @@ summary::-webkit-details-marker {
 
 .title-wrapper .title {
   margin: 0;
+  letter-spacing:0px;
 }
 
 .title {
