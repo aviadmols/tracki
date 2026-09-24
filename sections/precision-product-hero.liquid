@@ -253,11 +253,12 @@
             </div>
           {%- endif -%}
           {%- if section.settings.free_shipping != blank -%}
-            <div class="precision-pdp-hero__trust-item">
-              <span class="material-symbols-outlined precision-pdp-icon">verified_user</span>
-              <span>{{ section.settings.free_shipping | escape }}</span>
-            </div>
-          {%- endif -%}
+  <div class="precision-pdp-hero__trust-item">
+    <span class="material-symbols-outlined precision-pdp-icon">local_shipping</span>
+    <span>{{ section.settings.free_shipping | escape }}</span>
+  </div>
+{%- endif -%}
+
         </div>
       {%- endif -%}
 
