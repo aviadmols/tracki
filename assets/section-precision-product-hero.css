@@ -426,7 +426,7 @@
 .precision-pdp-hero__trust {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 30px;
   padding-top: 1rem;
   font-size: 14px;
   font-weight: 700;
