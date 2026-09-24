@@ -123,5 +123,6 @@
   .product-details .flex-grid__item {
     flex: 0 0 100%;
     max-width: 100%;
+    width:100%;
   }
 }
