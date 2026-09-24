@@ -417,8 +417,10 @@
 }
 
 .precision-pdp-hero__actions .shopify-payment-button__more-options {
-  margin: 0.65rem 0 0;
-  font-size: 0.875rem;
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #797b7c;
 }
 
 .precision-pdp-hero__trust {
