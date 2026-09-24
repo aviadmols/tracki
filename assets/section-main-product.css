@@ -1755,31 +1755,19 @@ product-gallery .product__media-toggle {
 
 @media screen and (min-width: 750px) {
 
-  /* ========================================
-     MAIN PRODUCT IMAGE
-     ======================================== */
-
+  /* Main product media */
   .product--thumbnail_slider .product__media-wrapper {
     position: relative !important;
-    display: block !important;
   }
 
-
-  /* ========================================
-     THUMBNAIL CONTAINER
-     ======================================== */
-
+  /* Thumbnail slider */
   .product--thumbnail_slider .thumbnail-slider {
     position: absolute !important;
-
     left: -85px !important;
     top: 0 !important;
 
     width: 75px !important;
-
-    /* 8 thumbnails:
-       8 × 70px + 7 × 8px gap = 616px */
-    height: 616px !important;
+    height: 382px !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -1790,54 +1778,32 @@ product-gallery .product__media-toggle {
     z-index: 20 !important;
   }
 
-
-  /* ========================================
-     THUMBNAIL LIST
-     ======================================== */
-
+  /* Thumbnail list */
   .product--thumbnail_slider .thumbnail-list {
-    display: flex !important;
+    width: 75px !important;
+    height: 382px !important;
+    max-height: 382px !important;
 
+    display: flex !important;
     flex-direction: column !important;
 
-    align-items: center !important;
-    justify-content: flex-start !important;
-
     gap: 8px !important;
-
-    width: 75px !important;
-
-    height: 616px !important;
-    max-height: 616px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
-    /* Enable scrolling */
-    overflow-x: hidden !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
 
-    /* Hide scrollbar - Firefox */
     scrollbar-width: none !important;
-
-    /* Hide scrollbar - IE/Edge */
     -ms-overflow-style: none !important;
   }
 
-
-  /* Hide scrollbar - Chrome/Safari/Edge */
   .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
     display: none !important;
-
-    width: 0 !important;
-    height: 0 !important;
   }
 
-
-  /* ========================================
-     INDIVIDUAL THUMBNAIL
-     ======================================== */
-
+  /* Thumbnail */
   .product--thumbnail_slider .thumbnail-list__item {
     width: 70px !important;
     min-width: 70px !important;
@@ -1850,24 +1816,12 @@ product-gallery .product__media-toggle {
     margin: 0 !important;
   }
 
-
-  /* ========================================
-     THUMBNAIL BUTTON
-     ======================================== */
-
   .product--thumbnail_slider .thumbnail {
     width: 70px !important;
     height: 70px !important;
 
     padding: 2px !important;
-
-    display: block !important;
   }
-
-
-  /* ========================================
-     THUMBNAIL IMAGE
-     ======================================== */
 
   .product--thumbnail_slider .thumbnail img {
     width: 100% !important;
@@ -1876,14 +1830,35 @@ product-gallery .product__media-toggle {
     object-fit: contain !important;
   }
 
+  /* =====================================
+     ARROWS
+     ===================================== */
 
-  /* ========================================
-     REMOVE THUMBNAIL ARROWS
-     ======================================== */
+  .product--thumbnail_slider .thumbnail-slider
+  .slider-button {
+    display: flex !important;
 
-  .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
-  .product--thumbnail_slider .thumbnail-slider .slider-button--next {
-    display: none !important;
+    position: absolute !important;
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    z-index: 50 !important;
+  }
+
+  /* Previous */
+  .product--thumbnail_slider .thumbnail-slider
+  .slider-button--prev {
+    top: -38px !important;
+  }
+
+  /* Next */
+  .product--thumbnail_slider .thumbnail-slider
+  .slider-button--next {
+    bottom: -38px !important;
   }
 
 }
