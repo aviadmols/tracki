@@ -528,9 +528,10 @@
 }
 
 .precision-pdp-product-info__content {
-  padding: 0 1rem 1rem;
+  padding:  1rem;
   border-top: 1px solid var(--precision-pdp-border-subtle);
   background: #ffffff;
+  font-size: 14px;
 }
 
 .precision-pdp-product-info__table {
