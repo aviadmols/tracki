@@ -27,14 +27,14 @@
 } */
 
 .rating-count {
-  /* display: none; */
+  display: none;
   margin: 0;
 }
 
 @media (forced-colors: active) {
-  .rating {
+  /* .rating {
     display: none;
-  }
+  } */
 
   .rating-text {
     display: block;
