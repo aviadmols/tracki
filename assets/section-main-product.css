@@ -153,7 +153,7 @@ media-gallery .media-wrapper.media-wrapper--intrinsic-size {
 
   .product__info-container {
     padding-top: 3rem;
-    padding-inline-start: 5rem;
+    padding-inline-start: 3rem;
   }
 
   .product__media-wrapper .slider-buttons {
@@ -169,11 +169,11 @@ media-gallery .media-wrapper.media-wrapper--intrinsic-size {
 @media screen and (min-width: 990px) {
   .product--right .product__info-container {
     padding-inline-start: 0;
-    padding-inline-end: 7rem;
+    padding-inline-end: 3rem;
   }
 
   .product__info-container {
-    padding-inline-start: 7rem;
+    padding-inline-start: 3rem;
   }
 
   .product--large:not(.product--no-media) .product__media-wrapper,
