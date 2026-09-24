@@ -4675,7 +4675,6 @@ left: 0;
 /* product tracki-pro-gps-tracker page css start */
 .template-product .page-width.section--padding{max-width:80rem;padding:2rem 1.5rem;}
 .product-form__buttons .product-form__submit.button{
-  .product-form__submit.button {
     background: #76c773;
     border-color: #76c773;
     color: #262c34;
@@ -4685,6 +4684,6 @@ left: 0;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
-}
+
 }
 /* product tracki-pro-gps-tracker page css end */
