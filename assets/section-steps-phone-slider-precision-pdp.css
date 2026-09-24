@@ -27,9 +27,9 @@
 /* כותרת — 80% מ־clamp הקודם */
 .steps-slider.steps-slider--precision-pdp h2.steps-title {
   color: #000000;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  font-size: clamp(1.4rem, 3.2vw, 3rem);
   margin-bottom: 0.5rem;
 }
 
