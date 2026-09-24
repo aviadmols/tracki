@@ -1021,7 +1021,7 @@ related-buttons.is-flipped a:first-child:only-child {
 .product__info-container .price .unit-price,
 .product__info-container .price .unit-price bdi,
 .product__info-container .price--on-sale .price-item--regular bdi {
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-size: 26px;
 }
 
 .product__info-container .price--large bdi {
