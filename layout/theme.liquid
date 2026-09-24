@@ -374,7 +374,151 @@ document.addEventListener('DOMContentLoaded', function () {
     {% comment %} Country Flags in phone contact form {% endcomment %}
 
   	{% include 'yta-widgets' %}
-{%- render "ecom_footer"-%}</body>
+{%- render "ecom_footer"-%}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  function setupVerticalThumbnails() {
+
+    document.querySelectorAll(
+      '.product--thumbnail_slider .thumbnail-slider'
+    ).forEach(function (slider) {
+
+      const list = slider.querySelector('.thumbnail-list');
+      const oldPrev = slider.querySelector('.slider-button--prev');
+      const oldNext = slider.querySelector('.slider-button--next');
+
+      if (!list || !oldPrev || !oldNext) return;
+
+      /* Prevent running twice */
+      if (slider.dataset.verticalReady === 'true') return;
+      slider.dataset.verticalReady = 'true';
+
+
+      /* =========================
+         FORCE VERTICAL SCROLL
+         ========================= */
+
+      list.style.display = 'flex';
+      list.style.flexDirection = 'column';
+      list.style.overflowY = 'auto';
+      list.style.overflowX = 'hidden';
+
+      list.style.scrollBehavior = 'smooth';
+
+
+      /* =========================
+         REPLACE PREVIOUS BUTTON
+         ========================= */
+
+      const prev = oldPrev.cloneNode(true);
+      oldPrev.replaceWith(prev);
+
+
+      /* =========================
+         REPLACE NEXT BUTTON
+         ========================= */
+
+      const next = oldNext.cloneNode(true);
+      oldNext.replaceWith(next);
+
+
+      /* =========================
+         GET THUMBNAIL HEIGHT
+         ========================= */
+
+      function getAmount() {
+
+        const item = list.querySelector(
+          '.thumbnail-list__item'
+        );
+
+        if (!item) return 78;
+
+        const style = window.getComputedStyle(list);
+
+        const gap =
+          parseFloat(style.rowGap) ||
+          parseFloat(style.gap) ||
+          8;
+
+        return item.getBoundingClientRect().height + gap;
+      }
+
+
+      /* =========================
+         NEXT
+         ========================= */
+
+      next.addEventListener('click', function (e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        list.scrollTop += getAmount();
+
+      });
+
+
+      /* =========================
+         PREVIOUS
+         ========================= */
+
+      prev.addEventListener('click', function (e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        list.scrollTop -= getAmount();
+
+      });
+
+
+      /* =========================
+         DISABLE BUTTONS AT ENDS
+         ========================= */
+
+      function updateButtons() {
+
+        const maxScroll =
+          list.scrollHeight - list.clientHeight;
+
+        prev.disabled = list.scrollTop <= 2;
+
+        next.disabled =
+          list.scrollTop >= maxScroll - 2;
+      }
+
+
+      list.addEventListener('scroll', updateButtons);
+
+      updateButtons();
+
+    });
+  }
+
+
+  /* Initial setup */
+  setupVerticalThumbnails();
+
+
+  /* Shopify can rebuild the product gallery */
+  const observer = new MutationObserver(function () {
+    setupVerticalThumbnails();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+});
+</script>
+
+</body>
 </html>
 
 <style>
