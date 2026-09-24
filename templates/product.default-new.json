@@ -319,7 +319,7 @@
       "settings": {
         "enable_sticky_info": true,
         "media_position": "left",
-        "media_size": "large",
+        "media_size": "medium",
         "gallery_layout": "thumbnail_slider",
         "image_ratio": "adapt",
         "show_featured_media": false,
@@ -330,7 +330,11 @@
         "mobile_image_ratio": "adapt_first",
         "show_mobile_thumbnails": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "rating": "4.3",
+        "review_count": "3,997",
+        "amazon_text": "",
+        "amazon_link": ""
       }
     },
     "product-details": {
