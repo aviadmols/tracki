@@ -1713,24 +1713,25 @@ product-gallery .product__media-toggle {
 
 /* Thumbnail container */
 .product--thumbnail_slider .thumbnail-slider {
-  position: absolute;
-  z-index: 10;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  top: 0;
-  left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 
-  width: 350px;
-  height: 95px;
+    width: 350px;
+    height: 95px;
 
-  margin: 0;
-  padding: 8px;
+    margin: 0;
+    padding: 8px;
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  background: #fff;
+    background: #fff;
 }
+
 
 /* Thumbnail list */
 .product--thumbnail_slider .thumbnail-list {
