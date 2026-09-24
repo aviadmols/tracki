@@ -655,7 +655,7 @@ a.amazon-text {
           {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
-          {% comment %} {%- when 'text' -%}
+          {%- when 'text' -%}
             {%- if block.settings.text != blank -%}
               <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
                 {%- liquid
@@ -667,23 +667,7 @@ a.amazon-text {
                   endif
                 -%}
               </p>
-            {%- endif -%} {% endcomment %}
-             {%- when 'text' -%}
-  {%- assign text_count = text_count | plus: 1 -%}
-
-  {%- if block.settings.text != blank -%}
-    <p class="product__text{% if text_count == 2 %} text-wrap{% endif %}{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
-      {%- liquid
-        if block.settings.text != product.vendor
-          render 'icon-accordion', icon: block.settings.icon
-          echo block.settings.text
-        else
-          echo product.vendor | link_to_vendor: class: "link"
-        endif
-      -%}
-    </p>
-  {%- endif -%}
-
+            {%- endif -%}
           {%- when 'sku' -%}
             <p class="product__sku{% if block.settings.sku_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.sku_style == 'subtitle' %} subtitle{% endif %}" id="Sku-{{ section.id }}" {{ block.shopify_attributes }}>
               {{- product.selected_or_first_available_variant.sku -}}
