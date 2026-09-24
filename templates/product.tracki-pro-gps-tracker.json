@@ -338,7 +338,7 @@
         "gallery_layout": "thumbnail_slider",
         "image_ratio": "adapt",
         "show_featured_media": false,
-        "show_thumbnails": false,
+        "show_thumbnails": true,
         "hide_variants": false,
         "enable_image_zoom": false,
         "enable_video_looping": false,
