@@ -1783,11 +1783,7 @@ product-gallery .product__media-toggle {
   .product--thumbnail_slider .product__media-wrapper {
     position: relative !important;
   }
-.thumbnail-list {
-  height: 382px !important;
-  max-height: 382px !important;
-  overflow-y: auto !important;
-}
+
   .product--thumbnail_slider .thumbnail-slider {
     position: absolute !important;
     left: -85px !important;
