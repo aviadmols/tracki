@@ -31,9 +31,12 @@
 }
 #shopify-section-template--19367601438835__precision_features, .precision-features{background: #f3f1f0 !important;}
 .precision-features__item .material-symbols-outlined {
-  font-size: 40px;
-  color: #76C773;
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 35px;
+    color: #458243;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    background: #c8e2c7;
+    border-radius: 50%;
+    padding: 10px;
 }
 
 .precision-features__title {
@@ -41,7 +44,7 @@
   font-weight: 700;
   letter-spacing: 0px;
   margin: 1rem 0 0.5rem;
-  color: #76c773;
+  color: #000;
 }
 
 .precision-features__text {
