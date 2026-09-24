@@ -281,7 +281,7 @@
         "text_QKXqJG": {
           "type": "text",
           "settings": {
-            "icon": "truck",
+            "icon": "none",
             "text": "TrackiPro is tough and smart. Its 10,000mAh battery lasts up to 12 months on a single charge, and its rugged, waterproof design is made for harsh industrial environments. With 4G connectivity and 3G/2G fallback, plus Wi-Fi and an accelerometer, TrackiPro keeps you connected to your assets all the time.",
             "text_style": "body"
           }
