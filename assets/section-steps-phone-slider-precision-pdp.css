@@ -35,7 +35,7 @@
 
 /* מספרי שלב — 300px→240px, במסכים קטנים 200px→160px */
 .steps-slider.steps-slider--precision-pdp .step-big {
-  color: var(--precision-pdp-primary, #1eea65);
+  color: #76c773;
   text-shadow: none;
   font-weight: 800;
   font-size: 240px;
