@@ -4688,6 +4688,7 @@ left: 0;
     letter-spacing: 1px;
 
 }
+.precision-pdp-hero__media .product--thumbnail_slider .slider-button{width: 36px !important;height: 36px !important;}
 .precision-pdp-hero__media .product--thumbnail_slider .slider-button.slider-button--prev{transform:translate(-50%) rotate(90deg)!important;}
 .precision-pdp-hero__media .product--thumbnail_slider .slider-button.slider-button--next{transform:translate(-50%) rotate(-90deg)!important;}
 
