@@ -885,9 +885,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span aria-hidden="true" class="rating-star" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
                <span class="rating-text">4.8 (1,245 reviews)</span>
               </div>
-              <p class="rating-text caption">
+              {% comment %} <p class="rating-text caption">
                 <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
-              </p>
+              </p> {% endcomment %}
               <p class="rating-count caption">
                 <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
                 <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
