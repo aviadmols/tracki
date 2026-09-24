@@ -1723,7 +1723,22 @@ product-gallery .product__media-toggle {
   [data-animate-image] .product--thumbnail_slider use-animate[data-animate=fade-up] {
     transform: none;
   }
+  .product--thumbnail_slider .product__media-wrapper {
+    position: relative;
+  }
 
+  .product--thumbnail_slider .thumbnail-slider {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 0;
+
+    position: absolute;
+    left: -85px;
+    top: 0;
+  }
   .product--thumbnail_slider .thumbnail-slider {
     z-index: 5;
     display: flex;
