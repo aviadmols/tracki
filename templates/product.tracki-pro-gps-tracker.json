@@ -226,6 +226,7 @@
         },
         "rating": {
           "type": "rating",
+          "disabled": true,
           "settings": {}
         },
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02": {
