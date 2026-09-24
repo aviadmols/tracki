@@ -1802,8 +1802,9 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
-    /* 5 thumbnails */
-    height: 382px !important;
+    /* 8 thumbnails:
+       8 × 70px + 7 × 8px gap = 616px */
+    height: 616px !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -1822,7 +1823,6 @@ product-gallery .product__media-toggle {
   .product--thumbnail_slider .thumbnail-list {
     display: flex !important;
 
-    /* VERTICAL */
     flex-direction: column !important;
 
     align-items: center !important;
@@ -1832,28 +1832,30 @@ product-gallery .product__media-toggle {
 
     width: 75px !important;
 
-    /*
-      5 thumbnails:
-      70 × 5 = 350px
-      8 × 4 gaps = 32px
-      Total = 382px
-    */
-    height: 382px !important;
-    max-height: 382px !important;
+    height: 616px !important;
+    max-height: 616px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
+    /* Enable scrolling */
     overflow-x: hidden !important;
-    overflow-y: hidden !important;
+    overflow-y: auto !important;
 
+    /* Hide scrollbar - Firefox */
     scrollbar-width: none !important;
+
+    /* Hide scrollbar - IE/Edge */
     -ms-overflow-style: none !important;
   }
 
 
+  /* Hide scrollbar - Chrome/Safari/Edge */
   .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
     display: none !important;
+
+    width: 0 !important;
+    height: 0 !important;
   }
 
 
@@ -1901,28 +1903,13 @@ product-gallery .product__media-toggle {
 
 
   /* ========================================
-     ARROWS
+     REMOVE THUMBNAIL ARROWS
      ======================================== */
 
-  .product--thumbnail_slider .slider-buttons {
-    display: flex !important;
-    flex-direction: column !important;
-
-    width: 75px !important;
-  }
-
-  .product--thumbnail_slider .slider-button {
-    display: flex !important;
-
-    width: 75px !important;
-    height: 24px !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+  /* .product--thumbnail_slider .thumbnail-slider .slider-button--prev,
+  .product--thumbnail_slider .thumbnail-slider .slider-button--next {
+    display: none !important;
+  } */
 
 }
 
