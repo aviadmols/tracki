@@ -884,15 +884,26 @@ document.addEventListener("DOMContentLoaded", function () {
               {% comment %} <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
                 <span aria-hidden="true" class="rating-star" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
               </div> {% endcomment %}
-              <div class="rating" role="img" aria-label="4.3 out of 5 stars">
-  <span class="rating-text">4.3</span>
+              <div class="rating" role="img" aria-label="{{ section.settings.rating }} out of 5 stars">
 
-  <span aria-hidden="true"
-        class="rating-star"
-        style="--rating: 4.3; --rating-max: 5; --rating-decimal: 0;">
+  <span class="rating-text">
+    {{ section.settings.rating }}
   </span>
 
-  <span class="rating-text">(3,997)</span>
+  <span
+    aria-hidden="true"
+    class="rating-star"
+    style="
+      --rating: {{ section.settings.rating }};
+      --rating-max: 5;
+      --rating-decimal: 0;
+    ">
+  </span>
+
+  <span class="rating-text">
+    ({{ section.settings.review_count }})
+  </span>
+
 </div>
 
 
@@ -3392,7 +3403,19 @@ document.addEventListener("DOMContentLoaded", function () {
       "unit": "t:sections.all.padding.padding_bottom.unit",
       "label": "t:sections.all.padding.padding_bottom.label",
       "default": 36
-    }
+    },
+    {
+  "type": "text",
+  "id": "rating",
+  "label": "Rating",
+  "default": "4.3"
+},
+{
+  "type": "text",
+  "id": "review_count",
+  "label": "Review count",
+  "default": "3,997"
+},
   ]
 }
 {% endschema %}
