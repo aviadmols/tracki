@@ -375,7 +375,7 @@ a.amazon-text {
                   class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %} is-active media-wrapper media-wrapper--small{% if gang_media_active == true %} gang__active{% endif %}"
                   data-target="{{ section.id }}-{{ featured_media.id }}"
                   data-media-position="{{ media_index }}"
-                  data-media-id="thumbnail--{{ section.id }}-{{ media.id }}"
+                  data-media-id="thumbnail--{{ section.id }}-{{ featured_media.id }}"
                   {% if gang_exist == true %}data-gang-option="{{ gang_option_name }}" data-gang-connect="{{ gang_connect }}"{% endif %}
                 >
                   <button class="thumbnail media media--square"
