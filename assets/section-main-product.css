@@ -1719,7 +1719,7 @@ product-gallery .product__media-toggle {
   }
 }
 
-/* @media screen and (min-width: 750px) {
+@media screen and (min-width: 750px) {
   [data-animate-image] .product--thumbnail_slider use-animate[data-animate=fade-up] {
     transform: none;
   }
@@ -1776,130 +1776,9 @@ product-gallery .product__media-toggle {
   .thumbnail-list.slider--tablet-up[data-media-count="3"] {
     max-width: 20.4rem;
   }
-} */
-
-@media screen and (min-width: 750px) {
-
-  /* ========================================
-     MAIN PRODUCT IMAGE
-     ======================================== */
-
-  .product--thumbnail_slider .product__media-wrapper {
-    position: relative !important;
-    display: block !important;
-  }
+} 
 
 
-  /* ========================================
-     THUMBNAIL CONTAINER
-     ======================================== */
-
-  .product--thumbnail_slider .thumbnail-slider {
-    position: absolute !important;
-
-    left: -85px !important;
-    top: 0 !important;
-
-    width: 75px !important;
-
-    /* 5 thumbnails:
-       5 × 70px + 4 × 8px gap = 382px */
-    height: 382px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    z-index: 20 !important;
-  }
-
-
-  /* ========================================
-     THUMBNAIL LIST
-     ======================================== */
-
-  .product--thumbnail_slider .thumbnail-list {
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: center !important;
-    justify-content: flex-start !important;
-
-    gap: 8px !important;
-
-    width: 75px !important;
-
-    height: 382px !important;
-    max-height: 382px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-  }
-
-
-  /* ========================================
-     HIDE SCROLLBAR
-     ======================================== */
-
-  .product--thumbnail_slider .thumbnail-list::-webkit-scrollbar {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-  }
-
-
-  /* ========================================
-     INDIVIDUAL THUMBNAIL
-     ======================================== */
-
-  .product--thumbnail_slider .thumbnail-list__item {
-    width: 70px !important;
-    min-width: 70px !important;
-
-    height: 70px !important;
-    min-height: 70px !important;
-
-    flex: 0 0 70px !important;
-
-    margin: 0 !important;
-  }
-
-
-  /* ========================================
-     THUMBNAIL BUTTON
-     ======================================== */
-
-  .product--thumbnail_slider .thumbnail {
-    width: 70px !important;
-    height: 70px !important;
-
-    padding: 2px !important;
-
-    display: block !important;
-  }
-
-
-  /* ========================================
-     THUMBNAIL IMAGE
-     ======================================== */
-
-  .product--thumbnail_slider .thumbnail img {
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-  }
-
-}
 
 
 
