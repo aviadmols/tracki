@@ -738,10 +738,17 @@ fieldset.product-form__input .form__label {
 }
 
 .product__text .icon {
-  fill: rgb(var(--color-foreground));
+  /* fill: rgb(var(--color-foreground));
   height: calc(var(--font-heading-scale) * 2rem);
   width: calc(var(--font-heading-scale) * 2rem);
+  margin-right: calc(var(--font-heading-scale) * 1rem); */
+  fill: #458243;
+  height: 42px;
+  width: 42px;
   margin-right: calc(var(--font-heading-scale) * 1rem);
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
 }
 
 a.product__text {
