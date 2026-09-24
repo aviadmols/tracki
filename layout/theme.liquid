@@ -405,8 +405,8 @@ document.addEventListener('DOMContentLoaded', function () {
       list.style.overflowY = 'auto';
       list.style.overflowX = 'hidden';
 
-      /* REMOVE SMOOTH SCROLL */
-      list.style.scrollBehavior = 'auto';
+      /* Smooth scrolling */
+      list.style.scrollBehavior = 'smooth';
 
 
       /* =========================
@@ -435,7 +435,9 @@ document.addEventListener('DOMContentLoaded', function () {
           '.thumbnail-list__item'
         );
 
-        if (!item) return 78;
+        if (!item) {
+          return 78;
+        }
 
         const style = window.getComputedStyle(list);
 
@@ -449,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       /* =========================
-         NEXT - SMALL JUMP
+         NEXT BUTTON
          ========================= */
 
       next.addEventListener('click', function (e) {
@@ -460,13 +462,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const amount = getAmount();
 
-        list.scrollTop = list.scrollTop + amount + 6;
+        list.scrollTo({
+          top: list.scrollTop + amount,
+          left: 0,
+          behavior: 'smooth'
+        });
 
       });
 
 
       /* =========================
-         PREVIOUS - SMALL JUMP
+         PREVIOUS BUTTON
          ========================= */
 
       prev.addEventListener('click', function (e) {
@@ -477,7 +483,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const amount = getAmount();
 
-        list.scrollTop = list.scrollTop - amount - 6;
+        list.scrollTo({
+          top: list.scrollTop - amount,
+          left: 0,
+          behavior: 'smooth'
+        });
 
       });
 
@@ -491,29 +501,47 @@ document.addEventListener('DOMContentLoaded', function () {
         const maxScroll =
           list.scrollHeight - list.clientHeight;
 
-        prev.disabled = list.scrollTop <= 2;
+        /* Previous disabled at top */
+        prev.disabled =
+          list.scrollTop <= 2;
 
+        /* Next disabled at bottom */
         next.disabled =
           list.scrollTop >= maxScroll - 2;
       }
 
 
-      list.addEventListener('scroll', updateButtons);
+      /* Update button state while scrolling */
+      list.addEventListener(
+        'scroll',
+        updateButtons
+      );
 
+
+      /* Initial button state */
       updateButtons();
 
     });
   }
 
 
-  /* Initial setup */
+  /* =========================
+     INITIAL SETUP
+     ========================= */
+
   setupVerticalThumbnails();
 
 
-  /* Shopify can rebuild the product gallery */
+  /* =========================
+     SHOPIFY DYNAMIC GALLERY
+     ========================= */
+
   const observer = new MutationObserver(function () {
+
     setupVerticalThumbnails();
+
   });
+
 
   observer.observe(document.body, {
     childList: true,
@@ -521,6 +549,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
 
 </script>
 
