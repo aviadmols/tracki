@@ -480,31 +480,10 @@ a.amazon-text {
                 {%- endunless -%}
               {%- endfor -%}
             </ul>
-            {% comment %} <div class="slider-buttons{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 4 %} medium-hide large-up-hide{% endif %}">
+            <div class="slider-buttons{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 4 %} medium-hide large-up-hide{% endif %}">
               <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">{% render 'icon', icon: 'caret' %}</button>
               <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">{% render 'icon', icon: 'caret' %}</button>
-            </div> {% endcomment %}
-            <div class="slider-buttons{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 4 %} medium-hide large-up-hide{% endif %}">
-  <button
-    type="button"
-    class="slider-button slider-button--prev"
-    name="previous"
-    aria-label="{{ 'general.slider.previous_slide' | t }}"
-    aria-controls="GalleryThumbnails-{{ section.id }}"
-    data-step="1">
-    {% render 'icon', icon: 'caret' %}
-  </button>
-
-  <button
-    type="button"
-    class="slider-button slider-button--next"
-    name="next"
-    aria-label="{{ 'general.slider.next_slide' | t }}"
-    aria-controls="GalleryThumbnails-{{ section.id }}"
-    data-step="1">
-    {% render 'icon', icon: 'caret' %}
-  </button>
-</div>
+            </div>
           </thumbnail-slider>
         {%- endif -%}
 
