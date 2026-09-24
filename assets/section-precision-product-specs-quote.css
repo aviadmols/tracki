@@ -192,7 +192,7 @@
 
 .precision-specs-quote__star--filled {
   font-variation-settings: 'FILL' 1;
-  color: var(--precision-pdp-primary);
+  color: #76c773;
 }
 
 .precision-specs-quote__star--empty {
