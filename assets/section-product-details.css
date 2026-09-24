@@ -118,8 +118,13 @@
   .product-details .accordion__content {
     padding-bottom: 10px;
 }
+}
 
 @media screen and (max-width: 749px) {
+  .product-details .flex-grid {
+    flex-direction: column;
+    flex: 1;
+}
   .product-details .flex-grid__item {
     flex: 0 0 100% !important;
     max-width: 100% !important;
