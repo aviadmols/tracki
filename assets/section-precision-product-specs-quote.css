@@ -162,7 +162,7 @@
 }
 
 .precision-specs-quote__blockquote {
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.125rem, 2.5vw, 1.3rem);
   font-weight: 500;
   line-height: 1.45;
   font-style: italic;
