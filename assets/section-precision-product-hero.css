@@ -367,7 +367,7 @@
   border-radius: 0;
 
   min-height: unset;
-  padding: 17px 32px;
+  padding: 15px 32px;
 
   font-size: 18px;
   font-weight: 600;
@@ -375,7 +375,7 @@
   text-transform: uppercase;
   
 }
-
+.shopify-payment-button .accelerated-checkout-button{height:50px;}
 .precision-pdp-hero__actions .product-form__submit.button--primary:hover,
 .precision-pdp-hero__actions .product-form__submit.button--secondary:hover,
 .precision-pdp-hero__btn-primary:hover {
