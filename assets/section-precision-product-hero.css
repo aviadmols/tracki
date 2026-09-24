@@ -377,6 +377,7 @@
 }
 .shopify-payment-button .accelerated-checkout-button {
     --gravity-button-height: 50px;
+    --gravity-button-border-radius:30px;
 }
 .precision-pdp-hero__actions .product-form__submit.button--primary:hover,
 .precision-pdp-hero__actions .product-form__submit.button--secondary:hover,
