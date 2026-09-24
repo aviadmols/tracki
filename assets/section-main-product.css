@@ -716,6 +716,7 @@ fieldset.product-form__input .form__label {
 .product__info-container .spacing-section + * {
   margin-top: 0;
 }
+.product__info-container iframe:empty{display:none;}
 
 .product__text {
   display: flex;
