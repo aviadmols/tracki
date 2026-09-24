@@ -131,7 +131,20 @@
             <span aria-hidden="true" class="rating-star" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
           </div>
           <span class="precision-pdp-hero__rating-caption">
-            {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
+            {% comment %} {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }} {% endcomment %}
+             <span
+    aria-hidden="true"
+    class="rating-star"
+    style="
+      --rating: {{ section.settings.rating }};
+      --rating-max: 5;
+      --rating-decimal: 0;
+    ">
+  </span>
+
+  <span class="rating-text">
+    ({{ section.settings.review_count }})
+  </span>
             {%- if product.metafields.reviews.rating_count != blank -%}
           <a href="https://www.amazon.com/Tracki-Unlimited-Worldwide-Magnetic-Subscription/dp/B07N4DHFZM?ref_=ast_slp_dp&th=1" target="_blank" rel="noopener noreferrer">(42,559 positive reviews on Amazon)</a>
             {%- endif -%}
@@ -225,7 +238,8 @@
         <div class="precision-pdp-hero__trust">
           {%- if section.settings.trust_shipping != blank -%}
             <div class="precision-pdp-hero__trust-item">
-              <span class="material-symbols-outlined precision-pdp-icon">local_shipping</span>
+              {% comment %} <span class="material-symbols-outlined precision-pdp-icon">local_shipping</span> {% endcomment %}
+               <span class="material-symbols-outlined precision-pdp-icon"> workspace_premium </span>
               <span>{{ section.settings.trust_shipping | escape }}</span>
             </div>
           {%- endif -%}
@@ -709,7 +723,19 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 36
-    }
+    },
+    {
+  "type": "text",
+  "id": "rating",
+  "label": "Rating",
+  "default": "4.3"
+},
+{
+  "type": "text",
+  "id": "review_count",
+  "label": "Review count",
+  "default": "3,997"
+},
   ],
   "presets": [
     {
