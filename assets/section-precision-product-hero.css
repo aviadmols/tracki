@@ -36,6 +36,10 @@
   }
 }
 
+@media (max-width: 989px) {
+.precision-pdp-hero__inner{max-width:80%;}
+}
+
 /* Fallback single image / placeholder (no product.media) */
 .precision-pdp-hero__media-inner {
   background: #ffffff;
