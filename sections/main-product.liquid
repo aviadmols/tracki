@@ -877,7 +877,8 @@ document.addEventListener("DOMContentLoaded", function () {
 {% comment %}  {% endcomment %}
 
           {%- when 'rating' -%}
-            {%- if product.metafields.reviews.rating.value != blank -%}
+            {% comment %} {%- if product.metafields.reviews.rating.value != blank -%} {% endcomment %}
+             {%- if product.metafields.reviews.rating.value != blank or product.metafields.stamped.reviews_average.value != blank -%}
               {% liquid
                 assign rating_decimal = 0
                 assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
