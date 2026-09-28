@@ -1,0 +1,349 @@
+<section class="product-info-columns">
+  <div class="product-info-columns__inner">
+
+    <!-- LEFT: KEY HIGHLIGHTS -->
+    <div class="product-info-columns__highlights">
+
+      <h2 class="product-info-columns__title">
+        {{ section.settings.highlights_heading }}
+      </h2>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'highlight' %}
+          <div class="highlight-row" {{ block.shopify_attributes }}>
+
+            <div class="highlight-title">
+              {{ block.settings.title }}
+            </div>
+
+            <div class="highlight-description">
+              {{ block.settings.description }}
+            </div>
+
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+
+    <!-- RIGHT: DETAILS -->
+    <div class="product-info-columns__details">
+
+      <div class="details-header">
+        <h2>{{ section.settings.details_heading }}</h2>
+      </div>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'detail' %}
+          <div class="detail-row" {{ block.shopify_attributes }}>
+
+            <div class="detail-label">
+              {{ block.settings.label }}
+            </div>
+
+            <div class="detail-value">
+              {{ block.settings.value }}
+            </div>
+
+          </div>
+        {% endif %}
+      {% endfor %}
+
+
+      <!-- ACCORDION -->
+      {% for block in section.blocks %}
+        {% if block.type == 'accordion' %}
+
+          <details class="details-accordion" {{ block.shopify_attributes }}>
+
+            <summary>
+              <span>{{ block.settings.title }}</span>
+              <span class="accordion-icon">+</span>
+            </summary>
+
+            <div class="accordion-content">
+              {{ block.settings.content }}
+            </div>
+
+          </details>
+
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .product-info-columns {
+    background: #252729;
+    color: #fff;
+    width: 100%;
+  }
+
+  .product-info-columns__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    gap: 50px;
+  }
+
+  /* =========================
+     HEADINGS
+  ========================= */
+
+  .product-info-columns__title,
+  .details-header h2 {
+    margin: 0 0 25px;
+    font-size: 24px !important;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  /* =========================
+     LEFT HIGHLIGHTS
+  ========================= */
+
+  .highlight-row {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    gap: 25px;
+    padding: 18px 0;
+    border-bottom: 1px solid #55595b;
+    align-items: center;
+  }
+
+  .highlight-row:first-of-type {
+    border-top: 1px solid #55595b;
+  }
+
+  .highlight-title {
+    font-size: 16px !important;
+    line-height: 1.5;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #dedede;
+  }
+
+  .highlight-description {
+    font-size: 15px !important;
+    line-height: 1.55;
+    font-weight: 500;
+    color: #9ee87d;
+  }
+
+  /* =========================
+     RIGHT DETAILS
+  ========================= */
+
+  .product-info-columns__details {
+    max-width: 560px;
+    margin-left: auto;
+    width: 100%;
+  }
+
+
+  .detail-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 9px 0;
+    gap: 12px;
+  }
+
+  .detail-label {
+    font-size: 16px !important;
+    line-height: 1.6;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .detail-value {
+    font-size: 16px !important;
+    line-height: 1.6;
+    color: #dedede;
+  }
+
+  /* =========================
+     ACCORDION
+  ========================= */
+
+  .details-accordion {
+    border-top: 1px solid #44484a;
+  }
+
+  .details-accordion:last-child {
+    border-bottom: 1px solid #44484a;
+  }
+
+  .details-accordion summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 0;
+    font-size: 16px !important;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  .details-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-icon {
+    font-size: 24px !important;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .details-accordion[open] .accordion-icon {
+    transform: rotate(45deg);
+  }
+
+  .accordion-content {
+    padding: 0 0 20px;
+    color: #cfcfcf;
+    font-size: 15px !important;
+    line-height: 1.6;
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media screen and (max-width: 767px) {
+
+    .product-info-columns__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 35px 20px;
+    }
+
+    .product-info-columns__details {
+      max-width: none;
+    }
+
+    .product-info-columns__title,
+    .details-header h2 {
+      font-size: 21px !important;
+    }
+
+    .highlight-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 16px 0;
+    }
+
+    .highlight-title {
+      font-size: 15px !important;
+    }
+
+    .highlight-description {
+      font-size: 14px !important;
+    }
+
+    .detail-label,
+    .detail-value {
+      font-size: 15px !important;
+    }
+
+    .details-accordion summary {
+      font-size: 15px !important;
+      padding: 18px 0;
+    }
+
+    .accordion-content {
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Highlights & Details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "highlights_heading",
+      "label": "Highlights heading",
+      "default": "Key Highlights at a Glance:"
+    },
+    {
+      "type": "text",
+      "id": "details_heading",
+      "label": "Details heading",
+      "default": "Specifications"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Key Highlight",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "ULTRA-LONG 6-WEEK BATTERY LIFE"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Powered by a 1950mAh rechargeable battery that delivers up to 1.5 months of continuous tracking on a single charge."
+        }
+      ]
+    },
+    {
+      "type": "detail",
+      "name": "Specification",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Dimensions:"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "60 mm × 37 mm × 20 mm"
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion Detail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Global 4G LTE Coverage"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Highlights & Details"
+    }
+  ]
+}
+{% endschema %}
