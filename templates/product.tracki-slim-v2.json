@@ -871,7 +871,7 @@
           "settings": {
             "button_size": "medium",
             "button_label": "Buy Now",
-            "button_link": "",
+            "button_link": "shopify://products/tracki-slim",
             "button_style_secondary": false,
             "button_alt_label": "",
             "button_alt_link": "",
