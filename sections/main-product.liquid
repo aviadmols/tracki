@@ -891,7 +891,7 @@ document.addEventListener("DOMContentLoaded", function () {
               {% comment %} <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
                 <span aria-hidden="true" class="rating-star" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
               </div> {% endcomment %}
-              <div class="rating" role="img" aria-label="{{ section.settings.rating }} out of 5 stars">
+              {% comment %} <div class="rating" role="img" aria-label="{{ section.settings.rating }} out of 5 stars">
 
   <span class="rating-text">
     {{ section.settings.rating }}
@@ -913,6 +913,48 @@ document.addEventListener("DOMContentLoaded", function () {
 {% if section.settings.amazon_text != '' %}
   <a href="{{ section.settings.amazon_link }}" class="amazon-text">{{ section.settings.amazon_text }}</a>
 {% endif %}
+</div> {% endcomment %}
+
+{% if product.template_suffix == 'default-new' and product.handle == 'tracki-2025-4g-model-mini-real-time-gps-tracker-6-month-subscription-included' %}
+  {% assign rating = '4.3' %}
+  {% assign rating_star = '4.3' %}
+  {% assign review_count = '43,286' %}
+{% elsif product.template_suffix == 'default-new' and product.handle == 'tracki-2025-4g-model-mini-real-time-gps-tracker-12-month-subscription-included' %}
+  {% assign rating = '4.5' %}
+  {% assign rating_star = '4.5' %}
+  {% assign review_count = '43,286' %}
+{% else %}
+  {% assign rating = section.settings.rating %}
+  {% assign rating_star = section.settings.rating_star %}
+  {% assign review_count = section.settings.review_count %}
+{% endif %}
+
+<div class="rating" role="img" aria-label="{{ rating }} out of 5 stars">
+
+  <span class="rating-text">
+    {{ rating }}
+  </span>
+
+  <span
+    aria-hidden="true"
+    class="rating-star"
+    style="
+      --rating: {{ rating_star }};
+      --rating-max: 5;
+      --rating-decimal: 0;
+    ">
+  </span>
+
+  <span class="rating-text">
+    ({{ review_count }})
+  </span>
+
+{% if section.settings.amazon_text != '' %}
+  <a href="{{ section.settings.amazon_link }}" class="amazon-text">
+    {{ section.settings.amazon_text }}
+  </a>
+{% endif %}
+
 </div>
 
 
