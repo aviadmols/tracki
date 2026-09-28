@@ -9,86 +9,6 @@
  */
 {
   "sections": {
-    "17870526332906f1d6": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "178705443560698a7b": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7576672_QRwHeQ": {
-          "type": "ai_gen_block_7576672",
-          "settings": {
-            "desktop_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max_8ac6fadb-70c6-49cd-99d4-8e9431bf18dc.png",
-            "desktop_width_percent": 100,
-            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile.png"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7576672_QRwHeQ"
-      ],
-      "settings": {}
-    },
-    "1787047544f15c8025": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_f2f05c2_wE9XQb": {
-          "type": "ai_gen_block_f2f05c2",
-          "settings": {
-            "hero_height": 700,
-            "hero_height_mobile": 600,
-            "background_gradient": "radial-gradient(rgba(245, 245, 247, 1), rgba(245, 245, 247, 1) 100%, rgba(215, 204, 250, 1) 100%)",
-            "hero_image_desktop": "shopify://shop_images/image-1Slide-1-copy-2.png",
-            "image_position": "flex-end",
-            "image_max_width": 90,
-            "content_horizontal_position": "flex-start",
-            "content_vertical_position": "center",
-            "content_max_width": 600,
-            "text_alignment": "left",
-            "main_title": "Tracki Max",
-            "title_size": 56,
-            "title_color": "#212326",
-            "feature_spacing": 35,
-            "feature_headline_size": 24,
-            "feature_headline_color": "#212326",
-            "feature_text_size": 16,
-            "feature_text_color": "#666666",
-            "feature_1_headline": "Never Lose Sight of What Matters",
-            "feature_1_text": "Track your car, valuables, or the people you love in real time over 4G LTE across 185+ countries, right from your phone.",
-            "feature_2_headline": "Up to 1.5 Months on a Single Charge",
-            "feature_2_text": "A powerful 1950 mAh battery means less recharging and more uninterrupted protection.",
-            "feature_3_headline": "Anywhere, Rain or Shine",
-            "feature_3_text": "A strong magnet and waterproof design let you hide it in a bag, on gear, or under a car, reliable through any weather.",
-            "callout_dot_size": 12,
-            "callout_dot_color": "#54a21f",
-            "callout_line_length": 100,
-            "callout_line_color": "#27282a",
-            "callout_1_enabled": true,
-            "callout_1_x": 59,
-            "callout_1_y": 24,
-            "callout_1_angle": 150,
-            "callout_2_enabled": true,
-            "callout_2_x": 56,
-            "callout_2_y": 52,
-            "callout_2_angle": 180,
-            "callout_3_enabled": true,
-            "callout_3_x": 54,
-            "callout_3_y": 70,
-            "callout_3_angle": 165,
-            "enable_animation": true
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_f2f05c2_wE9XQb"
-      ],
-      "disabled": true,
-      "name": "Hero Bullet",
-      "settings": {}
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -240,53 +160,185 @@
         "mobile_image_ratio": "adapt_first",
         "show_mobile_thumbnails": false,
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "rating": "4.7",
+        "rating_star": "4.5",
+        "review_count": "216",
+        "amazon_text": "",
+        "amazon_link": ""
       }
     },
-    "17890078342d3dc4b5": {
+    "17870526332906f1d6": {
+      "type": "_blocks",
+      "disabled": true,
+      "settings": {}
+    },
+    "product_highlights_details_YxCnQc": {
+      "type": "product-highlights-details",
+      "blocks": {
+        "highlight_DmLXei": {
+          "type": "highlight",
+          "settings": {
+            "title": "Ultra-Long 6-Week Battery Life",
+            "description": "Powered by a 1950mAh rechargeable battery that delivers up to 1.5 months of continuous tracking on a single charge."
+          }
+        },
+        "highlight_aqDnUz": {
+          "type": "highlight",
+          "settings": {
+            "title": "Global 4G LTE Connectivity:",
+            "description": "Seamless real-time tracking across international borders with worldwide 4G Cat 1 network roaming."
+          }
+        },
+        "highlight_yWm6VF": {
+          "type": "highlight",
+          "settings": {
+            "title": "Precision Multi-System Tracking:",
+            "description": "Combines GPS, Galileo, GLONASS, Beidou, Wi-Fi, and Bluetooth (BLE 5.0) for accurate indoor and outdoor positioning."
+          }
+        },
+        "highlight_aJpeej": {
+          "type": "highlight",
+          "settings": {
+            "title": "IP68 Heavy-Duty Waterproofing:",
+            "description": "Fully sealed, rugged housing engineered to withstand harsh environments, heavy weather, and water immersion."
+          }
+        },
+        "highlight_Bw8BDA": {
+          "type": "highlight",
+          "settings": {
+            "title": "Instant Emergency SOS Alert:",
+            "description": "One-touch SOS button sends instant panic alerts via Push, SMS, or Email."
+          }
+        },
+        "highlight_xNgYYU": {
+          "type": "highlight",
+          "settings": {
+            "title": "Rapid 5-Second Updates:",
+            "description": "Configurable location tracking frequency with real-time updates as fast as every 5 seconds."
+          }
+        },
+        "accordion_Neb3UE": {
+          "type": "accordion",
+          "settings": {
+            "title": "Specifications",
+            "content": "<p><strong>Dimensions</strong>: 60 mm × 37 mm × 20 mm</p><p><strong>Weight</strong>: 55 g</p><p><strong>Waterproof Rating</strong>: IP68</p><p><strong>Network Technology: </strong>LTE (4G) CAT1 with worldwide roaming</p><p><strong>Battery Type: </strong>Rechargeable Li-ion 1950mAh</p><p><strong>Active Battery:</strong> Up to 1.5 months (6 weeks)</p><p><strong>Network & SIM: </strong>Embedded SIM (or nano-SIM option) LTE (4G) CAT1 with worldwide roaming</p><p><strong>Connectivity: </strong>Wi-Fi & Bluetooth (BLE 5.0)</p><p><strong>Apps Supported: </strong>iOS / Android / Windows / Mac</p>"
+          }
+        },
+        "accordion_XCR4yM": {
+          "type": "accordion",
+          "settings": {
+            "title": "Global 4G LTE Coverage",
+            "content": "<p>Unlimited distance real-time tracking with worldwide 4G Cat 1 roaming networks.</p>"
+          }
+        },
+        "accordion_qyqPVa": {
+          "type": "accordion",
+          "settings": {
+            "title": "Ultra-Long Battery Life",
+            "content": "<p>Advanced 1950mAh rechargeable battery lasts up to 1.5 months (6 weeks) on a single charge.</p>"
+          }
+        },
+        "accordion_4JBcdi": {
+          "type": "accordion",
+          "settings": {
+            "title": "Multi-Sensor Positioning",
+            "content": "<p>Combines GPS, Galileo, Beidou, GLONASS, Wi-Fi, and Bluetooth (BLE 5.0) for precision indoor and outdoor location accuracy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_DmLXei",
+        "highlight_aqDnUz",
+        "highlight_yWm6VF",
+        "highlight_aJpeej",
+        "highlight_Bw8BDA",
+        "highlight_xNgYYU",
+        "accordion_Neb3UE",
+        "accordion_XCR4yM",
+        "accordion_qyqPVa",
+        "accordion_4JBcdi"
+      ],
+      "name": "Highlights & Details",
+      "settings": {
+        "highlights_heading": "Key Highlights at a Glance:",
+        "details_heading": "Specifications"
+      }
+    },
+    "178705443560698a7b": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_c37a919_9w4t9M": {
-          "type": "ai_gen_block_c37a919",
+        "ai_gen_block_7576672_QRwHeQ": {
+          "type": "ai_gen_block_7576672",
           "settings": {
-            "heading": "Key Highlights at a Glance:",
-            "row_1_label": "Ultra-Long 6-Week Battery Life",
-            "row_1_content": "<p>Powered by a 1950mAh rechargeable battery that delivers up to 1.5 months of continuous tracking on a single charge.</p>",
-            "row_2_label": "Global 4G LTE Connectivity:",
-            "row_2_content": "<p>Seamless real-time tracking across international borders with worldwide 4G Cat 1 network roaming.</p>",
-            "row_3_label": "Precision Multi-System Tracking:",
-            "row_3_content": "<p>Combines GPS, Galileo, GLONASS, Beidou, Wi-Fi, and Bluetooth (BLE 5.0) for accurate indoor and outdoor positioning.</p>",
-            "row_4_label": "IP68 Heavy-Duty Waterproofing:",
-            "row_4_content": "<p>Fully sealed, rugged housing engineered to withstand harsh environments, heavy weather, and water immersion.</p>",
-            "row_5_label": "Instant Emergency SOS Alert:",
-            "row_5_content": "<p>One-touch SOS button sends instant panic alerts via Push, SMS, or Email.</p>",
-            "row_6_label": "Rapid 5-Second Updates:",
-            "row_6_content": "<p>Configurable location tracking frequency with real-time updates as fast as every 5 seconds.</p>",
+            "desktop_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max_8ac6fadb-70c6-49cd-99d4-8e9431bf18dc.png",
             "desktop_width_percent": 100,
-            "padding_top": 36,
-            "padding_bottom": 36,
-            "mobile_padding_top": 24,
-            "mobile_padding_bottom": 24,
-            "border_radius": 16,
-            "heading_font": "jost_n6",
-            "body_font": "figtree_n4",
-            "heading_size": 24,
-            "mobile_heading_size": 22,
-            "body_size": 16,
-            "background_color": "#333333",
-            "heading_color": "#ffffff",
-            "text_color": "#c0fd97",
-            "label_color": "#d8dadd",
-            "border_color": "#424246",
-            "divider_color": "#737579"
+            "mobile_image": "shopify://shop_images/image-1Image-Banner-Tracki-Max-Mobile.png"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_c37a919_9w4t9M"
+        "ai_gen_block_7576672_QRwHeQ"
       ],
-      "name": "product-specs.liquid",
+      "settings": {}
+    },
+    "1787047544f15c8025": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f2f05c2_wE9XQb": {
+          "type": "ai_gen_block_f2f05c2",
+          "settings": {
+            "hero_height": 700,
+            "hero_height_mobile": 600,
+            "background_gradient": "radial-gradient(rgba(245, 245, 247, 1), rgba(245, 245, 247, 1) 100%, rgba(215, 204, 250, 1) 100%)",
+            "hero_image_desktop": "shopify://shop_images/image-1Slide-1-copy-2.png",
+            "image_position": "flex-end",
+            "image_max_width": 90,
+            "content_horizontal_position": "flex-start",
+            "content_vertical_position": "center",
+            "content_max_width": 600,
+            "text_alignment": "left",
+            "main_title": "Tracki Max",
+            "title_size": 56,
+            "title_color": "#212326",
+            "feature_spacing": 35,
+            "feature_headline_size": 24,
+            "feature_headline_color": "#212326",
+            "feature_text_size": 16,
+            "feature_text_color": "#666666",
+            "feature_1_headline": "Never Lose Sight of What Matters",
+            "feature_1_text": "Track your car, valuables, or the people you love in real time over 4G LTE across 185+ countries, right from your phone.",
+            "feature_2_headline": "Up to 1.5 Months on a Single Charge",
+            "feature_2_text": "A powerful 1950 mAh battery means less recharging and more uninterrupted protection.",
+            "feature_3_headline": "Anywhere, Rain or Shine",
+            "feature_3_text": "A strong magnet and waterproof design let you hide it in a bag, on gear, or under a car, reliable through any weather.",
+            "callout_dot_size": 12,
+            "callout_dot_color": "#54a21f",
+            "callout_line_length": 100,
+            "callout_line_color": "#27282a",
+            "callout_1_enabled": true,
+            "callout_1_x": 59,
+            "callout_1_y": 24,
+            "callout_1_angle": 150,
+            "callout_2_enabled": true,
+            "callout_2_x": 56,
+            "callout_2_y": 52,
+            "callout_2_angle": 180,
+            "callout_3_enabled": true,
+            "callout_3_x": 54,
+            "callout_3_y": 70,
+            "callout_3_angle": 165,
+            "enable_animation": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f2f05c2_wE9XQb"
+      ],
+      "disabled": true,
+      "name": "Hero Bullet",
       "settings": {}
     },
     "16448066058b9355f9": {
@@ -400,6 +452,53 @@
         "padding_bottom": 60
       }
     },
+    "17890078342d3dc4b5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c37a919_9w4t9M": {
+          "type": "ai_gen_block_c37a919",
+          "settings": {
+            "heading": "Key Highlights at a Glance:",
+            "row_1_label": "Ultra-Long 6-Week Battery Life",
+            "row_1_content": "<p>Powered by a 1950mAh rechargeable battery that delivers up to 1.5 months of continuous tracking on a single charge.</p>",
+            "row_2_label": "Global 4G LTE Connectivity:",
+            "row_2_content": "<p>Seamless real-time tracking across international borders with worldwide 4G Cat 1 network roaming.</p>",
+            "row_3_label": "Precision Multi-System Tracking:",
+            "row_3_content": "<p>Combines GPS, Galileo, GLONASS, Beidou, Wi-Fi, and Bluetooth (BLE 5.0) for accurate indoor and outdoor positioning.</p>",
+            "row_4_label": "IP68 Heavy-Duty Waterproofing:",
+            "row_4_content": "<p>Fully sealed, rugged housing engineered to withstand harsh environments, heavy weather, and water immersion.</p>",
+            "row_5_label": "Instant Emergency SOS Alert:",
+            "row_5_content": "<p>One-touch SOS button sends instant panic alerts via Push, SMS, or Email.</p>",
+            "row_6_label": "Rapid 5-Second Updates:",
+            "row_6_content": "<p>Configurable location tracking frequency with real-time updates as fast as every 5 seconds.</p>",
+            "desktop_width_percent": 100,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "mobile_padding_top": 24,
+            "mobile_padding_bottom": 24,
+            "border_radius": 16,
+            "heading_font": "jost_n6",
+            "body_font": "figtree_n4",
+            "heading_size": 24,
+            "mobile_heading_size": 22,
+            "body_size": 16,
+            "background_color": "#333333",
+            "heading_color": "#ffffff",
+            "text_color": "#c0fd97",
+            "label_color": "#d8dadd",
+            "border_color": "#424246",
+            "divider_color": "#737579"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c37a919_9w4t9M"
+      ],
+      "disabled": true,
+      "name": "product-specs.liquid",
+      "settings": {}
+    },
     "product-details": {
       "type": "product-details",
       "blocks": {
@@ -452,6 +551,7 @@
         "product-details-2",
         "collapsible_tab_GzVEEd"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "force_light_style": false,
@@ -494,11 +594,13 @@
     },
     "how_to_use_text_PGe3a8": {
       "type": "how-to-use-text",
+      "disabled": true,
       "name": "How TO Use Text",
       "settings": {}
     },
     "17870468929edde249": {
       "type": "_blocks",
+      "disabled": true,
       "settings": {}
     },
     "multicolumn_wKeNaP": {
@@ -649,10 +751,105 @@
         "colors_background": "#27282a",
         "gradient_background": "",
         "colors_highlight": "#00b600",
-        "padding_top": 80,
-        "padding_bottom": 80,
+        "padding_top": 0,
+        "padding_bottom": 60,
         "enable_highlight": false,
         "highlight_style": "marker"
+      }
+    },
+    "customer_reviews_YPaFc7": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review_4AYicN": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "time": "",
+            "review": "This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great.",
+            "author": "Carrol",
+            "verified": true
+          }
+        },
+        "review_fr4wtq": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "time": "",
+            "review": "This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great.",
+            "author": "Russell",
+            "verified": true
+          }
+        },
+        "review_w8z4FQ": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "time": "",
+            "review": "Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty. He informed me that the Lifetime warranty comes with purchasing Tracki through Amazon- they will replace the device if lost/stolen or ceases to function- and Tracki has already replaced the first device I purchased (it got lost, or I hid it so well I couldn't find it and the battery died, lol!",
+            "author": "Eric",
+            "verified": true
+          }
+        },
+        "review_8PNM3N": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "time": "",
+            "review": "I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!",
+            "author": "Victoria",
+            "verified": true
+          }
+        },
+        "review_t76R8n": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "time": "",
+            "review": "Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty.",
+            "author": "Monica",
+            "verified": true
+          }
+        },
+        "review_AQXfda": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "time": "",
+            "review": "I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!",
+            "author": "Ross",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_4AYicN",
+        "review_fr4wtq",
+        "review_w8z4FQ",
+        "review_8PNM3N",
+        "review_t76R8n",
+        "review_AQXfda"
+      ],
+      "name": "Customer Reviews",
+      "settings": {
+        "heading": "Reviews From Real Customers!",
+        "heading_size": 38,
+        "rating": 5,
+        "rating_count": 774,
+        "show_brand": false,
+        "brand_name": "",
+        "verified_text": "Verified, collected via Trustpilot",
+        "max_width": 1280,
+        "card_gap": 25,
+        "padding_top": 75,
+        "padding_bottom": 80,
+        "background_color": "#222426",
+        "title_color": "#ffffff",
+        "text_color": "#e7e7e7",
+        "muted_color": "#858789",
+        "star_color": "#ffffff",
+        "star_background": "#43c85a",
+        "border_color": "#3b3d3f",
+        "arrow_color": "#b7b8b9"
       }
     },
     "video_hero_7tqaLF": {
@@ -704,8 +901,8 @@
         "colors_overlay": "#000000",
         "colors_overlay_opacity": 28,
         "colors_highlight": "#ffb503",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "17870582111aba83be": {
@@ -818,6 +1015,7 @@
         "judge_me_reviews_reviews_grid_widget_x3AdhF",
         "ai_gen_block_34e97e1_fnT9d4"
       ],
+      "disabled": true,
       "name": "Review",
       "settings": {}
     },
@@ -1048,36 +1246,41 @@
     "1788800707fd30578a": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_review_snippet_widget_eXPQBD": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "judge_me_reviews_reviews_grid_widget_gHYwjg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/reviews_grid_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "reviews_selection": "product",
-            "products": [
-              "tracki-max-real-time-gps-tracker"
-            ],
+            "show_sample_reviews": true,
+            "review_selection": "all",
+            "products": [],
             "filter_pinned": false,
             "filter_featured": false,
             "filter_custom_tags": "",
-            "min_star_rating": "inherit",
-            "show_review_media": true,
-            "max_reviews": 5,
-            "review_length": "large",
-            "text_size": "large",
-            "max_width": 1600,
-            "max_image_size": "small",
-            "arrows_visibility": "always_shown",
-            "transition_speed": 5,
-            "corner_styling": "round",
-            "text_color": "",
-            "card_color": "",
-            "stars_color": "",
-            "arrows_color": "",
-            "arrows_background_color": ""
+            "show_media_only": false,
+            "display_order": "media_first",
+            "card_grouping": "per_media",
+            "columns_desktop": 3,
+            "rows_desktop": 3,
+            "columns_mobile": "2",
+            "rows_mobile": 6,
+            "show_stars": true,
+            "show_reviewer_name": true,
+            "show_review_title_on_hover_desktop": true,
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "card_spacing": "medium",
+            "header_text_color": "#000000",
+            "star_and_reviewer_name_color": "#f9f9f9",
+            "drop_shadow_color": "#000000",
+            "overlay_and_background_color": "#000000",
+            "content_color": "#f9f9f9",
+            "header_text": "From our customers",
+            "show_average_rating": true,
+            "rating_display": "default"
           }
         }
       },
       "block_order": [
-        "judge_me_reviews_review_snippet_widget_eXPQBD"
+        "judge_me_reviews_reviews_grid_widget_gHYwjg"
       ],
       "disabled": true,
       "settings": {
@@ -1089,18 +1292,20 @@
     }
   },
   "order": [
+    "main",
     "17870526332906f1d6",
+    "product_highlights_details_YxCnQc",
     "178705443560698a7b",
     "1787047544f15c8025",
-    "main",
-    "17890078342d3dc4b5",
     "16448066058b9355f9",
+    "17890078342d3dc4b5",
     "product-details",
     "product-recommendations",
     "how_to_use_text_PGe3a8",
     "17870468929edde249",
     "multicolumn_wKeNaP",
     "tab-collage",
+    "customer_reviews_YPaFc7",
     "video_hero_7tqaLF",
     "17870582111aba83be",
     "16448079723140b4d6",
