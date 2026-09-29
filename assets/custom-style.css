@@ -4840,25 +4840,30 @@ ul.tab-collage__content li:before {
 
 /* ------------- */
 #shopify-section-template--23917408321651__1788800707fd30578a{background:#222426;}
-.jdgm-cards-carousel h2.jdgm-title{
-      margin: 0 0 55px;
+.jdgm-cards-carousel h2.jdgm-title {
+    margin: 0 0 20px;
     text-align: center;
-    color: var(--cr-title);
+    color: #fff;
     font-size: 38px;
     line-height: 1.1;
     font-weight: 600;
-    letter-spacing: -0.8px;
-    position:relative;
+    letter-spacing: -.8px;
+    position: relative;
+    padding: 0 0 20px;
 }
-.jdgm-cards-carousel h2.jdgm-title:after{
+.jdgm-cards-carousel h2.jdgm-title::after {
     content: "";
-    display: block;
+    display: inline-block;
     width: 42px;
     height: 3px;
     margin: 18px auto 0;
-    background: var(--cr-green);
+    background: #43c85a;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.jdgm-cards-carousel .jdgm-star {color:#76c773;}
+.jdgm-cards-carousel .jdgm-average-rating .jdgm-stars .jdgm-star {color:#76c773;}
 .jdgm-cards-carousel .jdgm-rating-text{color:#fff;}
 .jdgm-cards-carousel .jdgm-card.jdgm-media-card .jdgm-text {
     padding: 16px 10px 0;
