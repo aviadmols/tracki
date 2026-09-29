@@ -4868,11 +4868,14 @@ ul.tab-collage__content li:before {
 .jdgm-cards-carousel .jdgm-card.jdgm-media-card .jdgm-text {
     padding: 16px 10px 0;
     flex: 1;
-    font-size: 14px !important;
-    color: #000 !important;
-    font-family: var(--font-heading-family);
-    font-weight: 400;
-    line-height: 1.4 !important;
+    
+}
+.jdgm-cards-carousel .jdgm-card.jdgm-media-card .jdgm-text p{
+  font-size: 14px !important;
+  color: #000 !important;
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  line-height: 1.4 !important;
 }
 .jdgm-cards-carousel .jdgm-card.jdgm-media-card .jdgm-rating-section {
     padding: 12px 10px 16px;
