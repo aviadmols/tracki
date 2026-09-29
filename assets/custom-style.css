@@ -4866,7 +4866,7 @@ ul.tab-collage__content li:before {
 .jdgm-cards-carousel .jdgm-average-rating .jdgm-stars .jdgm-star, .jdgm-cards-carousel .jdgm-media-card .jdgm-rating-section .jdgm-stars .jdgm-star {color:#76c773 !important;font-size:16px;}
 .jdgm-cards-carousel .jdgm-average-rating .jdgm-rating-text, .jdgm-cards-carousel .jdgm-average-rating .jdgm-rating-text .jdgm-rating-star{color:#fff;}
 .jdgm-cards-carousel .jdgm-card.jdgm-media-card .jdgm-text {
-    padding: 16px 10px 0;
+    padding: 16px 10px 20px;
     flex: 1;
     
 }
