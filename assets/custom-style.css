@@ -4859,6 +4859,7 @@ ul.tab-collage__content li:before {
     background: var(--cr-green);
 }
 .jdgm-cards-carousel .jdgm-star {color:#76c773;}
+.jdgm-rating-text{}
 @media(max-width:989px){
   #shopify-section-template--23890307088499__video_hero_7tqaLF .page-width.page-width--full-width {
     padding: 0px 0px !important;
