@@ -158,6 +158,14 @@
             "text_style": "body"
           }
         },
+        "text_3hXfe7": {
+          "type": "text",
+          "settings": {
+            "icon": "truck",
+            "text": "Free shipping in US",
+            "text_style": "body"
+          }
+        },
         "inventory_status": {
           "type": "inventory_status",
           "settings": {
@@ -218,6 +226,7 @@
         "99d9a132-b5b6-41b4-826d-b33fd2d33b02",
         "dd734640-b7b1-44ad-96b6-3d7c9affc69e",
         "fd414a67-531a-4a3a-8941-e78cec888355",
+        "text_3hXfe7",
         "inventory_status",
         "buy_buttons",
         "subtitle",
@@ -240,7 +249,12 @@
         "mobile_image_ratio": "adapt_first",
         "show_mobile_thumbnails": false,
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "rating": "4.3",
+        "rating_star": "4.5",
+        "review_count": "3,997",
+        "amazon_text": "",
+        "amazon_link": ""
       }
     },
     "17890078342d3dc4b5": {
