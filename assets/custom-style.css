@@ -4837,6 +4837,28 @@ ul.tab-collage__content li:before {
 }
 .cr-summary .cr-large-star.is-active{background:#76c773 !important;}
 
+
+/* ------------- */
+#shopify-section-template--23917408321651__1788800707fd30578a{background:#222426;}
+.jdgm-cards-carousel h2.jdgm-title{
+      margin: 0 0 55px;
+    text-align: center;
+    color: var(--cr-title);
+    font-size: 38px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    position:relative;
+}
+.jdgm-cards-carousel h2.jdgm-title:after{
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: var(--cr-green);
+}
+.jdgm-cards-carousel .jdgm-star {color:#76c773;}
 @media(max-width:989px){
   #shopify-section-template--23890307088499__video_hero_7tqaLF .page-width.page-width--full-width {
     padding: 0px 0px !important;
