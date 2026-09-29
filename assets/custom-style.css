@@ -4893,6 +4893,8 @@ ul.tab-collage__content li:before {
   border: 1px solid #fff;
     border-radius: 30px;
     color:#fff;
+    width:35px;
+    height:35px;
 }
 .jdgm-cards-carousel .jdgm-content .jdgm-arrow:hover{opacity:0.7;}
  .jdgm-cards-carousel .jdgm-content .jdgm-arrow svg{width:12px;}
