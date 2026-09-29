@@ -4894,6 +4894,7 @@ ul.tab-collage__content li:before {
     border-radius: 30px;
     color:#fff;
 }
+ .jdgm-cards-carousel .jdgm-content .jdgm-arrow svg{width:12px;}
 @media(max-width:989px){
   #shopify-section-template--23890307088499__video_hero_7tqaLF .page-width.page-width--full-width {
     padding: 0px 0px !important;
