@@ -871,7 +871,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5",
-            "text": "<p>I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!</p>",
+            "text": "<p>I purchased the Tracki to keep track of my vehicle, and thanks to Tracki I was able to confirm everything. It was a great device and works amazingly, I highly recommend it!</p>",
             "author": "Victoria",
             "enable_highlight": false,
             "highlight_style": "marker"
@@ -883,16 +883,6 @@
             "icon": "5",
             "text": "<p>Yet another great customer service experience with \"Glen\" - He handled all my inquiries, needs and even informed me (to which he also signed me up as well), for Tracki's Lifetime Warranty.</p>",
             "author": "Monica",
-            "enable_highlight": false,
-            "highlight_style": "marker"
-          }
-        },
-        "1644818997c04c6254-4": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5",
-            "text": "<p>I purchased the Tracki with suspicion of my husband’s activity and thanks for the Tracki I was correct, it was a great device and works amazing, I highly recommend it!</p>",
-            "author": "Ross",
             "enable_highlight": false,
             "highlight_style": "marker"
           }
@@ -913,7 +903,6 @@
         "1644818997c04c6254-1",
         "1644818997c04c6254-2",
         "1644818997c04c6254-3",
-        "1644818997c04c6254-4",
         "testimonial_aQJRUb"
       ],
       "settings": {
