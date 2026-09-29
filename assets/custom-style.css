@@ -4863,7 +4863,7 @@ ul.tab-collage__content li:before {
     left: 50%;
     transform: translateX(-50%);
 }
-.jdgm-cards-carousel .jdgm-average-rating .jdgm-stars .jdgm-star {color:#76c773;}
+.jdgm-cards-carousel .jdgm-average-rating .jdgm-stars .jdgm-star {color:#76c773 !important;font-size:18px;}
 .jdgm-cards-carousel .jdgm-average-rating .jdgm-rating-text{color:#fff;}
 .jdgm-cards-carousel .jdgm-card.jdgm-media-card .jdgm-text {
     padding: 16px 10px 0;
