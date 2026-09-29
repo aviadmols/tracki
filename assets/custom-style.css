@@ -4850,6 +4850,9 @@ ul.tab-collage__content li:before {
     letter-spacing: -.8px;
     position: relative;
     padding: 0 0 20px;
+    overflow: visible;
+    text-overflow: unset;
+    -webkit-line-clamp: unset;
 }
 .jdgm-cards-carousel h2.jdgm-title::after {
     content: "";
