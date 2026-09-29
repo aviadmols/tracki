@@ -761,6 +761,7 @@
       "blocks": {
         "1644818997c04c6254-0": {
           "type": "testimonial",
+          "disabled": true,
           "settings": {
             "icon": "5",
             "text": "<p>This is an excellent device, accurate reliable and works great. I found the device and subscription price to be way better than all the other GPS trackers. I had few questions and customer service was great.</p>",
