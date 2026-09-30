@@ -4902,14 +4902,18 @@ ul.tab-collage__content li:before {
 .jdgm-cards-carousel .jdgm-content .jdgm-arrow:hover{opacity:0.7;}
  .jdgm-cards-carousel .jdgm-content .jdgm-arrow svg{width:12px;}
 @media(max-width:989px){
-  #shopify-section-template--23890307088499__video_hero_7tqaLF .page-width.page-width--full-width {
+  #shopify-section-template--23917408321651__video_hero_7tqaLF .page-width.page-width--full-width {
     padding: 0px 0px !important;
 }
 }
 @media(max-width:749px){
-  #shopify-section-template--23890307088499__video_hero_7tqaLF .page-width--full-width .banner .banner__content {
+  #shopify-section-template--23917408321651__video_hero_7tqaLF .page-width--full-width .banner .banner__content {
     padding: 40px 15px !important;
 }
 .tab-collage__bottom.page-width{padding:0 20px 20px 40px;}
+}
+.tracki-max-real-time-gps-tracker .button--secondary:after,
+.tracki-slim .button--secondary:after {
+    background-color: #76c773;
 }
 /* tracki max real template design set */
